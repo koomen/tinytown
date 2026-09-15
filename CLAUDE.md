@@ -34,7 +34,7 @@ codex login                                           # only for `town author` (
 | `accept <site> [ids…] [--all-reviewed] [--force] [--no-rebuild]` | reviewed drafts -> `overrides.json`, then `build`; the only writer of blueprints |
 | `status <site> [--ids…]` | derived per-building status |
 | `bake <site> [--check] [--surfaces-only\|--stream-only]`, `bake --viewer [--check]` | surfaces + stream chunks for a site; `?v=` stamps in `index.html` |
-| `deploy [--target town\|chautauqua\|all] [--no-check]` | stage `dist/<target>/` after `bake --check` and viewer checks |
+| `deploy [--target avon\|chautauqua\|all] [--no-check]` | stage `dist/<target>/` after `bake --check` and viewer checks |
 | `serve [--port 8734] [--dist [TARGET]]` | dev server: `/`, `/avon`, `/chautauqua`, `/?site=<name>`; or a built dist |
 | `verify <target> <domain> [site]` | live files match `dist/<target>/` |
 | `browser setup\|status\|cleanup\|stop` | the private headless Chromium |

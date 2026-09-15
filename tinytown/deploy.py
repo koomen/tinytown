@@ -115,13 +115,14 @@ def render_document(site, root=ROOT, *, domain=None, page_path='/', asset_prefix
     return document
 
 
-def route_document(site, root=ROOT, target='town', fixed_site=True):
+def route_document(site, root=ROOT, target=None, fixed_site=True):
     """The document served for `site` on one deploy target.
 
     Targets with named routes below `/` pin every document to its scene: a
     `<base href="/">` so relative URLs resolve from the root, and (fixed_site)
     a script dropping a `?site=` override so the path alone chooses the scene.
     """
+    target = target or default_target(root)
     table = config.routes(target, root)
     if site not in table.values():
         raise ValueError('Unknown miniature route')

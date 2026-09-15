@@ -1,4 +1,4 @@
-// Build with ./town stage --target town before running this check.
+// Build with ./town stage --target avon before running this check.
 // Every clean URL loads its own scene through the same streamed renderer.
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
@@ -6,7 +6,7 @@ import {withBrowser,waitFor} from '../../tinytown/browser.mjs';
 const directory=new URL('../../runs/miniature-routes/',import.meta.url);
 await mkdir(directory,{recursive:true});
 const results=[];
-await withBrowser(new URL('../../dist/town/',import.meta.url).pathname,async page=>{
+await withBrowser(new URL('../../dist/avon/',import.meta.url).pathname,async page=>{
  const errors=[];
  let revision;
  page.events.add(m=>{

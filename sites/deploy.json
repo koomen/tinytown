@@ -1,4 +1,10 @@
 {
-  "town": {"dist": "dist/town", "wrangler": "wrangler.avon.jsonc"},
-  "chautauqua": {"dist": "dist/chautauqua", "wrangler": "wrangler.chautauqua.jsonc"}
+  "avon": {
+    "dist": "dist/avon",
+    "wrangler": "wrangler.avon.jsonc"
+  },
+  "chautauqua": {
+    "dist": "dist/chautauqua",
+    "wrangler": "wrangler.chautauqua.jsonc"
+  }
 }

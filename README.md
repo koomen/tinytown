@@ -39,7 +39,7 @@ so it needs network access.
 ./town refs mytown --all                                          # Street View fronts and aerials per building
 ./town author mytown --all --accept                               # model authoring: needs the Codex CLI (`codex login`)
 ./town bake mytown                                                # terrain/pavement surfaces and streaming chunks
-./town stage --target town                                       # after adding sites/mytown/site.json
+./town stage --target avon                                       # after adding sites/mytown/site.json
 ```
 
 Each verb is idempotent: re-running it does the missing work and exits 0.

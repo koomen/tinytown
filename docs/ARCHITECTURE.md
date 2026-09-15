@@ -159,7 +159,7 @@ Status of a building, derived by `state.building_status(paths, bid)`:
   "domain": "https://chautauqua.town",
   "deploy": [
     {"target": "chautauqua", "route": "/"},
-    {"target": "town", "route": "/chautauqua"}
+    {"target": "avon", "route": "/chautauqua"}
   ],
   "plugin": "chautauqua",
   "scope": "scope.json",
@@ -175,7 +175,7 @@ Status of a building, derived by `state.building_status(paths, bid)`:
 dist directories and Wrangler configs:
 
 ```json
-{"town": {"dist": "dist/town", "wrangler": "wrangler.avon.jsonc"},
+{"avon": {"dist": "dist/avon", "wrangler": "wrangler.avon.jsonc"},
  "chautauqua": {"dist": "dist/chautauqua", "wrangler": "wrangler.chautauqua.jsonc"}}
 ```
 
@@ -299,7 +299,7 @@ def bake(paths, *, check=False, surfaces=True, stream=True) -> bool
 def stamp_viewer(root=ROOT, check=False) -> bool
 
 # deploy.py
-def route_document(site, root=ROOT, target='town', fixed_site=True) -> str
+def route_document(site, root=ROOT, target=None, fixed_site=True) -> str   # target defaults to the first in sites/deploy.json
 def preview_document(url, root=ROOT, target=None) -> str | None
 def build(target, root=ROOT, check=True) -> Path   # dist/<target>
 def serve(port=8734, root=ROOT)
@@ -314,5 +314,5 @@ private browser is installed. Two golden checks guard the refactor:
 
 - `town build <site>` must reproduce the committed `data/<site>/site.json` for
   all three sites, byte for byte apart from the `name` field.
-- `town stage --target town` and `--target chautauqua` must reproduce the
+- `town stage --target avon` and `--target chautauqua` must reproduce the
   committed dist hashes apart from viewer `?v=` stamps.

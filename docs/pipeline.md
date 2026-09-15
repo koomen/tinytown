@@ -135,7 +135,7 @@ Edit `sites/mytown/site.json` (created by `town scope`, or write it):
   "title": "My Town, New York",
   "description": "A tiny interactive miniature of My Town.",
   "domain": "https://avon.town",
-  "deploy": [{"target": "town", "route": "/mytown"}],
+  "deploy": [{"target": "avon", "route": "/mytown"}],
   "plugin": "mytown",
   "scope": "scope.json",
   "landmarks": "landmarks.json",
@@ -160,11 +160,11 @@ A plugin is optional: `tinytown/plugins/mytown.py` with any of
 ## 8. Stage, check, push, verify
 
 ```sh
-./town stage --target town              # dist/town/, after bake --check and viewer checks
-./town serve --dist town                 # preview exactly what will be uploaded
+./town stage --target avon              # dist/avon/, after bake --check and viewer checks
+./town serve --dist avon                 # preview exactly what will be uploaded
 tests/run.sh
 git add data/mytown sites/mytown index.html _headers && git commit
-git push                                  # Cloudflare Workers Builds runs `python3 -m tinytown stage --target town`
+git push                                  # Cloudflare Workers Builds runs `python3 -m tinytown stage --target avon`
 ./town verify town https://avon.town mytown
 ```
 

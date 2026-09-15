@@ -5,10 +5,10 @@
   "compatibility_date": "2026-09-01",
   "routes": [{ "pattern": "avon.town", "custom_domain": true }],
   "build": {
-    "command": "python3 -m tinytown stage --target town"
+    "command": "python3 -m tinytown stage --target avon"
   },
   "assets": {
-    "directory": "./dist/town",
+    "directory": "./dist/avon",
     "html_handling": "auto-trailing-slash"
   }
 }

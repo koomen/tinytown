@@ -4,11 +4,11 @@
   "domain": "https://avon.town",
   "deploy": [
     {
-      "target": "town",
+      "target": "avon",
       "route": "/"
     },
     {
-      "target": "town",
+      "target": "avon",
       "route": "/avon-extended",
       "aliases": [
         "/extended"

@@ -5,7 +5,7 @@ built in the browser or at request time; the Workers upload `dist/<target>/`.
 
 | Worker | Domain | Wrangler config | Dist | Routes |
 | --- | --- | --- | --- | --- |
-| `avon-town` | avon.town | `wrangler.avon.jsonc` | `dist/town/` | `/` Avon, `/avon` the original village-centre scene, `/avon-extended` (+ alias `/extended`), `/chautauqua` |
+| `avon-town` | avon.town | `wrangler.avon.jsonc` | `dist/avon/` | `/` Avon, `/avon` the original village-centre scene, `/avon-extended` (+ alias `/extended`), `/chautauqua` |
 | `chautauqua-miniature` | chautauqua.town | `wrangler.chautauqua.jsonc` | `dist/chautauqua/` | `/` Chautauqua |
 
 ## Routes are config
@@ -15,8 +15,8 @@ Routes are not written anywhere in code. `config.routes(target)` reads the
 
 ```json
 "deploy": [
-  {"target": "town", "route": "/"},
-  {"target": "town", "route": "/avon-extended", "aliases": ["/extended"]}
+  {"target": "avon", "route": "/"},
+  {"target": "avon", "route": "/avon-extended", "aliases": ["/extended"]}
 ]
 ```
 
@@ -37,7 +37,7 @@ is the dist directory, and connect a Worker to it in Cloudflare.
 
 ```sh
 ./town stage                      # every target
-./town stage --target town        # one target
+./town stage --target avon        # one target
 ./town stage --target chautauqua --no-check   # skip the staleness checks (local experiments only)
 ```
 
@@ -118,7 +118,7 @@ commit the deletions too.
 
 ```sh
 ./town serve                        # the repository: /, /avon, /chautauqua, /?site=<name>
-./town serve --dist town            # dist/town/ exactly as deployed
+./town serve --dist avon            # dist/avon/ exactly as deployed
 ./town serve --dist chautauqua --port 8735
 ```
 

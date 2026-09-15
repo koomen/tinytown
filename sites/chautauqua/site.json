@@ -13,7 +13,7 @@
       "route": "/"
     },
     {
-      "target": "town",
+      "target": "avon",
       "route": "/chautauqua"
     }
   ],

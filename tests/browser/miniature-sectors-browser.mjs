@@ -1,4 +1,4 @@
-// Build dist/town first. Exercise camera sectors against actual network/GPU state.
+// Build dist/avon first. Exercise camera sectors against actual network/GPU state.
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
 import {withBrowser,waitFor} from '../../tinytown/browser.mjs';
@@ -29,7 +29,7 @@ await withBrowser(root,async page=>{
   await screenshot(page,'avon-reference');
 });
 
-await withBrowser(root+'dist/town',async page=>{
+await withBrowser(root+'dist/avon',async page=>{
   const errors=[];
   page.events.add(m=>{if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails);});
   for(const [site,mobile] of [['avon',false],['avon',true],['avon-extended',true],['chautauqua',true]]) {
