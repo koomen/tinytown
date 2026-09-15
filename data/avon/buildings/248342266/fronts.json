@@ -1,0 +1,117 @@
+{
+ "id": "248342266",
+ "addr": "61 North Avenue",
+ "name": null,
+ "faces": {
+  "+u": {
+   "bearing": 285,
+   "width": 10.6,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_248342266_+u.png",
+     "pano": "c96lKBYjplJrHqzUWT1YeQ",
+     "dist": 27.1,
+     "off_axis_deg": 178,
+     "fov": 55,
+     "tilt": 95,
+     "heading": 283,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9134771,-77.7435302,199a,55y,283h,95t/data=!3m7!1e1!3m5!1sc96lKBYjplJrHqzUWT1YeQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3Dc96lKBYjplJrHqzUWT1YeQ%26yaw%3D283!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+     "face": "+u",
+     "file": "front_248342266_+u_2.png",
+     "pano": "d49nR__A26_prvfXzQbs5Q",
+     "dist": 33.3,
+     "off_axis_deg": 144,
+     "fov": 55,
+     "tilt": 94,
+     "heading": 321,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9133013,-77.7435957,199a,55y,321h,94t/data=!3m7!1e1!3m5!1sd49nR__A26_prvfXzQbs5Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4%26panoid%3Dd49nR__A26_prvfXzQbs5Q%26yaw%3D321!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  },
+  "-u": {
+   "bearing": 105,
+   "width": 10.6,
+   "road": true,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_248342266_-u.png",
+     "pano": "c96lKBYjplJrHqzUWT1YeQ",
+     "dist": 12.8,
+     "off_axis_deg": 4,
+     "fov": 57,
+     "tilt": 100,
+     "heading": 281,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9134771,-77.7435302,199a,57y,281h,100t/data=!3m7!1e1!3m5!1sc96lKBYjplJrHqzUWT1YeQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3Dc96lKBYjplJrHqzUWT1YeQ%26yaw%3D281!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  },
+  "+v": {
+   "bearing": 15,
+   "width": 14.3,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_248342266_+v.png",
+     "pano": "7dO7RSYN-Xw8vgfHiVtuOA",
+     "dist": 25.0,
+     "off_axis_deg": 53,
+     "fov": 55,
+     "tilt": 95,
+     "heading": 249,
+     "date": null,
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9136441,-77.7434653,198a,55y,249h,95t/data=!3m7!1e1!3m5!1s7dO7RSYN-Xw8vgfHiVtuOA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3D7dO7RSYN-Xw8vgfHiVtuOA%26yaw%3D249!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+     "face": "+v",
+     "file": "front_248342266_+v_2.png",
+     "pano": "FRvhx6ufgp_Sf1Sw49cZFg",
+     "dist": 31.6,
+     "off_axis_deg": 39,
+     "fov": 55,
+     "tilt": 94,
+     "heading": 234,
+     "date": null,
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9137287,-77.7434376,198a,55y,234h,94t/data=!3m7!1e1!3m5!1sFRvhx6ufgp_Sf1Sw49cZFg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4%26panoid%3DFRvhx6ufgp_Sf1Sw49cZFg%26yaw%3D234!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+     "face": "+v",
+     "file": "front_248342266_+v_3.png",
+     "pano": "z5XFRzUH0X0Pm4ZVFhS5dA",
+     "dist": 39.0,
+     "off_axis_deg": 29,
+     "fov": 55,
+     "tilt": 93,
+     "heading": 224,
+     "date": null,
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9138128,-77.7434162,198a,55y,224h,93t/data=!3m7!1e1!3m5!1sz5XFRzUH0X0Pm4ZVFhS5dA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3Dz5XFRzUH0X0Pm4ZVFhS5dA%26yaw%3D224!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  },
+  "-v": {
+   "bearing": 195,
+   "width": 14.3,
+   "road": false,
+   "photos": [],
+   "coverage": false
+  }
+ },
+ "captured": "2026-09-03 02:14"
+}

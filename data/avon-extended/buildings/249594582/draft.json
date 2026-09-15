@@ -1,0 +1,265 @@
+{
+  "_comment": "75 West Main St, the red building at the West Main / South Ave corner: a 2-storey barn-red brick house-form with a steep red standing-seam gable roof (ridge along u) whose front gable (+u, West Main side) is tan shingle with a paired window. Across the +u front, a two-storey porch: the ground floor is enclosed in cream clapboard with a big display window and a door, the upper floor an open balcony with cream posts and a white railing under the roof. A low 1-storey cream-sided rear wing with a red gable roof runs back (-u) toward the South Ave parking lot. Small cream gabled side entry on -v. Brief calls +v (South Ave) the road face, but the front is +u.",
+  "wall": "#9a3f31",
+  "trim": "#e3d9c1",
+  "roofColor": "#b83a2d",
+  "volumes": [
+    {
+      "id": "main-brick",
+      "u": [0.7, 8.8],
+      "v": [-4.3, 4.2],
+      "height": 6.4,
+      "wall": "#9a3f31",
+      "roof": {
+        "type": "gable",
+        "ridge": "u",
+        "pitch": 0.44,
+        "maxH": 3.8,
+        "overhang": 0.45,
+        "color": "#b83a2d",
+        "gableColor": "#ab905f"
+      },
+      "chimneys": [{ "u": 4.5, "v": -1.0 }],
+      "faces": {
+        "+u": {
+          "porches": [
+            {
+              "style": "open",
+              "range": [0.02, 0.98],
+              "d": 2.1,
+              "height": 2.7,
+              "floorH": 3.3,
+              "floorColor": "#d9cfb3",
+              "posts": 3,
+              "postColor": "#e3d9c1",
+              "roof": "hip",
+              "pitch": 0.35,
+              "roofColor": "#b83a2d",
+              "railing": true,
+              "steps": 0
+            }
+          ],
+          "doors": [
+            {
+              "at": 0.5,
+              "y": 3.3,
+              "type": "rect",
+              "w": 1.0,
+              "h": 2.1,
+              "color": "#3a3037",
+              "surround": "#e3d9c1",
+              "surroundW": 0.1,
+              "steps": 0,
+              "lamp": false
+            }
+          ],
+          "storeys": [
+            {
+              "y": 4.3,
+              "windows": {
+                "type": "rect",
+                "w": 1.0,
+                "h": 1.5,
+                "at": [0.2, 0.8],
+                "trim": "#e3d9c1",
+                "glass": "#4f5a63"
+              }
+            },
+            {
+              "y": 7.3,
+              "windows": {
+                "type": "rect",
+                "w": 1.5,
+                "h": 1.2,
+                "at": [0.5],
+                "trim": "#e3d9c1",
+                "glass": "#4f5a63"
+              }
+            }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            {
+              "y": 4.3,
+              "windows": {
+                "type": "rect",
+                "w": 1.0,
+                "h": 1.5,
+                "at": [0.22, 0.62],
+                "trim": "#e3d9c1",
+                "glass": "#4f5a63"
+              }
+            },
+            {
+              "y": 1.2,
+              "windows": {
+                "type": "rect",
+                "w": 1.0,
+                "h": 1.5,
+                "at": [0.84],
+                "trim": "#e3d9c1",
+                "glass": "#4f5a63"
+              }
+            }
+          ],
+          "porches": [
+            {
+              "at": 0.55,
+              "w": 1.8,
+              "d": 1.3,
+              "height": 2.7,
+              "pitch": 0.5,
+              "wall": "#e3d9c1",
+              "roofColor": "#b83a2d",
+              "door": {
+                "type": "rect",
+                "w": 0.95,
+                "h": 2.1,
+                "color": "#e8e2d2",
+                "surround": "#e3d9c1",
+                "surroundW": 0.1,
+                "steps": 1,
+                "lamp": false
+              }
+            }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            {
+              "y": 4.3,
+              "windows": {
+                "type": "rect",
+                "w": 1.0,
+                "h": 1.5,
+                "at": [0.3, 0.72],
+                "trim": "#e3d9c1",
+                "glass": "#4f5a63"
+              }
+            },
+            {
+              "y": 1.2,
+              "windows": {
+                "type": "rect",
+                "w": 1.0,
+                "h": 1.5,
+                "at": [0.3, 0.72],
+                "trim": "#e3d9c1",
+                "glass": "#4f5a63"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "enclosed-porch",
+      "u": [8.8, 11.0],
+      "v": [-4.25, 4.15],
+      "height": 3.3,
+      "wall": "#d9cfb3",
+      "trim": "#e3d9c1",
+      "roof": { "type": "flat", "color": "#d9cfb3" },
+      "plinth": { "height": 0.45, "color": "#8e3a2e" },
+      "faces": {
+        "+u": {
+          "storefronts": [
+            { "range": [0.08, 0.52], "y": 0.9, "h": 1.9, "frame": "#e3d9c1", "kick": "#8e3a2e" }
+          ],
+          "doors": [
+            {
+              "at": 0.78,
+              "type": "rect",
+              "w": 1.0,
+              "h": 2.3,
+              "color": "#ece7da",
+              "surround": "#e3d9c1",
+              "surroundW": 0.12,
+              "steps": 1,
+              "fanlight": false,
+              "lamp": false
+            }
+          ],
+          "signs": []
+        },
+        "-v": {
+          "storeys": [
+            {
+              "y": 1.0,
+              "windows": { "type": "rect", "w": 0.9, "h": 1.3, "at": [0.5], "trim": "#e3d9c1", "glass": "#4f5a63" }
+            }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            {
+              "y": 1.0,
+              "windows": { "type": "rect", "w": 0.9, "h": 1.3, "at": [0.5], "trim": "#e3d9c1", "glass": "#4f5a63" }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rear-wing",
+      "u": [-11.0, 0.7],
+      "v": [-4.3, 2.4],
+      "height": 3.0,
+      "wall": "#d8d2c3",
+      "trim": "#e3d9c1",
+      "roof": {
+        "type": "gable",
+        "ridge": "u",
+        "pitch": 0.36,
+        "maxH": 2.4,
+        "overhang": 0.35,
+        "color": "#b83a2d",
+        "gableColor": "#d8d2c3"
+      },
+      "faces": {
+        "-u": {
+          "doors": [
+            {
+              "at": 0.62,
+              "type": "rect",
+              "w": 1.0,
+              "h": 2.1,
+              "color": "#ece7da",
+              "surround": "#e3d9c1",
+              "surroundW": 0.1,
+              "steps": 1,
+              "lamp": false
+            }
+          ],
+          "storeys": [
+            {
+              "y": 1.1,
+              "windows": { "type": "rect", "w": 0.9, "h": 1.1, "at": [0.28], "trim": "#e3d9c1", "glass": "#4f5a63" }
+            }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            {
+              "y": 1.1,
+              "windows": { "type": "rect", "w": 0.9, "h": 1.1, "at": [0.2, 0.5, 0.8], "trim": "#e3d9c1", "glass": "#4f5a63" }
+            }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            {
+              "y": 1.1,
+              "windows": { "type": "rect", "w": 0.9, "h": 1.1, "at": [0.3, 0.7], "trim": "#e3d9c1", "glass": "#4f5a63" }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "details": [
+    { "type": "bush", "u": 12.0, "v": -1.2, "size": 1.0 },
+    { "type": "bush", "u": 12.0, "v": 2.4, "size": 0.9 }
+  ]
+}

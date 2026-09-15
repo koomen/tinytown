@@ -1,0 +1,285 @@
+{
+ "version": 3,
+ "id": "820057539",
+ "name": "Main Gate entrance canopy",
+ "location": "Chautauqua Institution New York",
+ "address": null,
+ "source_tags": {
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 3,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 18.098,
+  "depth_v": 6.219,
+  "footprint_uv": [
+   [
+    -9.1,
+    -1.0
+   ],
+   [
+    -9.0,
+    -3.1
+   ],
+   [
+    -1.9,
+    -3.1
+   ],
+   [
+    4.7,
+    -3.1
+   ],
+   [
+    7.5,
+    -3.1
+   ],
+   [
+    9.0,
+    -3.1
+   ],
+   [
+    9.0,
+    3.1
+   ],
+   [
+    4.8,
+    3.1
+   ],
+   [
+    -2.0,
+    3.1
+   ],
+   [
+    -8.0,
+    3.1
+   ],
+   [
+    -8.0,
+    -1.0
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 293,
+    "compass": "WNW",
+    "left_bearing": 23,
+    "right_bearing": 203,
+    "nearest_road_outward": null,
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 113,
+    "compass": "ESE",
+    "left_bearing": 203,
+    "right_bearing": 23,
+    "nearest_road_outward": {
+     "name": "Massey Avenue",
+     "circular": false,
+     "distance_m": 35.5
+    },
+    "nearest_road_hint": true
+   },
+   "+v": {
+    "bearing": 23,
+    "compass": "NNE",
+    "left_bearing": 113,
+    "right_bearing": 293,
+    "nearest_road_outward": {
+     "name": "Ramble Avenue",
+     "circular": false,
+     "distance_m": 14.6
+    },
+    "nearest_road_hint": false
+   },
+   "-v": {
+    "bearing": 203,
+    "compass": "SSW",
+    "left_bearing": 293,
+    "right_bearing": 113,
+    "nearest_road_outward": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 61.4
+    },
+    "nearest_road_hint": false
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/820057539/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/820057539/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/820057539/reference-4.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820057539_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2081997,
+    "lon": -79.4693758,
+    "position_xz": [
+     -266.81,
+     131.39
+    ],
+    "position_uv": [
+     28.51,
+     -1.68
+    ],
+    "looking_bearing": 108.0,
+    "looking_compass": "ESE",
+    "image_left_bearing": 18.0,
+    "image_right_bearing": 198.0,
+    "target_center_offset_deg": 1.5,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 5,
+    "fov": 55,
+    "tilt": 97,
+    "near_road": {
+     "name": "Ramble Avenue",
+     "circular": false,
+     "distance_m": 31.3
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2081997,-79.4693758,425a,55y,108h,97t/data=!3m7!1e1!3m5!1sIhCgJWywgnRQrcjLmD5Qyg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7%26panoid%3DIhCgJWywgnRQrcjLmD5Qyg%26yaw%3D108!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "IhCgJWywgnRQrcjLmD5Qyg",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820057539/reference-1.jpg",
+   "sha256": "42c24b53255d1ef31eb5c0f607e1bbdd43575a6065fa786f5df62da468a7c6bd"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820057539_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2081149,
+    "lon": -79.4687124,
+    "position_xz": [
+     -212.1,
+     140.83
+    ],
+    "position_uv": [
+     -25.57,
+     10.85
+    ],
+    "looking_bearing": 263.0,
+    "looking_compass": "W",
+    "image_left_bearing": 173.0,
+    "image_right_bearing": 353.0,
+    "target_center_offset_deg": 6.8,
+    "geometrically_facing_camera": [
+     "-u",
+     "+v"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 30,
+    "fov": 55,
+    "tilt": 97,
+    "near_road": {
+     "name": "Massey Avenue",
+     "circular": false,
+     "distance_m": 0.6
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2081149,-79.4687124,425a,55y,263h,97t/data=!3m7!1e1!3m5!1s3pzLJEuv4eQvRLGHbw5phw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7%26panoid%3D3pzLJEuv4eQvRLGHbw5phw%26yaw%3D263!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "H2f7Y1cX7TLmTzaxj8qwkg",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820057539/reference-2.jpg",
+   "sha256": "5889cd670fe03452ced05d113546175c7143d23c4a6a6decdf1eb5ef72aa61f9"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820057539_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2082996,
+    "lon": -79.4689107,
+    "position_xz": [
+     -228.46,
+     120.27
+    ],
+    "position_uv": [
+     -2.52,
+     23.46
+    ],
+    "looking_bearing": 204.0,
+    "looking_compass": "SSW",
+    "image_left_bearing": 114.0,
+    "image_right_bearing": 294.0,
+    "target_center_offset_deg": 5.0,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 1,
+    "fov": 56,
+    "tilt": 96,
+    "near_road": {
+     "name": "Ramble Avenue",
+     "circular": false,
+     "distance_m": 6.2
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2082996,-79.4689107,425a,56y,204h,96t/data=!3m7!1e1!3m5!1sxk56S2P-TKzKAdFe7UQ3ew!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3Dxk56S2P-TKzKAdFe7UQ3ew%26yaw%3D204!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "DcCA4av7TrVBrX7i_XbiJw",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820057539/reference-3.jpg",
+   "sha256": "3885788540a63075206861085184dd6182fab8dfc629d2bd1dc2388f4095e494"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/aerial_820057539.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/820057539/reference-4.jpg",
+   "sha256": "d8dfd91aa6f0274df008fe77f6ccd8b4363ce745a5a28c74df200a5647da1e4d"
+  }
+ ],
+ "search_query": "Main Gate entrance canopy Chautauqua Institution New York building exterior",
+ "search_candidates": [],
+ "warnings": [
+  "No useful image-search candidates; using available Street View/aerial evidence."
+ ]
+}

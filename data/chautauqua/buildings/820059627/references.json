@@ -1,0 +1,389 @@
+{
+ "version": 3,
+ "id": "820059627",
+ "name": "Lenna Hall",
+ "location": "Chautauqua Institution New York",
+ "address": "54 Palestine Avenue",
+ "source_tags": {
+  "amenity": "theatre",
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 52.398,
+  "depth_v": 33.679,
+  "footprint_uv": [
+   [
+    26.1,
+    -9.2
+   ],
+   [
+    26.2,
+    -1.5
+   ],
+   [
+    26.2,
+    6.0
+   ],
+   [
+    18.2,
+    16.8
+   ],
+   [
+    15.0,
+    16.8
+   ],
+   [
+    3.3,
+    16.8
+   ],
+   [
+    -6.8,
+    9.4
+   ],
+   [
+    -9.3,
+    12.7
+   ],
+   [
+    -12.8,
+    10.2
+   ],
+   [
+    -16.0,
+    12.6
+   ],
+   [
+    -26.2,
+    2.6
+   ],
+   [
+    -17.5,
+    -9.2
+   ],
+   [
+    -13.6,
+    -5.5
+   ],
+   [
+    -12.1,
+    -7.6
+   ],
+   [
+    -10.4,
+    -7.6
+   ],
+   [
+    -7.0,
+    -7.6
+   ],
+   [
+    -0.2,
+    -16.8
+   ],
+   [
+    15.8,
+    -16.8
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 73,
+    "compass": "ENE",
+    "left_bearing": 163,
+    "right_bearing": 343,
+    "nearest_road_outward": {
+     "name": "Palestine Avenue",
+     "circular": false,
+     "distance_m": 17.4
+    },
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 253,
+    "compass": "WSW",
+    "left_bearing": 343,
+    "right_bearing": 163,
+    "nearest_road_outward": {
+     "name": "Construction Entrance",
+     "circular": false,
+     "distance_m": 116.6
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 163,
+    "compass": "SSE",
+    "left_bearing": 253,
+    "right_bearing": 73,
+    "nearest_road_outward": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 129.8
+    },
+    "nearest_road_hint": false
+   },
+   "-v": {
+    "bearing": 343,
+    "compass": "NNW",
+    "left_bearing": 73,
+    "right_bearing": 253,
+    "nearest_road_outward": {
+     "name": "Hurst Avenue",
+     "circular": false,
+     "distance_m": 9.4
+    },
+    "nearest_road_hint": true
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/820059627/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/820059627/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/820059627/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  },
+  {
+   "id": "WEB1",
+   "kind": "web-image",
+   "path": "miniature/820059627/reference-6.jpg",
+   "caption": "Lenna Hall: steep broad hipped roof, deep eaves, reddish timber upper walls, tan masonry buttresses and arched side entries. Unlocated public photo: confirm face direction with geolocated street views. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)"
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059627_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2100265,
+    "lon": -79.4706651,
+    "position_xz": [
+     -373.11,
+     -71.97
+    ],
+    "position_uv": [
+     56.29,
+     2.1
+    ],
+    "looking_bearing": 257.0,
+    "looking_compass": "WSW",
+    "image_left_bearing": 167.0,
+    "image_right_bearing": 347.0,
+    "target_center_offset_deg": -1.5,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 4,
+    "fov": 70,
+    "tilt": 91,
+    "near_road": {
+     "name": "Palestine Avenue",
+     "circular": false,
+     "distance_m": 9.1
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2100265,-79.4706651,424a,70y,257h,91t/data=!3m7!1e1!3m5!1sJHVF4y5MiJuV8re0_mR3rQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DJHVF4y5MiJuV8re0_mR3rQ%26yaw%3D257!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "JHVF4y5MiJuV8re0_mR3rQ",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059627/reference-1.jpg",
+   "sha256": "95bb8a934e390f66e5f76fcf7ab4fd00a4b627d814925445359217ea8c7e3f32"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059627_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2098002,
+    "lon": -79.4720381,
+    "position_xz": [
+     -486.32,
+     -46.78
+    ],
+    "position_uv": [
+     -59.39,
+     -6.24
+    ],
+    "looking_bearing": 84.0,
+    "looking_compass": "E",
+    "image_left_bearing": 354.0,
+    "image_right_bearing": 174.0,
+    "target_center_offset_deg": -4.7,
+    "geometrically_facing_camera": [
+     "-u"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 11,
+    "fov": 65,
+    "tilt": 91,
+    "near_road": {
+     "name": "Hurst Avenue",
+     "circular": false,
+     "distance_m": 15.9
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2098002,-79.4720381,428a,65y,84h,91t/data=!3m7!1e1!3m5!1s57O2bPRWkpGHsSQ6mbrawg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3D57O2bPRWkpGHsSQ6mbrawg%26yaw%3D84!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "57O2bPRWkpGHsSQ6mbrawg",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059627/reference-2.jpg",
+   "sha256": "2ddc917a55d36e74fc4f3ed0d574965a7525553f31a921ac4879bf9189d22eef"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059627_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2094425,
+    "lon": -79.4710863,
+    "position_xz": [
+     -407.84,
+     -6.96
+    ],
+    "position_uv": [
+     4.37,
+     54.42
+    ],
+    "looking_bearing": 337.0,
+    "looking_compass": "NNW",
+    "image_left_bearing": 247.0,
+    "image_right_bearing": 67.0,
+    "target_center_offset_deg": 1.7,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 7,
+    "fov": 80,
+    "tilt": 91,
+    "near_road": {
+     "name": "Scott Avenue",
+     "circular": false,
+     "distance_m": 50.1
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2094425,-79.4710863,426a,80y,337h,91t/data=!3m7!1e1!3m5!1snbjTg90gPfq8T2tBsDiTBA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DnbjTg90gPfq8T2tBsDiTBA%26yaw%3D337!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "nbjTg90gPfq8T2tBsDiTBA",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059627/reference-3.jpg",
+   "sha256": "650b7673d2a187867d661c1ab0bb36fac2ec3e5522d580155a720adcf5448e67"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059627_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2103229,
+    "lon": -79.4714133,
+    "position_xz": [
+     -434.81,
+     -104.96
+    ],
+    "position_uv": [
+     6.66,
+     -47.2
+    ],
+    "looking_bearing": 176.0,
+    "looking_compass": "S",
+    "image_left_bearing": 86.0,
+    "image_right_bearing": 266.0,
+    "target_center_offset_deg": -4.6,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 12,
+    "fov": 80,
+    "tilt": 91,
+    "near_road": {
+     "name": "Palestine Avenue",
+     "circular": false,
+     "distance_m": 16.3
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2103229,-79.4714133,427a,80y,176h,91t/data=!3m7!1e1!3m5!1sFFy34tU2_xlu7HUQxBUnkw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DFFy34tU2_xlu7HUQxBUnkw%26yaw%3D176!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "FFy34tU2_xlu7HUQxBUnkw",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059627/reference-4.jpg",
+   "sha256": "68d1c54d6ca4fdd6220dabd60bad6e1e5f08147586b47e5a201bb297b48e5c5e"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/aerial_820059627.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/820059627/reference-5.jpg",
+   "sha256": "1cc292d142003df9b5c2dc95c7a5224b335d3f85a5fdc30689dbec403c9fdb35"
+  },
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2025/05/lenna_hall.jpg",
+   "page_url": "https://www.chq.org/wp-content/uploads/2025/05/lenna_hall.jpg",
+   "title": "Lenna Hall: steep broad hipped roof, deep eaves, reddish timber upper walls, tan masonry buttresses and arched side entries. Unlocated public photo: confirm face direction with geolocated street views.",
+   "provider": "Chautauqua Institution",
+   "id": "WEB1",
+   "source_path": "data/chautauqua--20260910-044859-38562b/miniature/820059627/web-original-603230dddece3c35",
+   "kind": "web-image",
+   "camera": {
+    "status": "unlocated",
+    "reason": "Web photo has no verified capture pose."
+   },
+   "caption": "Lenna Hall: steep broad hipped roof, deep eaves, reddish timber upper walls, tan masonry buttresses and arched side entries. Unlocated public photo: confirm face direction with geolocated street views. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)",
+   "path": "miniature/820059627/reference-6.jpg",
+   "sha256": "603230dddece3c35254ef8e4e6172f9dcf23d523a7b2f8b20970a234c604a89c"
+  }
+ ],
+ "search_query": "Lenna Hall Chautauqua Institution New York building exterior",
+ "search_candidates": [
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2025/05/lenna_hall.jpg",
+   "page_url": "https://www.chq.org/wp-content/uploads/2025/05/lenna_hall.jpg",
+   "title": "Lenna Hall: steep broad hipped roof, deep eaves, reddish timber upper walls, tan masonry buttresses and arched side entries. Unlocated public photo: confirm face direction with geolocated street views.",
+   "provider": "Chautauqua Institution"
+  }
+ ],
+ "warnings": []
+}

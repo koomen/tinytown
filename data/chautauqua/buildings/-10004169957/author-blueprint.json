@@ -1,0 +1,65 @@
+{
+ "wall": "#98755e",
+ "trim": "#dedbd0",
+ "roofColor": "#686b61",
+ "volumes": [
+  {
+   "id": "south_gate_marker",
+   "u": [
+    -5.8,
+    -5.2
+   ],
+   "v": [
+    2.8,
+    5.0
+   ],
+   "bottom": 0,
+   "height": 3.1,
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "plinth": {
+    "height": 0.18,
+    "color": "#8d897b"
+   },
+   "faces": {
+    "-u": {
+     "signs": [
+      {
+       "text": "Chautauqua",
+       "style": "board",
+       "at": 0.5,
+       "y": 1.95,
+       "w": 2.05,
+       "h": 1.25
+      }
+     ]
+    },
+    "+u": {},
+    "-v": {},
+    "+v": {}
+   }
+  },
+  {
+   "id": "north_gate_post",
+   "u": [
+    -5.7,
+    -5.3
+   ],
+   "v": [
+    -3.8,
+    -3.4
+   ],
+   "bottom": 0,
+   "height": 1.6,
+   "wall": "#b1b4a8",
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "faces": {}
+  }
+ ],
+ "details": []
+}

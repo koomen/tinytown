@@ -1,0 +1,34 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"b9a6c94715dd40db5cc41852df6d4012201f6eacc5f042437dbcc877b34dec97\",\"operations\":[{\"op\":\"replace\",\"path\":\"/volumes/@gate_booth/u\",\"value\":[-1.55,1.55]},{\"op\":\"replace\",\"path\":\"/volumes/@gate_booth/v\",\"value\":[-4,-2.1]},{\"op\":\"replace\",\"path\":\"/volumes/@gate_booth/height\",\"value\":2.6},{\"op\":\"replace\",\"path\":\"/volumes/@gate_booth/roof\",\"value\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.28,\"maxH\":0.54,\"overhang\":0.28}},{\"op\":\"replace\",\"path\":\"/volumes/@gate_booth/faces/+u/storeys/0/windows/w\",\"value\":0.8},{\"op\":\"replace\",\"path\":\"/volumes/@gate_booth/faces/-u/storeys/0/windows/w\",\"value\":0.8},{\"op\":\"replace\",\"path\":\"/volumes/@gate_booth/faces/+u/signs/0/w\",\"value\":0.66},{\"op\":\"replace\",\"path\":\"/volumes/@gate_booth/faces/-u/signs/0/w\",\"value\":0.66}]}",
+ "cues": [
+  "Small pale booth beside an unobstructed road lane",
+  "Clear low gray gable with pale overhanging trim",
+  "Readable end windows and red STOP signs",
+  "Single lane-facing staff door"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV3",
+  "SV4"
+ ],
+ "uncertainties": [
+  "Scene fencing and foreground lamp are absent from the supplied blueprint and have no documented repair controls; replacing the dark fencing with pale ornamental gates and correcting the lamp remain scene-level work.",
+  "Booth dimensions are approximate; concealed rear elevation remains plain."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "gate_booth",
+   "face": "+v",
+   "role": "principal staff entrance, facing the open lane",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "SV2"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

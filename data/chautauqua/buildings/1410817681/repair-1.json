@@ -1,0 +1,30 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"b3c04e585f8ff984c5482321400c9f89585da4f130dbb020094e49240e49ed02\",\"operations\":[]}",
+ "cues": [
+  "Compact single-volume gabled cabin",
+  "Pale silver roof with modest overhangs",
+  "Dark reddish-brown walls",
+  "Small low opening on the NNW face"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Principal-entry placement cannot be verified from supplied references. Retain the single -u door as a concealed-face approximation; moving or duplicating it would add unsupported certainty."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal (provisional)",
+   "evidence": [
+    "MAP establishes face bearings; SV1 faces +u and does not show -u.",
+    "AERIAL establishes the roof footprint, not door placement."
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

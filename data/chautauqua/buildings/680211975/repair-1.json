@@ -1,0 +1,51 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"8579cc6e264dbf290140f001bb53647e885242c37d751a67ab8b6c9bc097d42a\",\"operations\":[{\"op\":\"replace\",\"path\":\"/volumes/@principal-gable/faces/+u/porches\",\"value\":[{\"style\":\"open\",\"at\":0.5,\"w\":5.4,\"d\":2.1,\"height\":3.2,\"floorH\":0.7,\"posts\":2,\"postColor\":\"#eee9da\",\"roof\":\"hip\",\"pitch\":0.15,\"roofColor\":\"#68716f\",\"railing\":false,\"steps\":5}]},{\"op\":\"add\",\"path\":\"/volumes/@principal-gable/faces/+u/awnings\",\"value\":[{\"range\":[0.12,0.88],\"y\":7.7,\"depth\":1.4,\"color\":\"#eee9da\"},{\"range\":[0.27,0.73],\"y\":10.8,\"depth\":1.3,\"color\":\"#eee9da\"}]},{\"op\":\"replace\",\"path\":\"/volumes/@principal-gable/faces/+u/signs/0/y\",\"value\":4.15},{\"op\":\"replace\",\"path\":\"/volumes/@main/faces/+u/porches\",\"value\":[{\"style\":\"open\",\"at\":0.2,\"w\":10.8,\"d\":2.7,\"height\":3.1,\"floorH\":0.7,\"posts\":5,\"postColor\":\"#eee9da\",\"roof\":\"hip\",\"pitch\":0.18,\"roofColor\":\"#68716f\",\"railing\":true,\"steps\":2},{\"style\":\"open\",\"at\":0.8,\"w\":10.8,\"d\":2.7,\"height\":3.1,\"floorH\":0.7,\"posts\":5,\"postColor\":\"#eee9da\",\"roof\":\"hip\",\"pitch\":0.18,\"roofColor\":\"#68716f\",\"railing\":true,\"steps\":2}]},{\"op\":\"replace\",\"path\":\"/volumes/@main/faces/-u/porches\",\"value\":[{\"style\":\"open\",\"at\":0.72,\"w\":13,\"d\":1.9,\"height\":2.8,\"floorH\":0.15,\"posts\":6,\"postColor\":\"#eee9da\",\"roof\":\"hip\",\"pitch\":0.18,\"roofColor\":\"#68716f\",\"railing\":true}]},{\"op\":\"replace\",\"path\":\"/volumes/@main/faces/-u/awnings\",\"value\":[{\"range\":[0.11,0.33],\"y\":2.8,\"depth\":1.8,\"color\":\"#354f48\"},{\"range\":[0.61,0.77],\"y\":3.3,\"depth\":1.7,\"color\":\"#eee9da\"},{\"range\":[0.61,0.77],\"y\":6.4,\"depth\":1.7,\"color\":\"#eee9da\"},{\"range\":[0.61,0.77],\"y\":9.5,\"depth\":1.7,\"color\":\"#eee9da\"}]}",
+ "cues": [
+  "Exposed brown double entrance beneath the tall central gable.",
+  "Ivory-posted veranda with a clear central entrance gap.",
+  "Gray-green walls, pale trim and varied Victorian roof peaks.",
+  "Projecting upper-floor ledges replace doorway-obscuring solid balcony bases."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Upper balconies are simplified to projecting ledges; the supplied porch component's elevated solid bases obscure the facade.",
+  "SV3 shows the separate Christian Science Chapel; SV4 does not reliably establish a St. Elmo entry."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "principal-gable",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "main",
+   "face": "-u",
+   "role": "secondary canopy entrance",
+   "evidence": [
+    "MAP",
+    "SV2"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "main",
+   "face": "-u",
+   "role": "secondary terrace access",
+   "evidence": [
+    "SV2"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

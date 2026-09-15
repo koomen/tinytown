@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The compact gabled cabin silhouette is recognizable and stylistically coherent, but its most characteristic materials and entrance detailing are misrepresented.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The sole principal door is on +v, the SW-facing long eave wall. SV1 is geolocated southwest of the cabin and looks NE toward that same +v face; it shows the lane-facing doors along the long walls. The labeled face sheet and actual inventory agree, and no duplicate principal portal is present."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The model uses red brick walls and a patterned shingle roof, while SV1 characteristically shows muted-brown shingle/clapboard-like wall covering and a pale standing-seam metal gable roof.",
+   "fix": "Replace the masonry texture with broad brown siding/shingle courses and simplify the roof to pale metal panels with visible seams."
+  },
+  {
+   "severity": "minor",
+   "problem": "The principal entrance is a plain gray slab with a decorative globe light, unlike the reference\u2019s crisp ivory door with a glazed upper portion and simple utilitarian trim.",
+   "fix": "Use an ivory, upper-glazed door and remove the globe light unless independently evidenced."
+  },
+  {
+   "severity": "minor",
+   "problem": "The heavy masonry steps and foundation treatment weaken the lightweight camp-cabin character visible in SV1.",
+   "fix": "Use two modest wooden steps/landing and a less prominent dark base."
+  }
+ ]
+}

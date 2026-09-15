@@ -1,0 +1,368 @@
+{
+ "version": 3,
+ "id": "946894365",
+ "name": "Coffee Gazebo",
+ "location": "Chautauqua Institution, Chautauqua, New York",
+ "address": null,
+ "source_tags": {
+  "amenity": "cafe",
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 5.23,
+  "depth_v": 5.225,
+  "footprint_uv": [
+   [
+    -2.6,
+    0.5
+   ],
+   [
+    -2.6,
+    -0.3
+   ],
+   [
+    -2.4,
+    -1.1
+   ],
+   [
+    -1.9,
+    -1.8
+   ],
+   [
+    -1.2,
+    -2.3
+   ],
+   [
+    -0.4,
+    -2.6
+   ],
+   [
+    0.4,
+    -2.6
+   ],
+   [
+    1.2,
+    -2.3
+   ],
+   [
+    1.9,
+    -1.8
+   ],
+   [
+    2.4,
+    -1.1
+   ],
+   [
+    2.6,
+    -0.2
+   ],
+   [
+    2.6,
+    0.6
+   ],
+   [
+    2.2,
+    1.4
+   ],
+   [
+    1.6,
+    2.1
+   ],
+   [
+    0.8,
+    2.5
+   ],
+   [
+    -0.0,
+    2.6
+   ],
+   [
+    -0.9,
+    2.5
+   ],
+   [
+    -1.7,
+    2.0
+   ],
+   [
+    -2.3,
+    1.4
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 35,
+    "compass": "NE",
+    "left_bearing": 125,
+    "right_bearing": 305,
+    "nearest_road_outward": {
+     "name": "Roberts Avenue",
+     "circular": false,
+     "distance_m": 18.4
+    },
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 215,
+    "compass": "SW",
+    "left_bearing": 305,
+    "right_bearing": 125,
+    "nearest_road_outward": {
+     "name": "Miller Avenue",
+     "circular": false,
+     "distance_m": 11.3
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 125,
+    "compass": "SE",
+    "left_bearing": 215,
+    "right_bearing": 35,
+    "nearest_road_outward": {
+     "name": "Miller Avenue",
+     "circular": false,
+     "distance_m": 4.6
+    },
+    "nearest_road_hint": false
+   },
+   "-v": {
+    "bearing": 305,
+    "compass": "NW",
+    "left_bearing": 35,
+    "right_bearing": 215,
+    "nearest_road_outward": {
+     "name": "Clark Brick Walk",
+     "circular": false,
+     "distance_m": 45.5
+    },
+    "nearest_road_hint": true
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/946894365/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/946894365/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/946894365/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua/research/front_946894365_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2092459,
+    "lon": -79.465066,
+    "position_xz": [
+     88.56,
+     14.93
+    ],
+    "position_uv": [
+     22.83,
+     1.21
+    ],
+    "looking_bearing": 219.0,
+    "looking_compass": "SW",
+    "image_left_bearing": 129.0,
+    "image_right_bearing": 309.0,
+    "target_center_offset_deg": -0.8,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 3,
+    "fov": 55,
+    "tilt": 97,
+    "near_road": {
+     "name": "Roberts Avenue",
+     "circular": false,
+     "distance_m": 2.2
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2092459,-79.465066,419a,55y,219h,97t/data=!3m7!1e1!3m5!1s9owhy15NyDd1CeZuvB4wVA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7%26panoid%3D9owhy15NyDd1CeZuvB4wVA%26yaw%3D219!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "9owhy15NyDd1CeZuvB4wVA",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/946894365/reference-1.jpg",
+   "sha256": "305d64f31654502437b57f9ada33f2f1e63912e68dad4fe8369e3269dbb87609"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua/research/front_946894365_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2089385,
+    "lon": -79.4653444,
+    "position_xz": [
+     65.6,
+     49.15
+    ],
+    "position_uv": [
+     -18.36,
+     2.15
+    ],
+    "looking_bearing": 27.0,
+    "looking_compass": "NNE",
+    "image_left_bearing": 297.0,
+    "image_right_bearing": 117.0,
+    "target_center_offset_deg": 1.5,
+    "geometrically_facing_camera": [
+     "-u"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 8,
+    "fov": 55,
+    "tilt": 99,
+    "near_road": {
+     "name": "Odland Plaza",
+     "circular": false,
+     "distance_m": 1.1
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2089385,-79.4653444,418a,55y,27h,99t/data=!3m7!1e1!3m5!1sVPmhdZjJO8BpsxAv1TnMyg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9%26panoid%3DVPmhdZjJO8BpsxAv1TnMyg%26yaw%3D27!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "VPmhdZjJO8BpsxAv1TnMyg",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/946894365/reference-2.jpg",
+   "sha256": "9ebe6284a086bac6cc69326a392e4ed020d13b60dd4252937d8c6689edd08dd4"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua/research/front_946894365_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2090691,
+    "lon": -79.4651248,
+    "position_xz": [
+     83.71,
+     34.61
+    ],
+    "position_uv": [
+     3.95,
+     8.58
+    ],
+    "looking_bearing": 272.0,
+    "looking_compass": "W",
+    "image_left_bearing": 182.0,
+    "image_right_bearing": 2.0,
+    "target_center_offset_deg": 8.4,
+    "geometrically_facing_camera": [
+     "+u",
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 34,
+    "fov": 80,
+    "tilt": 100,
+    "near_road": {
+     "name": "Miller Avenue",
+     "circular": false,
+     "distance_m": 0.6
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2090691,-79.4651248,418a,80y,272h,100t/data=!3m7!1e1!3m5!1s8UkhdXhyLzLzbvxZ3AxvvQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3D8UkhdXhyLzLzbvxZ3AxvvQ%26yaw%3D272!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "8UkhdXhyLzLzbvxZ3AxvvQ",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/946894365/reference-3.jpg",
+   "sha256": "5609cab6b07241d7aa8b228e22ec536f9b10ff47d635a5c398855ecdaf4f098d"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua/research/front_946894365_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2091487,
+    "lon": -79.4654536,
+    "position_xz": [
+     56.6,
+     25.75
+    ],
+    "position_uv": [
+     -4.42,
+     -18.69
+    ],
+    "looking_bearing": 110.0,
+    "looking_compass": "ESE",
+    "image_left_bearing": 20.0,
+    "image_right_bearing": 200.0,
+    "target_center_offset_deg": 1.9,
+    "geometrically_facing_camera": [
+     "-u",
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 15,
+    "fov": 55,
+    "tilt": 98,
+    "near_road": {
+     "name": "Clark Brick Walk",
+     "circular": false,
+     "distance_m": 8.6
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2091487,-79.4654536,418a,55y,110h,98t/data=!3m7!1e1!3m5!1sO6sTlqIbChFI3BMz_5TXIQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8%26panoid%3DO6sTlqIbChFI3BMz_5TXIQ%26yaw%3D110!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "O6sTlqIbChFI3BMz_5TXIQ",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/946894365/reference-4.jpg",
+   "sha256": "e5687bbb39cecaa0689f31277e779cf7d5055d007898ab6732963c8fbe180631"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua/research/aerial_946894365.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/946894365/reference-5.jpg",
+   "sha256": "15d35e7db299416a06c94ba9959a02934aff918437edc275ed0746508cee19de"
+  }
+ ],
+ "search_query": "Coffee Gazebo Chautauqua Institution, Chautauqua, New York building exterior",
+ "search_candidates": [],
+ "warnings": [
+  "No useful image-search candidates; using available Street View/aerial evidence."
+ ]
+}

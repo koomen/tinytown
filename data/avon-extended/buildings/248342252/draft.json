@@ -1,0 +1,83 @@
+{
+  "_comment": "48 North Avenue: light steel-blue vinyl-sided 2.5-storey house, side-gabled (ridge parallel to the street), a semicircular fanlight set in the front roof slope, a brick chimney at the NNE end of the ridge, full-width open front porch with a hip roof, three white posts and a solid siding half-wall (door at the left, wide window at the right, a big blue barn star between). The SSW gable end carries a large dark 3x3 solar-glass panel in the upper storey. A one-storey wing runs back toward the garage. Road face +u; left (0) = +v = NNE (toward 54 North Ave).",
+  "wall": "#a8b7c7",
+  "trim": "#eeeeea",
+  "roofColor": "#565b64",
+  "volumes": [
+    {
+      "id": "main",
+      "u": [-0.3, 9.1],
+      "v": [-4.7, 4.7],
+      "height": 6.0,
+      "roof": { "type": "gable", "ridge": "v", "pitch": 0.36, "maxH": 3.4, "overhang": 0.45,
+                "dormers": { "faces": ["+u"], "at": [0.5], "w": 1.4, "h": 0.8, "y": 1.0, "type": "arch", "style": "gable" } },
+      "chimneys": [ { "u": 4.2, "v": 3.7 } ],
+      "faces": {
+        "+u": {
+          "storeys": [
+            { "y": 3.8, "windows": { "type": "rect", "w": 1.05, "h": 1.6, "at": [0.23, 0.78], "glass": "#4e5a66" } },
+            { "y": 1.4, "windows": { "type": "rect", "w": 1.9, "h": 1.5, "at": [0.7], "glass": "#4e5a66" } }
+          ],
+          "doors": [
+            { "at": 0.26, "y": 0.6, "type": "rect", "w": 1.0, "h": 2.1, "color": "#eeeeea", "surround": "#eeeeea", "surroundW": 0.1, "steps": 0 }
+          ],
+          "porches": [
+            { "style": "open", "range": [0, 1], "d": 2.4, "height": 2.9, "floorH": 0.6, "floorColor": "#6f7783",
+              "posts": 3, "postColor": "#eeeeea", "roof": "hip", "pitch": 0.3, "roofColor": "#565b64",
+              "railing": true, "steps": 4, "stepsAt": 0.26, "stepsW": 1.3 }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 3.8, "windows": { "type": "rect", "w": 0.9, "h": 1.6, "at": [0.22, 0.42, 0.82], "glass": "#4e5a66" } },
+            { "y": 1.2, "windows": { "type": "rect", "w": 0.9, "h": 1.6, "at": [0.22, 0.68], "glass": "#4e5a66" } },
+            { "y": 7.4, "windows": { "type": "rect", "w": 0.6, "h": 0.9, "at": [0.5], "glass": "#4e5a66" } }
+          ],
+          "doors": [
+            { "at": 0.42, "type": "rect", "w": 0.95, "h": 2.1, "color": "#eeeeea", "surround": "#eeeeea", "surroundW": 0.1, "steps": 3 }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            { "y": 1.2, "windows": { "type": "rect", "w": 0.9, "h": 1.6, "at": [0.16, 0.76], "glass": "#4e5a66" } },
+            { "y": 3.7, "windows": { "type": "rect", "w": 3.0, "h": 2.3, "at": [0.7], "trim": "#3b3e44", "glass": "#2b2f36", "frameW": 0.08, "sill": false } },
+            { "y": 7.3, "windows": { "type": "rect", "w": 0.6, "h": 0.9, "at": [0.5], "glass": "#4e5a66" } }
+          ]
+        },
+        "-u": {
+          "storeys": [
+            { "y": 3.8, "windows": { "type": "rect", "w": 0.9, "h": 1.6, "at": [0.25, 0.75], "glass": "#4e5a66" } }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rear-wing",
+      "u": [-9.1, -0.3],
+      "v": [-4.2, 4.2],
+      "height": 3.1,
+      "roof": { "type": "hip", "ridge": "u", "pitch": 0.3, "maxH": 1.5, "overhang": 0.35 },
+      "faces": {
+        "+v": {
+          "storeys": [
+            { "y": 1.1, "windows": { "type": "rect", "w": 1.0, "h": 1.3, "at": [0.3, 0.7], "glass": "#4e5a66" } }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            { "y": 1.1, "windows": { "type": "rect", "w": 1.0, "h": 1.3, "at": [0.3, 0.7], "glass": "#4e5a66" } }
+          ]
+        },
+        "-u": {
+          "storeys": [
+            { "y": 1.1, "windows": { "type": "rect", "w": 1.0, "h": 1.3, "at": [0.28], "glass": "#4e5a66" } }
+          ],
+          "doors": [
+            { "at": 0.7, "type": "rect", "w": 0.95, "h": 2.1, "color": "#eeeeea", "surround": "#eeeeea", "surroundW": 0.1, "steps": 2 }
+          ]
+        }
+      }
+    }
+  ],
+  "details": []
+}

@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The pale clapboard, forest-green sash, gray-green roof palette, and elongated dormitory form are coherent and recognizable, but the model suppresses the building\u2019s most characteristic veranda architecture and oversimplifies its roof/annex silhouette.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The map assigns the NE/Pratt end to -u. Located SV2 views that face head-on from the NE and shows a centered walk and stairs rising to the sheltered porch; the -u render and door inventory correspond with one centered green principal door. Conversely, located SV1 shows the SW/Wythe +u end with multiple subordinate doors beneath the shared veranda, matching the inventory\u2019s two +u doors rather than a duplicated principal portal."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The signature two-level veranda is largely missing or reduced to tiny end balconies. SV1 shows prominent white posts, brackets, and dense upper rails at +u, while SV3 shows an extensive two-story porch along +v; the model instead presents broad, flat window walls.",
+   "fix": "Add a clearly legible two-level veranda wrapping the Wythe/+u end into the +v side, with white posts, decorative brackets, close-set railings, and doors sheltered below."
+  },
+  {
+   "severity": "major",
+   "problem": "The long block\u2019s roof and end massing read as an overly plain bar with bulky clipped/hipped ends, losing the aerial\u2019s smaller roof breaks and low annex character.",
+   "fix": "Refine the silhouette with simpler gabled terminations, modest roof interruptions, and a visibly lower side annex while retaining caricature-scale proportions."
+  },
+  {
+   "severity": "minor",
+   "problem": "The +v and -v panels are heavily blocked by neighboring models, preventing a clean review of the target\u2019s long elevations and veranda continuity.",
+   "fix": "Regenerate the four-face sheet with isolated or hidden neighboring buildings so every labeled elevation is unobstructed."
+  }
+ ]
+}

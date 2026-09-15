@@ -1,0 +1,430 @@
+{
+ "_comment": "58-60 West Main St: one OSM footprint holding two attached buildings. Left (+v, NW) half is #60, a long yellow clapboard two-storey house with a squared false front over its street gable and a full-width two-storey porch (open ground floor on thin posts, white balcony rail, yellow-and-white striped awning under the porch roof). Right (-v, SE) half is #58 Puppy's Bar & Grill, a teal front-gabled two-storey with a brick ground floor, a shingled pent canopy and the gold-on-green PUPPY'S sign; a low white shed behind it. Road face is +u (SW, West Main St).",
+ "wall": "#e3c463",
+ "trim": "#f1efe8",
+ "roofColor": "#5e6062",
+ "volumes": [
+  {
+   "id": "house-60",
+   "u": [
+    -10.6,
+    8.4
+   ],
+   "v": [
+    -0.6,
+    7.6
+   ],
+   "height": 6.4,
+   "wall": "#e3c463",
+   "trim": "#f1efe8",
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.35,
+    "overhang": 0.3,
+    "color": "#5e6062",
+    "gableColor": "#e3c463",
+    "maxH": 1.5
+   },
+   "faces": {
+    "+u": {
+     "parapets": [
+      {
+       "type": "flat",
+       "width": "full",
+       "height": 1.9,
+       "depth": 0.4,
+       "color": "#d9d0ad",
+       "trim": "#e6dfc2"
+      }
+     ]
+    },
+    "+v": {
+     "storeys": [
+      {
+       "y": 3.9,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.4,
+        "at": [
+         0.12,
+         0.36,
+         0.6,
+         0.86
+        ],
+        "trim": "#f1efe8",
+        "glass": "#5c6a78"
+       }
+      },
+      {
+       "y": 1.0,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.4,
+        "at": [
+         0.36,
+         0.6
+        ],
+        "trim": "#f1efe8",
+        "glass": "#5c6a78"
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.12,
+       "type": "rect",
+       "w": 0.9,
+       "h": 2.1,
+       "color": "#efece4",
+       "surround": "#f1efe8",
+       "surroundW": 0.12,
+       "steps": 2,
+       "lamp": false
+      }
+     ]
+    },
+    "-u": {
+     "storeys": [
+      {
+       "y": 3.9,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.4,
+        "at": [
+         0.3,
+         0.7
+        ],
+        "trim": "#f1efe8",
+        "glass": "#5c6a78"
+       }
+      },
+      {
+       "y": 1.0,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.4,
+        "at": [
+         0.3,
+         0.7
+        ],
+        "trim": "#f1efe8",
+        "glass": "#5c6a78"
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "porch-60",
+   "u": [
+    8.4,
+    10.6
+   ],
+   "v": [
+    -0.6,
+    7.6
+   ],
+   "height": 6.3,
+   "wall": "#a88f48",
+   "trim": "#f1efe8",
+   "roof": {
+    "type": "flat",
+    "lip": false,
+    "color": "#5e6062"
+   },
+   "cornice": {
+    "height": 0.3,
+    "overhang": 0.3,
+    "dentils": false,
+    "color": "#f1efe8"
+   },
+   "beltCourses": [
+    {
+     "y": 3.05,
+     "height": 0.25,
+     "color": "#f1efe8"
+    },
+    {
+     "y": 3.3,
+     "height": 0.85,
+     "color": "#f4f2ec"
+    }
+   ],
+   "faces": {
+    "+u": {
+     "pilasters": {
+      "at": [
+       0.03,
+       0.36,
+       0.68,
+       0.97
+      ],
+      "w": 0.22,
+      "d": 0.22,
+      "height": 6.0,
+      "color": "#3a3a3c",
+      "cap": "#f1efe8"
+     },
+     "storeys": [
+      {
+       "y": 0.9,
+       "windows": {
+        "type": "rect",
+        "w": 1.4,
+        "h": 1.3,
+        "at": [
+         0.22
+        ],
+        "trim": "#f1efe8",
+        "glass": "#5c6a78"
+       }
+      },
+      {
+       "y": 4.3,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.2,
+        "at": [
+         0.28,
+         0.72
+        ],
+        "trim": "#f1efe8",
+        "glass": "#5c6a78"
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.6,
+       "type": "rect",
+       "w": 0.95,
+       "h": 2.15,
+       "color": "#efece4",
+       "surround": "#f1efe8",
+       "surroundW": 0.12,
+       "steps": 1,
+       "lamp": false
+      },
+      {
+       "at": 0.82,
+       "type": "rect",
+       "w": 0.95,
+       "h": 2.15,
+       "color": "#b9b7b1",
+       "surround": "#f1efe8",
+       "surroundW": 0.12,
+       "steps": 1,
+       "lamp": false
+      }
+     ],
+     "awnings": [
+      {
+       "range": [
+        0.06,
+        0.94
+       ],
+       "y": 5.5,
+       "depth": 1.1,
+       "color": "#f2d47a",
+       "stripes": "#f6f3ea"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "puppys-58",
+   "u": [
+    -2.0,
+    10.6
+   ],
+   "v": [
+    -7.6,
+    -0.6
+   ],
+   "height": 6.2,
+   "wall": "#8e4a3b",
+   "upperWall": "#55a09a",
+   "split": 3.2,
+   "trim": "#f1efe8",
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.38,
+    "overhang": 0.35,
+    "color": "#4a4c4f",
+    "gableColor": "#55a09a",
+    "maxH": 2.7
+   },
+   "faces": {
+    "+u": {
+     "porches": [
+      {
+       "style": "open",
+       "range": [
+        0.04,
+        0.96
+       ],
+       "d": 1.7,
+       "height": 2.9,
+       "floorH": 0.3,
+       "floorColor": "#8a6a4a",
+       "posts": 3,
+       "postColor": "#3a3a3c",
+       "roof": "hip",
+       "pitch": 0.25,
+       "roofColor": "#5a5c5e",
+       "railing": false,
+       "steps": 1
+      }
+     ],
+     "storeys": [
+      {
+       "y": 1.1,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.2,
+        "at": [
+         0.2,
+         0.8
+        ],
+        "trim": "#2e3230",
+        "glass": "#3f4a46",
+        "sill": false
+       }
+      },
+      {
+       "y": 4.7,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 0.9,
+        "at": [
+         0.22,
+         0.78
+        ],
+        "trim": "#f1efe8",
+        "glass": "#5c6a78"
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.5,
+       "y": 0.3,
+       "type": "rect",
+       "w": 1.0,
+       "h": 2.2,
+       "color": "#2e3230",
+       "surround": "#2e3230",
+       "surroundW": 0.1,
+       "lamp": false
+      }
+     ],
+     "signs": [
+      {
+       "text": "PUPPY'S  BAR & GRILL",
+       "style": "gold-on-black",
+       "at": 0.5,
+       "y": 3.75,
+       "w": 5.4,
+       "h": 0.7,
+       "out": 0.2
+      }
+     ]
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 4.2,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.2,
+        "at": [
+         0.4,
+         0.62,
+         0.84
+        ],
+        "trim": "#f1efe8",
+        "glass": "#5c6a78"
+       }
+      },
+      {
+       "y": 1.1,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.2,
+        "at": [
+         0.5
+        ],
+        "trim": "#f1efe8",
+        "glass": "#5c6a78"
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "shed-58",
+   "u": [
+    -10.6,
+    -2.0
+   ],
+   "v": [
+    -7.6,
+    -0.6
+   ],
+   "height": 3.0,
+   "wall": "#e2e0d9",
+   "trim": "#e9e7e0",
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.3,
+    "overhang": 0.3,
+    "color": "#a3a3a1",
+    "gableColor": "#e2e0d9",
+    "maxH": 1.2
+   },
+   "faces": {
+    "-v": {
+     "storeys": [
+      {
+       "y": 1.2,
+       "windows": {
+        "type": "rect",
+        "w": 0.8,
+        "h": 0.8,
+        "at": [
+         0.3,
+         0.7
+        ],
+        "trim": "#e9e7e0",
+        "glass": "#5c6a78"
+       }
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "details": [
+  {
+   "type": "flag",
+   "u": 12.6,
+   "v": -6.4,
+   "height": 4.5
+  }
+ ]
+}

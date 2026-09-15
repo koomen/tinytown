@@ -1,0 +1,121 @@
+{
+ "id": "678506333",
+ "addr": "4840 Route 394",
+ "name": "Turner Community Center",
+ "frame": "a97f37ed5364514d7fed09a6361148c07221299b3ed5a7b8f94dddd7d143df83",
+ "faces": {
+  "+u": {
+   "bearing": 329,
+   "width": 46.6,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_678506333_+u.png",
+     "pano": "cyh5WDcjf7yWOIAivqiIxw",
+     "dist": 6.6,
+     "off_axis_deg": 20,
+     "fov": 80,
+     "tilt": 96,
+     "heading": 129,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2112091,-79.4747651,436a,80y,129h,96t/data=!3m7!1e1!3m5!1scyh5WDcjf7yWOIAivqiIxw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3Dcyh5WDcjf7yWOIAivqiIxw%26yaw%3D129!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2112091,
+      "lon": -79.4747651
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 149,
+   "width": 46.6,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_678506333_-u.png",
+     "pano": "h5WOMlCaHyr1zUUAMqQiPA",
+     "dist": 35.3,
+     "off_axis_deg": 4,
+     "fov": 79,
+     "tilt": 91,
+     "heading": 333,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2102005,-79.4739667,437a,79y,333h,91t/data=!3m7!1e1!3m5!1sIc1R6AjIeWL121-jjosagw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DIc1R6AjIeWL121-jjosagw%26yaw%3D333!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2101708,
+      "lon": -79.4739176
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 59,
+   "width": 93.6,
+   "road": true,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_678506333_+v.png",
+     "pano": "NuxJME8neg0ym8I772EDVA",
+     "dist": 66.4,
+     "off_axis_deg": 1,
+     "fov": 80,
+     "tilt": 90,
+     "heading": 240,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2112189,-79.47347,434a,80y,240h,90t/data=!3m7!1e1!3m5!1sNuxJME8neg0ym8I772EDVA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DNuxJME8neg0ym8I772EDVA%26yaw%3D240!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2112189,
+      "lon": -79.47347
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 239,
+   "width": 93.6,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_678506333_-v.png",
+     "pano": "i0BgnPczZgsewOReUl3qyA",
+     "dist": 41.8,
+     "off_axis_deg": 2,
+     "fov": 80,
+     "tilt": 91,
+     "heading": 57,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2104974,-79.4750743,437a,80y,57h,91t/data=!3m7!1e1!3m5!1si0BgnPczZgsewOReUl3qyA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3Di0BgnPczZgsewOReUl3qyA%26yaw%3D57!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2104974,
+      "lon": -79.4750743
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-10 04:42"
+}

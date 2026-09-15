@@ -1,0 +1,245 @@
+{
+ "wall": "#a45f4e",
+ "trim": "#eee8d8",
+ "roofColor": "#727b75",
+ "volumes": [
+  {
+   "id": "northwest_booth",
+   "u": [
+    -7.1,
+    -3.5
+   ],
+   "v": [
+    -2.8,
+    1.7
+   ],
+   "bottom": 0,
+   "height": 2.85,
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "cornice": {
+    "height": 0.3,
+    "overhang": 0.4,
+    "color": "#eee8d8",
+    "dentils": false
+   },
+   "plinth": {
+    "height": 0.18,
+    "color": "#898b80"
+   },
+   "faces": {
+    "+v": {
+     "storeys": [
+      {
+       "y": 0.7,
+       "windows": {
+        "type": "shop",
+        "w": 2.1,
+        "h": 1.65,
+        "at": [
+         0.59
+        ],
+        "trim": "#eee8d8",
+        "glass": "#455d5c",
+        "interior": false
+       }
+      }
+     ]
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 0.65,
+       "windows": {
+        "type": "shop",
+        "w": 2.35,
+        "h": 1.75,
+        "at": [
+         0.5
+        ],
+        "trim": "#eee8d8",
+        "glass": "#657a79",
+        "interior": false
+       }
+      }
+     ],
+     "signs": [
+      {
+       "text": "EXIT",
+       "style": "board",
+       "at": 0.5,
+       "y": 2.61,
+       "w": 1.2,
+       "h": 0.3
+      }
+     ]
+    },
+    "-u": {
+     "storeys": [
+      {
+       "y": 0.7,
+       "windows": {
+        "type": "rect",
+        "w": 1.4,
+        "h": 1.6,
+        "at": [
+         0.65
+        ],
+        "trim": "#eee8d8",
+        "glass": "#657a79",
+        "interior": false
+       }
+      }
+     ],
+     "signs": [
+      {
+       "text": "DO NOT ENTER",
+       "style": "board",
+       "at": 0.5,
+       "y": 2.59,
+       "w": 2.6,
+       "h": 0.3
+      }
+     ]
+    },
+    "+u": {
+     "doors": [
+      {
+       "at": 0.55,
+       "type": "rect",
+       "w": 1,
+       "h": 2.2,
+       "color": "#536861",
+       "surround": "#eee8d8",
+       "surroundW": 0.1
+      }
+     ],
+     "porches": [
+      {
+       "style": "open",
+       "at": 0.5,
+       "w": 4.5,
+       "d": 2.1,
+       "height": 2.7,
+       "floorH": 0.03,
+       "posts": 2,
+       "postColor": "#a45f4e",
+       "roof": "flat",
+       "roofColor": "#deded2",
+       "railing": false,
+       "steps": 0
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "southeast_booth",
+   "u": [
+    4,
+    7.8
+   ],
+   "v": [
+    -2.8,
+    2.6
+   ],
+   "bottom": 0,
+   "height": 2.85,
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "cornice": {
+    "height": 0.3,
+    "overhang": 0.4,
+    "color": "#eee8d8",
+    "dentils": false
+   },
+   "plinth": {
+    "height": 0.18,
+    "color": "#898b80"
+   },
+   "faces": {
+    "+v": {
+     "signs": [
+      {
+       "text": "ENTER",
+       "style": "board",
+       "at": 0.22,
+       "y": 2.61,
+       "w": 1.6,
+       "h": 0.3
+      }
+     ],
+     "storeys": [
+      {
+       "y": 0.7,
+       "windows": {
+        "type": "shop",
+        "w": 2.15,
+        "h": 1.65,
+        "at": [
+         0.61
+        ],
+        "trim": "#eee8d8",
+        "glass": "#455d5c",
+        "interior": false
+       }
+      }
+     ]
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 0.65,
+       "windows": {
+        "type": "shop",
+        "w": 2.65,
+        "h": 1.75,
+        "at": [
+         0.5
+        ],
+        "trim": "#eee8d8",
+        "glass": "#657a79",
+        "interior": false
+       }
+      }
+     ]
+    },
+    "+u": {},
+    "-u": {
+     "doors": [
+      {
+       "at": 0.5,
+       "type": "rect",
+       "w": 1,
+       "h": 2.2,
+       "color": "#536861",
+       "surround": "#eee8d8",
+       "surroundW": 0.1
+      }
+     ],
+     "porches": [
+      {
+       "style": "open",
+       "at": 0.5,
+       "w": 5.4,
+       "d": 2.5,
+       "height": 2.7,
+       "floorH": 0.03,
+       "posts": 2,
+       "postColor": "#a45f4e",
+       "roof": "flat",
+       "roofColor": "#deded2",
+       "railing": false,
+       "steps": 0
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "details": []
+}

@@ -1,0 +1,586 @@
+{
+ "wall": "#945744",
+ "trim": "#e7dfcd",
+ "roofColor": "#777b79",
+ "volumes": [
+  {
+   "id": "west-wing",
+   "u": [
+    -3.3,
+    7.8
+   ],
+   "v": [
+    -14.9,
+    -3.6
+   ],
+   "bottom": 0,
+   "height": 10,
+   "roof": {
+    "type": "hip",
+    "ridge": "v",
+    "pitch": 0.18,
+    "maxH": 1.65,
+    "overhang": 0.35
+   },
+   "cornice": {
+    "height": 0.45,
+    "overhang": 0.25,
+    "color": "#e7dfcd",
+    "dentils": true
+   },
+   "plinth": {
+    "height": 0.8,
+    "color": "#a19d8d"
+   },
+   "beltCourses": [
+    {
+     "y": 5.3,
+     "height": 0.15,
+     "color": "#d7cbb5"
+    }
+   ],
+   "faces": {
+    "+u": {
+     "storeys": [
+      {
+       "y": 1.4,
+       "windows": {
+        "type": "rect",
+        "w": 1.35,
+        "h": 2.9,
+        "at": [
+         0.2,
+         0.5,
+         0.8
+        ],
+        "glass": "#52666a",
+        "hood": true
+       }
+      },
+      {
+       "y": 6.25,
+       "windows": {
+        "type": "rect",
+        "w": 1.35,
+        "h": 2.35,
+        "at": [
+         0.2,
+         0.5,
+         0.8
+        ],
+        "glass": "#52666a",
+        "hood": true
+       }
+      }
+     ],
+     "pilasters": {
+      "at": [
+       0.975
+      ],
+      "w": 0.65,
+      "d": 0.16,
+      "height": 9.95,
+      "color": "#e7dfcd",
+      "cap": "#e7dfcd"
+     }
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 2.5,
+       "windows": {
+        "type": "rect",
+        "w": 1.6,
+        "h": 2.1,
+        "at": [
+         0.23,
+         0.5,
+         0.77
+        ],
+        "glass": "#52666a",
+        "hood": true,
+        "keystone": true
+       }
+      },
+      {
+       "y": 6.25,
+       "windows": {
+        "type": "rect",
+        "w": 1.6,
+        "h": 2.65,
+        "at": [
+         0.23,
+         0.5,
+         0.77
+        ],
+        "glass": "#52666a",
+        "hood": true
+       }
+      },
+      {
+       "y": 0.15,
+       "windows": {
+        "type": "basement",
+        "w": 1,
+        "h": 0.4,
+        "at": [
+         0.25,
+         0.75
+        ]
+       }
+      }
+     ],
+     "pilasters": {
+      "at": [
+       0.025,
+       0.975
+      ],
+      "w": 0.6,
+      "d": 0.15,
+      "height": 9.8,
+      "color": "#ddd3bf"
+     }
+    },
+    "-u": {
+     "storeys": [
+      {
+       "y": 1.5,
+       "windows": {
+        "type": "rect",
+        "w": 1.3,
+        "h": 2.6,
+        "at": [
+         0.25,
+         0.72
+        ],
+        "glass": "#52666a"
+       }
+      },
+      {
+       "y": 6.25,
+       "windows": {
+        "type": "rect",
+        "w": 1.3,
+        "h": 2.35,
+        "at": [
+         0.25,
+         0.72
+        ],
+        "glass": "#52666a"
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "east-wing",
+   "u": [
+    -5,
+    7.9
+   ],
+   "v": [
+    3.6,
+    14.9
+   ],
+   "bottom": 0,
+   "height": 10,
+   "roof": {
+    "type": "hip",
+    "ridge": "v",
+    "pitch": 0.18,
+    "maxH": 1.65,
+    "overhang": 0.35
+   },
+   "cornice": {
+    "height": 0.45,
+    "overhang": 0.25,
+    "color": "#e7dfcd",
+    "dentils": true
+   },
+   "plinth": {
+    "height": 0.8,
+    "color": "#a19d8d"
+   },
+   "beltCourses": [
+    {
+     "y": 5.3,
+     "height": 0.15,
+     "color": "#d7cbb5"
+    }
+   ],
+   "faces": {
+    "+u": {
+     "storeys": [
+      {
+       "y": 1.4,
+       "windows": {
+        "type": "rect",
+        "w": 1.35,
+        "h": 2.9,
+        "at": [
+         0.2,
+         0.5,
+         0.8
+        ],
+        "glass": "#52666a",
+        "hood": true
+       }
+      },
+      {
+       "y": 6.25,
+       "windows": {
+        "type": "rect",
+        "w": 1.35,
+        "h": 2.35,
+        "at": [
+         0.2,
+         0.5,
+         0.8
+        ],
+        "glass": "#52666a",
+        "hood": true
+       }
+      }
+     ],
+     "pilasters": {
+      "at": [
+       0.025
+      ],
+      "w": 0.65,
+      "d": 0.16,
+      "height": 9.95,
+      "color": "#e7dfcd",
+      "cap": "#e7dfcd"
+     }
+    },
+    "+v": {
+     "storeys": [
+      {
+       "y": 2.5,
+       "windows": {
+        "type": "rect",
+        "w": 1.65,
+        "h": 2.1,
+        "at": [
+         0.24,
+         0.5,
+         0.76
+        ],
+        "glass": "#52666a",
+        "hood": true,
+        "keystone": true
+       }
+      },
+      {
+       "y": 6.25,
+       "windows": {
+        "type": "rect",
+        "w": 1.65,
+        "h": 2.65,
+        "at": [
+         0.24,
+         0.5,
+         0.76
+        ],
+        "glass": "#52666a",
+        "hood": true
+       }
+      }
+     ],
+     "pilasters": {
+      "at": [
+       0.025,
+       0.975
+      ],
+      "w": 0.6,
+      "d": 0.15,
+      "height": 9.8,
+      "color": "#ddd3bf"
+     }
+    },
+    "-u": {
+     "storeys": [
+      {
+       "y": 1.5,
+       "windows": {
+        "type": "rect",
+        "w": 1.3,
+        "h": 2.6,
+        "at": [
+         0.25,
+         0.5,
+         0.75
+        ],
+        "glass": "#52666a"
+       }
+      },
+      {
+       "y": 6.25,
+       "windows": {
+        "type": "rect",
+        "w": 1.3,
+        "h": 2.35,
+        "at": [
+         0.25,
+         0.5,
+         0.75
+        ],
+        "glass": "#52666a"
+       }
+      }
+     ]
+    }
+   },
+   "wall": "#945744"
+  },
+  {
+   "id": "central-block",
+   "u": [
+    -5,
+    7.9
+   ],
+   "v": [
+    -3.6,
+    3.6
+   ],
+   "bottom": 0,
+   "height": 10,
+   "roof": {
+    "type": "hip",
+    "ridge": "v",
+    "pitch": 0.18,
+    "maxH": 1.65,
+    "overhang": 0.25
+   },
+   "faces": {}
+  },
+  {
+   "id": "entrance-risalit",
+   "u": [
+    7.7,
+    9
+   ],
+   "v": [
+    -3.6,
+    3.6
+   ],
+   "bottom": 0,
+   "height": 10,
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.27,
+    "maxH": 1.8,
+    "overhang": 0.25,
+    "gableColor": "#945744"
+   },
+   "plinth": {
+    "height": 0.65,
+    "color": "#a19d8d"
+   },
+   "faces": {
+    "+u": {
+     "doors": [
+      {
+       "at": 0.5,
+       "type": "double",
+       "y": 0.55,
+       "w": 1.65,
+       "h": 3.35,
+       "color": "#d8ded5",
+       "surround": "#e7dfcd",
+       "surroundW": 0.3,
+       "fanlight": true,
+       "steps": 3
+      }
+     ],
+     "storeys": [
+      {
+       "y": 6.1,
+       "windows": {
+        "type": "rect",
+        "w": 1.5,
+        "h": 2.55,
+        "at": [
+         0.5
+        ],
+        "glass": "#52666a",
+        "hood": true
+       }
+      }
+     ],
+     "pilasters": {
+      "at": [
+       0.045,
+       0.955
+      ],
+      "w": 0.65,
+      "d": 0.2,
+      "height": 10,
+      "color": "#e7dfcd",
+      "cap": "#e7dfcd"
+     },
+     "porches": [
+      {
+       "style": "open",
+       "at": 0.5,
+       "w": 3.3,
+       "d": 0.6,
+       "height": 4.65,
+       "floorH": 0.55,
+       "posts": 2,
+       "postColor": "#e7dfcd",
+       "roof": "flat",
+       "roofColor": "#d6cebc",
+       "railing": false,
+       "steps": 3
+      }
+     ],
+     "signs": [
+      {
+       "text": "SMITH MEMORIAL LIBRARY",
+       "style": "bronze",
+       "at": 0.5,
+       "y": 4.12,
+       "w": 2.55,
+       "h": 0.32
+      }
+     ]
+    }
+   },
+   "cornice": {
+    "height": 0.24,
+    "overhang": 0.22,
+    "color": "#e7dfcd",
+    "dentils": true
+   }
+  },
+  {
+   "id": "rear-bay",
+   "u": [
+    -8.8,
+    -4.7
+   ],
+   "v": [
+    -4.1,
+    3.4
+   ],
+   "bottom": 0,
+   "height": 9.7,
+   "roof": {
+    "type": "hip",
+    "ridge": "u",
+    "pitch": 0.25,
+    "maxH": 1.5,
+    "overhang": 0.3
+   },
+   "cornice": {
+    "height": 0.3,
+    "overhang": 0.2,
+    "color": "#e7dfcd",
+    "dentils": false
+   },
+   "plinth": {
+    "height": 0.8,
+    "color": "#a19d8d"
+   },
+   "beltCourses": [
+    {
+     "y": 5.3,
+     "height": 0.15,
+     "color": "#d7cbb5"
+    }
+   ],
+   "faces": {
+    "-u": {
+     "storeys": [
+      {
+       "y": 1.5,
+       "windows": {
+        "type": "rect",
+        "w": 1.25,
+        "h": 2.6,
+        "at": [
+         0.25,
+         0.75
+        ],
+        "glass": "#52666a"
+       }
+      },
+      {
+       "y": 6.15,
+       "windows": {
+        "type": "rect",
+        "w": 1.25,
+        "h": 2.4,
+        "at": [
+         0.25,
+         0.75
+        ],
+        "glass": "#52666a"
+       }
+      }
+     ]
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 1.5,
+       "windows": {
+        "type": "rect",
+        "w": 1.15,
+        "h": 2.6,
+        "at": [
+         0.45
+        ],
+        "glass": "#52666a"
+       }
+      },
+      {
+       "y": 6.15,
+       "windows": {
+        "type": "rect",
+        "w": 1.15,
+        "h": 2.4,
+        "at": [
+         0.45
+        ],
+        "glass": "#52666a"
+       }
+      }
+     ]
+    },
+    "+v": {
+     "storeys": [
+      {
+       "y": 1.5,
+       "windows": {
+        "type": "rect",
+        "w": 1.15,
+        "h": 2.6,
+        "at": [
+         0.55
+        ],
+        "glass": "#52666a"
+       }
+      },
+      {
+       "y": 6.15,
+       "windows": {
+        "type": "rect",
+        "w": 1.15,
+        "h": 2.4,
+        "at": [
+         0.55
+        ],
+        "glass": "#52666a"
+       }
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "details": []
+}

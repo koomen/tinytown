@@ -1,0 +1,25 @@
+{
+ "blueprint_json": "{\"wall\":\"#d9d0aa\",\"trim\":\"#eee5ce\",\"roofColor\":\"#b8c0bd\",\"amphitheater\":{\"axis\":\"v\",\"stageEnd\":\"positive\",\"height\":8,\"roofRise\":5,\"backstageDepth\":22,\"rows\":16,\"monitor\":true,\"wallColor\":\"#d9d0aa\",\"trimColor\":\"#eee5ce\",\"roofColor\":\"#b8c0bd\",\"seatColor\":\"#d8d2b7\"},\"volumes\":[],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Broad pale-metal hipped canopy with raised longitudinal monitor.",
+  "Open cream-painted galleries and slender perimeter supports.",
+  "Warm ivory seating tiers divided by readable aisles.",
+  "Stage and abstract organ at the narrower ENE end.",
+  "Chamfered audience end opposite the projecting stage house."
+ ],
+ "references_used": [
+  "MAP",
+  "AERIAL",
+  "WEB1",
+  "WEB2",
+  "SV1 hybrid"
+ ],
+ "uncertainties": [
+  "Stage placement at +v is inferred from the ENE roof projection in the north-up aerial and mapped footprint; interior photographs are unlocated.",
+  "Exact heights and backstage depth are approximated.",
+  "Multiple open perimeter gates are represented without door leaves; no single principal entrance is established.",
+  "Older Street Views chiefly show neighboring buildings and vegetation; their architecture is not copied."
+ ],
+ "entrance_plan": []
+}

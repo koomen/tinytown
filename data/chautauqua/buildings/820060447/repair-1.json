@@ -1,0 +1,46 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"23246c607eff15ca2ef86852810685055c976bd21ba6326fb5b6f84696a407db\",\"operations\":[{\"op\":\"replace\",\"path\":\"/pavilion/floorH\",\"value\":2},{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#51412f\"}]}",
+ "cues": [
+  "Broad shallow gable with open timber ends",
+  "White classical colonnades",
+  "Higher ceremonial east stair and terrace",
+  "Dark exposed trusses above paired bench banks"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV3",
+  "AERIAL interne"
+ ],
+ "uncertainties": [
+  "Exact terrace elevation is approximate; increased for stair emphasis.",
+  "The pavilion kit cannot independently model grand-stair cheek walls, heavy newels, or geometric railing panels.",
+  "East principal-stair placement remains inferred; WEB1 is unlocated."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "pavilion",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "AERIAL",
+    "WEB1"
+   ],
+   "confidence": "inferred"
+  },
+  {
+   "volume": "pavilion",
+   "face": "-u",
+   "role": "secondary audience-aisle approach",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

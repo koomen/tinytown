@@ -1,0 +1,258 @@
+{
+ "wall": "#b66f57",
+ "trim": "#f0eee2",
+ "roofColor": "#b8bdb9",
+ "volumes": [
+  {
+   "id": "hall",
+   "u": [
+    -12.6,
+    12.6
+   ],
+   "v": [
+    -6.7,
+    6.7
+   ],
+   "bottom": 0,
+   "height": 4.6,
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.15,
+    "maxH": 1.05,
+    "overhang": 0.25
+   },
+   "cornice": {
+    "height": 0.22,
+    "overhang": 0.2,
+    "color": "#f0eee2",
+    "dentils": false
+   },
+   "plinth": {
+    "height": 0.18,
+    "color": "#c4c2b6"
+   },
+   "faces": {
+    "-u": {
+     "doors": [
+      {
+       "at": 0.5,
+       "type": "double",
+       "w": 1.7,
+       "h": 2.8,
+       "color": "#e9e9de",
+       "surround": "#ffffff",
+       "surroundW": 0.15
+      }
+     ],
+     "storeys": [
+      {
+       "y": 0.55,
+       "windows": {
+        "type": "rect",
+        "w": 1.45,
+        "h": 2.65,
+        "at": [
+         0.23,
+         0.77
+        ],
+        "trim": "#f0eee2",
+        "glass": "#526362",
+        "interior": false
+       }
+      }
+     ],
+     "parapets": [
+      {
+       "type": "arch",
+       "at": 0.5,
+       "width": 13.2,
+       "height": 1.05,
+       "depth": 0.22,
+       "color": "#b66f57",
+       "trim": "#f0eee2"
+      }
+     ],
+     "signs": [
+      {
+       "text": "McKNIGHT HALL",
+       "style": "carved",
+       "at": 0.5,
+       "y": 3.35,
+       "w": 2.25,
+       "h": 0.4
+      }
+     ],
+     "porches": [
+      {
+       "style": "open",
+       "at": 0.5,
+       "w": 23,
+       "d": 1.5,
+       "height": 4.15,
+       "floorH": 0.12,
+       "posts": 8,
+       "postColor": "#f0eee2",
+       "roof": "flat",
+       "roofColor": "#e4e5db",
+       "railing": false,
+       "steps": 0
+      }
+     ]
+    },
+    "+u": {
+     "doors": [
+      {
+       "at": 0.5,
+       "type": "double",
+       "w": 1.75,
+       "h": 2.65,
+       "color": "#c8ccc2",
+       "surround": "#f0eee2",
+       "surroundW": 0.15
+      }
+     ],
+     "parapets": [
+      {
+       "type": "arch",
+       "at": 0.5,
+       "width": 13.2,
+       "height": 1.05,
+       "depth": 0.22,
+       "color": "#b66f57",
+       "trim": "#f0eee2"
+      }
+     ],
+     "pilasters": {
+      "at": [
+       0.025,
+       0.975
+      ],
+      "w": 0.3,
+      "d": 0.12,
+      "height": 4.5,
+      "color": "#f0eee2",
+      "cap": "#f0eee2"
+     },
+     "porches": [
+      {
+       "style": "open",
+       "at": 0.5,
+       "w": 23,
+       "d": 1.5,
+       "height": 4.15,
+       "floorH": 0.12,
+       "posts": 8,
+       "postColor": "#f0eee2",
+       "roof": "flat",
+       "roofColor": "#e4e5db",
+       "railing": false,
+       "steps": 0
+      }
+     ]
+    },
+    "+v": {
+     "storeys": [
+      {
+       "y": 0.35,
+       "windows": {
+        "type": "rect",
+        "w": 1.2,
+        "h": 2.35,
+        "at": [
+         0.22,
+         0.276,
+         0.332,
+         0.388,
+         0.444,
+         0.5,
+         0.556,
+         0.612,
+         0.668,
+         0.724,
+         0.78
+        ],
+        "trim": "#f0eee2",
+        "glass": "#536765",
+        "interior": false
+       }
+      }
+     ],
+     "awnings": [
+      {
+       "range": [
+        0.19,
+        0.81
+       ],
+       "y": 3.8,
+       "depth": 0.18,
+       "color": "#eeeee5"
+      }
+     ],
+     "pilasters": {
+      "at": [
+       0.19,
+       0.81
+      ],
+      "w": 0.26,
+      "d": 0.12,
+      "height": 4.45,
+      "color": "#f0eee2",
+      "cap": "#f0eee2"
+     }
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 0.35,
+       "windows": {
+        "type": "rect",
+        "w": 1.2,
+        "h": 2.35,
+        "at": [
+         0.22,
+         0.276,
+         0.332,
+         0.388,
+         0.444,
+         0.5,
+         0.556,
+         0.612,
+         0.668,
+         0.724,
+         0.78
+        ],
+        "trim": "#f0eee2",
+        "glass": "#536765",
+        "interior": false
+       }
+      }
+     ],
+     "awnings": [
+      {
+       "range": [
+        0.19,
+        0.81
+       ],
+       "y": 3.8,
+       "depth": 0.18,
+       "color": "#eeeee5"
+      }
+     ],
+     "pilasters": {
+      "at": [
+       0.19,
+       0.81
+      ],
+      "w": 0.26,
+      "d": 0.12,
+      "height": 4.45,
+      "color": "#f0eee2",
+      "cap": "#f0eee2"
+     }
+    }
+   }
+  }
+ ],
+ "details": []
+}

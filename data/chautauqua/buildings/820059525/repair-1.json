@@ -1,0 +1,58 @@
+{
+ "blueprint_json": "{\"wall\":\"#89a5aa\",\"trim\":\"#eee7d6\",\"roofColor\":\"#777568\",\"volumes\":[{\"id\":\"stone-base\",\"u\":[-5.5,5.5],\"v\":[-6.1,6.3],\"bottom\":-0.35,\"height\":2.9,\"wall\":\"#a29a85\",\"roof\":{\"type\":\"flat\",\"lip\":false},\"plinth\":{\"height\":0.28,\"color\":\"#555851\"},\"faces\":{\"-v\":{\"storeys\":[{\"y\":0.8,\"windows\":{\"type\":\"rect\",\"w\":1.35,\"h\":1.65,\"at\":[0.23,0.64],\"trim\":\"#eee7d6\",\"glass\":\"#88938c\"}}],\"doors\":[{\"at\":0.9,\"w\":1.05,\"h\":2.25,\"color\":\"#536663\",\"surround\":\"#eee7d6\",\"surroundW\":0.14,\"steps\":2}],\"porches\":[{\"style\":\"open\",\"at\":0.9,\"w\":1.95,\"d\":0.85,\"height\":2.55,\"floorH\":0.18,\"posts\":2,\"postColor\":\"#eee7d6\",\"roof\":\"hip\",\"pitch\":0.24,\"roofColor\":\"#777568\",\"railing\":false,\"steps\":2}]},\"+u\":{\"storeys\":[{\"y\":0.85,\"windows\":{\"type\":\"rect\",\"w\":1.1,\"h\":1.5,\"at\":[0.24,0.57],\"trim\":\"#365d4d\"}}]},\"+v\":{\"storeys\":[{\"y\":0.85,\"windows\":{\"type\":\"rect\",\"w\":1.4,\"h\":1.5,\"at\":[0.48,0.78]}}],\"doors\":[{\"at\":0.15,\"w\":1.05,\"h\":2.2,\"color\":\"#536663\",\"surround\":\"#eee7d6\"}],\"porches\":[{\"style\":\"open\",\"at\":0.15,\"w\":2.8,\"d\":1.2,\"height\":2.8,\"floorH\":0.18,\"posts\":2,\"postColor\":\"#eee7d6\",\"roof\":\"flat\",\"railing\":true,\"steps\":2}]}}},{\"id\":\"upper-house\",\"u\":[-5.5,5.5],\"v\":[-6.1,6.3],\"bottom\":2.9,\"height\":6.2,\"wall\":\"#89a5aa\",\"roof\":{\"type\":\"hip\",\"ridge\":\"v\",\"pitch\":0.25,\"maxH\":2.25,\"overhang\":0.35},\"beltCourses\":[{\"y\":3.02,\"height\":0.18,\"color\":\"#eee7d6\"}],\"faces\":{\"-v\":{\"storeys\":[{\"y\":0.7,\"windows\":{\"type\":\"rect\",\"w\":1.4,\"h\":1.95,\"at\":[0.24,0.77],\"trim\":\"#eee7d6\",\"glass\":\"#879693\"}}]},\"+u\":{\"storeys\":[{\"y\":0.7,\"windows\":{\"type\":\"rect\",\"w\":1.2,\"h\":1.9,\"at\":[0.22,0.48],\"trim\":\"#365d4d\"}}],\"doors\":[{\"at\":0.8,\"w\":0.95,\"h\":2.2,\"color\":\"#627e80\",\"surround\":\"#eee7d6\"}],\"porches\":[{\"style\":\"open\",\"at\":0.77,\"w\":4.2,\"d\":1.35,\"height\":3,\"floorH\":0.05,\"posts\":3,\"postColor\":\"#365d4d\",\"roof\":\"flat\",\"roofColor\":\"#777568\",\"railing\":true,\"steps\":0},{\"style\":\"open\",\"at\":0.77,\"w\":4.2,\"d\":1.35,\"height\":2.35,\"floorH\":3.15,\"posts\":3,\"postColor\":\"#365d4d\",\"roof\":\"gable\",\"pitch\":0.3,\"roofColor\":\"#777568\",\"railing\":true,\"steps\":0}]},\"+v\":{\"storeys\":[{\"y\":0.7,\"windows\":{\"type\":\"rect\",\"w\":1.25,\"h\":1.9,\"at\":[0.48,0.78]}}],\"porches\":[{\"style\":\"open\",\"at\":0.15,\"w\":2.8,\"d\":1.2,\"height\":2.8,\"floorH\":0.1,\"posts\":2,\"postColor\":\"#eee7d6\",\"roof\":\"flat\",\"railing\":true,\"steps\":0}]}}},{\"id\":\"ames-dormer\",\"u\":[-2.25,2.25],\"v\":[-6.25,-2.5],\"bottom\":5.95,\"height\":8.05,\"wall\":\"#89a5aa\",\"roof\":{\"type\":\"gable\",\"ridge\":\"v\",\"pitch\":0.36,\"maxH\":1.55,\"overhang\":0.25},\"faces\":{\"-v\":{\"storeys\":[{\"y\":0.5,\"windows\":{\"type\":\"rect\",\"w\":0.82,\"h\":1.55,\"at\":[0.39,0.61],\"trim\":\"#eee7d6\",\"glass\":\"#899791\"}}]}}},{\"id\":\"pratt-sunrooms\",\"u\":[-5.5,-3.7],\"v\":[-4.1,5.9],\"bottom\":-0.35,\"height\":6.2,\"wall\":\"#e4e3d6\",\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.3,\"maxH\":2.45,\"overhang\":0.25},\"beltCourses\":[{\"y\":2.95,\"height\":0.25,\"color\":\"#eee7d6\"}],\"faces\":{\"-u\":{\"storeys\":[{\"y\":0.65,\"windows\":{\"type\":\"rect\",\"w\":1.22,\"h\":2.05,\"at\":[0.1,0.26,0.42,0.58,0.74,0.9],\"trim\":\"#eee7d6\",\"glass\":\"#738784\"}},{\"y\":3.65,\"windows\":{\"type\":\"rect\",\"w\":1.22,\"h\":2.05,\"at\":[0.1,0.26,0.42,0.58,0.74,0.9],\"trim\":\"#eee7d6\",\"glass\":\"#738784\"}},{\"y\":6.9,\"windows\":{\"type\":\"rect\",\"w\":1.65,\"h\":1.35,\"at\":[0.5],\"trim\":\"#365d4d\",\"glass\":\"#738784\"}}]},\"-v\":{\"storeys\":[{\"y\":0.65,\"windows\":{\"type\":\"rect\",\"w\":1.15,\"h\":2.05,\"at\":[0.5]}},{\"y\":3.65,\"windows\":{\"type\":\"rect\",\"w\":1.15,\"h\":2.05,\"at\":[0.5]}}]},\"+v\":{\"storeys\":[{\"y\":0.65,\"windows\":{\"type\":\"rect\",\"w\":1.15,\"h\":2.05,\"at\":[0.5]}},{\"y\":3.65,\"windows\":{\"type\":\"rect\",\"w\":1.15,\"h\":2.05,\"at\":[0.5]}}]}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Blue-gray upper floor over warm stone-colored base.",
+  "Broad muted hip roof and projecting Ames gable with paired sash.",
+  "Small sheltered entrance at the right of the Ames elevation.",
+  "Stacked green-trimmed balconies and cream multi-pane sunrooms.",
+  "End porch on the Ramble-facing elevation."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV3",
+  "SV4 observations as interpreted in supplied review"
+ ],
+ "uncertainties": [
+  "Stone, shingles and lap siding are simplified to material colors; the catalog provides no explicit texture control.",
+  "Balcony and sunroom proportions are approximate; adjoining structures complicate their boundaries.",
+  "The Ames entrance is observed; its principal status follows the supplied review. Ramble entry association is less certain.",
+  "Neighbor occlusion cannot be repaired through this building blueprint."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "stone-base",
+   "face": "-v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV4",
+    "supplied orientation review"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "upper-house",
+   "face": "+u",
+   "role": "secondary elevated access",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "supplied orientation review"
+   ],
+   "confidence": "inferred"
+  },
+  {
+   "volume": "stone-base",
+   "face": "+v",
+   "role": "secondary porch entry",
+   "evidence": [
+    "MAP",
+    "SV3"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

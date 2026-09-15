@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"1ea882dfe1078c12505263522cf2c7d2b2eeecb999a91b16f9ffe8d5b1970cc6\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#89604f\"}]}",
+ "cues": [
+  "Compact single-storey cabin.",
+  "Muted reddish-brown cladding palette.",
+  "Low gray-brown gable roof with pale edging.",
+  "Mostly blank NNW gable with tiny attic vent."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The sole +u door is retained provisionally; its location and principal role remain unverified. SV1 shows the opposite -u gable, partly occluded by people.",
+  "The catalog provides no siding-texture control; the softened wall color cannot remove renderer-generated brickwork.",
+  "Side windows remain simplified assumptions."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal (provisional; placement unresolved)",
+   "evidence": [
+    "MAP and SV1 establish the photographed -u gable, not the entrance.",
+    "AERIAL does not resolve a doorway."
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

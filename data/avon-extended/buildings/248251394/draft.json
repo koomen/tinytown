@@ -1,0 +1,95 @@
+{
+  "_comment": "102 Genesee St (The Foot Doctor): greige gable-front 2-storey block on the SSW half, 1.5-storey cross-gabled wing on the NNE half, full-width white open porch (top-level, spanning both front volumes on the shared wall u=6.2) with a small gabled entry pediment, 1-storey rear wing behind the wing. +u = street (WNW), +v = NNE.",
+  "wall": "#aea99c",
+  "trim": "#f1efe9",
+  "roofColor": "#4b4d50",
+  "volumes": [
+    {
+      "id": "main-gable-block",
+      "u": [-3.4, 6.2],
+      "v": [-5.9, 1.5],
+      "height": 5.5,
+      "roof": { "type": "gable", "ridge": "u", "pitch": 0.3, "maxH": 2.3, "overhang": 0.4 },
+      "faces": {
+        "+u": {
+          "storeys": [
+            { "y": 3.3, "windows": { "type": "rect", "w": 0.95, "h": 1.45, "at": [0.34, 0.72] } },
+            { "y": 3.6, "windows": { "type": "rect", "w": 0.5, "h": 0.8, "at": [0.09], "mullions": false } },
+            { "y": 1.35, "windows": { "type": "rect", "w": 1.1, "h": 1.5, "at": [0.44] } }
+          ],
+          "doors": [
+            { "at": 0.1, "y": 0.45, "type": "rect", "w": 1.0, "h": 2.1, "color": "#e6e3dc", "surround": "#f1efe9", "surroundW": 0.12 }
+          ],
+          "signs": [
+            { "text": "THE FOOT DOCTOR", "style": "navy", "at": 0.81, "y": 1.7, "w": 1.5, "h": 0.55 }
+          ],
+          "porches": [
+            { "style": "open", "at": 0.1, "w": 2.2, "d": 2.5, "height": 2.8, "floorH": 0.45, "floorColor": "#7d7a74",
+              "posts": 2, "postColor": "#f1efe9", "roof": "gable", "pitch": 0.55, "gableColor": "#f1efe9", "railing": false }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            { "y": 3.3, "windows": { "type": "rect", "w": 0.95, "h": 1.45, "at": [0.3, 0.58, 0.72] } },
+            { "y": 0.9, "windows": { "type": "rect", "w": 0.95, "h": 1.45, "at": [0.3] } }
+          ]
+        },
+        "-u": {
+          "storeys": [
+            { "y": 3.3, "windows": { "type": "rect", "w": 0.95, "h": 1.45, "at": [0.3, 0.68] } },
+            { "y": 0.9, "windows": { "type": "rect", "w": 0.95, "h": 1.45, "at": [0.68] } }
+          ],
+          "doors": [
+            { "at": 0.92, "type": "rect", "w": 0.95, "h": 2.05, "color": "#8b2b2f", "surround": "#f1efe9", "surroundW": 0.1, "steps": 1 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cross-gable-wing",
+      "u": [0.5, 6.2],
+      "v": [1.5, 5.9],
+      "height": 4.0,
+      "roof": { "type": "gable", "ridge": "v", "pitch": 0.32, "maxH": 1.8, "overhang": 0.4 },
+      "faces": {
+        "+u": {
+          "storeys": [
+            { "y": 1.35, "windows": { "type": "rect", "w": 1.1, "h": 1.5, "at": [0.44] } }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 4.2, "windows": { "type": "rect", "w": 0.7, "h": 1.0, "at": [0.42, 0.62] } },
+            { "y": 0.9, "windows": { "type": "rect", "w": 0.95, "h": 1.45, "at": [0.3, 0.75] } }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rear-wing",
+      "u": [-8.6, 0.5],
+      "v": [1.5, 5.9],
+      "height": 3.0,
+      "roof": { "type": "gable", "ridge": "u", "pitch": 0.32, "maxH": 1.4, "overhang": 0.35 },
+      "faces": {
+        "-u": {
+          "storeys": [
+            { "y": 1.1, "windows": { "type": "rect", "w": 1.3, "h": 1.1, "at": [0.5] } }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 1.2, "windows": { "type": "rect", "w": 1.8, "h": 1.0, "at": [0.35] } }
+          ]
+        }
+      }
+    }
+  ],
+  "porches": [
+    { "_comment": "full-width front porch across both front volumes; left (NNE, +v) to right fractions along the porch; steps centred on the door at v=0.76",
+      "style": "open", "face": "+u", "v": [-5.9, 5.9], "wall": 6.2, "d": 2.4, "height": 2.6, "floorH": 0.45, "floorColor": "#7d7a74",
+      "posts": 6, "postColor": "#f1efe9", "roof": "hip", "pitch": 0.35, "railing": true,
+      "steps": 3, "stepsAt": 0.436, "stepsW": 1.4 }
+  ],
+  "details": []
+}

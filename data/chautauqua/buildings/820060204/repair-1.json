@@ -1,0 +1,43 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"facba6e159b48a088a01dbf46a87a5ce194190eaaff994b0876c0281966daf5a\",\"operations\":[{\"op\":\"replace\",\"path\":\"/volumes/@hall/roof\",\"value\":{\"type\":\"barrel\",\"ridge\":\"u\",\"h\":0.85,\"overhang\":0.25,\"color\":\"#b8c0bf\"}},{\"op\":\"remove\",\"path\":\"/volumes/@hall/faces/-u/parapets\"},{\"op\":\"remove\",\"path\":\"/volumes/@hall/faces/+u/parapets\"},{\"op\":\"replace\",\"path\":\"/volumes/@hall/faces/+u/doors\",\"value\":[{\"at\":0.5,\"type\":\"rect\",\"w\":1.3,\"h\":2.65,\"color\":\"#c8ccc2\",\"surround\":\"#f0eee2\",\"surroundW\":0.12}]}]}",
+ "cues": [
+  "Shallow silver standing-seam barrel roof with integrated curved ends.",
+  "Warm salmon walls and ivory trim.",
+  "Formal SSE entrance flanked by tall windows; simpler opposite entry.",
+  "Long side-window bands and extended white porch beams."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV3",
+  "SV4 original?"
+ ],
+ "uncertainties": [
+  "Secondary doorway width is approximate.",
+  "Porch supports remain simplified: the supplied porch component does not document classical round columns."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "hall",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV2"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "hall",
+   "face": "+u",
+   "role": "secondary",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

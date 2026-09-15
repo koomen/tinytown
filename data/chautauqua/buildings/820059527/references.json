@@ -1,0 +1,340 @@
+{
+ "version": 3,
+ "id": "820059527",
+ "name": "Hurlbut Memorial Community United Methodist Church",
+ "location": "Chautauqua Institution New York",
+ "address": "21 Scott Avenue",
+ "source_tags": {
+  "building": "church"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 37.902,
+  "depth_v": 24.302,
+  "footprint_uv": [
+   [
+    -19.0,
+    12.2
+   ],
+   [
+    -18.9,
+    -12.1
+   ],
+   [
+    18.9,
+    -12.1
+   ],
+   [
+    18.9,
+    1.2
+   ],
+   [
+    -2.9,
+    1.2
+   ],
+   [
+    -2.8,
+    12.1
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 53,
+    "compass": "NE",
+    "left_bearing": 143,
+    "right_bearing": 323,
+    "nearest_road_outward": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 11.5
+    },
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 233,
+    "compass": "SW",
+    "left_bearing": 323,
+    "right_bearing": 143,
+    "nearest_road_outward": {
+     "name": "Wythe Avenue",
+     "circular": false,
+     "distance_m": 6.4
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 143,
+    "compass": "SE",
+    "left_bearing": 233,
+    "right_bearing": 53,
+    "nearest_road_outward": {
+     "name": "Ramble Avenue",
+     "circular": false,
+     "distance_m": 30.3
+    },
+    "nearest_road_hint": false
+   },
+   "-v": {
+    "bearing": 323,
+    "compass": "NW",
+    "left_bearing": 53,
+    "right_bearing": 233,
+    "nearest_road_outward": {
+     "name": "Scott Avenue",
+     "circular": false,
+     "distance_m": 7.9
+    },
+    "nearest_road_hint": true
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/820059527/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/820059527/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/820059527/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  },
+  {
+   "id": "WEB1",
+   "kind": "web-image",
+   "path": "miniature/820059527/reference-6.jpg",
+   "caption": "Hurlbut Memorial Church: pale brick, tall Gothic windows, projecting high central facade and broad entrance stairs. Unlocated public photo: confirm face direction with geolocated street views. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)"
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059527_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2103081,
+    "lon": -79.4674697,
+    "position_xz": [
+     -109.64,
+     -103.32
+    ],
+    "position_uv": [
+     33.19,
+     4.98
+    ],
+    "looking_bearing": 252.0,
+    "looking_compass": "WSW",
+    "image_left_bearing": 162.0,
+    "image_right_bearing": 342.0,
+    "target_center_offset_deg": -10.8,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 19,
+    "fov": 80,
+    "tilt": 99,
+    "near_road": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 2.4
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2103081,-79.4674697,416a,80y,252h,99t/data=!3m7!1e1!3m5!1s4S3oSnFFdnQWqJgo8CgQGg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9%26panoid%3D4S3oSnFFdnQWqJgo8CgQGg%26yaw%3D252!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "4S3oSnFFdnQWqJgo8CgQGg",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059527/reference-1.jpg",
+   "sha256": "cc48a305e30c487258df56db648c8a9c8d5e5be8fc7c2bc986fc9351d0c12f53"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059527_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2099147,
+    "lon": -79.4682608,
+    "position_xz": [
+     -174.87,
+     -59.52
+    ],
+    "position_uv": [
+     -45.24,
+     0.29
+    ],
+    "looking_bearing": 52.0,
+    "looking_compass": "NE",
+    "image_left_bearing": 322.0,
+    "image_right_bearing": 142.0,
+    "target_center_offset_deg": 0.3,
+    "geometrically_facing_camera": [
+     "-u"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 1,
+    "fov": 62,
+    "tilt": 95,
+    "near_road": {
+     "name": "Wythe Avenue",
+     "circular": false,
+     "distance_m": 19.9
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2099147,-79.4682608,419a,62y,52h,95t/data=!3m7!1e1!3m5!1s-KmLI1zwrQK5b0jFEHXE2A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3D-KmLI1zwrQK5b0jFEHXE2A%26yaw%3D52!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "-KmLI1zwrQK5b0jFEHXE2A",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059527/reference-2.jpg",
+   "sha256": "df47091f5000b26b5fbbb49385cc3f23c5f6a0496c916502a81e0b505a217b20"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059527_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2098906,
+    "lon": -79.4674914,
+    "position_xz": [
+     -111.43,
+     -56.84
+    ],
+    "position_uv": [
+     3.6,
+     40.87
+    ],
+    "looking_bearing": 316.0,
+    "looking_compass": "NW",
+    "image_left_bearing": 226.0,
+    "image_right_bearing": 46.0,
+    "target_center_offset_deg": 1.7,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 7,
+    "fov": 78,
+    "tilt": 95,
+    "near_road": {
+     "name": "Ramble Avenue",
+     "circular": false,
+     "distance_m": 1.4
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2098906,-79.4674914,417a,78y,316h,95t/data=!3m7!1e1!3m5!1scZmhMOwhBzpy9IQERW-Hag!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3DcZmhMOwhBzpy9IQERW-Hag%26yaw%3D316!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "cZmhMOwhBzpy9IQERW-Hag",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059527/reference-3.jpg",
+   "sha256": "10d9c3de8c85cabfb900e30cc27de1d1df6b4a8dfc7460007f376e944f020f05"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059527_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2104444,
+    "lon": -79.4681481,
+    "position_xz": [
+     -165.58,
+     -118.49
+    ],
+    "position_uv": [
+     -2.11,
+     -40.99
+    ],
+    "looking_bearing": 139.0,
+    "looking_compass": "SE",
+    "image_left_bearing": 49.0,
+    "image_right_bearing": 229.0,
+    "target_center_offset_deg": 0.8,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 4,
+    "fov": 78,
+    "tilt": 95,
+    "near_road": {
+     "name": "Scott Avenue",
+     "circular": false,
+     "distance_m": 20.8
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2104444,-79.4681481,415a,78y,139h,95t/data=!3m7!1e1!3m5!1sZxeifN4P3s8Zv29vcWCu2w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3DZxeifN4P3s8Zv29vcWCu2w%26yaw%3D139!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "ZxeifN4P3s8Zv29vcWCu2w",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059527/reference-4.jpg",
+   "sha256": "fdcac3fd357352c9b3728c932d3c59aff38e56d2b4e40b99aef1985ad899af5f"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/aerial_820059527.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/820059527/reference-5.jpg",
+   "sha256": "a50b82bbd4ce620c1436064944a26578ff8107340468d6e9e338f5529e0e0803"
+  },
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2022/06/HurlbutChurch.jpg",
+   "page_url": "https://www.chq.org/wp-content/uploads/2022/06/HurlbutChurch.jpg",
+   "title": "Hurlbut Memorial Church: pale brick, tall Gothic windows, projecting high central facade and broad entrance stairs. Unlocated public photo: confirm face direction with geolocated street views.",
+   "provider": "Chautauqua Institution",
+   "id": "WEB1",
+   "source_path": "data/chautauqua--20260910-044859-38562b/miniature/820059527/web-original-2b7ee5c38f6668fc",
+   "kind": "web-image",
+   "camera": {
+    "status": "unlocated",
+    "reason": "Web photo has no verified capture pose."
+   },
+   "caption": "Hurlbut Memorial Church: pale brick, tall Gothic windows, projecting high central facade and broad entrance stairs. Unlocated public photo: confirm face direction with geolocated street views. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)",
+   "path": "miniature/820059527/reference-6.jpg",
+   "sha256": "2b7ee5c38f6668fc2bb435f4b31c7deb2d14723eb3d6ea816653b788280753a9"
+  }
+ ],
+ "search_query": "Hurlbut Memorial Community United Methodist Church Chautauqua Institution New York building exterior",
+ "search_candidates": [
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2022/06/HurlbutChurch.jpg",
+   "page_url": "https://www.chq.org/wp-content/uploads/2022/06/HurlbutChurch.jpg",
+   "title": "Hurlbut Memorial Church: pale brick, tall Gothic windows, projecting high central facade and broad entrance stairs. Unlocated public photo: confirm face direction with geolocated street views.",
+   "provider": "Chautauqua Institution"
+  }
+ ],
+ "warnings": []
+}

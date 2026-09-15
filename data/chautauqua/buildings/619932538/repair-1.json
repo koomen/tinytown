@@ -1,0 +1,34 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"0baa98d4df5d8916dc0984f193268e70c2002b0dd39b669611f4616bb286d750\",\"operations\":[{\"op\":\"add\",\"path\":\"/volumes/@east-wing/wall\",\"value\":\"#945744\"},{\"op\":\"replace\",\"path\":\"/volumes/@west-wing/faces/+u/pilasters\",\"value\":{\"at\":[0.975],\"w\":0.65,\"d\":0.16,\"height\":9.95,\"color\":\"#e7dfcd\",\"cap\":\"#e7dfcd\"}},{\"op\":\"replace\",\"path\":\"/volumes/@east-wing/faces/+u/pilasters\",\"value\":{\"at\":[0.025],\"w\":0.65,\"d\":0.16,\"height\":9.95,\"color\":\"#e7dfcd\",\"cap\":\"#e7dfcd\"}},{\"op\":\"replace\",\"path\":\"/volumes/@entrance-risalit/faces/+u/pilasters\",\"value\":{\"at\":[0.045,0.955],\"w\":0.65,\"d\":0.2,\"height\":10,\"color\":\"#e7dfcd\",\"cap\":\"#e7dfcd\"}},{\"op\":\"add\",\"path\":\"/volumes/@entrance-risalit/cornice\",\"value\":{\"height\":0.24,\"overhang\":0.22,\"color\":\"#e7dfcd\",\"dentils\":true}},{\"op\":\"add\",\"path\":\"/volumes/@entrance-risalit/roof/gableColor\",\"value\":\"#945744\"},{\"op\":\"replace\",\"path\":\"/volumes/@east-wing/cornice/height\",\"value\":0.45},{\"op\":\"replace\",\"path\":\"/volumes/@west-wing/cornice/height\",\"value\":0.45}]}",
+ "cues": [
+  "Warm red-brick, two-storey library with low gray roofs.",
+  "Centered gabled Miller Avenue entrance with pale columned surround.",
+  "Three-bay brick end elevations and broad dentilled cornices.",
+  "Pale outer-corner trim and fine horizontal belt courses."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV3",
+  "SV4",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The cream facade obscuring the initial +v render belongs to a neighboring structure; the library blueprint already has a compact three-bay brick end.",
+  "Blind brick arches and stepped quoins cannot be represented faithfully with the supplied components; rectangular glazing is preserved.",
+  "Rear rounded bay remains a simplified rectangular volume; SV2 is obscured by the postcard kiosk."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "entrance-risalit",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

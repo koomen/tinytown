@@ -1,0 +1,224 @@
+{
+ "key": "82d0f27b3d179a385f291a9138a75e80c85529a534f57fa96528d8d0c368b284",
+ "url": "http://localhost:8734/?site=chautauqua-practice-authoring&focus=1410817692&side=-v&dist=35.0&height=8&stage=detail&free=1&bp=1396730271,1410817666,1410817667,1410817668,1410817669,1410817670,1410817671,1410817672,1410817673,1410817674,1410817675,1410817676,1410817677,1410817678,1410817679,1410817680,1410817681,1410817682,1410817683,1410817684,1410817685,1410817686,1410817687,1410817688,1410817689,1410817690,1410817691,1410817692,1410817693,1410817694,1410817695,820054894,820057194,820058365,820058666,820059782,820060030,820060093,820060205,820061213,820061407,820061524,820061616&notrees=1",
+ "blueprint": "3f836ba178e36e753af1884d05c2a619f70a6a1e44713f56c1acc4dabd6908ef",
+ "frame": "7c849c49a082f40ca90319cd2da6cea1d562a3ba9cfc084555eda79ac7317a46",
+ "context": "940ffdb00532bb3924aa1f6771427ae12f8892dd05e36a95dfb9088909ff82eb",
+ "renderer": "ddc1e418f4a776148afddc63584bd8e325e0798c76e20b39afedf005cc349e66",
+ "view": "-v",
+ "stage": "detail",
+ "pose": null,
+ "neighbors": {
+  "820054894": {
+   "draft": true,
+   "frame": "7e3419312714fe63b653d527f0751dc7b74feeebc030824e28394b6648621b10",
+   "blueprint": "ae941d831a928d68b36a98a20d997666ae87b39cfd257c725ac24626f9433582"
+  },
+  "820057194": {
+   "draft": true,
+   "frame": "3d91df30032107cc73ff709a919b144f87adb112c8a2b60dc4299993d986addf",
+   "blueprint": "199c2ab10cfb4876127599047458c89ddf58a6ddd9e7e5a94ccafbf8548fbae2"
+  },
+  "820058365": {
+   "draft": true,
+   "frame": "066130c848cc693abd40c64e513c4c801018cbaa76384e2199e5e0dd9af54c08",
+   "blueprint": "82a090cf0145dfa72e2da56e236a1fdb73b0bbf57d51743d24531d82b79f7a2f"
+  },
+  "820058666": {
+   "draft": true,
+   "frame": "1f17430d8e4205b72522aad726b962e03779fef5b69bbeb660f46d4be5d96b2d",
+   "blueprint": "4a5912c38c7294e4e8ca91c6ca569976ce2c060a215ba3c8ffe3e5ffe8cb8036"
+  },
+  "820059782": {
+   "draft": true,
+   "frame": "92051c3e2812c197e96edc97a67b04bdf33790f5c62cd2b7272e4fe7c7cc8dcd",
+   "blueprint": "7b9af3158f1a7bf23461ae6d01d688fb61923b61ce1bb52e5533ced3120ebe8e"
+  },
+  "820060030": {
+   "draft": true,
+   "frame": "b42ce947e35fc3a9bfca9583f16e4d3916486018e180f7d350ad5390e6dd5131",
+   "blueprint": "9ad3b125cd48303bf6255a2c1aed0d9f850caa757f73cdce74a0ddf408932265"
+  },
+  "820060093": {
+   "draft": true,
+   "frame": "3cf09bf7f98ab7e3b52220fe193f4f6c0e46bab6b6d33d43e4001c361c3342fb",
+   "blueprint": "8eca0b0be8c35092b77ed0a49179ea59c4bb53ff4f2735526b3d56b6dbc9781c"
+  },
+  "820060205": {
+   "draft": true,
+   "frame": "48fd09faf9b24c1db428f7ac1c01bafe91f54e33b6e44f22a4132733f7c57d90",
+   "blueprint": "fae01a7dd7f5ce94117514fe27ec2ea2770f3aa2a3e578166c402bdb1aa95587"
+  },
+  "820061213": {
+   "draft": true,
+   "frame": "6f002f3ce1458c4f99848fdc4604f5bc50c145b9b6239b76f701e571bbaac612",
+   "blueprint": "6daf829d451aada45260cd0704e43e92e457012db12f0a41b08337ad79fc1ec9"
+  },
+  "820061407": {
+   "draft": true,
+   "frame": "6022947c364f633f67f967a82adf5509021a4d125371b94faf37244efe41f831",
+   "blueprint": "c264b64fc49f54d17576006f2054ffb35731ab1bb414a7475a6556ab95021c18"
+  },
+  "820061524": {
+   "draft": true,
+   "frame": "6b2dbd571f29e2665d9da30385e3a469361364e2947035a094a357830d45371e",
+   "blueprint": "dd856091eb8683c0b849d16190b542879b2aea1fee9d8a61c2691257b0d6bc17"
+  },
+  "820061616": {
+   "draft": true,
+   "frame": "6a728d3bfb3e5c06b64196adff058d958300339d5566997e6f1062818af4cb08",
+   "blueprint": "adbfd5becc178145d30f5e440f402b8be6dbdac5704e64ec784ca868d1eadfaf"
+  },
+  "1396730271": {
+   "draft": true,
+   "frame": "5364f6288ccbd6ee5b59eb109d3dd36c2df690596ff123b68aa10115b813b4a5",
+   "blueprint": "b09ec8bd7a4628672108b8e97c5c8b92fb10b2c1c9db3f00c81a444535fdc1ce"
+  },
+  "1410817666": {
+   "draft": true,
+   "frame": "c2e4947389bd66823d6a9e1eaf7465d4fde32a06782dae02614358c73e372470",
+   "blueprint": "7cc5089ff8c81af526045c904e0d48761609769185e263286428c748c7bcb5b5"
+  },
+  "1410817667": {
+   "draft": true,
+   "frame": "0676ce8c127629f85c525de4b8339805a1fada4edc26860275bfc02904a7a1f0",
+   "blueprint": "a1268689643ac85e0e9a70d20540a4f6b822c2170596ba0a95215d431617020d"
+  },
+  "1410817668": {
+   "draft": true,
+   "frame": "8fdb4f6b5240f0a875f9396c032f2666fd68038d3735d4f1bed6d350da58216e",
+   "blueprint": "7a1c09b8b341eaf9fadcd849393edaed9076d472f15e98c13b4c19b60d6b68b3"
+  },
+  "1410817669": {
+   "draft": true,
+   "frame": "de11b1f77c9fc3e746074cf614eb9c821dcbd36cf56cab67b7176d84e113dbdb",
+   "blueprint": "3d43f9bb8916080fa3541245b0a34fdca1a1da832aed8bbdf5016e027ee27d1c"
+  },
+  "1410817670": {
+   "draft": true,
+   "frame": "7d5f68462693b31b64d198e2d0f997b3ee877cd95d4a6a21d4276f732a9823e6",
+   "blueprint": "1f7f8e6fd30087a66a519c5ce23503efcde48d2ce0af3b730a8c9907c1272afc"
+  },
+  "1410817671": {
+   "draft": true,
+   "frame": "3eebdf16983ccbf276bc95a594422e3f1d95eed20c2877ffb8638069ad6b065a",
+   "blueprint": "ece6fb82e4ec34ea86499c629f387be40254323863e8475e8bd1bdafa18d1424"
+  },
+  "1410817672": {
+   "draft": true,
+   "frame": "ebee3fd84622f14470787a600abd04179eea001b078be40d60e9f0e211d3cbed",
+   "blueprint": "a3c7e1a2feac1f8c6c54cf02b6cdd220a1766c0c7387a375c67c10f6566a35a0"
+  },
+  "1410817673": {
+   "draft": true,
+   "frame": "50c6d9b15548223667321a83405108cd1fa245808a2ffd7a9c683806f5c1d408",
+   "blueprint": "a4665ed8a732d01bc63670c01caff5e1a482a6212b2c40e6c3e9372b27fb6201"
+  },
+  "1410817674": {
+   "draft": true,
+   "frame": "53bea6dfcce88ef520232a1a6637050f06c242c18c18751f4f1245577ae3813a",
+   "blueprint": "8b183d9220d189467ef5675440fb80488bd88869fdb6b96e4438e5d1489f0fce"
+  },
+  "1410817675": {
+   "draft": true,
+   "frame": "befe21f12afab1405af10948422588115aa1c026e815c966d87bf08a1b0ff88e",
+   "blueprint": "2da0dc39c604ad818609a8484ff30c3effcccc83811c98cc8a6a7e7d3edc2103"
+  },
+  "1410817676": {
+   "draft": true,
+   "frame": "2a426cfe53d3989267c92d4ad18ab58479355e553f5eae9775cd9a706dc352d6",
+   "blueprint": "b5f333fe063c7dba6fd9f9940892ee565ac8d8cd00b49877a45dac33fe70840c"
+  },
+  "1410817677": {
+   "draft": true,
+   "frame": "8afa1ddfec1528111e025546f55bc64498e0d5a8c6454d0192327626912531a9",
+   "blueprint": "0b12703ff90fac8771fc83965488f5bec514f5c7f148921019e579d109d17c28"
+  },
+  "1410817678": {
+   "draft": true,
+   "frame": "06643e2542463a3b8a3b3f1cc57bd4fcf06d65c859b660f23511d32d6aab66fe",
+   "blueprint": "4b6d96b01cb28f242e129fa8b101439fadc8e2972add13601fb736af95f08685"
+  },
+  "1410817679": {
+   "draft": true,
+   "frame": "bb15d2e014273371500ffc13f605f378d9aaa89088c39ff480cf5492a67ed144",
+   "blueprint": "23c8a55b0ea0859ec8aa4af82f04933db99956c8b40033f247d955fea32753f9"
+  },
+  "1410817680": {
+   "draft": true,
+   "frame": "9fb7c9c4c2ef49670f5b124cceb8bb7c21628f7840c9451993107ac40fa99e15",
+   "blueprint": "e584de11eaae2c84774db08dcd5f935bce853c62b2e7f7715bb6dc1bd99b3313"
+  },
+  "1410817681": {
+   "draft": true,
+   "frame": "aa3a3712b7a483abdc237139a077564ce1336cdfe4ddf49a5e402d8cfb739d9f",
+   "blueprint": "b3c04e585f8ff984c5482321400c9f89585da4f130dbb020094e49240e49ed02"
+  },
+  "1410817682": {
+   "draft": true,
+   "frame": "aa3bb40d4c968f91fa3279c577a9295d7684c5875cb84af96c377141898ebdd1",
+   "blueprint": "f8d1fd982fd34a3924478953e529dd492b5de8bca53b3baba7cdc199decb521c"
+  },
+  "1410817683": {
+   "draft": true,
+   "frame": "18ddc938c02cfe1a24f5111b0518f8890042bf9bb2f3a324e88d5086cc37bc58",
+   "blueprint": "ef0414ad3501ffbf465c860cf79a246d780f9b04555d636e55c9cb81563f136a"
+  },
+  "1410817684": {
+   "draft": true,
+   "frame": "c5be95babe299e65bd1775aa18a2ffe7af53fb33563cbc395b754b640e75e8c1",
+   "blueprint": "da302cdf8c8ac4b89cb8350d1807ede587c675087cdce1fc45b0c9b06522bd1f"
+  },
+  "1410817685": {
+   "draft": true,
+   "frame": "36417c2ff209e83b2be38da9ec3c58d302212cf4a35ae49ad8ff3da09f48f04e",
+   "blueprint": "cf0a93dbf3f3043ec8a587b790d7ec940c215d8063d0a5a1bc2c542e8dc03232"
+  },
+  "1410817686": {
+   "draft": true,
+   "frame": "b555435348bdcf20451fa81be66bed77136268b868c69933c6f6833db2dbf608",
+   "blueprint": "31253954efe9b3703121741c3506c3733fba78d7a3701ef318d43ea2a2b53acf"
+  },
+  "1410817687": {
+   "draft": true,
+   "frame": "43a2dea1474c000b7e2caa9b4c4eadbe879dbfbde816ea72fddafa918290c3ab",
+   "blueprint": "9293cfaa7d912bca707a86d9530427c5c9bc882f13aec7f74458549a1e9c7392"
+  },
+  "1410817688": {
+   "draft": true,
+   "frame": "d05d70aaf05996e4b88af16e7b347fce07e39d22f1883475992a94041ce9a005",
+   "blueprint": "2ffee34fffd8fefb0e2e616980067a359e1d56fc10b0cfeb8f41fa77bb3d8f3b"
+  },
+  "1410817689": {
+   "draft": true,
+   "frame": "73188b305db90342db90227a4a68e5c9b8b46cb5c63c830cfdb85620bcc9c8f8",
+   "blueprint": "0b2fe1d8bb1159ac0a9642871148d5de3e90ea487b974637ad8be8210ebe7acc"
+  },
+  "1410817690": {
+   "draft": true,
+   "frame": "d63064ef6781615b877b6b8a9c365762fe0a4f623c9da816ba099d2559486549",
+   "blueprint": "294365e98b626faef9743b78a9dba4adc5fc0a26f8715e391be1c41fbffb68ff"
+  },
+  "1410817691": {
+   "draft": true,
+   "frame": "abdd7d2575a8507698a21b39ca31207a0ea1b2d9332163677f36b9f00dcfd173",
+   "blueprint": "30346b2e6cc479db7c308696a17553ae4c135b1f3c27ec41404c7680d578b417"
+  },
+  "1410817693": {
+   "draft": true,
+   "frame": "efcb6c0848d45b17a4de5c64db5f9bf6cb2a6da7843e28599e07136b8655ed14",
+   "blueprint": "eaab19baf78fcc0548b5cb7ff2486d8cad60e554e359d220e8664764536cc694"
+  },
+  "1410817694": {
+   "draft": true,
+   "frame": "8ae7d76b52e2380d9ba12fa1ab24d3dc7923e81ae0a7b7fe45ee3e4da5e1fe43",
+   "blueprint": "870320550afcf31b6be8546eaf6193d34b540adf65942280dd6473aa807cb46f"
+  },
+  "1410817695": {
+   "draft": true,
+   "frame": "ed7762e8a75c7b2933aad43621d671b6135dd54d8f3b244ebd6440c20ec16bbe",
+   "blueprint": "549fd8fba2ff608fd37c5bab37a548f4feeae055f524ba7d69cb0c28316dfb08"
+  }
+ },
+ "batch_phase": "final"
+}

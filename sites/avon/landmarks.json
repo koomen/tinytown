@@ -1,0 +1,3452 @@
+{
+  "source": "Esri World Imagery",
+  "satelliteBounds": {
+    "north": 42.92626291864936,
+    "south": 42.89055498353175,
+    "west": -77.772216796875,
+    "east": -77.72758483886719
+  },
+  "features": [
+    {
+      "id": "driving-park-oval",
+      "kind": "track",
+      "coordinates": [
+        [
+          -77.76825249,
+          42.90605008
+        ],
+        [
+          -77.76828468,
+          42.906777
+        ],
+        [
+          -77.76827931,
+          42.9075039
+        ],
+        [
+          -77.76822031,
+          42.90782609
+        ],
+        [
+          -77.76804864,
+          42.90805006
+        ],
+        [
+          -77.76781261,
+          42.90818758
+        ],
+        [
+          -77.76752293,
+          42.9082858
+        ],
+        [
+          -77.76721179,
+          42.9082858
+        ],
+        [
+          -77.76691675,
+          42.9082308
+        ],
+        [
+          -77.76666999,
+          42.90810113
+        ],
+        [
+          -77.76650906,
+          42.90792432
+        ],
+        [
+          -77.76643932,
+          42.90770036
+        ],
+        [
+          -77.76645541,
+          42.90713849
+        ],
+        [
+          -77.76647151,
+          42.90650588
+        ],
+        [
+          -77.76649833,
+          42.90592828
+        ],
+        [
+          -77.76659489,
+          42.90568073
+        ],
+        [
+          -77.76676655,
+          42.90548427
+        ],
+        [
+          -77.76700795,
+          42.9053546
+        ],
+        [
+          -77.76728153,
+          42.9052878
+        ],
+        [
+          -77.76756585,
+          42.90531923
+        ],
+        [
+          -77.7678287,
+          42.90540568
+        ],
+        [
+          -77.76804864,
+          42.90555499
+        ],
+        [
+          -77.76818275,
+          42.90576325
+        ]
+      ],
+      "closed": true,
+      "width": 7,
+      "source": "Esri World Imagery; source/satellite.jpg, crop x850 y8850 w2250 h2450, displayed at 1125x1225, hand traced 2026-09-08",
+      "clearInterior": true
+    },
+    {
+      "id": 134399645,
+      "kind": "pitch",
+      "coordinates": [
+        [
+          -77.76583314,
+          42.90577503
+        ],
+        [
+          -77.76525378,
+          42.90535853
+        ],
+        [
+          -77.76537716,
+          42.90527208
+        ],
+        [
+          -77.76556492,
+          42.90520921
+        ],
+        [
+          -77.76580632,
+          42.90518564
+        ],
+        [
+          -77.76604772,
+          42.90521707
+        ],
+        [
+          -77.76627302,
+          42.9052878
+        ],
+        [
+          -77.76640713,
+          42.90536246
+        ]
+      ],
+      "closed": true,
+      "bases": [
+        [
+          -77.76583314,
+          42.90573574
+        ],
+        [
+          -77.76567221,
+          42.90559822
+        ],
+        [
+          -77.76582778,
+          42.90548427
+        ],
+        [
+          -77.76599407,
+          42.90560214
+        ]
+      ],
+      "infield": "grass",
+      "source": "Esri World Imagery; source/satellite.jpg, crop x850 y8850 w2250 h2450, displayed at 1125x1225, hand traced 2026-09-08",
+      "sport": "baseball",
+      "baseball": {
+        "source": "Esri World Imagery, data/avon-extended/satellite.jpg; fence, backstop and shelter positions hand traced 2026-09-13. Driving Park shelter finish and baseball emblems from user CleanShot 2026-09-13 14.30.45 photograph. Heights and small construction dimensions are model approximations.",
+        "fences": [
+          {
+            "height": 4.25,
+            "coordinates": [
+              [
+                -77.76594312,
+                42.90577307
+              ],
+              [
+                -77.76587338,
+                42.90582808
+              ],
+              [
+                -77.76579292,
+                42.90582808
+              ],
+              [
+                -77.76571244,
+                42.90576914
+              ]
+            ]
+          },
+          {
+            "height": 1.85,
+            "openings": [
+              {
+                "width": 2.4,
+                "coordinates": [
+                  -77.76603967,
+                  42.90569448
+                ]
+              }
+            ],
+            "coordinates": [
+              [
+                -77.76640445,
+                42.90536639
+              ],
+              [
+                -77.7660933,
+                42.9056493
+              ],
+              [
+                -77.76594312,
+                42.90577307
+              ]
+            ]
+          },
+          {
+            "height": 1.85,
+            "openings": [
+              {
+                "width": 2.4,
+                "coordinates": [
+                  -77.76559979,
+                  42.90567484
+                ]
+              }
+            ],
+            "coordinates": [
+              [
+                -77.76571244,
+                42.90576914
+              ],
+              [
+                -77.7655381,
+                42.90562376
+              ],
+              [
+                -77.76525646,
+                42.90536442
+              ]
+            ]
+          },
+          {
+            "height": 1.25,
+            "railColor": "#cbbd56",
+            "openings": [
+              {
+                "width": 3.2,
+                "coordinates": [
+                  -77.76539326,
+                  42.90527208
+                ]
+              }
+            ],
+            "coordinates": [
+              [
+                -77.76525646,
+                42.90536442
+              ],
+              [
+                -77.76537984,
+                42.90527798
+              ],
+              [
+                -77.7655676,
+                42.90521511
+              ],
+              [
+                -77.76580899,
+                42.90518367
+              ],
+              [
+                -77.7660504,
+                42.90520921
+              ],
+              [
+                -77.76627839,
+                42.90527994
+              ],
+              [
+                -77.76640445,
+                42.90536639
+              ]
+            ]
+          }
+        ],
+        "dugouts": [
+          {
+            "angle": -2.268264,
+            "length": 7.2,
+            "depth": 2.25,
+            "style": "driving-park",
+            "coordinates": [
+              -77.76602894,
+              42.90572592
+            ]
+          },
+          {
+            "angle": 2.25176,
+            "length": 7.2,
+            "depth": 2.25,
+            "style": "driving-park",
+            "coordinates": [
+              -77.76561856,
+              42.90572985
+            ]
+          }
+        ]
+      },
+      "name": "Avon Driving Park major-league field"
+    },
+    {
+      "id": 134399658,
+      "kind": "pitch",
+      "coordinates": [
+        [
+          -77.76532888,
+          42.90634085
+        ],
+        [
+          -77.76489973,
+          42.90600686
+        ],
+        [
+          -77.76503384,
+          42.90593614
+        ],
+        [
+          -77.76522696,
+          42.90589291
+        ],
+        [
+          -77.76543081,
+          42.90590863
+        ],
+        [
+          -77.76561856,
+          42.90596364
+        ],
+        [
+          -77.76572585,
+          42.90604223
+        ]
+      ],
+      "closed": true,
+      "bases": [
+        [
+          -77.76532888,
+          42.90630156
+        ],
+        [
+          -77.76517868,
+          42.90617975
+        ],
+        [
+          -77.76529133,
+          42.90605794
+        ],
+        [
+          -77.76545763,
+          42.90616403
+        ]
+      ],
+      "infield": "grass",
+      "source": "Esri World Imagery; source/satellite.jpg, crop x850 y8850 w2250 h2450, displayed at 1125x1225, hand traced 2026-09-08",
+      "sport": "baseball",
+      "baseball": {
+        "source": "Esri World Imagery, data/avon-extended/satellite.jpg; fence, backstop and shelter positions hand traced 2026-09-13. Driving Park shelter finish and baseball emblems from user CleanShot 2026-09-13 14.30.45 photograph. Heights and small construction dimensions are model approximations. User correction 2026-09-13: open bleachers at these fields; only the major-league field behind the playground has roofed dugouts.",
+        "fences": [
+          {
+            "height": 4.0,
+            "coordinates": [
+              [
+                -77.76540935,
+                42.90632513
+              ],
+              [
+                -77.76537716,
+                42.9063546
+              ],
+              [
+                -77.76531816,
+                42.90635657
+              ],
+              [
+                -77.76526989,
+                42.9063271
+              ]
+            ]
+          },
+          {
+            "height": 1.7,
+            "openings": [
+              {
+                "width": 2.3,
+                "coordinates": [
+                  -77.76547909,
+                  42.90626619
+                ]
+              }
+            ],
+            "coordinates": [
+              [
+                -77.76572585,
+                42.90604223
+              ],
+              [
+                -77.76553273,
+                42.90622101
+              ],
+              [
+                -77.76540935,
+                42.90632513
+              ]
+            ]
+          },
+          {
+            "height": 1.7,
+            "openings": [
+              {
+                "width": 2.3,
+                "coordinates": [
+                  -77.76520551,
+                  42.90627209
+                ]
+              }
+            ],
+            "coordinates": [
+              [
+                -77.76526989,
+                42.9063271
+              ],
+              [
+                -77.76510625,
+                42.90618564
+              ],
+              [
+                -77.7649051,
+                42.90600686
+              ]
+            ]
+          },
+          {
+            "height": 1.25,
+            "railColor": "#cbbd56",
+            "openings": [
+              {
+                "width": 3.0,
+                "coordinates": [
+                  -77.76502311,
+                  42.90594203
+                ]
+              }
+            ],
+            "coordinates": [
+              [
+                -77.7649051,
+                42.90600686
+              ],
+              [
+                -77.76502311,
+                42.90594203
+              ],
+              [
+                -77.76520818,
+                42.90590077
+              ],
+              [
+                -77.76540399,
+                42.90591845
+              ],
+              [
+                -77.76558638,
+                42.90596953
+              ],
+              [
+                -77.76572585,
+                42.90604223
+              ]
+            ]
+          }
+        ],
+        "bleachers": [
+          {
+            "angle": -2.414024,
+            "length": 6.5,
+            "coordinates": [
+              -77.76547372,
+              42.90629566
+            ]
+          },
+          {
+            "angle": 2.603424,
+            "length": 6.5,
+            "coordinates": [
+              -77.76521355,
+              42.90630156
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 248339760,
+      "kind": "playground",
+      "closed": true,
+      "surface": "gravel",
+      "color": "#afa492",
+      "coordinates": [
+        [
+          -77.76611298,
+          42.90643129
+        ],
+        [
+          -77.76598781,
+          42.90636318
+        ],
+        [
+          -77.76589662,
+          42.90638741
+        ],
+        [
+          -77.76578218,
+          42.90640378
+        ],
+        [
+          -77.76571691,
+          42.90640117
+        ],
+        [
+          -77.76570171,
+          42.90637628
+        ],
+        [
+          -77.76575089,
+          42.90632062
+        ],
+        [
+          -77.76579022,
+          42.90627281
+        ],
+        [
+          -77.76584834,
+          42.90624269
+        ],
+        [
+          -77.76592702,
+          42.90620798
+        ],
+        [
+          -77.76597798,
+          42.90620929
+        ],
+        [
+          -77.76607901,
+          42.90616411
+        ],
+        [
+          -77.7661711,
+          42.90621388
+        ],
+        [
+          -77.76619881,
+          42.90633306
+        ]
+      ],
+      "equipment": [
+        {
+          "type": "swings",
+          "coordinates": [
+            -77.7661103,
+            42.90635925
+          ],
+          "angle": 1.5707963267948966,
+          "length": 8.4,
+          "seats": 4,
+          "height": 3.0
+        },
+        {
+          "type": "swings",
+          "coordinates": [
+            -77.76612103,
+            42.90625448
+          ],
+          "angle": 1.5707963267948966,
+          "length": 6.4,
+          "seats": 3,
+          "height": 2.75,
+          "toddler": true
+        },
+        {
+          "type": "wooden-playset",
+          "coordinates": [
+            -77.76593417,
+            42.90626299
+          ],
+          "angle": -0.45
+        },
+        {
+          "type": "spring-seesaw",
+          "coordinates": [
+            -77.76602805,
+            42.90630228
+          ],
+          "angle": 0.15
+        },
+        {
+          "type": "bench",
+          "coordinates": [
+            -77.76587069,
+            42.9063789
+          ],
+          "angle": 3.141592653589793,
+          "length": 2.8
+        },
+        {
+          "type": "bench",
+          "coordinates": [
+            -77.76578307,
+            42.9062905
+          ],
+          "angle": 1.5707963267948966,
+          "length": 2.8
+        },
+        {
+          "type": "bench",
+          "coordinates": [
+            -77.76601195,
+            42.90621781
+          ],
+          "angle": 0,
+          "length": 2.8
+        }
+      ],
+      "source": "User photo CleanShot 2026-09-13 at 14.30.45@2x.png (equipment appearance); Esri World Imagery runs/avon-expansion-20260908/source/satellite.jpg (gravel boundaries and placement), traced 2026-09-13. Roofs and equipment under tree canopy use an illustrative layout within the visible playground."
+    },
+    {
+      "id": 133759501,
+      "kind": "pitch",
+      "name": null,
+      "sport": "baseball",
+      "closed": true,
+      "width": 4.0,
+      "tags": {},
+      "source": "https://www.openstreetmap.org/way/133759501",
+      "coordinates": [
+        [
+          -77.7392831,
+          42.9034463
+        ],
+        [
+          -77.7392126,
+          42.9034349
+        ],
+        [
+          -77.7384916,
+          42.9033182
+        ],
+        [
+          -77.7383414,
+          42.9038163
+        ],
+        [
+          -77.7384823,
+          42.9038391
+        ],
+        [
+          -77.7391329,
+          42.9039443
+        ]
+      ],
+      "baseball": {
+        "source": "Esri World Imagery, data/avon-extended/satellite.jpg; fence, backstop and shelter positions hand traced 2026-09-13. Driving Park shelter finish and baseball emblems from user CleanShot 2026-09-13 14.30.45 photograph. Heights and small construction dimensions are model approximations.",
+        "fences": [
+          {
+            "height": 3.6,
+            "coordinates": [
+              [
+                -77.73927659,
+                42.90351958
+              ],
+              [
+                -77.73929535,
+                42.90346653
+              ],
+              [
+                -77.73925245,
+                42.9034292
+              ],
+              [
+                -77.73916394,
+                42.90341152
+              ]
+            ]
+          },
+          {
+            "height": 1.55,
+            "openings": [
+              {
+                "width": 2.5,
+                "coordinates": [
+                  -77.73925245,
+                  42.90361192
+                ]
+              },
+              {
+                "width": 2.5,
+                "coordinates": [
+                  -77.73897886,
+                  42.90338401
+                ]
+              },
+              {
+                "width": 3.2,
+                "coordinates": [
+                  -77.73842901,
+                  42.90359031
+                ]
+              }
+            ],
+            "coordinates": [
+              [
+                -77.73927659,
+                42.90351958
+              ],
+              [
+                -77.73916394,
+                42.90394395
+              ],
+              [
+                -77.73837269,
+                42.90381232
+              ],
+              [
+                -77.73850143,
+                42.90331721
+              ],
+              [
+                -77.73916394,
+                42.90341152
+              ]
+            ]
+          }
+        ],
+        "dugouts": [
+          {
+            "angle": -1.509315,
+            "length": 5.8,
+            "depth": 2.05,
+            "style": "school",
+            "coordinates": [
+              -77.73923099,
+              42.90355494
+            ]
+          },
+          {
+            "angle": -0.059474,
+            "length": 5.8,
+            "depth": 2.05,
+            "style": "school",
+            "coordinates": [
+              -77.73907007,
+              42.90339776
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 133759508,
+      "kind": "pitch",
+      "name": null,
+      "sport": "baseball",
+      "closed": true,
+      "width": 4.0,
+      "tags": {},
+      "source": "https://www.openstreetmap.org/way/133759508",
+      "coordinates": [
+        [
+          -77.7402656,
+          42.9046432
+        ],
+        [
+          -77.7401975,
+          42.9045862
+        ],
+        [
+          -77.7389917,
+          42.9043867
+        ],
+        [
+          -77.73883611,
+          42.904959
+        ],
+        [
+          -77.7389592,
+          42.9052083
+        ],
+        [
+          -77.7391602,
+          42.9053555
+        ],
+        [
+          -77.73994141,
+          42.9055217
+        ],
+        [
+          -77.74021699,
+          42.9047263
+        ]
+      ],
+      "baseball": {
+        "source": "Esri World Imagery, data/avon-extended/satellite.jpg; fence, backstop and shelter positions hand traced 2026-09-13. Driving Park shelter finish and baseball emblems from user CleanShot 2026-09-13 14.30.45 photograph. Heights and small construction dimensions are model approximations.",
+        "fences": [
+          {
+            "height": 4.8,
+            "coordinates": [
+              [
+                -77.74021804,
+                42.90473573
+              ],
+              [
+                -77.74027169,
+                42.90463749
+              ],
+              [
+                -77.74024755,
+                42.90459427
+              ],
+              [
+                -77.74011075,
+                42.90457266
+              ]
+            ]
+          },
+          {
+            "height": 1.8,
+            "openings": [
+              {
+                "width": 2.8,
+                "coordinates": [
+                  -77.74018587,
+                  42.90484968
+                ]
+              },
+              {
+                "width": 2.8,
+                "coordinates": [
+                  -77.73994715,
+                  42.90454122
+                ]
+              },
+              {
+                "width": 3.6,
+                "coordinates": [
+                  -77.73904324,
+                  42.90439976
+                ]
+              }
+            ],
+            "coordinates": [
+              [
+                -77.74021804,
+                42.90473573
+              ],
+              [
+                -77.7401322,
+                42.90503632
+              ],
+              [
+                -77.73994446,
+                42.90552356
+              ],
+              [
+                -77.73918271,
+                42.90535853
+              ],
+              [
+                -77.73897617,
+                42.90520332
+              ],
+              [
+                -77.73883939,
+                42.90495577
+              ],
+              [
+                -77.73898959,
+                42.90438994
+              ],
+              [
+                -77.74011075,
+                42.90457266
+              ]
+            ]
+          }
+        ],
+        "dugouts": [
+          {
+            "angle": -1.743727,
+            "length": 8.0,
+            "depth": 2.4,
+            "style": "school",
+            "coordinates": [
+              -77.74023414,
+              42.90482021
+            ]
+          },
+          {
+            "angle": -0.377597,
+            "length": 8.0,
+            "depth": 2.4,
+            "style": "school",
+            "coordinates": [
+              -77.74002492,
+              42.90453926
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 134399651,
+      "kind": "pitch",
+      "name": null,
+      "sport": "baseball",
+      "closed": true,
+      "width": 4.0,
+      "tags": {},
+      "source": "https://www.openstreetmap.org/way/134399651",
+      "coordinates": [
+        [
+          -77.7381268,
+          42.9070514
+        ],
+        [
+          -77.7380139,
+          42.9074107
+        ],
+        [
+          -77.738428,
+          42.9074806
+        ],
+        [
+          -77.7385409,
+          42.9071213
+        ]
+      ],
+      "baseball": {
+        "source": "Esri World Imagery, data/avon-extended/satellite.jpg; fence, backstop and shelter positions hand traced 2026-09-13. Driving Park shelter finish and baseball emblems from user CleanShot 2026-09-13 14.30.45 photograph. Heights and small construction dimensions are model approximations.",
+        "use": "mapped practice enclosure; no visible base diamond",
+        "fences": [
+          {
+            "height": 1.25,
+            "openings": [
+              {
+                "width": 3.0,
+                "coordinates": [
+                  -77.73807036,
+                  42.90723105
+                ]
+              }
+            ],
+            "coordinates": [
+              [
+                -77.7381268,
+                42.9070514
+              ],
+              [
+                -77.7380139,
+                42.9074107
+              ],
+              [
+                -77.738428,
+                42.9074806
+              ],
+              [
+                -77.7385409,
+                42.9071213
+              ],
+              [
+                -77.7381268,
+                42.9070514
+              ]
+            ]
+          }
+        ],
+        "dugouts": [
+          {
+            "angle": 2.915082,
+            "length": 4.5,
+            "depth": 1.8,
+            "height": 1.95,
+            "style": "practice",
+            "coordinates": [
+              -77.73821544,
+              42.90746315
+            ]
+          },
+          {
+            "angle": -0.226511,
+            "length": 4.5,
+            "depth": 1.8,
+            "height": 1.95,
+            "style": "practice",
+            "coordinates": [
+              -77.73833936,
+              42.90706885
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 134399665,
+      "kind": "pitch",
+      "name": null,
+      "sport": "baseball",
+      "closed": true,
+      "width": 4.0,
+      "tags": {},
+      "source": "https://www.openstreetmap.org/way/134399665",
+      "coordinates": [
+        [
+          -77.76481409,
+          42.9064433
+        ],
+        [
+          -77.7647663,
+          42.9064766
+        ],
+        [
+          -77.7641449,
+          42.9064206
+        ],
+        [
+          -77.7642285,
+          42.9061159
+        ],
+        [
+          -77.7644102,
+          42.9059899
+        ],
+        [
+          -77.7647807,
+          42.9059479
+        ],
+        [
+          -77.7648739,
+          42.9059636
+        ],
+        [
+          -77.7648596,
+          42.9064206
+        ]
+      ],
+      "baseball": {
+        "source": "Esri World Imagery, data/avon-extended/satellite.jpg; fence, backstop and shelter positions hand traced 2026-09-13. Driving Park shelter finish and baseball emblems from user CleanShot 2026-09-13 14.30.45 photograph. Heights and small construction dimensions are model approximations. User correction 2026-09-13: open bleachers at these fields; only the major-league field behind the playground has roofed dugouts.",
+        "fences": [
+          {
+            "height": 3.45,
+            "coordinates": [
+              [
+                -77.76487023,
+                42.90636246
+              ],
+              [
+                -77.76487023,
+                42.90642729
+              ],
+              [
+                -77.76479243,
+                42.90647837
+              ],
+              [
+                -77.76470125,
+                42.90647052
+              ]
+            ]
+          },
+          {
+            "height": 1.25,
+            "railColor": "#cbbd56",
+            "openings": [
+              {
+                "width": 2.4,
+                "coordinates": [
+                  -77.76487023,
+                  42.90631335
+                ]
+              },
+              {
+                "width": 2.4,
+                "coordinates": [
+                  -77.76463419,
+                  42.90646462
+                ]
+              },
+              {
+                "width": 3.0,
+                "coordinates": [
+                  -77.76426673,
+                  42.90608741
+                ]
+              }
+            ],
+            "coordinates": [
+              [
+                -77.76487023,
+                42.90636246
+              ],
+              [
+                -77.76487559,
+                42.9059656
+              ],
+              [
+                -77.76478707,
+                42.90594989
+              ],
+              [
+                -77.76441693,
+                42.90598918
+              ],
+              [
+                -77.76422917,
+                42.90611688
+              ],
+              [
+                -77.76414603,
+                42.90641944
+              ],
+              [
+                -77.76470125,
+                42.90647052
+              ]
+            ]
+          }
+        ],
+        "bleachers": [
+          {
+            "angle": -2.07912,
+            "length": 5.8,
+            "coordinates": [
+              -77.76489437,
+              42.906388
+            ]
+          },
+          {
+            "angle": 3.050949,
+            "length": 5.8,
+            "coordinates": [
+              -77.7646637,
+              42.90649409
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 140641618,
+      "kind": "pitch",
+      "name": null,
+      "sport": "baseball",
+      "closed": true,
+      "width": 4.0,
+      "tags": {},
+      "source": "https://www.openstreetmap.org/way/140641618",
+      "coordinates": [
+        [
+          -77.7384031,
+          42.9041016
+        ],
+        [
+          -77.7380418,
+          42.9040431
+        ],
+        [
+          -77.738121,
+          42.9037806
+        ],
+        [
+          -77.7383414,
+          42.9038163
+        ],
+        [
+          -77.7384823,
+          42.9038391
+        ]
+      ],
+      "baseball": {
+        "source": "Esri World Imagery, data/avon-extended/satellite.jpg; fence, backstop and shelter positions hand traced 2026-09-13. Driving Park shelter finish and baseball emblems from user CleanShot 2026-09-13 14.30.45 photograph. Heights and small construction dimensions are model approximations.",
+        "use": "mapped practice enclosure; no visible base diamond",
+        "fences": [
+          {
+            "height": 1.25,
+            "openings": [
+              {
+                "width": 3.0,
+                "coordinates": [
+                  -77.73822245,
+                  42.90407235
+                ]
+              }
+            ],
+            "coordinates": [
+              [
+                -77.7384031,
+                42.9041016
+              ],
+              [
+                -77.7380418,
+                42.9040431
+              ],
+              [
+                -77.738121,
+                42.9037806
+              ],
+              [
+                -77.7383414,
+                42.9038163
+              ],
+              [
+                -77.7384823,
+                42.9038391
+              ],
+              [
+                -77.7384031,
+                42.9041016
+              ]
+            ]
+          }
+        ],
+        "dugouts": [
+          {
+            "angle": 2.924024,
+            "length": 4.5,
+            "depth": 1.8,
+            "height": 1.95,
+            "style": "practice",
+            "coordinates": [
+              -77.73821716,
+              42.9040899
+            ]
+          },
+          {
+            "angle": 1.353327,
+            "length": 4.5,
+            "depth": 1.8,
+            "height": 1.95,
+            "style": "practice",
+            "coordinates": [
+              -77.73805745,
+              42.90390797
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 247541939,
+      "kind": "pitch",
+      "name": null,
+      "sport": "baseball",
+      "closed": true,
+      "width": 4.0,
+      "tags": {},
+      "source": "https://www.openstreetmap.org/way/247541939",
+      "coordinates": [
+        [
+          -77.7665496,
+          42.9048554
+        ],
+        [
+          -77.7662706,
+          42.9039438
+        ],
+        [
+          -77.7661365,
+          42.9038731
+        ],
+        [
+          -77.7649242,
+          42.9041128
+        ],
+        [
+          -77.76483829,
+          42.9049222
+        ],
+        [
+          -77.7656698,
+          42.9049655
+        ]
+      ],
+      "baseball": {
+        "source": "Esri World Imagery, data/avon-extended/satellite.jpg; fence, backstop and shelter positions hand traced 2026-09-13. Driving Park shelter finish and baseball emblems from user CleanShot 2026-09-13 14.30.45 photograph. Heights and small construction dimensions are model approximations. User correction 2026-09-13: open bleachers at these fields; only the major-league field behind the playground has roofed dugouts.",
+        "fences": [
+          {
+            "height": 1.2,
+            "railColor": "#cbbd56",
+            "openings": [
+              {
+                "width": 3.0,
+                "coordinates": [
+                  -77.7663213,
+                  42.90410309
+                ]
+              },
+              {
+                "width": 3.0,
+                "coordinates": [
+                  -77.76570976,
+                  42.9049597
+                ]
+              },
+              {
+                "width": 4.0,
+                "coordinates": [
+                  -77.76490778,
+                  42.90433689
+                ]
+              }
+            ],
+            "coordinates": [
+              [
+                -77.76654661,
+                42.90485361
+              ],
+              [
+                -77.76627034,
+                42.9039361
+              ],
+              [
+                -77.76613623,
+                42.90387126
+              ],
+              [
+                -77.76492656,
+                42.90410899
+              ],
+              [
+                -77.7648434,
+                42.90492041
+              ],
+              [
+                -77.76567221,
+                42.90496363
+              ],
+              [
+                -77.76654661,
+                42.90485361
+              ]
+            ]
+          },
+          {
+            "height": 3.2,
+            "coordinates": [
+              [
+                -77.7663213,
+                42.90472001
+              ],
+              [
+                -77.76629984,
+                42.9047652
+              ],
+              [
+                -77.76623279,
+                42.90478681
+              ],
+              [
+                -77.76617914,
+                42.90477698
+              ]
+            ]
+          },
+          {
+            "height": 3.2,
+            "coordinates": [
+              [
+                -77.76554078,
+                42.90488701
+              ],
+              [
+                -77.76551933,
+                42.90493219
+              ],
+              [
+                -77.76546299,
+                42.90495381
+              ],
+              [
+                -77.7654013,
+                42.90494791
+              ]
+            ]
+          },
+          {
+            "height": 3.5,
+            "coordinates": [
+              [
+                -77.76619256,
+                42.90400682
+              ],
+              [
+                -77.76621133,
+                42.90396164
+              ],
+              [
+                -77.76616573,
+                42.90391841
+              ],
+              [
+                -77.76609868,
+                42.90390859
+              ]
+            ]
+          }
+        ],
+        "use": "multi-diamond practice area",
+        "bleachers": [
+          {
+            "angle": -1.888643,
+            "length": 4.8,
+            "coordinates": [
+              -77.76634544,
+              42.90467089
+            ]
+          },
+          {
+            "angle": -3.141593,
+            "length": 4.8,
+            "coordinates": [
+              -77.76614159,
+              42.90482021
+            ]
+          },
+          {
+            "angle": -2.055837,
+            "length": 4.8,
+            "coordinates": [
+              -77.76558638,
+              42.90485164
+            ]
+          },
+          {
+            "angle": 2.940503,
+            "length": 4.8,
+            "coordinates": [
+              -77.76533157,
+              42.90497738
+            ]
+          },
+          {
+            "angle": -1.248983,
+            "length": 6.0,
+            "coordinates": [
+              -77.76632935,
+              42.90400879
+            ]
+          },
+          {
+            "angle": -0.10306,
+            "length": 6.0,
+            "coordinates": [
+              -77.76599944,
+              42.90392431
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "avon-driving-park-small-playground",
+      "kind": "playground",
+      "closed": true,
+      "surface": "gravel",
+      "color": "#b1a791",
+      "coordinates": [
+        [
+          -77.76615769,
+          42.90610321
+        ],
+        [
+          -77.76610225,
+          42.90609666
+        ],
+        [
+          -77.76606649,
+          42.90606392
+        ],
+        [
+          -77.7660808,
+          42.90602724
+        ],
+        [
+          -77.76612371,
+          42.90601022
+        ],
+        [
+          -77.76617825,
+          42.90601022
+        ],
+        [
+          -77.76622474,
+          42.90603248
+        ],
+        [
+          -77.76624173,
+          42.90605344
+        ],
+        [
+          -77.7662015,
+          42.90608487
+        ]
+      ],
+      "equipment": [
+        {
+          "type": "wooden-playset",
+          "coordinates": [
+            -77.76613981,
+            42.90605213
+          ],
+          "size": "small",
+          "angle": 0.05
+        }
+      ],
+      "source": "User photo CleanShot 2026-09-13 at 14.30.45@2x.png (equipment appearance); Esri World Imagery runs/avon-expansion-20260908/source/satellite.jpg (gravel boundaries and placement), traced 2026-09-13. Roofs and equipment under tree canopy use an illustrative layout within the visible playground."
+    },
+    {
+      "id": "driving-park-white-fence",
+      "kind": "barrier",
+      "style": "vinyl",
+      "name": "Avon Driving Park white perimeter fence",
+      "height": 1.3,
+      "color": "#f1f0e8",
+      "closed": true,
+      "coordinates": [
+        [
+          -77.768295295,
+          42.906046804
+        ],
+        [
+          -77.768327614,
+          42.906776574
+        ],
+        [
+          -77.768322229,
+          42.907506083
+        ],
+        [
+          -77.768261761,
+          42.907836231
+        ],
+        [
+          -77.768081952,
+          42.908070825
+        ],
+        [
+          -77.767835309,
+          42.908214527
+        ],
+        [
+          -77.767532381,
+          42.90831724
+        ],
+        [
+          -77.767206418,
+          42.90831724
+        ],
+        [
+          -77.766898301,
+          42.908259802
+        ],
+        [
+          -77.766638608,
+          42.90812334
+        ],
+        [
+          -77.766468966,
+          42.907936949
+        ],
+        [
+          -77.766396294,
+          42.907703577
+        ],
+        [
+          -77.766412497,
+          42.907137875
+        ],
+        [
+          -77.766428589,
+          42.90650505
+        ],
+        [
+          -77.766455609,
+          42.905923358
+        ],
+        [
+          -77.766555351,
+          42.905667663
+        ],
+        [
+          -77.766734706,
+          42.90546239
+        ],
+        [
+          -77.766987997,
+          42.905326331
+        ],
+        [
+          -77.767277741,
+          42.905255589
+        ],
+        [
+          -77.767578069,
+          42.905288782
+        ],
+        [
+          -77.767852714,
+          42.905379116
+        ],
+        [
+          -77.768083915,
+          42.905536069
+        ],
+        [
+          -77.768224009,
+          42.905753622
+        ]
+      ],
+      "openings": [
+        {
+          "coordinates": [
+            -77.766480999,
+            42.905858275
+          ],
+          "width": 5.5,
+          "name": "Playground pedestrian access"
+        },
+        {
+          "coordinates": [
+            -77.76640488,
+            42.907403972
+          ],
+          "width": 14,
+          "name": "Northeastern vehicle access"
+        }
+      ],
+      "source": "Mapped dirt-track centerline plus its measured 7 m width. Fence follows outer track edge; user correction 2026-09-13. Existing access openings projected to corrected perimeter."
+    },
+    {
+      "id": "driving-park-entrance-sign",
+      "kind": "park-sign",
+      "name": "Avon Driving Park entrance sign",
+      "closed": false,
+      "coordinates": [
+        [
+          -77.758947305,
+          42.90715912
+        ]
+      ],
+      "angle": 1.4123794071021518,
+      "source": "User sign photo 2026-09-13; placement inferred from the specified Spring/River intersection and local Esri World Imagery (data/avon-extended/satellite.jpg). North verge of Spring, immediately west of River, in front of the corner house 248674609. Face points east-southeast toward westbound park traffic. Position and dimensions are photo/aerial estimates, not surveyed. User correction 2026-09-14: moved 11.18 m east-southeast toward the Spring/River intersection, keeping the north-side grass verge and east-southeast-facing front. Placement is a visual estimate; post clearance checked against the modeled streets."
+    },
+    {
+      "id": "avon-school-track-north-apron",
+      "kind": "pitch",
+      "sport": "athletics",
+      "closed": true,
+      "color": "#af6556",
+      "source": "User CleanShot 2026-09-13 at 16.05.55 aerial; Esri World Imagery data/avon-extended/satellite.jpg. Field graphics reconstructed by hand in native canvas; running track traced on retained aerial-field.png crop 2026-09-13. Small graphic detail and line widths are approximations.",
+      "coordinates": [
+        [
+          -77.740660608,
+          42.907498007
+        ],
+        [
+          -77.739888132,
+          42.907348698
+        ],
+        [
+          -77.739920318,
+          42.907429246
+        ],
+        [
+          -77.739982009,
+          42.907494078
+        ],
+        [
+          -77.740070522,
+          42.907553016
+        ],
+        [
+          -77.740175128,
+          42.907594272
+        ],
+        [
+          -77.740287781,
+          42.907611954
+        ],
+        [
+          -77.740397751,
+          42.90760606
+        ],
+        [
+          -77.74050504,
+          42.907582485
+        ],
+        [
+          -77.740598917,
+          42.907545158
+        ]
+      ]
+    },
+    {
+      "id": "avon-school-track-south-apron",
+      "kind": "pitch",
+      "sport": "athletics",
+      "closed": true,
+      "color": "#af6556",
+      "source": "User CleanShot 2026-09-13 at 16.05.55 aerial; Esri World Imagery data/avon-extended/satellite.jpg. Field graphics reconstructed by hand in native canvas; running track traced on retained aerial-field.png crop 2026-09-13. Small graphic detail and line widths are approximations.",
+      "coordinates": [
+        [
+          -77.741030753,
+          42.90650195
+        ],
+        [
+          -77.740266323,
+          42.906352638
+        ],
+        [
+          -77.740311921,
+          42.906276018
+        ],
+        [
+          -77.740397751,
+          42.906236725
+        ],
+        [
+          -77.740513086,
+          42.906226902
+        ],
+        [
+          -77.740636468,
+          42.906244583
+        ],
+        [
+          -77.740749121,
+          42.90628977
+        ],
+        [
+          -77.740859091,
+          42.906348709
+        ],
+        [
+          -77.740952969,
+          42.9064214
+        ]
+      ]
+    },
+    {
+      "id": "avon-school-running-track",
+      "kind": "track",
+      "name": "Avon school running track",
+      "closed": true,
+      "width": 9.6,
+      "color": "#af6556",
+      "athletics": {
+        "lanes": 8
+      },
+      "source": "User CleanShot 2026-09-13 at 16.05.55 aerial; Esri World Imagery data/avon-extended/satellite.jpg. Field graphics reconstructed by hand in native canvas; running track traced on retained aerial-field.png crop 2026-09-13. Small graphic detail and line widths are approximations.",
+      "coordinates": [
+        [
+          -77.740802765,
+          42.907358521
+        ],
+        [
+          -77.740799219,
+          42.90736787
+        ],
+        [
+          -77.740795814,
+          42.907377332
+        ],
+        [
+          -77.740792494,
+          42.907386869
+        ],
+        [
+          -77.740789204,
+          42.907396445
+        ],
+        [
+          -77.740785889,
+          42.907406024
+        ],
+        [
+          -77.740782493,
+          42.907415569
+        ],
+        [
+          -77.740778961,
+          42.907425043
+        ],
+        [
+          -77.740775238,
+          42.90743441
+        ],
+        [
+          -77.740771267,
+          42.907443634
+        ],
+        [
+          -77.740766993,
+          42.907452677
+        ],
+        [
+          -77.740762362,
+          42.907461504
+        ],
+        [
+          -77.740757317,
+          42.907470078
+        ],
+        [
+          -77.740751803,
+          42.907478361
+        ],
+        [
+          -77.740745846,
+          42.907486455
+        ],
+        [
+          -77.740739523,
+          42.907494471
+        ],
+        [
+          -77.740732859,
+          42.907502392
+        ],
+        [
+          -77.740725876,
+          42.907510202
+        ],
+        [
+          -77.740718598,
+          42.907517883
+        ],
+        [
+          -77.740711048,
+          42.907525418
+        ],
+        [
+          -77.740703251,
+          42.907532791
+        ],
+        [
+          -77.740695228,
+          42.907539984
+        ],
+        [
+          -77.740687004,
+          42.907546981
+        ],
+        [
+          -77.740678602,
+          42.907553764
+        ],
+        [
+          -77.740670045,
+          42.907560316
+        ],
+        [
+          -77.740661357,
+          42.907566621
+        ],
+        [
+          -77.740652561,
+          42.907572662
+        ],
+        [
+          -77.740642841,
+          42.907578955
+        ],
+        [
+          -77.740632848,
+          42.907585044
+        ],
+        [
+          -77.740622596,
+          42.907590923
+        ],
+        [
+          -77.7406121,
+          42.907596587
+        ],
+        [
+          -77.740601375,
+          42.907602031
+        ],
+        [
+          -77.740590437,
+          42.907607251
+        ],
+        [
+          -77.740579299,
+          42.90761224
+        ],
+        [
+          -77.740567976,
+          42.907616994
+        ],
+        [
+          -77.740556483,
+          42.907621509
+        ],
+        [
+          -77.740544835,
+          42.907625779
+        ],
+        [
+          -77.740533047,
+          42.907629799
+        ],
+        [
+          -77.740521133,
+          42.907633564
+        ],
+        [
+          -77.740509715,
+          42.907636865
+        ],
+        [
+          -77.740497642,
+          42.907640042
+        ],
+        [
+          -77.740485029,
+          42.907643076
+        ],
+        [
+          -77.740471993,
+          42.907645945
+        ],
+        [
+          -77.740458651,
+          42.90764863
+        ],
+        [
+          -77.740445118,
+          42.90765111
+        ],
+        [
+          -77.740431511,
+          42.907653367
+        ],
+        [
+          -77.740417947,
+          42.907655378
+        ],
+        [
+          -77.740404541,
+          42.907657126
+        ],
+        [
+          -77.740391411,
+          42.907658589
+        ],
+        [
+          -77.740378673,
+          42.907659747
+        ],
+        [
+          -77.740366442,
+          42.90766058
+        ],
+        [
+          -77.740354836,
+          42.907661068
+        ],
+        [
+          -77.740341524,
+          42.907661235
+        ],
+        [
+          -77.740328199,
+          42.907661018
+        ],
+        [
+          -77.740314875,
+          42.90766044
+        ],
+        [
+          -77.740301567,
+          42.907659521
+        ],
+        [
+          -77.740288288,
+          42.907658282
+        ],
+        [
+          -77.740275051,
+          42.907656746
+        ],
+        [
+          -77.740261872,
+          42.907654934
+        ],
+        [
+          -77.740248762,
+          42.907652867
+        ],
+        [
+          -77.740235738,
+          42.907650567
+        ],
+        [
+          -77.740222811,
+          42.907648055
+        ],
+        [
+          -77.740209997,
+          42.907645352
+        ],
+        [
+          -77.740198159,
+          42.907642658
+        ],
+        [
+          -77.740186071,
+          42.907639697
+        ],
+        [
+          -77.740173795,
+          42.907636472
+        ],
+        [
+          -77.740161393,
+          42.907632988
+        ],
+        [
+          -77.740148928,
+          42.907629248
+        ],
+        [
+          -77.740136462,
+          42.907625256
+        ],
+        [
+          -77.740124058,
+          42.907621016
+        ],
+        [
+          -77.740111778,
+          42.907616532
+        ],
+        [
+          -77.740099686,
+          42.907611809
+        ],
+        [
+          -77.740087844,
+          42.907606849
+        ],
+        [
+          -77.740076313,
+          42.907601657
+        ],
+        [
+          -77.740065157,
+          42.907596237
+        ],
+        [
+          -77.740055013,
+          42.907590898
+        ],
+        [
+          -77.740044819,
+          42.907585129
+        ],
+        [
+          -77.740034618,
+          42.907578981
+        ],
+        [
+          -77.740024455,
+          42.907572504
+        ],
+        [
+          -77.740014372,
+          42.90756575
+        ],
+        [
+          -77.740004412,
+          42.90755877
+        ],
+        [
+          -77.739994618,
+          42.907551614
+        ],
+        [
+          -77.739985035,
+          42.907544333
+        ],
+        [
+          -77.739975704,
+          42.907536977
+        ],
+        [
+          -77.73996667,
+          42.907529598
+        ],
+        [
+          -77.739957975,
+          42.907522247
+        ],
+        [
+          -77.739949662,
+          42.907514974
+        ],
+        [
+          -77.739941776,
+          42.90750783
+        ],
+        [
+          -77.739933579,
+          42.907500113
+        ],
+        [
+          -77.739925589,
+          42.907492265
+        ],
+        [
+          -77.739917812,
+          42.907484292
+        ],
+        [
+          -77.739910256,
+          42.907476198
+        ],
+        [
+          -77.739902928,
+          42.907467988
+        ],
+        [
+          -77.739895835,
+          42.907459665
+        ],
+        [
+          -77.739888985,
+          42.907451236
+        ],
+        [
+          -77.739882385,
+          42.907442703
+        ],
+        [
+          -77.739876042,
+          42.907434072
+        ],
+        [
+          -77.739869963,
+          42.907425348
+        ],
+        [
+          -77.739864156,
+          42.907416534
+        ],
+        [
+          -77.739858627,
+          42.907407636
+        ],
+        [
+          -77.739853701,
+          42.907399199
+        ],
+        [
+          -77.739848889,
+          42.90739044
+        ],
+        [
+          -77.739844224,
+          42.907381431
+        ],
+        [
+          -77.73983974,
+          42.907372246
+        ],
+        [
+          -77.739835471,
+          42.907362958
+        ],
+        [
+          -77.739831448,
+          42.907353639
+        ],
+        [
+          -77.739827707,
+          42.907344363
+        ],
+        [
+          -77.73982428,
+          42.907335203
+        ],
+        [
+          -77.739821201,
+          42.907326231
+        ],
+        [
+          -77.739818503,
+          42.907317521
+        ],
+        [
+          -77.73981622,
+          42.907309145
+        ],
+        [
+          -77.739814384,
+          42.907301177
+        ],
+        [
+          -77.73981303,
+          42.907293689
+        ],
+        [
+          -77.739811903,
+          42.907284282
+        ],
+        [
+          -77.739811352,
+          42.907274845
+        ],
+        [
+          -77.739811322,
+          42.907265388
+        ],
+        [
+          -77.739811758,
+          42.90725592
+        ],
+        [
+          -77.739812606,
+          42.907246451
+        ],
+        [
+          -77.739813809,
+          42.907236988
+        ],
+        [
+          -77.739815312,
+          42.907227541
+        ],
+        [
+          -77.739817061,
+          42.90721812
+        ],
+        [
+          -77.739819001,
+          42.907208732
+        ],
+        [
+          -77.739821076,
+          42.907199388
+        ],
+        [
+          -77.739821464,
+          42.907197905
+        ],
+        [
+          -77.739822084,
+          42.907195823
+        ],
+        [
+          -77.739822931,
+          42.907193159
+        ],
+        [
+          -77.739823998,
+          42.907189928
+        ],
+        [
+          -77.739825281,
+          42.907186145
+        ],
+        [
+          -77.739826773,
+          42.907181826
+        ],
+        [
+          -77.739828468,
+          42.907176987
+        ],
+        [
+          -77.73983036,
+          42.907171641
+        ],
+        [
+          -77.739832443,
+          42.907165806
+        ],
+        [
+          -77.739834712,
+          42.907159495
+        ],
+        [
+          -77.73983716,
+          42.907152726
+        ],
+        [
+          -77.739839781,
+          42.907145512
+        ],
+        [
+          -77.73984257,
+          42.90713787
+        ],
+        [
+          -77.739845521,
+          42.907129814
+        ],
+        [
+          -77.739848627,
+          42.907121361
+        ],
+        [
+          -77.739851883,
+          42.907112525
+        ],
+        [
+          -77.739855283,
+          42.907103323
+        ],
+        [
+          -77.739858821,
+          42.907093768
+        ],
+        [
+          -77.739862491,
+          42.907083877
+        ],
+        [
+          -77.739866287,
+          42.907073666
+        ],
+        [
+          -77.739870203,
+          42.907063148
+        ],
+        [
+          -77.739874233,
+          42.907052341
+        ],
+        [
+          -77.739878371,
+          42.907041259
+        ],
+        [
+          -77.739882612,
+          42.907029917
+        ],
+        [
+          -77.739886949,
+          42.907018331
+        ],
+        [
+          -77.739891377,
+          42.907006517
+        ],
+        [
+          -77.739895889,
+          42.90699449
+        ],
+        [
+          -77.73990048,
+          42.906982264
+        ],
+        [
+          -77.739905144,
+          42.906969857
+        ],
+        [
+          -77.739909874,
+          42.906957282
+        ],
+        [
+          -77.739914665,
+          42.906944555
+        ],
+        [
+          -77.739919512,
+          42.906931692
+        ],
+        [
+          -77.739924407,
+          42.906918708
+        ],
+        [
+          -77.739929345,
+          42.906905619
+        ],
+        [
+          -77.73993432,
+          42.906892439
+        ],
+        [
+          -77.739939327,
+          42.906879184
+        ],
+        [
+          -77.739944359,
+          42.90686587
+        ],
+        [
+          -77.73994941,
+          42.906852513
+        ],
+        [
+          -77.739954475,
+          42.906839126
+        ],
+        [
+          -77.739959547,
+          42.906825726
+        ],
+        [
+          -77.739964621,
+          42.906812328
+        ],
+        [
+          -77.73996969,
+          42.906798948
+        ],
+        [
+          -77.739974749,
+          42.906785601
+        ],
+        [
+          -77.739979792,
+          42.906772302
+        ],
+        [
+          -77.739984813,
+          42.906759066
+        ],
+        [
+          -77.739989805,
+          42.90674591
+        ],
+        [
+          -77.739994764,
+          42.906732848
+        ],
+        [
+          -77.739999683,
+          42.906719895
+        ],
+        [
+          -77.740004556,
+          42.906707068
+        ],
+        [
+          -77.740009377,
+          42.906694382
+        ],
+        [
+          -77.74001414,
+          42.906681851
+        ],
+        [
+          -77.74001884,
+          42.906669492
+        ],
+        [
+          -77.740023471,
+          42.906657319
+        ],
+        [
+          -77.740028025,
+          42.906645349
+        ],
+        [
+          -77.740032499,
+          42.906633596
+        ],
+        [
+          -77.740036885,
+          42.906622076
+        ],
+        [
+          -77.740041178,
+          42.906610804
+        ],
+        [
+          -77.740045371,
+          42.906599796
+        ],
+        [
+          -77.74004946,
+          42.906589067
+        ],
+        [
+          -77.740053437,
+          42.906578632
+        ],
+        [
+          -77.740057298,
+          42.906568507
+        ],
+        [
+          -77.740061035,
+          42.906558707
+        ],
+        [
+          -77.740064644,
+          42.906549247
+        ],
+        [
+          -77.740068118,
+          42.906540144
+        ],
+        [
+          -77.740071451,
+          42.906531412
+        ],
+        [
+          -77.740074638,
+          42.906523066
+        ],
+        [
+          -77.740077672,
+          42.906515123
+        ],
+        [
+          -77.740080548,
+          42.906507597
+        ],
+        [
+          -77.740083259,
+          42.906500504
+        ],
+        [
+          -77.7400858,
+          42.906493859
+        ],
+        [
+          -77.740088165,
+          42.906487678
+        ],
+        [
+          -77.740090347,
+          42.906481976
+        ],
+        [
+          -77.740092342,
+          42.906476768
+        ],
+        [
+          -77.740094142,
+          42.90647207
+        ],
+        [
+          -77.740095742,
+          42.906467897
+        ],
+        [
+          -77.740097137,
+          42.906464264
+        ],
+        [
+          -77.74009832,
+          42.906461187
+        ],
+        [
+          -77.740099285,
+          42.906458682
+        ],
+        [
+          -77.740100026,
+          42.906456764
+        ],
+        [
+          -77.74010345,
+          42.906447525
+        ],
+        [
+          -77.740106677,
+          42.906438123
+        ],
+        [
+          -77.740109766,
+          42.906428603
+        ],
+        [
+          -77.740112773,
+          42.906419011
+        ],
+        [
+          -77.740115756,
+          42.906409392
+        ],
+        [
+          -77.740118772,
+          42.906399791
+        ],
+        [
+          -77.740121879,
+          42.906390253
+        ],
+        [
+          -77.740125134,
+          42.906380824
+        ],
+        [
+          -77.740128595,
+          42.906371548
+        ],
+        [
+          -77.740132318,
+          42.906362472
+        ],
+        [
+          -77.740136362,
+          42.90635364
+        ],
+        [
+          -77.740140783,
+          42.906345098
+        ],
+        [
+          -77.740145639,
+          42.90633689
+        ],
+        [
+          -77.740150988,
+          42.906329063
+        ],
+        [
+          -77.740157255,
+          42.906320861
+        ],
+        [
+          -77.740163948,
+          42.9063127
+        ],
+        [
+          -77.74017104,
+          42.906304618
+        ],
+        [
+          -77.740178506,
+          42.906296653
+        ],
+        [
+          -77.740186321,
+          42.906288846
+        ],
+        [
+          -77.740194457,
+          42.906281236
+        ],
+        [
+          -77.74020289,
+          42.90627386
+        ],
+        [
+          -77.740211594,
+          42.906266758
+        ],
+        [
+          -77.740220544,
+          42.906259969
+        ],
+        [
+          -77.740229712,
+          42.906253533
+        ],
+        [
+          -77.740239074,
+          42.906247487
+        ],
+        [
+          -77.740248604,
+          42.906241872
+        ],
+        [
+          -77.740258276,
+          42.906236725
+        ],
+        [
+          -77.740269022,
+          42.906231639
+        ],
+        [
+          -77.740280139,
+          42.906226983
+        ],
+        [
+          -77.74029159,
+          42.906222736
+        ],
+        [
+          -77.740303334,
+          42.906218875
+        ],
+        [
+          -77.740315331,
+          42.906215381
+        ],
+        [
+          -77.740327544,
+          42.906212231
+        ],
+        [
+          -77.740339932,
+          42.906209406
+        ],
+        [
+          -77.740352455,
+          42.906206883
+        ],
+        [
+          -77.740365074,
+          42.906204642
+        ],
+        [
+          -77.740377751,
+          42.906202661
+        ],
+        [
+          -77.740390444,
+          42.90620092
+        ],
+        [
+          -77.740403116,
+          42.906199397
+        ],
+        [
+          -77.740415917,
+          42.906198154
+        ],
+        [
+          -77.740428985,
+          42.906197257
+        ],
+        [
+          -77.740442262,
+          42.906196687
+        ],
+        [
+          -77.740455688,
+          42.906196426
+        ],
+        [
+          -77.740469204,
+          42.906196456
+        ],
+        [
+          -77.740482751,
+          42.90619676
+        ],
+        [
+          -77.740496269,
+          42.90619732
+        ],
+        [
+          -77.7405097,
+          42.906198117
+        ],
+        [
+          -77.740522985,
+          42.906199134
+        ],
+        [
+          -77.740536063,
+          42.906200354
+        ],
+        [
+          -77.740548877,
+          42.906201757
+        ],
+        [
+          -77.740561366,
+          42.906203326
+        ],
+        [
+          -77.740573648,
+          42.906205095
+        ],
+        [
+          -77.740585876,
+          42.906207102
+        ],
+        [
+          -77.740598041,
+          42.906209341
+        ],
+        [
+          -77.740610137,
+          42.906211805
+        ],
+        [
+          -77.740622156,
+          42.906214485
+        ],
+        [
+          -77.74063409,
+          42.906217374
+        ],
+        [
+          -77.740645934,
+          42.906220466
+        ],
+        [
+          -77.740657678,
+          42.906223751
+        ],
+        [
+          -77.740669317,
+          42.906227224
+        ],
+        [
+          -77.740680842,
+          42.906230876
+        ],
+        [
+          -77.740692247,
+          42.906234701
+        ],
+        [
+          -77.740703523,
+          42.90623869
+        ],
+        [
+          -77.740714759,
+          42.906242914
+        ],
+        [
+          -77.74072603,
+          42.906247433
+        ],
+        [
+          -77.740737309,
+          42.906252224
+        ],
+        [
+          -77.74074857,
+          42.906257261
+        ],
+        [
+          -77.740759789,
+          42.90626252
+        ],
+        [
+          -77.740770939,
+          42.906267978
+        ],
+        [
+          -77.740781995,
+          42.906273609
+        ],
+        [
+          -77.74079293,
+          42.90627939
+        ],
+        [
+          -77.740803719,
+          42.906285296
+        ],
+        [
+          -77.740814336,
+          42.906291303
+        ],
+        [
+          -77.740824755,
+          42.906297386
+        ],
+        [
+          -77.740834951,
+          42.906303522
+        ],
+        [
+          -77.740844951,
+          42.9063098
+        ],
+        [
+          -77.7408548,
+          42.9063163
+        ],
+        [
+          -77.740864497,
+          42.90632299
+        ],
+        [
+          -77.740874043,
+          42.906329834
+        ],
+        [
+          -77.740883436,
+          42.906336799
+        ],
+        [
+          -77.740892678,
+          42.906343849
+        ],
+        [
+          -77.740901767,
+          42.906350951
+        ],
+        [
+          -77.740910704,
+          42.906358071
+        ],
+        [
+          -77.740919488,
+          42.906365174
+        ],
+        [
+          -77.740928119,
+          42.906372225
+        ],
+        [
+          -77.740936597,
+          42.906379191
+        ],
+        [
+          -77.740944922,
+          42.906386037
+        ],
+        [
+          -77.740953374,
+          42.906393006
+        ],
+        [
+          -77.740962146,
+          42.906400303
+        ],
+        [
+          -77.740971108,
+          42.906407831
+        ],
+        [
+          -77.74098013,
+          42.906415499
+        ],
+        [
+          -77.74098908,
+          42.90642321
+        ],
+        [
+          -77.74099783,
+          42.906430872
+        ],
+        [
+          -77.741006248,
+          42.906438389
+        ],
+        [
+          -77.741014203,
+          42.906445668
+        ],
+        [
+          -77.741021567,
+          42.906452615
+        ],
+        [
+          -77.741028208,
+          42.906459134
+        ],
+        [
+          -77.741033995,
+          42.906465133
+        ],
+        [
+          -77.741038799,
+          42.906470516
+        ],
+        [
+          -77.741045211,
+          42.906478134
+        ],
+        [
+          -77.741051537,
+          42.906485866
+        ],
+        [
+          -77.741057622,
+          42.906493723
+        ],
+        [
+          -77.741063313,
+          42.906501719
+        ],
+        [
+          -77.741068454,
+          42.906509866
+        ],
+        [
+          -77.74107289,
+          42.906518178
+        ],
+        [
+          -77.741076468,
+          42.906526668
+        ],
+        [
+          -77.741079032,
+          42.906535349
+        ],
+        [
+          -77.741080291,
+          42.906543449
+        ],
+        [
+          -77.741080597,
+          42.90655207
+        ],
+        [
+          -77.741080095,
+          42.906561102
+        ],
+        [
+          -77.741078933,
+          42.906570437
+        ],
+        [
+          -77.741077255,
+          42.906579967
+        ],
+        [
+          -77.741075207,
+          42.906589583
+        ],
+        [
+          -77.741072936,
+          42.906599177
+        ],
+        [
+          -77.741070586,
+          42.906608639
+        ],
+        [
+          -77.741068304,
+          42.906617863
+        ],
+        [
+          -77.741067934,
+          42.906619225
+        ],
+        [
+          -77.741067337,
+          42.906621208
+        ],
+        [
+          -77.741066518,
+          42.906623796
+        ],
+        [
+          -77.741065484,
+          42.906626972
+        ],
+        [
+          -77.74106424,
+          42.906630721
+        ],
+        [
+          -77.741062792,
+          42.906635026
+        ],
+        [
+          -77.741061146,
+          42.906639872
+        ],
+        [
+          -77.741059307,
+          42.906645241
+        ],
+        [
+          -77.741057282,
+          42.906651118
+        ],
+        [
+          -77.741055077,
+          42.906657486
+        ],
+        [
+          -77.741052697,
+          42.90666433
+        ],
+        [
+          -77.741050148,
+          42.906671633
+        ],
+        [
+          -77.741047436,
+          42.906679379
+        ],
+        [
+          -77.741044567,
+          42.906687552
+        ],
+        [
+          -77.741041547,
+          42.906696136
+        ],
+        [
+          -77.741038382,
+          42.906705114
+        ],
+        [
+          -77.741035077,
+          42.906714471
+        ],
+        [
+          -77.741031639,
+          42.90672419
+        ],
+        [
+          -77.741028073,
+          42.906734255
+        ],
+        [
+          -77.741024385,
+          42.906744649
+        ],
+        [
+          -77.741020581,
+          42.906755358
+        ],
+        [
+          -77.741016667,
+          42.906766364
+        ],
+        [
+          -77.741012649,
+          42.906777651
+        ],
+        [
+          -77.741008532,
+          42.906789203
+        ],
+        [
+          -77.741004323,
+          42.906801005
+        ],
+        [
+          -77.741000027,
+          42.906813039
+        ],
+        [
+          -77.740995651,
+          42.90682529
+        ],
+        [
+          -77.740991199,
+          42.906837741
+        ],
+        [
+          -77.740986679,
+          42.906850377
+        ],
+        [
+          -77.740982095,
+          42.906863181
+        ],
+        [
+          -77.740977454,
+          42.906876136
+        ],
+        [
+          -77.740972761,
+          42.906889228
+        ],
+        [
+          -77.740968023,
+          42.906902439
+        ],
+        [
+          -77.740963245,
+          42.906915754
+        ],
+        [
+          -77.740958434,
+          42.906929156
+        ],
+        [
+          -77.740953594,
+          42.906942629
+        ],
+        [
+          -77.740948733,
+          42.906956156
+        ],
+        [
+          -77.740943855,
+          42.906969723
+        ],
+        [
+          -77.740938966,
+          42.906983312
+        ],
+        [
+          -77.740934073,
+          42.906996908
+        ],
+        [
+          -77.740929182,
+          42.907010494
+        ],
+        [
+          -77.740924298,
+          42.907024054
+        ],
+        [
+          -77.740919426,
+          42.907037572
+        ],
+        [
+          -77.740914574,
+          42.907051031
+        ],
+        [
+          -77.740909747,
+          42.907064417
+        ],
+        [
+          -77.74090495,
+          42.907077711
+        ],
+        [
+          -77.74090019,
+          42.907090899
+        ],
+        [
+          -77.740895472,
+          42.907103964
+        ],
+        [
+          -77.740890802,
+          42.907116889
+        ],
+        [
+          -77.740886187,
+          42.90712966
+        ],
+        [
+          -77.740881632,
+          42.907142259
+        ],
+        [
+          -77.740877142,
+          42.90715467
+        ],
+        [
+          -77.740872725,
+          42.907166877
+        ],
+        [
+          -77.740868385,
+          42.907178865
+        ],
+        [
+          -77.740864128,
+          42.907190616
+        ],
+        [
+          -77.740859961,
+          42.907202115
+        ],
+        [
+          -77.740855889,
+          42.907213345
+        ],
+        [
+          -77.740851918,
+          42.907224291
+        ],
+        [
+          -77.740848054,
+          42.907234936
+        ],
+        [
+          -77.740844303,
+          42.907245264
+        ],
+        [
+          -77.740840671,
+          42.907255259
+        ],
+        [
+          -77.740837163,
+          42.907264904
+        ],
+        [
+          -77.740833786,
+          42.907274184
+        ],
+        [
+          -77.740830544,
+          42.907283082
+        ],
+        [
+          -77.740827445,
+          42.907291582
+        ],
+        [
+          -77.740824495,
+          42.907299669
+        ],
+        [
+          -77.740821698,
+          42.907307324
+        ],
+        [
+          -77.74081906,
+          42.907314534
+        ],
+        [
+          -77.740816589,
+          42.907321281
+        ],
+        [
+          -77.740814288,
+          42.907327549
+        ],
+        [
+          -77.740812166,
+          42.907333323
+        ],
+        [
+          -77.740810226,
+          42.907338585
+        ],
+        [
+          -77.740808476,
+          42.90734332
+        ],
+        [
+          -77.74080692,
+          42.907347512
+        ],
+        [
+          -77.740805565,
+          42.907351144
+        ],
+        [
+          -77.740804417,
+          42.9073542
+        ],
+        [
+          -77.740803482,
+          42.907356665
+        ]
+      ]
+    },
+    {
+      "id": 140641617,
+      "kind": "pitch",
+      "name": null,
+      "sport": "american_football",
+      "closed": true,
+      "width": 4.0,
+      "tags": {},
+      "source": "User CleanShot 2026-09-13 at 16.05.55 aerial; Esri World Imagery data/avon-extended/satellite.jpg. Field graphics reconstructed by hand in native canvas; running track traced on retained aerial-field.png crop 2026-09-13. Small graphic detail and line widths are approximations. Emblem from user-provided Avon Braves graphic, 2026-09-13; paired yellow goalposts.",
+      "football": {
+        "branding": "avon-braves"
+      },
+      "color": "#315b49",
+      "coordinates": [
+        [
+          -77.740941297,
+          42.906495097
+        ],
+        [
+          -77.740329995,
+          42.906379898
+        ],
+        [
+          -77.739999101,
+          42.907321597
+        ],
+        [
+          -77.740610404,
+          42.907436797
+        ]
+      ],
+      "image": "/data/avon-extended/textures/avon-braves-emblem.png"
+    },
+    {
+      "id": "avon-high-school-monument-sign",
+      "kind": "school-sign",
+      "name": "Avon High School \u2014 Home of the Braves",
+      "closed": false,
+      "coordinates": [
+        [
+          -77.73747919,
+          42.905250287
+        ]
+      ],
+      "angle": 1.314,
+      "source": "User sign photo 2026-09-13; school identity and east-facing placement corroborated by cached Aug 2025 Street View front_248254714_+v.png. Sign is on the school-side lawn facing the eastern parking lot. Position and dimensions inferred from aerial/photo, not surveyed.",
+      "image": "/data/avon-extended/textures/avon-braves-emblem.png"
+    },
+    {
+      "id": "avon-high-school-main-forecourt",
+      "kind": "school-forecourt",
+      "name": "Avon High School main entrance landscaping",
+      "closed": false,
+      "coordinates": [
+        [
+          -77.737893332,
+          42.905018335
+        ]
+      ],
+      "angle": 1.314,
+      "source": "User entrance photo 2026-09-13; anchored to south_classrooms main entrance and mapped footway 249547678 (u\u2248-60,v81.1..114.7), visible in cached Esri aerial. Beds, planters and ornamental trees are photo estimates. The northern library-side entrance and other campus buildings are preserved.",
+      "thresholdLift": 0.24,
+      "replacesRoadIds": [
+        249547678
+      ]
+    },
+    {
+      "id": "avon-school-stadium-bleachers",
+      "kind": "bleachers",
+      "name": "Avon football and track grandstand",
+      "closed": true,
+      "bleachers": {
+        "rows": 12
+      },
+      "coordinates": [
+        [
+          -77.739992738,
+          42.906509808
+        ],
+        [
+          -77.739804983,
+          42.907034361
+        ],
+        [
+          -77.73969233,
+          42.907012751
+        ],
+        [
+          -77.739880085,
+          42.906488198
+        ]
+      ],
+      "source": "User aerial photograph 2026-09-13 at 16.05.55; Esri World Imagery retained at runs/model-edits-20260913/avon-football/aerial-field.png. East straightaway grandstand footprint traced 2026-09-14; row count, railings and central press box dimensions are visual approximations."
+    }
+  ]
+}

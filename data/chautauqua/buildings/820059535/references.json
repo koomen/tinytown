@@ -1,0 +1,319 @@
+{
+ "version": 3,
+ "id": "820059535",
+ "name": "Bratton Theater",
+ "location": "Chautauqua Institution New York",
+ "address": "22 Scott Avenue",
+ "source_tags": {
+  "amenity": "theatre",
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 23.211,
+  "depth_v": 30.955,
+  "footprint_uv": [
+   [
+    -11.6,
+    -15.5
+   ],
+   [
+    11.6,
+    -15.5
+   ],
+   [
+    11.6,
+    1.1
+   ],
+   [
+    11.6,
+    15.4
+   ],
+   [
+    0.0,
+    15.5
+   ],
+   [
+    -0.9,
+    15.5
+   ],
+   [
+    -11.6,
+    15.5
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 236,
+    "compass": "SW",
+    "left_bearing": 326,
+    "right_bearing": 146,
+    "nearest_road_outward": {
+     "name": "Palestine Avenue",
+     "circular": false,
+     "distance_m": 153.1
+    },
+    "nearest_road_hint": true
+   },
+   "-u": {
+    "bearing": 56,
+    "compass": "NE",
+    "left_bearing": 146,
+    "right_bearing": 326,
+    "nearest_road_outward": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 26.0
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 326,
+    "compass": "NW",
+    "left_bearing": 56,
+    "right_bearing": 236,
+    "nearest_road_outward": {
+     "name": "Hurst Avenue",
+     "circular": false,
+     "distance_m": 154.9
+    },
+    "nearest_road_hint": false
+   },
+   "-v": {
+    "bearing": 146,
+    "compass": "SE",
+    "left_bearing": 236,
+    "right_bearing": 56,
+    "nearest_road_outward": {
+     "name": "Scott Avenue",
+     "circular": false,
+     "distance_m": 5.9
+    },
+    "nearest_road_hint": false
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/820059535/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/820059535/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/820059535/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059535_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2100799,
+    "lon": -79.4685289,
+    "position_xz": [
+     -196.97,
+     -77.91
+    ],
+    "position_uv": [
+     43.12,
+     -16.59
+    ],
+    "looking_bearing": 28.0,
+    "looking_compass": "NNE",
+    "image_left_bearing": 298.0,
+    "image_right_bearing": 118.0,
+    "target_center_offset_deg": 6.8,
+    "geometrically_facing_camera": [
+     "+u",
+     "-v"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 28,
+    "fov": 59,
+    "tilt": 91,
+    "near_road": {
+     "name": "Scott Avenue",
+     "circular": false,
+     "distance_m": 2.7
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2100799,-79.4685289,419a,59y,28h,91t/data=!3m7!1e1!3m5!1soc2vDNOLN2c_XWHmoDG8Iw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3Doc2vDNOLN2c_XWHmoDG8Iw%26yaw%3D28!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "oc2vDNOLN2c_XWHmoDG8Iw",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059535/reference-1.jpg",
+   "sha256": "c14be777ae66793c0952ae701ab28de59740ce581b9b29c6f3ada6b70869550e"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059535_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2106236,
+    "lon": -79.4678137,
+    "position_xz": [
+     -138.0,
+     -138.44
+    ],
+    "position_uv": [
+     -39.65,
+     0.43
+    ],
+    "looking_bearing": 235.0,
+    "looking_compass": "SW",
+    "image_left_bearing": 145.0,
+    "image_right_bearing": 325.0,
+    "target_center_offset_deg": 0.3,
+    "geometrically_facing_camera": [
+     "-u"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 1,
+    "fov": 70,
+    "tilt": 91,
+    "near_road": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 2.0
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2106236,-79.4678137,415a,70y,235h,91t/data=!3m7!1e1!3m5!1sBiQ1quqQvzbRLHCenrp94g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DBiQ1quqQvzbRLHCenrp94g%26yaw%3D235!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "BiQ1quqQvzbRLHCenrp94g",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059535/reference-2.jpg",
+   "sha256": "1fae54dba43501bfa6d7001be5c8365e2a790a3c611f41f318b95c22be783cd7"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059535_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2107053,
+    "lon": -79.4684941,
+    "position_xz": [
+     -194.11,
+     -147.53
+    ],
+    "position_uv": [
+     1.69,
+     39.43
+    ],
+    "looking_bearing": 142.0,
+    "looking_compass": "SE",
+    "image_left_bearing": 52.0,
+    "image_right_bearing": 232.0,
+    "target_center_offset_deg": 1.4,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 4,
+    "fov": 64,
+    "tilt": 91,
+    "near_road": {
+     "name": "Wythe Avenue",
+     "circular": false,
+     "distance_m": 25.8
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2107053,-79.4684941,414a,64y,142h,91t/data=!3m7!1e1!3m5!1sFTywm_zkVNXkksGqlA3WLg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DFTywm_zkVNXkksGqlA3WLg%26yaw%3D142!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "FTywm_zkVNXkksGqlA3WLg",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059535/reference-3.jpg",
+   "sha256": "f1502b69af541f59e75047885c613ce9ed3945c3437bf6b54edd4539b1f1929e"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059535_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2102449,
+    "lon": -79.4681229,
+    "position_xz": [
+     -163.5,
+     -96.28
+    ],
+    "position_uv": [
+     5.11,
+     -20.16
+    ],
+    "looking_bearing": 12.0,
+    "looking_compass": "NNE",
+    "image_left_bearing": 282.0,
+    "image_right_bearing": 102.0,
+    "target_center_offset_deg": -31.9,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 46,
+    "fov": 80,
+    "tilt": 95,
+    "near_road": {
+     "name": "Scott Avenue",
+     "circular": false,
+     "distance_m": 1.2
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2102449,-79.4681229,415a,80y,12h,95t/data=!3m7!1e1!3m5!1sOjcKBE_QVXD_NpqbM6j6Wg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3DOjcKBE_QVXD_NpqbM6j6Wg%26yaw%3D12!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "VXAeoHZ3PPML3vzCiUgTig",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059535/reference-4.jpg",
+   "sha256": "61caa968c6249989cf1b7880f3498559c2cc72424eb5dc9999c4f3982e235f25"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/aerial_820059535.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/820059535/reference-5.jpg",
+   "sha256": "05fd5a84eb737b3a7f2658d270876786ae1805a0a8416d35d6a27d98f044b894"
+  }
+ ],
+ "search_query": "Bratton Theater Chautauqua Institution New York building exterior",
+ "search_candidates": [],
+ "warnings": [
+  "No useful image-search candidates; using available Street View/aerial evidence."
+ ]
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Avon, New York — Extended Miniature",
+  "description": "Explore the extended miniature of Avon, New York, from the village center to the Genesee River and Driving Park.",
+  "domain": "https://avon.town",
+  "deploy": [
+    {
+      "target": "town",
+      "route": "/"
+    },
+    {
+      "target": "town",
+      "route": "/avon-extended",
+      "aliases": [
+        "/extended"
+      ]
+    }
+  ],
+  "plugin": "avon",
+  "landmarks": "../avon/landmarks.json"
+}

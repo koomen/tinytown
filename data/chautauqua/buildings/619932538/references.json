@@ -1,0 +1,366 @@
+{
+ "version": 3,
+ "id": "619932538",
+ "name": "Smith Memorial Library",
+ "location": "Chautauqua Institution, Chautauqua, New York",
+ "address": "21 Miller Avenue",
+ "source_tags": {
+  "amenity": "library",
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 18.022,
+  "depth_v": 29.777,
+  "footprint_uv": [
+   [
+    7.8,
+    -14.9
+   ],
+   [
+    7.8,
+    -3.6
+   ],
+   [
+    9.0,
+    -3.6
+   ],
+   [
+    8.9,
+    -0.4
+   ],
+   [
+    9.0,
+    3.6
+   ],
+   [
+    8.0,
+    3.6
+   ],
+   [
+    7.9,
+    14.9
+   ],
+   [
+    -5.0,
+    14.9
+   ],
+   [
+    -5.0,
+    3.6
+   ],
+   [
+    -6.5,
+    3.4
+   ],
+   [
+    -7.7,
+    2.6
+   ],
+   [
+    -8.7,
+    1.2
+   ],
+   [
+    -8.9,
+    -0.2
+   ],
+   [
+    -9.0,
+    -1.6
+   ],
+   [
+    -8.7,
+    -2.7
+   ],
+   [
+    -7.2,
+    -4.1
+   ],
+   [
+    -3.3,
+    -4.1
+   ],
+   [
+    -3.3,
+    -7.6
+   ],
+   [
+    -3.3,
+    -14.9
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 330,
+    "compass": "NNW",
+    "left_bearing": 60,
+    "right_bearing": 240,
+    "nearest_road_outward": {
+     "name": "Miller Avenue",
+     "circular": false,
+     "distance_m": 10.8
+    },
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 150,
+    "compass": "SSE",
+    "left_bearing": 240,
+    "right_bearing": 60,
+    "nearest_road_outward": {
+     "name": "Odland Plaza",
+     "circular": false,
+     "distance_m": 8.4
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 60,
+    "compass": "ENE",
+    "left_bearing": 150,
+    "right_bearing": 330,
+    "nearest_road_outward": {
+     "name": "Odland Plaza",
+     "circular": false,
+     "distance_m": 1.0
+    },
+    "nearest_road_hint": true
+   },
+   "-v": {
+    "bearing": 240,
+    "compass": "WSW",
+    "left_bearing": 330,
+    "right_bearing": 150,
+    "nearest_road_outward": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 10.2
+    },
+    "nearest_road_hint": false
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/619932538/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/619932538/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/619932538/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua/research/front_619932538_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2089677,
+    "lon": -79.4657889,
+    "position_xz": [
+     28.95,
+     45.9
+    ],
+    "position_uv": [
+     36.96,
+     -1.81
+    ],
+    "looking_bearing": 146.0,
+    "looking_compass": "SE",
+    "image_left_bearing": 56.0,
+    "image_right_bearing": 236.0,
+    "target_center_offset_deg": 0.8,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 4,
+    "fov": 68,
+    "tilt": 95,
+    "near_road": {
+     "name": "Miller Avenue",
+     "circular": false,
+     "distance_m": 17.1
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2089677,-79.4657889,419a,68y,146h,95t/data=!3m7!1e1!3m5!1saC4A-n5-BJkKzgPeKLrShg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3DaC4A-n5-BJkKzgPeKLrShg%26yaw%3D146!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "aC4A-n5-BJkKzgPeKLrShg",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/619932538/reference-1.jpg",
+   "sha256": "2a513ccf12db9e465270b27068604958582c2868ebcc32fa315dbc5159e9be27"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua/research/front_619932538_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2083565,
+    "lon": -79.4651706,
+    "position_xz": [
+     79.93,
+     113.94
+    ],
+    "position_uv": [
+     -47.53,
+     7.68
+    ],
+    "looking_bearing": 318.0,
+    "looking_compass": "NW",
+    "image_left_bearing": 228.0,
+    "image_right_bearing": 48.0,
+    "target_center_offset_deg": 2.4,
+    "geometrically_facing_camera": [
+     "-u"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 11,
+    "fov": 55,
+    "tilt": 93,
+    "near_road": {
+     "name": "Odland Plaza",
+     "circular": false,
+     "distance_m": 2.6
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2083565,-79.4651706,419a,55y,318h,93t/data=!3m7!1e1!3m5!1sFJ61cXAmHqmCgz_A5pZJoA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DFJ61cXAmHqmCgz_A5pZJoA%26yaw%3D318!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "FJ61cXAmHqmCgz_A5pZJoA",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/619932538/reference-2.jpg",
+   "sha256": "ad7e6895d59626567cfbb7c31c0e7c62332fa8d5c214df08231c11e1dde86477"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua/research/front_619932538_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2087893,
+    "lon": -79.465276,
+    "position_xz": [
+     71.24,
+     65.76
+    ],
+    "position_uv": [
+     -1.59,
+     24.59
+    ],
+    "looking_bearing": 249.0,
+    "looking_compass": "WSW",
+    "image_left_bearing": 159.0,
+    "image_right_bearing": 339.0,
+    "target_center_offset_deg": -5.7,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 9,
+    "fov": 80,
+    "tilt": 100,
+    "near_road": {
+     "name": "Odland Plaza",
+     "circular": false,
+     "distance_m": 1.4
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2087893,-79.465276,418a,80y,249h,100t/data=!3m7!1e1!3m5!1sXrnhSVON-QKnJiVR96qR_A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DXrnhSVON-QKnJiVR96qR_A%26yaw%3D249!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "XrnhSVON-QKnJiVR96qR_A",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/619932538/reference-3.jpg",
+   "sha256": "606e6ccf35cc45ee1f413ebda1e2f41a9b1993f94acc0cba94ccc04a1ef0e494"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua/research/front_619932538_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2085566,
+    "lon": -79.4657869,
+    "position_xz": [
+     29.11,
+     91.66
+    ],
+    "position_uv": [
+     -2.58,
+     -24.85
+    ],
+    "looking_bearing": 45.0,
+    "looking_compass": "NE",
+    "image_left_bearing": 315.0,
+    "image_right_bearing": 135.0,
+    "target_center_offset_deg": 8.6,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 15,
+    "fov": 80,
+    "tilt": 100,
+    "near_road": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 0.3
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2085566,-79.4657869,419a,80y,45h,100t/data=!3m7!1e1!3m5!1sImiUy6K8XIl8HAheGVb16Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DImiUy6K8XIl8HAheGVb16Q%26yaw%3D45!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "ImiUy6K8XIl8HAheGVb16Q",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/619932538/reference-4.jpg",
+   "sha256": "7b86da9062dadc82d66d9e4e303c45914f729946a8bdb15aeea4276697f16a7a"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua/research/aerial_619932538.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/619932538/reference-5.jpg",
+   "sha256": "a62467f52872cd5c1f531112e84bf06eb9b0d7992b8a3fc7d19b7447168fa4c6"
+  }
+ ],
+ "search_query": "Smith Memorial Library Chautauqua Institution, Chautauqua, New York building exterior",
+ "search_candidates": [],
+ "warnings": [
+  "No useful image-search candidates; using available Street View/aerial evidence."
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The square turquoise basin, brick sides, pale coping, central stone element, and four corner jets identify a fountain, but the defining tall relief pylon and stepped crown are too reduced to make this a strong Bestor Plaza Fountain caricature.",
+ "orientation": {
+  "status": "correct",
+  "summary": "This structure has no principal entrance, and the rendered door inventory is correctly empty. The labeled renders correspond to +u/SSE from SV1, -u/NNW from SV2, +v/WSW from SV3, and -v/ENE from SV4; the fountain is substantially four-sided, so no portal orientation or duplication problem exists."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The central pylon is much too short and squat relative to the basin; references show a tall, dominant four-sided limestone monument that controls the silhouette.",
+   "fix": "Raise and narrow the pylon substantially so it becomes the clear focal point, retaining a broad lower pedestal and four visible relief faces."
+  },
+  {
+   "severity": "major",
+   "problem": "The characteristic three-step crown is not clearly readable and currently resembles a simple cap.",
+   "fix": "Model three bold, progressively smaller stone tiers at the pylon top, exaggerated slightly for miniature-scale legibility."
+  },
+  {
+   "severity": "minor",
+   "problem": "The four corner jet sculptures read mostly as small generic blocks, while the long thin water streams look visually distracting from above.",
+   "fix": "Give each corner a clearer sculpted jet housing and use shorter, subtler arcs directed toward the center."
+  }
+ ]
+}

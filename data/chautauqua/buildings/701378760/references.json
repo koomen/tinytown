@@ -1,0 +1,358 @@
+{
+ "version": 3,
+ "id": "701378760",
+ "name": "Pier Building / 3 Taps",
+ "location": "Chautauqua Institution, Chautauqua, New York",
+ "address": "1 Miller Park",
+ "source_tags": {
+  "amenity": "restaurant",
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 28.692,
+  "depth_v": 12.546,
+  "footprint_uv": [
+   [
+    -14.4,
+    -6.3
+   ],
+   [
+    14.3,
+    -6.3
+   ],
+   [
+    14.3,
+    -2.7
+   ],
+   [
+    14.3,
+    6.3
+   ],
+   [
+    -0.5,
+    6.3
+   ],
+   [
+    -14.3,
+    6.3
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 41,
+    "compass": "NE",
+    "left_bearing": 131,
+    "right_bearing": 311,
+    "nearest_road_outward": null,
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 221,
+    "compass": "SW",
+    "left_bearing": 311,
+    "right_bearing": 131,
+    "nearest_road_outward": {
+     "name": "South Lake Drive",
+     "circular": false,
+     "distance_m": 140.4
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 131,
+    "compass": "SE",
+    "left_bearing": 221,
+    "right_bearing": 41,
+    "nearest_road_outward": null,
+    "nearest_road_hint": false
+   },
+   "-v": {
+    "bearing": 311,
+    "compass": "NW",
+    "left_bearing": 41,
+    "right_bearing": 221,
+    "nearest_road_outward": null,
+    "nearest_road_hint": true
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/701378760/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/701378760/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/701378760/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  },
+  {
+   "id": "WEB1",
+   "kind": "web-image",
+   "path": "miniature/701378760/reference-6.jpg",
+   "caption": "2021 Pier Building / 3Taps: long low lakeside building, white trim, broad roof and open sheltered service area. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)"
+  },
+  {
+   "id": "WEB2",
+   "kind": "web-image",
+   "path": "miniature/701378760/reference-7.jpg",
+   "caption": "July 2024 elevated closeup: brick Miller Bell Tower, four open arches per belfry face, stone columns, open bronze clock dial, red tile hip roof. Pier Building partly visible below. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)"
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua--20260909-222330-b5994a/research/front_701378760_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2113353,
+    "lon": -79.4619298,
+    "position_xz": [
+     347.15,
+     -217.66
+    ],
+    "position_uv": [
+     27.89,
+     -1.86
+    ],
+    "looking_bearing": 213.0,
+    "looking_compass": "SSW",
+    "image_left_bearing": 123.0,
+    "image_right_bearing": 303.0,
+    "target_center_offset_deg": 4.1,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 8,
+    "fov": 61,
+    "tilt": 100,
+    "near_road": {
+     "name": "South Lake Drive",
+     "circular": false,
+     "distance_m": 133.8
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2113353,-79.4619298,401a,61y,213h,100t/data=!3m7!1e1!3m5!1s9M9N8DIxFWIju5hkbY4IuA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3D9M9N8DIxFWIju5hkbY4IuA%26yaw%3D213!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "9M9N8DIxFWIju5hkbY4IuA",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/701378760/reference-1.jpg",
+   "sha256": "25df8f9586ff5668357f04ff38ac30947405db3aba7a4486dc7403280c81fabd"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua--20260909-222330-b5994a/research/front_701378760_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2110059,
+    "lon": -79.4624224,
+    "position_xz": [
+     306.53,
+     -181.0
+    ],
+    "position_uv": [
+     -26.42,
+     -8.55
+    ],
+    "looking_bearing": 76.0,
+    "looking_compass": "ENE",
+    "image_left_bearing": 346.0,
+    "image_right_bearing": 166.0,
+    "target_center_offset_deg": -17.2,
+    "geometrically_facing_camera": [
+     "-u",
+     "-v"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 35,
+    "fov": 58,
+    "tilt": 99,
+    "near_road": {
+     "name": "South Lake Drive",
+     "circular": false,
+     "distance_m": 88.4
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2110059,-79.4624224,401a,58y,76h,99t/data=!3m7!1e1!3m5!1s3Iex1ao5VIyVU3clLBnPYQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9%26panoid%3D3Iex1ao5VIyVU3clLBnPYQ%26yaw%3D76!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "3Iex1ao5VIyVU3clLBnPYQ",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/701378760/reference-2.jpg",
+   "sha256": "e2163e8ca850e34b40690b2958ed4560e0f5ad798e2a76a672fa804b5abcd0cb"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua--20260909-222330-b5994a/research/front_701378760_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2110012,
+    "lon": -79.4619678,
+    "position_xz": [
+     344.02,
+     -180.47
+    ],
+    "position_uv": [
+     -2.27,
+     20.12
+    ],
+    "looking_bearing": 320.0,
+    "looking_compass": "NW",
+    "image_left_bearing": 230.0,
+    "image_right_bearing": 50.0,
+    "target_center_offset_deg": -2.7,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 9,
+    "fov": 80,
+    "tilt": 100,
+    "near_road": {
+     "name": "South Lake Drive",
+     "circular": false,
+     "distance_m": 125.7
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2110012,-79.4619678,401a,80y,320h,100t/data=!3m7!1e1!3m5!1sLRQhfc3foGam-a4j7R6IHw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DLRQhfc3foGam-a4j7R6IHw%26yaw%3D320!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "LRQhfc3foGam-a4j7R6IHw",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/701378760/reference-3.jpg",
+   "sha256": "2f1e049e847478c0b9e80967d6ba0ab9dea130346d1a6c1e46cfc428cc6fa92a"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua--20260909-222330-b5994a/research/front_701378760_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2113125,
+    "lon": -79.4623192,
+    "position_xz": [
+     315.04,
+     -215.13
+    ],
+    "position_uv": [
+     4.95,
+     -24.47
+    ],
+    "looking_bearing": 146.0,
+    "looking_compass": "SE",
+    "image_left_bearing": 56.0,
+    "image_right_bearing": 236.0,
+    "target_center_offset_deg": -3.7,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 15,
+    "fov": 80,
+    "tilt": 97,
+    "near_road": {
+     "name": "South Lake Drive",
+     "circular": false,
+     "distance_m": 102.2
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2113125,-79.4623192,402a,80y,146h,97t/data=!3m7!1e1!3m5!1s1tpef9_cnpX55efsRlyE4Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7%26panoid%3D1tpef9_cnpX55efsRlyE4Q%26yaw%3D146!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "1tpef9_cnpX55efsRlyE4Q",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/701378760/reference-4.jpg",
+   "sha256": "ae7e1d64abb2c627ee308943b7883c89e3baa88b40f0cedef5c2b7391b37ea42"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua--20260909-222330-b5994a/research/aerial_701378760.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/701378760/reference-5.jpg",
+   "sha256": "785e829ffac649b42caaf3be1aae4e0f1b5d3c5b728a897cb6377f8244120f48"
+  },
+  {
+   "url": "https://chqdaily.com/wp-content/uploads/2021/06/062321_ThreeTapsBarOutside_KT_01.jpg",
+   "page_url": "https://chqdaily.com/2021/06/with-opening-of-3-taps-the-a-truck-food-service-expands-to-lakefront/",
+   "title": "2021 Pier Building / 3Taps: long low lakeside building, white trim, broad roof and open sheltered service area.",
+   "provider": "Chautauquan Daily",
+   "id": "WEB1",
+   "source_path": "data/chautauqua--20260909-222330-b5994a/miniature/701378760/web-original-6a7e9163a037364a",
+   "kind": "web-image",
+   "camera": {
+    "status": "unlocated",
+    "reason": "Web photo has no verified capture pose."
+   },
+   "caption": "2021 Pier Building / 3Taps: long low lakeside building, white trim, broad roof and open sheltered service area. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)",
+   "path": "miniature/701378760/reference-6.jpg",
+   "sha256": "6a7e9163a037364ae80c763f5880475c06a6773f12e0988dbe5651a601371faa"
+  },
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2025/02/071824_EveningBelltower_Hotel_Drone_DM_03.jpg",
+   "page_url": "https://www.chq.org/community-portal/",
+   "title": "July 2024 elevated closeup: brick Miller Bell Tower, four open arches per belfry face, stone columns, open bronze clock dial, red tile hip roof. Pier Building partly visible below.",
+   "provider": "Chautauqua Institution",
+   "id": "WEB2",
+   "source_path": "data/chautauqua--20260909-222330-b5994a/miniature/701378760/web-original-ca644de8dc4a4028",
+   "kind": "web-image",
+   "camera": {
+    "status": "unlocated",
+    "reason": "Web photo has no verified capture pose."
+   },
+   "caption": "July 2024 elevated closeup: brick Miller Bell Tower, four open arches per belfry face, stone columns, open bronze clock dial, red tile hip roof. Pier Building partly visible below. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)",
+   "path": "miniature/701378760/reference-7.jpg",
+   "sha256": "ca644de8dc4a4028161dfec103f61a2ff28e4d524765bf74fbf3d766bc02bfa9"
+  }
+ ],
+ "search_query": "Pier Building / 3 Taps Chautauqua Institution, Chautauqua, New York building exterior",
+ "search_candidates": [
+  {
+   "url": "https://chqdaily.com/wp-content/uploads/2021/06/062321_ThreeTapsBarOutside_KT_01.jpg",
+   "page_url": "https://chqdaily.com/2021/06/with-opening-of-3-taps-the-a-truck-food-service-expands-to-lakefront/",
+   "title": "2021 Pier Building / 3Taps: long low lakeside building, white trim, broad roof and open sheltered service area.",
+   "provider": "Chautauquan Daily"
+  },
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2025/02/071824_EveningBelltower_Hotel_Drone_DM_03.jpg",
+   "page_url": "https://www.chq.org/community-portal/",
+   "title": "July 2024 elevated closeup: brick Miller Bell Tower, four open arches per belfry face, stone columns, open bronze clock dial, red tile hip roof. Pier Building partly visible below.",
+   "provider": "Chautauqua Institution"
+  }
+ ],
+ "warnings": []
+}

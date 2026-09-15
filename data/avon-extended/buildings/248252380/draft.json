@@ -1,0 +1,104 @@
+{
+  "_comment": "Corner house at West Main St / South Ave (no address in OSM; the house NW of 51 West Main). Long greige vinyl two-storey house under a dark grey gable roof with the ridge running along u (perpendicular to West Main). Real front = +u (NE, toward West Main): full-width open porch with white posts and railing, a white front door with steps at right-centre, and a dark green second door at the left end (in reality reached by a stair with a little gable hood); upstairs two windows, the left one with rust shutters. The porch wraps a short way onto the -v (South Ave) side. Rear (-u, SW) gable end carries an enclosed screened sun porch on the upper floor, a row of screen panels under the gable, standing over an open undercroft on posts. Road face per pipeline is -v (South Ave); left (0) of -v = NE end.",
+  "wall": "#bfb49e",
+  "trim": "#ebe8e0",
+  "roofColor": "#4f5256",
+  "volumes": [
+    {
+      "id": "main",
+      "u": [-2.0, 9.4],
+      "v": [-4.7, 4.7],
+      "height": 6.3,
+      "roof": { "type": "gable", "ridge": "u", "pitch": 0.38, "maxH": 3.4, "overhang": 0.45 },
+      "chimneys": [ { "u": 2.6, "v": 0.0 } ],
+      "faces": {
+        "+u": {
+          "porches": [
+            { "style": "open", "range": [0.0, 1.0], "d": 2.4, "height": 2.8,
+              "floorH": 0.6, "floorColor": "#8a857a", "posts": 5, "postColor": "#ebe8e0",
+              "roof": "hip", "pitch": 0.25, "roofColor": "#4f5256",
+              "railing": true, "steps": 3, "stepsAt": 0.64, "stepsW": 1.4 }
+          ],
+          "doors": [
+            { "at": 0.14, "y": 0.6, "type": "rect", "w": 0.95, "h": 2.1, "color": "#2e5a3c",
+              "surround": "#ebe8e0", "surroundW": 0.12, "steps": 0 },
+            { "at": 0.64, "y": 0.6, "type": "rect", "w": 1.0, "h": 2.1, "color": "#e8e6df",
+              "surround": "#ebe8e0", "surroundW": 0.12, "steps": 0 }
+          ],
+          "storeys": [
+            { "y": 1.5, "windows": { "type": "rect", "w": 1.2, "h": 1.5, "at": [0.4, 0.86],
+                                     "trim": "#ebe8e0", "glass": "#4e5a66", "shutters": "#3a4a3e" } },
+            { "y": 4.4, "windows": { "type": "rect", "w": 1.1, "h": 1.5, "at": [0.32],
+                                     "trim": "#ebe8e0", "glass": "#4e5a66", "shutters": "#8b4b30" } },
+            { "y": 4.4, "windows": { "type": "rect", "w": 1.1, "h": 1.5, "at": [0.72],
+                                     "trim": "#ebe8e0", "glass": "#4e5a66" } }
+          ]
+        },
+        "-v": {
+          "porches": [
+            { "style": "open", "range": [0.0, 0.4], "d": 2.4, "height": 2.8,
+              "floorH": 0.6, "floorColor": "#8a857a", "posts": 3, "postColor": "#ebe8e0",
+              "roof": "hip", "pitch": 0.25, "roofColor": "#4f5256",
+              "railing": true, "steps": 0 }
+          ],
+          "storeys": [
+            { "y": 1.3, "windows": { "type": "rect", "w": 1.1, "h": 1.5, "at": [0.58, 0.84],
+                                     "trim": "#ebe8e0", "glass": "#4e5a66" } },
+            { "y": 4.4, "windows": { "type": "rect", "w": 1.0, "h": 1.4, "at": [0.22, 0.58, 0.84],
+                                     "trim": "#ebe8e0", "glass": "#4e5a66" } }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 1.3, "windows": { "type": "rect", "w": 1.1, "h": 1.5, "at": [0.3, 0.68],
+                                     "trim": "#ebe8e0", "glass": "#4e5a66" } },
+            { "y": 4.4, "windows": { "type": "rect", "w": 1.0, "h": 1.4, "at": [0.3, 0.68],
+                                     "trim": "#ebe8e0", "glass": "#4e5a66" } }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rear-wing",
+      "u": [-9.4, -2.0],
+      "v": [-4.3, 4.3],
+      "height": 5.9,
+      "roof": { "type": "gable", "ridge": "u", "pitch": 0.38, "maxH": 3.1, "overhang": 0.45 },
+      "faces": {
+        "-u": {
+          "storeys": [
+            { "y": 3.7, "windows": { "type": "rect", "w": 0.9, "h": 1.3, "at": [0.18],
+                                     "trim": "#ebe8e0", "glass": "#3d4a55" } },
+            { "y": 3.7, "windows": { "type": "rect", "w": 1.05, "h": 1.3, "at": [0.4, 0.55, 0.7, 0.85],
+                                     "trim": "#ebe8e0", "glass": "#3d4a55", "mullions": false, "sill": false } }
+          ],
+          "doors": [
+            { "at": 0.5, "type": "rect", "w": 1.0, "h": 2.1, "color": "#6c675d",
+              "surround": "#ebe8e0", "surroundW": 0.1, "steps": 1 }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            { "y": 1.3, "windows": { "type": "rect", "w": 1.1, "h": 1.5, "at": [0.5],
+                                     "trim": "#ebe8e0", "glass": "#4e5a66" } },
+            { "y": 4.1, "windows": { "type": "rect", "w": 1.0, "h": 1.3, "at": [0.3, 0.7],
+                                     "trim": "#ebe8e0", "glass": "#4e5a66" } }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 1.3, "windows": { "type": "rect", "w": 1.1, "h": 1.5, "at": [0.5],
+                                     "trim": "#ebe8e0", "glass": "#4e5a66" } },
+            { "y": 4.1, "windows": { "type": "rect", "w": 1.0, "h": 1.3, "at": [0.3, 0.7],
+                                     "trim": "#ebe8e0", "glass": "#4e5a66" } }
+          ]
+        }
+      }
+    }
+  ],
+  "details": [
+    { "type": "bush", "u": 12.6, "v": -3.2, "size": 1.3 },
+    { "type": "bush", "u": 12.6, "v": 2.2, "size": 1.1 },
+    { "type": "bush", "u": 2.0, "v": -7.0, "size": 1.6 }
+  ]
+}

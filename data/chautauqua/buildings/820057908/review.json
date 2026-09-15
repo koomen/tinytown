@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The open-pavilion character is recognizable, but the generic rectangular massing, weak classical detailing, and unresolved entrance prevent approval.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The map assigns the Foster Avenue side to +u, and located SV1 clearly shows Smith Wilkes Hall from that face. However, SV1 does not securely locate the principal opening, while the only clear projecting green entry awning is in unlocated WEB1. The four-face render and actual inventory show no door or distinct projecting awning on any face, so principal-entry placement cannot be verified."
+ },
+ "issues": [
+  {
+   "severity": "broken",
+   "problem": "No principal entrance is identifiable: there are no doors and no characteristic projecting green awning on any rendered face.",
+   "fix": "Use geolocated evidence to establish the awning/entry face\u2014likely beginning with the +u facade seen in SV1\u2014then add one clearly distinguished principal entrance and avoid duplicate portals."
+  },
+  {
+   "severity": "major",
+   "problem": "The model is essentially a plain rectangle, losing the stepped, irregular footprint and roof silhouette evident in the north-up map and aerial.",
+   "fix": "Reshape the pavilion and roof to preserve the major offsets and projecting wing while simplifying minor bends."
+  },
+  {
+   "severity": "minor",
+   "problem": "Flat tan supports and thin white trim understate the buff-brick piers, low masonry walls, and prominent classical cornice/frieze that give the pavilion its charm.",
+   "fix": "Add readable brick texture, stronger low walls, and a deeper white cornice with simplified classical relief."
+  }
+ ]
+}

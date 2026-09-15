@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "Recognizable gray-green St. Elmo massing and lively Victorian roofline, but the defining entrance and veranda composition is modeled as large blank projections, weakening both charm and identification.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The located SV1 looks inward toward the NE-facing +u fa\u00e7ade and shows the raised principal entrance beneath the prominent gable; the model\u2019s actual inventory places the sole brown double principal door on +u toward Pratt Avenue. The two -u doors align with the secondary canopy/terrace access visible in located SV2, so they do not duplicate the principal portal. SV3 depicts the separate chapel and is not entrance evidence."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "On +u, the principal-entry bay reads as a tall, featureless beige slab; the raised double doors are effectively concealed despite being present in the inventory.",
+   "fix": "Expose and emphasize the brown double doors with a short stair, landing, canopy/sign band, and strong ivory trim beneath the central entrance gable."
+  },
+  {
+   "severity": "major",
+   "problem": "The broad veranda and stacked open balconies that characterize the photographed fa\u00e7ades are reduced to small railings and blank box-like projections, especially on +u and -u.",
+   "fix": "Replace the blank projections with visibly open, column-supported porches and stacked railed balconies, prioritizing their silhouette over exact bay counts."
+  },
+  {
+   "severity": "minor",
+   "problem": "The long fa\u00e7ades are overly flat and repetitive compared with the reference\u2019s layered bays, porch shadows, and projecting corner volumes.",
+   "fix": "Add modest depth to selected bays and porch roofs while retaining the coherent simplified miniature style."
+  }
+ ]
+}

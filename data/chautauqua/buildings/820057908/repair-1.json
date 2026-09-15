@@ -1,0 +1,34 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"d5d1ed4f766506508df14e616a07921d53c03d9d43cb41be44c3f5b550fae74b\",\"operations\":[{\"op\":\"replace\",\"path\":\"/pavilion/height\",\"value\":5.2},{\"op\":\"replace\",\"path\":\"/pavilion/postWidth\",\"value\":1.05},{\"op\":\"replace\",\"path\":\"/pavilion/bents\",\"value\":4},{\"op\":\"replace\",\"path\":\"/pavilion/endPosts\",\"value\":2}]}",
+ "cues": [
+  "Large open bays between substantial buff-brick piers.",
+  "Low masonry perimeter walls.",
+  "Broad muted flat roof with white classical trim.",
+  "Shaded interior with simple bench rows."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL",
+  "WEB1"
+ ],
+ "uncertainties": [
+  "WEB1 shows the green-awning entrance but does not establish its outward face; no awning was placed speculatively.",
+  "SV2 and SV3 foreground neighboring buildings; SV4 does not securely locate the hall entrance.",
+  "The pavilion component cannot express the mapped faceted perimeter, a face-mounted awning, or additional cornice detailing; those review defects remain unresolved."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "pavilion",
+   "face": "unknown",
+   "role": "principal",
+   "evidence": [
+    "WEB1",
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

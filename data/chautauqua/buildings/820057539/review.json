@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "Recognizable warm-brick gate complex, but the dominant canopy reads as an oversized pavilion rather than the broad, low entrance canopy in SV3. Key traffic-gate identity cues also need strengthening.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The map assigns the NNE approach to +v, and located SV3 looks SSW directly toward that +v face, showing ENTER on the left and EXIT ONLY on the right. The four-face sheet places the canopy approach and the sole booth door on +v; the door inventory confirms one +v door, with no duplicated principal portal."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The main canopy roof is too tall, steep, and bulky, weakening the characteristic broad, shallow silhouette visible in SV3.",
+   "fix": "Lower the hip ridge and reduce roof thickness while retaining the wide projection and pale fascia."
+  },
+  {
+   "severity": "major",
+   "problem": "The twin vehicle-lane identity is not immediately legible; the reference\u2019s ENTER-left and EXIT ONLY-right arrangement is a defining feature.",
+   "fix": "Clarify two open passages around the central brick booth and add bold miniature-scale ENTER and EXIT ONLY labels on the +v fascia."
+  },
+  {
+   "severity": "minor",
+   "problem": "Supports, booth, and fascia lack the crisp contrast of the reference, so the canopy mass visually overwhelms the gate details.",
+   "fix": "Emphasize brick piers/booth, light fascia and columns, and dark glazed booth openings with slightly exaggerated scale contrast."
+  }
+ ]
+}

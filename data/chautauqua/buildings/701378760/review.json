@@ -1,0 +1,20 @@
+{
+ "verdict": "insufficient-evidence",
+ "summary": "The authored miniature was not rendered; the last two images are generic fallback views and cannot support a silhouette, style, feature, defect, or entrance-placement review.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "Geolocated SV3 identifies the characteristic colonnaded, multi-door elevation as +v (SE), while SV4 shows the opposite -v (NW) elevation with a central entrance grouping; SV1 and SV2 document the +u and -u ends. However, the rendered blueprint reports no actual doors, so the model\u2019s principal-entry placement\u2014and whether it duplicates portals\u2014cannot be verified. The road hint is not used as entrance evidence."
+ },
+ "issues": [
+  {
+   "severity": "broken",
+   "problem": "The authoring call timed out and produced no valid rendered draft.",
+   "fix": "Generate and submit a valid render of the authored miniature, including overview and all four labeled faces."
+  },
+  {
+   "severity": "major",
+   "problem": "The actual door inventory is empty, leaving principal-entry orientation unresolved.",
+   "fix": "Provide the computed door inventory by face and clearly model one principal entrance consistent with the geolocated facade evidence; avoid duplicated principal portals."
+  }
+ ]
+}

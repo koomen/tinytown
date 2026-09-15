@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"3d43f9bb8916080fa3541245b0a34fdca1a1da832aed8bbdf5016e027ee27d1c\",\"operations\":[]}",
+ "cues": [
+  "Compact single-storey rectangular studio",
+  "Simple gable with pale gray roof",
+  "Warm reddish-brown walls and cream trim",
+  "Restrained domestic window rhythm"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Principal entrance remains unverified: SV1 faces +v/SW through dense vegetation; neither the aerial nor map reveals a doorway. Retain the existing single -v/NE door provisionally, without relocating or duplicating it.",
+  "Concealed openings and wall details remain simplified approximations. No supplied evidence justifies a geometry change."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-v",
+   "role": "principal",
+   "evidence": [
+    "MAP and AERIAL establish orientation but not doorway placement.",
+    "SV1 observes the opposite +v face, heavily obscured by vegetation."
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

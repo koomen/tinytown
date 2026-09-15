@@ -1,0 +1,20 @@
+{
+ "wall": "#d9d0aa",
+ "trim": "#eee5ce",
+ "roofColor": "#b8c0bd",
+ "amphitheater": {
+  "axis": "v",
+  "stageEnd": "positive",
+  "height": 8,
+  "roofRise": 5,
+  "backstageDepth": 22,
+  "rows": 16,
+  "monitor": true,
+  "wallColor": "#d9d0aa",
+  "trimColor": "#eee5ce",
+  "roofColor": "#b8c0bd",
+  "seatColor": "#d8d2b7"
+ },
+ "volumes": [],
+ "details": []
+}

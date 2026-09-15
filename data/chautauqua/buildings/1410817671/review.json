@@ -1,0 +1,15 @@
+{
+ "verdict": "ready",
+ "summary": "The miniature is recognizable and charming: a compact near-square studio with a low silver-gray hipped roof, deep pale eaves, warm brown walls, one tall narrow window, and a modest side entry. The simplified proportions and repeated visual language are coherent at diorama scale, with no obvious broken geometry or duplicated principal portals.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The located SV1 camera is southwest of the studio and looks northeast, so it sees the southwest +v face nearly head-on and the southeast +u face obliquely. In SV1, the tall window is on the broad southwest-facing wall while the sole entry is on the receding southeast wall. The labeled render sheet likewise places the window on +v and the only actual door on +u (outward bearing 146\u00b0 SE), matching the source rather than relying on the nearest-road hint."
+ },
+ "issues": [
+  {
+   "severity": "minor",
+   "problem": "The wall treatment reads as uniform brick in the model, while SV1 shows cedar-brown shingle siding, an important part of the studio\u2019s character.",
+   "fix": "Use a simplified larger-scale shingle pattern or staggered horizontal courses while retaining the warm brown color."
+  }
+ ]
+}

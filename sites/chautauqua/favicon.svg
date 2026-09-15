@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Chautauqua</title>
+  <rect width="64" height="64" rx="12" fill="#faf3e6"/>
+  <path d="M46 17c-4-5-9-7-15-7C17 10 9 20 9 33s8 23 21 23c7 0 13-3 17-9l-3-3c-3 5-7 7-12 7-9 0-15-7-15-18s6-18 15-18c7 0 11 4 13 10h3l-1-15h-2z" fill="#4d3a2a"/>
+</svg>

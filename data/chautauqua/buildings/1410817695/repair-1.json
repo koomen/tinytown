@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"549fd8fba2ff608fd37c5bab37a548f4feeae055f524ba7d69cb0c28316dfb08\",\"operations\":[]}",
+ "cues": [
+  "Compact single-storey brown cabin",
+  "Simple gray gable roof",
+  "Muted cream window and door trim",
+  "Sparse windows and low foundation"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "SV1 faces +v, but trees obscure the doorway; the aerial cannot resolve it. The existing single +v entrance is retained as an unverified approximation. No supplied evidence supports relocating it."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "AERIAL"
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

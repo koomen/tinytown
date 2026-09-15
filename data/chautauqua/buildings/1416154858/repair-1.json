@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"ebd5b6af6279be36a1fd9fefa47c78d13e6556fd56574d15d720f830c3d1fc0b\",\"operations\":[{\"op\":\"replace\",\"path\":\"/volumes/@main/faces/+v/porches/1/height\",\"value\":3.2},{\"op\":\"replace\",\"path\":\"/volumes/@main/faces/+v/porches/1/roof\",\"value\":\"hip\"},{\"op\":\"add\",\"path\":\"/volumes/@main/faces/+v/porches/1/pitch\",\"value\":0.2},{\"op\":\"replace\",\"path\":\"/volumes/@main/faces/+v/signs/0\",\"value\":{\"text\":\"HULTQUIST CENTER\",\"style\":\"board\",\"at\":0.77,\"y\":2.85,\"w\":4.4,\"h\":0.65}}]}",
+ "cues": [
+  "Broad muted hipped roof",
+  "Grounded two-level cream veranda",
+  "Four prominent upper arches and pale railings",
+  "Hultquist Center sign above the right-hand entry",
+  "Long stepped rear wings"
+ ],
+ "references_used": [
+  "MAP",
+  "SV3",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Upper arcade openings remain simplified using the existing arched-window components.",
+  "SV1 shows an interior; SV2 and SV4 do not establish matching Hultquist Center exterior details and were not used for this repair."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "main",
+   "face": "+v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV3"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

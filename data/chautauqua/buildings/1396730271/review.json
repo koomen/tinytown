@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The compact gabled form, brown body, pale roof, single southeast entrance, and northeast-side window make the studio broadly recognizable. However, prominent material and entrance details need correction before it is ready.",
+ "orientation": {
+  "status": "correct",
+  "summary": "SV1 is geolocated northwest/northeast of the cabin and looks west, obliquely exposing the southeast (-u) gable and northeast (+v) side. Its white glazed door is on the screen-left southeast gable, while the tall window is on the northeast side. The labeled face sheet and actual inventory correspond: one principal door on -u (129\u00b0 SE), a window on +v (39\u00b0 NE), and no duplicated principal portal."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The principal southeast door is rendered as a plain solid slab, losing the conspicuous glazed multi-pane upper section visible in SV1.",
+   "fix": "Replace it with a white glazed door featuring a clearly readable multi-pane window and retain the small two-step stoop."
+  },
+  {
+   "severity": "major",
+   "problem": "The wall finish reads as regular red brick, whereas the reference cabin has warm brown shingle or overlapping-board siding.",
+   "fix": "Use simplified horizontal shingle courses in a muted reddish brown, with enough relief or linework to remain legible at miniature scale."
+  },
+  {
+   "severity": "minor",
+   "problem": "The pale roof reads as tiled shingles rather than the smooth light metal roof characteristic of the reference.",
+   "fix": "Simplify the roof surface and add restrained standing seams while preserving the bright projecting white edges."
+  }
+ ]
+}

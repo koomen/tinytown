@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "Recognizable ivory cottage massing, dark intersecting gables, dormer, and porch detailing are present, but the principal entrance is assigned to the wrong face and the key veranda is weakened.",
+ "orientation": {
+  "status": "incorrect",
+  "summary": "The located SV3 view establishes +v as the Pratt-facing show facade with the characteristic two-tier veranda; SV2 shows the Miller-facing -u end where the ground porch merely wraps around. The model\u2019s door inventory contains only one door, on -u, and none on +v, turning the secondary Miller side into the sole/principal portal. Place a clear principal doorway on +v; retain any -u door only as secondary."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The sole modeled entrance is on -u rather than the Pratt-facing +v veranda facade evidenced by SV3.",
+   "fix": "Add the principal doorway within the +v veranda composition and make the -u opening secondary or remove it if unsupported."
+  },
+  {
+   "severity": "major",
+   "problem": "The characteristic two-tier open veranda reads as a largely enclosed, flat lower porch, diminishing the building\u2019s strongest identifying feature.",
+   "fix": "Emphasize two open stacked porch levels with slender posts, railings, decorative cornice trim, and a legible wrap onto -u."
+  },
+  {
+   "severity": "broken",
+   "problem": "The +u labeled face render is almost completely blocked by a roof surface, preventing review and indicating camera/model clipping.",
+   "fix": "Move the face camera beyond the building bounds and regenerate an unobstructed +u elevation view."
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The miniature is not yet recognizable as the Main Gate gatehouse. Its dominant pitched-roof hall and chain of small structures replace the reference\u2019s simple pair of low brick booths with broad flat passage canopies.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "Located SV3 establishes the ENTER approach on the southwest-facing +v side, while SV4 establishes EXIT on the northeast-facing -v side. The labeled renders do not clearly show those roles or legible directional signs, and the repeated canopy/booth forms make the principal passage ambiguous. The two inventoried doors on +u and -u are staff doors, not principal portals, so they do not resolve entry orientation."
+ },
+ "issues": [
+  {
+   "severity": "broken",
+   "problem": "The silhouette is dominated by a large pitched-roof building absent from the gatehouse references.",
+   "fix": "Remove the pitched-roof hall and rebuild the subject as two separated, single-story brick booths with broad pale flat canopies over open pedestrian passages."
+  },
+  {
+   "severity": "major",
+   "problem": "Too many repeated booth/canopy volumes create several competing portal-like entrances instead of one clear ENTER and one EXIT passage.",
+   "fix": "Reduce the composition to the characteristic two-booth arrangement and emphasize oversized cream-framed dark ticket windows."
+  },
+  {
+   "severity": "major",
+   "problem": "Principal-entry direction is visually unresolved.",
+   "fix": "Make the southwest +v passage unmistakably ENTER and the northeast -v passage EXIT using canopy signs and passage layout; retain +u/-u doors only as subordinate staff access."
+  }
+ ]
+}

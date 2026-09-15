@@ -1,0 +1,454 @@
+{
+  "wall": "#eceae2",
+  "trim": "#f4f0e5",
+  "roofColor": "#858b86",
+  "volumes": [
+    {
+      "id": "main",
+      "u": [
+        -7.4,
+        14.4
+      ],
+      "v": [
+        -9.3,
+        2.4
+      ],
+      "height": 3.4,
+      "bottom": 0,
+      "roof": {
+        "type": "hip",
+        "ridge": "u",
+        "pitch": 0.2,
+        "maxH": 1.6,
+        "overhang": 0.35
+      },
+      "plinth": {
+        "height": 0.22,
+        "color": "#aaa99b"
+      },
+      "faces": {
+        "+v": {
+          "storeys": [
+            {
+              "y": 0.58,
+              "windows": {
+                "type": "shop",
+                "w": 3.05,
+                "h": 2.18,
+                "at": [
+                  0.45
+                ],
+                "glass": "#607772",
+                "trim": "#e9e8df",
+                "frameW": 0.08,
+                "divisions": {
+                  "vertical": [
+                    0.5
+                  ],
+                  "horizontal": [],
+                  "width": 0.05
+                },
+                "interior": false
+              }
+            }
+          ],
+          "moldings": [
+            {
+              "range": [
+                0,
+                0.3
+              ],
+              "y": 0,
+              "color": "#4b4842",
+              "profile": [
+                {
+                  "height": 3.35,
+                  "depth": 0.12
+                }
+              ]
+            },
+            {
+              "y": 2.95,
+              "color": "#f5f2e8",
+              "profile": [
+                {
+                  "height": 0.1,
+                  "depth": 0.4
+                }
+              ],
+              "range": [
+                0.3,
+                1
+              ]
+            },
+            {
+              "y": 3.05,
+              "color": "#174d9f",
+              "profile": [
+                {
+                  "height": 0.3,
+                  "depth": 0.42
+                }
+              ],
+              "range": [
+                0.3,
+                1
+              ]
+            },
+            {
+              "y": 3.35,
+              "color": "#f5f2e8",
+              "profile": [
+                {
+                  "height": 0.08,
+                  "depth": 0.45
+                }
+              ],
+              "range": [
+                0.3,
+                1
+              ]
+            }
+          ],
+          "signs": [
+            {
+              "text": "DUNKIN\u2019 DONUTS",
+              "brand": "dunkin-donuts",
+              "at": 0.15,
+              "y": 2.43,
+              "w": 4.75,
+              "h": 1.47,
+              "out": 0.22
+            }
+          ]
+        },
+        "-v": {
+          "doors": [
+            {
+              "at": 0.61,
+              "w": 1,
+              "h": 2.2,
+              "color": "#aaa99f"
+            },
+            {
+              "at": 0.89,
+              "type": "garage",
+              "w": 3.5,
+              "h": 2.8,
+              "color": "#414b49"
+            }
+          ],
+          "storeys": [
+            {
+              "y": 1.1,
+              "windows": {
+                "type": "rect",
+                "w": 2.7,
+                "h": 1.15,
+                "at": [
+                  0.28
+                ],
+                "glass": "#85877a",
+                "trim": "#cdcfc5",
+                "interior": false
+              }
+            }
+          ]
+        }
+      },
+      "cornice": {
+        "height": 0.1,
+        "overhang": 0.15,
+        "color": "#f4f0e5",
+        "dentils": false
+      }
+    },
+    {
+      "id": "wash_wing",
+      "u": [
+        -19.3,
+        -7.4
+      ],
+      "v": [
+        -9.3,
+        9.3
+      ],
+      "height": 3.5,
+      "bottom": 0,
+      "roof": {
+        "type": "gable",
+        "ridge": "v",
+        "pitch": 0.2,
+        "maxH": 1.75,
+        "overhang": 0.45
+      },
+      "plinth": {
+        "height": 0.18,
+        "color": "#aaa99b"
+      },
+      "faces": {
+        "-u": {
+          "storeys": [
+            {
+              "y": 1.2,
+              "windows": {
+                "type": "rect",
+                "w": 3.1,
+                "h": 1.2,
+                "at": [
+                  0.51
+                ],
+                "glass": "#748580",
+                "trim": "#f5f0e4",
+                "mullions": false,
+                "interior": false
+              }
+            }
+          ]
+        },
+        "+v": {
+          "doors": [
+            {
+              "at": 0.5,
+              "type": "garage",
+              "w": 5.4,
+              "h": 2.95,
+              "color": "#59635d",
+              "surround": "#f5f0e4"
+            }
+          ]
+        },
+        "-v": {
+          "doors": [
+            {
+              "at": 0.5,
+              "type": "garage",
+              "w": 7.8,
+              "h": 2.95,
+              "color": "#46524e",
+              "surround": "#f5f0e4"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "front_projection",
+      "u": [
+        4.7,
+        14.4
+      ],
+      "v": [
+        2,
+        6
+      ],
+      "height": 3.4,
+      "bottom": 0,
+      "roof": {
+        "type": "gable",
+        "ridge": "v",
+        "pitch": 0.24,
+        "maxH": 1.4,
+        "overhang": 0.3,
+        "gableColor": "#8e908b"
+      },
+      "faces": {
+        "+v": {
+          "moldings": [
+            {
+              "y": 2.95,
+              "color": "#f5f2e8",
+              "profile": [
+                {
+                  "height": 0.1,
+                  "depth": 0.22
+                }
+              ]
+            },
+            {
+              "y": 3.05,
+              "color": "#174d9f",
+              "profile": [
+                {
+                  "height": 0.3,
+                  "depth": 0.24
+                }
+              ]
+            },
+            {
+              "y": 3.35,
+              "color": "#f5f2e8",
+              "profile": [
+                {
+                  "height": 0.08,
+                  "depth": 0.27
+                }
+              ]
+            }
+          ],
+          "storefronts": [
+            {
+              "range": [
+                0.292,
+                0.92
+              ],
+              "y": 0.12,
+              "h": 2.75,
+              "frame": "#ecebe0",
+              "kick": false
+            }
+          ],
+          "doors": [
+            {
+              "type": "double",
+              "at": 0.19,
+              "w": 1.63,
+              "h": 2.15,
+              "color": "#6b807b",
+              "surround": "#e9e8df",
+              "surroundW": 0.065,
+              "lamp": false
+            }
+          ],
+          "signs": [
+            {
+              "text": "Quicklee\u2019s",
+              "brand": "quicklees",
+              "at": 0.5,
+              "y": 4.01,
+              "w": 3.5,
+              "h": 1.02,
+              "out": 0.16
+            }
+          ],
+          "storeys": [
+            {
+              "y": 2.29,
+              "windows": {
+                "type": "shop",
+                "w": 1.74,
+                "h": 0.55,
+                "at": [
+                  0.19
+                ],
+                "glass": "#607772",
+                "trim": "#ecebe0",
+                "frameW": 0.06,
+                "mullions": false,
+                "interior": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "northwest_end",
+      "u": [
+        14.4,
+        19.3
+      ],
+      "v": [
+        -9.3,
+        2.7
+      ],
+      "height": 3.4,
+      "bottom": 0,
+      "roof": {
+        "type": "hip",
+        "ridge": "u",
+        "pitch": 0.2,
+        "maxH": 1.6,
+        "overhang": 0.35
+      },
+      "faces": {
+        "+u": {
+          "storeys": [
+            {
+              "y": 1,
+              "windows": {
+                "type": "rect",
+                "w": 2,
+                "h": 1.4,
+                "at": [
+                  0.35,
+                  0.72
+                ],
+                "glass": "#788780",
+                "trim": "#f5f0e4",
+                "interior": false
+              }
+            }
+          ]
+        },
+        "+v": {
+          "moldings": [
+            {
+              "y": 2.95,
+              "color": "#f5f2e8",
+              "profile": [
+                {
+                  "height": 0.1,
+                  "depth": 0.4
+                }
+              ]
+            },
+            {
+              "y": 3.05,
+              "color": "#174d9f",
+              "profile": [
+                {
+                  "height": 0.3,
+                  "depth": 0.42
+                }
+              ]
+            },
+            {
+              "y": 3.35,
+              "color": "#f5f2e8",
+              "profile": [
+                {
+                  "height": 0.08,
+                  "depth": 0.45
+                }
+              ]
+            }
+          ],
+          "storeys": [
+            {
+              "y": 0.58,
+              "windows": {
+                "type": "shop",
+                "w": 3.4,
+                "h": 2.18,
+                "at": [
+                  0.5
+                ],
+                "glass": "#607772",
+                "trim": "#e9e8df",
+                "frameW": 0.08,
+                "divisions": {
+                  "vertical": [
+                    0.333,
+                    0.667
+                  ],
+                  "horizontal": [],
+                  "width": 0.05
+                },
+                "interior": false
+              }
+            }
+          ]
+        }
+      },
+      "cornice": {
+        "height": 0.1,
+        "overhang": 0.15,
+        "color": "#f4f0e5",
+        "dentils": false
+      }
+    }
+  ],
+  "details": [],
+  "wallMaterial": "stone"
+}

@@ -1,0 +1,121 @@
+{
+ "id": "820059536",
+ "addr": "33 Pratt Avenue",
+ "name": "Norton Hall",
+ "frame": "e52e273da2ecbbaa3e07828505b1da4b48317e5a640f5b2ab805c0926754ddf2",
+ "faces": {
+  "+u": {
+   "bearing": 35,
+   "width": 25.3,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_820059536_+u.png",
+     "pano": "hp9c000dEcLv5h6EG3gYSA",
+     "dist": 22.6,
+     "off_axis_deg": 6,
+     "fov": 71,
+     "tilt": 92,
+     "heading": 209,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2110532,-79.4682931,415a,71y,209h,92t/data=!3m7!1e1!3m5!1shp9c000dEcLv5h6EG3gYSA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3Dhp9c000dEcLv5h6EG3gYSA%26yaw%3D209!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2110532,
+      "lon": -79.4682931
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 215,
+   "width": 25.3,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_820059536_-u.png",
+     "pano": "aixrwV24mt2xd8vuHFkUKQ",
+     "dist": 25.6,
+     "off_axis_deg": 46,
+     "fov": 65,
+     "tilt": 91,
+     "heading": 82,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2103531,-79.4692007,419a,65y,82h,91t/data=!3m7!1e1!3m5!1saixrwV24mt2xd8vuHFkUKQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DaixrwV24mt2xd8vuHFkUKQ%26yaw%3D82!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2103531,
+      "lon": -79.4692007
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 125,
+   "width": 66.8,
+   "road": true,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_820059536_+v.png",
+     "pano": "iTFrq4MvyPCCPd7BmiWJ5g",
+     "dist": 29.0,
+     "off_axis_deg": 9,
+     "fov": 80,
+     "tilt": 91,
+     "heading": 315,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2103815,-79.4682838,415a,80y,315h,91t/data=!3m7!1e1!3m5!1siTFrq4MvyPCCPd7BmiWJ5g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DiTFrq4MvyPCCPd7BmiWJ5g%26yaw%3D315!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2103815,
+      "lon": -79.4682838
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 305,
+   "width": 66.8,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_820059536_-v.png",
+     "pano": "EEcIJoBIJ_O6jQOPhenFpA",
+     "dist": 26.1,
+     "off_axis_deg": 14,
+     "fov": 80,
+     "tilt": 91,
+     "heading": 140,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2108491,-79.4689886,418a,80y,140h,91t/data=!3m7!1e1!3m5!1s-qBCG56Ak_vqlaPnP-XtlA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3D-qBCG56Ak_vqlaPnP-XtlA%26yaw%3D140!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2108752,
+      "lon": -79.4689898
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-10 04:39"
+}

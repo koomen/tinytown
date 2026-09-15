@@ -1,0 +1,52 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"d85710eb1b93e429412be964a78f5f4ed1949d605623c29945bb564b874854b8\",\"operations\":[{\"op\":\"replace\",\"path\":\"/volumes/@cupola/u\",\"value\":[-0.45,0.45]},{\"op\":\"replace\",\"path\":\"/volumes/@cupola/v\",\"value\":[-0.45,0.45]},{\"op\":\"replace\",\"path\":\"/volumes/@cupola/height\",\"value\":4.32},{\"op\":\"replace\",\"path\":\"/volumes/@cupola/roof/maxH\",\"value\":0.6},{\"op\":\"replace\",\"path\":\"/volumes/@kiosk/faces/+v/storeys/0/windows/glass\",\"value\":\"#1f302c\"},{\"op\":\"replace\",\"path\":\"/volumes/@kiosk/faces/+v/signs/0/h\",\"value\":0.4},{\"op\":\"replace\",\"path\":\"/volumes/@kiosk/faces/-u/signs/0/h\",\"value\":0.4},{\"op\":\"add\",\"path\":\"/volumes/@kiosk/faces/+u/pilasters\",\"value\":{\"at\":[0.04,0.96],\"w\":0.17,\"d\":0.08,\"height\":2.6,\"color\":\"#eee9d9\",\"cap\":\"#eee9d9\"}}]}",
+ "cues": [
+  "Broad low roof with exaggerated pointed cream cupola.",
+  "Muted-green panels and strong ivory framing.",
+  "Dark SE serving hatch beneath Cappuccino sign.",
+  "Additional SW coffee-service windows."
+ ],
+ "references_used": [
+  "MAP",
+  "SV2",
+  "SV3",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Hidden NW staff door remains inferred, not a customer entrance.",
+  "Square hipped kit geometry approximates the rounded polygonal kiosk.",
+  "Surrounding-building occlusion and render framing cannot be repaired through building components; supplied renders do not clearly expose the kiosk."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "kiosk",
+   "face": "+v",
+   "role": "principal customer serving hatch, not a walk-in door",
+   "evidence": [
+    "MAP",
+    "SV3"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "kiosk",
+   "face": "-u",
+   "role": "secondary customer service windows",
+   "evidence": [
+    "MAP",
+    "SV2"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "kiosk",
+   "face": "-v",
+   "role": "subordinate staff access",
+   "evidence": [
+    "MAP"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

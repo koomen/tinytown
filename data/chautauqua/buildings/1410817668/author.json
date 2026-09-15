@@ -1,0 +1,33 @@
+{
+ "blueprint_json": "{\"wall\":\"#945f50\",\"trim\":\"#eee9dc\",\"roofColor\":\"#c9c9bc\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.715,2.715],\"v\":[-2.157,2.157],\"bottom\":0.25,\"height\":2.95,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.3,\"maxH\":1.3,\"overhang\":0.25},\"plinth\":{\"height\":0.25,\"color\":\"#514b40\"},\"faces\":{\"+u\":{\"doors\":[{\"at\":0.5,\"type\":\"rect\",\"y\":0.25,\"w\":0.95,\"h\":2.25,\"color\":\"#d9ded8\",\"surround\":\"#f2eee3\",\"surroundW\":0.1,\"steps\":3}]},\"+v\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.95,\"h\":1.45,\"at\":[0.73],\"trim\":\"#eee9dc\",\"glass\":\"#536567\"}}]},\"-u\":{},\"-v\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.95,\"h\":1.45,\"at\":[0.5],\"trim\":\"#eee9dc\",\"glass\":\"#536567\"}}]}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Small reddish-brown timber studio with a simple rectangular footprint.",
+  "Pale pitched roof with modest projecting eaves.",
+  "White-trimmed entrance on the southeast gable end.",
+  "Three exposed entry steps and a slightly raised base.",
+  "Single tall window toward the entrance end of the southwest wall."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Heights and roof pitch are estimated from the photograph.",
+  "Concealed elevations are simplified; the northeast window is inferred.",
+  "Door glazing and fine siding texture are omitted at miniature scale."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1: camera lies on the +u/+v side; the door occupies the right-hand gable end, while the window occupies the +v side wall."
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

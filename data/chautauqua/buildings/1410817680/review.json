@@ -1,0 +1,20 @@
+{
+ "verdict": "insufficient-evidence",
+ "summary": "The compact gabled silhouette, muted palette, small attic vent, and restrained cabin form are recognizable and coherent at miniature scale. No obvious duplicated portal or major geometry defect is visible, but the principal-entry face is not established by the supplied evidence.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The located SV1 camera stands by Hurst Avenue and looks SSE toward face -u; that NNW-outward road-facing gable is visibly blank except for a small attic vent. The model correctly leaves -u doorless, while its sole door is on the opposite +u/SSE face. SV1 does not show +u, and the aerial is too limited to distinguish a door there from doors on either side face, so the +u principal-entry placement remains unverified."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The only door is assigned to +u, but no supplied source establishes that face as the principal entrance. Confirming that -u is blank does not prove the opposite face contains the door.",
+   "fix": "Keep a single principal portal, but obtain face-resolved evidence for +u and the two side faces before approving or relocating it; update the door face to match that evidence."
+  },
+  {
+   "severity": "minor",
+   "problem": "The model uses a conspicuous brick-like wall texture, whereas SV1 reads as muted wood shingle or board cladding, weakening the cabin\u2019s characteristic appearance.",
+   "fix": "Replace the masonry pattern with subdued reddish-brown wood shingles or fine horizontal siding while preserving the simple massing."
+  }
+ ]
+}

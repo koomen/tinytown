@@ -1,0 +1,21 @@
+{
+ "blueprint_json": "{\"fountain\":{\"height\":3.96,\"basinHeight\":0.686,\"rimWidth\":0.42,\"pylonWidth\":1.65,\"stoneColor\":\"#d7d1c0\",\"brickColor\":\"#996b59\",\"waterColor\":\"#84b9bd\",\"jets\":true},\"volumes\":[],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Broad square water basin with warm brick walls and pale stone coping.",
+  "Central four-sided limestone relief pylon.",
+  "Three-step crown and softly weathered stone palette.",
+  "Four sculpted corner jets surrounding muted turquoise water."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV3",
+  "SV4 \u0639"
+ ],
+ "uncertainties": [
+  "Pylon width and coping thickness are approximate; relief figures and corner sculptures are simplified at miniature scale."
+ ],
+ "entrance_plan": []
+}

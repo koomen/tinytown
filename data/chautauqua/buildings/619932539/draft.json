@@ -1,0 +1,26 @@
+{
+ "wall": "#d9d0aa",
+ "trim": "#eee5ce",
+ "roofColor": "#b8c0bd",
+ "amphitheater": {
+  "axis": "v",
+  "stageEnd": "positive",
+  "height": 6.5,
+  "roofRise": 5,
+  "backstageDepth": 22,
+  "rows": 18,
+  "monitor": true,
+  "wallColor": "#d9d0aa",
+  "trimColor": "#eee5ce",
+  "roofColor": "#b8c0bd",
+  "seatColor": "#d8d2b7",
+  "bowlDepth": 5.2,
+  "audienceChamfer": 12,
+  "porchDepth": 3.4,
+  "rearWingChamfer": 5.5,
+  "stringLightSpacing": 1.05,
+  "interiorLighting": true
+ },
+ "volumes": [],
+ "details": []
+}

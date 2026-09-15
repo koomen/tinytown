@@ -1,0 +1,20 @@
+{
+ "verdict": "repair",
+ "summary": "The compact gabled silhouette is charming and coherent, but the entrance is on the wrong face and the dominant materials do not match the reference hut.",
+ "orientation": {
+  "status": "incorrect",
+  "summary": "Located SV1 looks NE toward the studio\u2019s -v/SW face and shows a door in that broad eave-side wall. The labeled four-face sheet shows -v blank, while the actual inventory places the sole door on the -u/SE gable face. Thus the rendered principal entry conflicts with the geolocated evidence; road proximity is not being used as proof."
+ },
+ "issues": [
+  {
+   "severity": "broken",
+   "problem": "The sole principal door is on -u, but SV1 supports it on -v.",
+   "fix": "Move the principal door to the -v/SW eave wall and leave -u without a principal portal; retain only one principal entrance."
+  },
+  {
+   "severity": "major",
+   "problem": "Brick walls and a shingle-pattern roof miss the reference\u2019s characteristic reddish-brown shingle siding and pale corrugated-metal roof.",
+   "fix": "Replace the brick relief with broad staggered shingle courses and use a light metal roof with clear parallel ribs."
+  }
+ ]
+}

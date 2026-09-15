@@ -1,0 +1,9 @@
+{
+ "source": "repair-response.json",
+ "field": "patch_json",
+ "appended": "]}",
+ "reason": "Completed patch operations lacked only their two outer closing delimiters. Original response retained unchanged.",
+ "base_hash": "8579cc6e264dbf290140f001bb53647e885242c37d751a67ab8b6c9bc097d42a",
+ "recovered_hash": "efaa7300ffdd3baa4eaa4e894ea51f3833be60653dc0dd45b57610f25159e25f",
+ "additional_model_calls": 0
+}

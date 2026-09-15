@@ -1,0 +1,20 @@
+{
+ "verdict": "insufficient-evidence",
+ "summary": "The compact gabled silhouette is recognizable and charming, with the peak vent and low grille reproduced well. However, the principal-entry face is not directly established, and the brick-like wall treatment conflicts with the timber-cabin reference.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The north-up map and located SV1 geometry identify the photographed road-facing gable as -u (NNW toward Hurst Avenue), not +u; that reference clearly shows a blank gable with a peak vent and low grille, which the -u render matches. The door inventory contains one principal-sized door on the opposite +u (SSE) gable and no duplicate portals. This is plausible, but SV1 conceals +u and the aerial does not resolve any doorway, so no supplied source confirms that +u is actually the entrance face."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry placement on +u remains inferred rather than verified by the located imagery.",
+   "fix": "Provide a geolocated view or other supplied visual evidence showing the entrance-bearing facade; otherwise retain the blank -u gable but mark the +u door placement unresolved."
+  },
+  {
+   "severity": "minor",
+   "problem": "The walls read as masonry/brick, while the reference shows warm reddish-brown timber shingle or siding cladding.",
+   "fix": "Replace the brick pattern with simplified reddish-brown timber shingles or horizontal siding while preserving the miniature palette."
+  }
+ ]
+}

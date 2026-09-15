@@ -1,0 +1,20 @@
+{
+ "verdict": "insufficient-evidence",
+ "summary": "The compact gabled silhouette, pale roof, muted red-brown color, tiny attic vent, and low dark grille are recognizable. However, the principal entrance cannot be conclusively oriented from the supplied imagery, and the brick treatment conflicts with the timber character.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The located SV1 camera looks SSE toward the building\u2019s +u/NW gable; that face is correctly modeled as nearly blank with a low grille and small vent. The actual inventory has one principal door on the opposite -u/SE face and no duplicated portal. However, SV1 does not show that opposite face, while the aerial does not resolve doors, so neither source establishes that -u\u2014rather than a side face\u2014is the entrance."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry placement on the -u/SE face remains unverified.",
+   "fix": "Provide a geolocated view showing the SE, NE, or SW face clearly enough to locate the entrance; retain only one principal door and move it if that evidence identifies another face."
+  },
+  {
+   "severity": "major",
+   "problem": "The model reads as brick masonry, while the reference describes and depicts a simple timber studio with smoother reddish-brown siding.",
+   "fix": "Replace the brick pattern with restrained horizontal or vertical timber siding in the same muted reddish-brown palette."
+  }
+ ]
+}

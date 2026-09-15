@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "{\"wall\":\"#65483f\",\"trim\":\"#b4afa0\",\"roofColor\":\"#bdc2bf\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.72,2.72],\"v\":[-2.16,2.16],\"bottom\":0,\"height\":2.65,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.28,\"maxH\":1.2,\"overhang\":0.25},\"plinth\":{\"height\":0.16,\"color\":\"#777467\"},\"faces\":{\"+u\":{\"storeys\":[{\"y\":0.45,\"windows\":{\"type\":\"basement\",\"w\":0.85,\"h\":0.38,\"at\":[0.58],\"trim\":\"#807b70\",\"glass\":\"#303a35\",\"mullions\":false,\"interior\":false}}]},\"-u\":{\"doors\":[{\"at\":0.5,\"type\":\"rect\",\"w\":0.9,\"h\":2.05,\"color\":\"#55443a\",\"surround\":\"#b4afa0\",\"surroundW\":0.09,\"steps\":1}]},\"+v\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.7,\"h\":1.05,\"at\":[0.72],\"trim\":\"#b4afa0\",\"glass\":\"#566765\"}}]},\"-v\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.7,\"h\":1.05,\"at\":[0.5],\"trim\":\"#b4afa0\",\"glass\":\"#566765\"}}]}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact, single-storey rectangular practice cabin.",
+  "Simple pitched roof with pale silver finish and modest overhangs.",
+  "Dark reddish-brown walls with restrained light trim.",
+  "Sparse openings and a small low opening on the road-facing end."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Trees obscure much of the studio; roof ridge and opening details are approximate.",
+  "No entrance is clearly visible. The single modeled entrance on -u is a conjectural placement, not established by the nearest road.",
+  "Concealed elevations use simplified window arrangements."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

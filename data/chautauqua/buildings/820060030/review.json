@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The compact one-room gabled form is recognizable and pleasantly simplified, but the dominant wall and roof treatments do not match the reference studio and weaken its identity.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The model has one principal door on +u, the southeast-facing end (145\u00b0), and a window on +v, the southwest wall (235\u00b0). This agrees with the geolocated SV1 oblique view, which faces both +u and +v and shows the small stepped entry on the southeast end with the white-trimmed window on the southwest side. The four-face sheet and actual inventory confirm a single +u portal, with no duplicate principal entrance."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The walls read as red brick, while the reference shows reddish-brown timber/shingle cladding\u2014a characteristic part of the camp-studio appearance.",
+   "fix": "Replace the brick pattern with simplified reddish-brown wood shingles or horizontal timber siding."
+  },
+  {
+   "severity": "major",
+   "problem": "The roof is rendered as gray rectangular shingles, whereas the reference roof is pale, lightly ribbed sheet metal with clean projecting eaves.",
+   "fix": "Use a pale cream or light-gray metal roof with subtle parallel seams and retain the shallow gable and overhangs."
+  },
+  {
+   "severity": "minor",
+   "problem": "The open door appears as an unusually thick bright-white slab and distracts from the otherwise restrained miniature.",
+   "fix": "Simplify it to a thin muted door and frame, preferably shown closed or only slightly ajar above the small steps."
+  }
+ ]
+}

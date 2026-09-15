@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The pale yellow palette, courtyard massing, veranda, and central roof crown suggest the Athenaeum, but the signature lakefront composition is too simplified and visibly malformed to be reliably charming or recognizable.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The principal entry is correctly placed on +v (ENE): geolocated SV3 looks WSW directly toward +v and shows the monumental lake-facing veranda with its central arched entrance and mansard crown. The labeled +v render contains the corresponding central tall arch and the actual inventory records one centered double door there. The separate +u double door agrees with the secondary entrance visible in SV1; no duplicated principal portal is present."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The +v centerpiece is inaccurate: the real rounded mansard crown, circular and tall vertical glazing, monumental arched bay, and split entrance stairs are reduced to a squat boxy tower, crude inset arch, and nearly flat ground-level entry.",
+   "fix": "Rebuild the central bay with a rounded mansard silhouette, circular upper window, strong vertical glazing, tall arched portal, and simplified but clearly legible split stairs."
+  },
+  {
+   "severity": "major",
+   "problem": "The characteristic lakefront veranda and end-pavilion rhythm is weak. The model has sparse columns and a large blank projecting block at the right, rather than the continuous two-storey colonnade, railings, stacked balconies, and pedimented ends shown by SV3 and the appearance photos.",
+   "fix": "Carry a continuous slender two-storey veranda across +v, add bold balcony rails and pedimented end pavilions, and replace the blank block with facade articulation consistent with the opposite end."
+  },
+  {
+   "severity": "minor",
+   "problem": "The remaining elevations read as repetitive generic hotel walls, with flat window grids and little of the dusty-rose cornice, porch, balcony, and trim character visible in SV1 and SV4.",
+   "fix": "Add a restrained miniature-scale hierarchy of cornice bands, porch posts, balcony rails, and varied openings while retaining the coherent buttery-yellow and rose palette."
+  }
+ ]
+}

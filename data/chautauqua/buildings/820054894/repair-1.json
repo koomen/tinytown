@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"de129d9c29710ad1d3c49c9340e541592f219fedbac6c7da57078c8a8b6b0185\",\"operations\":[{\"op\":\"remove\",\"path\":\"/volumes/@studio/faces/-u/doors\"},{\"op\":\"remove\",\"path\":\"/volumes/@studio/faces/-v/storeys\"},{\"op\":\"add\",\"path\":\"/volumes/@studio/faces/-v/doors\",\"value\":[{\"at\":0.82,\"type\":\"rect\",\"w\":0.85,\"h\":2.1,\"y\":0.22,\"color\":\"#e8e8df\",\"surround\":\"#f2eee3\",\"surroundW\":0.09,\"steps\":3}]},{\"op\":\"add\",\"path\":\"/volumes/@studio/faces/-u/storeys\",\"value\":[{\"y\":0.95,\"windows\":{\"type\":\"rect\",\"w\":0.85,\"h\":1.3,\"at\":[0.5],\"trim\":\"#eee9db\",\"glass\":\"#485451\"}}]},{\"op\":\"replace\",\"path\":\"/volumes/@studio/roof/overhang\",\"value\":0.45}]}",
+ "cues": [
+  "Compact brown single-storey cabin",
+  "Shallow pale hipped roof with generous eaves",
+  "White southwest entrance with three steps",
+  "Sparse white-trimmed windows"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Concealed windows remain inferred.",
+  "The catalog exposes no siding or roof-texture selectors; brown shingle siding and standing-seam metal remain material targets, not implemented texture changes."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

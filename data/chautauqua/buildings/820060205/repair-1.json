@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"299d35e69dadba606c9b79e68eb0eadd96aebb506edbe898742fb5117ba1bd1e\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#98664e\"},{\"op\":\"replace\",\"path\":\"/volumes/@studio/roof/pitch\",\"value\":0.29},{\"op\":\"replace\",\"path\":\"/volumes/@studio/faces/+v/storeys/0/windows/glass\",\"value\":\"#574538\"}]}",
+ "cues": [
+  "Long, simple rectangular studio with a modest gable roof.",
+  "Muted russet-brown walls and restrained painted trim.",
+  "Centered dark attic vent on the northwest gable.",
+  "Low rectangular grille beneath the otherwise blank northwest wall."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The principal entrance remains provisionally on -v; no supplied photograph confirms that concealed elevation.",
+  "The supplied component catalog exposes no shingle-wall material or louver component. Wall texture and attic slats remain simplified rather than fully repaired."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1: +v is a blank service gable; the opposite end is concealed"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

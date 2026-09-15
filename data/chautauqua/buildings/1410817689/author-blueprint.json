@@ -1,0 +1,46 @@
+{
+ "wall": "#815044",
+ "trim": "#d2c8ad",
+ "roofColor": "#a69c8e",
+ "volumes": [
+  {
+   "id": "studio",
+   "u": [
+    -2.715,
+    2.715
+   ],
+   "v": [
+    -2.16,
+    2.16
+   ],
+   "bottom": -0.15,
+   "height": 2.45,
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.52,
+    "maxH": 2.2,
+    "overhang": 0.22
+   },
+   "faces": {
+    "+v": {
+     "doors": [
+      {
+       "at": 0.32,
+       "type": "rect",
+       "w": 0.86,
+       "h": 2.05,
+       "color": "#293735",
+       "surround": "#d2c8ad",
+       "surroundW": 0.09
+      }
+     ]
+    },
+    "-v": {},
+    "+u": {},
+    "-u": {}
+   }
+  }
+ ],
+ "details": []
+}

@@ -1,0 +1,45 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"e3c726e2f894b26f0c5eab450d4afec84d669f60a81776dfd88de93bfb93315c\",\"operations\":[{\"op\":\"add\",\"path\":\"/volumes/@main_lower/faces/+v/doors\",\"value\":[{\"at\":0.65,\"w\":1.1,\"h\":2.3,\"y\":0.35,\"color\":\"#535953\",\"surround\":\"#faf4e7\",\"surroundW\":0.14}]},{\"op\":\"replace\",\"path\":\"/volumes/@main_lower/faces/+v/storeys/0/windows/at\",\"value\":[0.16,0.4,0.87]},{\"op\":\"replace\",\"path\":\"/volumes/@main_lower/faces/+v/porches/0/steps\",\"value\":2},{\"op\":\"replace\",\"path\":\"/volumes/@main_upper/faces/+v/porches/0/floorH\",\"value\":3.43},{\"op\":\"replace\",\"path\":\"/volumes/@main_upper/faces/+v/porches/0/height\",\"value\":6.1}]}",
+ "cues": [
+  "Ivory clapboard and warm white trim",
+  "Two-tier open Pratt-facing veranda",
+  "Ground veranda wrapping onto the Miller end",
+  "Dark intersecting gables and paired-window dormer"
+ ],
+ "references_used": [
+  "MAP",
+  "SV2",
+  "SV3",
+  "SV4",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Principal doorway position within +v veranda is approximate; foliage obscures openings.",
+  "Upper porch elevations are set explicitly to separate the stacked decks; renderer treatment of elevated-volume porches requires confirmation.",
+  "The obstructed +u review camera cannot be repaired through the supplied building-component schema.",
+  "SV1 foreground and SV4 left foreground show neighboring structures, not details to copy."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "main_lower",
+   "face": "+v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV3"
+   ],
+   "confidence": "inferred"
+  },
+  {
+   "volume": "main_lower",
+   "face": "-u",
+   "role": "secondary",
+   "evidence": [
+    "MAP",
+    "SV2"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

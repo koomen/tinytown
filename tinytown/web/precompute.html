@@ -1,0 +1,30 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Precompute miniature surfaces</title>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}
+</script>
+<script type="module">
+import { generateSite } from '../../src/site.js';
+import { packSurfaces, surfaceKey, SURFACE_VERSION } from '../../src/surface-assets.js';
+window.precomputeSurfaces = async (url, seed) => {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`Cannot load ${url}`);
+  const site = await response.json(), geometries = new Map();
+  seed = site.seed ?? seed;
+  const start = performance.now();
+  const { prof } = await generateSite(site, seed, {
+    surfacesOnly: true, onSurface: (name, geo) => geometries.set(name, geo),
+  });
+  const packed = packSurfaces(geometries);
+  const raw = await packed.arrayBuffer();
+  const hash = await crypto.subtle.digest('SHA-256', raw);
+  const sha256 = [...new Uint8Array(hash)].map(v => v.toString(16).padStart(2, '0')).join('');
+  const compressed = new Uint8Array(await new Response(packed.stream().pipeThrough(new CompressionStream('gzip'))).arrayBuffer());
+  const strings = [];
+  for (let i = 0; i < compressed.length; i += 32768) strings.push(String.fromCharCode(...compressed.subarray(i, i + 32768)));
+  return { version: SURFACE_VERSION, key: await surfaceKey(site, seed), sha256,
+    rawBytes: raw.byteLength, compressedBytes: compressed.byteLength,
+    buildMs: Math.round(performance.now() - start), prof, base64: btoa(strings.join('')) };
+};
+</script>

@@ -1,0 +1,42 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"8e15c56b4b697f3c47de9c2c28cecf8cd675c1dc4c3b78fcec5c8bdee0d8bdc8\",\"operations\":[{\"op\":\"replace\",\"path\":\"/volumes/@north_entry/faces/-u/porches/0\",\"value\":{\"style\":\"open\",\"at\":0.5,\"w\":13.8,\"d\":4.4,\"height\":7.7,\"floorH\":1.5,\"posts\":4,\"postColor\":\"#ded6c3\",\"roof\":\"gable\",\"pitch\":0.18,\"roofColor\":\"#777c76\",\"railing\":false,\"steps\":10}},{\"op\":\"replace\",\"path\":\"/volumes/@north_entry/faces/-u/doors/0/y\",\"value\":1.5},{\"op\":\"add\",\"path\":\"/volumes/@north_entry/plinth\",\"value\":{\"height\":1.5,\"color\":\"#aaa48f\"}},{\"op\":\"add\",\"path\":\"/volumes/@north_entry/beltCourses\",\"value\":[{\"y\":8.35,\"height\":0.32,\"color\":\"#ded5bf\"},{\"y\":5.65,\"height\":0.16,\"color\":\"#d7ceb9\"}]},{\"op\":\"replace\",\"path\":\"/volumes/@north_entry/cornice/height\",\"value\":0.6},{\"op\":\"add\",\"path\":\"/volumes/@north_entry/faces/-u/storeys/0/windows/frameW\",\"value\":0.13}]}",
+ "cues": [
+  "Raised north portico with a deeper-looking ceremonial stair approach.",
+  "Stronger classical cornice and facade bands.",
+  "Six dark circular openings with substantial pale surrounds.",
+  "Preserved long gray gable and unequal side wings."
+ ],
+ "references_used": [
+  "MAP",
+  "SV2",
+  "SV3",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Integrated porch stairs approximate the broad terraced approach; sculptural pediment relief and ornate column bases remain simplified.",
+  "South and east elevations remain largely concealed by trees."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "north_entry",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV2"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "west_wing",
+   "face": "+v",
+   "role": "secondary",
+   "evidence": [
+    "MAP",
+    "SV3"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

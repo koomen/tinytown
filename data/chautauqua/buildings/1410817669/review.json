@@ -1,0 +1,15 @@
+{
+ "verdict": "repair",
+ "summary": "The miniature has a coherent, charming cabin/studio style: compact one-storey massing, simple gable, pale roof, reddish-brown walls, cream trim, and restrained openings. No major silhouette or rendering defects are apparent, but the principal entrance is not verifiable from the supplied evidence.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The actual model has one principal door on the -v/NE face (55\u00b0). The only located street view approaches from the SW and geometrically faces the +v/SW face; vegetation heavily obscures the building and does not reveal the opposite -v face or establish an entrance. The north-up aerial and map establish footprint orientation but show no readable doorway. Thus the -v placement is neither confirmed nor contradicted; importantly, West Lake Road proximity does not prove that +v is the entrance."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry placement on the -v/NE face remains unsupported, so orientation cannot be approved.",
+   "fix": "Provide a located view or other supplied visual evidence showing the NE face and entrance, then retain or relocate the model\u2019s single principal portal accordingly; do not add a second principal door merely to hedge."
+  }
+ ]
+}

@@ -1,0 +1,355 @@
+{
+ "version": 3,
+ "id": "619932540",
+ "name": "Miller Bell Tower",
+ "location": "Chautauqua Institution, Chautauqua, New York",
+ "address": null,
+ "source_tags": {
+  "height": "21.34",
+  "building": "tower"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 4.464,
+  "depth_v": 4.371,
+  "footprint_uv": [
+   [
+    -2.2,
+    -2.2
+   ],
+   [
+    2.2,
+    -2.2
+   ],
+   [
+    2.2,
+    1.0
+   ],
+   [
+    2.2,
+    2.2
+   ],
+   [
+    -2.2,
+    2.2
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 221,
+    "compass": "SW",
+    "left_bearing": 311,
+    "right_bearing": 131,
+    "nearest_road_outward": {
+     "name": "South Lake Drive",
+     "circular": false,
+     "distance_m": 155.3
+    },
+    "nearest_road_hint": true
+   },
+   "-u": {
+    "bearing": 41,
+    "compass": "NE",
+    "left_bearing": 131,
+    "right_bearing": 311,
+    "nearest_road_outward": null,
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 311,
+    "compass": "NW",
+    "left_bearing": 41,
+    "right_bearing": 221,
+    "nearest_road_outward": null,
+    "nearest_road_hint": false
+   },
+   "-v": {
+    "bearing": 131,
+    "compass": "SE",
+    "left_bearing": 221,
+    "right_bearing": 41,
+    "nearest_road_outward": null,
+    "nearest_road_hint": false
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/619932540/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/619932540/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/619932540/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  },
+  {
+   "id": "WEB1",
+   "kind": "web-image",
+   "path": "miniature/619932540/reference-6.jpg",
+   "caption": "Miller Bell Tower and Pier Building. Official dimensions: 18 feet square, 75 feet high. Brick lower shaft, open columned belfry, open bronze Roman-numeral clock dials on brick, shallow pyramidal roof. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)"
+  },
+  {
+   "id": "WEB2",
+   "kind": "web-image",
+   "path": "miniature/619932540/reference-7.jpg",
+   "caption": "July 2024 elevated closeup: brick Miller Bell Tower, four open arches per belfry face, stone columns, open bronze clock dial, red tile hip roof. Pier Building partly visible below. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)"
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua--20260909-222330-b5994a/research/front_619932540_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2112291,
+    "lon": -79.4622806,
+    "position_xz": [
+     318.22,
+     -205.84
+    ],
+    "position_uv": [
+     16.36,
+     -0.92
+    ],
+    "looking_bearing": 37.0,
+    "looking_compass": "NE",
+    "image_left_bearing": 307.0,
+    "image_right_bearing": 127.0,
+    "target_center_offset_deg": 0.5,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 4,
+    "fov": 55,
+    "tilt": 100,
+    "near_road": {
+     "name": "South Lake Drive",
+     "circular": false,
+     "distance_m": 103.0
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2112291,-79.4622806,401a,55y,37h,100t/data=!3m7!1e1!3m5!1sJFkhtCiNdIbBTdzVaNmUAA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DJFkhtCiNdIbBTdzVaNmUAA%26yaw%3D37!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "JFkhtCiNdIbBTdzVaNmUAA",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/619932540/reference-1.jpg",
+   "sha256": "0bb35745b9043588e919c2333f162f0196ff51e5da9a338612fcbf8b94ddcf6b"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua--20260909-222330-b5994a/research/front_619932540_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2113699,
+    "lon": -79.4620812,
+    "position_xz": [
+     334.66,
+     -221.52
+    ],
+    "position_uv": [
+     -6.25,
+     -3.17
+    ],
+    "looking_bearing": 259.0,
+    "looking_compass": "W",
+    "image_left_bearing": 169.0,
+    "image_right_bearing": 349.0,
+    "target_center_offset_deg": -11.4,
+    "geometrically_facing_camera": [
+     "-u",
+     "-v"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 38,
+    "fov": 80,
+    "tilt": 100,
+    "near_road": {
+     "name": "South Lake Drive",
+     "circular": false,
+     "distance_m": 122.8
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2113699,-79.4620812,401a,80y,259h,100t/data=!3m7!1e1!3m5!1sQKCgRalhbWBTQBY6HAzIfA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DQKCgRalhbWBTQBY6HAzIfA%26yaw%3D259!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "QKCgRalhbWBTQBY6HAzIfA",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/619932540/reference-2.jpg",
+   "sha256": "92b05f539e2ca97191cf0d55fcd39d01623cca4572d271da519e95e558f382cc"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua--20260909-222330-b5994a/research/front_619932540_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2113916,
+    "lon": -79.4622187,
+    "position_xz": [
+     323.33,
+     -223.93
+    ],
+    "position_uv": [
+     -0.69,
+     7.0
+    ],
+    "looking_bearing": 139.0,
+    "looking_compass": "SE",
+    "image_left_bearing": 49.0,
+    "image_right_bearing": 229.0,
+    "target_center_offset_deg": -2.7,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 8,
+    "fov": 80,
+    "tilt": 100,
+    "near_road": {
+     "name": "South Lake Drive",
+     "circular": false,
+     "distance_m": 112.6
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2113916,-79.4622187,402a,80y,139h,100t/data=!3m7!1e1!3m5!1sGOVAgzYB21WUiFnkoWmAEQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DGOVAgzYB21WUiFnkoWmAEQ%26yaw%3D139!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "GOVAgzYB21WUiFnkoWmAEQ",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/619932540/reference-3.jpg",
+   "sha256": "22f4b3bdf50ec0d2cfb8c9b76b750b641aee53d1c7c56149ad9ebef16698998b"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua--20260909-222330-b5994a/research/front_619932540_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2112615,
+    "lon": -79.461973,
+    "position_xz": [
+     343.59,
+     -209.45
+    ],
+    "position_uv": [
+     -2.92,
+     -17.8
+    ],
+    "looking_bearing": 300.0,
+    "looking_compass": "WNW",
+    "image_left_bearing": 210.0,
+    "image_right_bearing": 30.0,
+    "target_center_offset_deg": 1.4,
+    "geometrically_facing_camera": [
+     "-u",
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 11,
+    "fov": 55,
+    "tilt": 99,
+    "near_road": {
+     "name": "South Lake Drive",
+     "circular": false,
+     "distance_m": 128.5
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2112615,-79.461973,401a,55y,300h,99t/data=!3m7!1e1!3m5!1sOo-LEdAs-23zhpEqe5qngQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9%26panoid%3DOo-LEdAs-23zhpEqe5qngQ%26yaw%3D300!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "Oo-LEdAs-23zhpEqe5qngQ",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/619932540/reference-4.jpg",
+   "sha256": "ca158aa849fcf6d3238ac5ad4d8d88985f7ac7bc3dd54fdccf28f408c620da76"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua--20260909-222330-b5994a/research/aerial_619932540.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/619932540/reference-5.jpg",
+   "sha256": "3653c1727bc48a56fa849a566fb7560b7c35576dc37d6027d30bfdf3380029e9"
+  },
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2017/04/Bell_Tower_Pier_building.jpg",
+   "page_url": "https://www.chq.org/about/miller-bell-tower/",
+   "title": "Miller Bell Tower and Pier Building. Official dimensions: 18 feet square, 75 feet high. Brick lower shaft, open columned belfry, open bronze Roman-numeral clock dials on brick, shallow pyramidal roof.",
+   "provider": "Chautauqua Institution",
+   "id": "WEB1",
+   "source_path": "data/chautauqua--20260909-222330-b5994a/miniature/619932540/web-original-ac65d042a138077f",
+   "kind": "web-image",
+   "camera": {
+    "status": "unlocated",
+    "reason": "Web photo has no verified capture pose."
+   },
+   "caption": "Miller Bell Tower and Pier Building. Official dimensions: 18 feet square, 75 feet high. Brick lower shaft, open columned belfry, open bronze Roman-numeral clock dials on brick, shallow pyramidal roof. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)",
+   "path": "miniature/619932540/reference-6.jpg",
+   "sha256": "ac65d042a138077f6709aac326ec7dc3fcbf922150925b6b74346fe2b3c4987b"
+  },
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2025/02/071824_EveningBelltower_Hotel_Drone_DM_03.jpg",
+   "page_url": "https://www.chq.org/community-portal/",
+   "title": "July 2024 elevated closeup: brick Miller Bell Tower, four open arches per belfry face, stone columns, open bronze clock dial, red tile hip roof. Pier Building partly visible below.",
+   "provider": "Chautauqua Institution",
+   "id": "WEB2",
+   "source_path": "data/chautauqua--20260909-222330-b5994a/miniature/619932540/web-original-ca644de8dc4a4028",
+   "kind": "web-image",
+   "camera": {
+    "status": "unlocated",
+    "reason": "Web photo has no verified capture pose."
+   },
+   "caption": "July 2024 elevated closeup: brick Miller Bell Tower, four open arches per belfry face, stone columns, open bronze clock dial, red tile hip roof. Pier Building partly visible below. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)",
+   "path": "miniature/619932540/reference-7.jpg",
+   "sha256": "ca644de8dc4a4028161dfec103f61a2ff28e4d524765bf74fbf3d766bc02bfa9"
+  }
+ ],
+ "search_query": "Miller Bell Tower Chautauqua Institution, Chautauqua, New York building exterior",
+ "search_candidates": [
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2017/04/Bell_Tower_Pier_building.jpg",
+   "page_url": "https://www.chq.org/about/miller-bell-tower/",
+   "title": "Miller Bell Tower and Pier Building. Official dimensions: 18 feet square, 75 feet high. Brick lower shaft, open columned belfry, open bronze Roman-numeral clock dials on brick, shallow pyramidal roof.",
+   "provider": "Chautauqua Institution"
+  },
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2025/02/071824_EveningBelltower_Hotel_Drone_DM_03.jpg",
+   "page_url": "https://www.chq.org/community-portal/",
+   "title": "July 2024 elevated closeup: brick Miller Bell Tower, four open arches per belfry face, stone columns, open bronze clock dial, red tile hip roof. Pier Building partly visible below.",
+   "provider": "Chautauqua Institution"
+  }
+ ],
+ "warnings": []
+}

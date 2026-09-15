@@ -1,0 +1,71 @@
+{
+  "_comment": "37 North Avenue: one-storey beige vinyl ranch set 40 m back from the road behind a big tree. T-plan: hip-roofed bar along the NNE (-v) side, gabled stem toward the SSW (+v) with two arched-head windows in its gable end, small gabled entry at the inside corner. +u = ESE (road), +v = SSW.",
+  "wall": "#d6cdb5",
+  "trim": "#f2efe6",
+  "roofColor": "#4d4f52",
+  "volumes": [
+    {
+      "id": "bar",
+      "u": [-13.2, 12.4],
+      "v": [-8.2, 1.2],
+      "height": 2.8,
+      "roof": { "type": "hip", "pitch": 0.4, "maxH": 2.3, "overhang": 0.45 },
+      "faces": {
+        "+u": {
+          "storeys": [
+            { "y": 0.9, "windows": { "type": "rect", "w": 1.7, "h": 1.3, "at": [0.35] } },
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.0, "h": 1.2, "at": [0.74] } }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.1, "h": 1.2, "at": [0.12, 0.32, 0.55, 0.8] } }
+          ]
+        },
+        "-u": {
+          "storeys": [
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.1, "h": 1.2, "at": [0.3, 0.7] } }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.1, "h": 1.2, "at": [0.12, 0.88] } }
+          ],
+          "porches": [
+            { "at": 0.745, "w": 1.9, "d": 1.4, "height": 2.4, "pitch": 0.6,
+              "wall": "#d6cdb5", "roofColor": "#4d4f52",
+              "door": { "at": 0.5, "type": "rect", "w": 0.95, "h": 2.05, "color": "#3b4a5c", "surround": "#f2efe6", "surroundW": 0.1, "steps": 2, "lamp": true } }
+          ]
+        }
+      }
+    },
+    {
+      "id": "stem",
+      "u": [-6.0, 4.3],
+      "v": [1.2, 8.2],
+      "height": 2.8,
+      "roof": { "type": "gable", "ridge": "v", "pitch": 0.3, "maxH": 2.0, "overhang": 0.4 },
+      "faces": {
+        "+v": {
+          "storeys": [
+            { "y": 0.9, "windows": { "type": "arch", "w": 1.0, "h": 1.5, "at": [0.3, 0.66] } }
+          ]
+        },
+        "+u": {
+          "storeys": [
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.4, "h": 1.2, "at": [0.45] } }
+          ]
+        },
+        "-u": {
+          "storeys": [
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.1, "h": 1.2, "at": [0.5] } }
+          ]
+        }
+      }
+    }
+  ],
+  "details": [
+    { "type": "bush", "u": 13.6, "v": -5.5 },
+    { "type": "bush", "u": 13.6, "v": -1.5 }
+  ]
+}

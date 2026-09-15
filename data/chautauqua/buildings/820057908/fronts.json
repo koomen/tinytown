@@ -1,0 +1,121 @@
+{
+ "id": "820057908",
+ "addr": "21 Foster Avenue",
+ "name": "Smith Wilkes Hall",
+ "frame": "190891ee1e828b3481fd7b1f5f3ac9532906c65dfdcf68363724732e3f04c050",
+ "faces": {
+  "+u": {
+   "bearing": 156,
+   "width": 25.4,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_820057908_+u.png",
+     "pano": "OMHl-uspwOukhcRkyOxzBg",
+     "dist": 12.3,
+     "off_axis_deg": 13,
+     "fov": 80,
+     "tilt": 93,
+     "heading": 323,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2074303,-79.4634617,417a,80y,323h,93t/data=!3m7!1e1!3m5!1sOMHl-uspwOukhcRkyOxzBg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DOMHl-uspwOukhcRkyOxzBg%26yaw%3D323!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2074303,
+      "lon": -79.4634617
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 336,
+   "width": 25.4,
+   "road": true,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_820057908_-u.png",
+     "pano": "aR6Pzuq3JbJyY4WnGMWKgA",
+     "dist": 31.4,
+     "off_axis_deg": 30,
+     "fov": 56,
+     "tilt": 91,
+     "heading": 186,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2080076,-79.4636371,415a,56y,186h,91t/data=!3m7!1e1!3m5!1saR6Pzuq3JbJyY4WnGMWKgA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DaR6Pzuq3JbJyY4WnGMWKgA%26yaw%3D186!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2080076,
+      "lon": -79.4636371
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 246,
+   "width": 25.3,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_820057908_+v.png",
+     "pano": "khG6IApiSsS33jQn1J7dTA",
+     "dist": 33.6,
+     "off_axis_deg": 7,
+     "fov": 55,
+     "tilt": 91,
+     "heading": 59,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.207421,-79.4641032,419a,55y,59h,91t/data=!3m7!1e1!3m5!1skhG6IApiSsS33jQn1J7dTA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DkhG6IApiSsS33jQn1J7dTA%26yaw%3D59!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.207421,
+      "lon": -79.4641032
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 66,
+   "width": 25.3,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_820057908_-v.png",
+     "pano": "tjZpAzJ2Sdg50b-mRBgQ6w",
+     "dist": 17.5,
+     "off_axis_deg": 17,
+     "fov": 80,
+     "tilt": 92,
+     "heading": 263,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2076882,-79.4632618,413a,80y,263h,92t/data=!3m7!1e1!3m5!1stjZpAzJ2Sdg50b-mRBgQ6w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3DtjZpAzJ2Sdg50b-mRBgQ6w%26yaw%3D263!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2076882,
+      "lon": -79.4632618
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-10 04:41"
+}

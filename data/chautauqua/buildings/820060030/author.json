@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "{\"wall\":\"#975f4d\",\"trim\":\"#e9e5d8\",\"roofColor\":\"#c8c5ad\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.2,2.2],\"v\":[-2.1,2.1],\"bottom\":0,\"height\":2.8,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.24,\"maxH\":1.05,\"overhang\":0.25},\"plinth\":{\"height\":0.25,\"color\":\"#57534a\"},\"faces\":{\"+v\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.85,\"h\":1.2,\"at\":[0.68],\"trim\":\"#e9e5d8\",\"glass\":\"#506263\"}}]},\"+u\":{\"doors\":[{\"at\":0.3,\"type\":\"rect\",\"w\":0.85,\"h\":2.15,\"color\":\"#e4e3d9\",\"surround\":\"#eeeadd\",\"surroundW\":0.1,\"steps\":2}]},\"-v\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.85,\"h\":1.2,\"at\":[0.5],\"trim\":\"#e9e5d8\",\"glass\":\"#506263\"}}]},\"-u\":{}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact reddish-brown timber studio",
+  "Pale, shallow gabled roof with projecting eaves",
+  "Single white-trimmed window on the southwest wall",
+  "Southeast end entry with small steps"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The target is interpreted as the central midground studio, not the cropped foreground cabin.",
+  "Southeast entry placement is inferred from the narrow visible end and steps; exact door position is approximate.",
+  "Concealed elevations and overall height are simplified."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

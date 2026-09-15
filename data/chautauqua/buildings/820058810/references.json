@@ -1,0 +1,412 @@
+{
+ "version": 3,
+ "id": "820058810",
+ "name": "Athenaeum Hotel",
+ "location": "Chautauqua Institution, Chautauqua, New York",
+ "address": "10 Janes Avenue",
+ "source_tags": {
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 64.577,
+  "depth_v": 56.031,
+  "footprint_uv": [
+   [
+    -31.7,
+    -5.8
+   ],
+   [
+    -32.3,
+    -15.3
+   ],
+   [
+    -29.2,
+    -15.3
+   ],
+   [
+    -29.9,
+    -28.0
+   ],
+   [
+    32.3,
+    -28.0
+   ],
+   [
+    32.1,
+    -5.7
+   ],
+   [
+    31.9,
+    6.0
+   ],
+   [
+    31.3,
+    6.1
+   ],
+   [
+    31.1,
+    19.4
+   ],
+   [
+    19.9,
+    19.3
+   ],
+   [
+    19.8,
+    25.7
+   ],
+   [
+    -18.1,
+    28.0
+   ],
+   [
+    -24.5,
+    26.5
+   ],
+   [
+    -27.3,
+    24.5
+   ],
+   [
+    -27.7,
+    16.9
+   ],
+   [
+    -27.7,
+    7.9
+   ],
+   [
+    -28.2,
+    -6.0
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 338,
+    "compass": "NNW",
+    "left_bearing": 68,
+    "right_bearing": 248,
+    "nearest_road_outward": {
+     "name": "South Terrace Avenue",
+     "circular": false,
+     "distance_m": 47.6
+    },
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 158,
+    "compass": "SSE",
+    "left_bearing": 248,
+    "right_bearing": 68,
+    "nearest_road_outward": {
+     "name": "Janes Avenue",
+     "circular": false,
+     "distance_m": 2.2
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 68,
+    "compass": "ENE",
+    "left_bearing": 158,
+    "right_bearing": 338,
+    "nearest_road_outward": {
+     "name": "Promenade",
+     "circular": false,
+     "distance_m": 34.2
+    },
+    "nearest_road_hint": false
+   },
+   "-v": {
+    "bearing": 248,
+    "compass": "WSW",
+    "left_bearing": 338,
+    "right_bearing": 158,
+    "nearest_road_outward": {
+     "name": "South Terrace Avenue",
+     "circular": false,
+     "distance_m": 6.6
+    },
+    "nearest_road_hint": true
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/820058810/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/820058810/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/820058810/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  },
+  {
+   "id": "WEB1",
+   "kind": "web-image",
+   "path": "miniature/820058810/reference-6.jpg",
+   "caption": "Athenaeum Hotel: lake-facing yellow facade, tall veranda columns, central rounded mansard tower and split stairs. Unlocated photo: corroborate side with map and Street View. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)"
+  },
+  {
+   "id": "WEB2",
+   "kind": "web-image",
+   "path": "miniature/820058810/reference-7.jpg",
+   "caption": "Athenaeum Hotel: oblique view of lake-facing veranda, double-height center opening and central tower (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)"
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua--20260909-215503-9a84fd/research/front_820058810_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2087421,
+    "lon": -79.4636776,
+    "position_xz": [
+     203.04,
+     71.01
+    ],
+    "position_uv": [
+     62.49,
+     -6.86
+    ],
+    "looking_bearing": 145.0,
+    "looking_compass": "SE",
+    "image_left_bearing": 55.0,
+    "image_right_bearing": 235.0,
+    "target_center_offset_deg": 6.4,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 13,
+    "fov": 80,
+    "tilt": 91,
+    "near_road": {
+     "name": "South Terrace Avenue",
+     "circular": false,
+     "distance_m": 8.9
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2087421,-79.4636776,409a,80y,145h,91t/data=!3m7!1e1!3m5!1sBrRLtIVu6VVDGpZ5Do0j0A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DBrRLtIVu6VVDGpZ5Do0j0A%26yaw%3D145!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "BrRLtIVu6VVDGpZ5Do0j0A",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820058810/reference-1.jpg",
+   "sha256": "91b628cd92374c6dd11cf36db588983879ae70c43db65a1034a739d14bdf5ebf"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua--20260909-215503-9a84fd/research/front_820058810_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2076423,
+    "lon": -79.4631383,
+    "position_xz": [
+     247.5,
+     193.44
+    ],
+    "position_uv": [
+     -67.66,
+     -12.17
+    ],
+    "looking_bearing": 357.0,
+    "looking_compass": "N",
+    "image_left_bearing": 267.0,
+    "image_right_bearing": 87.0,
+    "target_center_offset_deg": -9.1,
+    "geometrically_facing_camera": [
+     "-u"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 19,
+    "fov": 80,
+    "tilt": 91,
+    "near_road": {
+     "name": "Fletcher Avenue",
+     "circular": false,
+     "distance_m": 0.8
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2076423,-79.4631383,413a,80y,357h,91t/data=!3m7!1e1!3m5!1sjQv5Zq2xmYCxYSjlnAHh9A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DjQv5Zq2xmYCxYSjlnAHh9A%26yaw%3D357!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "jQv5Zq2xmYCxYSjlnAHh9A",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820058810/reference-2.jpg",
+   "sha256": "6f6850f7512ca8f21c685636d2da112443dbfac5b8b3ac2e6ccea25b242c408e"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua--20260909-215503-9a84fd/research/front_820058810_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.208463,
+    "lon": -79.4625879,
+    "position_xz": [
+     292.89,
+     102.08
+    ],
+    "position_uv": [
+     -0.35,
+     64.48
+    ],
+    "looking_bearing": 248.0,
+    "looking_compass": "WSW",
+    "image_left_bearing": 158.0,
+    "image_right_bearing": 338.0,
+    "target_center_offset_deg": 0.0,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 1,
+    "fov": 80,
+    "tilt": 91,
+    "near_road": {
+     "name": "Promenade",
+     "circular": false,
+     "distance_m": 2.2
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.208463,-79.4625879,404a,80y,248h,91t/data=!3m7!1e1!3m5!1sMomtALs2Tx1QEXdzRNGbsA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DMomtALs2Tx1QEXdzRNGbsA%26yaw%3D248!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "MomtALs2Tx1QEXdzRNGbsA",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820058810/reference-3.jpg",
+   "sha256": "89d0d8e61b2df404a18e545fb0cf0d3ac431a1d52f7c4c10fb81c4eac7bdb000"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua--20260909-215503-9a84fd/research/front_820058810_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.208133,
+    "lon": -79.4641855,
+    "position_xz": [
+     161.16,
+     138.82
+    ],
+    "position_uv": [
+     15.65,
+     -71.33
+    ],
+    "looking_bearing": 88.0,
+    "looking_compass": "E",
+    "image_left_bearing": 358.0,
+    "image_right_bearing": 178.0,
+    "target_center_offset_deg": -7.9,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 20,
+    "fov": 80,
+    "tilt": 90,
+    "near_road": {
+     "name": "Palestine Avenue",
+     "circular": false,
+     "distance_m": 2.2
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.208133,-79.4641855,417a,80y,88h,90t/data=!3m7!1e1!3m5!1seZNOs1fSDYL7s1bTh1o-zw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DeZNOs1fSDYL7s1bTh1o-zw%26yaw%3D88!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "eZNOs1fSDYL7s1bTh1o-zw",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820058810/reference-4.jpg",
+   "sha256": "53f5a8c614b224a39a45576feb499008cbc7977762006ac9503716a8c44c4948"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua--20260909-215503-9a84fd/research/aerial_820058810.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/820058810/reference-5.jpg",
+   "sha256": "86e9614b056d176635e250de9755b6de61f1bae707f5e08e5dd361ad6b4f1a2f"
+  },
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2016/01/chautauqua_ds_Hotel3.jpg",
+   "page_url": "https://www.chq.org/visit/accommodations/athenaeum-hotel/",
+   "title": "Athenaeum Hotel: lake-facing yellow facade, tall veranda columns, central rounded mansard tower and split stairs. Unlocated photo: corroborate side with map and Street View.",
+   "provider": "Chautauqua Institution",
+   "id": "WEB1",
+   "source_path": "data/chautauqua--20260909-215503-9a84fd/miniature/820058810/web-original-bf8b20f87bd24bb4",
+   "kind": "web-image",
+   "camera": {
+    "status": "unlocated",
+    "reason": "Web photo has no verified capture pose."
+   },
+   "caption": "Athenaeum Hotel: lake-facing yellow facade, tall veranda columns, central rounded mansard tower and split stairs. Unlocated photo: corroborate side with map and Street View. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)",
+   "path": "miniature/820058810/reference-6.jpg",
+   "sha256": "bf8b20f87bd24bb4c2753d2bdadbbced3ef3197360054ee2e0664a5baa7380de"
+  },
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2021/05/chautauqua_ds_Hotel5.jpg",
+   "page_url": "https://www.chq.org/visit/accommodations/athenaeum-hotel/",
+   "title": "Athenaeum Hotel: oblique view of lake-facing veranda, double-height center opening and central tower",
+   "provider": "Chautauqua Institution",
+   "id": "WEB2",
+   "source_path": "data/chautauqua--20260909-215503-9a84fd/miniature/820058810/web-original-1835660d8711b7e7",
+   "kind": "web-image",
+   "camera": {
+    "status": "unlocated",
+    "reason": "Web photo has no verified capture pose."
+   },
+   "caption": "Athenaeum Hotel: oblique view of lake-facing veranda, double-height center opening and central tower (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)",
+   "path": "miniature/820058810/reference-7.jpg",
+   "sha256": "1835660d8711b7e7adc63e689ccd9191de6dd4c03e2ec3ff286b637f7c05c7bd"
+  }
+ ],
+ "search_query": "Athenaeum Hotel Chautauqua Institution, Chautauqua, New York building exterior",
+ "search_candidates": [
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2016/01/chautauqua_ds_Hotel3.jpg",
+   "page_url": "https://www.chq.org/visit/accommodations/athenaeum-hotel/",
+   "title": "Athenaeum Hotel: lake-facing yellow facade, tall veranda columns, central rounded mansard tower and split stairs. Unlocated photo: corroborate side with map and Street View.",
+   "provider": "Chautauqua Institution"
+  },
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2021/05/chautauqua_ds_Hotel5.jpg",
+   "page_url": "https://www.chq.org/visit/accommodations/athenaeum-hotel/",
+   "title": "Athenaeum Hotel: oblique view of lake-facing veranda, double-height center opening and central tower",
+   "provider": "Chautauqua Institution"
+  }
+ ],
+ "warnings": []
+}

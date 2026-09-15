@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The compact freestanding cabin, gabled silhouette, pale roof, brown walls, sparse openings, and raised dark base read coherently, but the model substitutes suburban brick-and-shingle finishes for the reference cabin\u2019s simple wood-clad, metal-roof character. Principal-entry placement is not verified.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The only door inventory contains one principal portal on +u (NNW, toward Hurst Avenue). SV1 is geolocated southeast of the building and looks northwest/inward at +u, but the relevant facade is obscured or insufficiently resolved by the tree and surrounding cabins; it does not visibly confirm a door there. The aerial establishes the roof footprint only. The four-face sheet and inventory agree with each other, but they are model evidence, not source confirmation."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry orientation remains unsupported by visible reference evidence.",
+   "fix": "Obtain or provide a source view that clearly shows the entrance face, then retain or relocate the single door accordingly; do not infer +u merely from Hurst Avenue being nearest."
+  },
+  {
+   "severity": "major",
+   "problem": "The walls are rendered as brick, whereas the street reference shows muted brown wood shingles or siding, a defining camp-cabin feature.",
+   "fix": "Replace the brick pattern with simplified brown shingle or horizontal wood cladding while preserving the pale trim and dark raised base."
+  },
+  {
+   "severity": "minor",
+   "problem": "The roof reads as thick residential shingles rather than the light ribbed metal roof visible in SV1.",
+   "fix": "Use a smoother pale-gray metal treatment with subtle seams and modest overhangs."
+  }
+ ]
+}

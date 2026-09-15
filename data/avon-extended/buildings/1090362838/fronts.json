@@ -1,0 +1,144 @@
+{
+ "id": "1090362838",
+ "addr": null,
+ "name": null,
+ "faces": {
+  "+u": {
+   "bearing": 196,
+   "width": 19.9,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_1090362838_+u.png",
+     "pano": "yn6rK8Vs8yKYzKTopnL-EQ",
+     "dist": 27.1,
+     "off_axis_deg": 55,
+     "fov": 55,
+     "tilt": 95,
+     "heading": 321,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9106431,-77.7466675,197a,55y,321h,95t/data=!3m7!1e1!3m5!1syn6rK8Vs8yKYzKTopnL-EQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3Dyn6rK8Vs8yKYzKTopnL-EQ%26yaw%3D321!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+     "face": "+u",
+     "file": "front_1090362838_+u_2.png",
+     "pano": "6yfs2E24mtO6R3-1eeVO7Q",
+     "dist": 34.0,
+     "off_axis_deg": 41,
+     "fov": 55,
+     "tilt": 94,
+     "heading": 335,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.910555,-77.7467,197a,55y,335h,94t/data=!3m7!1e1!3m5!1s6yfs2E24mtO6R3-1eeVO7Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4%26panoid%3D6yfs2E24mtO6R3-1eeVO7Q%26yaw%3D335!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+     "face": "+u",
+     "file": "front_1090362838_+u_3.png",
+     "pano": "GdrUJC1IdH74WjrHBxjQgg",
+     "dist": 42.3,
+     "off_axis_deg": 32,
+     "fov": 55,
+     "tilt": 93,
+     "heading": 344,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9104671,-77.7467317,196a,55y,344h,93t/data=!3m7!1e1!3m5!1sGdrUJC1IdH74WjrHBxjQgg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DGdrUJC1IdH74WjrHBxjQgg%26yaw%3D344!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  },
+  "-u": {
+   "bearing": 16,
+   "width": 19.9,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_1090362838_-u.png",
+     "pano": "Zx4miWE6hdf5EOwNdfpiMw",
+     "dist": 29.8,
+     "off_axis_deg": 46,
+     "fov": 55,
+     "tilt": 94,
+     "heading": 242,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.911078,-77.7465078,198a,55y,242h,94t/data=!3m7!1e1!3m5!1sZx4miWE6hdf5EOwNdfpiMw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4%26panoid%3DZx4miWE6hdf5EOwNdfpiMw%26yaw%3D242!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+     "face": "-u",
+     "file": "front_1090362838_-u_2.png",
+     "pano": "SVUHDkNgl9yN_mtxBMQeZg",
+     "dist": 37.1,
+     "off_axis_deg": 35,
+     "fov": 55,
+     "tilt": 93,
+     "heading": 231,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9111626,-77.7464783,198a,55y,231h,93t/data=!3m7!1e1!3m5!1sSVUHDkNgl9yN_mtxBMQeZg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DSVUHDkNgl9yN_mtxBMQeZg%26yaw%3D231!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  },
+  "+v": {
+   "bearing": 286,
+   "width": 13.9,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_1090362838_+v.png",
+     "pano": "GKXdNIYzPsto3R48_Kx4dQ",
+     "dist": 32.0,
+     "off_axis_deg": 175,
+     "fov": 55,
+     "tilt": 94,
+     "heading": 290,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9108159,-77.7466039,197a,55y,290h,94t/data=!3m7!1e1!3m5!1sGKXdNIYzPsto3R48_Kx4dQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4%26panoid%3DGKXdNIYzPsto3R48_Kx4dQ%26yaw%3D290!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  },
+  "-v": {
+   "bearing": 106,
+   "width": 13.9,
+   "road": true,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_1090362838_-v.png",
+     "pano": "GKXdNIYzPsto3R48_Kx4dQ",
+     "dist": 12.2,
+     "off_axis_deg": 12,
+     "fov": 71,
+     "tilt": 100,
+     "heading": 298,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9108159,-77.7466039,197a,71y,298h,100t/data=!3m7!1e1!3m5!1sGKXdNIYzPsto3R48_Kx4dQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DGKXdNIYzPsto3R48_Kx4dQ%26yaw%3D298!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+     "face": "-v",
+     "file": "front_1090362838_-v_2.png",
+     "pano": "vrxTvoit3j-RRt-3sd8AGw",
+     "dist": 27.7,
+     "off_axis_deg": 18,
+     "fov": 55,
+     "tilt": 94,
+     "heading": 304,
+     "date": "Aug 2021",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9107292,-77.7464534,197a,55y,304h,94t/data=!3m7!1e1!3m5!1svrxTvoit3j-RRt-3sd8AGw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4%26panoid%3DvrxTvoit3j-RRt-3sd8AGw%26yaw%3D304!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  }
+ },
+ "captured": "2026-09-03 00:08"
+}

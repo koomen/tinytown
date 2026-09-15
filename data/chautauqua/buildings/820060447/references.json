@@ -1,0 +1,300 @@
+{
+ "version": 3,
+ "id": "820060447",
+ "name": "Hall of Philosophy",
+ "location": "Chautauqua Institution New York",
+ "address": null,
+ "source_tags": {
+  "amenity": "theatre",
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 3,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 28.572,
+  "depth_v": 18.703,
+  "footprint_uv": [
+   [
+    -14.3,
+    -9.4
+   ],
+   [
+    14.2,
+    -9.3
+   ],
+   [
+    14.3,
+    0.0
+   ],
+   [
+    14.3,
+    9.4
+   ],
+   [
+    -14.2,
+    9.2
+   ],
+   [
+    -14.2,
+    5.4
+   ],
+   [
+    -14.3,
+    -2.6
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 81,
+    "compass": "E",
+    "left_bearing": 171,
+    "right_bearing": 351,
+    "nearest_road_outward": {
+     "name": "Fletcher Avenue",
+     "circular": false,
+     "distance_m": 52.6
+    },
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 261,
+    "compass": "W",
+    "left_bearing": 351,
+    "right_bearing": 171,
+    "nearest_road_outward": {
+     "name": "Clark Brick Walk",
+     "circular": false,
+     "distance_m": 16.2
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 171,
+    "compass": "S",
+    "left_bearing": 261,
+    "right_bearing": 81,
+    "nearest_road_outward": {
+     "name": "Haven Avenue",
+     "circular": false,
+     "distance_m": 7.0
+    },
+    "nearest_road_hint": false
+   },
+   "-v": {
+    "bearing": 351,
+    "compass": "N",
+    "left_bearing": 81,
+    "right_bearing": 261,
+    "nearest_road_outward": {
+     "name": "Cookman Avenue",
+     "circular": false,
+     "distance_m": 6.1
+    },
+    "nearest_road_hint": true
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/820060447/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/820060447/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/820060447/reference-4.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  },
+  {
+   "id": "WEB1",
+   "kind": "web-image",
+   "path": "miniature/820060447/reference-5.jpg",
+   "caption": "Hall of Philosophy: white round classical columns, exposed brown timber gable trusses, elevated terrace and grand stairs. Open sides and ends, no enclosed walls or pediment. Unlocated public photo: confirm face direction with geolocated street views. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)"
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820060447_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2064996,
+    "lon": -79.4635889,
+    "position_xz": [
+     210.35,
+     320.65
+    ],
+    "position_uv": [
+     -28.12,
+     -3.45
+    ],
+    "looking_bearing": 95.0,
+    "looking_compass": "E",
+    "image_left_bearing": 5.0,
+    "image_right_bearing": 185.0,
+    "target_center_offset_deg": -6.8,
+    "geometrically_facing_camera": [
+     "-u"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 14,
+    "fov": 79,
+    "tilt": 93,
+    "near_road": {
+     "name": "Clark Brick Walk",
+     "circular": false,
+     "distance_m": 2.3
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2064996,-79.4635889,419a,79y,95h,93t/data=!3m7!1e1!3m5!1sYRG0IWzQF-P72a-krmOADw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DYRG0IWzQF-P72a-krmOADw%26yaw%3D95!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "YRG0IWzQF-P72a-krmOADw",
+   "additional_view": false,
+   "caption": "SV1: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820060447/reference-1.jpg",
+   "sha256": "b422ebbc8cdc5d38dea322a5808e03a82118a82b9648051b6ab68e62718b22dd"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820060447_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2063595,
+    "lon": -79.4632031,
+    "position_xz": [
+     242.16,
+     336.24
+    ],
+    "position_uv": [
+     0.94,
+     16.82
+    ],
+    "looking_bearing": 344.0,
+    "looking_compass": "NNW",
+    "image_left_bearing": 254.0,
+    "image_right_bearing": 74.0,
+    "target_center_offset_deg": 4.0,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 7,
+    "fov": 80,
+    "tilt": 96,
+    "near_road": {
+     "name": "Haven Avenue",
+     "circular": false,
+     "distance_m": 0.4
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2063595,-79.4632031,419a,80y,344h,96t/data=!3m7!1e1!3m5!1s12PhJnXkqImy_g7vfPhVKw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3D12PhJnXkqImy_g7vfPhVKw%26yaw%3D344!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "12PhJnXkqImy_g7vfPhVKw",
+   "additional_view": false,
+   "caption": "SV2: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820060447/reference-2.jpg",
+   "sha256": "0f7001d80867aa8d77e5b881dc4fa25ca7eb52c216e05e53b32082807d5e8c17"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820060447_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2066915,
+    "lon": -79.4632,
+    "position_xz": [
+     242.42,
+     299.28
+    ],
+    "position_uv": [
+     6.83,
+     -19.67
+    ],
+    "looking_bearing": 205.0,
+    "looking_compass": "SSW",
+    "image_left_bearing": 115.0,
+    "image_right_bearing": 295.0,
+    "target_center_offset_deg": -14.6,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 33,
+    "fov": 80,
+    "tilt": 93,
+    "near_road": {
+     "name": "Cookman Avenue",
+     "circular": false,
+     "distance_m": 2.1
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2066915,-79.4632,418a,80y,205h,93t/data=!3m7!1e1!3m5!1sdnrFLt0INtdsl02hmBLKDQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DdnrFLt0INtdsl02hmBLKDQ%26yaw%3D205!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "dnrFLt0INtdsl02hmBLKDQ",
+   "additional_view": false,
+   "caption": "SV3: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820060447/reference-3.jpg",
+   "sha256": "f0d4e821310357b9c78f293c5b8b12755ffbc5e22ca392c71d82800bf8d32458"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/aerial_820060447.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/820060447/reference-4.jpg",
+   "sha256": "d5dc5657f3a1f231ba667b9ed303b6617ea423963b6478204ce4903889a3e22e"
+  },
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2024/03/hall_philosophy.jpg",
+   "page_url": "https://www.chq.org/wp-content/uploads/2024/03/hall_philosophy.jpg",
+   "title": "Hall of Philosophy: white round classical columns, exposed brown timber gable trusses, elevated terrace and grand stairs. Open sides and ends, no enclosed walls or pediment. Unlocated public photo: confirm face direction with geolocated street views.",
+   "provider": "Chautauqua Institution",
+   "id": "WEB1",
+   "source_path": "data/chautauqua--20260910-044859-38562b/miniature/820060447/web-original-77ac12d0d43fb306",
+   "kind": "web-image",
+   "camera": {
+    "status": "unlocated",
+    "reason": "Web photo has no verified capture pose."
+   },
+   "caption": "Hall of Philosophy: white round classical columns, exposed brown timber gable trusses, elevated terrace and grand stairs. Open sides and ends, no enclosed walls or pediment. Unlocated public photo: confirm face direction with geolocated street views. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)",
+   "path": "miniature/820060447/reference-5.jpg",
+   "sha256": "77ac12d0d43fb306f281ea2221c481ffa64396dba9fb8cfccd03a8475c23c249"
+  }
+ ],
+ "search_query": "Hall of Philosophy Chautauqua Institution New York building exterior",
+ "search_candidates": [
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2024/03/hall_philosophy.jpg",
+   "page_url": "https://www.chq.org/wp-content/uploads/2024/03/hall_philosophy.jpg",
+   "title": "Hall of Philosophy: white round classical columns, exposed brown timber gable trusses, elevated terrace and grand stairs. Open sides and ends, no enclosed walls or pediment. Unlocated public photo: confirm face direction with geolocated street views.",
+   "provider": "Chautauqua Institution"
+  }
+ ],
+ "warnings": []
+}

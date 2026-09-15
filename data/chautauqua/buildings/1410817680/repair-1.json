@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "{\"wall\":\"#865a49\",\"trim\":\"#b09a7d\",\"roofColor\":\"#777770\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.715,2.715],\"v\":[-2.159,2.159],\"bottom\":0,\"height\":3,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.32,\"maxH\":1.38,\"overhang\":0.25},\"plinth\":{\"height\":0.16,\"color\":\"#50483c\"},\"faces\":{\"-u\":{\"storeys\":[{\"y\":3.23,\"windows\":{\"type\":\"rect\",\"w\":0.34,\"h\":0.46,\"at\":[0.5],\"trim\":\"#765443\",\"glass\":\"#493c32\",\"mullions\":false,\"interior\":false}}]},\"+u\":{\"doors\":[{\"at\":0.5,\"type\":\"rect\",\"w\":0.95,\"h\":2.05,\"color\":\"#654939\",\"surround\":\"#a18a70\",\"surroundW\":0.09,\"steps\":1}]},\"+v\":{},\"-v\":{}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact rectangular cabin with a simple gabled roof.",
+  "Muted reddish-brown walls and gray roof.",
+  "Small dark attic vent on the Hurst Avenue gable.",
+  "Restrained trim and a low dark plinth."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Principal-entry placement remains unresolved: +u is retained as a concealed-face approximation, not a confirmed entrance location. No supplied evidence justifies relocating it.",
+  "SV1 suggests wood shingles or boards; the supplied catalog has no documented wall-cladding control to replace the renderer's masonry texture."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP and SV1 establish the visible -u gable, not the concealed entrance face.",
+    "AERIAL does not resolve door placement."
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

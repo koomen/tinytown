@@ -1,0 +1,34 @@
+{
+ "blueprint_json": "{\"wall\":\"#a77365\",\"trim\":\"#eee9dd\",\"roofColor\":\"#d1d0c6\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.7,2.7],\"v\":[-2.2,2.16],\"bottom\":-0.15,\"height\":2.7,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.36,\"maxH\":1.55,\"overhang\":0.25},\"plinth\":{\"height\":0.16,\"color\":\"#918b7c\"},\"faces\":{\"-u\":{\"doors\":[{\"at\":0.55,\"type\":\"rect\",\"w\":0.88,\"h\":2.12,\"color\":\"#bfc5c0\",\"surround\":\"#eee9dd\",\"surroundW\":0.1,\"steps\":1}]},\"+u\":{},\"-v\":{},\"+v\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.8,\"h\":1.05,\"at\":[0.5],\"trim\":\"#eee9dd\",\"glass\":\"#738580\"}}]}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact rectangular practice hut",
+  "Simple gable with pale metal-colored roof",
+  "Muted reddish-brown walls",
+  "White-trimmed gable-end entrance",
+  "Minimal openings and shallow eaves"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "SV1 is tightly cropped among similar huts; foreground identification is not fully secure.",
+  "The visible right-hand gable suggests a southeast (-u) entrance, but its assignment to this footprint remains inferred.",
+  "Wall height and concealed rear window are approximate; shingle and roof-seam textures are simplified."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "AERIAL"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

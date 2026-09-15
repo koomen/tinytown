@@ -1,0 +1,345 @@
+{
+ "version": 3,
+ "id": "820059536",
+ "name": "Norton Hall",
+ "location": "Chautauqua Institution New York",
+ "address": "33 Pratt Avenue",
+ "source_tags": {
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 66.771,
+  "depth_v": 25.348,
+  "footprint_uv": [
+   [
+    33.4,
+    12.7
+   ],
+   [
+    -12.3,
+    12.1
+   ],
+   [
+    -12.7,
+    10.3
+   ],
+   [
+    -33.0,
+    4.9
+   ],
+   [
+    -33.4,
+    -12.7
+   ],
+   [
+    33.2,
+    -12.7
+   ],
+   [
+    33.3,
+    -1.8
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 35,
+    "compass": "NE",
+    "left_bearing": 125,
+    "right_bearing": 305,
+    "nearest_road_outward": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 20.0
+    },
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 215,
+    "compass": "SW",
+    "left_bearing": 305,
+    "right_bearing": 125,
+    "nearest_road_outward": {
+     "name": "Wythe Avenue",
+     "circular": false,
+     "distance_m": 4.0
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 125,
+    "compass": "SE",
+    "left_bearing": 215,
+    "right_bearing": 35,
+    "nearest_road_outward": {
+     "name": "Scott Avenue",
+     "circular": false,
+     "distance_m": 53.1
+    },
+    "nearest_road_hint": true
+   },
+   "-v": {
+    "bearing": 305,
+    "compass": "NW",
+    "left_bearing": 35,
+    "right_bearing": 215,
+    "nearest_road_outward": {
+     "name": "Wythe Avenue",
+     "circular": false,
+     "distance_m": 15.3
+    },
+    "nearest_road_hint": false
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/820059536/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/820059536/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/820059536/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  },
+  {
+   "id": "WEB1",
+   "kind": "web-image",
+   "path": "miniature/820059536/reference-6.jpg",
+   "caption": "Norton Hall: monumental pale masonry facade, five tall arched entrance bays and broad stairs. Unlocated public photo: confirm face direction with geolocated street views. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)"
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059536_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2110532,
+    "lon": -79.4682931,
+    "position_xz": [
+     -177.53,
+     -186.26
+    ],
+    "position_uv": [
+     55.82,
+     -2.5
+    ],
+    "looking_bearing": 209.0,
+    "looking_compass": "SSW",
+    "image_left_bearing": 119.0,
+    "image_right_bearing": 299.0,
+    "target_center_offset_deg": 3.7,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 6,
+    "fov": 71,
+    "tilt": 92,
+    "near_road": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 2.2
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2110532,-79.4682931,415a,71y,209h,92t/data=!3m7!1e1!3m5!1shp9c000dEcLv5h6EG3gYSA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3Dhp9c000dEcLv5h6EG3gYSA%26yaw%3D209!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "hp9c000dEcLv5h6EG3gYSA",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059536/reference-1.jpg",
+   "sha256": "2d257d069bd977d94033b041228d75cf595d3502808f525f8efaa109c6c88cdd"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059536_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2103531,
+    "lon": -79.4692007,
+    "position_xz": [
+     -252.37,
+     -108.33
+    ],
+    "position_uv": [
+     -51.02,
+     -18.58
+    ],
+    "looking_bearing": 82.0,
+    "looking_compass": "E",
+    "image_left_bearing": 352.0,
+    "image_right_bearing": 172.0,
+    "target_center_offset_deg": -26.7,
+    "geometrically_facing_camera": [
+     "-u",
+     "-v"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 46,
+    "fov": 65,
+    "tilt": 91,
+    "near_road": {
+     "name": "Root Avenue",
+     "circular": false,
+     "distance_m": 0.5
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2103531,-79.4692007,419a,65y,82h,91t/data=!3m7!1e1!3m5!1saixrwV24mt2xd8vuHFkUKQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DaixrwV24mt2xd8vuHFkUKQ%26yaw%3D82!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "aixrwV24mt2xd8vuHFkUKQ",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059536/reference-2.jpg",
+   "sha256": "0596426f2d5a72228f0a0b1d123226b5cfea601595a229d66109b12c48404705"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059536_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2103815,
+    "lon": -79.4682838,
+    "position_xz": [
+     -176.77,
+     -111.49
+    ],
+    "position_uv": [
+     -4.77,
+     41.31
+    ],
+    "looking_bearing": 315.0,
+    "looking_compass": "NW",
+    "image_left_bearing": 225.0,
+    "image_right_bearing": 45.0,
+    "target_center_offset_deg": -3.1,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 9,
+    "fov": 80,
+    "tilt": 91,
+    "near_road": {
+     "name": "Scott Avenue",
+     "circular": false,
+     "distance_m": 21.3
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2103815,-79.4682838,415a,80y,315h,91t/data=!3m7!1e1!3m5!1siTFrq4MvyPCCPd7BmiWJ5g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DiTFrq4MvyPCCPd7BmiWJ5g%26yaw%3D315!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "iTFrq4MvyPCCPd7BmiWJ5g",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059536/reference-3.jpg",
+   "sha256": "a51d9584b379dc11fbf2b7f7291ad8349dc8a20bd4176833c4bd638feb9f05a2"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820059536_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2108491,
+    "lon": -79.4689886,
+    "position_xz": [
+     -234.88,
+     -163.54
+    ],
+    "position_uv": [
+     4.15,
+     -36.19
+    ],
+    "looking_bearing": 140.0,
+    "looking_compass": "SE",
+    "image_left_bearing": 50.0,
+    "image_right_bearing": 230.0,
+    "target_center_offset_deg": -8.2,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 14,
+    "fov": 80,
+    "tilt": 91,
+    "near_road": {
+     "name": "Wythe Avenue",
+     "circular": false,
+     "distance_m": 0.8
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2108491,-79.4689886,418a,80y,140h,91t/data=!3m7!1e1!3m5!1s-qBCG56Ak_vqlaPnP-XtlA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3D-qBCG56Ak_vqlaPnP-XtlA%26yaw%3D140!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "EEcIJoBIJ_O6jQOPhenFpA",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059536/reference-4.jpg",
+   "sha256": "f2261de6d7217b6355bc60176aeaf1aaef978535f00b7f10c701dd077921296e"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/aerial_820059536.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/820059536/reference-5.jpg",
+   "sha256": "7e552064448af974f628ec2e47c37f61ad84450631479893e48a9ca042400225"
+  },
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2014/08/norton_hall.jpg",
+   "page_url": "https://www.chq.org/wp-content/uploads/2014/08/norton_hall.jpg",
+   "title": "Norton Hall: monumental pale masonry facade, five tall arched entrance bays and broad stairs. Unlocated public photo: confirm face direction with geolocated street views.",
+   "provider": "Chautauqua Institution",
+   "id": "WEB1",
+   "source_path": "data/chautauqua--20260910-044859-38562b/miniature/820059536/web-original-53c38c20bf503bfe",
+   "kind": "web-image",
+   "camera": {
+    "status": "unlocated",
+    "reason": "Web photo has no verified capture pose."
+   },
+   "caption": "Norton Hall: monumental pale masonry facade, five tall arched entrance bays and broad stairs. Unlocated public photo: confirm face direction with geolocated street views. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)",
+   "path": "miniature/820059536/reference-6.jpg",
+   "sha256": "53c38c20bf503bfea0a370f602003839a73ee0fdd49a2f786ac740a8f6785380"
+  }
+ ],
+ "search_query": "Norton Hall Chautauqua Institution New York building exterior",
+ "search_candidates": [
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2014/08/norton_hall.jpg",
+   "page_url": "https://www.chq.org/wp-content/uploads/2014/08/norton_hall.jpg",
+   "title": "Norton Hall: monumental pale masonry facade, five tall arched entrance bays and broad stairs. Unlocated public photo: confirm face direction with geolocated street views.",
+   "provider": "Chautauqua Institution"
+  }
+ ],
+ "warnings": []
+}

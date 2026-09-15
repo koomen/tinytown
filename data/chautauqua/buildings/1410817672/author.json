@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "{\"wall\":\"#895b4d\",\"trim\":\"#eeeae0\",\"roofColor\":\"#bfc2b9\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.72,2.72],\"v\":[-2.16,2.16],\"bottom\":0,\"height\":2.75,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.42,\"maxH\":1.82,\"overhang\":0.2},\"plinth\":{\"height\":0.12,\"color\":\"#827e70\"},\"faces\":{\"+v\":{\"storeys\":[{\"y\":0.9,\"windows\":{\"type\":\"rect\",\"w\":0.75,\"h\":1.3,\"at\":[0.73],\"trim\":\"#eeeae0\",\"glass\":\"#586966\"}}]},\"+u\":{\"doors\":[{\"at\":0.36,\"type\":\"rect\",\"w\":0.88,\"h\":2.1,\"color\":\"#eeeae0\",\"surround\":\"#eeeae0\",\"surroundW\":0.09,\"steps\":2}]},\"-u\":{},\"-v\":{}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact brown cottage-like practice studio.",
+  "Steep pale-gray gable roof with modest overhangs.",
+  "Single white-trimmed window offset along the southwest wall.",
+  "White southeast gable-end entrance with small steps."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Target identification within the repeated studio row is inferred from the camera pose and map.",
+  "Entrance placement on +u is inferred from the visible right-hand gable; exact position and door glazing are unclear.",
+  "Concealed elevations are simplified; siding and metal-roof textures are represented by color."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

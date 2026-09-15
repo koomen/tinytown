@@ -1,0 +1,121 @@
+{
+ "id": "1410819772",
+ "addr": null,
+ "name": "Main Gate gatehouse",
+ "frame": "41e7735b987fb38c137f594ec7f7ad62c287f0fe52f33f987b925b26f1ffdc02",
+ "faces": {
+  "+u": {
+   "bearing": 139,
+   "width": 5.5,
+   "road": true,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_1410819772_+u.png",
+     "pano": "mK8axQHTbbz-d1tk1uHxiQ",
+     "dist": 14.1,
+     "off_axis_deg": 63,
+     "fov": 55,
+     "tilt": 100,
+     "heading": 23,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2078714,-79.4689126,425a,55y,23h,100t/data=!3m7!1e1!3m5!1smK8axQHTbbz-d1tk1uHxiQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DmK8axQHTbbz-d1tk1uHxiQ%26yaw%3D23!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2078714,
+      "lon": -79.4689126
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 319,
+   "width": 5.5,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_1410819772_-u.png",
+     "pano": "K5sq9gTu1JtB4OS0CQqxLg",
+     "dist": 13.4,
+     "off_axis_deg": 12,
+     "fov": 55,
+     "tilt": 100,
+     "heading": 128,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.20817,-79.4690989,425a,55y,128h,100t/data=!3m7!1e1!3m5!1sK5sq9gTu1JtB4OS0CQqxLg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DK5sq9gTu1JtB4OS0CQqxLg%26yaw%3D128!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.20817,
+      "lon": -79.4690989
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 229,
+   "width": 15.7,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_1410819772_+v.png",
+     "pano": "dDz8MzE42VxQ-qcvzonlmQ",
+     "dist": 10.6,
+     "off_axis_deg": 17,
+     "fov": 80,
+     "tilt": 100,
+     "heading": 32,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2079455,-79.469002,425a,80y,32h,100t/data=!3m7!1e1!3m5!1sdDz8MzE42VxQ-qcvzonlmQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DdDz8MzE42VxQ-qcvzonlmQ%26yaw%3D32!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2079455,
+      "lon": -79.469002
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 49,
+   "width": 15.7,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_1410819772_-v.png",
+     "pano": "3pzLJEuv4eQvRLGHbw5phw",
+     "dist": 15.4,
+     "off_axis_deg": 16,
+     "fov": 66,
+     "tilt": 99,
+     "heading": 246,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2081149,-79.4687124,425a,66y,246h,99t/data=!3m7!1e1!3m5!1s3pzLJEuv4eQvRLGHbw5phw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9%26panoid%3D3pzLJEuv4eQvRLGHbw5phw%26yaw%3D246!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2081149,
+      "lon": -79.4687124
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-10 04:37"
+}

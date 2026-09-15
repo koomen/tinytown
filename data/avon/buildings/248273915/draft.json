@@ -1,0 +1,241 @@
+{
+  "_comment": "West side of Prospect Street between 53 and 77 Prospect: pale-yellow clapboard 1.5-storey farmhouse under a medium-grey roof whose ridge runs parallel to the street (gable ends face the neighbours; the south gable end has two storeys of windows plus an attic window), with a small steep cross gable centred on the street face and a full-width open front porch with white turned posts and a spindle railing (hammock in the right bay). Dark-green window trim. A lower rear kitchen wing fills the back of the 19.7 m deep footprint. Road face +u; left (0) = +v = SSW (toward 53 Prospect). The one-storey pale-green metal-roofed addition and the 2-storey green house right of the porch in the +u photo belong to 77 Prospect (248273917), not this building.",
+  "wall": "#e3d9a9",
+  "trim": "#efece2",
+  "roofColor": "#5b5e62",
+  "volumes": [
+    {
+      "id": "main",
+      "u": [-2.0, 9.8],
+      "v": [-6.2, 6.2],
+      "height": 4.4,
+      "roof": {
+        "type": "gable",
+        "ridge": "v",
+        "pitch": 0.36,
+        "maxH": 4.2,
+        "overhang": 0.4
+      },
+      "chimneys": [
+        { "u": 1.0, "v": -0.4 }
+      ],
+      "faces": {
+        "+u": {
+          "storeys": [
+            {
+              "y": 1.3,
+              "windows": {
+                "type": "rect",
+                "w": 1.6,
+                "h": 1.5,
+                "at": [0.2, 0.8],
+                "trim": "#3f5a45",
+                "glass": "#3f4a55"
+              }
+            }
+          ],
+          "doors": [
+            {
+              "at": 0.5,
+              "y": 0.55,
+              "type": "rect",
+              "w": 1.0,
+              "h": 2.1,
+              "color": "#efece2",
+              "surround": "#3f5a45",
+              "surroundW": 0.1
+            }
+          ],
+          "porches": [
+            {
+              "style": "open",
+              "range": [0.0, 1.0],
+              "d": 2.4,
+              "height": 2.6,
+              "floorH": 0.55,
+              "floorColor": "#8a8d90",
+              "posts": 6,
+              "postColor": "#efece2",
+              "roof": "hip",
+              "pitch": 0.3,
+              "roofColor": "#5b5e62",
+              "railing": true,
+              "steps": 3,
+              "stepsAt": 0.5,
+              "stepsW": 1.6
+            }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            {
+              "y": 6.6,
+              "windows": {
+                "type": "rect",
+                "w": 0.8,
+                "h": 1.1,
+                "at": [0.5],
+                "trim": "#3f5a45",
+                "glass": "#3f4a55"
+              }
+            },
+            {
+              "y": 3.8,
+              "windows": {
+                "type": "rect",
+                "w": 1.0,
+                "h": 1.4,
+                "at": [0.3, 0.7],
+                "trim": "#3f5a45",
+                "glass": "#3f4a55"
+              }
+            },
+            {
+              "y": 1.3,
+              "windows": {
+                "type": "rect",
+                "w": 1.2,
+                "h": 1.5,
+                "at": [0.3, 0.7],
+                "trim": "#3f5a45",
+                "glass": "#3f4a55"
+              }
+            }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            {
+              "y": 3.8,
+              "windows": {
+                "type": "rect",
+                "w": 1.0,
+                "h": 1.4,
+                "at": [0.3, 0.7],
+                "trim": "#3f5a45",
+                "glass": "#3f4a55"
+              }
+            },
+            {
+              "y": 1.3,
+              "windows": {
+                "type": "rect",
+                "w": 1.2,
+                "h": 1.5,
+                "at": [0.3, 0.7],
+                "trim": "#3f5a45",
+                "glass": "#3f4a55"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "front-gable",
+      "u": [3.0, 9.8],
+      "v": [-2.1, 2.1],
+      "height": 4.4,
+      "roof": {
+        "type": "gable",
+        "ridge": "u",
+        "pitch": 0.6,
+        "maxH": 2.5,
+        "overhang": 0.35
+      },
+      "faces": {
+        "+u": {
+          "storeys": [
+            {
+              "y": 4.9,
+              "windows": {
+                "type": "rect",
+                "w": 0.9,
+                "h": 1.3,
+                "at": [0.5],
+                "trim": "#3f5a45",
+                "glass": "#3f4a55"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rear-wing",
+      "u": [-9.8, -1.9],
+      "v": [-4.6, 4.6],
+      "height": 3.4,
+      "roof": {
+        "type": "gable",
+        "ridge": "u",
+        "pitch": 0.3,
+        "maxH": 2.6,
+        "overhang": 0.35
+      },
+      "faces": {
+        "+v": {
+          "storeys": [
+            {
+              "y": 1.3,
+              "windows": {
+                "type": "rect",
+                "w": 1.0,
+                "h": 1.4,
+                "at": [0.3, 0.7],
+                "trim": "#3f5a45",
+                "glass": "#3f4a55"
+              }
+            }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            {
+              "y": 1.3,
+              "windows": {
+                "type": "rect",
+                "w": 1.0,
+                "h": 1.4,
+                "at": [0.3, 0.7],
+                "trim": "#3f5a45",
+                "glass": "#3f4a55"
+              }
+            }
+          ]
+        },
+        "-u": {
+          "storeys": [
+            {
+              "y": 1.3,
+              "windows": {
+                "type": "rect",
+                "w": 1.0,
+                "h": 1.4,
+                "at": [0.3],
+                "trim": "#3f5a45",
+                "glass": "#3f4a55"
+              }
+            }
+          ],
+          "doors": [
+            {
+              "at": 0.72,
+              "type": "rect",
+              "w": 1.0,
+              "h": 2.1,
+              "color": "#efece2",
+              "surround": "#3f5a45",
+              "surroundW": 0.1,
+              "steps": 2
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "details": [
+    { "type": "bush", "u": 12.6, "v": -4.0, "size": 1.0 },
+    { "type": "bush", "u": 12.6, "v": 4.2, "size": 0.9 }
+  ]
+}

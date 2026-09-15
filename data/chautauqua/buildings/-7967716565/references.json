@@ -1,0 +1,361 @@
+{
+ "version": 3,
+ "id": "-7967716565",
+ "name": "Bestor Plaza Fountain",
+ "location": "Chautauqua Institution, Chautauqua, New York",
+ "address": null,
+ "source_tags": {
+  "building": "fountain",
+  "amenity": "fountain"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 11.0,
+  "depth_v": 11.0,
+  "footprint_uv": [
+   [
+    -5.5,
+    5.5
+   ],
+   [
+    -5.5,
+    -5.5
+   ],
+   [
+    5.5,
+    -5.5
+   ],
+   [
+    5.5,
+    5.5
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 149,
+    "compass": "SSE",
+    "left_bearing": 239,
+    "right_bearing": 59,
+    "nearest_road_outward": {
+     "name": "Miller Avenue",
+     "circular": false,
+     "distance_m": 60.4
+    },
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 329,
+    "compass": "NNW",
+    "left_bearing": 59,
+    "right_bearing": 239,
+    "nearest_road_outward": {
+     "name": "Ames Avenue",
+     "circular": false,
+     "distance_m": 69.3
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 239,
+    "compass": "WSW",
+    "left_bearing": 329,
+    "right_bearing": 149,
+    "nearest_road_outward": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 13.9
+    },
+    "nearest_road_hint": true
+   },
+   "-v": {
+    "bearing": 59,
+    "compass": "ENE",
+    "left_bearing": 149,
+    "right_bearing": 329,
+    "nearest_road_outward": {
+     "name": "Clark Brick Walk",
+     "circular": false,
+     "distance_m": 20.3
+    },
+    "nearest_road_hint": false
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/-7967716565/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/-7967716565/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/-7967716565/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  },
+  {
+   "id": "WEB1",
+   "kind": "web-image",
+   "path": "miniature/-7967716565/reference-6.jpg",
+   "caption": "Original Bestor Plaza Fountain side elevation: 13 feet overall, 2 feet 3 inches basin wall; all four sides similar (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)"
+  },
+  {
+   "id": "WEB2",
+   "kind": "web-image",
+   "path": "miniature/-7967716565/reference-7.jpg",
+   "caption": "Bestor Plaza Fountain restored limestone stepped cap and four-sided bas-relief pylon, 2024 (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)"
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua/research/front_-7967716565_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2092015,
+    "lon": -79.4659813,
+    "position_xz": [
+     13.09,
+     19.87
+    ],
+    "position_uv": [
+     18.24,
+     0.05
+    ],
+    "looking_bearing": 329.0,
+    "looking_compass": "NNW",
+    "image_left_bearing": 239.0,
+    "image_right_bearing": 59.0,
+    "target_center_offset_deg": 0.2,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 0,
+    "fov": 59,
+    "tilt": 100,
+    "near_road": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 18.9
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2092015,-79.4659813,418a,59y,329h,100t/data=!3m7!1e1!3m5!1saeCu1vFSZkne1fvGJVzmlA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DaeCu1vFSZkne1fvGJVzmlA%26yaw%3D329!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "aeCu1vFSZkne1fvGJVzmlA",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/-7967716565/reference-1.jpg",
+   "sha256": "6f760550f25d72daf5ccf12ec0379074a17965dcf489cdb1e322f55aa33121d3"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua/research/front_-7967716565_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2094906,
+    "lon": -79.4662138,
+    "position_xz": [
+     -6.09,
+     -12.31
+    ],
+    "position_uv": [
+     -19.22,
+     -0.08
+    ],
+    "looking_bearing": 149.0,
+    "looking_compass": "SSE",
+    "image_left_bearing": 59.0,
+    "image_right_bearing": 239.0,
+    "target_center_offset_deg": 0.3,
+    "geometrically_facing_camera": [
+     "-u"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 0,
+    "fov": 56,
+    "tilt": 100,
+    "near_road": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 21.4
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2094906,-79.4662138,418a,56y,149h,100t/data=!3m7!1e1!3m5!1s_XOx6BYVxaT7ilG1YY6QQA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3D_XOx6BYVxaT7ilG1YY6QQA%26yaw%3D149!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "_XOx6BYVxaT7ilG1YY6QQA",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/-7967716565/reference-2.jpg",
+   "sha256": "a25b994490b459547d0772122a143a644bed3b5583315f1b5f618e011267e76c"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua/research/front_-7967716565_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2092336,
+    "lon": -79.4662799,
+    "position_xz": [
+     -11.54,
+     16.3
+    ],
+    "position_uv": [
+     2.5,
+     19.32
+    ],
+    "looking_bearing": 49.0,
+    "looking_compass": "NE",
+    "image_left_bearing": 319.0,
+    "image_right_bearing": 139.0,
+    "target_center_offset_deg": 2.6,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 10,
+    "fov": 55,
+    "tilt": 100,
+    "near_road": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 0.1
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2092336,-79.4662799,419a,55y,49h,100t/data=!3m7!1e1!3m5!1sz42tkqvzYb2BAn30fSegtg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3Dz42tkqvzYb2BAn30fSegtg%26yaw%3D49!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "z42tkqvzYb2BAn30fSegtg",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/-7967716565/reference-3.jpg",
+   "sha256": "a3d444390e28ced9cff3f7c0e7a514d542f6301aca5d6eac06dacf2b7ce6bfac"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua/research/front_-7967716565_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.209484,
+    "lon": -79.4658319,
+    "position_xz": [
+     25.4,
+     -11.58
+    ],
+    "position_uv": [
+     -2.38,
+     -26.7
+    ],
+    "looking_bearing": 233.0,
+    "looking_compass": "SW",
+    "image_left_bearing": 143.0,
+    "image_right_bearing": 323.0,
+    "target_center_offset_deg": 0.9,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 6,
+    "fov": 55,
+    "tilt": 96,
+    "near_road": {
+     "name": "Clark Brick Walk",
+     "circular": false,
+     "distance_m": 1.0
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.209484,-79.4658319,418a,55y,233h,96t/data=!3m7!1e1!3m5!1s2yhLWETGAJOy10Ro0AUynQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3D2yhLWETGAJOy10Ro0AUynQ%26yaw%3D233!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "2yhLWETGAJOy10Ro0AUynQ",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/-7967716565/reference-4.jpg",
+   "sha256": "32527c152156d309aff84229def6ca0f2f5bd21ab46d4ba8cec13061a4e6fda0"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua/research/aerial_-7967716565.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/-7967716565/reference-5.jpg",
+   "sha256": "451adce5b5dcd35735383550158614b52c9aedcdf551acdbaa97bb0fbc3c9f0f"
+  },
+  {
+   "url": "https://chqdaily.com/wp-content/uploads/2026/07/021324_FountainBlueprints_DM_01.jpg",
+   "page_url": "https://chqdaily.com/2026/07/eighty-years-ago-chautauqua-unveiled-fred-torrey-fountain/",
+   "title": "Original Bestor Plaza Fountain side elevation: 13 feet overall, 2 feet 3 inches basin wall; all four sides similar",
+   "provider": "Chautauquan Daily",
+   "id": "WEB1",
+   "source_path": "data/chautauqua/miniature/-7967716565/web-original-192bd5fc4e5f19a0",
+   "kind": "web-image",
+   "camera": {
+    "status": "unlocated",
+    "reason": "Web photo has no verified capture pose."
+   },
+   "caption": "Original Bestor Plaza Fountain side elevation: 13 feet overall, 2 feet 3 inches basin wall; all four sides similar (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)",
+   "path": "miniature/-7967716565/reference-6.jpg",
+   "sha256": "192bd5fc4e5f19a0e9721dbbfacff2c8a095ba70d065f76685a9ef57c5ff4e44"
+  },
+  {
+   "url": "https://chqdaily.com/wp-content/uploads/2024/06/040924_FountainRestoration_DM_01.jpg",
+   "page_url": "https://chqdaily.com/2024/06/restoration-of-bestor-plaza-fountain-ensures-future-for-iconic-monument/",
+   "title": "Bestor Plaza Fountain restored limestone stepped cap and four-sided bas-relief pylon, 2024",
+   "provider": "Chautauquan Daily",
+   "id": "WEB2",
+   "source_path": "data/chautauqua/miniature/-7967716565/web-original-1dd2717e478b600c",
+   "kind": "web-image",
+   "camera": {
+    "status": "unlocated",
+    "reason": "Web photo has no verified capture pose."
+   },
+   "caption": "Bestor Plaza Fountain restored limestone stepped cap and four-sided bas-relief pylon, 2024 (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)",
+   "path": "miniature/-7967716565/reference-7.jpg",
+   "sha256": "1dd2717e478b600c3a2d6ecc5372fc412218479919da9e614d45b1dbbdc6053b"
+  }
+ ],
+ "search_query": "Bestor Plaza Fountain Chautauqua Institution, Chautauqua, New York building exterior",
+ "search_candidates": [
+  {
+   "url": "https://chqdaily.com/wp-content/uploads/2026/07/021324_FountainBlueprints_DM_01.jpg",
+   "page_url": "https://chqdaily.com/2026/07/eighty-years-ago-chautauqua-unveiled-fred-torrey-fountain/",
+   "title": "Original Bestor Plaza Fountain side elevation: 13 feet overall, 2 feet 3 inches basin wall; all four sides similar",
+   "provider": "Chautauquan Daily"
+  },
+  {
+   "url": "https://chqdaily.com/wp-content/uploads/2024/06/040924_FountainRestoration_DM_01.jpg",
+   "page_url": "https://chqdaily.com/2024/06/restoration-of-bestor-plaza-fountain-ensures-future-for-iconic-monument/",
+   "title": "Bestor Plaza Fountain restored limestone stepped cap and four-sided bas-relief pylon, 2024",
+   "provider": "Chautauquan Daily"
+  }
+ ],
+ "warnings": []
+}

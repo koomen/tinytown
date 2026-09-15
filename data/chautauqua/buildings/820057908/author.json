@@ -1,0 +1,44 @@
+{
+ "blueprint_json": "{\"wall\":\"#c4ad76\",\"trim\":\"#eeeae0\",\"roofColor\":\"#666963\",\"pavilion\":{\"axis\":\"u\",\"height\":4.5,\"pitch\":0.15,\"bents\":5,\"endPosts\":4,\"postWidth\":0.85,\"columnColor\":\"#c4ad76\",\"roofType\":\"flat\",\"trimColor\":\"#eeeae0\",\"floorH\":0.15,\"floorColor\":\"#aaa597\",\"wallH\":0.8,\"railing\":false,\"seatingRows\":6,\"furniture\":false},\"volumes\":[],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Open, single-storey garden hall with broad shaded bays.",
+  "Warm buff square masonry piers and low perimeter walls.",
+  "Broad white classical cornice beneath a nearly flat charcoal roof.",
+  "Simple bench seating visible through the open sides."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV4",
+  "AERIAL",
+  "WEB1"
+ ],
+ "uncertainties": [
+  "WEB1's green-awning entrance cannot be assigned a compass face reliably; omitted rather than misplaced.",
+  "SV2 foreground house and SV3 Baptist House are different subjects and were excluded.",
+  "SV4 shows an enclosed brick elevation whose relationship to the open hall is uncertain; its windows were not copied.",
+  "Integrated pavilion simplifies the irregular mapped perimeter; concealed sides and seating are approximate."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "pavilion",
+   "face": "unknown",
+   "role": "principal, green-awning opening; not explicitly modeled",
+   "evidence": [
+    "WEB1"
+   ],
+   "confidence": "unknown"
+  },
+  {
+   "volume": "pavilion",
+   "face": "+u",
+   "role": "inferred secondary access through open pavilion bays",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

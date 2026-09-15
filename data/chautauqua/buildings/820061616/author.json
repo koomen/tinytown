@@ -1,0 +1,33 @@
+{
+ "blueprint_json": "{\"wall\":\"#a87868\",\"trim\":\"#eee8db\",\"roofColor\":\"#c3c2b9\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.7,2.7],\"v\":[-2.2,2.2],\"bottom\":0,\"height\":2.7,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.38,\"maxH\":1.65,\"overhang\":0.22},\"plinth\":{\"height\":0.18,\"color\":\"#77766c\"},\"faces\":{\"-u\":{\"doors\":[{\"at\":0.5,\"type\":\"rect\",\"w\":0.9,\"h\":2.1,\"color\":\"#685d54\",\"surround\":\"#eee8db\",\"surroundW\":0.1,\"steps\":2}]},\"+u\":{},\"-v\":{\"storeys\":[{\"y\":0.95,\"windows\":{\"type\":\"rect\",\"w\":0.8,\"h\":1.35,\"at\":[0.5],\"trim\":\"#eee8db\",\"glass\":\"#526967\"}}]},\"+v\":{}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact single-storey practice cottage",
+  "Pale, steep gabled roof with modest eaves",
+  "Muted salmon-brown walls and ivory trim",
+  "Simple lane-facing door with two small steps"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Map spacing suggests the target is the first gabled studio behind the foreground hip-roofed neighbor; identification remains approximate.",
+  "The lane-facing entrance is inferred on -u from the repeated studio entries; its exact position is uncertain.",
+  "Concealed elevations and the side window are simplified assumptions."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "AERIAL"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "blueprint_json": "{\"wall\":\"#79664f\",\"trim\":\"#e2dfd2\",\"roofColor\":\"#626769\",\"volumes\":[{\"id\":\"long-wing\",\"u\":[-4.5,46.8],\"v\":[-19.5,4.2],\"height\":7.4,\"roof\":{\"type\":\"flat\",\"lip\":false},\"cornice\":{\"height\":0.18,\"overhang\":0.12,\"color\":\"#d4d3c8\",\"dentils\":false},\"plinth\":{\"height\":0.3,\"color\":\"#aaa69a\"},\"faces\":{\"-v\":{\"storeys\":[{\"y\":0.65,\"windows\":{\"type\":\"rect\",\"w\":2.6,\"h\":2.3,\"at\":[0.05,0.14,0.23,0.32,0.41,0.5,0.59,0.68,0.77,0.86,0.95],\"trim\":\"#deded3\",\"glass\":\"#566762\",\"interior\":false}},{\"y\":4.05,\"windows\":{\"type\":\"rect\",\"w\":2.6,\"h\":2.25,\"at\":[0.05,0.14,0.23,0.32,0.41,0.5,0.59,0.68,0.77,0.86,0.95],\"trim\":\"#deded3\",\"glass\":\"#65726b\",\"interior\":false}}],\"pilasters\":{\"at\":[0.005,0.095,0.185,0.275,0.365,0.455,0.545,0.635,0.725,0.815,0.905,0.995],\"w\":0.32,\"d\":0.18,\"height\":7.2,\"color\":\"#deded3\",\"cap\":\"#deded3\"},\"awnings\":[{\"range\":[0.02,0.98],\"y\":3.2,\"depth\":0.65,\"color\":\"#e4e2d7\"}]},\"+u\":{},\"+v\":{\"storeys\":[{\"y\":1.1,\"windows\":{\"type\":\"rect\",\"w\":1.5,\"h\":1.8,\"at\":[0.15,0.35,0.55,0.75,0.9],\"trim\":\"#cbc9bd\",\"glass\":\"#63726d\",\"interior\":false}}]}}},{\"id\":\"connector\",\"u\":[-10.4,-4.2],\"v\":[-19.7,8.9],\"height\":7.1,\"roof\":{\"type\":\"flat\",\"lip\":false},\"faces\":{\"-v\":{\"storeys\":[{\"y\":0.6,\"windows\":{\"type\":\"rect\",\"w\":1.6,\"h\":2.4,\"at\":[0.25,0.75],\"trim\":\"#deded3\",\"glass\":\"#52645e\",\"interior\":false}},{\"y\":4,\"windows\":{\"type\":\"rect\",\"w\":1.6,\"h\":2.1,\"at\":[0.25,0.75],\"trim\":\"#deded3\",\"glass\":\"#62736b\",\"interior\":false}}]}}},{\"id\":\"southwest-block\",\"u\":[-46.5,-9.8],\"v\":[-23.3,-6.1],\"height\":7.6,\"roof\":{\"type\":\"flat\",\"lip\":false},\"cornice\":{\"height\":0.16,\"overhang\":0.1,\"color\":\"#bab9ae\",\"dentils\":false},\"faces\":{\"-v\":{\"doors\":[{\"at\":0.23,\"type\":\"double\",\"w\":2.8,\"h\":2.7,\"color\":\"#43564e\",\"surround\":\"#deded3\",\"surroundW\":0.2}],\"porches\":[{\"style\":\"open\",\"at\":0.23,\"w\":10.5,\"d\":3.1,\"height\":3.1,\"floorH\":0.15,\"posts\":4,\"postColor\":\"#e5e3d8\",\"roof\":\"flat\",\"roofColor\":\"#c9cec7\",\"railing\":false,\"steps\":1}],\"storeys\":[{\"y\":0.75,\"windows\":{\"type\":\"rect\",\"w\":1.65,\"h\":2.35,\"at\":[0.85],\"trim\":\"#d9d9ce\",\"glass\":\"#596960\",\"interior\":false}},{\"y\":4.05,\"windows\":{\"type\":\"rect\",\"w\":1.65,\"h\":2.35,\"at\":[0.85],\"trim\":\"#d9d9ce\",\"glass\":\"#596960\",\"interior\":false}}]},\"-u\":{\"storeys\":[{\"y\":1.1,\"windows\":{\"type\":\"rect\",\"w\":0.9,\"h\":1.6,\"at\":[0.34,0.43,0.52],\"trim\":\"#e0dfd1\",\"glass\":\"#46574f\",\"interior\":false}}]}}},{\"id\":\"gymnasium\",\"u\":[-42.2,-10.3],\"v\":[-6.3,23.3],\"height\":8,\"roof\":{\"type\":\"flat\",\"lip\":false},\"faces\":{\"-u\":{\"doors\":[{\"at\":0.12,\"type\":\"double\",\"w\":2,\"h\":2.5,\"color\":\"#4b5146\",\"surround\":\"#c4beaa\",\"surroundW\":0.14}],\"storeys\":[{\"y\":4.3,\"windows\":{\"type\":\"rect\",\"w\":2.2,\"h\":1.9,\"at\":[0.16],\"trim\":\"#d9d9ce\",\"glass\":\"#a7b0ad\",\"mullions\":false,\"interior\":false}}]},\"+v\":{}}},{\"id\":\"raised-gym-roof\",\"u\":[-40.2,-12.2],\"v\":[1,22.3],\"bottom\":7.9,\"height\":10,\"wall\":\"#deded5\",\"roofColor\":\"#62696a\",\"roof\":{\"type\":\"flat\",\"lip\":false},\"faces\":{}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Long, two-storey glazed wing with pale vertical mullions.",
+  "Stepped brown-brick massing and broad charcoal flat roofs.",
+  "White entrance canopy on the WSW frontage.",
+  "Mostly solid gymnasium with a raised pale roof section."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV3",
+  "SV4 initial silhouette entrance comparison not applicable"
+ ],
+ "uncertainties": [
+  "Exact heights and concealed openings are approximated; SV3 is heavily screened.",
+  "Principal-entry role and precise canopy position are inferred from SV4 and the aerial.",
+  "The aerial rooftop grid is simplified away; raised gym-roof dimensions are approximate."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "southwest-block",
+   "face": "-v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV4",
+    "AERIAL"
+   ],
+   "confidence": "inferred"
+  },
+  {
+   "volume": "gymnasium",
+   "face": "-u",
+   "role": "secondary",
+   "evidence": [
+    "MAP",
+    "SV2"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

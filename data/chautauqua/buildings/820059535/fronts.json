@@ -1,0 +1,121 @@
+{
+ "id": "820059535",
+ "addr": "22 Scott Avenue",
+ "name": "Bratton Theater",
+ "frame": "f537f095a7751dedee90951013ed2bcd81491c06a79ac53929089d7c552f3356",
+ "faces": {
+  "+u": {
+   "bearing": 236,
+   "width": 31.0,
+   "road": true,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_820059535_+u.png",
+     "pano": "oc2vDNOLN2c_XWHmoDG8Iw",
+     "dist": 35.6,
+     "off_axis_deg": 28,
+     "fov": 59,
+     "tilt": 91,
+     "heading": 28,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2100799,-79.4685289,419a,59y,28h,91t/data=!3m7!1e1!3m5!1soc2vDNOLN2c_XWHmoDG8Iw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3Doc2vDNOLN2c_XWHmoDG8Iw%26yaw%3D28!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2100799,
+      "lon": -79.4685289
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 56,
+   "width": 31.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_820059535_-u.png",
+     "pano": "BiQ1quqQvzbRLHCenrp94g",
+     "dist": 28.0,
+     "off_axis_deg": 1,
+     "fov": 70,
+     "tilt": 91,
+     "heading": 235,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2106236,-79.4678137,415a,70y,235h,91t/data=!3m7!1e1!3m5!1sBiQ1quqQvzbRLHCenrp94g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DBiQ1quqQvzbRLHCenrp94g%26yaw%3D235!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2106236,
+      "lon": -79.4678137
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 326,
+   "width": 23.2,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_820059535_+v.png",
+     "pano": "FTywm_zkVNXkksGqlA3WLg",
+     "dist": 24.0,
+     "off_axis_deg": 4,
+     "fov": 64,
+     "tilt": 91,
+     "heading": 142,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2107053,-79.4684941,414a,64y,142h,91t/data=!3m7!1e1!3m5!1sFTywm_zkVNXkksGqlA3WLg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DFTywm_zkVNXkksGqlA3WLg%26yaw%3D142!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2107053,
+      "lon": -79.4684941
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 146,
+   "width": 23.2,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_820059535_-v.png",
+     "pano": "VXAeoHZ3PPML3vzCiUgTig",
+     "dist": 8.5,
+     "off_axis_deg": 46,
+     "fov": 80,
+     "tilt": 95,
+     "heading": 12,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2102449,-79.4681229,415a,80y,12h,95t/data=!3m7!1e1!3m5!1sOjcKBE_QVXD_NpqbM6j6Wg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3DOjcKBE_QVXD_NpqbM6j6Wg%26yaw%3D12!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2102309,
+      "lon": -79.4681246
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-10 04:40"
+}

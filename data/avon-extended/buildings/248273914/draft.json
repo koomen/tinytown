@@ -1,0 +1,101 @@
+{
+  "_comment": "53 Prospect St: pale-yellow vinyl-clapboard two-family, dark-red shutters, tan/brown shingle roofs. Street face (+u, E): the south ~55% is a side-gabled 2-storey block (ridge N-S) fronted by a full-width one-storey porch with a low hip roof on four heavy timber posts on stacked-stone piers, two front doors (white left, dark red right) and a small shuttered window pair upstairs; the north ~45% is a 2-storey front-facing gable wing, flush with the main block, with two shuttered windows upstairs and a shutter-flanked three-light bay window below (faces[].bays). A tall red-brick exterior chimney stands on the south wall at the back of the 2-storey block; a long one-storey rear wing runs west (downhill) toward the detached garage 248274489. Road face +u; left (0) = +v = S. The cream Victorian with the gabled turned-post porch in the -v photos is the neighbour 248273915, not this house.",
+  "wall": "#ebe2b4",
+  "trim": "#f0ede2",
+  "roofColor": "#9c7f5a",
+  "volumes": [
+    {
+      "id": "main",
+      "u": [2.3, 8.1],
+      "v": [-5.4, 5.4],
+      "height": 5.8,
+      "roof": { "type": "gable", "ridge": "v", "pitch": 0.45, "maxH": 2.6, "overhang": 0.35 },
+      "faces": {
+        "+u": {
+          "porches": [
+            { "style": "open", "range": [0.0, 0.56], "d": 2.2, "height": 3.0, "floorH": 0.3, "floorColor": "#8a6a4a",
+              "posts": 4, "postColor": "#7a5230", "roof": "hip", "pitch": 0.25, "roofColor": "#9c7f5a",
+              "railing": false, "steps": 2, "stepsAt": 0.27, "stepsW": 1.6 }
+          ],
+          "doors": [
+            { "at": 0.19, "y": 0.3, "type": "rect", "w": 0.95, "h": 2.1, "color": "#e8e6de", "surround": "#f0ede2", "surroundW": 0.1, "steps": 0 },
+            { "at": 0.35, "y": 0.3, "type": "rect", "w": 0.95, "h": 2.1, "color": "#6e2a2e", "surround": "#f0ede2", "surroundW": 0.1, "steps": 0 }
+          ],
+          "storeys": [
+            { "y": 1.2, "windows": { "type": "rect", "w": 1.2, "h": 1.4, "at": [0.46], "shutters": "#7a2a30", "glass": "#4e5a66" } },
+            { "y": 3.7, "windows": { "type": "rect", "w": 1.3, "h": 1.0, "at": [0.39], "shutters": "#7a2a30", "glass": "#4e5a66" } }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 1.2, "windows": { "type": "rect", "w": 0.9, "h": 1.4, "at": [0.4], "shutters": "#7a2a30", "glass": "#4e5a66" } },
+            { "y": 3.6, "windows": { "type": "rect", "w": 0.9, "h": 1.4, "at": [0.4], "shutters": "#7a2a30", "glass": "#4e5a66" } }
+          ]
+        },
+        "-u": {
+          "storeys": [
+            { "y": 3.6, "windows": { "type": "rect", "w": 0.9, "h": 1.4, "at": [0.25, 0.75], "glass": "#4e5a66" } }
+          ]
+        }
+      }
+    },
+    {
+      "id": "front-gable-wing",
+      "u": [2.3, 8.25],
+      "v": [-5.5, -0.4],
+      "height": 5.8,
+      "roof": { "type": "gable", "ridge": "u", "pitch": 0.5, "maxH": 2.5, "overhang": 0.35 },
+      "faces": {
+        "+u": {
+          "storeys": [
+            { "y": 3.6, "windows": { "type": "rect", "w": 0.9, "h": 1.5, "at": [0.27, 0.73], "shutters": "#7a2a30", "glass": "#4e5a66" } }
+          ],
+          "bays": [
+            { "at": 0.5, "w": 2.4, "d": 0.7, "y0": 0, "y1": 2.7, "roof": "hip", "pitch": 0.3, "count": 3, "sides": true,
+              "storeys": [ { "y": 1.0, "windows": { "type": "rect", "w": 0.6, "h": 1.4, "glass": "#4e5a66" } } ] }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            { "y": 1.2, "windows": { "type": "rect", "w": 0.9, "h": 1.4, "at": [0.3, 0.7], "glass": "#4e5a66" } },
+            { "y": 3.6, "windows": { "type": "rect", "w": 0.9, "h": 1.4, "at": [0.3, 0.7], "glass": "#4e5a66" } }
+          ]
+        }
+      }
+    },
+    {
+      "id": "chimney",
+      "u": [2.5, 3.3],
+      "v": [5.4, 5.95],
+      "height": 9.0,
+      "wall": "#8a3a30",
+      "trim": "#8a3a30",
+      "roof": { "type": "flat", "lip": false }
+    },
+    {
+      "id": "rear-wing",
+      "u": [-8.1, 2.3],
+      "v": [-4.0, 4.4],
+      "height": 3.2,
+      "roof": { "type": "gable", "ridge": "u", "pitch": 0.4, "maxH": 1.8, "overhang": 0.35 },
+      "faces": {
+        "+v": {
+          "storeys": [ { "y": 1.1, "windows": { "type": "rect", "w": 1.0, "h": 1.3, "at": [0.2, 0.5, 0.8], "glass": "#4e5a66" } } ]
+        },
+        "-v": {
+          "storeys": [ { "y": 1.1, "windows": { "type": "rect", "w": 1.0, "h": 1.3, "at": [0.25, 0.6], "glass": "#4e5a66" } } ],
+          "doors": [ { "at": 0.85, "type": "rect", "w": 0.95, "h": 2.05, "color": "#e8e6de", "surround": "#f0ede2", "surroundW": 0.1, "steps": 2 } ]
+        },
+        "-u": {
+          "storeys": [ { "y": 1.1, "windows": { "type": "rect", "w": 1.0, "h": 1.3, "at": [0.3], "glass": "#4e5a66" } } ],
+          "doors": [ { "at": 0.7, "type": "rect", "w": 0.95, "h": 2.05, "color": "#e8e6de", "surround": "#f0ede2", "surroundW": 0.1, "steps": 3 } ]
+        }
+      }
+    }
+  ],
+  "details": [
+    { "type": "bush", "u": 9.4, "v": -3.0, "size": 1.1 },
+    { "type": "bush", "u": 9.4, "v": -1.2, "size": 0.9 },
+    { "type": "bush", "u": 8.9, "v": -5.6, "size": 1.0 }
+  ]
+}

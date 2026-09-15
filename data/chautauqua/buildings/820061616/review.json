@@ -1,0 +1,15 @@
+{
+ "verdict": "repair",
+ "summary": "The compact single-storey form, pale gabled roof, muted wall color, ivory trim, and small entry steps create a coherent miniature. Recognition is weakened by conspicuously incorrect surface treatments.",
+ "orientation": {
+  "status": "correct",
+  "summary": "SV1 is southwest of the cottage looking northeast and shows the door on the long SE-outward side (-u), while the SW-outward gable (-v) carries a window. The labeled renders and inventory agree: one principal door is on -u, with no duplicated portal."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The model depicts brick walls and a tiled/shingled roof, whereas SV1 shows salmon-brown shingle/sided walls and a pale ribbed metal roof. These prominent textures change the cottage\u2019s character.",
+   "fix": "Replace the brick bond with restrained brown shingle or siding courses, and simplify the roof to pale standing-seam/ribbed metal while retaining the current compact gabled silhouette."
+  }
+ ]
+}

@@ -1,0 +1,329 @@
+{
+ "version": 3,
+ "id": "641329576",
+ "name": "The Colonnade",
+ "location": "Chautauqua Institution, Chautauqua, New York",
+ "address": "1 Ames Avenue",
+ "source_tags": {
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 54.357,
+  "depth_v": 28.999,
+  "footprint_uv": [
+   [
+    27.2,
+    -14.5
+   ],
+   [
+    27.2,
+    -3.5
+   ],
+   [
+    27.2,
+    10.0
+   ],
+   [
+    27.2,
+    14.5
+   ],
+   [
+    18.2,
+    14.5
+   ],
+   [
+    18.2,
+    10.5
+   ],
+   [
+    -2.3,
+    10.5
+   ],
+   [
+    -18.9,
+    10.5
+   ],
+   [
+    -18.9,
+    14.3
+   ],
+   [
+    -27.2,
+    14.3
+   ],
+   [
+    -27.2,
+    -14.5
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 59,
+    "compass": "ENE",
+    "left_bearing": 149,
+    "right_bearing": 329,
+    "nearest_road_outward": {
+     "name": "Bliss Avenue",
+     "circular": false,
+     "distance_m": 3.9
+    },
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 239,
+    "compass": "WSW",
+    "left_bearing": 329,
+    "right_bearing": 149,
+    "nearest_road_outward": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 9.5
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 149,
+    "compass": "SSE",
+    "left_bearing": 239,
+    "right_bearing": 59,
+    "nearest_road_outward": {
+     "name": "Ames Avenue",
+     "circular": false,
+     "distance_m": 4.8
+    },
+    "nearest_road_hint": true
+   },
+   "-v": {
+    "bearing": 329,
+    "compass": "NNW",
+    "left_bearing": 59,
+    "right_bearing": 239,
+    "nearest_road_outward": null,
+    "nearest_road_hint": false
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/641329576/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/641329576/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/641329576/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua/research/front_641329576_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.210312,
+    "lon": -79.4660936,
+    "position_xz": [
+     3.83,
+     -103.75
+    ],
+    "position_uv": [
+     52.13,
+     1.5
+    ],
+    "looking_bearing": 242.0,
+    "looking_compass": "WSW",
+    "image_left_bearing": 152.0,
+    "image_right_bearing": 332.0,
+    "target_center_offset_deg": -1.4,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 3,
+    "fov": 72,
+    "tilt": 91,
+    "near_road": {
+     "name": "Morris Avenue",
+     "circular": false,
+     "distance_m": 0.3
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.210312,-79.4660936,417a,72y,242h,91t/data=!3m7!1e1!3m5!1swpPDWCOqHherQZP0d5vv5w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DwpPDWCOqHherQZP0d5vv5w%26yaw%3D242!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "wpPDWCOqHherQZP0d5vv5w",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/641329576/reference-1.jpg",
+   "sha256": "f2326c2739f36abca60ed77e53d736e843181607469b0d0d038e46d9aea5fadf"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua/research/front_641329576_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2099277,
+    "lon": -79.4670187,
+    "position_xz": [
+     -72.45,
+     -60.97
+    ],
+    "position_uv": [
+     -35.29,
+     -1.11
+    ],
+    "looking_bearing": 69.0,
+    "looking_compass": "ENE",
+    "image_left_bearing": 339.0,
+    "image_right_bearing": 159.0,
+    "target_center_offset_deg": -8.2,
+    "geometrically_facing_camera": [
+     "-u"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 10,
+    "fov": 80,
+    "tilt": 95,
+    "near_road": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 1.6
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2099277,-79.4670187,418a,80y,69h,95t/data=!3m7!1e1!3m5!1s9aPpZ5mEN1ef16HatZgQ_Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3D9aPpZ5mEN1ef16HatZgQ_Q%26yaw%3D69!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "qFF4e9_c04-HvlKHU6LjdA",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/641329576/reference-2.jpg",
+   "sha256": "d319f31b164ef8211d791bbee066b5d6724c07dde18b17c56521a4d088efce34"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua/research/front_641329576_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2097145,
+    "lon": -79.4663988,
+    "position_xz": [
+     -21.34,
+     -37.24
+    ],
+    "position_uv": [
+     -3.7,
+     45.55
+    ],
+    "looking_bearing": 336.0,
+    "looking_compass": "NNW",
+    "image_left_bearing": 246.0,
+    "image_right_bearing": 66.0,
+    "target_center_offset_deg": -2.4,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 7,
+    "fov": 80,
+    "tilt": 91,
+    "near_road": {
+     "name": "Clark Brick Walk",
+     "circular": false,
+     "distance_m": 24.4
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2097145,-79.4663988,418a,80y,336h,91t/data=!3m7!1e1!3m5!1sKALN-h6Jtj6hrwudTR4paA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DKALN-h6Jtj6hrwudTR4paA%26yaw%3D336!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "KALN-h6Jtj6hrwudTR4paA",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/641329576/reference-3.jpg",
+   "sha256": "701dda7dcaf20fb4dfa42960c295444563b1ed2f5fd6109dc2dda05d6b2c5d66"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua/research/front_641329576_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2104649,
+    "lon": -79.4666608,
+    "position_xz": [
+     -42.94,
+     -120.77
+    ],
+    "position_uv": [
+     20.8,
+     -37.18
+    ],
+    "looking_bearing": 192.0,
+    "looking_compass": "SSW",
+    "image_left_bearing": 102.0,
+    "image_right_bearing": 282.0,
+    "target_center_offset_deg": -13.8,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 43,
+    "fov": 80,
+    "tilt": 91,
+    "near_road": {
+     "name": "Bliss Avenue",
+     "circular": false,
+     "distance_m": 1.5
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2104649,-79.4666608,416a,80y,192h,91t/data=!3m7!1e1!3m5!1sItZWRfvESPzfVw01mzWdfA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DItZWRfvESPzfVw01mzWdfA%26yaw%3D192!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "ItZWRfvESPzfVw01mzWdfA",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/641329576/reference-4.jpg",
+   "sha256": "ea2a6be19b7ad8d88ce97393065a2154ee2ad1cecc2e195753fe61967c01052d"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua/research/aerial_641329576.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/641329576/reference-5.jpg",
+   "sha256": "d85c18f5ec5449fa01e6c2cac10d20b6593008c48d7870517037ae7364d99c47"
+  }
+ ],
+ "search_query": "The Colonnade Chautauqua Institution, Chautauqua, New York building exterior",
+ "search_candidates": [],
+ "warnings": [
+  "No useful image-search candidates; using available Street View/aerial evidence."
+ ]
+}

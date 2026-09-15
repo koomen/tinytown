@@ -1,0 +1,15 @@
+{
+ "verdict": "repair",
+ "summary": "The compact gabled cabin, pale silver roof, dark reddish-brown walls, sparse openings, and low road-facing window form a coherent, charming miniature. No obvious duplicate portal or severe modeling defect is visible, but the principal entrance is not source-verified.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The map locates SV1 north of the cabin looking SSE (163\u00b0) toward the +u face, whose outward normal is NNW (334\u00b0). The four-face sheet appropriately shows the low opening on +u. However, the model\u2019s sole door is on the opposite -u/SSE face (154\u00b0), which SV1 does not show, and the north-up aerial cannot locate a door. Thus the actual door inventory is internally consistent but not enough to establish principal-entry orientation."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry placement on the -u face remains unresolved by the supplied evidence, so the miniature is not ready.",
+   "fix": "Obtain a located view showing the -u/SSE face or another geolocated source that identifies the entrance; then retain or relocate the single door to the evidenced face without adding a duplicate principal portal."
+  }
+ ]
+}

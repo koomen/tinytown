@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"4485494aa6079d40eacae01e4fb8d9f43da03296c4bf377d66f1d3a28ab4b359\",\"operations\":[{\"op\":\"replace\",\"path\":\"/roofColor\",\"value\":\"#dfe2df\"}]}",
+ "cues": [
+  "Compact warm-brown cabin.",
+  "Broad pale-silver hipped roof with generous eaves.",
+  "Solitary white-trimmed ENE window.",
+  "Low, dark raised base."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The WSW entrance remains unverified; retain the single existing door as a plausible concealed entry.",
+  "Roof color is lightened toward silver; the catalog provides no control for removing the renderer\u2019s shingle pattern."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1 establishes the opposite windowed end; neither SV1 nor AERIAL reveals this entry"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

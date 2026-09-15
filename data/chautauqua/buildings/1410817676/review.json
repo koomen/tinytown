@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The compact rectangular mass and simple projecting gable make a coherent cabin-like miniature, but the brick treatment conflicts with the characteristic brown timber studio, and the principal entrance is not securely resolved from the supplied imagery.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "SV1 is geolocated northwest of the building and looks southeast, so it shows the +u/NW gable\u2014not the camera heading as a facade bearing. The render inventory places the only door on that +u face at its right edge. SV1 clearly confirms the gable\u2019s low grille and apex detail, but the supposed right-edge doorway is too dark and indistinct to verify as the principal entrance. The map and nearby Hurst Avenue do not independently prove entry placement."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry placement on +u remains visually unverified; the single modeled door relies on an ambiguous shadow/detail in SV1.",
+   "fix": "Obtain clearer located entrance evidence or revise the +u edge treatment so the door matches a demonstrably visible portal; do not add a duplicate principal door."
+  },
+  {
+   "severity": "major",
+   "problem": "The walls read as masonry brick, whereas the reference and stated identifying cue read as subdued brown timber cladding.",
+   "fix": "Replace the brick pattern with restrained dark-brown horizontal or board-like siding while retaining the simple trim."
+  },
+  {
+   "severity": "minor",
+   "problem": "The bright spherical wall light on +u is conspicuous and unsupported by the street view, distracting from the grille-and-apex composition.",
+   "fix": "Remove it or reduce it to a small, subdued fixture consistent with the reference."
+  }
+ ]
+}

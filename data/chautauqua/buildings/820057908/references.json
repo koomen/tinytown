@@ -1,0 +1,362 @@
+{
+ "version": 3,
+ "id": "820057908",
+ "name": "Smith Wilkes Hall",
+ "location": "Chautauqua Institution New York",
+ "address": "21 Foster Avenue",
+ "source_tags": {
+  "amenity": "events_venue",
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 25.338,
+  "depth_v": 25.376,
+  "footprint_uv": [
+   [
+    -7.4,
+    -5.9
+   ],
+   [
+    -7.4,
+    -12.7
+   ],
+   [
+    6.9,
+    -12.7
+   ],
+   [
+    6.9,
+    -7.2
+   ],
+   [
+    12.7,
+    -7.2
+   ],
+   [
+    12.7,
+    4.4
+   ],
+   [
+    6.4,
+    12.7
+   ],
+   [
+    1.7,
+    12.4
+   ],
+   [
+    -3.7,
+    12.1
+   ],
+   [
+    -12.7,
+    3.7
+   ],
+   [
+    -12.7,
+    -5.9
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 156,
+    "compass": "SSE",
+    "left_bearing": 246,
+    "right_bearing": 66,
+    "nearest_road_outward": {
+     "name": "Foster Avenue",
+     "circular": false,
+     "distance_m": 13.7
+    },
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 336,
+    "compass": "NNW",
+    "left_bearing": 66,
+    "right_bearing": 246,
+    "nearest_road_outward": {
+     "name": "Janes Avenue",
+     "circular": false,
+     "distance_m": 5.4
+    },
+    "nearest_road_hint": true
+   },
+   "+v": {
+    "bearing": 246,
+    "compass": "WSW",
+    "left_bearing": 336,
+    "right_bearing": 156,
+    "nearest_road_outward": {
+     "name": "Clark Brick Walk",
+     "circular": false,
+     "distance_m": 36.3
+    },
+    "nearest_road_hint": false
+   },
+   "-v": {
+    "bearing": 66,
+    "compass": "ENE",
+    "left_bearing": 156,
+    "right_bearing": 336,
+    "nearest_road_outward": {
+     "name": "Fletcher Avenue",
+     "circular": false,
+     "distance_m": 12.1
+    },
+    "nearest_road_hint": false
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/820057908/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/820057908/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/820057908/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  },
+  {
+   "id": "WEB1",
+   "kind": "web-image",
+   "path": "miniature/820057908/reference-6.jpg",
+   "caption": "Smith Wilkes Hall: OPEN square pavilion, tan brick square piers and low walls, white classical cornice and green fabric entry awning. Do not model enclosed windows. Unlocated public photo: confirm face direction with geolocated street views. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)"
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820057908_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2074303,
+    "lon": -79.4634617,
+    "position_xz": [
+     220.84,
+     217.04
+    ],
+    "position_uv": [
+     24.66,
+     -2.71
+    ],
+    "looking_bearing": 323.0,
+    "looking_compass": "NW",
+    "image_left_bearing": 233.0,
+    "image_right_bearing": 53.0,
+    "target_center_offset_deg": 6.8,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 13,
+    "fov": 80,
+    "tilt": 93,
+    "near_road": {
+     "name": "Foster Avenue",
+     "circular": false,
+     "distance_m": 1.7
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2074303,-79.4634617,417a,80y,323h,93t/data=!3m7!1e1!3m5!1sOMHl-uspwOukhcRkyOxzBg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DOMHl-uspwOukhcRkyOxzBg%26yaw%3D323!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "OMHl-uspwOukhcRkyOxzBg",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820057908/reference-1.jpg",
+   "sha256": "32233337c8554d45182ca77c6e8f1468221f91c798aab3efa63d00f8787cd549"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820057908_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2080076,
+    "lon": -79.4636371,
+    "position_xz": [
+     206.37,
+     152.78
+    ],
+    "position_uv": [
+     -39.95,
+     -15.57
+    ],
+    "looking_bearing": 186.0,
+    "looking_compass": "S",
+    "image_left_bearing": 96.0,
+    "image_right_bearing": 276.0,
+    "target_center_offset_deg": -8.6,
+    "geometrically_facing_camera": [
+     "-u",
+     "-v"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 30,
+    "fov": 56,
+    "tilt": 91,
+    "near_road": {
+     "name": "South Terrace Avenue",
+     "circular": false,
+     "distance_m": 1.4
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2080076,-79.4636371,415a,56y,186h,91t/data=!3m7!1e1!3m5!1saR6Pzuq3JbJyY4WnGMWKgA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DaR6Pzuq3JbJyY4WnGMWKgA%26yaw%3D186!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "aR6Pzuq3JbJyY4WnGMWKgA",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820057908/reference-2.jpg",
+   "sha256": "bd9bb26caa581a0550d4cc9218bfc4ac889f7f3fb5bd62f76edb461aa3f0a6d8"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820057908_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.207421,
+    "lon": -79.4641032,
+    "position_xz": [
+     167.94,
+     218.08
+    ],
+    "position_uv": [
+     4.14,
+     46.05
+    ],
+    "looking_bearing": 59.0,
+    "looking_compass": "ENE",
+    "image_left_bearing": 329.0,
+    "image_right_bearing": 149.0,
+    "target_center_offset_deg": 1.9,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 7,
+    "fov": 55,
+    "tilt": 91,
+    "near_road": {
+     "name": "Clark Brick Walk",
+     "circular": false,
+     "distance_m": 2.2
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.207421,-79.4641032,419a,55y,59h,91t/data=!3m7!1e1!3m5!1skhG6IApiSsS33jQn1J7dTA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DkhG6IApiSsS33jQn1J7dTA%26yaw%3D59!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "khG6IApiSsS33jQn1J7dTA",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820057908/reference-3.jpg",
+   "sha256": "f2f733e8e587b2067a7623a4aaacf8d28d2e9e11983e4400ee833e3992fad68d"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_820057908_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2076882,
+    "lon": -79.4632618,
+    "position_xz": [
+     237.32,
+     188.33
+    ],
+    "position_uv": [
+     5.1,
+     -29.43
+    ],
+    "looking_bearing": 263.0,
+    "looking_compass": "W",
+    "image_left_bearing": 173.0,
+    "image_right_bearing": 353.0,
+    "target_center_offset_deg": -7.1,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 17,
+    "fov": 80,
+    "tilt": 92,
+    "near_road": {
+     "name": "Fletcher Avenue",
+     "circular": false,
+     "distance_m": 0.2
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2076882,-79.4632618,413a,80y,263h,92t/data=!3m7!1e1!3m5!1stjZpAzJ2Sdg50b-mRBgQ6w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3DtjZpAzJ2Sdg50b-mRBgQ6w%26yaw%3D263!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "tjZpAzJ2Sdg50b-mRBgQ6w",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820057908/reference-4.jpg",
+   "sha256": "d1e8c56dfa717341f8bbda4bc914bdfd1e0a7f57e1117d753de2537b0ca68f7f"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/aerial_820057908.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/820057908/reference-5.jpg",
+   "sha256": "12d8ae1c624313c15ec1b66a99eac121512ed9aa33afd893f25e6c6e24ea174e"
+  },
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2022/06/smith_wilkes.jpg",
+   "page_url": "https://www.chq.org/wp-content/uploads/2022/06/smith_wilkes.jpg",
+   "title": "Smith Wilkes Hall: OPEN square pavilion, tan brick square piers and low walls, white classical cornice and green fabric entry awning. Do not model enclosed windows. Unlocated public photo: confirm face direction with geolocated street views.",
+   "provider": "Chautauqua Institution",
+   "id": "WEB1",
+   "source_path": "data/chautauqua--20260910-044859-38562b/miniature/820057908/web-original-e2f943f40738b783",
+   "kind": "web-image",
+   "camera": {
+    "status": "unlocated",
+    "reason": "Web photo has no verified capture pose."
+   },
+   "caption": "Smith Wilkes Hall: OPEN square pavilion, tan brick square piers and low walls, white classical cornice and green fabric entry awning. Do not model enclosed windows. Unlocated public photo: confirm face direction with geolocated street views. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)",
+   "path": "miniature/820057908/reference-6.jpg",
+   "sha256": "e2f943f40738b78318f7249241d0f31d9a3a2c28901c8f8b81293a502d46ec4e"
+  }
+ ],
+ "search_query": "Smith Wilkes Hall Chautauqua Institution New York building exterior",
+ "search_candidates": [
+  {
+   "url": "https://www.chq.org/wp-content/uploads/2022/06/smith_wilkes.jpg",
+   "page_url": "https://www.chq.org/wp-content/uploads/2022/06/smith_wilkes.jpg",
+   "title": "Smith Wilkes Hall: OPEN square pavilion, tan brick square piers and low walls, white classical cornice and green fabric entry awning. Do not model enclosed windows. Unlocated public photo: confirm face direction with geolocated street views.",
+   "provider": "Chautauqua Institution"
+  }
+ ],
+ "warnings": []
+}

@@ -1,0 +1,15 @@
+{
+ "verdict": "insufficient-evidence",
+ "summary": "The compact warm-brown cabin, simple gray gable roof, restrained trim, and sparse openings form a coherent and recognizable miniature with no obvious visible modeling defects. Principal-entry placement remains unverified.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The actual inventory has one principal door on +v (SSE, 147\u00b0), matching the +v face render and avoiding duplicated portals. SV1 is geolocated southeast of the cabin and looks NW, so it correctly faces +v rather than proving a different side; however, the cabin\u2019s +v wall is substantially obscured by trees and the doorway cannot be confirmed. The low-resolution north-up aerial also does not resolve an entrance. Road proximity and the author plan are not evidence."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "No supplied source clearly establishes that the principal entry belongs on the +v/SSE face, so orientation is unresolved and cannot be approved.",
+   "fix": "Provide an unobstructed geolocated view or clearer north-up aerial/path evidence showing the target cabin\u2019s doorway; then retain +v or move the single principal door to the evidenced face."
+  }
+ ]
+}

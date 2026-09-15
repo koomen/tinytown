@@ -1,0 +1,43 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"8f81d229eee218408c45baa6fda9b1dbff2fca044d9f2f88a67a14c1195561ee\",\"operations\":[{\"op\":\"replace\",\"path\":\"/volumes/@main/faces/-v/porches\",\"value\":[{\"style\":\"open\",\"at\":0.5,\"w\":60.1,\"d\":3.5,\"height\":4.15,\"floorH\":0.15,\"posts\":12,\"postColor\":\"#f0e8d6\",\"roof\":\"flat\",\"roofColor\":\"#747971\",\"railing\":false,\"steps\":1}]},{\"op\":\"replace\",\"path\":\"/volumes/@raised_roof_block/faces/-v/storeys\",\"value\":[{\"y\":0.4,\"windows\":{\"type\":\"rect\",\"w\":1.5,\"h\":1.3,\"at\":[0.09,0.24,0.39,0.54,0.69,0.84,0.94],\"trim\":\"#eee6d4\",\"glass\":\"#526967\",\"interior\":false}}]}]}",
+ "cues": [
+  "Long warm-brick welcome center",
+  "Continuous pale-post West Lake veranda",
+  "Raised hipped roof with readable clerestory windows",
+  "Cream bracketed cornices",
+  "Raised southeast double-door entrance"
+ ],
+ "references_used": [
+  "MAP",
+  "SV2",
+  "SV4",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Veranda post spacing and clerestory dimensions are simplified for miniature readability.",
+  "Concealed northeast and northwest elevations remain inferred."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "main",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV2"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "main",
+   "face": "-v",
+   "role": "secondary veranda access",
+   "evidence": [
+    "MAP",
+    "SV4"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"5e169c5df35d0fcc3e13c740c930064e070375435a50d739d098ec38815939f1\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#896451\"},{\"op\":\"replace\",\"path\":\"/roofColor\",\"value\":\"#ded9c5\"},{\"op\":\"replace\",\"path\":\"/volumes/@studio/faces/+u/doors/0/color\",\"value\":\"#c8c7b9\"},{\"op\":\"replace\",\"path\":\"/volumes/@studio/faces/+u/doors/0/surround\",\"value\":\"#ddd9cb\"}]}",
+ "cues": [
+  "Compact single-room studio",
+  "Shallow pale gable with projecting eaves",
+  "Muted brown walls and cream window trim",
+  "Single southeast entry above small steps"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Palette repaired; the supplied catalog exposes no wood-cladding, metal-seam, or door-thickness controls, so those rendering defects remain unresolved."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

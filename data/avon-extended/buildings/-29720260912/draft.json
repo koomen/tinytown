@@ -1,0 +1,42 @@
+{
+ "wall": "#a9aca0",
+ "wallMaterial": "siding",
+ "trim": "#747c70",
+ "roofColor": "#797f79",
+ "volumes": [
+  {
+   "id": "shed",
+   "u": [
+    -2.2,
+    2.2
+   ],
+   "v": [
+    -1.6,
+    1.6
+   ],
+   "height": 2.3,
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.23,
+    "maxH": 0.75,
+    "overhang": 0.18
+   },
+   "faces": {
+    "+u": {
+     "doors": [
+      {
+       "at": 0.5,
+       "w": 1.15,
+       "h": 1.85,
+       "color": "#747763",
+       "surround": "#72776c",
+       "lamp": false
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "notes": "Small detached shed located from the user aerial. Roof footprint and light finish are observed; door position and wall height are conservative estimates because no close-up was supplied."
+}

@@ -1,0 +1,50 @@
+{
+ "id": "248274497",
+ "addr": "46 West Main Street",
+ "name": null,
+ "faces": {
+  "+u": {
+   "bearing": 219,
+   "width": 8.4,
+   "road": true,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_248274497_+u.png",
+     "pano": "YjUsV-e_Pe-7jW2AZoeMLA",
+     "dist": 17.8,
+     "off_axis_deg": 2,
+     "fov": 55,
+     "tilt": 96,
+     "heading": 42,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9125563,-77.7470195,191a,55y,42h,96t/data=!3m7!1e1!3m5!1sYjUsV-e_Pe-7jW2AZoeMLA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3DYjUsV-e_Pe-7jW2AZoeMLA%26yaw%3D42!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  },
+  "-u": {
+   "bearing": 39,
+   "width": 8.4,
+   "road": false,
+   "photos": [],
+   "coverage": false
+  },
+  "+v": {
+   "bearing": 309,
+   "width": 23.0,
+   "road": false,
+   "photos": [],
+   "coverage": false
+  },
+  "-v": {
+   "bearing": 129,
+   "width": 23.0,
+   "road": false,
+   "photos": [],
+   "coverage": false
+  }
+ },
+ "captured": "2026-09-03 03:41"
+}

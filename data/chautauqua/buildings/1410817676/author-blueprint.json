@@ -1,0 +1,82 @@
+{
+ "wall": "#805b43",
+ "trim": "#65513e",
+ "roofColor": "#8d8b7e",
+ "volumes": [
+  {
+   "id": "studio",
+   "u": [
+    -2.72,
+    2.72
+   ],
+   "v": [
+    -2.16,
+    2.16
+   ],
+   "bottom": 0,
+   "height": 2.9,
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.27,
+    "maxH": 1.17,
+    "overhang": 0.28
+   },
+   "plinth": {
+    "height": 0.16,
+    "color": "#514b40"
+   },
+   "faces": {
+    "+u": {
+     "doors": [
+      {
+       "at": 0.83,
+       "type": "rect",
+       "w": 0.78,
+       "h": 2.05,
+       "color": "#654a36",
+       "surround": "#594532",
+       "surroundW": 0.07
+      }
+     ],
+     "storeys": [
+      {
+       "y": 0.38,
+       "windows": {
+        "type": "basement",
+        "w": 1.05,
+        "h": 0.48,
+        "at": [
+         0.5
+        ],
+        "trim": "#655e4d",
+        "glass": "#343a35",
+        "mullions": false,
+        "interior": false
+       }
+      },
+      {
+       "y": 3.12,
+       "windows": {
+        "type": "rect",
+        "w": 0.25,
+        "h": 0.38,
+        "at": [
+         0.5
+        ],
+        "trim": "#66513c",
+        "glass": "#403e32",
+        "mullions": false,
+        "interior": false
+       }
+      }
+     ]
+    },
+    "-u": {},
+    "+v": {},
+    "-v": {}
+   }
+  }
+ ],
+ "details": []
+}

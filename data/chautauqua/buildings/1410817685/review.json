@@ -1,0 +1,20 @@
+{
+ "verdict": "insufficient-evidence",
+ "summary": "The compact rectangular cabin, gray gable roof, pale rake trim, high vent, and low utility grille form a recognizable miniature, but the strongly brick-like wall texture conflicts with the reference\u2019s brown timber/shingle character. Principal-entry placement remains unverified.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "Located SV1 looks SSE toward the cabin\u2019s -u face, whose outward bearing is NNW; it shows the nearly blank gable with a high vent and low grille, and the render matches that face. The actual inventory contains one door only, on the opposite +u/SSE face, so there is no duplicated portal. However, neither SV1 nor the map or low-resolution aerial reveals that +u face\u2019s entrance, so the sole principal door cannot be confirmed."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The sole +u principal door is not supported by visible geolocated evidence, leaving entry orientation unresolved.",
+   "fix": "Obtain a located view that reveals the entrance face, or mark/revise the door placement only when a source can tie the principal entry to a labeled face."
+  },
+  {
+   "severity": "minor",
+   "problem": "The walls read as red masonry brick rather than the dark-brown timber/shingle cladding visible in SV1.",
+   "fix": "Replace the brick coursing with subdued brown wood or shingle siding while retaining the simple cabin massing."
+  }
+ ]
+}

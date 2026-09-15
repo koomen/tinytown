@@ -1,0 +1,20 @@
+{
+ "verdict": "repair",
+ "summary": "Recognizable Norton Hall caricature with the correct long auditorium mass, raised stage block, pale masonry, five-arch ceremonial front, and broad stairs. The principal silhouette is weakened by the conspicuously pitched-looking gray roof and an overly simplified entrance fa\u00e7ade.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The geolocated SV1 camera faces the +u side and directly shows the five-arched principal entrance; the labeled +u render places all five entrance portals there. The actual inventory confirms five arches only on +u, with a single secondary double door on -v and one service door on -u, so there is no duplicated principal portal. SV2/SV4 are consistent with those secondary/rear placements."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The auditorium reads as having a vast gray sloping roof, while the aerial and street views show a pale, nearly flat roof concealed by parapets. This changes the characteristic silhouette.",
+   "fix": "Flatten and lighten the main roof, keeping only subtle drainage slope, and strengthen the perimeter parapet/coping."
+  },
+  {
+   "severity": "minor",
+   "problem": "The principal fa\u00e7ade is too plain: its corner relief panels, arched surrounds, slender decorative piers, and upper inscription band are weak or reduced to generic shapes.",
+   "fix": "Exaggerate these few signature ornaments with shallow relief and stronger contrast while retaining the miniature style."
+  }
+ ]
+}

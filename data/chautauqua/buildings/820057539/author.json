@@ -1,0 +1,66 @@
+{
+ "blueprint_json": "{\"wall\":\"#a46e55\",\"trim\":\"#dfd6bc\",\"roofColor\":\"#777364\",\"volumes\":[{\"id\":\"canopy\",\"u\":[-8,9],\"v\":[-3.1,3.1],\"bottom\":4.35,\"height\":4.65,\"roof\":{\"type\":\"hip\",\"ridge\":\"u\",\"pitch\":0.3,\"maxH\":1.65,\"overhang\":0.45},\"faces\":{\"+v\":{\"signs\":[{\"text\":\"ENTER\",\"style\":\"board\",\"at\":0.28,\"y\":0.02,\"w\":1.5,\"h\":0.24},{\"text\":\"EXIT ONLY\",\"style\":\"board\",\"at\":0.77,\"y\":0.02,\"w\":2.1,\"h\":0.24}]}},\"wall\":\"#b4aa88\"},{\"id\":\"gate_booth\",\"u\":[0,2.6],\"v\":[-2.65,2.65],\"bottom\":0,\"height\":4.35,\"roof\":{\"type\":\"flat\",\"lip\":false},\"plinth\":{\"height\":0.2,\"color\":\"#969185\"},\"faces\":{\"+v\":{\"doors\":[{\"at\":0.5,\"type\":\"rect\",\"w\":1.05,\"h\":2.35,\"color\":\"#405652\",\"surround\":\"#dfd6bc\",\"surroundW\":0.13}],\"storeys\":[{\"y\":1.1,\"windows\":{\"type\":\"rect\",\"w\":0.48,\"h\":1.15,\"at\":[0.15,0.85],\"trim\":\"#dfd6bc\",\"glass\":\"#657d7b\",\"interior\":false}}]},\"-u\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":1.35,\"h\":1.4,\"at\":[0.32,0.72],\"trim\":\"#dfd6bc\",\"glass\":\"#657d7b\",\"interior\":false}}]},\"+u\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":1.35,\"h\":1.4,\"at\":[0.32,0.72],\"trim\":\"#dfd6bc\",\"glass\":\"#657d7b\",\"interior\":false}}]},\"-v\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":1.35,\"h\":1.4,\"at\":[0.5],\"trim\":\"#dfd6bc\",\"glass\":\"#657d7b\",\"interior\":false}}]}}},{\"id\":\"east_pier\",\"u\":[-8,-7.15],\"v\":[-2.65,2.65],\"bottom\":0,\"height\":4.35,\"roof\":{\"type\":\"flat\",\"lip\":false}},{\"id\":\"west_pier\",\"u\":[8.15,9],\"v\":[-2.65,2.65],\"bottom\":0,\"height\":4.35,\"roof\":{\"type\":\"flat\",\"lip\":false}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Broad, low hipped roof with generous pale eaves",
+  "Two genuinely open vehicle passages",
+  "Warm brick central attendant booth and outer supports",
+  "Small ENTER and EXIT ONLY fascia signs",
+  "Cream-framed dark booth glazing"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV3",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Pier depth, booth glazing and concealed rear elevation are simplified.",
+  "The small eastern footprint notch is omitted to preserve open circulation.",
+  "SV2's lower pedestrian gate appears adjacent to the target canopy and is not duplicated."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "canopy",
+   "face": "+v",
+   "role": "principal vehicle entrance through the negative-u bay",
+   "evidence": [
+    "MAP",
+    "SV3",
+    "AERIAL"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "canopy",
+   "face": "+v",
+   "role": "outbound vehicle opening through the positive-u bay; EXIT ONLY",
+   "evidence": [
+    "MAP",
+    "SV3"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "gate_booth",
+   "face": "+v",
+   "role": "secondary attendant access",
+   "evidence": [
+    "SV3"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "canopy",
+   "face": "-v",
+   "role": "grounds-side continuation of both open vehicle passages",
+   "evidence": [
+    "MAP",
+    "SV3",
+    "AERIAL"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

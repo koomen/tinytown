@@ -1,0 +1,121 @@
+{
+ "id": "680211975",
+ "addr": "1 Pratt Avenue",
+ "name": "The St. Elmo",
+ "frame": "ee83fcec7327b5fc6fa2fae9fb0ed23e54c3da3a5fe65e22858dee5c7e26eb4c",
+ "faces": {
+  "+u": {
+   "bearing": 49,
+   "width": 28.7,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_680211975_+u.png",
+     "pano": "3EU44U3cXf7uhIagS-JBRA",
+     "dist": 32.5,
+     "off_axis_deg": 2,
+     "fov": 60,
+     "tilt": 91,
+     "heading": 230,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2097748,-79.4664481,418a,60y,230h,91t/data=!3m7!1e1!3m5!1s3EU44U3cXf7uhIagS-JBRA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3D3EU44U3cXf7uhIagS-JBRA%26yaw%3D230!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2097748,
+      "lon": -79.4664481
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 229,
+   "width": 28.7,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_680211975_-u.png",
+     "pano": "5ZCoqUptCayEw13Xk_5e3A",
+     "dist": 11.3,
+     "off_axis_deg": 26,
+     "fov": 80,
+     "tilt": 94,
+     "heading": 23,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2092212,-79.4672215,419a,80y,23h,94t/data=!3m7!1e1!3m5!1s5ZCoqUptCayEw13Xk_5e3A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4%26panoid%3D5ZCoqUptCayEw13Xk_5e3A%26yaw%3D23!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2092212,
+      "lon": -79.4672215
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 139,
+   "width": 46.0,
+   "road": true,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_680211975_+v.png",
+     "pano": "YC3AGN0jrl5XGX8QoEtcvQ",
+     "dist": 48.2,
+     "off_axis_deg": 2,
+     "fov": 63,
+     "tilt": 90,
+     "heading": 316,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.209043,-79.4664394,420a,63y,316h,90t/data=!3m7!1e1!3m5!1sYC3AGN0jrl5XGX8QoEtcvQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DYC3AGN0jrl5XGX8QoEtcvQ%26yaw%3D316!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.209043,
+      "lon": -79.4664394
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 319,
+   "width": 46.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_680211975_-v.png",
+     "pano": "cZmhMOwhBzpy9IQERW-Hag",
+     "dist": 51.3,
+     "off_axis_deg": 0,
+     "fov": 60,
+     "tilt": 90,
+     "heading": 138,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2098906,-79.4674914,417a,60y,138h,90t/data=!3m7!1e1!3m5!1scZmhMOwhBzpy9IQERW-Hag!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DcZmhMOwhBzpy9IQERW-Hag%26yaw%3D138!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2098906,
+      "lon": -79.4674914
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-09 17:55"
+}

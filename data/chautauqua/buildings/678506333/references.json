@@ -1,0 +1,341 @@
+{
+ "version": 3,
+ "id": "678506333",
+ "name": "Turner Community Center",
+ "location": "Chautauqua Institution New York",
+ "address": "4840 Route 394",
+ "source_tags": {
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 93.628,
+  "depth_v": 46.632,
+  "footprint_uv": [
+   [
+    46.8,
+    -19.2
+   ],
+   [
+    46.3,
+    4.4
+   ],
+   [
+    -4.2,
+    4.0
+   ],
+   [
+    -4.4,
+    8.9
+   ],
+   [
+    -5.8,
+    8.9
+   ],
+   [
+    -10.0,
+    8.5
+   ],
+   [
+    -10.4,
+    23.2
+   ],
+   [
+    -42.2,
+    23.3
+   ],
+   [
+    -42.0,
+    -6.3
+   ],
+   [
+    -46.8,
+    -6.0
+   ],
+   [
+    -46.4,
+    -13.0
+   ],
+   [
+    -45.9,
+    -23.3
+   ],
+   [
+    -9.8,
+    -23.3
+   ],
+   [
+    -9.4,
+    -19.7
+   ],
+   [
+    -4.4,
+    -19.7
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 329,
+    "compass": "NNW",
+    "left_bearing": 59,
+    "right_bearing": 239,
+    "nearest_road_outward": null,
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 149,
+    "compass": "SSE",
+    "left_bearing": 239,
+    "right_bearing": 59,
+    "nearest_road_outward": {
+     "name": "Turner Access Road",
+     "circular": false,
+     "distance_m": 30.1
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 59,
+    "compass": "ENE",
+    "left_bearing": 149,
+    "right_bearing": 329,
+    "nearest_road_outward": null,
+    "nearest_road_hint": true
+   },
+   "-v": {
+    "bearing": 239,
+    "compass": "WSW",
+    "left_bearing": 329,
+    "right_bearing": 149,
+    "nearest_road_outward": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 92.7
+    },
+    "nearest_road_hint": false
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/678506333/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/678506333/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/678506333/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_678506333_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2112091,
+    "lon": -79.4747651,
+    "position_xz": [
+     -711.18,
+     -203.62
+    ],
+    "position_uv": [
+     53.0,
+     -2.26
+    ],
+    "looking_bearing": 129.0,
+    "looking_compass": "SE",
+    "image_left_bearing": 39.0,
+    "image_right_bearing": 219.0,
+    "target_center_offset_deg": 17.4,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 20,
+    "fov": 80,
+    "tilt": 96,
+    "near_road": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 122.4
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2112091,-79.4747651,436a,80y,129h,96t/data=!3m7!1e1!3m5!1scyh5WDcjf7yWOIAivqiIxw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3Dcyh5WDcjf7yWOIAivqiIxw%26yaw%3D129!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "cyh5WDcjf7yWOIAivqiIxw",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/678506333/reference-1.jpg",
+   "sha256": "3ef59557fb3bcc24c2c59c94409ea8ed43981930a9f49e91158ca7aa7165d56a"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_678506333_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2102005,
+    "lon": -79.4739667,
+    "position_xz": [
+     -645.34,
+     -91.34
+    ],
+    "position_uv": [
+     -77.14,
+     -4.07
+    ],
+    "looking_bearing": 333.0,
+    "looking_compass": "NNW",
+    "image_left_bearing": 243.0,
+    "image_right_bearing": 63.0,
+    "target_center_offset_deg": -1.2,
+    "geometrically_facing_camera": [
+     "-u"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 4,
+    "fov": 79,
+    "tilt": 91,
+    "near_road": {
+     "name": "Turner Access Road",
+     "circular": false,
+     "distance_m": 0.2
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2102005,-79.4739667,437a,79y,333h,91t/data=!3m7!1e1!3m5!1sIc1R6AjIeWL121-jjosagw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DIc1R6AjIeWL121-jjosagw%26yaw%3D333!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "h5WOMlCaHyr1zUUAMqQiPA",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/678506333/reference-2.jpg",
+   "sha256": "79b16838e246367063d49d4934da408b5d6ea1c317def4d541664fe4c5add701"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_678506333_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2112189,
+    "lon": -79.47347,
+    "position_xz": [
+     -604.39,
+     -204.71
+    ],
+    "position_uv": [
+     -1.35,
+     89.67
+    ],
+    "looking_bearing": 240.0,
+    "looking_compass": "WSW",
+    "image_left_bearing": 150.0,
+    "image_right_bearing": 330.0,
+    "target_center_offset_deg": -0.3,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 1,
+    "fov": 80,
+    "tilt": 90,
+    "near_road": {
+     "name": "Turner Access Road",
+     "circular": false,
+     "distance_m": 81.4
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2112189,-79.47347,434a,80y,240h,90t/data=!3m7!1e1!3m5!1sNuxJME8neg0ym8I772EDVA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DNuxJME8neg0ym8I772EDVA%26yaw%3D240!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "NuxJME8neg0ym8I772EDVA",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/678506333/reference-3.jpg",
+   "sha256": "c49819442020fdbc80a59ee26f3cb143798845144f76f5452fc776433d50fc70"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_678506333_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2104974,
+    "lon": -79.4750743,
+    "position_xz": [
+     -736.67,
+     -124.39
+    ],
+    "position_uv": [
+     -1.58,
+     -65.09
+    ],
+    "looking_bearing": 57.0,
+    "looking_compass": "ENE",
+    "image_left_bearing": 327.0,
+    "image_right_bearing": 147.0,
+    "target_center_offset_deg": 0.4,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 2,
+    "fov": 80,
+    "tilt": 91,
+    "near_road": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 47.4
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2104974,-79.4750743,437a,80y,57h,91t/data=!3m7!1e1!3m5!1si0BgnPczZgsewOReUl3qyA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3Di0BgnPczZgsewOReUl3qyA%26yaw%3D57!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "i0BgnPczZgsewOReUl3qyA",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/678506333/reference-4.jpg",
+   "sha256": "7ba24744cbee30c838072d3010abb4f2d4c0824060eecfde5d2f2899a9203757"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/aerial_678506333.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/678506333/reference-5.jpg",
+   "sha256": "17e31cfe015bf57d721f3891c6beacd41c446abf397d1659d4529ebf2add57df"
+  }
+ ],
+ "search_query": "Turner Community Center Chautauqua Institution New York building exterior",
+ "search_candidates": [],
+ "warnings": [
+  "No useful image-search candidates; using available Street View/aerial evidence."
+ ]
+}

@@ -1,0 +1,241 @@
+{
+ "wall": "#99543f",
+ "trim": "#eee7d4",
+ "roofColor": "#77756a",
+ "volumes": [
+  {
+   "id": "cafe",
+   "u": [
+    -7.2,
+    7.2
+   ],
+   "v": [
+    -14.4,
+    14.2
+   ],
+   "height": 3.5,
+   "roof": {
+    "type": "hip",
+    "ridge": "v",
+    "pitch": 0.18,
+    "maxH": 1.8,
+    "overhang": 0.45
+   },
+   "cornice": {
+    "height": 0.22,
+    "overhang": 0.16,
+    "color": "#eee7d4",
+    "dentils": false
+   },
+   "plinth": {
+    "height": 0.2,
+    "color": "#8c8171"
+   },
+   "faces": {
+    "+v": {
+     "storeys": [
+      {
+       "y": 0.65,
+       "windows": {
+        "type": "rect",
+        "w": 1.7,
+        "h": 2.1,
+        "at": [
+         0.13,
+         0.6,
+         0.82
+        ],
+        "trim": "#eee7d4",
+        "glass": "#61716a",
+        "interior": false
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.34,
+       "type": "double",
+       "w": 1.65,
+       "h": 2.5,
+       "color": "#445b4c",
+       "surround": "#eee7d4",
+       "surroundW": 0.12
+      }
+     ],
+     "awnings": [
+      {
+       "range": [
+        0.04,
+        0.94
+       ],
+       "y": 3.05,
+       "depth": 1.8,
+       "color": "#b74239"
+      }
+     ],
+     "signs": [
+      {
+       "text": "BRICK WALK CAF\u00c9",
+       "style": "green",
+       "at": 0.35,
+       "y": 2.72,
+       "w": 3.1,
+       "h": 0.35
+      }
+     ]
+    },
+    "-u": {
+     "storeys": [
+      {
+       "y": 0.75,
+       "windows": {
+        "type": "rect",
+        "w": 1.55,
+        "h": 1.85,
+        "at": [
+         0.09,
+         0.21,
+         0.34,
+         0.78,
+         0.9
+        ],
+        "trim": "#eee7d4",
+        "glass": "#62766e",
+        "interior": false
+       }
+      }
+     ],
+     "awnings": [
+      {
+       "range": [
+        0.03,
+        0.4
+       ],
+       "y": 3.02,
+       "depth": 1.45,
+       "color": "#b74239"
+      },
+      {
+       "range": [
+        0.72,
+        0.97
+       ],
+       "y": 3.02,
+       "depth": 1.45,
+       "color": "#b74239"
+      }
+     ]
+    },
+    "+u": {
+     "storeys": [
+      {
+       "y": 1.2,
+       "windows": {
+        "type": "rect",
+        "w": 1.2,
+        "h": 1.25,
+        "at": [
+         0.18,
+         0.36
+        ],
+        "trim": "#ddd9cb",
+        "glass": "#69746d",
+        "interior": false
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.76,
+       "type": "garage",
+       "w": 2.8,
+       "h": 2.65,
+       "color": "#d9ddd5"
+      },
+      {
+       "at": 0.54,
+       "type": "rect",
+       "w": 0.95,
+       "h": 2.25,
+       "color": "#7c8174"
+      }
+     ]
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 0.8,
+       "windows": {
+        "type": "rect",
+        "w": 1.4,
+        "h": 1.8,
+        "at": [
+         0.24,
+         0.52,
+         0.8
+        ],
+        "trim": "#eee7d4",
+        "glass": "#66756b",
+        "interior": false
+       }
+      }
+     ],
+     "awnings": [
+      {
+       "range": [
+        0.12,
+        0.9
+       ],
+       "y": 2.95,
+       "depth": 1.35,
+       "color": "#b74239"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "walk_bay",
+   "u": [
+    -7.3,
+    -3.5
+   ],
+   "v": [
+    -0.8,
+    5.4
+   ],
+   "height": 3.55,
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.23,
+    "maxH": 1.35,
+    "overhang": 0.3,
+    "gableColor": "#eee7d4"
+   },
+   "faces": {
+    "-u": {
+     "storeys": [
+      {
+       "y": 0.75,
+       "windows": {
+        "type": "rect",
+        "w": 1.35,
+        "h": 2.05,
+        "at": [
+         0.2,
+         0.5,
+         0.8
+        ],
+        "trim": "#eee7d4",
+        "glass": "#62766e",
+        "interior": false
+       }
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "details": []
+}

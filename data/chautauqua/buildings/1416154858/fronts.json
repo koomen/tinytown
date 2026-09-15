@@ -1,0 +1,121 @@
+{
+ "id": "1416154858",
+ "addr": null,
+ "name": "Hultquist Center",
+ "frame": "440c861ec977c736897b373778e38fce5ccb6354d863df246461168732d1d2aa",
+ "faces": {
+  "+u": {
+   "bearing": 242,
+   "width": 32.9,
+   "road": true,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_1416154858_+u.png",
+     "pano": "cMtsjieR7MZrE1wgA1Vj8w",
+     "dist": 30.2,
+     "off_axis_deg": 1,
+     "fov": 69,
+     "tilt": 91,
+     "heading": 63,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2086517,-79.4655377,416a,69y,63h,91t/data=!3m7!1e1!3m5!1scMtsjieR7MZrE1wgA1Vj8w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DcMtsjieR7MZrE1wgA1Vj8w%26yaw%3D63!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2086517,
+      "lon": -79.4655377
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 62,
+   "width": 32.9,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_1416154858_-u.png",
+     "pano": "1EALBh87buduVMbRNNJaKw",
+     "dist": 21.7,
+     "off_axis_deg": 6,
+     "fov": 80,
+     "tilt": 92,
+     "heading": 248,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2089056,-79.4648218,418a,80y,248h,92t/data=!3m7!1e1!3m5!1s1EALBh87buduVMbRNNJaKw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3D1EALBh87buduVMbRNNJaKw%26yaw%3D248!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2089056,
+      "lon": -79.4648218
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 332,
+   "width": 13.6,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_1416154858_+v.png",
+     "pano": "1KQ4qg_E-vN-uMUGMyMNQw",
+     "dist": 18.1,
+     "off_axis_deg": 16,
+     "fov": 55,
+     "tilt": 92,
+     "heading": 136,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2090515,-79.4653865,419a,55y,136h,92t/data=!3m7!1e1!3m5!1s1KQ4qg_E-vN-uMUGMyMNQw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3D1KQ4qg_E-vN-uMUGMyMNQw%26yaw%3D136!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2090515,
+      "lon": -79.4653865
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 152,
+   "width": 13.6,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_1416154858_-v.png",
+     "pano": "vw2RyLS4A9UfUycoZtPEsQ",
+     "dist": 22.9,
+     "off_axis_deg": 3,
+     "fov": 55,
+     "tilt": 92,
+     "heading": 335,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2084877,-79.4649296,418a,55y,335h,92t/data=!3m7!1e1!3m5!1svw2RyLS4A9UfUycoZtPEsQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3Dvw2RyLS4A9UfUycoZtPEsQ%26yaw%3D335!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2084877,
+      "lon": -79.4649296
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-09 17:59"
+}

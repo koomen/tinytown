@@ -1,0 +1,47 @@
+{
+ "blueprint_json": "{\"wall\":\"#a65f49\",\"trim\":\"#eee7d7\",\"roofColor\":\"#94665c\",\"volumes\":[{\"id\":\"hall\",\"u\":[-12.2,4.8],\"v\":[-19.7,13.5],\"height\":6.3,\"roof\":{\"type\":\"mansard\",\"h\":1.35,\"inset\":2.2,\"overhang\":0.35},\"cornice\":{\"height\":0.38,\"overhang\":0.25,\"color\":\"#eee7d7\",\"dentils\":false},\"plinth\":{\"height\":0.65,\"color\":\"#aaa493\"},\"faces\":{\"-u\":{\"storeys\":[{\"y\":1.15,\"windows\":{\"type\":\"rect\",\"w\":2.1,\"h\":4.3,\"at\":[0.09,0.31,0.48,0.69,0.92],\"trim\":\"#eee7d7\",\"glass\":\"#647776\",\"interior\":false}}],\"doors\":[{\"at\":0.23,\"type\":\"double\",\"w\":1.6,\"h\":2.9,\"color\":\"#43534e\",\"surround\":\"#eee7d7\",\"surroundW\":0.16,\"steps\":3},{\"at\":0.79,\"type\":\"double\",\"w\":1.6,\"h\":2.9,\"color\":\"#43534e\",\"surround\":\"#eee7d7\",\"surroundW\":0.16,\"steps\":3}],\"porches\":[{\"style\":\"open\",\"at\":0.51,\"w\":24,\"d\":1.4,\"height\":5.65,\"floorH\":0.45,\"posts\":6,\"postColor\":\"#eee7d7\",\"roof\":\"hip\",\"pitch\":0.15,\"roofColor\":\"#94665c\",\"railing\":false,\"steps\":2}],\"signs\":[{\"text\":\"POST OFFICE\",\"style\":\"bronze\",\"at\":0.12,\"y\":4.75,\"w\":2.8,\"h\":0.48}]},\"-v\":{\"storeys\":[{\"y\":1.2,\"windows\":{\"type\":\"rect\",\"w\":2.4,\"h\":4.3,\"at\":[0.23,0.5,0.77],\"trim\":\"#eee7d7\",\"glass\":\"#667874\",\"interior\":false}}],\"pilasters\":{\"at\":[0.04,0.96],\"w\":0.42,\"d\":0.15,\"height\":6.1,\"color\":\"#a65f49\",\"cap\":\"#eee7d7\"}},\"+u\":{\"storeys\":[{\"y\":1.4,\"windows\":{\"type\":\"rect\",\"w\":1.6,\"h\":3.6,\"at\":[0.13,0.34,0.55],\"trim\":\"#eee7d7\",\"glass\":\"#687a76\",\"interior\":false}}]}}},{\"id\":\"south_bookstore\",\"u\":[-12.1,12],\"v\":[13.3,19.7],\"height\":4.6,\"roof\":{\"type\":\"gable\",\"ridge\":\"v\",\"pitch\":0.15,\"maxH\":1.1,\"overhang\":0.3},\"cornice\":{\"height\":0.3,\"overhang\":0.2,\"color\":\"#eee7d7\",\"dentils\":false},\"plinth\":{\"height\":0.35,\"color\":\"#aaa493\"},\"faces\":{\"+v\":{\"storeys\":[{\"y\":0.65,\"windows\":{\"type\":\"rect\",\"w\":4,\"h\":3.35,\"at\":[0.12,0.36,0.64,0.88],\"trim\":\"#eee7d7\",\"glass\":\"#688381\",\"interior\":false}}],\"pilasters\":{\"at\":[0.015,0.245,0.5,0.755,0.985],\"w\":0.55,\"d\":0.15,\"height\":4.4,\"color\":\"#a65f49\",\"cap\":\"#eee7d7\"}},\"-u\":{\"doors\":[{\"at\":0.5,\"type\":\"double\",\"w\":1.7,\"h\":2.7,\"color\":\"#536960\",\"surround\":\"#eee7d7\",\"surroundW\":0.15,\"steps\":1}],\"awnings\":[{\"range\":[0.23,0.77],\"y\":3.15,\"depth\":1.1,\"color\":\"#9a514d\"}],\"signs\":[{\"text\":\"BOOKSTORE\",\"style\":\"board\",\"at\":0.5,\"y\":3.65,\"w\":3.5,\"h\":0.45}]},\"+u\":{\"storeys\":[{\"y\":0.7,\"windows\":{\"type\":\"rect\",\"w\":2.2,\"h\":3.1,\"at\":[0.28,0.73],\"trim\":\"#eee7d7\",\"glass\":\"#688381\",\"interior\":false}}]}}},{\"id\":\"east_return\",\"u\":[4.6,12.1],\"v\":[5,13.5],\"height\":4.4,\"roofColor\":\"#656b66\",\"roof\":{\"type\":\"flat\",\"lip\":false},\"cornice\":{\"height\":0.25,\"overhang\":0.18,\"color\":\"#eee7d7\",\"dentils\":false},\"faces\":{\"+u\":{\"storeys\":[{\"y\":0.8,\"windows\":{\"type\":\"rect\",\"w\":1.8,\"h\":2.8,\"at\":[0.25,0.75],\"trim\":\"#eee7d7\",\"glass\":\"#688381\",\"interior\":false}}]},\"-v\":{\"storeys\":[{\"y\":1,\"windows\":{\"type\":\"rect\",\"w\":1.6,\"h\":2.6,\"at\":[0.3,0.72],\"trim\":\"#eee7d7\",\"glass\":\"#688381\",\"interior\":false}}]}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Warm brick hall with a low, broad truncated roof.",
+  "Cream cornice and tall multipane windows.",
+  "Long columned entrance front facing Clark Brick Walk.",
+  "Lower glazed bookstore wing with a shallow gable.",
+  "L-shaped footprint with the return on the southeast end."
+ ],
+ "references_used": [
+  "MAP",
+  "SV2",
+  "SV3",
+  "SV4",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "SV1 shows an occluding timber building, not usable evidence for the target\u2019s east facade.",
+  "Southern roof junctions and wing heights are approximate.",
+  "Bookstore side-entry placement is inferred; exact tenant assignments of the two observed front entries are uncertain.",
+  "The aerial\u2019s dark flat roof center is simplified within the mansard component."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "hall",
+   "face": "-u",
+   "role": "principal public entrance group; two separate doorways beneath the long colonnade",
+   "evidence": [
+    "MAP",
+    "SV2"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "south_bookstore",
+   "face": "-u",
+   "role": "secondary bookstore entry near the terrace",
+   "evidence": [
+    "MAP",
+    "SV2",
+    "SV3"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The long gray-gabled hall and unequal wings are recognizable, but the ceremonial classical front is too weak and canopy-like to capture the Hall of Christ convincingly.",
+ "orientation": {
+  "status": "correct",
+  "summary": "SV2 is a located camera north of the building looking south and clearly shows the principal temple front; this corresponds to the model\u2019s north-facing -u face. The labeled -u render carries the pedimented entrance composition, and the actual inventory contains one -u double door. The only other door is on the west-facing +v wing, consistent with the secondary entrance visible obliquely in SV3, so there is no duplicated principal portal."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The -u principal front reads as a lightweight open canopy rather than the substantial raised classical portico in SV2; its columns, entablature, pediment, and stair approach lack visual weight.",
+   "fix": "Rebuild the north entry as a compact monumental temple front with four prominent columns/pilasters, a strong entablature and pediment, and a broad, deep ceremonial stair centered on the door."
+  },
+  {
+   "severity": "major",
+   "problem": "The six characteristic dark circular openings and their heavy pale surrounds are too small and indistinct, weakening the building\u2019s most recognizable facade detail.",
+   "fix": "Enlarge and darken the six round openings, group them symmetrically around the portico, and give each a clearly modeled pale surround."
+  },
+  {
+   "severity": "minor",
+   "problem": "The long side walls are extremely flat and generic despite the reference\u2019s pronounced cornice and horizontal facade banding.",
+   "fix": "Strengthen the eave cornice, belt courses, pilaster rhythm, and base transition while retaining the simplified miniature style."
+  }
+ ]
+}

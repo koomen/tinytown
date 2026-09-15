@@ -1,0 +1,54 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"caa92a12ae5e58f8fcbc094b61d7c314783db8c8528f1c8fcaf1f17f4d289f71\",\"operations\":[{\"op\":\"replace\",\"path\":\"/volumes/@wythe_end/faces/+u/porches/1/height\",\"value\":6.15},{\"op\":\"add\",\"path\":\"/volumes/@long_block/faces/+v/porches\",\"value\":[{\"style\":\"open\",\"at\":0.5,\"w\":21.4,\"d\":1.5,\"height\":3.05,\"floorH\":0.35,\"posts\":9,\"postColor\":\"#f2eee3\",\"roof\":\"flat\",\"roofColor\":\"#e2dfd4\",\"railing\":true,\"steps\":2},{\"style\":\"open\",\"at\":0.5,\"w\":21.4,\"d\":1.5,\"height\":6.15,\"floorH\":3.1,\"posts\":9,\"postColor\":\"#f2eee3\",\"roof\":\"flat\",\"roofColor\":\"#626963\",\"railing\":true,\"steps\":0}]},{\"op\":\"replace\",\"path\":\"/volumes/@long_block/faces/+v/storeys/0/windows/at\",\"value\":[0.12,0.3,0.48,0.66]},{\"op\":\"add\",\"path\":\"/volumes/@long_block/faces/+v/doors\",\"value\":[{\"at\":0.84,\"w\":1.05,\"h\":2.25,\"color\":\"#3b554d\",\"surround\":\"#f2eee3\",\"steps\":2}]},{\"op\":\"replace\",\"path\":\"/volumes/@low_side_annex/height\",\"value\":2.5},{\"op\":\"replace\",\"path\":\"/volumes/@low_side_annex/roof\",\"value\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.18,\"maxH\":0.4,\"overhang\":0.25}}]}",
+ "cues": [
+  "Long pale dormitory with forest-green window trim.",
+  "Prominent two-level white veranda wrapping the Wythe end and Vincent side.",
+  "Muted gabled roofs with a cross-gabled end and distinctly low annex.",
+  "Centered Pratt-side approach retained."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV3",
+  "SV4 gate context only; neighboring church excluded from design"
+ ],
+ "uncertainties": [
+  "SV3 may depict the intervening neighboring building; Vincent-side veranda extent and secondary doorway placement remain inferred.",
+  "Decorative porch brackets are simplified to catalog posts and rails.",
+  "An isolated elevation sheet cannot be supplied through a blueprint patch."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "long_block",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV2"
+   ],
+   "confidence": "inferred"
+  },
+  {
+   "volume": "wythe_end",
+   "face": "+u",
+   "role": "secondary paired entries beneath shared veranda",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "long_block",
+   "face": "+v",
+   "role": "secondary veranda entry",
+   "evidence": [
+    "MAP",
+    "SV3"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

@@ -1,0 +1,118 @@
+{
+ "id": "248274494",
+ "addr": null,
+ "name": null,
+ "faces": {
+  "+u": {
+   "bearing": 215,
+   "width": 15.2,
+   "road": true,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_248274494_+u.png",
+     "pano": "Rd-6WVx-_mQMh74Cou2Z9w",
+     "dist": 18.4,
+     "off_axis_deg": 3,
+     "fov": 57,
+     "tilt": 96,
+     "heading": 39,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9127243,-77.7473159,188a,57y,39h,96t/data=!3m7!1e1!3m5!1sRd-6WVx-_mQMh74Cou2Z9w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3DRd-6WVx-_mQMh74Cou2Z9w%26yaw%3D39!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  },
+  "-u": {
+   "bearing": 35,
+   "width": 15.2,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_248274494_-u.png",
+     "pano": "JNySd95-LWYBxCzivusAlw",
+     "dist": 40.9,
+     "off_axis_deg": 164,
+     "fov": 55,
+     "tilt": 93,
+     "heading": 51,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9127783,-77.7474137,187a,55y,51h,93t/data=!3m7!1e1!3m5!1sJNySd95-LWYBxCzivusAlw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DJNySd95-LWYBxCzivusAlw%26yaw%3D51!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  },
+  "+v": {
+   "bearing": 305,
+   "width": 21.3,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_248274494_+v.png",
+     "pano": "SIUTN3BzYDyj1x2MBkIF6A",
+     "dist": 36.7,
+     "off_axis_deg": 50,
+     "fov": 55,
+     "tilt": 93,
+     "heading": 75,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.912887,-77.7476108,185a,55y,75h,93t/data=!3m7!1e1!3m5!1sSIUTN3BzYDyj1x2MBkIF6A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DSIUTN3BzYDyj1x2MBkIF6A%26yaw%3D75!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+     "face": "+v",
+     "file": "front_248274494_+v_2.png",
+     "pano": "-_siEyR26BZFJfsw2uCkZA",
+     "dist": 43.7,
+     "off_axis_deg": 39,
+     "fov": 55,
+     "tilt": 92,
+     "heading": 86,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9129438,-77.7477096,184a,55y,86h,92t/data=!3m7!1e1!3m5!1s-_siEyR26BZFJfsw2uCkZA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3D-_siEyR26BZFJfsw2uCkZA%26yaw%3D86!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  },
+  "-v": {
+   "bearing": 125,
+   "width": 21.3,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_248274494_-v.png",
+     "pano": "YjUsV-e_Pe-7jW2AZoeMLA",
+     "dist": 37.3,
+     "off_axis_deg": 54,
+     "fov": 55,
+     "tilt": 93,
+     "heading": 360,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9125563,-77.7470195,191a,55y,360h,93t/data=!3m7!1e1!3m5!1sYjUsV-e_Pe-7jW2AZoeMLA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DYjUsV-e_Pe-7jW2AZoeMLA%26yaw%3D0!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+     "face": "-v",
+     "file": "front_248274494_-v_2.png",
+     "pano": "KYtrIo5ttXSoud1-rUnRoA",
+     "dist": 44.0,
+     "off_axis_deg": 44,
+     "fov": 55,
+     "tilt": 92,
+     "heading": 350,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9125028,-77.7469249,192a,55y,350h,92t/data=!3m7!1e1!3m5!1sKYtrIo5ttXSoud1-rUnRoA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3DKYtrIo5ttXSoud1-rUnRoA%26yaw%3D350!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  }
+ },
+ "captured": "2026-09-03 01:32"
+}

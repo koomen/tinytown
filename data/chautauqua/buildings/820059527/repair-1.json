@@ -1,0 +1,46 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"20c30841207967d4bd3fa66613f4b7feca596baefcb0ee4c5708026aed223cce\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#d6c39f\"},{\"op\":\"replace\",\"path\":\"/volumes/@sanctuary/faces/+u/parapets/0/color\",\"value\":\"#d6c39f\"},{\"op\":\"replace\",\"path\":\"/volumes/@sanctuary/faces/+u/pilasters/color\",\"value\":\"#d6c39f\"}]}",
+ "cues": [
+  "Warmer buff masonry with pale stone trim",
+  "High stepped entrance facade with three Gothic lights",
+  "Brown double doors above entrance stairs",
+  "Long muted charcoal roof and lower L-shaped wing"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "AERIAL",
+  "WEB1"
+ ],
+ "uncertainties": [
+  "Unobstructed face-sheet views require external camera changes; blueprint components cannot repair them.",
+  "The catalog provides no masonry-texture control; this repair adjusts the palette only.",
+  "SV3 shows an intervening house; SV4 shows an interior, not an exterior elevation."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "sanctuary",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "WEB1"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "sanctuary",
+   "face": "+v",
+   "role": "secondary",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "WEB1"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

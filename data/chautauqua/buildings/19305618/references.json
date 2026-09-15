@@ -1,0 +1,309 @@
+{
+ "version": 3,
+ "id": "19305618",
+ "name": "Main Gate Welcome Center",
+ "location": "Chautauqua Institution New York",
+ "address": "1 Massey Avenue",
+ "source_tags": {
+  "building": "commercial"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 68.337,
+  "depth_v": 20.955,
+  "footprint_uv": [
+   [
+    34.2,
+    10.1
+   ],
+   [
+    -3.6,
+    10.3
+   ],
+   [
+    -34.2,
+    10.5
+   ],
+   [
+    -34.2,
+    -10.5
+   ],
+   [
+    25.9,
+    -10.5
+   ],
+   [
+    25.9,
+    -3.5
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 321,
+    "compass": "NW",
+    "left_bearing": 51,
+    "right_bearing": 231,
+    "nearest_road_outward": {
+     "name": "Crescent Avenue",
+     "circular": false,
+     "distance_m": 97.3
+    },
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 141,
+    "compass": "SE",
+    "left_bearing": 231,
+    "right_bearing": 51,
+    "nearest_road_outward": null,
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 51,
+    "compass": "NE",
+    "left_bearing": 141,
+    "right_bearing": 321,
+    "nearest_road_outward": {
+     "name": "Massey Avenue",
+     "circular": false,
+     "distance_m": 40.8
+    },
+    "nearest_road_hint": true
+   },
+   "-v": {
+    "bearing": 231,
+    "compass": "SW",
+    "left_bearing": 321,
+    "right_bearing": 141,
+    "nearest_road_outward": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 16.0
+    },
+    "nearest_road_hint": false
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/19305618/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/19305618/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/19305618/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_19305618_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2081637,
+    "lon": -79.4694348,
+    "position_xz": [
+     -271.67,
+     135.4
+    ],
+    "position_uv": [
+     64.61,
+     9.01
+    ],
+    "looking_bearing": 158.0,
+    "looking_compass": "SSE",
+    "image_left_bearing": 68.0,
+    "image_right_bearing": 248.0,
+    "target_center_offset_deg": -9.0,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 16,
+    "fov": 55,
+    "tilt": 94,
+    "near_road": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 36.2
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2081637,-79.4694348,425a,55y,158h,94t/data=!3m7!1e1!3m5!1s2l3owZNlpxNDpIBqzNuUFA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4%26panoid%3D2l3owZNlpxNDpIBqzNuUFA%26yaw%3D158!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "2l3owZNlpxNDpIBqzNuUFA",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/19305618/reference-1.jpg",
+   "sha256": "363cdc1c77e8e6e742300c8345f783a7bc122e895e2abbcba6b9b5f4fcb62c8e"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_19305618_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2073647,
+    "lon": -79.4686341,
+    "position_xz": [
+     -205.65,
+     224.34
+    ],
+    "position_uv": [
+     -46.07,
+     4.51
+    ],
+    "looking_bearing": 300.0,
+    "looking_compass": "WNW",
+    "image_left_bearing": 210.0,
+    "image_right_bearing": 30.0,
+    "target_center_offset_deg": 15.5,
+    "geometrically_facing_camera": [
+     "-u"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 21,
+    "fov": 80,
+    "tilt": 100,
+    "near_road": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 30.7
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2073647,-79.4686341,424a,80y,300h,100t/data=!3m7!1e1!3m5!1sLfjwhScHG9WwD3tqLgLAfQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DLfjwhScHG9WwD3tqLgLAfQ%26yaw%3D300!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "LfjwhScHG9WwD3tqLgLAfQ",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/19305618/reference-2.jpg",
+   "sha256": "70bf9971303903c7371eaea2037c89de10b1ea10adb58de86a0a7ffc2c227df6"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_19305618_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2079336,
+    "lon": -79.4685369,
+    "position_xz": [
+     -197.63,
+     161.01
+    ],
+    "position_uv": [
+     -1.83,
+     50.52
+    ],
+    "looking_bearing": 234.0,
+    "looking_compass": "SW",
+    "image_left_bearing": 144.0,
+    "image_right_bearing": 324.0,
+    "target_center_offset_deg": -0.8,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 3,
+    "fov": 80,
+    "tilt": 93,
+    "near_road": {
+     "name": "Massey Avenue",
+     "circular": false,
+     "distance_m": 0.6
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2079336,-79.4685369,425a,80y,234h,93t/data=!3m7!1e1!3m5!1sL2fadR6_P3KvjeQOR4Xpkw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DL2fadR6_P3KvjeQOR4Xpkw%26yaw%3D234!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "L2fadR6_P3KvjeQOR4Xpkw",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/19305618/reference-3.jpg",
+   "sha256": "7cb9bd6bf68baaf6193bce91963f9b87ab98bcc9399aa5554f9e52241163877b"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_19305618_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2074619,
+    "lon": -79.4692701,
+    "position_xz": [
+     -258.09,
+     213.52
+    ],
+    "position_uv": [
+     -4.71,
+     -29.5
+    ],
+    "looking_bearing": 37.0,
+    "looking_compass": "NE",
+    "image_left_bearing": 307.0,
+    "image_right_bearing": 127.0,
+    "target_center_offset_deg": 5.0,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 14,
+    "fov": 80,
+    "tilt": 97,
+    "near_road": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 3.1
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2074619,-79.4692701,425a,80y,37h,97t/data=!3m7!1e1!3m5!1s9e_MIkP7ZeEfKGHiyAWfhQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7%26panoid%3D9e_MIkP7ZeEfKGHiyAWfhQ%26yaw%3D37!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "9e_MIkP7ZeEfKGHiyAWfhQ",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/19305618/reference-4.jpg",
+   "sha256": "87a852b10970258bde4df96ff2727ee87d9a5b80ac573a431971c1029ef99fb3"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/aerial_19305618.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/19305618/reference-5.jpg",
+   "sha256": "8431ce29a4a4c6fcabd572a9b0969f463863e65fc79984bf414fe31cd811cc97"
+  }
+ ],
+ "search_query": "Main Gate Welcome Center Chautauqua Institution New York building exterior",
+ "search_candidates": [],
+ "warnings": [
+  "No useful image-search candidates; using available Street View/aerial evidence."
+ ]
+}

@@ -1,0 +1,91 @@
+{
+  "_comment": "29 West Main St: 2-storey pale-yellow clapboard house, front gable toward the street (-u, NE), grey-blue shutters, dark brown shingle roof. Enclosed one-storey sun porch across the left (SE, -v) half of the front with a wide window band; front door with '29' beside it and one shuttered window to the right; two shuttered windows upstairs. Long lower rear wing / attached garage running SW to the parking area. Honey-locust in the front yard.",
+  "wall": "#e8e0aa",
+  "trim": "#f1eee2",
+  "roofColor": "#5c5147",
+  "volumes": [
+    {
+      "id": "house",
+      "u": [-13.3, -2.0],
+      "v": [-4.95, 4.95],
+      "height": 6.4,
+      "roof": { "type": "gable", "ridge": "u", "pitch": 0.45, "maxH": 3.2, "overhang": 0.45 },
+      "chimneys": [ { "u": -6.0, "v": 0.4 } ],
+      "faces": {
+        "-u": {
+          "storeys": [
+            { "y": 3.9, "windows": { "type": "rect", "w": 1.0, "h": 1.6, "at": [0.3, 0.74], "shutters": "#7d8895" } },
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.0, "h": 1.6, "at": [0.86], "shutters": "#7d8895" } },
+            { "y": 7.3, "windows": { "type": "rect", "w": 0.6, "h": 0.6, "at": [0.5], "mullions": false, "sill": false, "glass": "#5a5e63" } }
+          ],
+          "doors": [
+            { "at": 0.62, "type": "rect", "w": 1.0, "h": 2.15, "color": "#3a3f47", "surround": "#f1eee2", "surroundW": 0.14, "steps": 2, "lamp": true }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 3.9, "windows": { "type": "rect", "w": 1.0, "h": 1.6, "at": [0.25, 0.55, 0.8], "shutters": "#7d8895" } },
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.0, "h": 1.6, "at": [0.25, 0.8], "shutters": "#7d8895" } }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            { "y": 3.9, "windows": { "type": "rect", "w": 1.0, "h": 1.6, "at": [0.2, 0.5, 0.8], "shutters": "#7d8895" } },
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.0, "h": 1.6, "at": [0.5, 0.8], "shutters": "#7d8895" } }
+          ]
+        }
+      }
+    },
+    {
+      "id": "sunporch",
+      "u": [-15.6, -13.2],
+      "v": [-4.95, 0.3],
+      "height": 3.0,
+      "roof": { "type": "hip", "ridge": "v", "pitch": 0.25, "maxH": 0.7, "overhang": 0.3 },
+      "faces": {
+        "-u": {
+          "storeys": [
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.3, "h": 1.3, "at": [0.2, 0.5, 0.8], "mullions": true } }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.2, "h": 1.3, "at": [0.5], "mullions": true } }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rear-wing",
+      "u": [-2.6, 13.3],
+      "v": [-4.3, 4.3],
+      "height": 3.4,
+      "roof": { "type": "gable", "ridge": "u", "pitch": 0.3, "maxH": 2.0, "overhang": 0.35 },
+      "faces": {
+        "+u": {
+          "doors": [
+            { "at": 0.5, "type": "garage", "w": 2.8, "h": 2.4, "color": "#e6e3da", "panels": 4, "lights": true }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 1.1, "windows": { "type": "rect", "w": 1.0, "h": 1.2, "at": [0.2, 0.5, 0.8] } }
+          ],
+          "doors": [
+            { "at": 0.35, "type": "rect", "w": 0.95, "h": 2.05, "color": "#dcd9d0", "surround": "#f1eee2", "surroundW": 0.1, "steps": 1 }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            { "y": 1.1, "windows": { "type": "rect", "w": 1.0, "h": 1.2, "at": [0.3, 0.7] } }
+          ]
+        }
+      }
+    }
+  ],
+  "details": [
+    { "type": "bush", "u": -16.8, "v": -3.5, "size": 1.2 },
+    { "type": "bush", "u": -16.8, "v": -1.5, "size": 1.0 },
+    { "type": "bush", "u": -15.2, "v": 3.2, "size": 1.3 }
+  ]
+}

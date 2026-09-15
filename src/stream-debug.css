@@ -1,0 +1,46 @@
+#stream-debug {
+  position: fixed; top: max(24px, env(safe-area-inset-top)); left: max(24px, env(safe-area-inset-left));
+  z-index: 1; width: 270px; max-width: calc(100vw - 32px); box-sizing: border-box;
+  border: 1px solid #7f634133; border-radius: 16px;
+  background: #fffaf2ed; color: #614a32; box-shadow: 0 5px 24px #45321a14;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  font: 600 12px/1.45 "Nunito", system-ui, sans-serif;
+  max-height: calc(100dvh - 110px); overflow: auto;
+}
+#stream-debug summary { padding: 13px 16px; font-weight: 800; cursor: pointer; }
+#stream-debug summary::marker { color: #937857; }
+#stream-debug .stream-dot { display: inline-block; width: 7px; height: 7px; margin: 0 7px 1px 1px; border-radius: 50%; background: #368363; }
+#stream-debug .stream-body { padding: 0 16px 15px; }
+#stream-debug p { margin: 0 0 10px; }
+#stream-debug .stream-count { font-size: 13px; margin-bottom: 2px; }
+#stream-debug .stream-count strong { font-size: 22px; font-variant-numeric: tabular-nums; }
+#stream-debug [data-status] { min-height: 2.9em; color: #806c55; }
+#stream-debug .stream-memory { display: flex; justify-content: space-between; gap: 8px; font-size: 11px; }
+#stream-debug meter { display: block; width: 100%; height: 12px; accent-color: #438b6d; margin: 3px 0; }
+#stream-debug meter::-webkit-meter-bar { border: 0; background: #74634b20; }
+#stream-debug meter::-webkit-meter-optimum-value { background: #438b6d; }
+#stream-debug .stream-base, #stream-debug .stream-activity { font-size: 10px; color: #806c55; }
+#stream-debug .stream-base { margin-bottom: 4px; }
+#stream-debug .stream-actions { display: flex; gap: 7px; margin: 12px 0 10px; }
+#stream-debug button { flex: 1; min-height: 40px; border: 1px solid #947d5e55; border-radius: 9px; background: transparent; color: inherit; font: 800 12px "Nunito", system-ui, sans-serif; cursor: pointer; }
+#stream-debug button[aria-pressed="true"] { background: #397a5c; border-color: #397a5c; color: #fff; }
+#stream-debug button:focus-visible, #stream-debug a:focus-visible, #stream-debug summary:focus-visible { outline: 2px solid #397a5c; outline-offset: 2px; }
+#stream-debug .stream-legend { display: flex; gap: 14px; font-size: 10px; }
+#stream-debug .stream-legend[hidden] { display: none; }
+#stream-debug .stream-legend span::before { content: ''; display: inline-block; width: 8px; height: 8px; margin-right: 5px; border-radius: 2px; background: #809eae; }
+#stream-debug .stream-legend .detail::before { background: #259c70; }
+#stream-debug .stream-legend .pending::before { background: #d59126; }
+#stream-debug .stream-tip { font-size: 11px; }
+#stream-debug a { color: inherit; font-size: 11px; text-underline-offset: 3px; }
+[data-time="night"] #stream-debug { background: #1c273eed; color: #f4d8a5; border-color: #d2dbf533; }
+[data-time="night"] #stream-debug [data-status], [data-time="night"] #stream-debug .stream-base, [data-time="night"] #stream-debug .stream-activity { color: #b6c1d6; }
+[data-time="night"] #stream-debug .stream-dot { background: #47efae; }
+[data-time="night"] #stream-debug meter::-webkit-meter-bar { background: #ffffff22; }
+[data-time="night"] #stream-debug .stream-legend .detail::before { background: #47efae; }
+[data-time="night"] #stream-debug .stream-legend .pending::before { background: #ffc45e; }
+@media (max-width: 600px) {
+  #stream-debug { top: max(16px, env(safe-area-inset-top)); left: max(16px, env(safe-area-inset-left)); width: 220px; max-width: calc(100vw - 150px); }
+  #stream-debug summary { padding: 11px 13px; }
+  #stream-debug .stream-body { padding: 0 13px 13px; }
+  #stream-debug .stream-memory { flex-direction: column; gap: 0; }
+}

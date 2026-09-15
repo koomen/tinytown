@@ -1,0 +1,30 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"4b6d96b01cb28f242e129fa8b101439fadc8e2972add13601fb736af95f08685\",\"operations\":[{\"op\":\"add\",\"path\":\"/wallMaterial\",\"value\":\"wood\"}]}",
+ "cues": [
+  "Warm-brown timber cladding rather than brick",
+  "Compact pale gabled roof",
+  "Small square gable opening above a low horizontal opening",
+  "Understated right-offset entrance"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The catalog provides no documented cladding selector; wallMaterial is a material hint requiring renderer support. Existing geometry and colors are preserved."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

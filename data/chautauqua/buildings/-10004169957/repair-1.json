@@ -1,0 +1,33 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"7dd323a5962654bd702ed2a7e7ec6149ae6a10cbf4929e152ebf5e282f4af68a\",\"operations\":[{\"op\":\"replace\",\"path\":\"/volumes/@south_gate_marker/height\",\"value\":3.6},{\"op\":\"replace\",\"path\":\"/volumes/@south_gate_marker/v\",\"value\":[2.4,5.0]},{\"op\":\"replace\",\"path\":\"/volumes/@south_gate_marker/faces/-u/signs/0\",\"value\":{\"text\":\"Chautauqua\",\"style\":\"board\",\"at\":0.5,\"y\":2.2,\"w\":2.45,\"h\":1.5}},{\"op\":\"replace\",\"path\":\"/volumes/@north_gate_post/u\",\"value\":[-5.625,-5.375]},{\"op\":\"replace\",\"path\":\"/volumes/@north_gate_post/v\",\"value\":[-3.725,-3.475]},{\"op\":\"replace\",\"path\":\"/volumes/@north_gate_post/height\",\"value\":1.5}]}",
+ "cues": [
+  "Open east\u2013west entrance lane, without overhead structure.",
+  "Taller warm masonry marker on the south verge.",
+  "Broader pale Chautauqua sign facing west.",
+  "Slim, distinctly lower opposing post."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV3",
+  "SV4"
+ ],
+ "uncertainties": [
+  "Marker dimensions and lettering are simplified and modestly exaggerated for miniature readability."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "south_gate_marker",
+   "face": "-u",
+   "role": "principal vehicular approach through the adjacent open lane; no doorway",
+   "evidence": [
+    "MAP",
+    "SV2",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

@@ -1,0 +1,121 @@
+{
+ "id": "820059525",
+ "addr": "2 Ames Avenue",
+ "name": "2 Ames",
+ "frame": "6b9811d5a57d59b2d06231aaaa3bb48dba21a0144b8bcd873744c14919d6cc05",
+ "faces": {
+  "+u": {
+   "bearing": 230,
+   "width": 12.7,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_820059525_+u.png",
+     "pano": "e7Gxa2JOXeoiOJTO9QLNpA",
+     "dist": 22.3,
+     "off_axis_deg": 33,
+     "fov": 55,
+     "tilt": 96,
+     "heading": 16,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2095725,-79.4672139,419a,55y,16h,96t/data=!3m7!1e1!3m5!1se7Gxa2JOXeoiOJTO9QLNpA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3De7Gxa2JOXeoiOJTO9QLNpA%26yaw%3D16!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2095725,
+      "lon": -79.4672139
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 50,
+   "width": 12.7,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_820059525_-u.png",
+     "pano": "lcQ3jxijmV0Wbo4Yn8q6Zw",
+     "dist": 10.0,
+     "off_axis_deg": 35,
+     "fov": 77,
+     "tilt": 100,
+     "heading": 265,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2098363,-79.4669151,418a,77y,265h,100t/data=!3m7!1e1!3m5!1slcQ3jxijmV0Wbo4Yn8q6Zw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DlcQ3jxijmV0Wbo4Yn8q6Zw%26yaw%3D265!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2098363,
+      "lon": -79.4669151
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 320,
+   "width": 11.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_820059525_+v.png",
+     "pano": "gRQZTtT2lU4lQDDmkG8BUA",
+     "dist": 24.4,
+     "off_axis_deg": 7,
+     "fov": 55,
+     "tilt": 96,
+     "heading": 146,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2100222,-79.4673018,417a,55y,146h,96t/data=!3m7!1e1!3m5!1sgRQZTtT2lU4lQDDmkG8BUA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3DgRQZTtT2lU4lQDDmkG8BUA%26yaw%3D146!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2100222,
+      "lon": -79.4673018
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 140,
+   "width": 11.0,
+   "road": true,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_820059525_-v.png",
+     "pano": "S9kVxXnxL1dg-kNOa3BO6A",
+     "dist": 6.9,
+     "off_axis_deg": 22,
+     "fov": 80,
+     "tilt": 100,
+     "heading": 342,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2096939,-79.4670102,417a,80y,342h,100t/data=!3m7!1e1!3m5!1sS9kVxXnxL1dg-kNOa3BO6A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DS9kVxXnxL1dg-kNOa3BO6A%26yaw%3D342!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2096939,
+      "lon": -79.4670102
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-09 17:56"
+}

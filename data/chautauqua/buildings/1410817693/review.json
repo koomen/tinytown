@@ -1,0 +1,9 @@
+{
+ "verdict": "ready",
+ "summary": "Recognizable and coherent miniature: compact brown single-storey cabin, broad pale hipped roof, ivory glazed door, stoop, light fixture, and adjacent plaques read clearly without obvious defects.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The located SV1 camera is southwest of the cabin and geometrically faces the -v side (outward bearing 227\u00b0 SW); that photographed side contains the ivory glazed principal door and plaques. The four-face sheet and actual inventory place exactly one door on -v, with no duplicated principal portal on the other three faces."
+ },
+ "issues": []
+}

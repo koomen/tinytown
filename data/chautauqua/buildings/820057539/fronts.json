@@ -1,0 +1,103 @@
+{
+ "id": "820057539",
+ "addr": null,
+ "name": "Main Gate entrance canopy",
+ "frame": "bedc4f75c77c569f954defcdb9b424538485d96ccc188fcd4df9de357616b513",
+ "faces": {
+  "+u": {
+   "bearing": 293,
+   "width": 6.2,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_820057539_+u.png",
+     "pano": "IhCgJWywgnRQrcjLmD5Qyg",
+     "dist": 19.5,
+     "off_axis_deg": 5,
+     "fov": 55,
+     "tilt": 97,
+     "heading": 108,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2081997,-79.4693758,425a,55y,108h,97t/data=!3m7!1e1!3m5!1sIhCgJWywgnRQrcjLmD5Qyg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7%26panoid%3DIhCgJWywgnRQrcjLmD5Qyg%26yaw%3D108!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2081997,
+      "lon": -79.4693758
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 113,
+   "width": 6.2,
+   "road": true,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_820057539_-u.png",
+     "pano": "H2f7Y1cX7TLmTzaxj8qwkg",
+     "dist": 20.0,
+     "off_axis_deg": 30,
+     "fov": 55,
+     "tilt": 97,
+     "heading": 263,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2081149,-79.4687124,425a,55y,263h,97t/data=!3m7!1e1!3m5!1s3pzLJEuv4eQvRLGHbw5phw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7%26panoid%3D3pzLJEuv4eQvRLGHbw5phw%26yaw%3D263!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.208106,
+      "lon": -79.468707
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 23,
+   "width": 18.1,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_820057539_+v.png",
+     "pano": "DcCA4av7TrVBrX7i_XbiJw",
+     "dist": 22.7,
+     "off_axis_deg": 1,
+     "fov": 56,
+     "tilt": 96,
+     "heading": 204,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2082996,-79.4689107,425a,56y,204h,96t/data=!3m7!1e1!3m5!1sxk56S2P-TKzKAdFe7UQ3ew!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3Dxk56S2P-TKzKAdFe7UQ3ew%26yaw%3D204!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2083259,
+      "lon": -79.4689224
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 203,
+   "width": 18.1,
+   "road": false,
+   "photos": [],
+   "coverage": false,
+   "status": "no-coverage",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-10 04:37"
+}

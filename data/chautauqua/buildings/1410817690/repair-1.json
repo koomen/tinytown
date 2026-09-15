@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"3538a3082fb5ca9aa591d7c85237190d8ba6081bb38c8fd7c3d67c9c1491adda\",\"operations\":[{\"op\":\"remove\",\"path\":\"/volumes/@studio/faces/-u/doors\"},{\"op\":\"add\",\"path\":\"/volumes/@studio/faces/-v/doors\",\"value\":[{\"at\":0.55,\"type\":\"rect\",\"w\":0.88,\"h\":2.12,\"color\":\"#bfc5c0\",\"surround\":\"#eee9dd\",\"surroundW\":0.1,\"steps\":1}]}]}",
+ "cues": [
+  "Compact single-storey gabled studio",
+  "Muted reddish-brown walls and pale roof",
+  "Single ivory-trimmed southwest entrance",
+  "Small step and restrained window trim"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Entrance face follows the supplied repair review; exact lateral placement remains approximate.",
+  "The supplied catalog exposes no shingle-siding or ribbed-metal gable material controls; existing colors approximate these materials, but the texture defect remains unresolved.",
+  "Concealed elevations retain their simple inferred treatment."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "blueprint_json": "{\"wall\":\"#98634f\",\"trim\":\"#e7dfcc\",\"roofColor\":\"#96998d\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.72,2.72],\"v\":[-2.16,2.16],\"bottom\":0,\"height\":2.65,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.32,\"maxH\":1.4,\"overhang\":0.25},\"plinth\":{\"height\":0.18,\"color\":\"#918a79\"},\"faces\":{\"-u\":{\"doors\":[{\"at\":0.5,\"type\":\"rect\",\"w\":0.95,\"h\":2.1,\"color\":\"#665443\",\"surround\":\"#e7dfcc\",\"surroundW\":0.12,\"steps\":1}]},\"+u\":{\"storeys\":[{\"y\":0.95,\"windows\":{\"type\":\"rect\",\"w\":0.85,\"h\":1.15,\"at\":[0.5],\"trim\":\"#e7dfcc\",\"glass\":\"#778783\"}}]},\"-v\":{\"storeys\":[{\"y\":0.95,\"windows\":{\"type\":\"rect\",\"w\":0.85,\"h\":1.15,\"at\":[0.28,0.72],\"trim\":\"#e7dfcc\",\"glass\":\"#778783\"}}]},\"+v\":{\"storeys\":[{\"y\":0.95,\"windows\":{\"type\":\"rect\",\"w\":0.85,\"h\":1.15,\"at\":[0.28,0.72],\"trim\":\"#e7dfcc\",\"glass\":\"#778783\"}}]}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact rectangular practice hut",
+  "Muted gray-green gable roof",
+  "Warm masonry with cream opening surrounds",
+  "Restrained paired side windows",
+  "Single modest gable-end doorway"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Geometry preserved: no supported correction or validation error was identified.",
+  "The retained -u (SE) entrance is provisional, not verified: SV1 faces -v and vegetation obscures the target; the aerial does not resolve doors.",
+  "Window arrangements and concealed elevations remain simplified assumptions; rendered initial views are not independent evidence."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP establishes face bearings; not entrance placement.",
+    "SV1 faces -v but is heavily occluded.",
+    "AERIAL establishes roof alignment, not entrance location."
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

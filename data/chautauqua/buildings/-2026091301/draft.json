@@ -1,0 +1,789 @@
+{
+ "wall": "#c3c0ad",
+ "wallMaterial": "plaster",
+ "trim": "#b3a088",
+ "roofColor": "#515b52",
+ "volumes": [
+  {
+   "id": "east-dining-room-stone-base",
+   "u": [
+    -0.625,
+    15.075
+   ],
+   "v": [
+    -7.25,
+    8.95
+   ],
+   "height": 1.02,
+   "bottom": -0.9,
+   "wall": "#847663",
+   "wallMaterial": "stone",
+   "roof": {
+    "type": "none"
+   },
+   "faces": {
+    "default": "blank"
+   }
+  },
+  {
+   "id": "east-dining-room",
+   "u": [
+    -0.625,
+    15.075
+   ],
+   "v": [
+    -7.25,
+    8.95
+   ],
+   "height": 3.55,
+   "bottom": 1,
+   "wall": "#c3c0ad",
+   "wallMaterial": "plaster",
+   "roof": {
+    "color": "#515b52",
+    "overhang": 0.3,
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.12,
+    "maxH": 1.2
+   },
+   "trim": "#a38671",
+   "cornice": {
+    "height": 0.16,
+    "overhang": 0.18,
+    "dentils": false,
+    "color": "#9c7e67"
+   },
+   "faces": {
+    "-v": {
+     "storeys": [
+      {
+       "y": 1.05,
+       "windows": {
+        "type": "arch",
+        "w": 1.35,
+        "h": 1.65,
+        "at": [
+         0.2,
+         0.48,
+         0.76
+        ],
+        "trim": "#d4d2bd",
+        "glass": "#485958",
+        "interior": false,
+        "divisions": {
+         "vertical": [],
+         "horizontal": [
+          0.43,
+          0.81
+         ],
+         "width": 0.055
+        },
+        "frameW": 0.085,
+        "sill": true
+       }
+      }
+     ],
+     "pilasters": {
+      "at": [
+       0.01,
+       0.99
+      ],
+      "w": 0.11,
+      "d": 0.045,
+      "height": 3.52,
+      "color": "#b4af98",
+      "cap": false
+     }
+    },
+    "+u": {
+     "storeys": [
+      {
+       "y": 1.05,
+       "windows": {
+        "type": "arch",
+        "w": 1.15,
+        "h": 1.65,
+        "at": [
+         0.86
+        ],
+        "trim": "#d4d2bd",
+        "glass": "#485958",
+        "interior": false,
+        "divisions": {
+         "vertical": [],
+         "horizontal": [
+          0.43,
+          0.81
+         ],
+         "width": 0.055
+        },
+        "frameW": 0.085,
+        "sill": true
+       }
+      }
+     ]
+    },
+    "+v": {
+     "storeys": [
+      {
+       "y": 1.25,
+       "windows": {
+        "type": "rect",
+        "w": 1.1,
+        "h": 1.3,
+        "at": [
+         0.2,
+         0.55,
+         0.8
+        ],
+        "interior": false,
+        "mullions": false
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "west-dining-room-stone-base",
+   "u": [
+    -15.125,
+    -4.925
+   ],
+   "v": [
+    -7.3,
+    8.95
+   ],
+   "height": 1.02,
+   "bottom": -0.9,
+   "wall": "#847663",
+   "wallMaterial": "stone",
+   "roof": {
+    "type": "none"
+   },
+   "faces": {
+    "default": "blank"
+   }
+  },
+  {
+   "id": "west-dining-room",
+   "u": [
+    -15.125,
+    -4.925
+   ],
+   "v": [
+    -7.3,
+    8.95
+   ],
+   "height": 3.45,
+   "bottom": 1,
+   "wall": "#c3c0ad",
+   "wallMaterial": "plaster",
+   "roof": {
+    "color": "#515b52",
+    "overhang": 0.3,
+    "type": "gambrel",
+    "ridge": "v",
+    "h": 1.05,
+    "kneeH": 0.8,
+    "kneeIn": 0.28
+   },
+   "trim": "#a38671",
+   "cornice": {
+    "height": 0.16,
+    "overhang": 0.18,
+    "dentils": false,
+    "color": "#9c7e67"
+   },
+   "faces": {
+    "-v": {
+     "storeys": [
+      {
+       "y": 1.05,
+       "windows": {
+        "type": "arch",
+        "w": 1.35,
+        "h": 1.65,
+        "at": [
+         0.69,
+         0.87
+        ],
+        "trim": "#d4d2bd",
+        "glass": "#485958",
+        "interior": false,
+        "divisions": {
+         "vertical": [],
+         "horizontal": [
+          0.43,
+          0.81
+         ],
+         "width": 0.055
+        },
+        "frameW": 0.085,
+        "sill": true
+       }
+      }
+     ]
+    },
+    "-u": {
+     "storeys": [
+      {
+       "y": 1.15,
+       "windows": {
+        "type": "rect",
+        "w": 1.2,
+        "h": 1.4,
+        "at": [
+         0.28,
+         0.54,
+         0.8
+        ],
+        "interior": false,
+        "mullions": false
+       }
+      }
+     ]
+    },
+    "+v": {
+     "storeys": [
+      {
+       "y": 1.05,
+       "windows": {
+        "type": "arch",
+        "w": 1.2,
+        "h": 1.65,
+        "at": [
+         0.25,
+         0.7
+        ],
+        "trim": "#d4d2bd",
+        "glass": "#485958",
+        "interior": false,
+        "divisions": {
+         "vertical": [],
+         "horizontal": [
+          0.43,
+          0.81
+         ],
+         "width": 0.055
+        },
+        "frameW": 0.085,
+        "sill": true
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "rear-kitchen-stone-base",
+   "u": [
+    -4.925,
+    2.775
+   ],
+   "v": [
+    -3.1,
+    8.95
+   ],
+   "height": 1.02,
+   "bottom": -0.9,
+   "wall": "#847663",
+   "wallMaterial": "stone",
+   "roof": {
+    "type": "none"
+   },
+   "faces": {
+    "default": "blank"
+   }
+  },
+  {
+   "id": "rear-kitchen",
+   "u": [
+    -4.925,
+    2.775
+   ],
+   "v": [
+    -3.1,
+    8.95
+   ],
+   "height": 4.35,
+   "bottom": 1,
+   "wall": "#c3c0ad",
+   "wallMaterial": "plaster",
+   "roof": {
+    "color": "#515b52",
+    "overhang": 0.3,
+    "type": "gable",
+    "ridge": "v",
+    "pitch": 0.16,
+    "maxH": 0.85
+   },
+   "trim": "#a38671",
+   "cornice": {
+    "height": 0.16,
+    "overhang": 0.18,
+    "dentils": false,
+    "color": "#9c7e67"
+   },
+   "faces": {
+    "+v": {
+     "doors": [
+      {
+       "at": 0.65,
+       "y": 0,
+       "type": "rect",
+       "w": 1.2,
+       "h": 2.3,
+       "color": "#34413f",
+       "surround": "#a99178",
+       "surroundW": 0.12,
+       "fanlight": true,
+       "steps": 0,
+       "lamp": false
+      }
+     ],
+     "storeys": [
+      {
+       "y": 1.8,
+       "windows": {
+        "type": "rect",
+        "w": 1.1,
+        "h": 0.7,
+        "at": [
+         0.2
+        ],
+        "interior": false,
+        "mullions": false
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "front-sign-bay-stone-base",
+   "u": [
+    -10.525,
+    -0.625
+   ],
+   "v": [
+    -8.95,
+    -3.1
+   ],
+   "height": 1.02,
+   "bottom": -0.9,
+   "wall": "#847663",
+   "wallMaterial": "stone",
+   "roof": {
+    "type": "none"
+   },
+   "faces": {
+    "default": "blank"
+   }
+  },
+  {
+   "id": "front-sign-bay",
+   "u": [
+    -10.525,
+    -0.625
+   ],
+   "v": [
+    -8.95,
+    -3.1
+   ],
+   "height": 3.12,
+   "bottom": 1,
+   "wall": "#c3c0ad",
+   "wallMaterial": "plaster",
+   "roof": {
+    "color": "#515b52",
+    "overhang": 0.3,
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.1,
+    "maxH": 0.55
+   },
+   "trim": "#a38671",
+   "cornice": {
+    "height": 0.16,
+    "overhang": 0.18,
+    "dentils": false,
+    "color": "#9c7e67"
+   },
+   "faces": {
+    "-v": {
+     "doors": [
+      {
+       "at": 0.875,
+       "y": 0,
+       "type": "rect",
+       "w": 1.2,
+       "h": 2.3,
+       "color": "#34413f",
+       "surround": "#a99178",
+       "surroundW": 0.12,
+       "fanlight": true,
+       "steps": 0,
+       "lamp": false
+      }
+     ],
+     "signs": [
+      {
+       "text": "Andriaccio\u2019s",
+       "brand": "andriaccios",
+       "at": 0.4,
+       "y": 2.16,
+       "w": 7.0,
+       "h": 1.14,
+       "out": 0.04
+      }
+     ]
+    },
+    "+u": {
+     "doors": [
+      {
+       "at": 0.85,
+       "y": 0,
+       "type": "rect",
+       "w": 1.2,
+       "h": 2.3,
+       "color": "#34413f",
+       "surround": "#a99178",
+       "surroundW": 0.12,
+       "fanlight": true,
+       "steps": 0,
+       "lamp": false
+      }
+     ],
+     "signs": [
+      {
+       "text": "A",
+       "style": "ghost",
+       "at": 0.85,
+       "y": 2.69,
+       "w": 0.65,
+       "h": 0.45,
+       "opts": {
+        "fg": "#eae5cf",
+        "font": "italic 700 118px Georgia, serif",
+        "caps": false
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "takeout-entry-stone-base",
+   "u": [
+    15.075,
+    18.225
+   ],
+   "v": [
+    -4.1,
+    8.95
+   ],
+   "height": 1.02,
+   "bottom": -0.9,
+   "wall": "#847663",
+   "wallMaterial": "stone",
+   "roof": {
+    "type": "none"
+   },
+   "faces": {
+    "default": "blank"
+   }
+  },
+  {
+   "id": "takeout-entry",
+   "u": [
+    15.075,
+    18.225
+   ],
+   "v": [
+    -4.1,
+    8.95
+   ],
+   "height": 3.85,
+   "bottom": 1,
+   "wall": "#c3c0ad",
+   "wallMaterial": "plaster",
+   "roof": {
+    "color": "#515b52",
+    "overhang": 0.3,
+    "type": "flat",
+    "lip": false
+   },
+   "trim": "#a38671",
+   "cornice": {
+    "height": 0.16,
+    "overhang": 0.18,
+    "dentils": false,
+    "color": "#9c7e67"
+   },
+   "faces": {
+    "-v": {
+     "doors": [
+      {
+       "at": 0.45,
+       "y": 0,
+       "type": "rect",
+       "w": 1.2,
+       "h": 2.3,
+       "color": "#34413f",
+       "surround": "#a99178",
+       "surroundW": 0.12,
+       "fanlight": true,
+       "steps": 0,
+       "lamp": false
+      }
+     ],
+     "awnings": [
+      {
+       "type": "barrel",
+       "range": [
+        0.03,
+        0.98
+       ],
+       "y": 2.5,
+       "depth": 1.25,
+       "rise": 0.5,
+       "color": "#315753",
+       "trim": "#d2c7aa"
+      }
+     ],
+     "signs": [
+      {
+       "text": "Andriaccio\u2019s Restaurant / TAKE OUT",
+       "brand": "andriaccios-takeout",
+       "at": 0.5,
+       "y": 2.62,
+       "w": 3.05,
+       "h": 0.47,
+       "out": 1.35
+      }
+     ]
+    },
+    "+u": {
+     "doors": [
+      {
+       "at": 0.22,
+       "y": 0,
+       "type": "rect",
+       "w": 1.2,
+       "h": 2.3,
+       "color": "#34413f",
+       "surround": "#a99178",
+       "surroundW": 0.12,
+       "fanlight": true,
+       "steps": 0,
+       "lamp": false
+      }
+     ],
+     "storeys": [
+      {
+       "y": 1.4,
+       "windows": {
+        "type": "rect",
+        "w": 1.1,
+        "h": 1.2,
+        "at": [
+         0.57,
+         0.82
+        ],
+        "interior": false
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "west-service-room-stone-base",
+   "u": [
+    -18.225,
+    -15.125
+   ],
+   "v": [
+    -7.1,
+    -2.6
+   ],
+   "height": 1.02,
+   "bottom": -0.9,
+   "wall": "#847663",
+   "wallMaterial": "stone",
+   "roof": {
+    "type": "none"
+   },
+   "faces": {
+    "default": "blank"
+   }
+  },
+  {
+   "id": "west-service-room",
+   "u": [
+    -18.225,
+    -15.125
+   ],
+   "v": [
+    -7.1,
+    -2.6
+   ],
+   "height": 2.8,
+   "bottom": 1,
+   "wall": "#c3c0ad",
+   "wallMaterial": "plaster",
+   "roof": {
+    "color": "#515b52",
+    "overhang": 0.3,
+    "type": "flat",
+    "lip": false
+   },
+   "trim": "#a38671",
+   "cornice": {
+    "height": 0.16,
+    "overhang": 0.18,
+    "dentils": false,
+    "color": "#9c7e67"
+   },
+   "faces": {
+    "-u": {
+     "doors": [
+      {
+       "at": 0.55,
+       "y": 0,
+       "type": "rect",
+       "w": 1.2,
+       "h": 2.3,
+       "color": "#34413f",
+       "surround": "#a99178",
+       "surroundW": 0.12,
+       "fanlight": true,
+       "steps": 0,
+       "lamp": false
+      }
+     ],
+     "storeys": []
+    }
+   }
+  },
+  {
+   "id": "kitchen-exhaust",
+   "u": [
+    -2.1999999999999997,
+    -0.85
+   ],
+   "v": [
+    4.8,
+    5.999999999999999
+   ],
+   "bottom": 4.949999999999999,
+   "height": 5.6,
+   "wall": "#a4a498",
+   "wallMaterial": "plaster",
+   "roof": {
+    "type": "flat",
+    "lip": false,
+    "color": "#8b8c82"
+   },
+   "cornice": {
+    "height": 0.08,
+    "overhang": 0.04,
+    "dentils": false
+   },
+   "faces": {
+    "default": "blank"
+   }
+  },
+  {
+   "id": "east-air-unit",
+   "u": [
+    9.775,
+    11.174999999999999
+   ],
+   "v": [
+    4.05,
+    5.1499999999999995
+   ],
+   "bottom": 3.9499999999999997,
+   "height": 4.6,
+   "wall": "#a4a498",
+   "wallMaterial": "plaster",
+   "roof": {
+    "type": "flat",
+    "lip": false,
+    "color": "#8b8c82"
+   },
+   "cornice": {
+    "height": 0.08,
+    "overhang": 0.04,
+    "dentils": false
+   },
+   "faces": {
+    "default": "blank"
+   }
+  },
+  {
+   "id": "west-skylight",
+   "u": [
+    -11.775,
+    -10.275
+   ],
+   "v": [
+    2.55,
+    4.05
+   ],
+   "bottom": 4.0,
+   "height": 4.65,
+   "wall": "#667b75",
+   "wallMaterial": "plaster",
+   "roof": {
+    "type": "flat",
+    "lip": false,
+    "color": "#8b8c82"
+   },
+   "cornice": {
+    "height": 0.08,
+    "overhang": 0.04,
+    "dentils": false
+   },
+   "faces": {
+    "default": "blank"
+   }
+  }
+ ],
+ "details": [
+  {
+   "type": "landing",
+   "u": -9.285,
+   "v": -9.35,
+   "w": 1.9,
+   "length": 1.2,
+   "height": 0.1,
+   "y": -0.08,
+   "color": "#a7a58f",
+   "construction": "solid",
+   "foundationDepth": 0.55,
+   "railing": false
+  },
+  {
+   "type": "stair",
+   "u": -9.285,
+   "v": -10.45,
+   "dir": [
+    0,
+    1
+   ],
+   "length": 1.2,
+   "height": 0.26,
+   "y": -0.24,
+   "w": 1.9,
+   "construction": "solid",
+   "foundationDepth": 0.45,
+   "color": "#a7a58f",
+   "railing": false
+  }
+ ],
+ "notes": "Grounded in June 2026 Street View and cached Esri aerial. Cream script sign is native CanvasTexture; current front entry has no brown dome awning. Roof heights, hidden rear openings, and patio furniture are miniature approximations."
+}

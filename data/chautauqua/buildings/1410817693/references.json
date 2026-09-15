@@ -1,0 +1,168 @@
+{
+ "version": 3,
+ "id": "1410817693",
+ "name": "Practice Studio 26",
+ "location": "",
+ "address": null,
+ "source_tags": {
+  "building": "cabin"
+ },
+ "street_view_counts": {
+  "directional": 1,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 5.433,
+  "depth_v": 4.321,
+  "footprint_uv": [
+   [
+    2.7,
+    -2.2
+   ],
+   [
+    2.7,
+    2.2
+   ],
+   [
+    -2.7,
+    2.2
+   ],
+   [
+    -2.7,
+    -2.2
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 317,
+    "compass": "NW",
+    "left_bearing": 47,
+    "right_bearing": 227,
+    "nearest_road_outward": {
+     "name": "Hurst Avenue",
+     "circular": false,
+     "distance_m": 106.2
+    },
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 137,
+    "compass": "SE",
+    "left_bearing": 227,
+    "right_bearing": 47,
+    "nearest_road_outward": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 90.9
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 47,
+    "compass": "NE",
+    "left_bearing": 137,
+    "right_bearing": 317,
+    "nearest_road_outward": {
+     "name": "Palestine Avenue",
+     "circular": false,
+     "distance_m": 102.3
+    },
+    "nearest_road_hint": false
+   },
+   "-v": {
+    "bearing": 227,
+    "compass": "SW",
+    "left_bearing": 317,
+    "right_bearing": 137,
+    "nearest_road_outward": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 37.5
+    },
+    "nearest_road_hint": true
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/1410817693/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/1410817693/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/1410817693/reference-2.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua-practice-authoring/research/front_1410817693_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2091505,
+    "lon": -79.4714313,
+    "position_xz": [
+     -436.29,
+     25.55
+    ],
+    "position_uv": [
+     0.77,
+     -5.42
+    ],
+    "looking_bearing": 61.0,
+    "looking_compass": "ENE",
+    "image_left_bearing": 331.0,
+    "image_right_bearing": 151.0,
+    "target_center_offset_deg": -5.6,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 13,
+    "fov": 80,
+    "tilt": 100,
+    "near_road": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 31.5
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2091505,-79.4714313,427a,80y,61h,100t/data=!3m7!1e1!3m5!1se6jhxv703atS5QtWmoYFBA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3De6jhxv703atS5QtWmoYFBA%26yaw%3D61!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "e6jhxv703atS5QtWmoYFBA",
+   "additional_view": false,
+   "caption": "SV1: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/1410817693/reference-1.jpg",
+   "sha256": "1d047eb3e6c2395eac50208d521baa3d3a742edee13b967729a81069e8021d50"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua-practice-authoring/research/aerial_1410817693.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/1410817693/reference-2.jpg",
+   "sha256": "4cea3ef034054805ee85333f0db95a121280a3bb8ddadef7fefbc7a43d8ac04a"
+  }
+ ],
+ "search_query": "Practice Studio 26 building exterior",
+ "search_candidates": [],
+ "warnings": []
+}

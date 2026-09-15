@@ -1,0 +1,81 @@
+{
+  "wall": "#c4b190",
+  "trim": "#e6e6e1",
+  "roofColor": "#a6a9ab",
+  "volumes": [
+    {
+      "id": "main-gable",
+      "u": [-9.1, 9.1],
+      "v": [-4.5, 6.8],
+      "height": 7.4,
+      "wall": "#c4b190",
+      "upperWall": "#b6b9bd",
+      "split": 3.4,
+      "roof": { "type": "gable", "ridge": "u", "pitch": 0.5, "overhang": 0.5, "color": "#a6a9ab", "gableColor": "#b6b9bd" },
+      "beltCourses": [ { "y": 3.4, "height": 0.2, "color": "#e6e6e1" } ],
+      "faces": {
+        "+u": {
+          "storefronts": [
+            { "range": [0.2, 0.62], "y": 0.9, "h": 2.0, "frame": "#b3a07a", "kick": "#b3a07a" }
+          ],
+          "awnings": [
+            { "range": [0.02, 0.98], "y": 3.15, "depth": 1.3, "color": "#2f62a3" }
+          ],
+          "porches": [
+            { "at": 0.79, "w": 2.3, "d": 1.4, "height": 3.15, "pitch": 0.5, "wall": "#c4b190", "roofColor": "#2f62a3",
+              "door": { "type": "rect", "w": 1.0, "h": 2.3, "color": "#d9d3c4", "surround": "#b3a07a", "surroundW": 0.14, "steps": 1, "lamp": false } }
+          ],
+          "storeys": [
+            { "y": 4.2, "windows": { "type": "rect", "w": 1.1, "h": 1.4, "at": [0.66] } },
+            { "y": 6.2, "windows": { "type": "rect", "w": 1.1, "h": 1.4, "at": [0.66] } },
+            { "y": 8.6, "windows": { "type": "rect", "w": 0.7, "h": 0.6, "at": [0.5], "glass": "#9a9ea2", "mullions": false, "sill": false } }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 6.0, "windows": { "type": "rect", "w": 1.0, "h": 1.2, "at": [0.2, 0.45, 0.8] } },
+            { "y": 3.9, "windows": { "type": "rect", "w": 1.0, "h": 1.3, "at": [0.3, 0.55] } },
+            { "y": 1.2, "windows": { "type": "rect", "w": 1.0, "h": 1.3, "at": [0.35], "trim": "#b3a07a" } }
+          ]
+        },
+        "-u": {
+          "storeys": [
+            { "y": 6.0, "windows": { "type": "rect", "w": 1.0, "h": 1.2, "at": [0.3, 0.7] } },
+            { "y": 3.9, "windows": { "type": "rect", "w": 1.0, "h": 1.3, "at": [0.3, 0.7] } }
+          ],
+          "doors": [
+            { "at": 0.5, "type": "rect", "w": 1.0, "h": 2.2, "color": "#d9d3c4", "surround": "#b3a07a", "surroundW": 0.12, "steps": 1, "lamp": false }
+          ]
+        }
+      }
+    },
+    {
+      "id": "side-wing",
+      "u": [-9.1, 9.1],
+      "v": [-6.8, -4.5],
+      "height": 6.3,
+      "wall": "#c4b190",
+      "upperWall": "#b6b9bd",
+      "split": 3.4,
+      "roof": { "type": "hip", "pitch": 0.5, "overhang": 0.4, "color": "#a6a9ab" },
+      "beltCourses": [ { "y": 3.4, "height": 0.2, "color": "#e6e6e1" } ],
+      "faces": {
+        "+u": {
+          "storeys": [
+            { "y": 4.2, "windows": { "type": "rect", "w": 0.9, "h": 1.3, "at": [0.5] } }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            { "y": 3.9, "windows": { "type": "rect", "w": 1.0, "h": 1.3, "at": [0.1, 0.22, 0.8, 0.92] } },
+            { "y": 1.2, "windows": { "type": "rect", "w": 1.0, "h": 1.3, "at": [0.5, 0.85], "trim": "#b3a07a" } }
+          ]
+        }
+      }
+    }
+  ],
+  "details": [
+    { "type": "lawnsign", "text": "@Work Personnel", "style": "navy", "u": 10.8, "v": 4.2, "w": 2.6, "h": 0.8, "rotation": -1.5708 },
+    { "type": "flag", "u": 10.6, "v": -5.6, "height": 5.0 }
+  ]
+}

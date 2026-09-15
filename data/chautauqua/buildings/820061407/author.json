@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "{\"wall\":\"#956f63\",\"trim\":\"#eee9dc\",\"roofColor\":\"#c5c3b7\",\"volumes\":[{\"id\":\"studio\",\"u\":[-3.066,3.066],\"v\":[-2.219,2.219],\"bottom\":0,\"height\":2.65,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.29,\"maxH\":1.3,\"overhang\":0.28},\"plinth\":{\"height\":0.18,\"color\":\"#77766a\"},\"faces\":{\"+v\":{\"doors\":[{\"at\":0.82,\"type\":\"rect\",\"w\":0.88,\"h\":2.15,\"color\":\"#eeeede\",\"surround\":\"#f1eee3\",\"surroundW\":0.1,\"steps\":2}]},\"+u\":{\"storeys\":[{\"y\":0.95,\"windows\":{\"type\":\"rect\",\"w\":0.8,\"h\":1.25,\"at\":[0.5],\"trim\":\"#eee9dc\",\"glass\":\"#71868a\"}}]},\"-v\":{\"storeys\":[{\"y\":0.95,\"windows\":{\"type\":\"rect\",\"w\":0.8,\"h\":1.25,\"at\":[0.3,0.7],\"trim\":\"#eee9dc\",\"glass\":\"#71868a\"}}]},\"-u\":{}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact single-storey rectangular practice cabin",
+  "Pale metal-colored gable roof with modest overhangs",
+  "Muted brown walls and crisp ivory trim",
+  "Offset lane-facing entrance with two small steps"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Studio 42 is not individually legible in the row; appearance follows the visible matching cabins.",
+  "Entrance placement on +v is inferred from the located view and repeated cabin arrangement; its precise offset is approximate.",
+  "Concealed window positions and roof pitch are simplified."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

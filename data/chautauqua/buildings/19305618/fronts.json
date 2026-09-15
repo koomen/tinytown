@@ -1,0 +1,121 @@
+{
+ "id": "19305618",
+ "addr": "1 Massey Avenue",
+ "name": "Main Gate Welcome Center",
+ "frame": "284a0447f42e4a54a3de2c6663fbdd6816a9c917e6d68c42e3795b8dbb33b37d",
+ "faces": {
+  "+u": {
+   "bearing": 321,
+   "width": 21.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_19305618_+u.png",
+     "pano": "2l3owZNlpxNDpIBqzNuUFA",
+     "dist": 31.7,
+     "off_axis_deg": 16,
+     "fov": 55,
+     "tilt": 94,
+     "heading": 158,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2081637,-79.4694348,425a,55y,158h,94t/data=!3m7!1e1!3m5!1s2l3owZNlpxNDpIBqzNuUFA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4%26panoid%3D2l3owZNlpxNDpIBqzNuUFA%26yaw%3D158!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2081637,
+      "lon": -79.4694348
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 141,
+   "width": 21.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_19305618_-u.png",
+     "pano": "LfjwhScHG9WwD3tqLgLAfQ",
+     "dist": 12.7,
+     "off_axis_deg": 21,
+     "fov": 80,
+     "tilt": 100,
+     "heading": 300,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2073647,-79.4686341,424a,80y,300h,100t/data=!3m7!1e1!3m5!1sLfjwhScHG9WwD3tqLgLAfQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DLfjwhScHG9WwD3tqLgLAfQ%26yaw%3D300!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2073647,
+      "lon": -79.4686341
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 51,
+   "width": 68.3,
+   "road": true,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_19305618_+v.png",
+     "pano": "L2fadR6_P3KvjeQOR4Xpkw",
+     "dist": 40.1,
+     "off_axis_deg": 3,
+     "fov": 80,
+     "tilt": 93,
+     "heading": 234,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2079336,-79.4685369,425a,80y,234h,93t/data=!3m7!1e1!3m5!1sL2fadR6_P3KvjeQOR4Xpkw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DL2fadR6_P3KvjeQOR4Xpkw%26yaw%3D234!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2079336,
+      "lon": -79.4685369
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 231,
+   "width": 68.3,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_19305618_-v.png",
+     "pano": "9e_MIkP7ZeEfKGHiyAWfhQ",
+     "dist": 19.6,
+     "off_axis_deg": 14,
+     "fov": 80,
+     "tilt": 97,
+     "heading": 37,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2074619,-79.4692701,425a,80y,37h,97t/data=!3m7!1e1!3m5!1s9e_MIkP7ZeEfKGHiyAWfhQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7%26panoid%3D9e_MIkP7ZeEfKGHiyAWfhQ%26yaw%3D37!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2074619,
+      "lon": -79.4692701
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-10 04:36"
+}

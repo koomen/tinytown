@@ -1,0 +1,418 @@
+{
+ "wall": "#d9dbd6",
+ "trim": "#eceee9",
+ "roofColor": "#4d5054",
+ "volumes": [
+  {
+   "id": "house",
+   "u": [
+    -5.5,
+    8.5
+   ],
+   "v": [
+    -6.6,
+    6.6
+   ],
+   "height": 6.6,
+   "roof": {
+    "type": "flat",
+    "lip": false,
+    "color": "#4d5054"
+   },
+   "cornice": {
+    "height": 0.4,
+    "overhang": 0.55,
+    "dentils": false,
+    "color": "#eceee9"
+   },
+   "faces": {
+    "+v": {
+     "storeys": [
+      {
+       "y": 3.9,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.6,
+        "at": [
+         0.13,
+         0.29,
+         0.5,
+         0.72,
+         0.88
+        ],
+        "shutters": "#262930"
+       }
+      }
+     ]
+    },
+    "-u": {
+     "storeys": [
+      {
+       "y": 3.9,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.6,
+        "at": [
+         0.25,
+         0.5,
+         0.75
+        ],
+        "shutters": "#262930"
+       }
+      },
+      {
+       "y": 0.9,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.6,
+        "at": [
+         0.15,
+         0.4,
+         0.8
+        ],
+        "shutters": "#262930"
+       }
+      }
+     ]
+    },
+    "+u": {
+     "storeys": [
+      {
+       "y": 3.9,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.6,
+        "at": [
+         0.2,
+         0.5,
+         0.8
+        ],
+        "shutters": "#262930"
+       }
+      },
+      {
+       "y": 0.9,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.6,
+        "at": [
+         0.2,
+         0.5,
+         0.8
+        ],
+        "shutters": "#262930"
+       }
+      }
+     ]
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 3.9,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.6,
+        "count": 4,
+        "margin": 1.5,
+        "shutters": "#262930"
+       }
+      },
+      {
+       "y": 0.9,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.6,
+        "count": 3,
+        "margin": 2.0,
+        "shutters": "#262930"
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "mansard-storey",
+   "u": [
+    -5.05,
+    8.05
+   ],
+   "v": [
+    -6.15,
+    6.15
+   ],
+   "height": 9.4,
+   "roof": {
+    "type": "hip",
+    "flatTop": true,
+    "h": 1.2,
+    "run": 4.6,
+    "overhang": 0.3,
+    "color": "#4d5054"
+   },
+   "cornice": {
+    "height": 0.3,
+    "overhang": 0.3,
+    "dentils": false,
+    "color": "#eceee9"
+   },
+   "chimneys": [
+    {
+     "u": 1.5,
+     "v": 0.0
+    }
+   ],
+   "faces": {
+    "+v": {
+     "storeys": [
+      {
+       "y": 7.2,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.4,
+        "at": [
+         0.2,
+         0.51,
+         0.81
+        ],
+        "shutters": "#262930"
+       }
+      }
+     ]
+    },
+    "-u": {
+     "storeys": [
+      {
+       "y": 7.2,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.4,
+        "at": [
+         0.3,
+         0.7
+        ],
+        "shutters": "#262930"
+       }
+      }
+     ]
+    },
+    "+u": {
+     "storeys": [
+      {
+       "y": 7.2,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.4,
+        "at": [
+         0.3,
+         0.7
+        ],
+        "shutters": "#262930"
+       }
+      }
+     ]
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 7.2,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.4,
+        "at": [
+         0.2,
+         0.5,
+         0.8
+        ],
+        "shutters": "#262930"
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "east-wing",
+   "u": [
+    -8.5,
+    -5.4
+   ],
+   "v": [
+    -6.6,
+    2.0
+   ],
+   "height": 3.3,
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.45,
+    "maxH": 1.8,
+    "overhang": 0.35
+   },
+   "faces": {
+    "+v": {
+     "storeys": [
+      {
+       "y": 0.9,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.3,
+        "at": [
+         0.5
+        ],
+        "shutters": "#262930"
+       }
+      }
+     ]
+    },
+    "-u": {
+     "storeys": [
+      {
+       "y": 0.9,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.3,
+        "at": [
+         0.3,
+         0.7
+        ],
+        "shutters": "#262930"
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "porch",
+   "u": [
+    -5.5,
+    8.5
+   ],
+   "v": [
+    6.6,
+    9.0
+   ],
+   "height": 3.1,
+   "wall": "#8f8c86",
+   "roof": {
+    "type": "flat",
+    "lip": false,
+    "color": "#4d5054"
+   },
+   "cornice": {
+    "height": 0.35,
+    "overhang": 0.3,
+    "dentils": false,
+    "color": "#eceee9"
+   },
+   "faces": {
+    "+v": {
+     "pilasters": {
+      "at": [
+       0.03,
+       0.35,
+       0.65,
+       0.97
+      ],
+      "w": 0.36,
+      "d": 0.36,
+      "height": 2.8,
+      "color": "#eceee9",
+      "cap": "#eceee9"
+     },
+     "doors": [
+      {
+       "at": 0.5,
+       "type": "rect",
+       "w": 1.3,
+       "h": 2.3,
+       "color": "#e6e4dc",
+       "surround": "#eceee9",
+       "surroundW": 0.15,
+       "steps": 3
+      }
+     ],
+     "storeys": [
+      {
+       "y": 0.8,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.7,
+        "at": [
+         0.12,
+         0.24,
+         0.76,
+         0.88
+        ],
+        "shutters": "#262930"
+       }
+      }
+     ]
+    },
+    "-u": {
+     "pilasters": {
+      "at": [
+       0.1,
+       0.9
+      ],
+      "w": 0.36,
+      "d": 0.36,
+      "height": 2.8,
+      "color": "#eceee9",
+      "cap": "#eceee9"
+     }
+    },
+    "+u": {
+     "pilasters": {
+      "at": [
+       0.1,
+       0.9
+      ],
+      "w": 0.36,
+      "d": 0.36,
+      "height": 2.8,
+      "color": "#eceee9",
+      "cap": "#eceee9"
+     }
+    }
+   }
+  }
+ ],
+ "details": [
+  {
+   "type": "bush",
+   "u": -4.0,
+   "v": 10.0
+  },
+  {
+   "type": "bush",
+   "u": -1.2,
+   "v": 10.0
+  },
+  {
+   "type": "bush",
+   "u": 4.2,
+   "v": 10.0
+  },
+  {
+   "type": "bush",
+   "u": 7.0,
+   "v": 10.0
+  }
+ ]
+}

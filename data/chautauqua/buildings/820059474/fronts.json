@@ -1,0 +1,121 @@
+{
+ "id": "820059474",
+ "addr": "14 Roberts Avenue",
+ "name": "Brick Walk Caf\u00e9",
+ "frame": "19e43f54ba84048f08872907c9bc97b64642283221cf0a198494554dd86ae234",
+ "faces": {
+  "+u": {
+   "bearing": 63,
+   "width": 28.9,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_820059474_+u.png",
+     "pano": "Uh7SuWzpiMY1cZHHffjvDA",
+     "dist": 16.5,
+     "off_axis_deg": 7,
+     "fov": 80,
+     "tilt": 98,
+     "heading": 250,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2092997,-79.4650763,418a,80y,250h,98t/data=!3m7!1e1!3m5!1sUh7SuWzpiMY1cZHHffjvDA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8%26panoid%3DUh7SuWzpiMY1cZHHffjvDA%26yaw%3D250!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2092997,
+      "lon": -79.4650763
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 243,
+   "width": 28.9,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_820059474_-u.png",
+     "pano": "AOLVC0ypGC3N1kiH3JOf8w",
+     "dist": 38.6,
+     "off_axis_deg": 3,
+     "fov": 55,
+     "tilt": 93,
+     "heading": 61,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2090197,-79.4658317,419a,55y,61h,93t/data=!3m7!1e1!3m5!1sAOLVC0ypGC3N1kiH3JOf8w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DAOLVC0ypGC3N1kiH3JOf8w%26yaw%3D61!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2090197,
+      "lon": -79.4658317
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 153,
+   "width": 14.6,
+   "road": true,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_820059474_+v.png",
+     "pano": "pbTQfaftagjkPFq1vcK_sA",
+     "dist": 9.0,
+     "off_axis_deg": 4,
+     "fov": 80,
+     "tilt": 100,
+     "heading": 338,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2090299,-79.4652345,419a,80y,338h,100t/data=!3m7!1e1!3m5!1scHHiHF2VyFrnT_QLDZlksw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DcHHiHF2VyFrnT_QLDZlksw%26yaw%3D338!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2090291,
+      "lon": -79.4652243
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 333,
+   "width": 14.6,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_820059474_-v.png",
+     "pano": "sAiLytiQj0KSUuHHKRdUsw",
+     "dist": 17.8,
+     "off_axis_deg": 50,
+     "fov": 57,
+     "tilt": 98,
+     "heading": 103,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2093711,-79.4656326,418a,57y,103h,98t/data=!3m7!1e1!3m5!1ssAiLytiQj0KSUuHHKRdUsw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8%26panoid%3DsAiLytiQj0KSUuHHKRdUsw%26yaw%3D103!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2093711,
+      "lon": -79.4656326
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-09 18:01"
+}

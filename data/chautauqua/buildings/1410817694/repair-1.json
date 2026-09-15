@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"313527b03cddee254ee0273b5fea36035d8df07f8561b3136578618afc9824fe\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#99704f\"}]}",
+ "cues": [
+  "Muted cedar-brown cabin palette",
+  "Low pale gable with raised ridge monitor",
+  "Single white entrance on +v",
+  "Narrow window on the visible -u gable"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The apparent window left of the door is on the -u gable and is already modeled; adding another to +v would misread the photograph.",
+  "The supplied catalog exposes neither square-shingle wall finishes nor standalone stair handrails. The palette is corrected; the existing four-step entrance is retained."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "main",
+   "face": "+v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

@@ -1,0 +1,307 @@
+{
+ "version": 3,
+ "id": "820059525",
+ "name": "2 Ames",
+ "location": "Chautauqua Institution, Chautauqua, New York",
+ "address": "2 Ames Avenue",
+ "source_tags": {
+  "amenity": "restaurant",
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 10.997,
+  "depth_v": 12.727,
+  "footprint_uv": [
+   [
+    5.5,
+    -6.4
+   ],
+   [
+    5.4,
+    6.4
+   ],
+   [
+    -5.5,
+    6.3
+   ],
+   [
+    -5.5,
+    -6.4
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 230,
+    "compass": "SW",
+    "left_bearing": 320,
+    "right_bearing": 140,
+    "nearest_road_outward": {
+     "name": "Wythe Avenue",
+     "circular": false,
+     "distance_m": 43.3
+    },
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 50,
+    "compass": "NE",
+    "left_bearing": 140,
+    "right_bearing": 320,
+    "nearest_road_outward": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 7.0
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 320,
+    "compass": "NW",
+    "left_bearing": 50,
+    "right_bearing": 230,
+    "nearest_road_outward": {
+     "name": "Ramble Avenue",
+     "circular": false,
+     "distance_m": 21.8
+    },
+    "nearest_road_hint": false
+   },
+   "-v": {
+    "bearing": 140,
+    "compass": "SE",
+    "left_bearing": 230,
+    "right_bearing": 50,
+    "nearest_road_outward": {
+     "name": "Ames Avenue",
+     "circular": false,
+     "distance_m": 5.9
+    },
+    "nearest_road_hint": true
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/820059525/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/820059525/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/820059525/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua/research/front_820059525_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2095725,
+    "lon": -79.4672139,
+    "position_xz": [
+     -88.55,
+     -21.43
+    ],
+    "position_uv": [
+     24.13,
+     -12.19
+    ],
+    "looking_bearing": 16.0,
+    "looking_compass": "NNE",
+    "image_left_bearing": 286.0,
+    "image_right_bearing": 106.0,
+    "target_center_offset_deg": 6.8,
+    "geometrically_facing_camera": [
+     "+u",
+     "-v"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 33,
+    "fov": 55,
+    "tilt": 96,
+    "near_road": {
+     "name": "Ames Avenue",
+     "circular": false,
+     "distance_m": 0.3
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2095725,-79.4672139,419a,55y,16h,96t/data=!3m7!1e1!3m5!1se7Gxa2JOXeoiOJTO9QLNpA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3De7Gxa2JOXeoiOJTO9QLNpA%26yaw%3D16!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "e7Gxa2JOXeoiOJTO9QLNpA",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059525/reference-1.jpg",
+   "sha256": "be0f118c4d2ec78e00060bb4d85944e48090cfb4863cc13b6d1a263277e70897"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua/research/front_820059525_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2098363,
+    "lon": -79.4669151,
+    "position_xz": [
+     -63.91,
+     -50.8
+    ],
+    "position_uv": [
+     -13.66,
+     -5.78
+    ],
+    "looking_bearing": 265.0,
+    "looking_compass": "W",
+    "image_left_bearing": 175.0,
+    "image_right_bearing": 355.0,
+    "target_center_offset_deg": -12.5,
+    "geometrically_facing_camera": [
+     "-u"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 35,
+    "fov": 77,
+    "tilt": 100,
+    "near_road": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 0.9
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2098363,-79.4669151,418a,77y,265h,100t/data=!3m7!1e1!3m5!1slcQ3jxijmV0Wbo4Yn8q6Zw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DlcQ3jxijmV0Wbo4Yn8q6Zw%26yaw%3D265!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "lcQ3jxijmV0Wbo4Yn8q6Zw",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059525/reference-2.jpg",
+   "sha256": "ee553cff1f3ce6d44259264c14e0d3c97ee9fa2dc65bacfa4e1ed3f91313170d"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua/research/front_820059525_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2100222,
+    "lon": -79.4673018,
+    "position_xz": [
+     -95.8,
+     -71.49
+    ],
+    "position_uv": [
+     -2.77,
+     30.64
+    ],
+    "looking_bearing": 146.0,
+    "looking_compass": "SE",
+    "image_left_bearing": 56.0,
+    "image_right_bearing": 236.0,
+    "target_center_offset_deg": -1.2,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 7,
+    "fov": 55,
+    "tilt": 96,
+    "near_road": {
+     "name": "Ramble Avenue",
+     "circular": false,
+     "distance_m": 2.5
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2100222,-79.4673018,417a,55y,146h,96t/data=!3m7!1e1!3m5!1sgRQZTtT2lU4lQDDmkG8BUA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3DgRQZTtT2lU4lQDDmkG8BUA%26yaw%3D146!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "gRQZTtT2lU4lQDDmkG8BUA",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059525/reference-3.jpg",
+   "sha256": "a0cbca7df89a9cf71184f28303ff4f3d1a0445693036edcb8e6da7b25bbe2357"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua/research/front_820059525_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2096939,
+    "lon": -79.4670102,
+    "position_xz": [
+     -71.75,
+     -34.94
+    ],
+    "position_uv": [
+     2.58,
+     -12.77
+    ],
+    "looking_bearing": 342.0,
+    "looking_compass": "NNW",
+    "image_left_bearing": 252.0,
+    "image_right_bearing": 72.0,
+    "target_center_offset_deg": -10.9,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 22,
+    "fov": 80,
+    "tilt": 100,
+    "near_road": {
+     "name": "Ames Avenue",
+     "circular": false,
+     "distance_m": 0.5
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2096939,-79.4670102,417a,80y,342h,100t/data=!3m7!1e1!3m5!1sS9kVxXnxL1dg-kNOa3BO6A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DS9kVxXnxL1dg-kNOa3BO6A%26yaw%3D342!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "S9kVxXnxL1dg-kNOa3BO6A",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059525/reference-4.jpg",
+   "sha256": "237f7705120a550b49faf584ac445327d50bbbf68aaa40199322742015761540"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua/research/aerial_820059525.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/820059525/reference-5.jpg",
+   "sha256": "b2ef38e89e1ea96d1726d4433982f01a8db795db501737ae844e6241bcd7b03c"
+  }
+ ],
+ "search_query": "2 Ames Chautauqua Institution, Chautauqua, New York building exterior",
+ "search_candidates": [],
+ "warnings": [
+  "No useful image-search candidates; using available Street View/aerial evidence."
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"30ae6e6ca2abfd641bfcbeba2cf067a686a62877b551c7eae1f5d2dd4e6f2cae\",\"operations\":[{\"op\":\"replace\",\"path\":\"/roofColor\",\"value\":\"#d0d3cc\"},{\"op\":\"add\",\"path\":\"/volumes/@studio/roof/color\",\"value\":\"#d0d3cc\"},{\"op\":\"replace\",\"path\":\"/volumes/@studio/faces/+u/doors/0/color\",\"value\":\"#f5f3eb\"}]}",
+ "cues": [
+  "Compact brown studio with steep gable",
+  "Pale silver-gray roof and modest overhangs",
+  "White SE entrance with two small steps",
+  "Single white-trimmed SW window"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The supplied catalog exposes no wood-siding or standing-seam gable material controls; texture defects remain unresolved.",
+  "Divided-light glazing for a rectangular entry door is not exposed by the catalog; white door color is reinforced without inventing unsupported geometry."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

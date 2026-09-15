@@ -1,0 +1,63 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"0fd84bfaf48b7c3ea171835f42e96b39fa536a13e1ba0b260d68156c7783ee5a\",\"operations\":[{\"op\":\"remove\",\"path\":\"/volumes/@central/faces/+v/beltCourses\"}]}",
+ "cues": [
+  "Monumental ivory colonnade on the recessed +v facade",
+  "Long warm-brick block with projecting end wings",
+  "Dark flat roof and pale continuous cornice",
+  "Tall cream-trimmed windows and rose awnings"
+ ],
+ "references_used": [
+  "MAP",
+  "SV2",
+  "SV3",
+  "SV4",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Rear service-door positions remain unconfirmed behind vegetation.",
+  "The existing principal door is retained; fallback views do not depict this draft.",
+  "Exterior fire escape is omitted as a catalog simplification."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "central",
+   "face": "+v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV3"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "west_wing",
+   "face": "-u",
+   "role": "secondary basement access",
+   "evidence": [
+    "MAP",
+    "SV2"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "central",
+   "face": "-v",
+   "role": "assumed secondary service access",
+   "evidence": [
+    "SV4"
+   ],
+   "confidence": "unknown"
+  },
+  {
+   "volume": "east_wing",
+   "face": "-v",
+   "role": "secondary service access; approximate placement",
+   "evidence": [
+    "MAP",
+    "SV4"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

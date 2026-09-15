@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The long rectangular gable-roof silhouette is recognizable, but the model reads as a brick utility hut rather than the russet shingle-clad studio in SV1. Principal-entry placement is plausible but not proven.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The map and located SV1 look SSE toward the +v/NW gable and clearly establish that face as a blank end with an attic vent and low grille. The render agrees that +v has no door, while the actual inventory contains one principal-sized door only on the opposite -v/SE face. However, that opposite face is concealed in the supplied geolocated view, so no source directly confirms the entrance there; nearest-road relationships are not evidence."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry orientation remains unresolved: the sole -v door is only an inference from the blank +v view.",
+   "fix": "Supply geolocated evidence of the -v end or another source that locates the principal entrance; otherwise mark its placement uncertain rather than approving it."
+  },
+  {
+   "severity": "major",
+   "problem": "The walls use conspicuous brick texture, whereas SV1 shows russet-brown shingle/panel cladding, changing the building\u2019s identity.",
+   "fix": "Replace the brick courses with simplified brown shingle courses or subtle rectangular panels."
+  },
+  {
+   "severity": "minor",
+   "problem": "The characteristic centered louvered attic vent on +v is modeled as a dark glazed-looking square; the roof also appears somewhat too steep and dominant.",
+   "fix": "Use a shallow, horizontally slatted vent and modestly reduce the gable pitch while retaining the long simple roof form and low grille."
+  }
+ ]
+}

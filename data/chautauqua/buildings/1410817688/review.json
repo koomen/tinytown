@@ -1,0 +1,20 @@
+{
+ "verdict": "insufficient-evidence",
+ "summary": "The compact gabled silhouette and low dark opening make the cabin recognizable, but the brick treatment conflicts with the reference\u2019s timber character, and the principal entrance cannot be verified from the supplied evidence.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "Located SV1 looks SSE toward the +u face, whose outward normal is NNW, and confirms that face as the largely blank gable with a low opening and no door. The render inventory contains one door only, centered on the opposite -u face, with no duplicated principal portal. However, neither SV1 nor the north-up aerial shows -u well enough to establish that it is the principal-entry face; the author plan is not evidence."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry placement on -u is unsupported by the available geolocated imagery.",
+   "fix": "Obtain a located view showing the entrance face before approving or relocating the single door; do not infer it from Hurst Avenue proximity."
+  },
+  {
+   "severity": "major",
+   "problem": "The model reads as red-brown brick, while the reference cabin is characterized by brown timber cladding and warm wood trim.",
+   "fix": "Replace the masonry texture with simplified brown timber siding or paneling while retaining the miniature-scale detailing."
+  }
+ ]
+}

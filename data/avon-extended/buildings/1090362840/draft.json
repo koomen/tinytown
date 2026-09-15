@@ -1,0 +1,584 @@
+{
+ "_comment": "Avon Park Theater (71 Genesee, 1938) + two absorbed neighbours to its north: the narrow white flat-roof 2-storey (Integrity Tours / 'Wedding Flowers by Avon Floral World') and the white clapboard gable of Avon Floral World (63 Genesee). Road face +u; left (fraction 0) = +v = SSW.",
+ "wall": "#d4c08e",
+ "trim": "#e9e6de",
+ "roofColor": "#3f3d3a",
+ "volumes": [
+  {
+   "id": "theater-front",
+   "u": [
+    1.8,
+    16.3
+   ],
+   "v": [
+    -0.8,
+    13.1
+   ],
+   "height": 8.0,
+   "wall": "#d4c08e",
+   "trim": "#2a2724",
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "beltCourses": [
+    {
+     "y": 4.75,
+     "height": 0.2,
+     "color": "#8b6b4c"
+    },
+    {
+     "y": 6.85,
+     "height": 0.2,
+     "color": "#8b6b4c"
+    }
+   ],
+   "towers": [
+    {
+     "u": 16.05,
+     "v": 6.15,
+     "w": 0.7,
+     "height": 10.6,
+     "wall": "#2a2724",
+     "spire": false,
+     "windows": false
+    }
+   ],
+   "faces": {
+    "+u": {
+     "storefronts": [
+      {
+       "range": [
+        0.02,
+        0.29
+       ],
+       "y": 0.6,
+       "h": 2.5,
+       "frame": "#2b2926",
+       "kick": "#e9e6de"
+      },
+      {
+       "range": [
+        0.71,
+        0.98
+       ],
+       "y": 0.6,
+       "h": 2.5,
+       "frame": "#2b2926",
+       "kick": "#e9e6de"
+      }
+     ],
+     "awnings": [
+      {
+       "range": [
+        0.02,
+        0.29
+       ],
+       "y": 3.35,
+       "depth": 1.4,
+       "color": "#2b2926",
+       "stripes": "#e8e3d8"
+      },
+      {
+       "range": [
+        0.71,
+        0.98
+       ],
+       "y": 3.35,
+       "depth": 1.4,
+       "color": "#2b2926",
+       "stripes": "#e8e3d8"
+      },
+      {
+       "range": [
+        0.3,
+        0.7
+       ],
+       "y": 4.35,
+       "depth": 1.8,
+       "color": "#dedad0"
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.42,
+       "type": "double",
+       "w": 1.5,
+       "h": 2.7,
+       "color": "#2b2926",
+       "surround": "#e9e6de",
+       "surroundW": 0.14
+      },
+      {
+       "at": 0.58,
+       "type": "double",
+       "w": 1.5,
+       "h": 2.7,
+       "color": "#2b2926",
+       "surround": "#e9e6de",
+       "surroundW": 0.14
+      }
+     ],
+     "signs": [
+      {
+       "_comment": "marquee fascia hung at the front edge of the white canopy",
+       "text": "PARK",
+       "style": "board",
+       "at": 0.5,
+       "y": 3.55,
+       "w": 1.8,
+       "h": 0.9,
+       "out": 1.65
+      },
+      {
+       "text": "FALL MUSIC\nSCHEDULE",
+       "style": "board",
+       "at": 0.385,
+       "y": 3.55,
+       "w": 1.4,
+       "h": 0.9,
+       "out": 1.65
+      },
+      {
+       "text": "RAIDERS OF\nTHE LOST ARK",
+       "style": "board",
+       "at": 0.615,
+       "y": 3.55,
+       "w": 1.4,
+       "h": 0.9,
+       "out": 1.65
+      },
+      {
+       "_comment": "vertical PARK blade: single-letter boards stacked in front of the dark tower",
+       "text": "P",
+       "style": "gold-on-black",
+       "opts": {
+        "ornaments": false,
+        "fg": "#efe9dd",
+        "border": null
+       },
+       "at": 0.5,
+       "y": 8.3,
+       "w": 0.8,
+       "h": 0.85,
+       "out": 0.15
+      },
+      {
+       "text": "A",
+       "style": "gold-on-black",
+       "opts": {
+        "ornaments": false,
+        "fg": "#efe9dd",
+        "border": null
+       },
+       "at": 0.5,
+       "y": 7.35,
+       "w": 0.8,
+       "h": 0.85,
+       "out": 0.15
+      },
+      {
+       "text": "R",
+       "style": "gold-on-black",
+       "opts": {
+        "ornaments": false,
+        "fg": "#efe9dd",
+        "border": null
+       },
+       "at": 0.5,
+       "y": 6.4,
+       "w": 0.8,
+       "h": 0.85,
+       "out": 0.15
+      },
+      {
+       "text": "K",
+       "style": "gold-on-black",
+       "opts": {
+        "ornaments": false,
+        "fg": "#efe9dd",
+        "border": null
+       },
+       "at": 0.5,
+       "y": 5.45,
+       "w": 0.8,
+       "h": 0.85,
+       "out": 0.15
+      }
+     ],
+     "storeys": [
+      {
+       "y": 5.1,
+       "windows": {
+        "type": "rect",
+        "w": 2.0,
+        "h": 1.5,
+        "at": [
+         0.227,
+         0.41,
+         0.59,
+         0.773
+        ],
+        "trim": "#e9e6de",
+        "glass": "#4d5a63"
+       }
+      }
+     ],
+     "parapets": [
+      {
+       "type": "stepped",
+       "at": 0.5,
+       "width": "full",
+       "height": 1.2,
+       "depth": 0.35,
+       "color": "#d4c08e",
+       "trim": "#ddd3b8"
+      }
+     ]
+    }
+   },
+   "cornice": {
+    "height": 0.25,
+    "overhang": 0.12,
+    "dentils": false,
+    "color": "#ddd3b8"
+   }
+  },
+  {
+   "id": "auditorium",
+   "u": [
+    -13.6,
+    1.8
+   ],
+   "v": [
+    -0.8,
+    13.1
+   ],
+   "height": 7.8,
+   "wall": "#d4c08e",
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "faces": {
+    "-u": {
+     "doors": [
+      {
+       "at": 0.5,
+       "type": "double",
+       "w": 1.6,
+       "h": 2.4,
+       "color": "#3a3835",
+       "surround": "#cfc4a8",
+       "surroundW": 0.12,
+       "lamp": true
+      }
+     ]
+    },
+    "+v": {
+     "doors": [
+      {
+       "at": 0.2,
+       "type": "rect",
+       "w": 1.0,
+       "h": 2.3,
+       "color": "#3a3835",
+       "surround": "#cfc4a8",
+       "surroundW": 0.12,
+       "fanlight": false
+      }
+     ]
+    }
+   },
+   "cornice": {
+    "height": 0.3,
+    "overhang": 0.1,
+    "dentils": false,
+    "color": "#c9b48a"
+   }
+  },
+  {
+   "id": "rear-annex",
+   "u": [
+    -16.3,
+    -13.7
+   ],
+   "v": [
+    1.6,
+    10.3
+   ],
+   "height": 3.4,
+   "wall": "#d4c08e",
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "cornice": {
+    "height": 0.3,
+    "overhang": 0.1,
+    "dentils": false,
+    "color": "#c9b48a"
+   }
+  },
+  {
+   "id": "white-flat",
+   "_comment": "narrow white 2-storey between the theater and the gable (Integrity Tours 2023 / wedding-flowers shop 2025)",
+   "u": [
+    1.8,
+    16.3
+   ],
+   "v": [
+    -5.3,
+    -0.8
+   ],
+   "height": 7.7,
+   "wall": "#e6e2d8",
+   "trim": "#33302d",
+   "roof": {
+    "type": "flat",
+    "lip": false,
+    "color": "#4a4846"
+   },
+   "cornice": {
+    "height": 0.4,
+    "overhang": 0.3,
+    "dentils": true,
+    "color": "#33302d"
+   },
+   "faces": {
+    "+u": {
+     "storeys": [
+      {
+       "y": 4.9,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.6,
+        "at": [
+         0.3,
+         0.7
+        ],
+        "trim": "#33302d",
+        "glass": "#4d5a63"
+       }
+      }
+     ],
+     "storefronts": [
+      {
+       "range": [
+        0.06,
+        0.6
+       ],
+       "y": 0.7,
+       "h": 2.2,
+       "frame": "#33302d",
+       "kick": "#e6e2d8"
+      }
+     ],
+     "awnings": [
+      {
+       "range": [
+        0.04,
+        0.72
+       ],
+       "y": 3.3,
+       "depth": 1.3,
+       "color": "#33302d"
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.8,
+       "type": "rect",
+       "w": 0.95,
+       "h": 2.4,
+       "color": "#33302d",
+       "surround": "#e6e2d8",
+       "surroundW": 0.12,
+       "fanlight": true
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "floral-gable",
+   "_comment": "Avon Floral World, white clapboard gable-front, burgundy trim",
+   "u": [
+    1.8,
+    16.3
+   ],
+   "v": [
+    -13.1,
+    -5.3
+   ],
+   "height": 6.5,
+   "wall": "#ece7dc",
+   "trim": "#6e2f3a",
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.36,
+    "overhang": 0.35,
+    "color": "#4b4a4c",
+    "gableColor": "#ece7dc"
+   },
+   "faces": {
+    "+u": {
+     "storeys": [
+      {
+       "y": 4.3,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.7,
+        "at": [
+         0.28,
+         0.72
+        ],
+        "trim": "#6e2f3a",
+        "glass": "#4d5a63"
+       }
+      }
+     ],
+     "storefronts": [
+      {
+       "range": [
+        0.06,
+        0.42
+       ],
+       "y": 0.6,
+       "h": 2.2,
+       "frame": "#3f3a35",
+       "kick": "#6e2f3a"
+      },
+      {
+       "range": [
+        0.58,
+        0.94
+       ],
+       "y": 0.6,
+       "h": 2.2,
+       "frame": "#3f3a35",
+       "kick": "#6e2f3a"
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.5,
+       "type": "rect",
+       "w": 1.0,
+       "h": 2.4,
+       "color": "#6e2f3a",
+       "surround": "#ece7dc",
+       "surroundW": 0.14,
+       "fanlight": true
+      }
+     ],
+     "signs": [
+      {
+       "text": "AVON FLORAL WORLD",
+       "style": "green",
+       "at": 0.5,
+       "y": 3.15,
+       "w": 6.4,
+       "h": 0.7
+      }
+     ]
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 4.3,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.5,
+        "at": [
+         0.2,
+         0.5,
+         0.8
+        ],
+        "trim": "#6e2f3a",
+        "glass": "#4d5a63"
+       }
+      },
+      {
+       "y": 1.0,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.5,
+        "at": [
+         0.35,
+         0.65
+        ],
+        "trim": "#6e2f3a",
+        "glass": "#4d5a63"
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "rear-wing",
+   "_comment": "narrow single-storey wing running back behind the florist",
+   "u": [
+    -13.6,
+    1.8
+   ],
+   "v": [
+    -13.1,
+    -9.9
+   ],
+   "height": 3.6,
+   "wall": "#d9d4c8",
+   "trim": "#6e2f3a",
+   "roof": {
+    "type": "flat",
+    "lip": false,
+    "color": "#4a4846"
+   },
+   "faces": {
+    "-v": {
+     "storeys": [
+      {
+       "y": 1.1,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.2,
+        "at": [
+         0.3,
+         0.75
+        ],
+        "trim": "#ece7dc",
+        "glass": "#4d5a63"
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.52,
+       "type": "rect",
+       "w": 0.95,
+       "h": 2.2,
+       "color": "#6e2f3a",
+       "surround": "#ece7dc",
+       "surroundW": 0.12,
+       "fanlight": false
+      }
+     ]
+    }
+   },
+   "cornice": {
+    "height": 0.25,
+    "overhang": 0.1,
+    "dentils": false,
+    "color": "#d9d4c8"
+   }
+  }
+ ],
+ "details": []
+}

@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "{\"wall\":\"#89604e\",\"trim\":\"#c9bea9\",\"roofColor\":\"#b4afa0\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.72,2.72],\"v\":[-2.16,2.16],\"bottom\":0,\"height\":2.55,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.36,\"maxH\":1.55,\"overhang\":0.22},\"plinth\":{\"height\":0.16,\"color\":\"#514c40\"},\"faces\":{\"+u\":{\"storeys\":[{\"y\":0.35,\"windows\":{\"type\":\"basement\",\"w\":1.05,\"h\":0.45,\"at\":[0.51],\"trim\":\"#67594d\",\"glass\":\"#303a36\",\"mullions\":false}},{\"y\":2.96,\"windows\":{\"type\":\"rect\",\"w\":0.48,\"h\":0.5,\"at\":[0.5],\"trim\":\"#695347\",\"glass\":\"#343632\",\"mullions\":false,\"interior\":false}}],\"doors\":[{\"at\":0.83,\"type\":\"rect\",\"w\":0.76,\"h\":1.98,\"color\":\"#634b3e\",\"surround\":\"#745747\",\"surroundW\":0.08,\"steps\":1}]},\"-u\":{},\"+v\":{\"storeys\":[{\"y\":1.12,\"windows\":{\"type\":\"rect\",\"w\":0.75,\"h\":1.03,\"at\":[0.52],\"trim\":\"#c9bea9\",\"glass\":\"#596964\"}}]},\"-v\":{}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact brown timber studio with a simple rectangular footprint.",
+  "Pale, moderately steep gable roof with restrained overhangs.",
+  "Small dark square opening high in the front gable.",
+  "Low horizontal front opening and understated right-hand entry."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The centered hut in SV1 is treated as the target; the large cropped foreground hut is excluded.",
+  "The narrow right-hand front feature is interpreted as a door, but its outline is indistinct.",
+  "Hidden elevations and the single side window are simplified inferences; cladding texture is omitted."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1: camera lies predominantly along +u; the centered gable has a narrow door-like feature at its right edge."
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

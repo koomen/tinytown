@@ -1,0 +1,20 @@
+{
+ "verdict": "repair",
+ "summary": "The compact raised studio, low hipped roof, red-brown palette, and side steps create a recognizable miniature, but the wall and window treatment misses key visible character.",
+ "orientation": {
+  "status": "correct",
+  "summary": "SV1 is geolocated southwest of the studio and looks NE, exposing the camera-facing -u and +v sides. Its broad -u wall has the off-center window, while the adjoining +v side carries the steps/entry. The labeled face sheet matches this arrangement, and the actual inventory contains one principal door only on +v (SSE, 149\u00b0), with no duplicated portal."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The model uses pronounced masonry/brick walls, while SV1 shows reddish-brown horizontal timber siding, a defining material cue.",
+   "fix": "Replace the brick pattern with simplified horizontal brown siding while retaining the pale corner and opening trim."
+  },
+  {
+   "severity": "minor",
+   "problem": "The broad-wall window reads as a wide paired, multi-pane unit rather than the reference\u2019s single tall, narrow, off-center window.",
+   "fix": "Narrow the -u window to one vertically proportioned opening and preserve its asymmetric placement."
+  }
+ ]
+}

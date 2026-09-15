@@ -1,0 +1,44 @@
+.DS_Store
+Thumbs.db
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+node_modules/
+.vscode/
+.idea/
+*.log
+.env
+.env.*
+.dev.vars
+*.pem
+*.key
+
+# Build output and Cloudflare state
+/dist/
+.wrangler/
+
+# Private headless browser runtime, model transcripts, scratch runs
+/runs/
+.town-cache/
+
+# Source imagery is refetched by `town fetch`; never commit third-party tiles
+data/*/source/satellite.jpg
+
+# Per-building imagery: Street View captures, aerial crops, renders, web images.
+# Reproducible from the JSON records next to them; often third-party content.
+data/*/buildings/*/fronts/
+data/*/buildings/*/images/
+data/*/buildings/*/*.png
+data/*/buildings/*/*.jpg
+data/*/buildings/*/*.jpeg
+data/*/buildings/*/*.webp
+data/*/buildings/*/*.gif
+data/*/buildings/*/*.avif
+data/*/buildings/*/*.sha256
+data/*/buildings/*/renders/*.png
+data/*/buildings/*/web-original-*
+
+# Streaming build scratch
+data/*/stream/.prepare-*
+*.egg-info/

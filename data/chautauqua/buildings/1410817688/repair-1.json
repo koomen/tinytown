@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"ae2a61336b3826892c89ff9bc72e1cd974cb7cb0ed1345c514d328e6f92451f4\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#896443\"},{\"op\":\"replace\",\"path\":\"/trim\",\"value\":\"#a58056\"}]}",
+ "cues": [
+  "Compact single-storey cabin.",
+  "Simple muted-gray gable roof with projecting eaves.",
+  "Warm timber-brown palette.",
+  "Mostly blank NNW gable with one low dark opening."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The single -u door is retained as a concealed-face approximation; its principal-entry placement is unverified.",
+  "The reference shows timber cladding. Palette is adjusted, but the supplied catalog exposes no timber-texture control; masonry texture remains an unresolved renderer limitation.",
+  "Side windows remain simplified inferred details."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "SV1 confirms the opposite +u gable has no visible entrance; MAP and AERIAL do not establish the actual entry face."
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

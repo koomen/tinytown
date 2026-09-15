@@ -1,0 +1,15 @@
+{
+ "verdict": "ready",
+ "summary": "The miniature is recognizable: cream siding, dark layered gables, two front dormers, chimney, broad divided-window frontage, and an offset covered entry form a coherent, charming cottage caricature. The taller rear mass is somewhat visually dominant but remains compatible with the aerial\u2019s layered roof form.",
+ "orientation": {
+  "status": "correct",
+  "summary": "SV3 is geolocated ENE of the building and looks southwest onto the +v face; it clearly shows the principal door left of the broad window group beneath the covered porch. The rendered blueprint inventory has its sole door on that same +v/ENE face toward Pratt Avenue. The +v panel likewise presents this entrance frontage, with no duplicated principal portal on another face."
+ },
+ "issues": [
+  {
+   "severity": "minor",
+   "problem": "The +v entrance reads more like a glazed box than the reference\u2019s open, left-offset porch with conspicuous timber rails and ramp.",
+   "fix": "Open up the porch sides and strengthen the pale rail/ramp silhouette while retaining the existing +v door."
+  }
+ ]
+}

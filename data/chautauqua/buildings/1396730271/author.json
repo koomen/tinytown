@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "{\"wall\":\"#94675b\",\"trim\":\"#eeeae0\",\"roofColor\":\"#dce1dc\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.2,2.2],\"v\":[-2.1,2.1],\"bottom\":0.18,\"height\":2.8,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.3,\"maxH\":1.26,\"overhang\":0.3},\"plinth\":{\"height\":0.18,\"color\":\"#635b51\"},\"faces\":{\"-u\":{\"doors\":[{\"at\":0.5,\"type\":\"rect\",\"w\":0.9,\"h\":2.15,\"color\":\"#f1eee7\",\"surround\":\"#f1eee7\",\"surroundW\":0.1,\"lights\":true,\"panels\":2,\"steps\":2}]},\"+v\":{\"storeys\":[{\"y\":0.9,\"windows\":{\"type\":\"rect\",\"w\":0.85,\"h\":1.35,\"at\":[0.5],\"trim\":\"#eeeae0\",\"glass\":\"#536768\",\"mullions\":false}}]},\"+u\":{},\"-v\":{\"storeys\":[{\"y\":0.9,\"windows\":{\"type\":\"rect\",\"w\":0.85,\"h\":1.35,\"at\":[0.5],\"trim\":\"#eeeae0\",\"glass\":\"#536768\",\"mullions\":false}}]}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Tiny brown cottage with a simple steep gable.",
+  "Pale metal-colored roof with projecting white edges.",
+  "White glazed door on the southeast gable, reached by two steps.",
+  "Single tall white-trimmed window on the northeast side."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Target interpreted as the complete background cabin; the cropped foreground cabin marked 66 is excluded.",
+  "Hidden southwest window is a simple inference; exact dimensions and siding courses are approximated."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1: located camera sees southeast and northeast sides; background cabin door occupies the screen-left gable.",
+    "AERIAL"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "verdict": "repair",
+ "summary": "The miniature is a coherent, charming single-storey practice cabin with a clear gabled silhouette, restrained openings, pale roof, and raised threshold. No obvious mesh or duplication defects are visible, but principal-entry placement is unresolved.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The sole door is on +u, the SSE face toward West Lake Road. The located SV1 camera instead looks SSE toward the opposite -u/NNW face from Hurst Avenue; vegetation heavily occludes the building, and the visible portion does not establish a doorway. The north-up aerial is too coarse to locate an entrance. Thus neither source supports the +u door, while the nearest-road relationship is not entrance evidence."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The only principal portal is assigned to +u without source evidence; the available located view concerns -u but is too obscured to confirm whether that face contains the entrance.",
+   "fix": "Verify the entry face from a clearer geolocated view or other supplied orientation evidence, then retain exactly one principal door on that evidenced face and update the corresponding four-face render."
+  }
+ ]
+}

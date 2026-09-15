@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The compact gabled hut reads clearly and has a coherent miniature treatment, but the principal entrance is not fully verified and the northwest facade includes an unsupported prominent window.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "Located SV1 is northwest of the hut and looks SSE, giving evidence for the -u/NW gable and part of the -v/NE side. The photographed NW gable has a low dark opening and no door, consistent with treating -u as a rear face. The model inventory has exactly one principal door, on the opposite +u/SE gable, so it is not duplicated; however, no supplied view actually establishes +u rather than either side face as the entrance."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry placement on +u/SE remains inferred rather than source-confirmed.",
+   "fix": "Provide a located view showing the entrance face, or establish the door\u2019s face from another supplied geolocated source before approval."
+  },
+  {
+   "severity": "minor",
+   "problem": "The model adds a conspicuous upper square window on the -u/NW gable, while SV1 shows only the characteristic low dark opening there.",
+   "fix": "Remove the upper NW window and retain a simpler low, dark vent/opening matching SV1."
+  },
+  {
+   "severity": "minor",
+   "problem": "The strong brick texture conflicts with the reference hut\u2019s flatter shingle-like reddish-brown wall finish.",
+   "fix": "Use a subdued shingle or lightly patterned siding texture while preserving the muted brown palette and cream trim."
+  }
+ ]
+}

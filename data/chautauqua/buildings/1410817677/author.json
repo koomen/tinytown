@@ -1,0 +1,34 @@
+{
+ "blueprint_json": "{\"wall\":\"#a66d43\",\"trim\":\"#bc956c\",\"roofColor\":\"#96928a\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.7,2.7],\"v\":[-2.2,2.1],\"bottom\":0,\"height\":3.1,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.25,\"maxH\":1.08,\"overhang\":0.22},\"plinth\":{\"height\":0.18,\"color\":\"#514b3e\"},\"faces\":{\"+u\":{\"storeys\":[{\"y\":3.35,\"windows\":{\"type\":\"rect\",\"w\":0.27,\"h\":0.35,\"at\":[0.5],\"trim\":\"#805633\",\"glass\":\"#59442e\",\"mullions\":false,\"interior\":false}}]},\"-u\":{\"doors\":[{\"at\":0.5,\"type\":\"rect\",\"w\":0.9,\"h\":2.05,\"color\":\"#755033\",\"surround\":\"#bc956c\",\"surroundW\":0.08,\"steps\":1}]},\"+v\":{\"storeys\":[{\"y\":1.35,\"windows\":{\"type\":\"rect\",\"w\":0.8,\"h\":0.9,\"at\":[0.5],\"trim\":\"#bc956c\",\"glass\":\"#65716d\"}}]},\"-v\":{}}},{\"id\":\"rear_ac\",\"u\":[2.7,2.97],\"v\":[-0.7,0.5],\"bottom\":0.95,\"height\":1.5,\"wall\":\"#454b4b\",\"roofColor\":\"#555957\",\"roof\":{\"type\":\"flat\",\"lip\":false},\"faces\":{}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact single-storey cabin with a simple gabled silhouette.",
+  "Warm cinnamon-brown walls and restrained tan trim.",
+  "Plain northwest gable with a tiny high vent.",
+  "Low dark wall-mounted air-conditioning box.",
+  "Shallow muted roof with modest projecting eaves."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Entrance is concealed; a single southeast (-u) entry is a provisional inference, not confirmed by the nearest road.",
+  "Side window placement and concealed elevations are simplified.",
+  "Shingle texture and exposed utility conduits are omitted; roof color is approximate."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "AERIAL"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

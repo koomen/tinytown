@@ -1,0 +1,396 @@
+{
+ "wall": "#9eada7",
+ "trim": "#f0eadb",
+ "roofColor": "#595953",
+ "volumes": [
+  {
+   "id": "house",
+   "u": [
+    -4.2,
+    2.8
+   ],
+   "v": [
+    -5.5,
+    3.7
+   ],
+   "bottom": 0,
+   "height": 6.1,
+   "roof": {
+    "type": "gable",
+    "ridge": "v",
+    "pitch": 0.42,
+    "maxH": 2.6,
+    "overhang": 0.35
+   },
+   "plinth": {
+    "height": 0.35,
+    "color": "#969589"
+   },
+   "beltCourses": [
+    {
+     "y": 3.1,
+     "height": 0.2,
+     "color": "#eee8dc"
+    }
+   ],
+   "faces": {
+    "+v": {
+     "storeys": [
+      {
+       "y": 0.85,
+       "windows": {
+        "type": "rect",
+        "w": 1.05,
+        "h": 1.7,
+        "at": [
+         0.48,
+         0.77
+        ],
+        "trim": "#f0eadb",
+        "glass": "#687a78",
+        "planter": true
+       }
+      },
+      {
+       "y": 3.65,
+       "windows": {
+        "type": "rect",
+        "w": 0.95,
+        "h": 1.6,
+        "at": [
+         0.24,
+         0.51,
+         0.78
+        ],
+        "trim": "#f0eadb",
+        "glass": "#687a78"
+       }
+      },
+      {
+       "y": 6.35,
+       "windows": {
+        "type": "rect",
+        "w": 0.65,
+        "h": 1.1,
+        "at": [
+         0.44,
+         0.56
+        ],
+        "trim": "#f0eadb",
+        "glass": "#687a78"
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.16,
+       "type": "rect",
+       "w": 1,
+       "h": 2.25,
+       "color": "#59665e",
+       "surround": "#f0eadb",
+       "steps": 3
+      }
+     ],
+     "porches": [
+      {
+       "style": "open",
+       "at": 0.5,
+       "w": 7,
+       "d": 1.8,
+       "height": 2.65,
+       "floorH": 0.45,
+       "posts": 5,
+       "postColor": "#eee8da",
+       "roof": "flat",
+       "roofColor": "#62645c",
+       "railing": true,
+       "steps": 3
+      },
+      {
+       "style": "open",
+       "at": 0.5,
+       "w": 7,
+       "d": 1.8,
+       "height": 2.8,
+       "floorH": 3.15,
+       "floorThickness": 0.22,
+       "posts": 5,
+       "postColor": "#eee8da",
+       "roof": "hip",
+       "pitch": 0.15,
+       "roofColor": "#595953",
+       "railing": true,
+       "steps": 0
+      }
+     ],
+     "awnings": [
+      {
+       "range": [
+        0.02,
+        0.98
+       ],
+       "y": 2.95,
+       "depth": 1.95,
+       "color": "#aa4940"
+      }
+     ],
+     "signs": [
+      {
+       "text": "CHRISTIAN SCIENCE HOUSE",
+       "style": "board",
+       "at": 0.25,
+       "y": 2.7,
+       "w": 2.5,
+       "h": 0.3
+      }
+     ]
+    },
+    "+u": {
+     "storeys": [
+      {
+       "y": 0.8,
+       "windows": {
+        "type": "rect",
+        "w": 1.35,
+        "h": 1.7,
+        "at": [
+         0.17,
+         0.39
+        ],
+        "trim": "#f0eadb",
+        "glass": "#687a78"
+       }
+      },
+      {
+       "y": 3.65,
+       "windows": {
+        "type": "rect",
+        "w": 0.95,
+        "h": 1.65,
+        "at": [
+         0.17,
+         0.39
+        ],
+        "trim": "#f0eadb",
+        "glass": "#687a78"
+       }
+      }
+     ],
+     "porches": [
+      {
+       "style": "open",
+       "at": 0.245,
+       "w": 4.5,
+       "d": 1.4,
+       "height": 2.65,
+       "floorH": 0.45,
+       "posts": 4,
+       "postColor": "#eee8da",
+       "roof": "flat",
+       "roofColor": "#62645c",
+       "railing": false,
+       "steps": 0
+      },
+      {
+       "style": "open",
+       "at": 0.245,
+       "w": 4.5,
+       "d": 1.4,
+       "height": 2.8,
+       "floorH": 3.15,
+       "floorThickness": 0.22,
+       "posts": 4,
+       "postColor": "#eee8da",
+       "roof": "hip",
+       "pitch": 0.15,
+       "roofColor": "#595953",
+       "railing": true,
+       "steps": 0
+      }
+     ],
+     "awnings": [
+      {
+       "range": [
+        0.01,
+        0.49
+       ],
+       "y": 2.95,
+       "depth": 1.55,
+       "color": "#aa4940"
+      }
+     ]
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 0.9,
+       "windows": {
+        "type": "rect",
+        "w": 1,
+        "h": 1.6,
+        "at": [
+         0.25,
+         0.73
+        ],
+        "glass": "#687a78"
+       }
+      },
+      {
+       "y": 3.8,
+       "windows": {
+        "type": "rect",
+        "w": 1,
+        "h": 1.6,
+        "at": [
+         0.25,
+         0.73
+        ],
+        "glass": "#687a78"
+       }
+      },
+      {
+       "y": 6.35,
+       "windows": {
+        "type": "arch",
+        "w": 0.65,
+        "h": 1.15,
+        "at": [
+         0.44,
+         0.56
+        ],
+        "glass": "#687a78"
+       }
+      }
+     ],
+     "porches": [
+      {
+       "style": "open",
+       "at": 0.5,
+       "w": 6.8,
+       "d": 1.2,
+       "height": 2.75,
+       "floorH": 0.35,
+       "posts": 4,
+       "postColor": "#eee8da",
+       "roof": "flat",
+       "roofColor": "#62645c",
+       "railing": false,
+       "steps": 1
+      }
+     ]
+    },
+    "-u": {
+     "storeys": [
+      {
+       "y": 1,
+       "windows": {
+        "type": "rect",
+        "w": 0.95,
+        "h": 1.5,
+        "at": [
+         0.2,
+         0.5,
+         0.8
+        ],
+        "glass": "#687a78"
+       }
+      },
+      {
+       "y": 3.85,
+       "windows": {
+        "type": "rect",
+        "w": 0.95,
+        "h": 1.5,
+        "at": [
+         0.2,
+         0.5,
+         0.8
+        ],
+        "glass": "#687a78"
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "side_gable",
+   "u": [
+    0.2,
+    4.2
+   ],
+   "v": [
+    -5,
+    -0.8
+   ],
+   "bottom": 0,
+   "height": 6.1,
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.5,
+    "maxH": 2.1,
+    "overhang": 0.35
+   },
+   "plinth": {
+    "height": 0.35,
+    "color": "#969589"
+   },
+   "beltCourses": [
+    {
+     "y": 3.1,
+     "height": 0.2,
+     "color": "#eee8dc"
+    }
+   ],
+   "faces": {
+    "+u": {
+     "storeys": [
+      {
+       "y": 0.85,
+       "windows": {
+        "type": "rect",
+        "w": 1.05,
+        "h": 1.7,
+        "at": [
+         0.5
+        ],
+        "trim": "#f0eadb",
+        "glass": "#687a78"
+       }
+      },
+      {
+       "y": 3.8,
+       "windows": {
+        "type": "rect",
+        "w": 1.05,
+        "h": 1.7,
+        "at": [
+         0.5
+        ],
+        "trim": "#f0eadb",
+        "glass": "#687a78"
+       }
+      },
+      {
+       "y": 6.35,
+       "windows": {
+        "type": "rect",
+        "w": 0.6,
+        "h": 0.95,
+        "at": [
+         0.4,
+         0.6
+        ],
+        "trim": "#f0eadb",
+        "glass": "#687a78"
+       }
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "details": []
+}

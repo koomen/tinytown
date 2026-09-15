@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "{\"wall\":\"#925f49\",\"trim\":\"#c7bbaa\",\"roofColor\":\"#69645e\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.7,2.7],\"v\":[-2.2,2.2],\"bottom\":0,\"height\":2.7,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.24,\"maxH\":1.05,\"overhang\":0.28},\"plinth\":{\"height\":0.12,\"color\":\"#514b40\"},\"faces\":{\"-u\":{\"storeys\":[{\"y\":2.88,\"windows\":{\"type\":\"rect\",\"w\":0.3,\"h\":0.4,\"at\":[0.5],\"trim\":\"#845640\",\"glass\":\"#514239\",\"mullions\":false,\"interior\":false}}]},\"+u\":{\"doors\":[{\"at\":0.5,\"type\":\"rect\",\"w\":0.88,\"h\":2.05,\"color\":\"#694a38\",\"surround\":\"#b6a68e\",\"surroundW\":0.08}]},\"+v\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.75,\"h\":1.1,\"at\":[0.38],\"trim\":\"#c7bbaa\",\"glass\":\"#657471\"}}]},\"-v\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.75,\"h\":1.1,\"at\":[0.55],\"trim\":\"#c7bbaa\",\"glass\":\"#657471\"}}]}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Small, single-storey rectangular timber cabin.",
+  "Muted reddish-brown walls and simple gray-brown gable roof.",
+  "Pale fascia outlining the projecting roof edges.",
+  "Mostly blank NNW gable with a tiny dark attic vent."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "People obscure the lower NNW facade; no entrance is positively visible.",
+  "The SSE entrance is a provisional concealed-face placement, not corroborated by photographs.",
+  "Side windows and dimensions above ground are simplified estimates; the attic vent is represented by a dark inset."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

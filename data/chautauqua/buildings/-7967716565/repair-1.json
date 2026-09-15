@@ -1,0 +1,21 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"a89107bf5e72e8454b64f01e54ca2d4a2999d5c13f7ebd62a1ee39a4d7af6208\",\"operations\":[{\"op\":\"replace\",\"path\":\"/fountain/height\",\"value\":4.9},{\"op\":\"replace\",\"path\":\"/fountain/pylonWidth\",\"value\":1.5}]}",
+ "cues": [
+  "Taller, slimmer four-sided relief monument",
+  "Integrated three-step limestone crown",
+  "Square turquoise basin with pale coping and warm brick walls",
+  "Four sculpted corner jets"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV3",
+  "SV4\u587f"
+ ],
+ "uncertainties": [
+  "Height deliberately exaggerated above the documented 3.96 m for silhouette readability; crown tiers and jet arcs have no independent catalog controls."
+ ],
+ "entrance_plan": []
+}

@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "Not ready: the authored draft timed out and was never rendered. The generic fallback cannot be used to judge the miniature\u2019s silhouette, architectural character, or defects.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "Geolocated SV1 identifies the principal arched entrance on the +u face, whose outward bearing is SW (221\u00b0). SV2 (-u), SV3 (+v), and SV4 (-v) show no competing principal portal. However, the actual rendered door inventory is empty because no valid authored model exists, so placement cannot be verified."
+ },
+ "issues": [
+  {
+   "severity": "broken",
+   "problem": "The author call timed out, leaving no valid rendered miniature to review.",
+   "fix": "Complete and render a valid authored draft, then provide its overview, labeled four-face sheet, and populated door inventory."
+  },
+  {
+   "severity": "major",
+   "problem": "Principal-entry orientation is unresolved in the model.",
+   "fix": "Place one principal arched entrance on face +u (SW/221\u00b0), as established by SV1, and avoid duplicating it on other faces."
+  },
+  {
+   "severity": "major",
+   "problem": "Characteristic appearance cannot be verified from the fallback views.",
+   "fix": "Ensure the rendered miniature clearly features the tall square brick shaft, open columned four-arch belfry, prominent bronze Roman-numeral clock faces, decorative masonry bands, and shallow red-tile pyramidal roof."
+  }
+ ]
+}

@@ -1,0 +1,103 @@
+{
+ "id": "820060447",
+ "addr": null,
+ "name": "Hall of Philosophy",
+ "frame": "b5e15324f8140fd7ca734bf9e11f4906f6fa05da2c57e1ae65bd6137efa4d8ce",
+ "faces": {
+  "+u": {
+   "bearing": 81,
+   "width": 18.7,
+   "road": false,
+   "photos": [],
+   "coverage": false,
+   "status": "no-coverage",
+   "attempts": 2,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 261,
+   "width": 18.7,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_820060447_-u.png",
+     "pano": "YRG0IWzQF-P72a-krmOADw",
+     "dist": 14.3,
+     "off_axis_deg": 14,
+     "fov": 79,
+     "tilt": 93,
+     "heading": 95,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2064996,-79.4635889,419a,79y,95h,93t/data=!3m7!1e1!3m5!1sYRG0IWzQF-P72a-krmOADw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DYRG0IWzQF-P72a-krmOADw%26yaw%3D95!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2064996,
+      "lon": -79.4635889
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 2,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 171,
+   "width": 28.6,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_820060447_+v.png",
+     "pano": "12PhJnXkqImy_g7vfPhVKw",
+     "dist": 7.5,
+     "off_axis_deg": 7,
+     "fov": 80,
+     "tilt": 96,
+     "heading": 344,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2063595,-79.4632031,419a,80y,344h,96t/data=!3m7!1e1!3m5!1s12PhJnXkqImy_g7vfPhVKw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3D12PhJnXkqImy_g7vfPhVKw%26yaw%3D344!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2063595,
+      "lon": -79.4632031
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 351,
+   "width": 28.6,
+   "road": true,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_820060447_-v.png",
+     "pano": "dnrFLt0INtdsl02hmBLKDQ",
+     "dist": 12.4,
+     "off_axis_deg": 33,
+     "fov": 80,
+     "tilt": 93,
+     "heading": 205,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2066915,-79.4632,418a,80y,205h,93t/data=!3m7!1e1!3m5!1sdnrFLt0INtdsl02hmBLKDQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DdnrFLt0INtdsl02hmBLKDQ%26yaw%3D205!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2066915,
+      "lon": -79.4632
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-10 04:38"
+}

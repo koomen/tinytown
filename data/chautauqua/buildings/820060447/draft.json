@@ -1,0 +1,30 @@
+{
+  "wall": "#51412f",
+  "trim": "#eeeade",
+  "roofColor": "#555b53",
+  "volumes": [],
+  "pavilion": {
+    "axis": "u",
+    "height": 5.8,
+    "pitch": 0.15,
+    "bents": 7,
+    "columns": "classical",
+    "columnColor": "#eeeade",
+    "postWidth": 0.85,
+    "endPosts": 2,
+    "floorH": 2,
+    "floorColor": "#b5ac97",
+    "entranceEnd": "positive",
+    "railing": true,
+    "seatingRows": 12,
+    "furniture": false,
+    "railingStyle": "ornamental",
+    "entranceStairs": {
+      "length": 8.4,
+      "width": 5,
+      "bottomY": -2.24,
+      "foundationDepth": 0.55
+    }
+  },
+  "details": []
+}

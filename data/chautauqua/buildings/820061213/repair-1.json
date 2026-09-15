@@ -1,0 +1,30 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"6daf829d451aada45260cd0704e43e92e457012db12f0a41b08337ad79fc1ec9\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#795d49\"},{\"op\":\"add\",\"path\":\"/wallMaterial\",\"value\":\"siding\"},{\"op\":\"add\",\"path\":\"/roofMaterial\",\"value\":\"metal\"}]}",
+ "cues": [
+  "Compact single-storey brown studio",
+  "Low pale hipped roof with projecting eaves",
+  "White-trimmed southwest window",
+  "Single side entrance with two steps"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Material-selector fields are not documented in the supplied catalog; renderer support requires confirmation. Massing and opening placement remain unchanged."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

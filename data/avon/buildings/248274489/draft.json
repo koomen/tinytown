@@ -1,0 +1,40 @@
+{
+  "_comment": "Detached garage in the back lot behind 53 Prospect St (house 3914 on the overhead). Not legible in any Street View capture: the +u photo shows only a pale blur at the end of the driveway behind the fence, and the yellow lean-to in the -u photo belongs to 60 Genesee. Overhead: dark shingle gable, ridge along u (long axis), gable ends toward the road (+u) and the back lot (-u). Modelled plain: pale warm-grey siding with white trim to match the cream house, dark grey roof, two sectional doors on the +u gable end where the driveway arrives, a man door on the +v (driveway) side.",
+  "wall": "#d8d3c8",
+  "trim": "#eceae3",
+  "roofColor": "#4d4f52",
+  "volumes": [
+    {
+      "id": "garage",
+      "u": [-4.2, 4.2],
+      "v": [-3.5, 3.5],
+      "height": 2.8,
+      "roof": {
+        "type": "gable",
+        "ridge": "u",
+        "pitch": 0.3,
+        "maxH": 1.9,
+        "overhang": 0.3
+      },
+      "faces": {
+        "+u": {
+          "doors": [
+            { "at": 0.28, "type": "garage", "w": 2.6, "h": 2.3, "color": "#e6e3dc", "panels": 4, "lights": true },
+            { "at": 0.72, "type": "garage", "w": 2.6, "h": 2.3, "color": "#e6e3dc", "panels": 4, "lights": true }
+          ]
+        },
+        "+v": {
+          "doors": [
+            { "at": 0.2, "type": "rect", "w": 0.9, "h": 2.05, "color": "#6d6a64", "surround": "#eceae3", "surroundW": 0.1, "steps": 0 }
+          ],
+          "storeys": [
+            { "y": 1.3, "windows": { "type": "rect", "w": 0.9, "h": 0.9, "at": [0.65], "trim": "#eceae3", "glass": "#5c6a78", "mullions": false } }
+          ]
+        },
+        "-u": {},
+        "-v": {}
+      }
+    }
+  ],
+  "details": []
+}

@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "{\"wall\":\"#90684e\",\"trim\":\"#deddd0\",\"roofColor\":\"#c6c3b6\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.79,2.79],\"v\":[-1.96,1.96],\"bottom\":0,\"height\":2.65,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.32,\"maxH\":1.25,\"overhang\":0.23},\"faces\":{\"-v\":{\"storeys\":[{\"y\":0.95,\"windows\":{\"type\":\"rect\",\"w\":0.95,\"h\":1.55,\"at\":[0.52],\"trim\":\"#deddd0\",\"glass\":\"#46534c\"}}]},\"+u\":{\"doors\":[{\"at\":0.78,\"type\":\"rect\",\"w\":0.85,\"h\":2.05,\"color\":\"#72533f\",\"surround\":\"#b19a78\",\"surroundW\":0.08}]},\"+v\":{},\"-u\":{}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact single-storey rectangular practice cabin.",
+  "Simple gable roof with pale metal-like coloring and modest overhangs.",
+  "Warm brown walls recalling cedar shingles.",
+  "One tall, pale-trimmed sash window on the WSW wall."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The apparent doorway on the narrow NNW end is partly obscured; its principal-entry role and exact position are inferred.",
+  "Concealed elevations are simplified; shingle texture and metal roof seams are represented primarily by palette."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

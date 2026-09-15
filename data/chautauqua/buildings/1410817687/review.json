@@ -1,0 +1,25 @@
+{
+ "verdict": "insufficient-evidence",
+ "summary": "The simple gabled cabin silhouette and pale roof are recognizable, but the principal-entry face is not fully established and the wall finish departs noticeably from the reference.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The located SV1 camera looks SSE at the NNW-facing -u gable and clearly supports that face being nearly blank, with a tiny upper vent and low grille. The render matches that evidence on -u. The actual inventory contains one door only, on the opposite +u/SSE face, so there is no duplicated principal portal; however, neither SV1 nor the north-up aerial reveals the entrance and therefore cannot distinguish +u from either side face as the true principal-entry location. The author\u2019s +u entrance plan is not evidence."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry placement on +u remains unverified by the supplied located imagery.",
+   "fix": "Provide a geolocated view showing the entrance or another source that ties it to a compass face; otherwise treat the entry face as unresolved."
+  },
+  {
+   "severity": "major",
+   "problem": "The cabin reads as red brick in the model, while the street view shows dark brown timber cladding.",
+   "fix": "Replace the masonry pattern with simplified dark-brown vertical or subtly paneled timber siding."
+  },
+  {
+   "severity": "minor",
+   "problem": "The rear grille and upper vent are oversized and heavily framed compared with the understated reference details.",
+   "fix": "Reduce their projection, contrast, and frame thickness while preserving the recognizable blank-gable arrangement."
+  }
+ ]
+}

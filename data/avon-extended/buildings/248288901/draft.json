@@ -1,0 +1,82 @@
+{
+  "_comment": "33 Temple St: narrow tan 2.5-storey gable-front house (ridge perpendicular to the street), the street gable clad in dark brown shingles with one attic window, dark brown roof, a full-width one-storey open porch with a brown hip roof, cream square posts and railing, steps up to a white door at left-centre. Stone foundation. Rear cross gable and a small hooded side door on the -u (NNE, toward 29 Temple) side. Road face -v; left (0) = +u = SSW (toward 35 Temple).",
+  "wall": "#c2ae84",
+  "trim": "#ebe4d3",
+  "roofColor": "#4a3a30",
+  "volumes": [
+    {
+      "id": "main",
+      "u": [-3.8, 3.8],
+      "v": [-8.0, 8.0],
+      "height": 6.3,
+      "roof": { "type": "gable", "ridge": "v", "pitch": 0.5, "maxH": 3.7, "overhang": 0.4, "gableColor": "#5a4433" },
+      "plinth": { "height": 0.6, "color": "#8b8578" },
+      "chimneys": [ { "u": 2.6, "v": 2.0 } ],
+      "faces": {
+        "-v": {
+          "porches": [
+            { "style": "open", "range": [0.0, 1.0], "d": 2.4, "height": 2.9, "floorH": 0.8,
+              "floorColor": "#8a7d6a", "posts": 4, "postColor": "#ebe4d3", "roof": "hip", "pitch": 0.35,
+              "roofColor": "#4a3a30", "railing": true, "steps": 5, "stepsAt": 0.4, "stepsW": 1.4 }
+          ],
+          "doors": [
+            { "at": 0.4, "y": 0.8, "type": "rect", "w": 1.0, "h": 2.1, "color": "#eeeae0", "surround": "#ebe4d3", "surroundW": 0.12, "steps": 0 }
+          ],
+          "storeys": [
+            { "y": 1.7, "windows": { "type": "rect", "w": 1.1, "h": 1.4, "at": [0.74], "trim": "#ebe4d3", "glass": "#4f5964" } },
+            { "y": 4.4, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.28, 0.72], "trim": "#ebe4d3", "glass": "#4f5964" } },
+            { "y": 7.2, "windows": { "type": "rect", "w": 0.8, "h": 1.1, "at": [0.5], "trim": "#ebe4d3", "glass": "#4f5964" } }
+          ]
+        },
+        "-u": {
+          "porches": [
+            { "at": 0.3, "w": 1.6, "d": 1.0, "height": 2.6, "pitch": 0.5, "wall": "#c2ae84", "roofColor": "#4a3a30",
+              "door": { "at": 0.5, "type": "rect", "w": 0.95, "h": 2.05, "color": "#eeeae0", "surround": "#ebe4d3", "surroundW": 0.1, "steps": 2 } }
+          ],
+          "storeys": [
+            { "y": 1.4, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.12, 0.6, 0.86], "trim": "#ebe4d3", "glass": "#4f5964" } },
+            { "y": 4.4, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.12, 0.4, 0.86], "trim": "#ebe4d3", "glass": "#4f5964" } }
+          ]
+        },
+        "+u": {
+          "storeys": [
+            { "y": 1.4, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.15, 0.5, 0.85], "trim": "#ebe4d3", "glass": "#4f5964" } },
+            { "y": 4.4, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.15, 0.5, 0.85], "trim": "#ebe4d3", "glass": "#4f5964" } }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 1.4, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.7], "trim": "#ebe4d3", "glass": "#4f5964" } },
+            { "y": 4.4, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.3, 0.7], "trim": "#ebe4d3", "glass": "#4f5964" } }
+          ],
+          "doors": [
+            { "at": 0.3, "type": "rect", "w": 0.95, "h": 2.05, "color": "#eeeae0", "surround": "#ebe4d3", "surroundW": 0.1, "steps": 2 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rear-cross-gable",
+      "u": [-3.8, 3.8],
+      "v": [1.6, 7.6],
+      "height": 6.3,
+      "roof": { "type": "gable", "ridge": "u", "pitch": 0.5, "maxH": 2.9, "overhang": 0.4 },
+      "faces": {
+        "-u": {
+          "storeys": [
+            { "y": 7.0, "windows": { "type": "rect", "w": 0.8, "h": 1.0, "at": [0.5], "trim": "#ebe4d3", "glass": "#4f5964" } }
+          ]
+        },
+        "+u": {
+          "storeys": [
+            { "y": 7.0, "windows": { "type": "rect", "w": 0.8, "h": 1.0, "at": [0.5], "trim": "#ebe4d3", "glass": "#4f5964" } }
+          ]
+        }
+      }
+    }
+  ],
+  "details": [
+    { "type": "bush", "u": 2.4, "v": -11.0, "size": 1.1 },
+    { "type": "bush", "u": -2.6, "v": -11.0, "size": 1.0 }
+  ]
+}

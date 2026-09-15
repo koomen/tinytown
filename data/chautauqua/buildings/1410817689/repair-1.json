@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"17d5aad5395a9ab5f89045c6b002d6a3ba350093ed7ae1b890970599e43ecb36\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#885044\"},{\"op\":\"replace\",\"path\":\"/roofColor\",\"value\":\"#b9b1a5\"}]}",
+ "cues": [
+  "Compact red-brown studio",
+  "Pale taupe-gray gabled roof",
+  "Modest projecting eaves",
+  "Single off-center doorway on southwest eave wall"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Palette corrected; the supplied catalog exposes no siding or ribbed-metal gable material controls, so the brick and shingle texture defects remain unresolved.",
+  "Concealed elevations remain simply blank."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

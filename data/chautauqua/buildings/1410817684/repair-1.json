@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"5602caee7763cc41b02fa508f85d0920a4b9174d66220ec553b7f43228e6ee65\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#8b513d\"}]}",
+ "cues": [
+  "Compact cabin with a muted gray gable roof.",
+  "Warm reddish-brown timber-like palette.",
+  "Road-facing gable has a small peak vent and low dark grille.",
+  "Restrained trim and shallow roof overhangs."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The concealed +u entrance remains an unverified inference; retained without duplicating doors.",
+  "The catalog provides no explicit timber-cladding control; the warmer wall color cannot itself remove renderer-generated brick texture."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1 establishes the opposite -u gable without a visible entry; neither SV1 nor AERIAL confirms the +u doorway."
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

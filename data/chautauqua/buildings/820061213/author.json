@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "{\"wall\":\"#925f49\",\"trim\":\"#e6e5d9\",\"roofColor\":\"#c8cbc1\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.69,2.69],\"v\":[-2.12,2.12],\"height\":2.65,\"bottom\":-0.15,\"roof\":{\"type\":\"hip\",\"ridge\":\"u\",\"pitch\":0.25,\"maxH\":1.05,\"overhang\":0.3},\"plinth\":{\"height\":0.15,\"color\":\"#817e70\"},\"faces\":{\"+v\":{\"storeys\":[{\"y\":0.85,\"windows\":{\"type\":\"rect\",\"w\":0.95,\"h\":1.35,\"at\":[0.3],\"trim\":\"#e6e5d9\",\"glass\":\"#485950\"}}]},\"+u\":{\"doors\":[{\"at\":0.76,\"type\":\"rect\",\"w\":0.85,\"h\":2.1,\"color\":\"#e4e6df\",\"surround\":\"#eeeade\",\"surroundW\":0.08,\"steps\":2}]},\"-v\":{},\"-u\":{\"storeys\":[{\"y\":0.95,\"windows\":{\"type\":\"rect\",\"w\":0.85,\"h\":1.2,\"at\":[0.5],\"trim\":\"#e6e5d9\",\"glass\":\"#485950\"}}]}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact single-storey brown studio",
+  "Low pale-metal hipped roof with projecting eaves",
+  "White-trimmed rectangular window facing southwest",
+  "Simple white side entrance with two small steps"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Target interpreted as the small hipped-roof studio behind the foreground gabled cabin; the foreground cabin is excluded.",
+  "SSE side-door placement is inferred from the oblique view; principal-entry status is not confirmed.",
+  "Concealed elevations and dimensions are simplified; the rear-end window is conjectural."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

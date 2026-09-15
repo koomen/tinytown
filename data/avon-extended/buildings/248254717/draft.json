@@ -1,0 +1,533 @@
+{
+  "wall": "#a36e59",
+  "trim": "#d6d1be",
+  "roofColor": "#454d4e",
+  "volumes": [
+    {
+      "id": "north_east",
+      "u": [
+        0,
+        15
+      ],
+      "v": [
+        59,
+        77
+      ],
+      "height": 3.8,
+      "bottom": 0,
+      "roof": {
+        "type": "flat",
+        "lip": false
+      },
+      "cornice": {
+        "height": 0.18,
+        "overhang": 0.2,
+        "color": "#d6d1be"
+      },
+      "faces": {
+        "+v": {
+          "storeys": [
+            {
+              "y": 1.1,
+              "windows": {
+                "type": "rect",
+                "w": 2.6,
+                "h": 1.7,
+                "at": [
+                  0.22,
+                  0.51
+                ],
+                "glass": "#637775",
+                "trim": "#d6d1be",
+                "interior": false
+              }
+            }
+          ],
+          "doors": [
+            {
+              "at": 0.83,
+              "type": "double",
+              "w": 1.9,
+              "h": 2.4,
+              "color": "#52645d",
+              "surround": "#d6d1be"
+            }
+          ]
+        },
+        "-u": {
+          "storeys": [
+            {
+              "y": 1.1,
+              "windows": {
+                "type": "rect",
+                "w": 2.5,
+                "h": 1.7,
+                "at": [
+                  0.25,
+                  0.7
+                ],
+                "interior": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "north_middle",
+      "u": [
+        12,
+        29
+      ],
+      "v": [
+        48,
+        67
+      ],
+      "height": 3.8,
+      "bottom": 0,
+      "roof": {
+        "type": "flat",
+        "lip": false
+      },
+      "cornice": {
+        "height": 0.18,
+        "overhang": 0.2,
+        "color": "#d6d1be"
+      },
+      "faces": {
+        "+v": {
+          "storeys": [
+            {
+              "y": 1.1,
+              "windows": {
+                "type": "rect",
+                "w": 2.8,
+                "h": 1.7,
+                "at": [
+                  0.28,
+                  0.7
+                ],
+                "glass": "#637775",
+                "interior": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "north_west",
+      "u": [
+        26,
+        41
+      ],
+      "v": [
+        40,
+        56
+      ],
+      "height": 3.8,
+      "bottom": 0,
+      "roof": {
+        "type": "flat",
+        "lip": false
+      },
+      "cornice": {
+        "height": 0.18,
+        "overhang": 0.2,
+        "color": "#d6d1be"
+      },
+      "faces": {
+        "+v": {
+          "storeys": [
+            {
+              "y": 1.1,
+              "windows": {
+                "type": "rect",
+                "w": 2.7,
+                "h": 1.7,
+                "at": [
+                  0.25,
+                  0.7
+                ],
+                "glass": "#637775",
+                "interior": false
+              }
+            }
+          ]
+        },
+        "+u": {
+          "storeys": [
+            {
+              "y": 1.1,
+              "windows": {
+                "type": "rect",
+                "w": 2.4,
+                "h": 1.7,
+                "at": [
+                  0.25,
+                  0.72
+                ],
+                "interior": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "north_hall",
+      "u": [
+        -12,
+        20
+      ],
+      "v": [
+        27,
+        53
+      ],
+      "height": 4.5,
+      "bottom": 0,
+      "roof": {
+        "type": "flat",
+        "lip": false
+      },
+      "cornice": {
+        "height": 0.2,
+        "overhang": 0.15,
+        "color": "#c5c9bf"
+      },
+      "faces": {
+        "-u": {
+          "storeys": [
+            {
+              "y": 1.3,
+              "windows": {
+                "type": "rect",
+                "w": 2.5,
+                "h": 1.8,
+                "at": [
+                  0.22,
+                  0.5,
+                  0.78
+                ],
+                "interior": false
+              }
+            }
+          ]
+        },
+        "+u": {
+          "storeys": [
+            {
+              "y": 1.3,
+              "windows": {
+                "type": "rect",
+                "w": 2.7,
+                "h": 1.8,
+                "at": [
+                  0.22,
+                  0.5,
+                  0.78
+                ],
+                "interior": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "classroom_spine",
+      "u": [
+        -15,
+        9
+      ],
+      "v": [
+        -44,
+        29
+      ],
+      "height": 4.87,
+      "bottom": 0,
+      "roof": {
+        "type": "flat",
+        "lip": false,
+        "color": "#e2e1d6"
+      },
+      "cornice": {
+        "height": 0.2,
+        "overhang": 0.18,
+        "color": "#dad8c9"
+      },
+      "faces": {
+        "-u": {
+          "storeys": [
+            {
+              "y": 2.12,
+              "windows": {
+                "type": "rect",
+                "w": 3.2,
+                "h": 1.7,
+                "at": [
+                  0.12,
+                  0.25,
+                  0.38,
+                  0.51,
+                  0.65,
+                  0.94
+                ],
+                "glass": "#687e7c",
+                "interior": false
+              }
+            }
+          ],
+          "doors": [
+            {
+              "at": 0.82,
+              "type": "double",
+              "w": 2.6,
+              "h": 2.6,
+              "color": "#476060",
+              "surround": "#dedbc9",
+              "surroundW": 0.2,
+              "y": 1.07
+            }
+          ],
+          "awnings": [
+            {
+              "range": [
+                0.77,
+                0.87
+              ],
+              "y": 3.97,
+              "depth": 2.1,
+              "color": "#b8bba9"
+            }
+          ]
+        },
+        "+u": {
+          "storeys": [
+            {
+              "y": 2.12,
+              "windows": {
+                "type": "rect",
+                "w": 3.2,
+                "h": 1.7,
+                "at": [
+                  0.12,
+                  0.26,
+                  0.4,
+                  0.54,
+                  0.68,
+                  0.82
+                ],
+                "glass": "#687e7c",
+                "interior": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "east_classrooms",
+      "u": [
+        -42,
+        -14
+      ],
+      "v": [
+        -44,
+        -14
+      ],
+      "height": 7.51,
+      "bottom": 0,
+      "roof": {
+        "type": "flat",
+        "lip": false,
+        "color": "#e2e1d6"
+      },
+      "cornice": {
+        "height": 0.2,
+        "overhang": 0.18,
+        "color": "#dad8c9"
+      },
+      "faces": {
+        "-u": {
+          "storeys": [
+            {
+              "y": 4.76,
+              "windows": {
+                "type": "rect",
+                "w": 3.1,
+                "h": 1.7,
+                "at": [
+                  0.15,
+                  0.38,
+                  0.62,
+                  0.85
+                ],
+                "interior": false
+              }
+            }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            {
+              "y": 4.76,
+              "windows": {
+                "type": "rect",
+                "w": 3.1,
+                "h": 1.7,
+                "at": [
+                  0.2,
+                  0.5,
+                  0.8
+                ],
+                "interior": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "south_block",
+      "u": [
+        -37,
+        13
+      ],
+      "v": [
+        -70,
+        -42
+      ],
+      "height": 7.71,
+      "bottom": 0,
+      "roof": {
+        "type": "flat",
+        "lip": false,
+        "color": "#dedfd5"
+      },
+      "cornice": {
+        "height": 0.2,
+        "overhang": 0.18,
+        "color": "#dad8c9"
+      },
+      "faces": {
+        "-v": {
+          "storeys": [
+            {
+              "y": 4.86,
+              "windows": {
+                "type": "rect",
+                "w": 3,
+                "h": 1.7,
+                "at": [
+                  0.12,
+                  0.27,
+                  0.42,
+                  0.57
+                ],
+                "interior": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "west_gym",
+      "u": [
+        12,
+        39
+      ],
+      "v": [
+        -68,
+        -42
+      ],
+      "height": 8.3,
+      "bottom": 0,
+      "roof": {
+        "type": "flat",
+        "lip": false,
+        "color": "#414b4e"
+      },
+      "cornice": {
+        "height": 0.25,
+        "overhang": 0.18,
+        "color": "#c7cabe"
+      },
+      "faces": {
+        "+u": {
+          "storeys": [
+            {
+              "y": 6.5,
+              "windows": {
+                "type": "rect",
+                "w": 2.3,
+                "h": 0.8,
+                "at": [
+                  0.25,
+                  0.5,
+                  0.75
+                ],
+                "interior": false
+              }
+            }
+          ]
+        },
+        "-v": {}
+      }
+    },
+    {
+      "id": "south_east_tail",
+      "u": [
+        -36,
+        -22
+      ],
+      "v": [
+        -78.5,
+        -44
+      ],
+      "height": 7.51,
+      "bottom": 0,
+      "roof": {
+        "type": "flat",
+        "lip": false,
+        "color": "#e2e1d6"
+      },
+      "faces": {
+        "-u": {
+          "storeys": [
+            {
+              "y": 4.76,
+              "windows": {
+                "type": "rect",
+                "w": 2.8,
+                "h": 1.7,
+                "at": [
+                  0.18,
+                  0.4,
+                  0.62,
+                  0.84
+                ],
+                "interior": false
+              }
+            }
+          ]
+        },
+        "-v": {
+          "doors": [
+            {
+              "at": 0.5,
+              "type": "double",
+              "w": 1.8,
+              "h": 2.4,
+              "color": "#52645d",
+              "y": 3.71,
+              "groundEntrance": true
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "details": []
+}

@@ -1,0 +1,25 @@
+[project]
+name = "tinytown"
+version = "1.0.0"
+description = "A pipeline for generating little 3D town miniatures and serving them in a browser."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "pillow>=10",
+    "websocket-client>=1.6",
+]
+
+[project.scripts]
+town = "tinytown.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["tinytown", "tinytown.plugins"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+tinytown = ["web/*", "miniature_examples.json"]

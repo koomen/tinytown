@@ -1,0 +1,14 @@
+{
+ "fountain": {
+  "height": 3.96,
+  "basinHeight": 0.686,
+  "rimWidth": 0.42,
+  "pylonWidth": 1.65,
+  "stoneColor": "#d7d1c0",
+  "brickColor": "#996b59",
+  "waterColor": "#84b9bd",
+  "jets": true
+ },
+ "volumes": [],
+ "details": []
+}

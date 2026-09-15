@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The target is not presented clearly enough to read as the Coffee Gazebo. Its small, low kiosk form is largely lost among oversized surrounding buildings, and the supplied face renders do not clearly demonstrate the characteristic cupola, green-and-ivory panels, dark serving hatch, or coffee signage.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The map defines +v as SE, -u as SW, and -v as NW. Located SV3 views the +u/+v sides and clearly shows a prominent customer serving hatch; SV2 views -u and also shows customer-facing service openings. SV4 does not clearly establish the hidden -v side. The four-face render sheet does not expose the modeled kiosk closely enough to match these openings to labeled faces. The actual inventory contains only one door on -v toward Clark Brick Walk, but the references do not verify that as the principal customer entry; it may only be staff access. Therefore principal-entry/service orientation remains unresolved."
+ },
+ "issues": [
+  {
+   "severity": "broken",
+   "problem": "The miniature is visually overwhelmed or obscured by unrelated surrounding buildings, so its recognizable silhouette cannot be audited in the overview or four-face sheet.",
+   "fix": "Provide close, unobstructed four-face renders centered on the kiosk and keep context secondary."
+  },
+  {
+   "severity": "major",
+   "problem": "The distinctive broad low pyramidal roof, pointed cream cupola, ivory framing, muted-green panels, dark serving hatch, and coffee signs are not clearly readable in the model renders.",
+   "fix": "Strengthen these characteristic elements with simplified, exaggerated proportions suitable for miniature scale."
+  },
+  {
+   "severity": "major",
+   "problem": "Customer-service orientation is unverified: references support prominent openings on the +v/-u sides, while the only inventoried door is on -v and the renders do not reveal the kiosk faces clearly.",
+   "fix": "Expose and label the actual openings in close face renders; place the primary serving hatch consistently with SV3 on +v, retain any additional -u service opening shown by SV2, and keep a single subordinate staff door on -v only if intended."
+  }
+ ]
+}

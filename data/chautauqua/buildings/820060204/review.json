@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "Recognizable salmon hall with curved end crowns, white porch structures, and long window bands, but the roof and entry hierarchy need correction for a convincing McKnight Hall miniature.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The principal entrance is correctly placed on the -u/SSE face toward Scott Avenue: geolocated SV2 shows the formal centered double door flanked by tall windows, matching the -u render and door inventory. SV1 confirms a secondary door on the opposite +u/NNW face; SV3 and SV4 show window-dominant long sides rather than principal entrances."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The roof reads as a tall, faceted shingle hip/gable rather than McKnight Hall\u2019s signature shallow silver barrel roof with smoothly curved end profiles.",
+   "fix": "Lower the roof substantially, use a continuous barrel-like curve and light silver standing-seam finish, retaining the curved end crowns."
+  },
+  {
+   "severity": "major",
+   "problem": "Both short faces receive double-door portals, weakening the documented entry hierarchy; SV1\u2019s +u entrance is a plainer secondary doorway while SV2\u2019s -u entrance is the formal double-door composition.",
+   "fix": "Keep the centered formal double entrance on -u, but simplify +u to the narrower secondary door seen in SV1 and avoid matching principal-portal treatment."
+  },
+  {
+   "severity": "minor",
+   "problem": "The lateral porches look like thin square-frame pergolas, while references show prominent round classical columns supporting substantial continuous white beams/roofs.",
+   "fix": "Thicken the porch beams and replace or visually round the supports into bold, evenly spaced white columns."
+  }
+ ]
+}

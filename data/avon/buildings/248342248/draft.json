@@ -1,0 +1,37 @@
+{
+  "_comment": "Detached two-bay garage at the end of the driveway between 38 North Ave (the ranch 248342249, whose own small attached hip garage is 1.9 m off face +u) and the cream two-storey house 248342246. Gable end to North Avenue (+u), ridge along u. Pale yellow vinyl siding, white trim, grey shingles. +u: two white sectional doors with lights and a small four-pane loft window in the gable. Other faces plain (never seen).",
+  "wall": "#ebe4cc",
+  "trim": "#f1efe8",
+  "roofColor": "#6c6f73",
+  "volumes": [
+    {
+      "id": "garage",
+      "u": [-5.5, 5.5],
+      "v": [-3.5, 3.5],
+      "height": 2.7,
+      "roof": {
+        "type": "gable",
+        "ridge": "u",
+        "pitch": 0.35,
+        "maxH": 2.4,
+        "overhang": 0.3,
+        "gableColor": "#ebe4cc"
+      },
+      "faces": {
+        "+u": {
+          "doors": [
+            { "at": 0.27, "type": "garage", "w": 2.5, "h": 2.15, "color": "#efede7", "panels": 4, "lights": true },
+            { "at": 0.73, "type": "garage", "w": 2.5, "h": 2.15, "color": "#efede7", "panels": 4, "lights": true }
+          ],
+          "storeys": [
+            { "y": 3.2, "out": 0.15, "windows": { "type": "rect", "w": 0.9, "h": 0.7, "at": [0.5], "trim": "#f1efe8", "glass": "#5c6a78", "mullions": true } }
+          ]
+        },
+        "-u": {},
+        "+v": {},
+        "-v": {}
+      }
+    }
+  ],
+  "details": []
+}

@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"7a9c80ea89897f77553fcdd5bc233cfd816a457d2a23fc762e985b52b2fb0a50\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#805746\"}]}",
+ "cues": [
+  "Compact cabin with steep longitudinal gable roof.",
+  "Muted brown walls and pale roof-edge trim.",
+  "Centered dark attic vent on the NNW gable.",
+  "Wide, low dark vent beneath the attic vent."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The retained +u entrance is a concealed-elevation inference, not a verified principal-entry location.",
+  "SV1 shows timber/shingle siding; the supplied catalog exposes no siding-pattern control. Browner walls reduce the red-brick impression but do not correct its texture.",
+  "The concealed side window remains approximate."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal (provisional)",
+   "evidence": [
+    "MAP",
+    "SV1: visible -u gable has vents and no door; opposite +u gable is concealed"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

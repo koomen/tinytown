@@ -1,0 +1,24 @@
+{
+  "title": "Chautauqua Institution, New York",
+  "description": "Explore a miniature of Chautauqua Institution, from Elm Gate to Bryant Gate: Bestor Plaza, historic halls, music cabins, the Amphitheater, Athenaeum Hotel, and Chautauqua Lake.",
+  "domain": "https://chautauqua.town",
+  "social_image": {
+    "alt": "Bestor Plaza, its fountain, and the Colonnade in the miniature of Chautauqua Institution, New York.",
+    "width": 1200,
+    "height": 630
+  },
+  "deploy": [
+    {
+      "target": "chautauqua",
+      "route": "/"
+    },
+    {
+      "target": "town",
+      "route": "/chautauqua"
+    }
+  ],
+  "plugin": "chautauqua",
+  "scope": "scope.json",
+  "landmarks": "landmarks.json",
+  "outline": "outline.json"
+}

@@ -1,0 +1,121 @@
+{
+ "id": "619932539",
+ "addr": "31 Roberts Avenue",
+ "name": "Chautauqua Amphitheater",
+ "frame": "b89f1fc3fe9435957437dba713145d418b75e1da050c079854d70dc2e9c7bf23",
+ "faces": {
+  "+u": {
+   "bearing": 328,
+   "width": 90.7,
+   "road": true,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_619932539_+u.png",
+     "pano": "hwLWdgYhJAjxKH75ZMLMTQ",
+     "dist": 34.3,
+     "off_axis_deg": 20,
+     "fov": 80,
+     "tilt": 91,
+     "heading": 168,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2088851,-79.4648299,419a,80y,168h,91t/data=!3m7!1e1!3m5!1shwLWdgYhJAjxKH75ZMLMTQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DhwLWdgYhJAjxKH75ZMLMTQ%26yaw%3D168!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2088851,
+      "lon": -79.4648299
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 148,
+   "width": 90.7,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_619932539_-u.png",
+     "pano": "S_-GEmQeo4gpTPYiHWA1Mg",
+     "dist": 68.0,
+     "off_axis_deg": 6,
+     "fov": 79,
+     "tilt": 90,
+     "heading": 321,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2076243,-79.4638155,417a,79y,321h,90t/data=!3m7!1e1!3m5!1sS_-GEmQeo4gpTPYiHWA1Mg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DS_-GEmQeo4gpTPYiHWA1Mg%26yaw%3D321!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2076243,
+      "lon": -79.4638155
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 58,
+   "width": 63.6,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_619932539_+v.png",
+     "pano": "U9s1aUFgs5w11yiLSS-VkQ",
+     "dist": 25.7,
+     "off_axis_deg": 2,
+     "fov": 80,
+     "tilt": 91,
+     "heading": 236,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2086892,-79.4638144,410a,80y,236h,91t/data=!3m7!1e1!3m5!1sU9s1aUFgs5w11yiLSS-VkQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DU9s1aUFgs5w11yiLSS-VkQ%26yaw%3D236!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2086892,
+      "lon": -79.4638144
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 238,
+   "width": 63.6,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_619932539_-v.png",
+     "pano": "zpANyPdfMEB6d1I4dGOKAw",
+     "dist": 38.4,
+     "off_axis_deg": 25,
+     "fov": 80,
+     "tilt": 91,
+     "heading": 83,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2080822,-79.4654648,420a,80y,83h,91t/data=!3m7!1e1!3m5!1szpANyPdfMEB6d1I4dGOKAw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DzpANyPdfMEB6d1I4dGOKAw%26yaw%3D83!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2080822,
+      "lon": -79.4654648
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-09 21:51"
+}

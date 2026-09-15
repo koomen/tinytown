@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"30346b2e6cc479db7c308696a17553ae4c135b1f3c27ec41404c7680d578b417\",\"operations\":[]}",
+ "cues": [
+  "Compact single-storey gabled studio",
+  "Muted reddish-brown walls and pale roof",
+  "Nearly blank northwest gable",
+  "Small attic vent and low dark grille"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The concealed entrance remains provisionally on -u; supplied references do not justify relocating or duplicating it.",
+  "Timber siding is reference-supported, but the supplied catalog exposes no wall-material or texture control; the brick-pattern defect cannot be corrected through its documented components."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "AERIAL"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

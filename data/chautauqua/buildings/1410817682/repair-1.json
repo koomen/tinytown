@@ -1,0 +1,33 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"f8d1fd982fd34a3924478953e529dd492b5de8bca53b3baba7cdc199decb521c\",\"operations\":[]}",
+ "cues": [
+  "Compact single-storey cabin",
+  "Pale gabled roof with modest overhangs",
+  "Muted taupe walls and ivory trim",
+  "Simple windows and raised entry threshold"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Principal-entry placement cannot be verified from supplied evidence. The existing +u door is retained as an uncertain modeling assumption, not a confirmed location.",
+  "SV1 faces -u but vegetation obscures the target; the clearer cabin at image-right does not establish this studio\u2019s details.",
+  "The aerial does not resolve doors. Moving or duplicating the entrance would introduce another unsupported placement."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "AERIAL"
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

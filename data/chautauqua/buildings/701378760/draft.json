@@ -1,0 +1,455 @@
+{
+ "wall": "#493c35",
+ "trim": "#eee9da",
+ "roofColor": "#62645f",
+ "volumes": [
+  {
+   "id": "hall",
+   "u": [
+    -9.8,
+    9.8
+   ],
+   "v": [
+    -6.1,
+    6.1
+   ],
+   "bottom": 0,
+   "height": 5.7,
+   "roof": {
+    "type": "hip",
+    "ridge": "u",
+    "pitch": 0.18,
+    "maxH": 1.5,
+    "overhang": 0.5
+   },
+   "plinth": {
+    "height": 0.18,
+    "color": "#a09c8c"
+   },
+   "beltCourses": [
+    {
+     "y": 3.8,
+     "height": 0.18,
+     "color": "#eee9da"
+    }
+   ],
+   "faces": {
+    "+v": {
+     "storeys": [
+      {
+       "y": 0.9,
+       "windows": {
+        "type": "rect",
+        "w": 1.05,
+        "h": 1.7,
+        "at": [
+         0.29,
+         0.42,
+         0.71
+        ],
+        "trim": "#eee9da",
+        "glass": "#73817b",
+        "interior": false
+       }
+      },
+      {
+       "y": 4.15,
+       "windows": {
+        "type": "rect",
+        "w": 1.8,
+        "h": 1.05,
+        "at": [
+         0.1,
+         0.23,
+         0.36,
+         0.5,
+         0.64,
+         0.77,
+         0.9
+        ],
+        "trim": "#eee9da",
+        "glass": "#76847e",
+        "interior": false
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.57,
+       "type": "double",
+       "w": 1.65,
+       "h": 2.65,
+       "color": "#62716a",
+       "surround": "#eee9da",
+       "surroundW": 0.16
+      },
+      {
+       "at": 0.14,
+       "type": "rect",
+       "w": 1.05,
+       "h": 2.65,
+       "color": "#39443f",
+       "surround": "#eee9da"
+      },
+      {
+       "at": 0.86,
+       "type": "rect",
+       "w": 1.05,
+       "h": 2.65,
+       "color": "#39443f",
+       "surround": "#eee9da"
+      }
+     ],
+     "pilasters": {
+      "at": [
+       0.035,
+       0.2,
+       0.34,
+       0.48,
+       0.64,
+       0.8,
+       0.965
+      ],
+      "w": 0.3,
+      "d": 0.5,
+      "height": 5.5,
+      "color": "#eee9da",
+      "cap": "#eee9da"
+     }
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 0.95,
+       "windows": {
+        "type": "rect",
+        "w": 0.95,
+        "h": 1.6,
+        "at": [
+         0.17,
+         0.3,
+         0.73
+        ],
+        "trim": "#eee9da",
+        "glass": "#73817b",
+        "interior": false
+       }
+      },
+      {
+       "y": 4.15,
+       "windows": {
+        "type": "rect",
+        "w": 1.8,
+        "h": 1.05,
+        "at": [
+         0.1,
+         0.23,
+         0.36,
+         0.5,
+         0.64,
+         0.77,
+         0.9
+        ],
+        "trim": "#eee9da",
+        "glass": "#76847e",
+        "interior": false
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.46,
+       "type": "double",
+       "w": 1.6,
+       "h": 2.65,
+       "color": "#62716a",
+       "surround": "#eee9da",
+       "surroundW": 0.15
+      },
+      {
+       "at": 0.86,
+       "type": "rect",
+       "w": 1,
+       "h": 2.65,
+       "color": "#39443f",
+       "surround": "#eee9da"
+      }
+     ],
+     "pilasters": {
+      "at": [
+       0.035,
+       0.2,
+       0.34,
+       0.55,
+       0.68,
+       0.8,
+       0.965
+      ],
+      "w": 0.3,
+      "d": 0.5,
+      "height": 5.5,
+      "color": "#eee9da",
+      "cap": "#eee9da"
+     }
+    },
+    "+u": {
+     "storeys": [
+      {
+       "y": 4.35,
+       "windows": {
+        "type": "rect",
+        "w": 0.8,
+        "h": 0.75,
+        "at": [
+         0.23,
+         0.41,
+         0.59,
+         0.77
+        ],
+        "trim": "#eee9da",
+        "glass": "#76847e",
+        "interior": false
+       }
+      }
+     ]
+    },
+    "-u": {
+     "storeys": [
+      {
+       "y": 4.35,
+       "windows": {
+        "type": "rect",
+        "w": 0.8,
+        "h": 0.75,
+        "at": [
+         0.23,
+         0.41,
+         0.59,
+         0.77
+        ],
+        "trim": "#eee9da",
+        "glass": "#76847e",
+        "interior": false
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "northeast_room",
+   "u": [
+    9.5,
+    14.3
+   ],
+   "v": [
+    -6.1,
+    6.1
+   ],
+   "bottom": 0,
+   "height": 3.45,
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "cornice": {
+    "height": 0.32,
+    "overhang": 0.2,
+    "color": "#eee9da",
+    "dentils": false
+   },
+   "faces": {
+    "+u": {
+     "storeys": [
+      {
+       "y": 0.55,
+       "windows": {
+        "type": "rect",
+        "w": 1.5,
+        "h": 2.15,
+        "at": [
+         0.13,
+         0.28,
+         0.72,
+         0.87
+        ],
+        "trim": "#eee9da",
+        "glass": "#87958a",
+        "interior": false
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.5,
+       "type": "double",
+       "w": 1.8,
+       "h": 2.65,
+       "color": "#946444",
+       "surround": "#eee9da",
+       "surroundW": 0.15
+      }
+     ],
+     "awnings": [
+      {
+       "range": [
+        0.06,
+        0.94
+       ],
+       "y": 2.95,
+       "depth": 0.65,
+       "color": "#b2b3a6"
+      }
+     ]
+    },
+    "+v": {
+     "storeys": [
+      {
+       "y": 0.55,
+       "windows": {
+        "type": "rect",
+        "w": 1.1,
+        "h": 2.15,
+        "at": [
+         0.2,
+         0.5,
+         0.8
+        ],
+        "trim": "#eee9da",
+        "glass": "#87958a",
+        "interior": false
+       }
+      }
+     ]
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 0.55,
+       "windows": {
+        "type": "rect",
+        "w": 1.1,
+        "h": 2.15,
+        "at": [
+         0.2,
+         0.5,
+         0.8
+        ],
+        "trim": "#eee9da",
+        "glass": "#87958a",
+        "interior": false
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "southwest_service",
+   "u": [
+    -14.3,
+    -9.5
+   ],
+   "v": [
+    -6.1,
+    6.1
+   ],
+   "bottom": 0,
+   "height": 3.45,
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "cornice": {
+    "height": 0.32,
+    "overhang": 0.2,
+    "color": "#eee9da",
+    "dentils": false
+   },
+   "faces": {
+    "-u": {
+     "storeys": [
+      {
+       "y": 0.65,
+       "windows": {
+        "type": "rect",
+        "w": 1.25,
+        "h": 2.05,
+        "at": [
+         0.12,
+         0.48
+        ],
+        "trim": "#eee9da",
+        "glass": "#7d8b81",
+        "interior": false
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.3,
+       "type": "rect",
+       "w": 1.05,
+       "h": 2.6,
+       "color": "#d8ddd1",
+       "surround": "#eee9da"
+      },
+      {
+       "at": 0.64,
+       "type": "rect",
+       "w": 1.05,
+       "h": 2.6,
+       "color": "#d8ddd1",
+       "surround": "#eee9da"
+      },
+      {
+       "at": 0.89,
+       "type": "rect",
+       "w": 0.95,
+       "h": 2.6,
+       "color": "#d8ddd1",
+       "surround": "#eee9da"
+      }
+     ]
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 0.9,
+       "windows": {
+        "type": "rect",
+        "w": 1.25,
+        "h": 1.7,
+        "at": [
+         0.5
+        ],
+        "trim": "#eee9da",
+        "glass": "#7d8b81",
+        "interior": false
+       }
+      }
+     ]
+    },
+    "+v": {
+     "storeys": [
+      {
+       "y": 0.9,
+       "windows": {
+        "type": "rect",
+        "w": 1.25,
+        "h": 1.7,
+        "at": [
+         0.5
+        ],
+        "trim": "#eee9da",
+        "glass": "#7d8b81",
+        "interior": false
+       }
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "details": []
+}

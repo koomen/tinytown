@@ -1,0 +1,20 @@
+{
+ "verdict": "repair",
+ "summary": "The compact gabled silhouette and rear vent arrangement are recognizable, but the principal entrance is not sufficiently established and the finishes misrepresent the timber studio.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "Located SV1 is northwest of the studio and looks ESE, exposing the outward-NW -u gable and part of +v. Its blank gable with a small upper vent and broad low panel matches the rendered -u face, and no portal is visible on the exposed faces. The sole modeled door is on the opposite +u face; neither SV1 nor the aerial distinguishes +u from the unseen -v face as the principal entrance. The author plan and nearest-road relationships do not resolve this."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry placement on +u remains unsupported by the supplied visual evidence.",
+   "fix": "Provide a located view showing the entrance or other face-specific evidence establishing +u versus -v, then place exactly one principal door on the verified face."
+  },
+  {
+   "severity": "major",
+   "problem": "The model reads as red brick with a shingled roof, while SV1 shows brown timber cladding and a pale, likely metal roof\u2014important character-defining finishes.",
+   "fix": "Replace the brick texture with warm brown timber/shingle siding and simplify the roof to a pale metal-like finish while retaining the gable form, vent, and low ventilation panel."
+  }
+ ]
+}

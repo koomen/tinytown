@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The L-shaped brick massing and broad low roof are recognizable and stylistically coherent, but several signature elements have been reduced to generic forms, especially the glazed bookstore wing and the hall\u2019s tall multipane windows.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The geolocated SV2 camera west of the building looks ENE directly at the -u face and shows the long public entrance facade along Clark Brick Walk. The labeled -u render places both hall doorways and the bookstore door on that same face, matching the actual door inventory; the wing also returns at the +v/southeast end as supported by the north-up footprint and aerial. This is not an erroneous Roberts Avenue entrance, and the two separated hall portals are supported by SV2 rather than being an unsupported duplicate."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The lower bookstore wing lacks the reference\u2019s defining shallow front gable and nearly continuous cream-framed, finely gridded glazing visible in SV3; it reads as a generic brick annex.",
+   "fix": "Give the +v wing a clear shallow gable and replace the sparse openings with a broad cream/white multipane window wall."
+  },
+  {
+   "severity": "major",
+   "problem": "The main hall facades omit much of the characteristic cream architectural framework: SV2 shows a strong cornice/colonnaded rhythm, while SV4 shows exceptionally tall arched multipane windows. The model uses thin strips and plain rectangular panes.",
+   "fix": "Strengthen the cream cornice and column/pilaster rhythm on -u, and model the tall arched, gridded window bays on -v and other prominent hall faces."
+  },
+  {
+   "severity": "minor",
+   "problem": "The roof\u2019s large upper field is reddish-brown, whereas the aerial reads as a dark flat center enclosed by a red perimeter roof, weakening the distinctive truncated-roof silhouette.",
+   "fix": "Darken and flatten the central roof field while retaining the warm red sloped perimeter."
+  }
+ ]
+}

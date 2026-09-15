@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "{\"wall\":\"#98634f\",\"trim\":\"#e7dfcc\",\"roofColor\":\"#96998d\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.72,2.72],\"v\":[-2.16,2.16],\"bottom\":0,\"height\":2.65,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.32,\"maxH\":1.4,\"overhang\":0.25},\"plinth\":{\"height\":0.18,\"color\":\"#918a79\"},\"faces\":{\"-u\":{\"doors\":[{\"at\":0.5,\"type\":\"rect\",\"w\":0.95,\"h\":2.1,\"color\":\"#665443\",\"surround\":\"#e7dfcc\",\"surroundW\":0.12,\"steps\":1}]},\"+u\":{\"storeys\":[{\"y\":0.95,\"windows\":{\"type\":\"rect\",\"w\":0.85,\"h\":1.15,\"at\":[0.5],\"trim\":\"#e7dfcc\",\"glass\":\"#778783\"}}]},\"-v\":{\"storeys\":[{\"y\":0.95,\"windows\":{\"type\":\"rect\",\"w\":0.85,\"h\":1.15,\"at\":[0.28,0.72],\"trim\":\"#e7dfcc\",\"glass\":\"#778783\"}}]},\"+v\":{\"storeys\":[{\"y\":0.95,\"windows\":{\"type\":\"rect\",\"w\":0.85,\"h\":1.15,\"at\":[0.28,0.72],\"trim\":\"#e7dfcc\",\"glass\":\"#778783\"}}]}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact, single-storey rectangular practice hut.",
+  "Simple pale gray roof with modest overhangs.",
+  "Muted reddish-brown walls and cream opening trim.",
+  "Restrained windows and one small entry step."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "SV1 faces -v, but vegetation conceals the target; the larger background roof and exposed neighboring huts are not reliable target details.",
+  "Gable profile, wall palette, height and openings are approximate; the aerial chiefly supports the compact footprint and light roof.",
+  "The single modeled entrance on -u is an unverified simplification, not an observed placement."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "AERIAL"
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"90a9d26de54b451cc187f601eeaa81cece78f03abf578503bce4da91752c914a\",\"operations\":[{\"op\":\"replace\",\"path\":\"/roofColor\",\"value\":\"#d5cfc0\"},{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#956f55\"}]}",
+ "cues": [
+  "Compact single-storey gabled studio",
+  "Pale roof with modest overhangs",
+  "Warm brown cladding and restrained cream trim",
+  "Single tall window on the WSW wall"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The +u door is retained as a plausible, unconfirmed entrance; no supplied view justifies relocating it.",
+  "SV1 shows standing-seam metal roofing and cedar-shingle walls. Palette is corrected, but the supplied catalog exposes no material or texture controls to replace rendered shingles and brick."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "blueprint_json": "{\"wall\":\"#e3e1d8\",\"trim\":\"#faf4e7\",\"roofColor\":\"#545b60\",\"volumes\":[{\"id\":\"main_lower\",\"u\":[-5.5,2.8],\"v\":[-4.2,2.1],\"height\":3.35,\"bottom\":0,\"roof\":{\"type\":\"flat\",\"lip\":false},\"plinth\":{\"height\":0.35,\"color\":\"#98958a\"},\"cornice\":{\"height\":0.22,\"overhang\":0.18,\"color\":\"#faf4e7\",\"dentils\":true},\"faces\":{\"+v\":{\"storeys\":[{\"y\":0.8,\"windows\":{\"type\":\"rect\",\"w\":1.05,\"h\":1.9,\"at\":[0.16,0.4,0.65,0.87],\"glass\":\"#63716e\"}}],\"porches\":[{\"style\":\"open\",\"at\":0.5,\"w\":8.3,\"d\":2.1,\"height\":2.85,\"floorH\":0.35,\"posts\":5,\"postColor\":\"#faf4e7\",\"roof\":\"hip\",\"pitch\":0.18,\"roofColor\":\"#545b60\",\"railing\":true,\"steps\":0}]},\"-u\":{\"doors\":[{\"at\":0.28,\"w\":1.05,\"h\":2.25,\"color\":\"#535953\",\"surround\":\"#faf4e7\",\"surroundW\":0.12,\"steps\":2}],\"storeys\":[{\"y\":0.85,\"windows\":{\"type\":\"rect\",\"w\":1.1,\"h\":1.8,\"at\":[0.63,0.86],\"glass\":\"#63716e\"}}],\"porches\":[{\"style\":\"open\",\"at\":0.5,\"w\":6.3,\"d\":1.7,\"height\":2.85,\"floorH\":0.35,\"posts\":4,\"postColor\":\"#faf4e7\",\"roof\":\"hip\",\"pitch\":0.18,\"roofColor\":\"#545b60\",\"railing\":true,\"steps\":2}]},\"-v\":{\"storeys\":[{\"y\":0.9,\"windows\":{\"type\":\"rect\",\"w\":0.9,\"h\":1.65,\"at\":[0.2,0.5,0.8],\"glass\":\"#63716e\"}}]}}},{\"id\":\"main_upper\",\"u\":[-5.5,2.8],\"v\":[-4.2,2.1],\"bottom\":3.35,\"height\":6.5,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.36,\"maxH\":2.1,\"overhang\":0.3},\"cornice\":{\"height\":0.2,\"overhang\":0.18,\"color\":\"#faf4e7\",\"dentils\":true},\"faces\":{\"+v\":{\"storeys\":[{\"y\":0.55,\"windows\":{\"type\":\"rect\",\"w\":1.05,\"h\":1.8,\"at\":[0.17,0.43,0.7,0.9],\"glass\":\"#657671\"}}],\"porches\":[{\"style\":\"open\",\"at\":0.5,\"w\":8.3,\"d\":2.05,\"height\":2.65,\"floorH\":0.08,\"posts\":5,\"postColor\":\"#faf4e7\",\"roof\":\"hip\",\"pitch\":0.18,\"roofColor\":\"#545b60\",\"railing\":true,\"steps\":0}]},\"-u\":{\"storeys\":[{\"y\":0.55,\"windows\":{\"type\":\"rect\",\"w\":1.05,\"h\":1.85,\"at\":[0.28,0.72],\"glass\":\"#657671\"}}]},\"-v\":{\"storeys\":[{\"y\":0.6,\"windows\":{\"type\":\"rect\",\"w\":0.95,\"h\":1.7,\"at\":[0.2,0.5,0.8],\"glass\":\"#657671\"}}]}}},{\"id\":\"north_wing\",\"u\":[2.8,7.2],\"v\":[-4.2,4.2],\"height\":6.5,\"bottom\":0,\"roof\":{\"type\":\"gable\",\"ridge\":\"v\",\"pitch\":0.4,\"maxH\":1.8,\"overhang\":0.3},\"plinth\":{\"height\":0.35,\"color\":\"#98958a\"},\"cornice\":{\"height\":0.23,\"overhang\":0.18,\"color\":\"#faf4e7\",\"dentils\":true},\"faces\":{\"+v\":{\"storeys\":[{\"y\":0.8,\"windows\":{\"type\":\"rect\",\"w\":1.15,\"h\":1.95,\"at\":[0.25,0.75],\"glass\":\"#63716e\"}},{\"y\":3.95,\"windows\":{\"type\":\"rect\",\"w\":1.05,\"h\":1.85,\"at\":[0.25,0.75],\"glass\":\"#63716e\"}},{\"y\":6.7,\"windows\":{\"type\":\"rect\",\"w\":0.7,\"h\":0.9,\"at\":[0.5],\"glass\":\"#63716e\"}}]},\"+u\":{\"storeys\":[{\"y\":0.85,\"windows\":{\"type\":\"rect\",\"w\":1,\"h\":1.8,\"at\":[0.2,0.5,0.8],\"glass\":\"#63716e\"}},{\"y\":3.95,\"windows\":{\"type\":\"rect\",\"w\":1,\"h\":1.75,\"at\":[0.2,0.5,0.8],\"glass\":\"#63716e\"}}]},\"-v\":{\"storeys\":[{\"y\":0.9,\"windows\":{\"type\":\"rect\",\"w\":0.95,\"h\":1.65,\"at\":[0.25,0.75],\"glass\":\"#63716e\"}},{\"y\":4,\"windows\":{\"type\":\"rect\",\"w\":0.95,\"h\":1.65,\"at\":[0.25,0.75],\"glass\":\"#63716e\"}}]}}},{\"id\":\"front_dormer\",\"u\":[-2.4,-0.55],\"v\":[0.25,2.05],\"bottom\":6.6,\"height\":7.9,\"roof\":{\"type\":\"gable\",\"ridge\":\"v\",\"pitch\":0.4,\"maxH\":0.75,\"overhang\":0.15},\"faces\":{\"+v\":{\"storeys\":[{\"y\":0.18,\"windows\":{\"type\":\"rect\",\"w\":0.53,\"h\":0.95,\"at\":[0.29,0.71],\"glass\":\"#627370\"}}]}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Ivory timber cottage with dark intersecting gables.",
+  "Two-tier Pratt-facing veranda with slender white posts.",
+  "Ground-floor porch wraps onto the Miller-facing end.",
+  "Small paired-window gabled dormer.",
+  "Pale decorative cornices and tall, dark-glazed windows."
+ ],
+ "references_used": [
+  "MAP",
+  "SV2",
+  "SV3",
+  "SV4",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Principal-entry role is inferred: SV2 shows a door on the -u porch, but access is partly concealed by planting.",
+  "SV1 is dominated by a neighboring building; its foreground architecture is excluded.",
+  "SV4's foreground Fair Point Cottage is a neighbor, not the target.",
+  "Rear openings, roof intersections and simplified porch ornament are approximate."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "main_lower",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV2",
+    "SV3"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

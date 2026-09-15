@@ -1,0 +1,20 @@
+{
+ "verdict": "repair",
+ "summary": "The compact gabled hut is recognizable and includes the grille, gable vent, corner door, and pale-trimmed side window, but its brick treatment and slightly house-like proportions miss the plain brown practice-studio character.",
+ "orientation": {
+  "status": "correct",
+  "summary": "SV1 is located northwest of the hut and looks southeast, exposing the +u northwest gable and -v southwest side. The visible principal opening lies at the southwest edge of the northwest gable; the render places its sole door on +u at that same -v corner. No duplicated principal portal is present."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The model uses conspicuous red brick, while SV1 shows plain brown vertically finished siding, a defining part of these modest practice huts.",
+   "fix": "Replace the brick texture with subdued brown vertical wood or panel siding, retaining restrained pale trim."
+  },
+  {
+   "severity": "minor",
+   "problem": "The tall facade and relatively steep roof make the miniature read more like a small house than the low, utilitarian reference hut.",
+   "fix": "Slightly lower the walls and flatten the gable pitch while preserving the compact rectangular silhouette."
+  }
+ ]
+}

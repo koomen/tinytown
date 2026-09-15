@@ -1,0 +1,70 @@
+{
+  "wall": "#c9b998",
+  "trim": "#efece4",
+  "roofColor": "#5b4d45",
+  "volumes": [
+    {
+      "id": "main",
+      "u": [-4.5, 11.7],
+      "v": [-6.6, 6.6],
+      "height": 6.4,
+      "roof": { "type": "hip", "ridge": "u", "pitch": 0.35, "maxH": 2.8, "overhang": 0.5 },
+      "chimneys": [ { "u": -1.8, "v": 0.0 } ],
+      "faces": {
+        "+u": {
+          "storeys": [
+            { "y": 4.6, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.2, 0.5, 0.8] } },
+            { "y": 1.8, "windows": { "type": "rect", "w": 1.2, "h": 1.5, "at": [0.24, 0.76] } }
+          ],
+          "doors": [
+            { "at": 0.5, "y": 0.8, "type": "rect", "w": 1.1, "h": 2.2, "color": "#3b3a38", "surround": "#efece4", "surroundW": 0.14, "fanlight": true }
+          ],
+          "porches": [
+            { "style": "open", "range": [0, 1], "d": 2.6, "height": 2.9, "floorH": 0.8, "floorColor": "#8c8780",
+              "posts": 5, "postColor": "#efece4", "roof": "hip", "pitch": 0.3, "railing": true, "steps": 4, "stepsAt": 0.5, "stepsW": 1.6 }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 4.6, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.22, 0.5, 0.78] } },
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.3, 0.7] } }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            { "y": 4.6, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.22, 0.5, 0.78] } },
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.3, 0.7] } }
+          ]
+        },
+        "-u": {
+          "storeys": [
+            { "y": 4.6, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.2, 0.45, 0.8] } },
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.8] } }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rear-wing",
+      "u": [-11.7, -4.4],
+      "v": [-6.65, 1.1],
+      "height": 3.4,
+      "roof": { "type": "hip", "ridge": "u", "pitch": 0.3, "maxH": 1.4, "overhang": 0.4 },
+      "faces": {
+        "+v": {
+          "storeys": [ { "y": 1.0, "windows": { "type": "rect", "w": 1.0, "h": 1.4, "at": [0.3, 0.7] } } ]
+        },
+        "-v": {
+          "storeys": [ { "y": 1.0, "windows": { "type": "rect", "w": 1.0, "h": 1.4, "at": [0.3, 0.7] } } ]
+        },
+        "-u": {
+          "storeys": [ { "y": 1.0, "windows": { "type": "rect", "w": 1.0, "h": 1.4, "at": [0.75] } } ],
+          "doors": [
+            { "at": 0.3, "type": "rect", "w": 1.0, "h": 2.1, "color": "#efece4", "surround": "#efece4", "surroundW": 0.12, "steps": 2 }
+          ]
+        }
+      }
+    }
+  ],
+  "details": []
+}

@@ -1,0 +1,309 @@
+{
+ "version": 3,
+ "id": "820059454",
+ "name": "The Chautauquan Daily / Logan Dormitory",
+ "location": "Chautauqua Institution, Chautauqua, New York",
+ "address": "17 Vincent Avenue",
+ "source_tags": {
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 29.254,
+  "depth_v": 11.856,
+  "footprint_uv": [
+   [
+    14.4,
+    5.9
+   ],
+   [
+    -14.6,
+    5.9
+   ],
+   [
+    -14.4,
+    -0.2
+   ],
+   [
+    -14.2,
+    -5.9
+   ],
+   [
+    14.6,
+    -5.9
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 232,
+    "compass": "SW",
+    "left_bearing": 322,
+    "right_bearing": 142,
+    "nearest_road_outward": {
+     "name": "Wythe Avenue",
+     "circular": false,
+     "distance_m": 19.2
+    },
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 52,
+    "compass": "NE",
+    "left_bearing": 142,
+    "right_bearing": 322,
+    "nearest_road_outward": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 14.1
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 322,
+    "compass": "NW",
+    "left_bearing": 52,
+    "right_bearing": 232,
+    "nearest_road_outward": {
+     "name": "Vincent Brick Walk",
+     "circular": false,
+     "distance_m": 8.3
+    },
+    "nearest_road_hint": true
+   },
+   "-v": {
+    "bearing": 142,
+    "compass": "SE",
+    "left_bearing": 232,
+    "right_bearing": 52,
+    "nearest_road_outward": {
+     "name": "Center Avenue",
+     "circular": false,
+     "distance_m": 21.4
+    },
+    "nearest_road_hint": false
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/820059454/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/820059454/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/820059454/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua/research/front_820059454_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2089902,
+    "lon": -79.4669535,
+    "position_xz": [
+     -67.08,
+     43.39
+    ],
+    "position_uv": [
+     32.25,
+     -3.6
+    ],
+    "looking_bearing": 40.0,
+    "looking_compass": "NE",
+    "image_left_bearing": 310.0,
+    "image_right_bearing": 130.0,
+    "target_center_offset_deg": 5.2,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 12,
+    "fov": 55,
+    "tilt": 98,
+    "near_road": {
+     "name": "Wythe Avenue",
+     "circular": false,
+     "distance_m": 1.5
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2089902,-79.4669535,421a,55y,40h,98t/data=!3m7!1e1!3m5!1s1gf8uPU8QWdzGvITmMBzLQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8%26panoid%3D1gf8uPU8QWdzGvITmMBzLQ%26yaw%3D40!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "1gf8uPU8QWdzGvITmMBzLQ",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059454/reference-1.jpg",
+   "sha256": "c3ffe30cf6a1ebfb1ede5a85b45c5b3b8bd7f8b36962b5bb820413e1f8ca10c0"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua/research/front_820059454_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2093655,
+    "lon": -79.4663963,
+    "position_xz": [
+     -21.13,
+     1.61
+    ],
+    "position_uv": [
+     -29.71,
+     0.57
+    ],
+    "looking_bearing": 229.0,
+    "looking_compass": "SW",
+    "image_left_bearing": 139.0,
+    "image_right_bearing": 319.0,
+    "target_center_offset_deg": 1.5,
+    "geometrically_facing_camera": [
+     "-u"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 2,
+    "fov": 55,
+    "tilt": 99,
+    "near_road": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 1.0
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2093655,-79.4663963,419a,55y,229h,99t/data=!3m7!1e1!3m5!1sYASunWoRvnpaLUr4dnkKRQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9%26panoid%3DYASunWoRvnpaLUr4dnkKRQ%26yaw%3D229!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "YASunWoRvnpaLUr4dnkKRQ",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059454/reference-2.jpg",
+   "sha256": "67f9ec0be3d087e50329336fe132253b736730b7c460bd71db75178cefa1e5c8"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua/research/front_820059454_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2096304,
+    "lon": -79.4671048,
+    "position_xz": [
+     -79.55,
+     -27.87
+    ],
+    "position_uv": [
+     -2.27,
+     59.98
+    ],
+    "looking_bearing": 144.0,
+    "looking_compass": "SE",
+    "image_left_bearing": 54.0,
+    "image_right_bearing": 234.0,
+    "target_center_offset_deg": -0.3,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 2,
+    "fov": 55,
+    "tilt": 92,
+    "near_road": {
+     "name": "Ames Avenue",
+     "circular": false,
+     "distance_m": 0.7
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2096304,-79.4671048,417a,55y,144h,92t/data=!3m7!1e1!3m5!1sJeVz2dkiEE4bz-y6pLDbOA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3DJeVz2dkiEE4bz-y6pLDbOA%26yaw%3D144!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "JeVz2dkiEE4bz-y6pLDbOA",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059454/reference-3.jpg",
+   "sha256": "9cd00af80d8612c23341a25dbed380af355581be36dbf305382e5b1d93b83733"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua/research/front_820059454_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2089885,
+    "lon": -79.4665101,
+    "position_xz": [
+     -30.52,
+     43.58
+    ],
+    "position_uv": [
+     3.72,
+     -26.47
+    ],
+    "looking_bearing": 332.0,
+    "looking_compass": "NNW",
+    "image_left_bearing": 242.0,
+    "image_right_bearing": 62.0,
+    "target_center_offset_deg": -2.4,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 10,
+    "fov": 80,
+    "tilt": 97,
+    "near_road": {
+     "name": "Center Avenue",
+     "circular": false,
+     "distance_m": 0.9
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2089885,-79.4665101,418a,80y,332h,97t/data=!3m7!1e1!3m5!1sLNbcRdPCZOGlLExjAGI3tg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7%26panoid%3DLNbcRdPCZOGlLExjAGI3tg%26yaw%3D332!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "LNbcRdPCZOGlLExjAGI3tg",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059454/reference-4.jpg",
+   "sha256": "93cab5945dea333dc6aeed9c76c97b5d8af3152e5f4445265077cdefb0b86932"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua/research/aerial_820059454.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/820059454/reference-5.jpg",
+   "sha256": "e688527063d81ba332e95f02ebab08565a79e931a45d627ddf5e61534cb0c540"
+  }
+ ],
+ "search_query": "The Chautauquan Daily / Logan Dormitory Chautauqua Institution, Chautauqua, New York building exterior",
+ "search_candidates": [],
+ "warnings": [
+  "No useful image-search candidates; using available Street View/aerial evidence."
+ ]
+}

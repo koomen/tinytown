@@ -1,0 +1,45 @@
+{
+ "blueprint_json": "{\"wall\":\"#655440\",\"trim\":\"#eeeade\",\"roofColor\":\"#555b53\",\"volumes\":[],\"pavilion\":{\"axis\":\"u\",\"height\":5.8,\"pitch\":0.15,\"bents\":7,\"columns\":\"classical\",\"columnColor\":\"#eeeade\",\"postWidth\":0.85,\"endPosts\":2,\"floorH\":1.4,\"floorColor\":\"#b5ac97\",\"entranceEnd\":\"positive\",\"railing\":true,\"seatingRows\":12,\"furniture\":false},\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Broad, shallow gable roof with exposed dark timber trusses.",
+  "White classical columns surrounding a completely open hall.",
+  "Raised terrace with pale balustrades and central entrance stairs.",
+  "Two orderly banks of light benches framing a central aisle."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV3",
+  "AERIAL elaboration"
+ ],
+ "uncertainties": [
+  "The grand stair is tentatively assigned to +u: WEB1 shows a raised gable entrance, unlike the near-grade western approach in SV1; no located eastern photograph confirms it.",
+  "Uniform terrace height simplifies the sloping ground; the western approach should read closer to grade.",
+  "Open balustrades approximate the photographed decorative pierced panels."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "pavilion",
+   "face": "+u",
+   "role": "principal, tentatively assigned grand stair",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "WEB1"
+   ],
+   "confidence": "inferred"
+  },
+  {
+   "volume": "pavilion",
+   "face": "-u",
+   "role": "secondary open aisle approach from outdoor seating",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

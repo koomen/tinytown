@@ -1,0 +1,40 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"c322b4596db1ee5b26d6a2fc579f954eca4f0ee8bd7ade394256c0e16080a52f\",\"operations\":[{\"op\":\"replace\",\"path\":\"/volumes/@canopy/roof\",\"value\":{\"type\":\"hip\",\"ridge\":\"u\",\"pitch\":0.15,\"maxH\":0.9,\"overhang\":0.5}},{\"op\":\"replace\",\"path\":\"/volumes/@canopy/bottom\",\"value\":4.2},{\"op\":\"replace\",\"path\":\"/volumes/@canopy/wall\",\"value\":\"#dfd6bc\"},{\"op\":\"replace\",\"path\":\"/volumes/@canopy/faces/+v/signs\",\"value\":[{\"text\":\"ENTER\",\"style\":\"board\",\"at\":0.28,\"y\":0.04,\"w\":2,\"h\":0.36},{\"text\":\"EXIT ONLY\",\"style\":\"board\",\"at\":0.77,\"y\":0.04,\"w\":2.6,\"h\":0.36}]}]}",
+ "cues": [
+  "Broad, shallow hipped canopy",
+  "Projecting pale eaves and fascia",
+  "Warm brick attendant booth",
+  "Twin open vehicle lanes",
+  "ENTER left; EXIT ONLY right on +v"
+ ],
+ "references_used": [
+  "MAP",
+  "SV3",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Concealed booth elevations remain simplified; sign sizes are slightly exaggerated for miniature readability."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "canopy",
+   "face": "+v",
+   "role": "principal vehicle approach: entry through left lane, exit through right lane",
+   "evidence": [
+    "MAP",
+    "SV3"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "gate_booth",
+   "face": "+v",
+   "role": "secondary attendant access",
+   "evidence": [
+    "SV3"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

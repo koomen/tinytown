@@ -1,0 +1,121 @@
+{
+ "id": "641329576",
+ "addr": "1 Ames Avenue",
+ "name": "The Colonnade",
+ "frame": "d3307d6aa10e71895dc5cc2763d1240edab5ed37755eb450e7e9bf73960d92af",
+ "faces": {
+  "+u": {
+   "bearing": 59,
+   "width": 29.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_641329576_+u.png",
+     "pano": "wpPDWCOqHherQZP0d5vv5w",
+     "dist": 25.0,
+     "off_axis_deg": 3,
+     "fov": 72,
+     "tilt": 91,
+     "heading": 242,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.210312,-79.4660936,417a,72y,242h,91t/data=!3m7!1e1!3m5!1swpPDWCOqHherQZP0d5vv5w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DwpPDWCOqHherQZP0d5vv5w%26yaw%3D242!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.210312,
+      "lon": -79.4660936
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 239,
+   "width": 29.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_641329576_-u.png",
+     "pano": "qFF4e9_c04-HvlKHU6LjdA",
+     "dist": 8.6,
+     "off_axis_deg": 10,
+     "fov": 80,
+     "tilt": 95,
+     "heading": 69,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2099277,-79.4670187,418a,80y,69h,95t/data=!3m7!1e1!3m5!1s9aPpZ5mEN1ef16HatZgQ_Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3D9aPpZ5mEN1ef16HatZgQ_Q%26yaw%3D69!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2099288,
+      "lon": -79.4670251
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 149,
+   "width": 54.4,
+   "road": true,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_641329576_+v.png",
+     "pano": "KALN-h6Jtj6hrwudTR4paA",
+     "dist": 31.3,
+     "off_axis_deg": 7,
+     "fov": 80,
+     "tilt": 91,
+     "heading": 336,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2097145,-79.4663988,418a,80y,336h,91t/data=!3m7!1e1!3m5!1sKALN-h6Jtj6hrwudTR4paA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DKALN-h6Jtj6hrwudTR4paA%26yaw%3D336!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2097145,
+      "lon": -79.4663988
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 329,
+   "width": 54.4,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_641329576_-v.png",
+     "pano": "ItZWRfvESPzfVw01mzWdfA",
+     "dist": 30.8,
+     "off_axis_deg": 43,
+     "fov": 80,
+     "tilt": 91,
+     "heading": 192,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2104649,-79.4666608,416a,80y,192h,91t/data=!3m7!1e1!3m5!1sItZWRfvESPzfVw01mzWdfA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DItZWRfvESPzfVw01mzWdfA%26yaw%3D192!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2104649,
+      "lon": -79.4666608
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-09 17:55"
+}

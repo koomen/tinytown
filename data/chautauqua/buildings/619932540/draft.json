@@ -1,0 +1,455 @@
+{
+ "wall": "#a45f46",
+ "trim": "#dcc9a4",
+ "roofColor": "#a45235",
+ "volumes": [
+  {
+   "id": "shaft",
+   "u": [
+    -2.2,
+    2.2
+   ],
+   "v": [
+    -2.2,
+    2.2
+   ],
+   "bottom": 0,
+   "height": 16.2,
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "plinth": {
+    "height": 0.3,
+    "color": "#c4baa4"
+   },
+   "beltCourses": [
+    {
+     "y": 0.55,
+     "height": 0.12,
+     "color": "#c7ad84"
+    },
+    {
+     "y": 2.6,
+     "height": 0.18,
+     "color": "#c7ad84"
+    },
+    {
+     "y": 15.9,
+     "height": 0.3,
+     "color": "#dfcfad"
+    }
+   ],
+   "faces": {
+    "+u": {
+     "doors": [
+      {
+       "at": 0.5,
+       "type": "arch",
+       "w": 1.35,
+       "h": 2.7,
+       "color": "#51352e",
+       "surround": "#bd9270",
+       "surroundW": 0.18,
+       "steps": 2
+      }
+     ],
+     "signs": [
+      {
+       "text": "MILLER BELL TOWER",
+       "style": "gold-on-black",
+       "at": 0.5,
+       "y": 2.25,
+       "w": 1.1,
+       "h": 0.32
+      }
+     ],
+     "storeys": [
+      {
+       "y": 4.6,
+       "windows": {
+        "type": "arch",
+        "w": 0.28,
+        "h": 1.4,
+        "at": [
+         0.5
+        ],
+        "glass": "#302e29",
+        "trim": "#b79b76",
+        "mullions": false,
+        "interior": false
+       }
+      },
+      {
+       "y": 9.4,
+       "windows": {
+        "type": "arch",
+        "w": 0.28,
+        "h": 1.3,
+        "at": [
+         0.5
+        ],
+        "glass": "#302e29",
+        "trim": "#b79b76",
+        "mullions": false,
+        "interior": false
+       }
+      },
+      {
+       "y": 12.9,
+       "windows": {
+        "type": "clock",
+        "w": 2.15,
+        "h": 2.15,
+        "at": [
+         0.5
+        ],
+        "trim": "#876b36",
+        "interior": false
+       }
+      }
+     ]
+    },
+    "-u": {
+     "storeys": [
+      {
+       "y": 4.6,
+       "windows": {
+        "type": "arch",
+        "w": 0.28,
+        "h": 1.4,
+        "at": [
+         0.5
+        ],
+        "glass": "#302e29",
+        "trim": "#b79b76",
+        "mullions": false,
+        "interior": false
+       }
+      },
+      {
+       "y": 9.4,
+       "windows": {
+        "type": "arch",
+        "w": 0.28,
+        "h": 1.3,
+        "at": [
+         0.5
+        ],
+        "glass": "#302e29",
+        "trim": "#b79b76",
+        "mullions": false,
+        "interior": false
+       }
+      },
+      {
+       "y": 12.9,
+       "windows": {
+        "type": "clock",
+        "w": 2.15,
+        "h": 2.15,
+        "at": [
+         0.5
+        ],
+        "trim": "#876b36",
+        "interior": false
+       }
+      }
+     ]
+    },
+    "+v": {
+     "storeys": [
+      {
+       "y": 4.6,
+       "windows": {
+        "type": "arch",
+        "w": 0.28,
+        "h": 1.4,
+        "at": [
+         0.5
+        ],
+        "glass": "#302e29",
+        "trim": "#b79b76",
+        "mullions": false,
+        "interior": false
+       }
+      },
+      {
+       "y": 9.4,
+       "windows": {
+        "type": "arch",
+        "w": 0.28,
+        "h": 1.3,
+        "at": [
+         0.5
+        ],
+        "glass": "#302e29",
+        "trim": "#b79b76",
+        "mullions": false,
+        "interior": false
+       }
+      },
+      {
+       "y": 12.9,
+       "windows": {
+        "type": "clock",
+        "w": 2.15,
+        "h": 2.15,
+        "at": [
+         0.5
+        ],
+        "trim": "#876b36",
+        "interior": false
+       }
+      }
+     ]
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 4.6,
+       "windows": {
+        "type": "arch",
+        "w": 0.28,
+        "h": 1.4,
+        "at": [
+         0.5
+        ],
+        "glass": "#302e29",
+        "trim": "#b79b76",
+        "mullions": false,
+        "interior": false
+       }
+      },
+      {
+       "y": 9.4,
+       "windows": {
+        "type": "arch",
+        "w": 0.28,
+        "h": 1.3,
+        "at": [
+         0.5
+        ],
+        "glass": "#302e29",
+        "trim": "#b79b76",
+        "mullions": false,
+        "interior": false
+       }
+      },
+      {
+       "y": 12.9,
+       "windows": {
+        "type": "clock",
+        "w": 2.15,
+        "h": 2.15,
+        "at": [
+         0.5
+        ],
+        "trim": "#876b36",
+        "interior": false
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "pier_pp",
+   "u": [
+    1.6,
+    2.2
+   ],
+   "v": [
+    1.6,
+    2.2
+   ],
+   "bottom": 16.2,
+   "height": 20.3,
+   "roof": {
+    "type": "flat",
+    "lip": false
+   }
+  },
+  {
+   "id": "pier_pn",
+   "u": [
+    1.6,
+    2.2
+   ],
+   "v": [
+    -2.2,
+    -1.6
+   ],
+   "bottom": 16.2,
+   "height": 20.3,
+   "roof": {
+    "type": "flat",
+    "lip": false
+   }
+  },
+  {
+   "id": "pier_np",
+   "u": [
+    -2.2,
+    -1.6
+   ],
+   "v": [
+    1.6,
+    2.2
+   ],
+   "bottom": 16.2,
+   "height": 20.3,
+   "roof": {
+    "type": "flat",
+    "lip": false
+   }
+  },
+  {
+   "id": "pier_nn",
+   "u": [
+    -2.2,
+    -1.6
+   ],
+   "v": [
+    -2.2,
+    -1.6
+   ],
+   "bottom": 16.2,
+   "height": 20.3,
+   "roof": {
+    "type": "flat",
+    "lip": false
+   }
+  },
+  {
+   "id": "column_pu",
+   "u": [
+    1.8,
+    2.05
+   ],
+   "v": [
+    -0.125,
+    0.125
+   ],
+   "bottom": 16.2,
+   "height": 20.3,
+   "wall": "#ddc9a2",
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "cornice": {
+    "height": 0.18,
+    "overhang": 0.1,
+    "color": "#dcc8a1",
+    "dentils": false
+   }
+  },
+  {
+   "id": "column_nu",
+   "u": [
+    -2.05,
+    -1.8
+   ],
+   "v": [
+    -0.125,
+    0.125
+   ],
+   "bottom": 16.2,
+   "height": 20.3,
+   "wall": "#ddc9a2",
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "cornice": {
+    "height": 0.18,
+    "overhang": 0.1,
+    "color": "#dcc8a1",
+    "dentils": false
+   }
+  },
+  {
+   "id": "column_pv",
+   "u": [
+    -0.125,
+    0.125
+   ],
+   "v": [
+    1.8,
+    2.05
+   ],
+   "bottom": 16.2,
+   "height": 20.3,
+   "wall": "#ddc9a2",
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "cornice": {
+    "height": 0.18,
+    "overhang": 0.1,
+    "color": "#dcc8a1",
+    "dentils": false
+   }
+  },
+  {
+   "id": "column_nv",
+   "u": [
+    -0.125,
+    0.125
+   ],
+   "v": [
+    -2.05,
+    -1.8
+   ],
+   "bottom": 16.2,
+   "height": 20.3,
+   "wall": "#ddc9a2",
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "cornice": {
+    "height": 0.18,
+    "overhang": 0.1,
+    "color": "#dcc8a1",
+    "dentils": false
+   }
+  },
+  {
+   "id": "belfry_crown",
+   "u": [
+    -2.2,
+    2.2
+   ],
+   "v": [
+    -2.2,
+    2.2
+   ],
+   "bottom": 20.3,
+   "height": 21.3,
+   "roof": {
+    "type": "hip",
+    "ridge": "u",
+    "pitch": 0.2,
+    "maxH": 0.88,
+    "overhang": 0.35
+   },
+   "cornice": {
+    "height": 0.32,
+    "overhang": 0.18,
+    "color": "#bc9164",
+    "dentils": true
+   },
+   "beltCourses": [
+    {
+     "y": 20.4,
+     "height": 0.14,
+     "color": "#c69e70"
+    }
+   ]
+  }
+ ],
+ "details": []
+}

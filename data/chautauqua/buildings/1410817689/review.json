@@ -1,0 +1,20 @@
+{
+ "verdict": "repair",
+ "summary": "The compact one-storey gabled form is recognizable and stylistically coherent, with no obvious geometry failures. However, its brick walls and shingle-pattern roof miss the reference building\u2019s most characteristic simple red cladding and light corrugated-metal roof.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The located SV1 camera is southwest of the studio and looks NE, nearly head-on toward the southwest eave wall; that wall\u2019s outward normal is SW (233\u00b0), identified by the map as +v. The four-face sheet places the doorway on +v, and the actual inventory confirms exactly one door there and none on the other faces. Thus the sole principal portal is correctly oriented, independent of the nearest-road hint."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The model uses conspicuous brick wall texture, while the references show plain red-brown siding or an otherwise much smoother wall finish.",
+   "fix": "Replace the brick pattern with simple red-brown siding or a subdued, nearly smooth cladding texture."
+  },
+  {
+   "severity": "major",
+   "problem": "The gray shingle pattern does not capture the pale corrugated metal roof prominent in both the street and aerial references.",
+   "fix": "Use a muted light taupe-gray metal roof with visible parallel ribs and modest eaves, retaining the current gabled silhouette."
+  }
+ ]
+}

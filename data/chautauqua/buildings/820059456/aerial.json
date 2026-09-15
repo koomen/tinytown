@@ -1,0 +1,34 @@
+{
+ "source": "data/chautauqua--20260910-044859-38562b/satellite.jpg",
+ "source_metadata": {
+  "z": 19,
+  "px": [
+   11264,
+   12032
+  ],
+  "bounds": {
+   "north": 42.221398787613666,
+   "south": 42.19749486566082,
+   "west": -79.48127746582031,
+   "east": -79.45106506347656
+  },
+  "source": "Esri World Imagery"
+ },
+ "crop_pixels": [
+  5514,
+  6180,
+  5667,
+  6336
+ ],
+ "source_pixels": [
+  11264,
+  12032
+ ],
+ "decoded_pixels": [
+  11264,
+  12032
+ ],
+ "north_up": true,
+ "id": "820059456",
+ "note": "Yellow outline is the mapped footprint, not an observed roof outline."
+}

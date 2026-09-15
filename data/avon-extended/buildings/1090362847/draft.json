@@ -1,0 +1,31 @@
+{
+  "wall": "#a85a44",
+  "trim": "#2f4a3a",
+  "roofColor": "tar",
+  "volumes": [
+    {
+      "id": "infill",
+      "u": [-4.4, 4.4],
+      "v": [-3.0, 3.0],
+      "height": 7.2,
+      "roof": { "type": "flat", "lip": false },
+      "cornice": { "height": 0.3, "overhang": 0.15, "dentils": false, "color": "#c9bda3" },
+      "beltCourses": [ { "y": 3.4, "height": 0.5, "color": "#2f4a3a" } ],
+      "faces": {
+        "-u": {
+          "storeys": [
+            { "y": 4.3, "windows": { "type": "arch", "w": 0.75, "h": 2.0, "at": [0.16, 0.41, 0.59, 0.85],
+                "hood": "#cdbf9f", "keystone": true, "glass": "#5c6b74", "trim": "#2f4a3a" } }
+          ],
+          "doors": [
+            { "at": 0.17, "type": "rect", "w": 0.9, "h": 2.5, "color": "#6b2f2a", "surround": "#2f4a3a", "surroundW": 0.12, "fanlight": true },
+            { "at": 0.44, "type": "rect", "w": 0.85, "h": 2.5, "color": "#6b2f2a", "surround": "#2f4a3a", "surroundW": 0.12 }
+          ],
+          "storefronts": [ { "range": [0.6, 0.97], "y": 0.6, "h": 2.4, "frame": "#2f4a3a", "kick": "#2a3d31" } ],
+          "pilasters": { "at": [0.55, 0.985], "w": 0.3, "d": 0.2, "height": 3.4, "color": "#a8905a", "cap": "#c6ad6a" }
+        }
+      }
+    }
+  ],
+  "details": []
+}

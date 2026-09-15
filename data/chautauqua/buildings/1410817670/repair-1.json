@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"1f7f8e6fd30087a66a519c5ce23503efcde48d2ce0af3b730a8c9907c1272afc\",\"operations\":[]}",
+ "cues": [
+  "Compact single-storey cabin",
+  "Low pale hipped roof",
+  "Muted reddish-brown walls",
+  "Cream trim and sparse windows",
+  "Low foundation and simple entry step"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Entrance face cannot be established from supplied evidence: vegetation obscures SV1, and the aerial reveals no doorway. Preserve the sole -v door provisionally; relocating it would introduce another unsupported assumption."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-v",
+   "role": "principal; provisional placement",
+   "evidence": [
+    "MAP establishes -v as NE; not entrance evidence",
+    "SV1 faces +v and does not verify the entrance",
+    "AERIAL establishes footprint only"
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

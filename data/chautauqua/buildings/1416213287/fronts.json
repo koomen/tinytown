@@ -1,0 +1,121 @@
+{
+ "id": "1416213287",
+ "addr": "4 Ramble Avenue",
+ "name": "Chautauqua Utility District Office",
+ "frame": "05537909d5baa200aa2fbe820822368369bd4065842fc127f8631db0e972c6a4",
+ "faces": {
+  "+u": {
+   "bearing": 331,
+   "width": 12.5,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_1416213287_+u.png",
+     "pano": "4S3oSnFFdnQWqJgo8CgQGg",
+     "dist": 34.8,
+     "off_axis_deg": 71,
+     "fov": 55,
+     "tilt": 94,
+     "heading": 80,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2103081,-79.4674697,416a,55y,80h,94t/data=!3m7!1e1!3m5!1s4S3oSnFFdnQWqJgo8CgQGg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4%26panoid%3D4S3oSnFFdnQWqJgo8CgQGg%26yaw%3D80!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2103081,
+      "lon": -79.4674697
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 151,
+   "width": 12.5,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_1416213287_-u.png",
+     "pano": "2fXVR5f0bLSium-Y8U9IJw",
+     "dist": 8.9,
+     "off_axis_deg": 33,
+     "fov": 80,
+     "tilt": 100,
+     "heading": 4,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2101627,-79.4669739,416a,80y,4h,100t/data=!3m7!1e1!3m5!1s2fXVR5f0bLSium-Y8U9IJw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3D2fXVR5f0bLSium-Y8U9IJw%26yaw%3D4!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2101627,
+      "lon": -79.4669739
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 61,
+   "width": 15.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_1416213287_+v.png",
+     "pano": "ItZWRfvESPzfVw01mzWdfA",
+     "dist": 27.8,
+     "off_axis_deg": 4,
+     "fov": 55,
+     "tilt": 95,
+     "heading": 237,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2104649,-79.4666608,416a,55y,237h,95t/data=!3m7!1e1!3m5!1sItZWRfvESPzfVw01mzWdfA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3DItZWRfvESPzfVw01mzWdfA%26yaw%3D237!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2104649,
+      "lon": -79.4666608
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 241,
+   "width": 15.0,
+   "road": true,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_1416213287_-v.png",
+     "pano": "uoxFIH_MVd-itKJDsbNsIw",
+     "dist": 22.1,
+     "off_axis_deg": 5,
+     "fov": 55,
+     "tilt": 96,
+     "heading": 56,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2101637,-79.4672992,417a,55y,56h,96t/data=!3m7!1e1!3m5!1suoxFIH_MVd-itKJDsbNsIw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3DuoxFIH_MVd-itKJDsbNsIw%26yaw%3D56!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2101637,
+      "lon": -79.4672992
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-15 08:03"
+}

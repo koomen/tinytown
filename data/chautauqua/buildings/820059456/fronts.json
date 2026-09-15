@@ -1,0 +1,121 @@
+{
+ "id": "820059456",
+ "addr": "6 Pratt Avenue",
+ "name": "6 Pratt Avenue",
+ "frame": "692f7c392c41ba495b4ef9353b3397d3a4247d271604964bc271223bcf197fb9",
+ "faces": {
+  "+u": {
+   "bearing": 331,
+   "width": 9.4,
+   "road": true,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_820059456_+u.png",
+     "pano": "fHwVkqsYXBaHFviqNCDTnw",
+     "dist": 10.1,
+     "off_axis_deg": 18,
+     "fov": 68,
+     "tilt": 100,
+     "heading": 169,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2091008,-79.4663398,420a,68y,169h,100t/data=!3m7!1e1!3m5!1sfHwVkqsYXBaHFviqNCDTnw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DfHwVkqsYXBaHFviqNCDTnw%26yaw%3D169!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2091008,
+      "lon": -79.4663398
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 151,
+   "width": 9.4,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_820059456_-u.png",
+     "pano": "iFXRUILhBfbHUKBoSdM8og",
+     "dist": 24.8,
+     "off_axis_deg": 34,
+     "fov": 55,
+     "tilt": 95,
+     "heading": 297,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2088209,-79.4659744,419a,55y,297h,95t/data=!3m7!1e1!3m5!1sELqf7CPZgoHqVX5HkgQQCA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3DELqf7CPZgoHqVX5HkgQQCA%26yaw%3D297!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2088216,
+      "lon": -79.4659799
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 61,
+   "width": 11.4,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_820059456_+v.png",
+     "pano": "JgM0iXtqNKRtCEhjOr5jTA",
+     "dist": 9.4,
+     "off_axis_deg": 13,
+     "fov": 75,
+     "tilt": 100,
+     "heading": 227,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2090442,-79.4661487,419a,75y,227h,100t/data=!3m7!1e1!3m5!1sJgM0iXtqNKRtCEhjOr5jTA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DJgM0iXtqNKRtCEhjOr5jTA%26yaw%3D227!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2090442,
+      "lon": -79.4661487
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 241,
+   "width": 11.4,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_820059456_-v.png",
+     "pano": "dkgQ_kd1pBB-gc7LvuxMIg",
+     "dist": 22.7,
+     "off_axis_deg": 25,
+     "fov": 55,
+     "tilt": 96,
+     "heading": 86,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2089307,-79.4666063,419a,55y,86h,96t/data=!3m7!1e1!3m5!1sdkgQ_kd1pBB-gc7LvuxMIg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3DdkgQ_kd1pBB-gc7LvuxMIg%26yaw%3D86!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2089307,
+      "lon": -79.4666063
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-09 17:58"
+}

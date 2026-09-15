@@ -1,0 +1,20 @@
+{
+ "verdict": "ready",
+ "summary": "Recognizable and charming: the elongated brick caf\u00e9, broad hip roof, red awnings, cream trim, grouped glazing, Clark Brick Walk gable, and Roberts Avenue service doors read coherently at miniature scale.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The map places +v SSE toward Miller Avenue, and located SV3 looks NNW directly toward that public patio/frontage; the inventory assigns the sole double customer door to +v. Located SV1 faces +u from Roberts Avenue, matching the rendered garage and plain service door. The glazed/gabled -u Clark Brick Walk elevation has no duplicated principal portal, and -v also has none."
+ },
+ "issues": [
+  {
+   "severity": "minor",
+   "problem": "The main hip roof appears somewhat tall and visually dominant compared with the low, elongated silhouette in the street views and aerial.",
+   "fix": "Lower the ridge/eaves relationship slightly and simplify the roof transitions while retaining the broad muted hip form."
+  },
+  {
+   "severity": "minor",
+   "problem": "The +v and -v face-sheet views are heavily obscured by neighboring models, making the principal doorway difficult to inspect visually.",
+   "fix": "Reframe or temporarily hide foreground neighbors so the +v double door and opposite elevation are clearly visible."
+  }
+ ]
+}

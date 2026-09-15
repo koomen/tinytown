@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"4037ac16803942e5dad66f5c0a2a75df76e95d5fc4bcb16111b15e1b42bd8f51\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#885f4d\"},{\"op\":\"replace\",\"path\":\"/roofColor\",\"value\":\"#c4c8c5\"}]}",
+ "cues": [
+  "Compact freestanding practice cabin",
+  "Low pale-gray gabled roof",
+  "Muted brown walls and pale opening trim",
+  "Sparse narrow windows above a dark raised base"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "SV1 is northwest of the target, looking southeast toward +u; the review reverses this camera relationship.",
+  "The tree obscures the target entrance. Retain the existing single +u door provisionally, not as a confirmed placement.",
+  "The supplied catalog exposes colors but no wood-cladding or standing-seam material controls. Palette is corrected; brick and roof-shingle textures remain unresolved."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

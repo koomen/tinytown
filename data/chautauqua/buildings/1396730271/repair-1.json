@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"04762cad0e971500c3b6183bdbbb4445e7be9b8f240a942573f9676e45f234a9\",\"operations\":[{\"op\":\"add\",\"path\":\"/volumes/@studio/faces/-u/storeys\",\"value\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.64,\"h\":1.02,\"at\":[0.5],\"trim\":\"#f1eee7\",\"glass\":\"#536768\",\"mullions\":true,\"interior\":false}}]}]}",
+ "cues": [
+  "Compact brown cabin with a pale projecting gable roof.",
+  "White southeast entry with readable divided glazing and two steps.",
+  "Single tall, white-trimmed northeast window."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Door glazing uses an integrated window over the upper door because lights:true did not render visibly.",
+  "The supplied catalog exposes no siding or roof-texture controls; brown shingle siding and smooth metal roofing remain unresolved renderer finishes.",
+  "Southwest window remains inferred."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

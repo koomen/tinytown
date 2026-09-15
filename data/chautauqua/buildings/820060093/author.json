@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "{\"wall\":\"#955f4c\",\"trim\":\"#e5e6d8\",\"roofColor\":\"#c9ceca\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.1,2.1],\"v\":[-2.7,2.7],\"bottom\":0.35,\"height\":3.05,\"roof\":{\"type\":\"hip\",\"ridge\":\"v\",\"pitch\":0.23,\"maxH\":0.95,\"overhang\":0.32},\"plinth\":{\"height\":0.35,\"color\":\"#665747\"},\"faces\":{\"-u\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.85,\"h\":1.5,\"at\":[0.68],\"trim\":\"#e5e6d8\",\"glass\":\"#526763\"}}]},\"+v\":{\"doors\":[{\"at\":0.78,\"type\":\"rect\",\"y\":0.35,\"w\":0.85,\"h\":2.15,\"color\":\"#757b70\",\"surround\":\"#e5e6d8\",\"surroundW\":0.09,\"steps\":3}]},\"+u\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.85,\"h\":1.5,\"at\":[0.5],\"trim\":\"#e5e6d8\",\"glass\":\"#526763\"}}]},\"-v\":{}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact reddish-brown timber studio",
+  "Low silver-gray hipped roof with generous eaves",
+  "Single off-center, pale-trimmed window on the broad visible wall",
+  "Raised floor and small side-entry steps"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Door and steps appear on the receding +v face; their exact position is approximate.",
+  "Concealed elevations, foundation treatment and dimensions above ground are simplified."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

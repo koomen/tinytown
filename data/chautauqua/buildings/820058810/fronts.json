@@ -1,0 +1,121 @@
+{
+ "id": "820058810",
+ "addr": "10 Janes Avenue",
+ "name": "Athenaeum Hotel",
+ "frame": "482f94e3bad3126754153fec3fae9e755ffa2e3fff729455495b6b6d3edfe81f",
+ "faces": {
+  "+u": {
+   "bearing": 338,
+   "width": 56.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_820058810_+u.png",
+     "pano": "BrRLtIVu6VVDGpZ5Do0j0A",
+     "dist": 31.0,
+     "off_axis_deg": 13,
+     "fov": 80,
+     "tilt": 91,
+     "heading": 145,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2087421,-79.4636776,409a,80y,145h,91t/data=!3m7!1e1!3m5!1sBrRLtIVu6VVDGpZ5Do0j0A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DBrRLtIVu6VVDGpZ5Do0j0A%26yaw%3D145!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2087421,
+      "lon": -79.4636776
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 158,
+   "width": 56.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_820058810_-u.png",
+     "pano": "jQv5Zq2xmYCxYSjlnAHh9A",
+     "dist": 37.4,
+     "off_axis_deg": 19,
+     "fov": 80,
+     "tilt": 91,
+     "heading": 357,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2076423,-79.4631383,413a,80y,357h,91t/data=!3m7!1e1!3m5!1sjQv5Zq2xmYCxYSjlnAHh9A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DjQv5Zq2xmYCxYSjlnAHh9A%26yaw%3D357!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2076423,
+      "lon": -79.4631383
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 68,
+   "width": 64.6,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_820058810_+v.png",
+     "pano": "MomtALs2Tx1QEXdzRNGbsA",
+     "dist": 36.5,
+     "off_axis_deg": 1,
+     "fov": 80,
+     "tilt": 91,
+     "heading": 248,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.208463,-79.4625879,404a,80y,248h,91t/data=!3m7!1e1!3m5!1sMomtALs2Tx1QEXdzRNGbsA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DMomtALs2Tx1QEXdzRNGbsA%26yaw%3D248!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.208463,
+      "lon": -79.4625879
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 248,
+   "width": 64.6,
+   "road": true,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_820058810_-v.png",
+     "pano": "eZNOs1fSDYL7s1bTh1o-zw",
+     "dist": 46.1,
+     "off_axis_deg": 20,
+     "fov": 80,
+     "tilt": 90,
+     "heading": 88,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.208133,-79.4641855,417a,80y,88h,90t/data=!3m7!1e1!3m5!1seZNOs1fSDYL7s1bTh1o-zw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DeZNOs1fSDYL7s1bTh1o-zw%26yaw%3D88!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.208133,
+      "lon": -79.4641855
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-09 21:51"
+}

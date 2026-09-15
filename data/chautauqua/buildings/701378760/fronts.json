@@ -1,0 +1,121 @@
+{
+ "id": "701378760",
+ "addr": "1 Miller Park",
+ "name": "Pier Building / 3 Taps",
+ "frame": "8a8596b7a250d7775f505d58399b3f9dafc585caca88a116acb006d35920a3f0",
+ "faces": {
+  "+u": {
+   "bearing": 41,
+   "width": 12.5,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_701378760_+u.png",
+     "pano": "9M9N8DIxFWIju5hkbY4IuA",
+     "dist": 13.7,
+     "off_axis_deg": 8,
+     "fov": 61,
+     "tilt": 100,
+     "heading": 213,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2113353,-79.4619298,401a,61y,213h,100t/data=!3m7!1e1!3m5!1s9M9N8DIxFWIju5hkbY4IuA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3D9M9N8DIxFWIju5hkbY4IuA%26yaw%3D213!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2113353,
+      "lon": -79.4619298
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 221,
+   "width": 12.5,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_701378760_-u.png",
+     "pano": "3Iex1ao5VIyVU3clLBnPYQ",
+     "dist": 14.8,
+     "off_axis_deg": 35,
+     "fov": 58,
+     "tilt": 99,
+     "heading": 76,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2110059,-79.4624224,401a,58y,76h,99t/data=!3m7!1e1!3m5!1s3Iex1ao5VIyVU3clLBnPYQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9%26panoid%3D3Iex1ao5VIyVU3clLBnPYQ%26yaw%3D76!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2110059,
+      "lon": -79.4624224
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 131,
+   "width": 28.7,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_701378760_+v.png",
+     "pano": "LRQhfc3foGam-a4j7R6IHw",
+     "dist": 14.0,
+     "off_axis_deg": 9,
+     "fov": 80,
+     "tilt": 100,
+     "heading": 320,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2110012,-79.4619678,401a,80y,320h,100t/data=!3m7!1e1!3m5!1sLRQhfc3foGam-a4j7R6IHw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DLRQhfc3foGam-a4j7R6IHw%26yaw%3D320!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2110012,
+      "lon": -79.4619678
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 311,
+   "width": 28.7,
+   "road": true,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_701378760_-v.png",
+     "pano": "1tpef9_cnpX55efsRlyE4Q",
+     "dist": 18.9,
+     "off_axis_deg": 15,
+     "fov": 80,
+     "tilt": 97,
+     "heading": 146,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2113125,-79.4623192,402a,80y,146h,97t/data=!3m7!1e1!3m5!1s1tpef9_cnpX55efsRlyE4Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7%26panoid%3D1tpef9_cnpX55efsRlyE4Q%26yaw%3D146!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2113125,
+      "lon": -79.4623192
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-09 22:22"
+}

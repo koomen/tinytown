@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The compact cabin massing, pale low gable roof, raised ridge monitor, and warm-brown palette are recognizable, but the facade treatment needs correction to match the reference\u2019s character.",
+ "orientation": {
+  "status": "correct",
+  "summary": "SV1 is geolocated on the +v/-u side and looks approximately north. It shows the entrance on the long eave facade, identifying +v (SSE outward), not the short -u gable. The four-face sheet and actual inventory consistently place a single principal door on +v, with no duplicated portal."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The model reads as red brick, while SV1 shows warm cedar-brown shingle siding, a defining visual feature.",
+   "fix": "Replace the brick pattern with simplified brown square-shingle siding across the cabin."
+  },
+  {
+   "severity": "minor",
+   "problem": "The +v entrance facade omits the narrow window visible to the left of the door, weakening the characteristic sparse door-and-window composition.",
+   "fix": "Add a narrow pale-trimmed window left of the entrance while retaining the existing right window."
+  },
+  {
+   "severity": "minor",
+   "problem": "The broad masonry-like steps lack the reference\u2019s light wooden stair character and prominent metal handrail.",
+   "fix": "Use a narrower four-step approach and add a simple pale or metal handrail."
+  }
+ ]
+}

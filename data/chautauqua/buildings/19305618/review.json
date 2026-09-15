@@ -1,0 +1,20 @@
+{
+ "verdict": "repair",
+ "summary": "The long warm-brick massing, layered hipped roof, cream cornices, and restrained miniature treatment are recognizable, but two defining West Lake elevations are substantially under-described.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The principal entrance is correctly placed on the -u/SE end: located SV2 looks WNW toward that face and shows the raised double-door entrance on the right side, matching the labeled -u render and actual -u door inventory. The separate -v/SW door is not a duplicated principal portal and reasonably represents veranda access seen from West Lake Road."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The -v/West Lake Road face lacks the reference\u2019s continuous pale-post veranda, one of the building\u2019s strongest identifying features; the render instead reads as an exposed storefront-like wall.",
+   "fix": "Add a shallow full-length veranda roof with evenly spaced pale posts and keep the openings visually subordinate behind it."
+  },
+  {
+   "severity": "major",
+   "problem": "The raised central roof tier has blank brick sides, while SV4 shows a conspicuous rhythm of clerestory windows beneath the upper cornice.",
+   "fix": "Add simplified, clearly readable clerestory windows along the raised roof tier, prioritizing rhythm over exact count."
+  }
+ ]
+}

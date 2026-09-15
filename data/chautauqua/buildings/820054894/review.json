@@ -1,0 +1,20 @@
+{
+ "verdict": "repair",
+ "summary": "The compact one-storey form and shallow hipped roof are recognizable, but the principal entrance is on the wrong face and the model\u2019s brick-and-shingle treatment misses the cabin\u2019s defining material character.",
+ "orientation": {
+  "status": "incorrect",
+  "summary": "SV1 is located southwest of the target and looks northeast; on the nearest target cabin, the white door is visible in the broad, camera-facing southwest wall, corresponding to -v (233\u00b0 outward), not the southeast -u face. The four-face sheet and actual inventory instead place the sole door on -u and a window on -v. There is no duplicate portal, but the principal entry must be moved to -v."
+ },
+ "issues": [
+  {
+   "severity": "broken",
+   "problem": "The only entrance is modeled on -u, while located SV1 supports the principal door on -v.",
+   "fix": "Move the white door and steps from -u to the -v southwest face, preserving a single principal portal; relocate the conflicting -v window as needed."
+  },
+  {
+   "severity": "major",
+   "problem": "The model uses red brick walls and a tiled/shingled roof, whereas SV1 shows brown shingle-clad walls and a pale standing-seam metal roof with generous eaves.",
+   "fix": "Replace the brick texture with coarse brown shingle siding and simplify the roof into pale metal panels with visible seams and broader eaves."
+  }
+ ]
+}

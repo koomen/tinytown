@@ -1,0 +1,91 @@
+{
+  "wall": "#c8bc92",
+  "trim": "#7b2f30",
+  "roofColor": "#4a4c50",
+  "volumes": [
+    {
+      "id": "front-gable",
+      "u": [-12.0, -2.0],
+      "v": [-5.5, 5.5],
+      "height": 7.4,
+      "roof": { "type": "gable", "ridge": "u", "pitch": 0.7, "overhang": 0.45, "gableColor": "#cfc49c" },
+      "faces": {
+        "-u": {
+          "storeys": [
+            { "y": 4.1, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.28], "trim": "#7b2f30" } }
+          ],
+          "doors": [
+            { "at": 0.64, "y": 3.2, "type": "rect", "w": 1.0, "h": 2.2, "color": "#6a3226", "surround": "#7b2f30", "surroundW": 0.14, "steps": 0, "lamp": false }
+          ],
+          "porches": [
+            { "style": "open", "range": [0.0, 1.0], "d": 2.4, "floorH": 3.2, "height": 2.7,
+              "floorColor": "#c8bc92", "posts": 4, "postColor": "#7b2f30", "roof": "flat", "roofColor": "#4a4c50",
+              "railing": true, "steps": 0 }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 4.1, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.3, 0.72], "trim": "#7b2f30" } },
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.3, 0.72], "trim": "#7b2f30" } }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            { "y": 4.1, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.28, 0.7], "trim": "#7b2f30" } },
+            { "y": 1.0, "windows": { "type": "rect", "w": 1.0, "h": 1.5, "at": [0.28, 0.7], "trim": "#7b2f30" } }
+          ]
+        }
+      }
+    },
+    {
+      "id": "shopfront",
+      "u": [-14.5, -11.9],
+      "v": [-5.6, 5.6],
+      "height": 3.15,
+      "roof": { "type": "flat", "lip": false, "color": "#c8bc92" },
+      "plinth": { "height": 0.9, "color": "#8c8578" },
+      "faces": {
+        "-u": {
+          "storefronts": [
+            { "range": [0.07, 0.52], "y": 0.9, "h": 2.0, "frame": "#7b2f30", "kick": "#8c8578" }
+          ],
+          "doors": [
+            { "at": 0.66, "type": "rect", "w": 1.05, "h": 2.4, "color": "#6a3226", "surround": "#7b2f30", "surroundW": 0.16, "steps": 1, "fanlight": true }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rear-wing",
+      "u": [-2.0, 14.4],
+      "v": [-5.1, 5.1],
+      "height": 6.0,
+      "wall": "#e4e2da",
+      "trim": "#f0efe9",
+      "roof": { "type": "gable", "ridge": "u", "pitch": 0.5, "overhang": 0.4, "color": "#55575a", "gableColor": "#e4e2da" },
+      "faces": {
+        "+u": {
+          "storeys": [
+            { "y": 3.6, "windows": { "type": "rect", "w": 0.95, "h": 1.5, "at": [0.3, 0.7] } },
+            { "y": 0.9, "windows": { "type": "rect", "w": 0.95, "h": 1.5, "at": [0.3, 0.7] } }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 3.6, "windows": { "type": "rect", "w": 0.95, "h": 1.5, "at": [0.2, 0.5, 0.8] } },
+            { "y": 0.9, "windows": { "type": "rect", "w": 0.95, "h": 1.5, "at": [0.2, 0.5, 0.8] } }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            { "y": 3.6, "windows": { "type": "rect", "w": 0.95, "h": 1.5, "at": [0.2, 0.5, 0.8] } },
+            { "y": 0.9, "windows": { "type": "rect", "w": 0.95, "h": 1.5, "at": [0.2, 0.5, 0.8] } }
+          ]
+        }
+      }
+    }
+  ],
+  "details": [
+    { "type": "lawnsign", "text": "Rivoli Dental", "style": "navy", "u": -17.2, "v": 3.4, "w": 1.8, "h": 0.8, "rotation": 1.5708 }
+  ]
+}

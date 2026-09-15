@@ -1,0 +1,7 @@
+#!/bin/sh
+# tiny-town CLI. Prefers the repo's .venv (pillow, websocket-client) when present.
+here="$(cd "$(dirname "$0")" && pwd)"
+if [ -n "$PIPELINE_PYTHON" ]; then python="$PIPELINE_PYTHON"
+elif [ -x "$here/.venv/bin/python" ]; then python="$here/.venv/bin/python"
+else python=python3; fi
+cd "$here" && exec "$python" -B -m tinytown "$@"

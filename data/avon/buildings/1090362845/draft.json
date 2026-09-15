@@ -1,0 +1,388 @@
+{
+ "wall": "#ad956d",
+ "trim": "#cfc4a6",
+ "roofColor": "#b9b6ae",
+ "volumes": [
+  {
+   "id": "bank",
+   "u": [
+    -0.45,
+    7.05
+   ],
+   "v": [
+    -6.0,
+    14.35
+   ],
+   "height": 10.0,
+   "wall": "#ad956d",
+   "trim": "#cfc4a6",
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "cornice": {
+    "height": 0.45,
+    "overhang": 0.3,
+    "dentils": false,
+    "color": "#cfc4a6"
+   },
+   "beltCourses": [
+    {
+     "y": 4.95,
+     "height": 0.35,
+     "color": "#cfc4a6"
+    },
+    {
+     "y": 8.45,
+     "height": 1.05,
+     "color": "#c6c09b"
+    }
+   ],
+   "faces": {
+    "+v": {
+     "pilasters": {
+      "at": [
+       0.045,
+       0.955
+      ],
+      "w": 0.7,
+      "d": 0.14,
+      "height": 9.5,
+      "color": "#cfc4a6",
+      "cap": "#d8cfb3"
+     },
+     "storeys": [
+      {
+       "y": 0.5,
+       "windows": {
+        "type": "arch",
+        "w": 3.0,
+        "h": 4.3,
+        "at": [
+         0.32
+        ],
+        "trim": "#cfc4a6",
+        "frameW": 0.22,
+        "keystone": true,
+        "glass": "#3a4247",
+        "sill": false
+       }
+      },
+      {
+       "y": 5.5,
+       "windows": {
+        "type": "arch",
+        "w": 1.9,
+        "h": 2.5,
+        "at": [
+         0.32,
+         0.72
+        ],
+        "trim": "#cfc4a6",
+        "frameW": 0.12,
+        "keystone": true,
+        "glass": "#4a5660"
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.72,
+       "type": "arch",
+       "w": 2.1,
+       "h": 4.0,
+       "color": "#33373b",
+       "surround": "#cfc4a6",
+       "surroundW": 0.35,
+       "steps": 2,
+       "lamp": true
+      }
+     ],
+     "signs": [
+      {
+       "text": "STATE BANK OF AVON",
+       "style": "carved",
+       "opts": {
+        "bg": "#c6c09b"
+       },
+       "at": 0.5,
+       "y": 8.98,
+       "w": 6.6,
+       "h": 0.85,
+       "out": 0.06
+      }
+     ],
+     "parapets": [
+      {
+       "type": "flat",
+       "width": "full",
+       "height": 0.55,
+       "depth": 0.45,
+       "color": "#b39b74",
+       "trim": "#cfc4a6"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "bank-rear",
+   "u": [
+    -0.45,
+    7.05
+   ],
+   "v": [
+    -14.35,
+    -6.0
+   ],
+   "height": 6.0,
+   "wall": "#ad956d",
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "cornice": {
+    "height": 0.3,
+    "overhang": 0.2,
+    "dentils": false,
+    "color": "#cfc4a6"
+   },
+   "faces": {
+    "-v": {
+     "storeys": [
+      {
+       "y": 3.3,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.5,
+        "at": [
+         0.3,
+         0.7
+        ],
+        "trim": "#cfc4a6",
+        "glass": "#4a5660"
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.5,
+       "type": "rect",
+       "w": 1.0,
+       "h": 2.3,
+       "color": "#3a3d44",
+       "surround": "#cfc4a6",
+       "surroundW": 0.1,
+       "lamp": false
+      }
+     ]
+    },
+    "+u": {
+     "storeys": [
+      {
+       "y": 3.3,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.5,
+        "at": [
+         0.5
+        ],
+        "trim": "#cfc4a6",
+        "glass": "#4a5660"
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "spa",
+   "u": [
+    -7.05,
+    -0.45
+   ],
+   "v": [
+    -6.0,
+    14.35
+   ],
+   "height": 7.6,
+   "wall": "#d9d5cb",
+   "trim": "#e2dfd6",
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "cornice": {
+    "height": 0.35,
+    "overhang": 0.22,
+    "dentils": false,
+    "color": "#e2dfd6"
+   },
+   "beltCourses": [
+    {
+     "y": 3.3,
+     "height": 0.95,
+     "color": "#2a3350"
+    }
+   ],
+   "faces": {
+    "+v": {
+     "storefronts": [
+      {
+       "range": [
+        0.16,
+        0.4
+       ],
+       "y": 0.8,
+       "h": 2.3,
+       "frame": "#e8e5dd",
+       "kick": "#5d6578"
+      },
+      {
+       "range": [
+        0.56,
+        0.93
+       ],
+       "y": 0.8,
+       "h": 2.3,
+       "frame": "#e8e5dd",
+       "kick": "#5d6578"
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.08,
+       "type": "rect",
+       "w": 0.95,
+       "h": 2.4,
+       "color": "#6b7385",
+       "surround": "#e8e5dd",
+       "surroundW": 0.12,
+       "fanlight": true,
+       "lamp": false
+      },
+      {
+       "at": 0.48,
+       "type": "rect",
+       "w": 1.0,
+       "h": 2.4,
+       "color": "#3a3d44",
+       "surround": "#e8e5dd",
+       "surroundW": 0.12,
+       "fanlight": true,
+       "lamp": false
+      }
+     ],
+     "awnings": [
+      {
+       "range": [
+        0.03,
+        0.97
+       ],
+       "y": 2.95,
+       "depth": 1.4,
+       "color": "#2a3350"
+      }
+     ],
+     "signs": [
+      {
+       "text": "PURE BODY DAY SPA",
+       "style": "board",
+       "at": 0.5,
+       "y": 3.8,
+       "w": 4.0,
+       "h": 0.6,
+       "out": 0.2
+      }
+     ],
+     "storeys": [
+      {
+       "y": 4.9,
+       "windows": {
+        "type": "rect",
+        "w": 1.15,
+        "h": 2.1,
+        "at": [
+         0.2,
+         0.5,
+         0.8
+        ],
+        "trim": "#eceae3",
+        "hood": "#eceae3",
+        "glass": "#5c6a78"
+       }
+      }
+     ],
+     "parapets": [
+      {
+       "type": "stepped",
+       "width": "full",
+       "height": 0.7,
+       "depth": 0.45,
+       "color": "#d9d5cb",
+       "trim": "#e2dfd6"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "spa-rear",
+   "u": [
+    -7.05,
+    -0.45
+   ],
+   "v": [
+    -14.35,
+    -6.0
+   ],
+   "height": 5.0,
+   "wall": "#d9d5cb",
+   "trim": "#e2dfd6",
+   "roof": {
+    "type": "flat",
+    "lip": false
+   },
+   "cornice": {
+    "height": 0.3,
+    "overhang": 0.2,
+    "dentils": false,
+    "color": "#e2dfd6"
+   },
+   "faces": {
+    "-v": {
+     "storeys": [
+      {
+       "y": 3.0,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.4,
+        "at": [
+         0.3
+        ],
+        "trim": "#e2dfd6",
+        "glass": "#5c6a78"
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.7,
+       "type": "rect",
+       "w": 1.0,
+       "h": 2.3,
+       "color": "#6b7385",
+       "surround": "#e2dfd6",
+       "surroundW": 0.1,
+       "lamp": false
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "details": []
+}

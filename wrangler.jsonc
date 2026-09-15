@@ -1,0 +1,14 @@
+// Avon at the domain root; the compact miniature remains available at /avon.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "avon-town",
+  "compatibility_date": "2026-09-01",
+  "routes": [{ "pattern": "avon.town", "custom_domain": true }],
+  "build": {
+    "command": "python3 -m tinytown deploy --target town"
+  },
+  "assets": {
+    "directory": "./dist/town",
+    "html_handling": "auto-trailing-slash"
+  }
+}

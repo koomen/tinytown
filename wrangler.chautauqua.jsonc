@@ -1,0 +1,14 @@
+// Chautauqua's independent domain-root deployment.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "chautauqua-miniature",
+  "compatibility_date": "2026-09-01",
+  "routes": [{ "pattern": "chautauqua.town", "custom_domain": true }],
+  "build": {
+    "command": "python3 -m tinytown deploy --target chautauqua"
+  },
+  "assets": {
+    "directory": "./dist/chautauqua",
+    "html_handling": "auto-trailing-slash"
+  }
+}

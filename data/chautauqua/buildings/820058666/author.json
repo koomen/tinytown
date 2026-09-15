@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "{\"wall\":\"#92745b\",\"trim\":\"#e5e3d6\",\"roofColor\":\"#d4d6cf\",\"volumes\":[{\"id\":\"studio\",\"u\":[-3.95,3.95],\"v\":[-2.27,2.27],\"bottom\":0.3,\"height\":3.05,\"roof\":{\"type\":\"hip\",\"ridge\":\"u\",\"pitch\":0.28,\"maxH\":1.27,\"overhang\":0.4},\"plinth\":{\"height\":0.25,\"color\":\"#494b40\"},\"faces\":{\"+u\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.95,\"h\":1.5,\"at\":[0.5],\"trim\":\"#e5e3d6\",\"glass\":\"#52645b\"}}]},\"-v\":{\"storeys\":[{\"y\":1.2,\"windows\":{\"type\":\"rect\",\"w\":0.75,\"h\":1.25,\"at\":[0.83],\"trim\":\"#d6d4c8\",\"glass\":\"#566157\"}}]},\"-u\":{\"doors\":[{\"at\":0.5,\"type\":\"rect\",\"w\":0.95,\"h\":2.1,\"y\":0.3,\"color\":\"#6a705d\",\"surround\":\"#e5e3d6\",\"surroundW\":0.08,\"steps\":2}]},\"+v\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.9,\"h\":1.4,\"at\":[0.3,0.75],\"trim\":\"#e5e3d6\",\"glass\":\"#52645b\"}}]}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact single-storey brown cabin.",
+  "Pale silver hipped roof with broad eaves.",
+  "Solitary white-trimmed window on the ENE end.",
+  "Sparse side windows and a low, dark raised base."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "No entrance is visible; the single WSW-end door is a provisional concealed-side placement.",
+  "Concealed SSE windows and foundation treatment are simplified; brown shingle texture is represented by the wall palette."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

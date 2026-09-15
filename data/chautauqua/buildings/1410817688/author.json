@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "{\"wall\":\"#946039\",\"trim\":\"#b38d62\",\"roofColor\":\"#929187\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.7175,2.7175],\"v\":[-2.155,2.155],\"bottom\":0,\"height\":2.7,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.31,\"maxH\":1.3,\"overhang\":0.35},\"plinth\":{\"height\":0.18,\"color\":\"#49473b\"},\"faces\":{\"+u\":{\"storeys\":[{\"y\":0.55,\"windows\":{\"type\":\"basement\",\"w\":1.15,\"h\":0.42,\"at\":[0.53],\"trim\":\"#655039\",\"glass\":\"#252d2d\",\"mullions\":false,\"interior\":false}}]},\"-u\":{\"doors\":[{\"at\":0.5,\"type\":\"rect\",\"w\":0.9,\"h\":2.05,\"color\":\"#65482f\",\"surround\":\"#b38d62\",\"surroundW\":0.09,\"steps\":1}]},\"+v\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.75,\"h\":1.15,\"at\":[0.5],\"trim\":\"#c2b99b\",\"glass\":\"#54615a\"}}]},\"-v\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.75,\"h\":1.15,\"at\":[0.5],\"trim\":\"#c2b99b\",\"glass\":\"#54615a\"}}]}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact single-storey brown timber cabin.",
+  "Simple gable facing NNW, with projecting eaves.",
+  "Low dark rectangular opening on the largely blank visible gable.",
+  "Muted gray-tan roof and warm wooden trim."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "No entrance is visible; a single rear (-u) entrance is conjectural.",
+  "Side windows are simplified assumptions; concealed elevations are undocumented.",
+  "The low front rectangle may be a ventilation grille rather than glazing; represented as a dark opening."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

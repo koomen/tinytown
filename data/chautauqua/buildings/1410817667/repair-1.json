@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"94884d347d4ff1c39ba1b541786cd872ff9cd2d27b1701ba21556c2b8517d6b8\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#754235\"},{\"op\":\"replace\",\"path\":\"/roofColor\",\"value\":\"#bebdb4\"}]}",
+ "cues": [
+  "Compact single-storey practice hut",
+  "Steep pale-gray gable roof",
+  "Dark reddish-brown walls",
+  "Restrained cream trim and one simple entry"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The obscured entrance remains provisionally on +u; supplied references cannot verify its placement.",
+  "The component catalog exposes no wall-cladding or metal-roof texture control; palette is corrected, but brick and shingle textures require renderer support.",
+  "Concealed windows remain simplified inferences."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

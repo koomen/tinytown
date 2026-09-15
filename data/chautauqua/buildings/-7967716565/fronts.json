@@ -1,0 +1,121 @@
+{
+ "id": "-7967716565",
+ "addr": null,
+ "name": "Bestor Plaza Fountain",
+ "frame": "b13bb02aea30acbdc696bb0f448c10ed4fc96081fa46e2812e5372e5daef4f11",
+ "faces": {
+  "+u": {
+   "bearing": 149,
+   "width": 11.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_-7967716565_+u.png",
+     "pano": "aeCu1vFSZkne1fvGJVzmlA",
+     "dist": 12.7,
+     "off_axis_deg": 0,
+     "fov": 59,
+     "tilt": 100,
+     "heading": 329,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2092015,-79.4659813,418a,59y,329h,100t/data=!3m7!1e1!3m5!1saeCu1vFSZkne1fvGJVzmlA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DaeCu1vFSZkne1fvGJVzmlA%26yaw%3D329!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2092015,
+      "lon": -79.4659813
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 329,
+   "width": 11.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_-7967716565_-u.png",
+     "pano": "_XOx6BYVxaT7ilG1YY6QQA",
+     "dist": 13.7,
+     "off_axis_deg": 0,
+     "fov": 56,
+     "tilt": 100,
+     "heading": 149,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2094906,-79.4662138,418a,56y,149h,100t/data=!3m7!1e1!3m5!1s_XOx6BYVxaT7ilG1YY6QQA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3D_XOx6BYVxaT7ilG1YY6QQA%26yaw%3D149!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2094906,
+      "lon": -79.4662138
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 239,
+   "width": 11.0,
+   "road": true,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_-7967716565_+v.png",
+     "pano": "z42tkqvzYb2BAn30fSegtg",
+     "dist": 14.0,
+     "off_axis_deg": 10,
+     "fov": 55,
+     "tilt": 100,
+     "heading": 49,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2092336,-79.4662799,419a,55y,49h,100t/data=!3m7!1e1!3m5!1sz42tkqvzYb2BAn30fSegtg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3Dz42tkqvzYb2BAn30fSegtg%26yaw%3D49!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2092336,
+      "lon": -79.4662799
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 59,
+   "width": 11.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_-7967716565_-v.png",
+     "pano": "2yhLWETGAJOy10Ro0AUynQ",
+     "dist": 21.3,
+     "off_axis_deg": 6,
+     "fov": 55,
+     "tilt": 96,
+     "heading": 233,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.209484,-79.4658319,418a,55y,233h,96t/data=!3m7!1e1!3m5!1s2yhLWETGAJOy10Ro0AUynQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3D2yhLWETGAJOy10Ro0AUynQ%26yaw%3D233!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.209484,
+      "lon": -79.4658319
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-09 18:03"
+}

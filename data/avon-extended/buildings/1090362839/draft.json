@@ -1,0 +1,188 @@
+{
+ "_comment": "77 Genesee St: NYS Assemblywoman Andrea Bailey's district office. Narrow 2-storey gable-front (ridge running back from the street) in grey-beige brick; ground floor storefront with vertical blinds between rock-faced tan stone piers, glass door + white apartment door at the right, white fascia with the navy office sign; three tall white windows upstairs; white raking fascia on the gable. Party wall with the Park Theater block (1090362840) on -v; alley on +v. Road face +u; left (0) = +v = SSW.",
+ "wall": "#a29e97",
+ "trim": "#e9e7e2",
+ "roofColor": "#6b6d70",
+ "volumes": [
+  {
+   "id": "block",
+   "u": [
+    -12.7,
+    12.7
+   ],
+   "v": [
+    -4.2,
+    4.2
+   ],
+   "height": 7.2,
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.23,
+    "maxH": 1.7,
+    "overhang": 0.3
+   },
+   "beltCourses": [
+    {
+     "y": 3.15,
+     "height": 0.75,
+     "color": "#e9e7e2"
+    }
+   ],
+   "faces": {
+    "+u": {
+     "pilasters": {
+      "at": [
+       0.055,
+       0.945
+      ],
+      "w": 0.9,
+      "d": 0.28,
+      "height": 3.15,
+      "color": "#b8a37e",
+      "cap": "#b8a37e"
+     },
+     "storefronts": [
+      {
+       "range": [
+        0.11,
+        0.62
+       ],
+       "y": 0.45,
+       "h": 2.6,
+       "frame": "#e9e7e2",
+       "kick": "#e9e7e2"
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.71,
+       "type": "rect",
+       "w": 1.0,
+       "h": 2.3,
+       "color": "#5b6772",
+       "surround": "#e9e7e2",
+       "surroundW": 0.1,
+       "steps": 0
+      },
+      {
+       "at": 0.86,
+       "type": "rect",
+       "w": 1.0,
+       "h": 2.3,
+       "color": "#ecebe6",
+       "surround": "#e9e7e2",
+       "surroundW": 0.1,
+       "steps": 0
+      }
+     ],
+     "signs": [
+      {
+       "text": "NYS ASSEMBLYWOMAN ANDREA BAILEY",
+       "style": "navy",
+       "at": 0.44,
+       "y": 3.25,
+       "w": 4.8,
+       "h": 0.55,
+       "out": 0.12
+      }
+     ],
+     "storeys": [
+      {
+       "y": 4.5,
+       "windows": {
+        "type": "rect",
+        "w": 1.05,
+        "h": 1.7,
+        "at": [
+         0.25,
+         0.5,
+         0.75
+        ],
+        "trim": "#e9e7e2",
+        "glass": "#4e5a66",
+        "frameW": 0.12
+       }
+      }
+     ]
+    },
+    "+v": {
+     "storeys": [
+      {
+       "y": 4.5,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.5,
+        "at": [
+         0.15,
+         0.4,
+         0.65,
+         0.88
+        ],
+        "trim": "#e9e7e2",
+        "glass": "#4e5a66"
+       }
+      },
+      {
+       "y": 1.2,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.4,
+        "at": [
+         0.4,
+         0.65
+        ],
+        "trim": "#e9e7e2",
+        "glass": "#4e5a66"
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.15,
+       "type": "rect",
+       "w": 1.0,
+       "h": 2.2,
+       "color": "#6b6a66",
+       "surround": "#e9e7e2",
+       "surroundW": 0.1,
+       "steps": 1
+      }
+     ]
+    },
+    "-u": {
+     "storeys": [
+      {
+       "y": 4.5,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 1.5,
+        "at": [
+         0.3,
+         0.7
+        ],
+        "trim": "#e9e7e2",
+        "glass": "#4e5a66"
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.5,
+       "type": "rect",
+       "w": 1.0,
+       "h": 2.2,
+       "color": "#6b6a66",
+       "surround": "#e9e7e2",
+       "surroundW": 0.1,
+       "steps": 1
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

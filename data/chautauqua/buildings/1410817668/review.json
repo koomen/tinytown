@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The compact gabled silhouette, raised base, and three-step entry make a coherent miniature, but key appearance and side-window details conflict with the reference.",
+ "orientation": {
+  "status": "correct",
+  "summary": "SV1 is located southwest of the studio and geometrically faces the +u and +v sides. It shows the principal door on the right-hand gable, supporting the southeast-facing +u end. The four-face sheet places the sole rendered door on +u, the actual inventory confirms one +u door at bearing 145\u00b0, and -u is blank; therefore the principal-entry orientation is correct and not duplicated."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The reddish-brown walls read as masonry/brick, whereas SV1 shows timber siding, changing the studio\u2019s characteristic appearance.",
+   "fix": "Replace the brick pattern with simplified reddish-brown horizontal or shingle-like timber cladding."
+  },
+  {
+   "severity": "major",
+   "problem": "SV1 places the tall side window on the southwest +v wall, but the four-face sheet shows it on the northeast -v wall, mirroring this characteristic feature.",
+   "fix": "Move the tall white-trimmed window from -v to +v, near the +u entrance end."
+  },
+  {
+   "severity": "minor",
+   "problem": "The model uses strongly articulated gray shingles, while the reference has a pale, lightly seamed metal roof with modest eaves.",
+   "fix": "Use a smoother pale metal-roof treatment with subtle seams and restrained overhangs."
+  }
+ ]
+}

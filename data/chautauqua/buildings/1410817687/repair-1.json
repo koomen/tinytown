@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"ac78e106725995670b1b02b1a061c5c9a7481ea8fa5d76e0e253afb55f07f0c4\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#514039\"},{\"op\":\"replace\",\"path\":\"/volumes/@studio/faces/-u/storeys/0/windows/w\",\"value\":1.1},{\"op\":\"replace\",\"path\":\"/volumes/@studio/faces/-u/storeys/0/windows/h\",\"value\":0.38},{\"op\":\"replace\",\"path\":\"/volumes/@studio/faces/-u/storeys/0/windows/trim\",\"value\":\"#777870\"},{\"op\":\"add\",\"path\":\"/volumes/@studio/faces/-u/storeys/0/windows/frameW\",\"value\":0.035},{\"op\":\"replace\",\"path\":\"/volumes/@studio/faces/-u/storeys/1/windows/w\",\"value\":0.22},{\"op\":\"replace\",\"path\":\"/volumes/@studio/faces/-u/storeys/1/windows/h\",\"value\":0.28},{\"op\":\"replace\",\"path\":\"/volumes/@studio/faces/-u/storeys/1/windows/trim\",\"value\":\"#514039\"},{\"op\":\"add\",\"path\":\"/volumes/@studio/faces/-u/storeys/1/windows/frameW\",\"value\":0.025}]}",
+ "cues": [
+  "Compact dark-brown cabin",
+  "Pale gray gable roof with modest overhang",
+  "Nearly blank NNW gable",
+  "Small upper vent and subdued low grille"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Principal-entry face remains unresolved; the existing single +u door is retained only as a modeling assumption.",
+  "Reference shows timber siding, but the supplied catalog exposes no timber-cladding control; darker color reduces contrast without replacing the masonry texture.",
+  "Concealed side openings remain approximate."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal (provisional placement)",
+   "evidence": [
+    "SV1 establishes the nearly blank -u gable, not the entrance.",
+    "MAP and AERIAL establish orientation but do not reveal the doorway."
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

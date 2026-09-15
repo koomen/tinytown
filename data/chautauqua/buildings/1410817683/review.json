@@ -1,0 +1,15 @@
+{
+ "verdict": "repair",
+ "summary": "The cabin is a charming, coherent miniature with the recognizable reddish-brown box form, gray gable roof, dark attic vent, and low foundation opening. Its principal-entry placement remains unverified, so it is not ready.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The north-up map assigns the Hurst-facing gable to +u (outward 334\u00b0). Located SV1 looks inward toward that face on a 144\u00b0 heading and confirms it is nearly blank, with an attic vent and low opening but no visible door. The render matches this on +u. However, the model\u2019s only door is centered on the opposite -u/SSE face, which SV1 does not show; neither the aerial nor other supplied evidence establishes that face as the principal entrance. Thus the sole portal is plausible but unresolved\u2014not proven correct merely because +u lacks a door."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The only door\u2014and therefore presumed principal entry\u2014is on the unobserved -u face without source confirmation.",
+   "fix": "Provide geolocated evidence of the opposite end or another face showing the entrance, or revise the portal placement to match such evidence. Keep exactly one principal portal."
+  }
+ ]
+}

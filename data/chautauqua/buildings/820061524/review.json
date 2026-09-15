@@ -1,0 +1,15 @@
+{
+ "verdict": "insufficient-evidence",
+ "summary": "The model is a charming, coherent match for the compact brick studio: broad hipped roof, restrained trim, and an almost blank road-facing wall with two low openings. However, the principal-entry placement is not verified.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "Located SV1 is south of the building on West Lake Road, looks NNE, and faces the model\u2019s -v wall (SSW outward); it supports that wall being nearly blank. The rendered inventory instead places the sole door on the opposite +v/NNE face. Neither SV1 nor the small north-up aerial visibly confirms a principal entrance there, and the nearest-road relationship cannot determine it."
+ },
+ "issues": [
+  {
+   "severity": "broken",
+   "problem": "The only principal portal is assigned to +v without source evidence locating an entrance on that face, so entry orientation remains unresolved.",
+   "fix": "Obtain a located view that shows the north, east, or west side and verifies the entrance; then retain exactly one principal door on the evidenced face and update the four-face render accordingly."
+  }
+ ]
+}

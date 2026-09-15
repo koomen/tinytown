@@ -1,0 +1,292 @@
+{
+  "wall": "#a9573f",
+  "trim": "#2f4a3a",
+  "roofColor": "tar",
+  "volumes": [
+    {
+      "id": "wadsworth",
+      "height": 13.8,
+      "roof": {"type": "flat", "lip": false},
+      "cornice": {"height": 0.8, "overhang": 0.45, "dentils": true, "color": "#d9d2c1"},
+      "plinth": {"height": 0.5, "color": "#8b8377"},
+      "beltCourses": [{"y": 4.5, "height": 0.5, "color": "#2f4a3a"}],
+      "faces": {
+        "edge0": {
+          "storeys": [
+            {
+              "y": 5.6,
+              "windows": {
+                "type": "arch",
+                "w": 0.8,
+                "h": 2.9,
+                "at": [0.1067, 0.2267],
+                "hood": "#cdbf9f",
+                "keystone": true,
+                "glass": "#5c6b74"
+              }
+            },
+            {
+              "y": 10.2,
+              "windows": {
+                "type": "arch",
+                "w": 0.8,
+                "h": 2.7,
+                "at": [0.1067, 0.2267],
+                "hood": "#cdbf9f",
+                "keystone": true,
+                "glass": "#5c6b74"
+              }
+            },
+            {
+              "y": 1.3,
+              "windows": {
+                "type": "arch",
+                "w": 1.9,
+                "h": 2.9,
+                "at": [0.4933],
+                "hood": "#cdbf9f",
+                "keystone": true,
+                "glass": "#5c6b74",
+                "trim": "#2f4a3a",
+                "frameW": 0.14
+              }
+            },
+            {
+              "y": 5.6,
+              "windows": {
+                "type": "arch",
+                "w": 0.8,
+                "h": 2.9,
+                "at": [0.44, 0.56],
+                "hood": "#cdbf9f",
+                "keystone": true,
+                "glass": "#5c6b74"
+              }
+            },
+            {
+              "y": 10.2,
+              "windows": {
+                "type": "arch",
+                "w": 0.8,
+                "h": 2.7,
+                "at": [0.44, 0.56],
+                "hood": "#cdbf9f",
+                "keystone": true,
+                "glass": "#5c6b74"
+              }
+            },
+            {
+              "y": 2.6,
+              "windows": {
+                "type": "rect",
+                "w": 1.1,
+                "h": 1.7,
+                "at": [0.7667, 0.8933],
+                "glass": "#5c6b74",
+                "trim": "#2f4a3a"
+              }
+            },
+            {
+              "y": 5.6,
+              "windows": {
+                "type": "arch",
+                "w": 0.8,
+                "h": 2.9,
+                "at": [0.7733, 0.8933],
+                "hood": "#cdbf9f",
+                "keystone": true,
+                "glass": "#5c6b74"
+              }
+            },
+            {
+              "y": 10.2,
+              "windows": {
+                "type": "arch",
+                "w": 0.8,
+                "h": 2.7,
+                "at": [0.7733, 0.8933],
+                "hood": "#cdbf9f",
+                "keystone": true,
+                "glass": "#5c6b74"
+              }
+            }
+          ],
+          "doors": [
+            {"at": 0.77, "type": "rect", "w": 1.0, "h": 2.2, "color": "#23302a", "surround": "#2f4a3a", "surroundW": 0.12},
+            {"at": 0.8967, "type": "rect", "w": 0.95, "h": 2.2, "color": "#6b2f2a", "surround": "#2f4a3a", "surroundW": 0.12}
+          ],
+          "storefronts": [{"range": [0.0267, 0.3067], "y": 0.6, "h": 3.4, "frame": "#2f4a3a", "kick": "#2a3d31"}],
+          "pilasters": {
+            "at": [0.0133, 0.1667, 0.32],
+            "w": 0.35,
+            "d": 0.25,
+            "height": 4.5,
+            "color": "#a8905a",
+            "cap": "#c6ad6a"
+          }
+        },
+        "edge1": {
+          "doors": [
+            {
+              "at": 0.5,
+              "type": "double",
+              "w": 1.3,
+              "h": 3.0,
+              "color": "#6b2f2a",
+              "surround": "#a8905a",
+              "surroundW": 0.2,
+              "fanlight": true,
+              "steps": 1
+            }
+          ],
+          "signs": [{"text": "Wadsworth Building 1876", "style": "gold-on-black", "shape": "plaque", "at": 0.5, "y": 3.55, "w": 1.5, "h": 0.6}],
+          "pilasters": {
+            "at": [0.06, 0.94],
+            "w": 0.3,
+            "d": 0.25,
+            "height": 4.5,
+            "color": "#a8905a",
+            "cap": "#c6ad6a"
+          },
+          "storeys": [
+            {
+              "y": 5.6,
+              "windows": {
+                "type": "arch",
+                "w": 1.3,
+                "h": 2.9,
+                "at": [0.5],
+                "hood": "#cdbf9f",
+                "keystone": true,
+                "glass": "#5c6b74"
+              }
+            },
+            {
+              "y": 10.2,
+              "windows": {
+                "type": "arch",
+                "w": 1.3,
+                "h": 2.7,
+                "at": [0.5],
+                "hood": "#cdbf9f",
+                "keystone": true,
+                "glass": "#5c6b74"
+              }
+            }
+          ]
+        },
+        "edge2": {
+          "storeys": [
+            {
+              "y": 5.6,
+              "windows": {
+                "type": "arch",
+                "w": 1.0,
+                "h": 2.9,
+                "at": [0.0832, 0.2328, 0.3742, 0.5405, 0.7068, 0.9044],
+                "hood": "#cdbf9f",
+                "keystone": true,
+                "glass": "#5c6b74",
+                "trim": "#2f4a3a"
+              }
+            },
+            {
+              "y": 10.2,
+              "windows": {
+                "type": "arch",
+                "w": 1.0,
+                "h": 2.7,
+                "at": [0.0832, 0.2328, 0.3742, 0.5405, 0.7068, 0.9044],
+                "hood": "#cdbf9f",
+                "keystone": true,
+                "glass": "#5c6b74",
+                "trim": "#2f4a3a"
+              }
+            }
+          ],
+          "storefronts": [
+            {
+              "range": [0.0249, 0.1414],
+              "y": 0.6,
+              "h": 3.4,
+              "frame": "#2f4a3a",
+              "kick": "#2a3d31"
+            },
+            {
+              "range": [0.2578, 0.7151],
+              "y": 0.6,
+              "h": 3.4,
+              "frame": "#2f4a3a",
+              "kick": "#2a3d31"
+            },
+            {
+              "range": [0.8471, 0.9877],
+              "y": 0.6,
+              "h": 3.4,
+              "frame": "#2f4a3a",
+              "kick": "#2a3d31"
+            }
+          ],
+          "doors": [
+            {
+              "at": 0.1954,
+              "type": "rect",
+              "w": 1.1,
+              "h": 3.0,
+              "color": "#6b2f2a",
+              "surround": "#2f4a3a",
+              "surroundW": 0.15,
+              "fanlight": true
+            },
+            {"at": 0.7733, "type": "rect", "w": 1.3, "h": 3.4, "color": "#23302a", "surround": "#2f4a3a", "surroundW": 0.15, "steps": 2}
+          ],
+          "pilasters": {
+            "at": [0.0125, 0.1621, 0.2328, 0.4158, 0.5821, 0.7276, 0.8191, 0.9955],
+            "w": 0.35,
+            "d": 0.25,
+            "height": 4.5,
+            "color": "#a8905a",
+            "cap": "#c6ad6a"
+          }
+        },
+        "edge3": {
+          "storeys": [
+            {
+              "y": 5.6,
+              "windows": {"type": "arch", "w": 1.0, "h": 2.6, "count": 4, "margin": 2.0, "hood": "#cdbf9f", "glass": "#5c6b74"}
+            },
+            {
+              "y": 10.2,
+              "windows": {"type": "arch", "w": 1.0, "h": 2.4, "count": 4, "margin": 2.0, "hood": "#cdbf9f", "glass": "#5c6b74"}
+            }
+          ]
+        },
+        "edge4": {
+          "storeys": [
+            {
+              "y": 5.6,
+              "windows": {"type": "arch", "w": 1.0, "h": 2.6, "count": 2, "margin": 1.6, "hood": "#cdbf9f", "glass": "#5c6b74"}
+            },
+            {
+              "y": 10.2,
+              "windows": {"type": "arch", "w": 1.0, "h": 2.4, "count": 2, "margin": 1.6, "hood": "#cdbf9f", "glass": "#5c6b74"}
+            }
+          ]
+        }
+      },
+      "polygon": [
+        [10.13, -0.55],
+        [6.32, 9.12],
+        [3.73, 11.07],
+        [-10.1, 10.91],
+        [-10.12, -11.07],
+        [-2.69, -11.08],
+        [-3.06, -4.47],
+        [1.41, -4.34],
+        [2.27, -5.95],
+        [10.28, -2.3]
+      ]
+    }
+  ],
+  "details": []
+}

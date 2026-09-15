@@ -1,0 +1,15 @@
+{
+ "verdict": "ready",
+ "summary": "Recognizable and charming cabin miniature with coherent brown siding, pale eaves, gray-green gable roof, centered gable vent, low wall unit, and offset entry. No obvious broken geometry or duplicated principal portal is visible.",
+ "orientation": {
+  "status": "correct",
+  "summary": "SV1 is located on the +u/-v side and looks ESE toward the cabin; its clearest gable end has the centered upper vent, low rectangular unit, and narrow door toward the viewer\u2019s right. The labeled +u render reproduces that arrangement. The actual inventory confirms exactly one door on +u and none on the other faces, so the principal entry is consistently placed on the NW-facing +u facade without relying on the nearest-road hint."
+ },
+ "issues": [
+  {
+   "severity": "minor",
+   "problem": "The modeled roof is steeper and visually heavier than the lower, simpler gable seen in SV1, making the cabin slightly too tall and house-like.",
+   "fix": "Reduce the roof pitch and overhang modestly while retaining the gray-green roof and pale eaves."
+  }
+ ]
+}

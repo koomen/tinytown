@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"07bcc645365d448fa86ef176255a2d7bc32e2ae3e39550374e276c51f7698802\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#654b38\"},{\"op\":\"replace\",\"path\":\"/volumes/@studio/faces/+u/doors/0/color\",\"value\":\"#56412f\"},{\"op\":\"replace\",\"path\":\"/volumes/@studio/faces/+u/doors/0/surround\",\"value\":\"#594633\"}]}",
+ "cues": [
+  "Compact brown studio with an uncomplicated rectangular footprint.",
+  "Muted projecting gable roof, ridge along u.",
+  "Low centered grille and tiny apex opening.",
+  "Subdued right-edge entry treatment."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The +u right-edge doorway remains inferred from a dark vertical feature; its principal-entry role is unverified.",
+  "Darker wall coloring reduces masonry prominence but does not replace the brick texture: the supplied catalog exposes no siding control.",
+  "The conspicuous rendered light is absent from the blueprint; no fixture-removal control is supplied."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal (provisional)",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

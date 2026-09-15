@@ -1,0 +1,121 @@
+{
+ "id": "820059527",
+ "addr": "21 Scott Avenue",
+ "name": "Hurlbut Memorial Community United Methodist Church",
+ "frame": "ad736732e08a5b51026d05928221936df10a4826ce4b87d1768c15888b664d11",
+ "faces": {
+  "+u": {
+   "bearing": 53,
+   "width": 24.3,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_820059527_+u.png",
+     "pano": "4S3oSnFFdnQWqJgo8CgQGg",
+     "dist": 15.1,
+     "off_axis_deg": 19,
+     "fov": 80,
+     "tilt": 99,
+     "heading": 252,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2103081,-79.4674697,416a,80y,252h,99t/data=!3m7!1e1!3m5!1s4S3oSnFFdnQWqJgo8CgQGg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9%26panoid%3D4S3oSnFFdnQWqJgo8CgQGg%26yaw%3D252!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2103081,
+      "lon": -79.4674697
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 233,
+   "width": 24.3,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_820059527_-u.png",
+     "pano": "-KmLI1zwrQK5b0jFEHXE2A",
+     "dist": 26.3,
+     "off_axis_deg": 1,
+     "fov": 62,
+     "tilt": 95,
+     "heading": 52,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2099147,-79.4682608,419a,62y,52h,95t/data=!3m7!1e1!3m5!1s-KmLI1zwrQK5b0jFEHXE2A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3D-KmLI1zwrQK5b0jFEHXE2A%26yaw%3D52!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2099147,
+      "lon": -79.4682608
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 143,
+   "width": 37.9,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_820059527_+v.png",
+     "pano": "cZmhMOwhBzpy9IQERW-Hag",
+     "dist": 28.9,
+     "off_axis_deg": 7,
+     "fov": 78,
+     "tilt": 95,
+     "heading": 316,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2098906,-79.4674914,417a,78y,316h,95t/data=!3m7!1e1!3m5!1scZmhMOwhBzpy9IQERW-Hag!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3DcZmhMOwhBzpy9IQERW-Hag%26yaw%3D316!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2098906,
+      "lon": -79.4674914
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 323,
+   "width": 37.9,
+   "road": true,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_820059527_-v.png",
+     "pano": "ZxeifN4P3s8Zv29vcWCu2w",
+     "dist": 28.9,
+     "off_axis_deg": 4,
+     "fov": 78,
+     "tilt": 95,
+     "heading": 139,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2104444,-79.4681481,415a,78y,139h,95t/data=!3m7!1e1!3m5!1sZxeifN4P3s8Zv29vcWCu2w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3DZxeifN4P3s8Zv29vcWCu2w%26yaw%3D139!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2104444,
+      "lon": -79.4681481
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-10 04:41"
+}

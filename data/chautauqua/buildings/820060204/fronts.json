@@ -1,0 +1,121 @@
+{
+ "id": "820060204",
+ "addr": "55 Scott Avenue",
+ "name": "McKnight Hall",
+ "frame": "7c41002a3c354f79b4f8f03612f8cbc3710325b5efa5d190c8ce0abd8ec82b4b",
+ "faces": {
+  "+u": {
+   "bearing": 334,
+   "width": 13.5,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_820060204_+u.png",
+     "pano": "uETANBnKXdvFbmQEZhoIJQ",
+     "dist": 22.9,
+     "off_axis_deg": 12,
+     "fov": 55,
+     "tilt": 92,
+     "heading": 165,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2097749,-79.4708007,425a,55y,165h,92t/data=!3m7!1e1!3m5!1suETANBnKXdvFbmQEZhoIJQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3DuETANBnKXdvFbmQEZhoIJQ%26yaw%3D165!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2097749,
+      "lon": -79.4708007
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 154,
+   "width": 13.5,
+   "road": true,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_820060204_-u.png",
+     "pano": "bGjQEQaMDkSX8AWS2M9R4A",
+     "dist": 14.8,
+     "off_axis_deg": 5,
+     "fov": 61,
+     "tilt": 93,
+     "heading": 338,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2092259,-79.4705108,425a,61y,338h,93t/data=!3m7!1e1!3m5!1sbGjQEQaMDkSX8AWS2M9R4A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DbGjQEQaMDkSX8AWS2M9R4A%26yaw%3D338!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2092259,
+      "lon": -79.4705108
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 64,
+   "width": 28.2,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_820060204_+v.png",
+     "pano": "DO1HbzSb-wCBrSBhnGm4vA",
+     "dist": 20.0,
+     "off_axis_deg": 3,
+     "fov": 80,
+     "tilt": 92,
+     "heading": 240,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2095782,-79.4703701,425a,80y,240h,92t/data=!3m7!1e1!3m5!1sDO1HbzSb-wCBrSBhnGm4vA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3DDO1HbzSb-wCBrSBhnGm4vA%26yaw%3D240!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2095782,
+      "lon": -79.4703701
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 244,
+   "width": 28.2,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_820060204_-v.png",
+     "pano": "OGCYlvlQR6A-92TlWm2ECw",
+     "dist": 15.4,
+     "off_axis_deg": 2,
+     "fov": 80,
+     "tilt": 92,
+     "heading": 65,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2093786,-79.4708966,427a,80y,65h,92t/data=!3m7!1e1!3m5!1sOGCYlvlQR6A-92TlWm2ECw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3DOGCYlvlQR6A-92TlWm2ECw%26yaw%3D65!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2093786,
+      "lon": -79.4708966
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-10 04:42"
+}

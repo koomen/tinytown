@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The authored miniature is not reviewable because the invalid draft was not rendered; the last two images are generic fallback views and provide no evidence of the intended silhouette, colonnade, wings, facade treatment, or door placement.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The located SV3 view looks inward toward the monumental colonnaded principal facade, which maps to the +v face (SSE, toward Ames Avenue). However, the rendered blueprint reports no actual doors, and the author entrance plan is not evidence, so principal-entry implementation on +v cannot be verified. SV2 supports only secondary/basement access on -u; SV4 is heavily obscured and does not resolve rear service doors."
+ },
+ "issues": [
+  {
+   "severity": "broken",
+   "problem": "The draft fails schema validation at volumes[0](central).faces[+v].beltCourses, so no authored render was produced.",
+   "fix": "Replace `beltCourses` with supported face-schema elements such as `moldings` or `trim`, then render again."
+  },
+  {
+   "severity": "major",
+   "problem": "The actual door inventory is empty, leaving the principal portal absent or unverifiable despite SV3 clearly establishing the colonnaded +v entrance facade.",
+   "fix": "Add one unambiguous principal entrance on central +v within the recessed ivory colonnade; keep any -u or -v doors visibly secondary and avoid duplicating the principal portal."
+  },
+  {
+   "severity": "major",
+   "problem": "Recognizability and miniature quality cannot be audited from fallback imagery.",
+   "fix": "Resubmit authored overview and labeled four-face renders showing the long warm-brick block, flat dark roof, pale cornice, projecting end wings, monumental ivory colonnade, tall cream-trimmed windows, and rose awnings."
+  }
+ ]
+}

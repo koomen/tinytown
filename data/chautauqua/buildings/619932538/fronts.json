@@ -1,0 +1,121 @@
+{
+ "id": "619932538",
+ "addr": "21 Miller Avenue",
+ "name": "Smith Memorial Library",
+ "frame": "014624bd612dd7f99b2aa16e47e9db3f48d8b6aa4224a75e1563fdbc65b578e1",
+ "faces": {
+  "+u": {
+   "bearing": 330,
+   "width": 29.8,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_619932538_+u.png",
+     "pano": "aC4A-n5-BJkKzgPeKLrShg",
+     "dist": 28.0,
+     "off_axis_deg": 4,
+     "fov": 68,
+     "tilt": 95,
+     "heading": 146,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2089677,-79.4657889,419a,68y,146h,95t/data=!3m7!1e1!3m5!1saC4A-n5-BJkKzgPeKLrShg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3DaC4A-n5-BJkKzgPeKLrShg%26yaw%3D146!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2089677,
+      "lon": -79.4657889
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 150,
+   "width": 29.8,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_619932538_-u.png",
+     "pano": "FJ61cXAmHqmCgz_A5pZJoA",
+     "dist": 39.3,
+     "off_axis_deg": 11,
+     "fov": 55,
+     "tilt": 93,
+     "heading": 318,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2083565,-79.4651706,419a,55y,318h,93t/data=!3m7!1e1!3m5!1sFJ61cXAmHqmCgz_A5pZJoA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DFJ61cXAmHqmCgz_A5pZJoA%26yaw%3D318!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2083565,
+      "lon": -79.4651706
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 60,
+   "width": 18.0,
+   "road": true,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_619932538_+v.png",
+     "pano": "XrnhSVON-QKnJiVR96qR_A",
+     "dist": 9.8,
+     "off_axis_deg": 9,
+     "fov": 80,
+     "tilt": 100,
+     "heading": 249,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2087893,-79.465276,418a,80y,249h,100t/data=!3m7!1e1!3m5!1sXrnhSVON-QKnJiVR96qR_A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DXrnhSVON-QKnJiVR96qR_A%26yaw%3D249!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2087893,
+      "lon": -79.465276
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 240,
+   "width": 18.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_619932538_-v.png",
+     "pano": "ImiUy6K8XIl8HAheGVb16Q",
+     "dist": 10.3,
+     "off_axis_deg": 15,
+     "fov": 80,
+     "tilt": 100,
+     "heading": 45,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2085566,-79.4657869,419a,80y,45h,100t/data=!3m7!1e1!3m5!1sImiUy6K8XIl8HAheGVb16Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DImiUy6K8XIl8HAheGVb16Q%26yaw%3D45!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2085566,
+      "lon": -79.4657869
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-09 17:59"
+}

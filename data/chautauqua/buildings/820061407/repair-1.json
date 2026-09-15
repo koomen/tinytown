@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"03983deeca4b23a6363a6d6bb3d93eb3e3e84944ab8660e778b2abf669060f98\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#94776b\"},{\"op\":\"replace\",\"path\":\"/roofColor\",\"value\":\"#d3d2c8\"},{\"op\":\"replace\",\"path\":\"/volumes/@studio/faces/+v/doors/0/color\",\"value\":\"#f2efdf\"},{\"op\":\"replace\",\"path\":\"/volumes/@studio/plinth/height\",\"value\":0.1},{\"op\":\"replace\",\"path\":\"/volumes/@studio/plinth/color\",\"value\":\"#615e52\"}]}",
+ "cues": [
+  "Compact single-storey gabled studio",
+  "Muted brown walls and pale roof",
+  "Ivory entrance near the right end of the SW eave wall",
+  "Low, unobtrusive foundation"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The supplied catalog exposes no controls for siding texture, standing-seam roofing, upper-door glazing, automatic light removal, or wooden step material; these requested finish repairs remain unresolved.",
+  "Concealed window arrangements remain inferred and unchanged."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

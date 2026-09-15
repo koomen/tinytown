@@ -1,0 +1,15 @@
+{
+ "verdict": "repair",
+ "summary": "The cabin is a coherent, charming miniature with the expected reddish-brown walls, pale trim, low foundation, sparse windows, and light hipped roof. No obvious duplicate portal or major modeling defect is visible, but the principal entrance is not evidentially resolved.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The sole modeled door is on the -v/NE face (outward bearing 55\u00b0). The located SV1 camera looks ENE toward the opposite +v/SW face and is strongly obstructed by vegetation, so it neither shows nor corroborates a -v entrance. The north-up aerial establishes the roof/footprint but does not reveal a door. Thus the actual one-door inventory is internally clean but its face placement remains unsupported."
+ },
+ "issues": [
+  {
+   "severity": "broken",
+   "problem": "Principal-entry placement on -v is unresolved; neither SV1 nor the aerial verifies that facade.",
+   "fix": "Use a clear, geolocated view or other supplied facade-specific evidence to identify the entrance face, then retain exactly one principal door on that proven face and update steps/path accordingly."
+  }
+ ]
+}

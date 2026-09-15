@@ -1,0 +1,36 @@
+{
+ "blueprint_json": "{\"wall\":\"#98755e\",\"trim\":\"#dedbd0\",\"roofColor\":\"#686b61\",\"volumes\":[{\"id\":\"south_gate_marker\",\"u\":[-5.8,-5.2],\"v\":[2.8,5.0],\"bottom\":0,\"height\":3.1,\"roof\":{\"type\":\"flat\",\"lip\":false},\"plinth\":{\"height\":0.18,\"color\":\"#8d897b\"},\"faces\":{\"-u\":{\"signs\":[{\"text\":\"Chautauqua\",\"style\":\"board\",\"at\":0.5,\"y\":1.95,\"w\":2.05,\"h\":1.25}]},\"+u\":{},\"-v\":{},\"+v\":{}}},{\"id\":\"north_gate_post\",\"u\":[-5.7,-5.3],\"v\":[-3.8,-3.4],\"bottom\":0,\"height\":1.6,\"wall\":\"#b1b4a8\",\"roof\":{\"type\":\"flat\",\"lip\":false},\"faces\":{}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Open east\u2013west roadway, not an enclosed gatehouse.",
+  "Tall warm-toned marker beside the south verge.",
+  "Pale Chautauqua sign oriented toward the western approach.",
+  "Small opposing gate post; no overhead roof or raised slab."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV3",
+  "SV4 view in STREET-VIEWS atlas labelled SV4 (SV4 reference ID)"
+ ],
+ "uncertainties": [
+  "Vegetation conceals minor gate hardware; no enclosed booth is clearly established.",
+  "Marker dimensions and opposing post position are approximate.",
+  "The prominent lawn sign may stand beyond the authoring envelope; its lettering is condensed onto the southern marker rather than adding an unsupported building."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "open_lane_between_posts",
+   "face": "-u",
+   "role": "principal site entrance, not a building doorway",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "SV2",
+    "AERIAL"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

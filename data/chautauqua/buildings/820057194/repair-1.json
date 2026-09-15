@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"b5a7df2c5c58cdf58dacd6688e7ccea1834f7da7b70de7c91feecf96b5155d71\",\"operations\":[{\"op\":\"replace\",\"path\":\"/roofColor\",\"value\":\"#c6c9ca\"},{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#79574f\"}]}",
+ "cues": [
+  "Compact, single-storey brown studio",
+  "Simple silver-gray gable with projecting eaves",
+  "Tall, narrow windows with pale trim",
+  "Restrained entrance and low dark base"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The tree obscures the entrance; the existing single +u door is retained provisionally, not corroborated.",
+  "The catalog provides no documented gable-roof or wall-material selector; lighter roof color approximates silver metal but cannot eliminate shingles or supply standing seams.",
+  "Concealed elevations remain simplified."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal; provisional placement",
+   "evidence": [
+    "MAP and SV1 place +u toward the camera, but foliage obscures it.",
+    "AERIAL establishes the footprint, not the doorway."
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

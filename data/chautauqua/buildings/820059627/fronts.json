@@ -1,0 +1,180 @@
+{
+ "id": "820059627",
+ "addr": "54 Palestine Avenue",
+ "name": "Lenna Hall",
+ "frame": "876c2506e8b8af3c15a128a0f2d2ffa51a95d25a0fa2ae2ef69f478227f6751e",
+ "faces": {
+  "+u": {
+   "bearing": 73,
+   "width": 33.7,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_820059627_+u.png",
+     "pano": "JHVF4y5MiJuV8re0_mR3rQ",
+     "dist": 30.2,
+     "off_axis_deg": 4,
+     "fov": 70,
+     "tilt": 91,
+     "heading": 257,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2100265,-79.4706651,424a,70y,257h,91t/data=!3m7!1e1!3m5!1sJHVF4y5MiJuV8re0_mR3rQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DJHVF4y5MiJuV8re0_mR3rQ%26yaw%3D257!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2100265,
+      "lon": -79.4706651
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 253,
+   "width": 33.7,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_820059627_-u.png",
+     "pano": "57O2bPRWkpGHsSQ6mbrawg",
+     "dist": 33.8,
+     "off_axis_deg": 11,
+     "fov": 65,
+     "tilt": 91,
+     "heading": 84,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2098002,-79.4720381,428a,65y,84h,91t/data=!3m7!1e1!3m5!1s57O2bPRWkpGHsSQ6mbrawg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3D57O2bPRWkpGHsSQ6mbrawg%26yaw%3D84!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2098002,
+      "lon": -79.4720381
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 163,
+   "width": 52.4,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_820059627_+v.png",
+     "pano": "nbjTg90gPfq8T2tBsDiTBA",
+     "dist": 37.8,
+     "off_axis_deg": 7,
+     "fov": 80,
+     "tilt": 91,
+     "heading": 337,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2094425,-79.4710863,426a,80y,337h,91t/data=!3m7!1e1!3m5!1snbjTg90gPfq8T2tBsDiTBA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DnbjTg90gPfq8T2tBsDiTBA%26yaw%3D337!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2094425,
+      "lon": -79.4710863
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 343,
+   "width": 52.4,
+   "road": true,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_820059627_-v.png",
+     "pano": "FFy34tU2_xlu7HUQxBUnkw",
+     "dist": 31.1,
+     "off_axis_deg": 12,
+     "fov": 80,
+     "tilt": 91,
+     "heading": 176,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2103229,-79.4714133,427a,80y,176h,91t/data=!3m7!1e1!3m5!1sFFy34tU2_xlu7HUQxBUnkw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DFFy34tU2_xlu7HUQxBUnkw%26yaw%3D176!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2103229,
+      "lon": -79.4714133
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-10 04:36",
+ "extra_views": {
+  "requested": 2,
+  "status": "complete",
+  "photos": [
+   {
+    "pano": "uxFjIaQEjfsWXcc8SQzzRQ",
+    "position": {
+     "lat": 42.209483,
+     "lon": -79.4716272
+    },
+    "heading": 28,
+    "file": "front_820059627_oblique_1.png",
+    "face": "+v",
+    "kind": "oblique",
+    "coverage": true,
+    "fov": 73,
+    "tilt": 90,
+    "url": "https://www.google.com/maps/@42.209483,-79.4716272,3a,73y,28h,90t/data=!3m7!1e1!3m5!1suxFjIaQEjfsWXcc8SQzzRQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DuxFjIaQEjfsWXcc8SQzzRQ%26yaw%3D28!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D",
+    "date": "Jul 2012",
+    "dist": 52.6
+   },
+   {
+    "pano": "Cq187ZsciM8qF22Q-tIXSw",
+    "position": {
+     "lat": 42.2102138,
+     "lon": -79.4710413
+    },
+    "heading": 214,
+    "file": "front_820059627_oblique_2.png",
+    "face": "+u",
+    "kind": "oblique",
+    "coverage": true,
+    "fov": 80,
+    "tilt": 91,
+    "url": "https://www.google.com/maps/@42.2102138,-79.4710413,3a,80y,214h,91t/data=!3m7!1e1!3m5!1sCq187ZsciM8qF22Q-tIXSw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DCq187ZsciM8qF22Q-tIXSw%26yaw%3D214!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D",
+    "date": "May 2023",
+    "dist": 42.1
+   }
+  ],
+  "attempts": [
+   {
+    "requested_xz": [
+     -451.955,
+     -10.982499999999998
+    ],
+    "result": "captured",
+    "file": "front_820059627_oblique_1.png"
+   },
+   {
+    "requested_xz": [
+     -403.10333333333335,
+     -95.70666666666666
+    ],
+    "result": "captured",
+    "file": "front_820059627_oblique_2.png"
+   }
+  ],
+  "elapsed_seconds": 33.6185106660123
+ }
+}

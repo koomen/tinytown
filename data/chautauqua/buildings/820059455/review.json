@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The miniature captures a porch-house idea, but the target is not yet strongly recognizable: its massing, veranda, roof composition, and palette diverge too far from the gray-green Christian Science House.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The sole modeled exterior door is on +v (SE, toward Center Avenue). This agrees with the entrance visible beneath the veranda in located SV3, with supporting oblique context from SV2; the labeled +v render places that door on the same veranda face. No duplicated principal portal appears in the inventory."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The model reads as a long, plain rectangular block with a small end porch, unlike the reference\u2019s compact, irregular house silhouette with prominent intersecting gables.",
+   "fix": "Reshape the main mass and roof into the recognizable intersecting-gable composition, including the attic-windowed gable ends."
+  },
+  {
+   "severity": "major",
+   "problem": "The characteristic two-storey wraparound veranda is reduced and visually concentrated on one narrow end.",
+   "fix": "Extend the stacked veranda around the visible corner/long facade, using slender posts and railings as the dominant miniature feature."
+  },
+  {
+   "severity": "major",
+   "problem": "White walls, sparse trim, and token red stripes miss the gray-green clapboard, pale trim, and clearly projecting muted-red awnings.",
+   "fix": "Apply the gray-green palette and model readable awning canopies, porch trim, and paired attic windows with slightly exaggerated depth."
+  }
+ ]
+}

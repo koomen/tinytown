@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "{\"wall\":\"#715046\",\"trim\":\"#d4cbbb\",\"roofColor\":\"#999b91\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.9,2.9],\"v\":[-2,2],\"height\":2.65,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.25,\"maxH\":1.05,\"overhang\":0.28},\"plinth\":{\"height\":0.18,\"color\":\"#817e70\"},\"faces\":{\"+v\":{\"doors\":[{\"at\":0.28,\"type\":\"rect\",\"w\":0.9,\"h\":2.05,\"color\":\"#4b3b34\",\"surround\":\"#d4cbbb\",\"surroundW\":0.09,\"steps\":1}],\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.8,\"h\":1.05,\"at\":[0.76],\"trim\":\"#d4cbbb\",\"glass\":\"#48534f\"}}]},\"-v\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.8,\"h\":1.05,\"at\":[0.3,0.7],\"trim\":\"#d4cbbb\",\"glass\":\"#48534f\"}}]},\"+u\":{\"storeys\":[{\"y\":1.05,\"windows\":{\"type\":\"rect\",\"w\":0.8,\"h\":1.05,\"at\":[0.5],\"trim\":\"#d4cbbb\",\"glass\":\"#48534f\"}}]},\"-u\":{}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact, single-storey rectangular practice cabin.",
+  "Dark warm-brown walls with restrained pale trim.",
+  "Simple weathered-gray pitched roof with modest eaves.",
+  "Small, sparse windows and an understated entry."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Trees heavily obscure the target cabin in SV1; the larger buildings behind and to the right are separate structures.",
+  "Roof pitch, ridge direction, trim and window arrangement are approximate.",
+  "The principal door is provisionally placed on +v, facing the located camera; neither its face nor exact position is visually confirmed."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

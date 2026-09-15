@@ -1,0 +1,103 @@
+{
+  "_comment": "60 North Ave: 2-storey pale peach-beige vinyl colonial, side-gable dark-grey roof with the chimney at the NNE (+u) end of the ridge, three shuttered (near-black) windows upstairs, full-width open porch with white posts and railing on a shallow hip roof, front door at the left (+u) end of the porch, steps there too. A one-storey sun-porch wing on the SSW (-u) side continues the porch roof line. Road face -v; left (0) = +u = NNE (toward 68 North). The blue house in the -v photos is 68 North (+u side), the olive-green Foursquare is 54 North (-u side).",
+  "wall": "#e3d3bc",
+  "trim": "#f0ece3",
+  "roofColor": "#55585d",
+  "volumes": [
+    {
+      "id": "main",
+      "u": [-2.95, 5.45],
+      "v": [-5.1, 4.0],
+      "height": 6.0,
+      "roof": { "type": "gable", "ridge": "u", "pitch": 0.42, "maxH": 3.3, "overhang": 0.3 },
+      "chimneys": [ { "u": 4.9, "v": -0.55 } ],
+      "faces": {
+        "-v": {
+          "storeys": [
+            { "y": 3.7, "windows": { "type": "rect", "w": 1.0, "h": 1.4, "at": [0.2, 0.5, 0.8], "shutters": "#2c2e33", "glass": "#4e5966" } },
+            { "y": 1.4, "windows": { "type": "rect", "w": 1.3, "h": 1.5, "at": [0.5, 0.82], "glass": "#4e5966" } }
+          ],
+          "doors": [
+            { "at": 0.17, "y": 0.6, "type": "rect", "w": 1.0, "h": 2.1, "color": "#e9e4d8", "surround": "#f0ece3", "surroundW": 0.12 }
+          ],
+          "porches": [
+            { "style": "open", "range": [0, 1], "d": 2.4, "height": 2.7, "floorH": 0.6, "floorColor": "#8a8580",
+              "posts": 5, "postColor": "#f0ece3", "roof": "hip", "pitch": 0.2, "roofColor": "#55585d",
+              "railing": true, "steps": 4, "stepsAt": 0.17, "stepsW": 1.3 }
+          ]
+        },
+        "+u": {
+          "storeys": [
+            { "y": 3.7, "windows": { "type": "rect", "w": 1.0, "h": 1.4, "at": [0.3, 0.72], "glass": "#4e5966" } },
+            { "y": 1.2, "windows": { "type": "rect", "w": 1.1, "h": 1.4, "at": [0.25, 0.72], "glass": "#4e5966", "planter": "#b8434a" } }
+          ],
+          "doors": [
+            { "at": 0.48, "type": "rect", "w": 0.95, "h": 2.05, "color": "#e9e4d8", "surround": "#f0ece3", "surroundW": 0.1, "steps": 2 }
+          ]
+        },
+        "-u": {
+          "storeys": [
+            { "y": 3.7, "windows": { "type": "rect", "w": 1.0, "h": 1.4, "at": [0.3, 0.7], "glass": "#4e5966" } },
+            { "y": 6.7, "windows": { "type": "rect", "w": 0.6, "h": 0.8, "at": [0.5], "glass": "#4e5966", "sill": false } },
+            { "y": 1.2, "windows": { "type": "rect", "w": 1.1, "h": 1.4, "at": [0.7], "glass": "#4e5966" } }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 3.7, "windows": { "type": "rect", "w": 1.0, "h": 1.4, "at": [0.3, 0.7], "glass": "#4e5966" } },
+            { "y": 1.2, "windows": { "type": "rect", "w": 1.1, "h": 1.4, "at": [0.88], "glass": "#4e5966" } }
+          ]
+        }
+      }
+    },
+    {
+      "id": "sun-porch-wing",
+      "u": [-5.45, -2.95],
+      "v": [-7.5, -1.5],
+      "height": 3.2,
+      "roof": { "type": "hip", "ridge": "v", "pitch": 0.25, "maxH": 0.9, "overhang": 0.3 },
+      "faces": {
+        "-v": {
+          "storeys": [
+            { "y": 1.3, "windows": { "type": "rect", "w": 1.4, "h": 1.4, "at": [0.5], "glass": "#4e5966" } }
+          ]
+        },
+        "-u": {
+          "storeys": [
+            { "y": 1.3, "windows": { "type": "rect", "w": 1.2, "h": 1.4, "at": [0.25, 0.75], "glass": "#4e5966" } }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rear-addition",
+      "u": [-2.0, 4.5],
+      "v": [4.0, 7.5],
+      "height": 2.9,
+      "roof": { "type": "hip", "ridge": "u", "pitch": 0.25, "maxH": 1.0, "overhang": 0.3 },
+      "faces": {
+        "+v": {
+          "storeys": [
+            { "y": 1.2, "windows": { "type": "rect", "w": 1.1, "h": 1.3, "at": [0.3, 0.7], "glass": "#4e5966" } }
+          ]
+        },
+        "+u": {
+          "storeys": [
+            { "y": 1.2, "windows": { "type": "rect", "w": 1.1, "h": 1.3, "at": [0.5], "glass": "#4e5966" } }
+          ]
+        },
+        "-u": {
+          "storeys": [
+            { "y": 1.2, "windows": { "type": "rect", "w": 1.1, "h": 1.3, "at": [0.5], "glass": "#4e5966" } }
+          ]
+        }
+      }
+    }
+  ],
+  "details": [
+    { "type": "bush", "u": 2.8, "v": -8.6, "size": 0.9 },
+    { "type": "bush", "u": 0.9, "v": -8.7, "size": 0.8 },
+    { "type": "bush", "u": -1.2, "v": -8.6, "size": 0.9 },
+    { "type": "flag", "u": 5.2, "v": -8.1, "height": 3.0 }
+  ]
+}

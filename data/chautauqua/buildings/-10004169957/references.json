@@ -1,0 +1,303 @@
+{
+ "version": 3,
+ "id": "-10004169957",
+ "name": "Bryant Gate",
+ "location": "Chautauqua Institution New York",
+ "address": null,
+ "source_tags": {
+  "building": "gatehouse",
+  "miniature:open_lane": "yes"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 13.998,
+  "depth_v": 10.0,
+  "footprint_uv": [
+   [
+    -7.0,
+    -5.0
+   ],
+   [
+    7.0,
+    -5.0
+   ],
+   [
+    7.0,
+    5.0
+   ],
+   [
+    -7.0,
+    5.0
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 90,
+    "compass": "E",
+    "left_bearing": 180,
+    "right_bearing": 0,
+    "nearest_road_outward": null,
+    "nearest_road_hint": false
+   },
+   "-u": {
+    "bearing": 270,
+    "compass": "W",
+    "left_bearing": 0,
+    "right_bearing": 180,
+    "nearest_road_outward": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 17.5
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 180,
+    "compass": "S",
+    "left_bearing": 270,
+    "right_bearing": 90,
+    "nearest_road_outward": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 41.7
+    },
+    "nearest_road_hint": false
+   },
+   "-v": {
+    "bearing": 0,
+    "compass": "N",
+    "left_bearing": 90,
+    "right_bearing": 270,
+    "nearest_road_outward": {
+     "name": "Longfellow Avenue",
+     "circular": false,
+     "distance_m": 69.4
+    },
+    "nearest_road_hint": true
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/-10004169957/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/-10004169957/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/-10004169957/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_-10004169957_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2024399,
+    "lon": -79.4630752,
+    "position_xz": [
+     252.71,
+     772.57
+    ],
+    "position_uv": [
+     20.14,
+     -2.97
+    ],
+    "looking_bearing": 261.0,
+    "looking_compass": "W",
+    "image_left_bearing": 171.0,
+    "image_right_bearing": 351.0,
+    "target_center_offset_deg": 0.6,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 9,
+    "fov": 55,
+    "tilt": 100,
+    "near_road": {
+     "name": "Bryant Avenue",
+     "circular": false,
+     "distance_m": 2.7
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2024399,-79.4630752,422a,55y,261h,100t/data=!3m7!1e1!3m5!1spItqXZwJvNCC3OSUA1K4sw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DpItqXZwJvNCC3OSUA1K4sw%26yaw%3D261!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "u--leGOtMzLjizFe8vhKqQ",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/-10004169957/reference-1.jpg",
+   "sha256": "7b585f0424a005b2ebff42ab26a4d7879c928b986be4e556b84636b4f0a4d9e7"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_-10004169957_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2023695,
+    "lon": -79.4636456,
+    "position_xz": [
+     205.67,
+     780.41
+    ],
+    "position_uv": [
+     -26.9,
+     4.86
+    ],
+    "looking_bearing": 76.0,
+    "looking_compass": "ENE",
+    "image_left_bearing": 346.0,
+    "image_right_bearing": 166.0,
+    "target_center_offset_deg": 3.7,
+    "geometrically_facing_camera": [
+     "-u"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 14,
+    "fov": 55,
+    "tilt": 97,
+    "near_road": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 4.7
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2023695,-79.4636456,421a,55y,76h,97t/data=!3m7!1e1!3m5!1s4aWkDDV06j1OvrWlncPZYQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7%26panoid%3D4aWkDDV06j1OvrWlncPZYQ%26yaw%3D76!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "4aWkDDV06j1OvrWlncPZYQ",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/-10004169957/reference-2.jpg",
+   "sha256": "abb94bf925e96f5eb1d6413dbf04094edca5c2dc940deb5ee89319d929fadd7a"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_-10004169957_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.202196,
+    "lon": -79.4635067,
+    "position_xz": [
+     217.13,
+     799.72
+    ],
+    "position_uv": [
+     -15.44,
+     24.18
+    ],
+    "looking_bearing": 39.0,
+    "looking_compass": "NE",
+    "image_left_bearing": 309.0,
+    "image_right_bearing": 129.0,
+    "target_center_offset_deg": -6.4,
+    "geometrically_facing_camera": [
+     "-u",
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 39,
+    "fov": 55,
+    "tilt": 96,
+    "near_road": {
+     "name": "West Lake Road",
+     "circular": false,
+     "distance_m": 3.6
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.202196,-79.4635067,421a,55y,39h,96t/data=!3m7!1e1!3m5!1sNQQkPEgGROPKItBPG6ZHIg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3DNQQkPEgGROPKItBPG6ZHIg%26yaw%3D39!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "NQQkPEgGROPKItBPG6ZHIg",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/-10004169957/reference-3.jpg",
+   "sha256": "6e3ac3632292ea1509d6d14be7d5d7c3373b8fb5b1681ac26b8cec0cdbf814cb"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/front_-10004169957_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2026177,
+    "lon": -79.463325,
+    "position_xz": [
+     232.11,
+     752.78
+    ],
+    "position_uv": [
+     -0.46,
+     -22.76
+    ],
+    "looking_bearing": 179.0,
+    "looking_compass": "S",
+    "image_left_bearing": 89.0,
+    "image_right_bearing": 269.0,
+    "target_center_offset_deg": -0.2,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 1,
+    "fov": 55,
+    "tilt": 98,
+    "near_road": {
+     "name": "Bryant Avenue",
+     "circular": false,
+     "distance_m": 22.8
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2026177,-79.463325,422a,55y,179h,98t/data=!3m7!1e1!3m5!1sM-kVctgRoYxI8QocmfoBAw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8%26panoid%3DM-kVctgRoYxI8QocmfoBAw%26yaw%3D179!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "M-kVctgRoYxI8QocmfoBAw",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/-10004169957/reference-4.jpg",
+   "sha256": "8ed4ba5e0947222774eb561be07d5c1d3ad0f6f2745d91d5fd9ca5db48bd1e52"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua--20260910-044859-38562b/research/aerial_-10004169957.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/-10004169957/reference-5.jpg",
+   "sha256": "b114a4162917b44bd2e5775a1dc0cc99db6652569610a39c3e51122715408ad3"
+  }
+ ],
+ "search_query": "Bryant Gate Chautauqua Institution New York building exterior",
+ "search_candidates": [],
+ "warnings": [
+  "No useful image-search candidates; using available Street View/aerial evidence."
+ ]
+}

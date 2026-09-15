@@ -1,0 +1,34 @@
+{
+  "_comment": "Detached garage behind 37 Temple St (the stucco house 248288899 is 2 m off face -v). Gable end to Temple St (+u), ridge along u. Tan vinyl siding, slate-blue trim and fascia, grey shingle roof with wide eaves. +u: one white sectional door left of centre, and the right ~2.8 m (the -v side) is an open carport under the same roof, caricatured as a dark open bay. Other faces plain (no openings visible).",
+  "wall": "#c9bfad",
+  "trim": "#4a6878",
+  "roofColor": "#5a5e63",
+  "volumes": [
+    {
+      "id": "garage",
+      "u": [-3.9, 3.9],
+      "v": [-3.9, 3.9],
+      "height": 2.6,
+      "roof": {
+        "type": "gable",
+        "ridge": "u",
+        "pitch": 0.22,
+        "maxH": 1.7,
+        "overhang": 0.4,
+        "gableColor": "#c9bfad"
+      },
+      "faces": {
+        "+u": {
+          "doors": [
+            { "at": 0.3, "type": "garage", "w": 2.9, "h": 2.2, "color": "#ecebe6", "panels": 4, "lights": true },
+            { "at": 0.82, "type": "garage", "w": 2.6, "h": 2.3, "color": "#3a3c3f", "panels": 0, "lights": false }
+          ]
+        },
+        "-u": {},
+        "+v": {},
+        "-v": {}
+      }
+    }
+  ],
+  "details": []
+}

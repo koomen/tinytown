@@ -1,0 +1,282 @@
+{
+  "wall": "#78a6ae",
+  "trim": "#eee9da",
+  "roofColor": "#d0cec3",
+  "volumes": [
+    {
+      "id": "fuel_canopy",
+      "u": [
+        -16.578,
+        16.578
+      ],
+      "v": [
+        -3.903,
+        3.903
+      ],
+      "bottom": 4.35,
+      "height": 4.95,
+      "roof": {
+        "type": "flat",
+        "lip": false
+      },
+      "faces": {
+        "-v": {
+          "signs": [
+            {
+              "text": "QUICKLEE\u2019S",
+              "style": "navy",
+              "at": 0.12,
+              "y": 4.65,
+              "w": 5,
+              "h": 0.55
+            },
+            {
+              "text": "Mobil",
+              "style": "navy",
+              "at": 0.86,
+              "y": 4.65,
+              "w": 3.8,
+              "h": 0.55
+            }
+          ]
+        },
+        "+v": {},
+        "-u": {},
+        "+u": {}
+      },
+      "wall": "#78a6ae",
+      "cornice": {
+        "height": 0.4,
+        "overhang": 0.1,
+        "color": "#78a6ae",
+        "dentils": false
+      }
+    },
+    {
+      "id": "west_post",
+      "u": [
+        -11.25,
+        -10.75
+      ],
+      "v": [
+        -0.25,
+        0.25
+      ],
+      "bottom": -1.0,
+      "height": 4.35,
+      "wall": "#eee9da",
+      "roof": {
+        "type": "flat",
+        "lip": false,
+        "color": "#eee9da"
+      }
+    },
+    {
+      "id": "center_post",
+      "u": [
+        -0.25,
+        0.25
+      ],
+      "v": [
+        -0.25,
+        0.25
+      ],
+      "bottom": -1.0,
+      "height": 4.35,
+      "wall": "#eee9da",
+      "roof": {
+        "type": "flat",
+        "lip": false,
+        "color": "#eee9da"
+      }
+    },
+    {
+      "id": "east_post",
+      "u": [
+        10.75,
+        11.25
+      ],
+      "v": [
+        -0.25,
+        0.25
+      ],
+      "bottom": -1.0,
+      "height": 4.35,
+      "wall": "#eee9da",
+      "roof": {
+        "type": "flat",
+        "lip": false,
+        "color": "#eee9da"
+      }
+    },
+    {
+      "id": "west_dispenser",
+      "u": [
+        -7.9,
+        -6.1
+      ],
+      "v": [
+        -0.55,
+        0.55
+      ],
+      "bottom": 0,
+      "height": 2.05,
+      "wall": "#e7e5dc",
+      "trim": "#d1d0c7",
+      "roof": {
+        "type": "flat",
+        "lip": false,
+        "color": "#e7e5dc"
+      },
+      "plinth": {
+        "height": 0.5,
+        "color": "#315d9a"
+      },
+      "faces": {
+        "+v": {
+          "storeys": [
+            {
+              "y": 0.95,
+              "windows": {
+                "type": "rect",
+                "w": 1.15,
+                "h": 0.6,
+                "at": [
+                  0.5
+                ],
+                "glass": "#303b43",
+                "trim": "#656d70",
+                "mullions": false,
+                "interior": false
+              }
+            }
+          ],
+          "signs": [
+            {
+              "text": "Mobil",
+              "style": "navy",
+              "at": 0.5,
+              "y": 1.78,
+              "w": 1.3,
+              "h": 0.3
+            }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            {
+              "y": 0.95,
+              "windows": {
+                "type": "rect",
+                "w": 1.15,
+                "h": 0.6,
+                "at": [
+                  0.5
+                ],
+                "glass": "#303b43",
+                "trim": "#656d70",
+                "mullions": false,
+                "interior": false
+              }
+            }
+          ],
+          "signs": [
+            {
+              "text": "Mobil",
+              "style": "navy",
+              "at": 0.5,
+              "y": 1.78,
+              "w": 1.3,
+              "h": 0.3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "east_dispenser",
+      "u": [
+        6.1,
+        7.9
+      ],
+      "v": [
+        -0.55,
+        0.55
+      ],
+      "bottom": 0,
+      "height": 2.05,
+      "wall": "#e7e5dc",
+      "trim": "#d1d0c7",
+      "roof": {
+        "type": "flat",
+        "lip": false,
+        "color": "#e7e5dc"
+      },
+      "plinth": {
+        "height": 0.5,
+        "color": "#315d9a"
+      },
+      "faces": {
+        "+v": {
+          "storeys": [
+            {
+              "y": 0.95,
+              "windows": {
+                "type": "rect",
+                "w": 1.15,
+                "h": 0.6,
+                "at": [
+                  0.5
+                ],
+                "glass": "#303b43",
+                "trim": "#656d70",
+                "mullions": false,
+                "interior": false
+              }
+            }
+          ],
+          "signs": [
+            {
+              "text": "Mobil",
+              "style": "navy",
+              "at": 0.5,
+              "y": 1.78,
+              "w": 1.3,
+              "h": 0.3
+            }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            {
+              "y": 0.95,
+              "windows": {
+                "type": "rect",
+                "w": 1.15,
+                "h": 0.6,
+                "at": [
+                  0.5
+                ],
+                "glass": "#303b43",
+                "trim": "#656d70",
+                "mullions": false,
+                "interior": false
+              }
+            }
+          ],
+          "signs": [
+            {
+              "text": "Mobil",
+              "style": "navy",
+              "at": 0.5,
+              "y": 1.78,
+              "w": 1.3,
+              "h": 0.3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "details": []
+}

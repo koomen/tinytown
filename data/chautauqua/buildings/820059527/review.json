@@ -1,0 +1,20 @@
+{
+ "verdict": "repair",
+ "summary": "The miniature is recognizable: its long dark gabled sanctuary, rhythmic Gothic windows, raised stepped entrance front, and lower L-shaped wing capture the church well. The main architectural shortcomings are the overly plain wall finish and an unusable four-face presentation.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The principal entrance is correctly placed on +u (NE): geolocated SV1, viewed from Pratt Avenue toward WSW, shows the high stepped facade with grouped Gothic lights, brown double doors, and broad stairs; the labeled +u render and actual door inventory place exactly that composition on +u. The +v inventory contains only a small ground-level side door near the entrance, consistent with the reference photo, so there is no duplicated principal portal. SV4 faces the opposite -v side and does not contradict this placement."
+ },
+ "issues": [
+  {
+   "severity": "broken",
+   "problem": "The -v face render is entirely blank, while the +v view is heavily blocked by neighboring geometry, preventing a proper four-side visual audit.",
+   "fix": "Move or isolate the face-sheet cameras so every facade is centered and unobstructed, then regenerate the four-face sheet."
+  },
+  {
+   "severity": "minor",
+   "problem": "The walls read as flat pale gray panels rather than the characteristic pale warm brick visible in SV1 and WEB1.",
+   "fix": "Shift to a warmer buff tone and add restrained miniature-scale brick or masonry texture, preserving the clean caricature style."
+  }
+ ]
+}

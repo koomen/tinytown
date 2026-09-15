@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#d7eaf5" />
+  <script>
+    // Resolve the scene before first paint, including the loading screen.
+    { let time = new URLSearchParams(location.search).get('time');
+      if (time !== 'day' && time !== 'night') {
+        try { time = localStorage.getItem('town-time'); } catch {}
+      }
+      document.documentElement.dataset.time = time === 'night' ? 'night' : 'day';
+      document.querySelector('meta[name="theme-color"]').content = time === 'night' ? '#19253b' : '#d7eaf5';
+    }
+  </script>
+  <title>avon.town</title>
+  <meta name="description" content="A tiny, interactive diorama of Avon, New York." />
+  <link rel="canonical" href="https://avon.town/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="avon.town" />
+  <meta property="og:title" content="avon.town" />
+  <meta property="og:description" content="A tiny, interactive diorama of Avon, New York." />
+  <meta property="og:url" content="https://avon.town/" />
+  <meta property="og:image" content="https://avon.town/social-preview.jpg?v=genesee-circle" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Genesee Street storefronts and Memorial Park circle in the miniature town of Avon, New York." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="avon.town" />
+  <meta name="twitter:description" content="A tiny, interactive diorama of Avon, New York." />
+  <meta name="twitter:image" content="https://avon.town/social-preview.jpg?v=genesee-circle" />
+  <meta name="twitter:image:alt" content="Genesee Street storefronts and Memorial Park circle in the miniature town of Avon, New York." />
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+  <!-- Local module revisions are maintained by `town bake --viewer`. -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/",
+        "./src/alumni-hall-balcony.js": "./src/alumni-hall-balcony.js?v=c87e1e36d02f9909",
+        "./src/amphitheater-backstage.js": "./src/amphitheater-backstage.js?v=c87e1e36d02f9909",
+        "./src/amphitheater-garden-grade.js": "./src/amphitheater-garden-grade.js?v=c87e1e36d02f9909",
+        "./src/amphitheater-garden.js": "./src/amphitheater-garden.js?v=c87e1e36d02f9909",
+        "./src/amphitheater-grade.js": "./src/amphitheater-grade.js?v=c87e1e36d02f9909",
+        "./src/amphitheater-layout.js": "./src/amphitheater-layout.js?v=c87e1e36d02f9909",
+        "./src/amphitheater.js": "./src/amphitheater.js?v=c87e1e36d02f9909",
+        "./src/andriaccios-sign.js": "./src/andriaccios-sign.js?v=c87e1e36d02f9909",
+        "./src/athenaeum-front.js": "./src/athenaeum-front.js?v=c87e1e36d02f9909",
+        "./src/avon-emblem.js": "./src/avon-emblem.js?v=c87e1e36d02f9909",
+        "./src/awning.js": "./src/awning.js?v=c87e1e36d02f9909",
+        "./src/bake.js": "./src/bake.js?v=c87e1e36d02f9909",
+        "./src/barrel-roof.js": "./src/barrel-roof.js?v=c87e1e36d02f9909",
+        "./src/baseball-layout.js": "./src/baseball-layout.js?v=c87e1e36d02f9909",
+        "./src/baseball.js": "./src/baseball.js?v=c87e1e36d02f9909",
+        "./src/blueprint.js": "./src/blueprint.js?v=c87e1e36d02f9909",
+        "./src/boats.js": "./src/boats.js?v=c87e1e36d02f9909",
+        "./src/bootstrap.js": "./src/bootstrap.js?v=c87e1e36d02f9909",
+        "./src/bridge-grade.js": "./src/bridge-grade.js?v=c87e1e36d02f9909",
+        "./src/bridge-stonework.js": "./src/bridge-stonework.js?v=c87e1e36d02f9909",
+        "./src/bridge-wing.js": "./src/bridge-wing.js?v=c87e1e36d02f9909",
+        "./src/bridge.js": "./src/bridge.js?v=c87e1e36d02f9909",
+        "./src/camera-depth.js": "./src/camera-depth.js?v=c87e1e36d02f9909",
+        "./src/colors.js": "./src/colors.js?v=c87e1e36d02f9909",
+        "./src/context-recovery.js": "./src/context-recovery.js?v=c87e1e36d02f9909",
+        "./src/diorama-outline.js": "./src/diorama-outline.js?v=c87e1e36d02f9909",
+        "./src/far-geometry.js": "./src/far-geometry.js?v=c87e1e36d02f9909",
+        "./src/football-field.js": "./src/football-field.js?v=c87e1e36d02f9909",
+        "./src/foundation-support.js": "./src/foundation-support.js?v=c87e1e36d02f9909",
+        "./src/fountain-fish.js": "./src/fountain-fish.js?v=c87e1e36d02f9909",
+        "./src/fountain-relief.js": "./src/fountain-relief.js?v=c87e1e36d02f9909",
+        "./src/fountain.js": "./src/fountain.js?v=c87e1e36d02f9909",
+        "./src/gate-barrier.js": "./src/gate-barrier.js?v=c87e1e36d02f9909",
+        "./src/hultquist-center.js": "./src/hultquist-center.js?v=c87e1e36d02f9909",
+        "./src/isocontrols.js": "./src/isocontrols.js?v=c87e1e36d02f9909",
+        "./src/kit.js": "./src/kit.js?v=c87e1e36d02f9909",
+        "./src/lake-grade.js": "./src/lake-grade.js?v=c87e1e36d02f9909",
+        "./src/landmark-drape.js": "./src/landmark-drape.js?v=c87e1e36d02f9909",
+        "./src/landmark-frame.js": "./src/landmark-frame.js?v=c87e1e36d02f9909",
+        "./src/landmark-ribbon.js": "./src/landmark-ribbon.js?v=c87e1e36d02f9909",
+        "./src/landmarks.js": "./src/landmarks.js?v=c87e1e36d02f9909",
+        "./src/lenna-hall.js": "./src/lenna-hall.js?v=c87e1e36d02f9909",
+        "./src/lighting.js": "./src/lighting.js?v=c87e1e36d02f9909",
+        "./src/loading-progress.js": "./src/loading-progress.js?v=c87e1e36d02f9909",
+        "./src/main.js": "./src/main.js?v=c87e1e36d02f9909",
+        "./src/mapped-parking.js": "./src/mapped-parking.js?v=c87e1e36d02f9909",
+        "./src/massing.js": "./src/massing.js?v=c87e1e36d02f9909",
+        "./src/materials.js": "./src/materials.js?v=c87e1e36d02f9909",
+        "./src/noise.js": "./src/noise.js?v=c87e1e36d02f9909",
+        "./src/ornamental-paving.js": "./src/ornamental-paving.js?v=c87e1e36d02f9909",
+        "./src/palette.js": "./src/palette.js?v=c87e1e36d02f9909",
+        "./src/park-sign.js": "./src/park-sign.js?v=c87e1e36d02f9909",
+        "./src/parking.js": "./src/parking.js?v=c87e1e36d02f9909",
+        "./src/pavement.js": "./src/pavement.js?v=c87e1e36d02f9909",
+        "./src/pavilion.js": "./src/pavilion.js?v=c87e1e36d02f9909",
+        "./src/perimeter-layout.js": "./src/perimeter-layout.js?v=c87e1e36d02f9909",
+        "./src/perimeter.js": "./src/perimeter.js?v=c87e1e36d02f9909",
+        "./src/playground-frame.js": "./src/playground-frame.js?v=c87e1e36d02f9909",
+        "./src/playground.js": "./src/playground.js?v=c87e1e36d02f9909",
+        "./src/polygon-distance.js": "./src/polygon-distance.js?v=c87e1e36d02f9909",
+        "./src/quality.js": "./src/quality.js?v=c87e1e36d02f9909",
+        "./src/quicklees-signs.js": "./src/quicklees-signs.js?v=c87e1e36d02f9909",
+        "./src/railways.js": "./src/railways.js?v=c87e1e36d02f9909",
+        "./src/render-loop.js": "./src/render-loop.js?v=c87e1e36d02f9909",
+        "./src/rng.js": "./src/rng.js?v=c87e1e36d02f9909",
+        "./src/road-water-bridges.js": "./src/road-water-bridges.js?v=c87e1e36d02f9909",
+        "./src/road-water-crossings.js": "./src/road-water-crossings.js?v=c87e1e36d02f9909",
+        "./src/roof-union.js": "./src/roof-union.js?v=c87e1e36d02f9909",
+        "./src/school-entrance.js": "./src/school-entrance.js?v=c87e1e36d02f9909",
+        "./src/site-data.js": "./src/site-data.js?v=c87e1e36d02f9909",
+        "./src/site.js": "./src/site.js?v=c87e1e36d02f9909",
+        "./src/stadium-bleachers.js": "./src/stadium-bleachers.js?v=c87e1e36d02f9909",
+        "./src/stream-debug.js": "./src/stream-debug.js?v=c87e1e36d02f9909",
+        "./src/stream-format.js": "./src/stream-format.js?v=c87e1e36d02f9909",
+        "./src/stream-loader.js": "./src/stream-loader.js?v=c87e1e36d02f9909",
+        "./src/stream-policy.js": "./src/stream-policy.js?v=c87e1e36d02f9909",
+        "./src/stream-worker.js": "./src/stream-worker.js?v=c87e1e36d02f9909",
+        "./src/streaming.js": "./src/streaming.js?v=c87e1e36d02f9909",
+        "./src/street-grade.js": "./src/street-grade.js?v=c87e1e36d02f9909",
+        "./src/surface-assets.js": "./src/surface-assets.js?v=c87e1e36d02f9909",
+        "./src/surface-lod.js": "./src/surface-lod.js?v=c87e1e36d02f9909",
+        "./src/tennis-court.js": "./src/tennis-court.js?v=c87e1e36d02f9909",
+        "./src/terrain-grid.js": "./src/terrain-grid.js?v=c87e1e36d02f9909",
+        "./src/terrain-paint.js": "./src/terrain-paint.js?v=c87e1e36d02f9909",
+        "./src/tree-lod.js": "./src/tree-lod.js?v=c87e1e36d02f9909",
+        "./src/vegetation.js": "./src/vegetation.js?v=c87e1e36d02f9909",
+        "./src/vinyl-fence.js": "./src/vinyl-fence.js?v=c87e1e36d02f9909",
+        "./src/wall-union.js": "./src/wall-union.js?v=c87e1e36d02f9909",
+        "./src/watercourse.js": "./src/watercourse.js?v=c87e1e36d02f9909"
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js" />
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.core.js" />
+  <link rel="modulepreload" href="./src/main.js?v=c87e1e36d02f9909" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
+  <!-- Keep the viewer's module graph in the initial document load. The early
+       data entry overlaps map/texture transfer with Three.js downloads; the
+       deferred error handler is installed before either module executes. -->
+  <script defer src="./src/bootstrap.js?v=c87e1e36d02f9909"></script>
+  <script type="module" src="./src/site-data.js?v=c87e1e36d02f9909" data-startup></script>
+  <script type="module" src="./src/main.js?v=c87e1e36d02f9909" data-startup></script>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: "Nunito", -apple-system, "SF Pro Rounded", "Segoe UI", system-ui, sans-serif;
+      background: linear-gradient(180deg, #b5d9ef 0%, #d7eaf5 70%, #c5deee 100%);
+    }
+    #app { position: fixed; inset: 0; }
+    canvas { display: block; cursor: grab; }   /* open hand over the diorama… */
+    html.grabbing, html.grabbing * { cursor: grabbing !important; }   /* …closed hand while pulling it */
+
+    /* Loading bar: on screen from first paint until the first frame renders.
+       Opaque and in the page gradient, so the scene appears as it fades. */
+    #loading {
+      position: fixed;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background: linear-gradient(180deg, #b5d9ef 0%, #d7eaf5 70%, #c5deee 100%);
+      color: #7c6551;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      user-select: none;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+    #loading.done { opacity: 0; }
+    #loading.failed { pointer-events: auto; }
+    #loading.failed .track { display: none; }
+    .render-error {
+      position: fixed; inset: 0; z-index: 3; display: flex;
+      flex-direction: column; align-items: center; justify-content: center;
+      padding: 24px; text-align: center; background: #d7eaf5; color: #7c6551;
+      padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right))
+        max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
+    }
+    .render-error button {
+      font: inherit; padding: 8px 18px; border-radius: 999px;
+      border: 1px solid #b9906a; background: #fffaf2; color: inherit;
+    }
+    #loading .retry {
+      font: inherit;
+      color: inherit;
+      background: #fffaf2;
+      border: 1px solid #b9906a;
+      border-radius: 999px;
+      padding: 8px 18px;
+      cursor: pointer;
+    }
+    #loading .track {
+      box-sizing: border-box;
+      width: 200px;
+      height: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, 0.6);
+      overflow: hidden;
+    }
+    #loading .bar {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #d2ab84, #b9906a);
+      /* Width stays in the same coordinate space across every phase. Avoid
+         retargeted transform animations that can restart on mobile Safari. */
+      transition: width 0.18s linear;
+    }
+    @media (prefers-reduced-motion: reduce) { #loading .bar { transition: none; } }
+    #loading .what { margin: 0; }
+    #loading .error-details { width: min(340px, calc(100vw - 48px)); font-weight: 400; }
+    #loading .error-details summary { cursor: pointer; text-align: center; }
+    #loading .error-details pre {
+      max-height: 35vh; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere;
+      font-size: 11px; line-height: 1.5; user-select: text; -webkit-user-select: text;
+    }
+    #loading .original { color: inherit; }
+
+    /* Place title: a caption in the corner of the diorama, like the label on
+       a museum model. */
+    #place {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      padding: 120px 140px 30px 34px;   /* room for the wash below to fade out */
+      padding-bottom: max(30px, env(safe-area-inset-bottom));
+      padding-left: max(34px, env(safe-area-inset-left));
+      color: #4d3a2a;
+      user-select: none;
+      pointer-events: none;
+      text-shadow: 0 1px 0 rgba(255, 250, 240, 0.8), 0 2px 14px rgba(255, 246, 232, 0.9);
+      /* a wash of the parchment colour that keeps the text legible over grass */
+      background: radial-gradient(ellipse 120% 130% at 0% 100%, rgba(250, 243, 230, 0.9), rgba(250, 243, 230, 0.55) 45%, rgba(250, 243, 230, 0) 75%);
+    }
+    #place .name {
+      font-family: "Fraunces", "Iowan Old Style", "Palatino", Georgia, serif;
+      font-variation-settings: "opsz" 144;
+      font-weight: 500;
+      font-size: 52px;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      margin: 0;
+    }
+    #place .region {
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 21px;
+      line-height: 1.2;
+      margin: 5px 0 0 2px;
+      color: #7c6551;
+    }
+    #place .rule {
+      width: 48px;
+      height: 2px;
+      margin: 14px 0 10px 2px;
+      background: linear-gradient(90deg, #b9906a, rgba(185, 144, 106, 0));
+      border-radius: 1px;
+    }
+    #place .how {
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #6f5a47;
+      margin: 0 0 0 2px;
+    }
+    #place .how b { font-weight: 800; color: #4d3a2a; }
+
+    #time-toggle {
+      position: fixed; top: max(24px, env(safe-area-inset-top));
+      right: max(24px, env(safe-area-inset-right)); z-index: 1;
+      display: flex; align-items: center; gap: 9px;
+      min-height: 44px; padding: 0 17px;
+      border: 1px solid rgba(127, 99, 65, 0.2); border-radius: 999px;
+      background: rgba(255, 250, 239, 0.88); color: #614a32;
+      box-shadow: 0 3px 16px rgba(69, 50, 26, 0.08);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      font: 800 12px "Nunito", system-ui, sans-serif; letter-spacing: 0.02em;
+      cursor: pointer; transition: background 0.3s, color 0.3s, box-shadow 0.2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    #time-toggle[hidden] { display: none; }
+    #time-toggle:hover { box-shadow: 0 3px 20px rgba(69, 50, 26, 0.18); }
+    #time-toggle:focus-visible { outline: 2px solid #a77844; outline-offset: 4px; }
+    #time-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    #time-toggle .moon { display: none; }
+    html[data-time="night"], [data-time="night"] body, [data-time="night"] #loading {
+      background: linear-gradient(180deg, #111b38 0%, #374461 70%, #19253b 100%);
+      color: #e8d8be; color-scheme: dark;
+    }
+    [data-time="night"] #time-toggle {
+      color: #f4d8a5; border-color: rgba(210, 219, 245, 0.2);
+      background: rgba(28, 39, 62, 0.88); box-shadow: 0 3px 20px #10182d30;
+    }
+    [data-time="night"] #time-toggle:focus-visible { outline-color: #f4d8a5; }
+    [data-time="night"] #time-toggle .sun { display: none; }
+    [data-time="night"] #time-toggle .moon { display: block; }
+    [data-time="night"] #place {
+      color: #f6e5c8; text-shadow: 0 1px 12px #111b38;
+      background: radial-gradient(ellipse 120% 130% at 0% 100%, #142139ed, #14213980 45%, #14213900 75%);
+    }
+    [data-time="night"] #place .region, [data-time="night"] #place .how { color: #c4c9d8; }
+    [data-time="night"] #place .how b { color: #f6e5c8; }
+    [data-time="night"] .render-error { background: #19253b; color: #e8d8be; }
+    [data-time="night"] #loading .retry, [data-time="night"] .render-error button { background: #28354e; }
+    [data-time="night"] #loading .track { border-color: #99a6c455; background: #99a6c422; }
+    @media (max-width: 600px) {
+      #time-toggle { top: max(16px, env(safe-area-inset-top)); right: max(16px, env(safe-area-inset-right)); }
+      #place { max-width: 100vw; box-sizing: border-box; padding-right: 24px; }
+      #place .name { font-size: 38px; overflow-wrap: break-word; }
+    }
+    @media (prefers-reduced-motion: reduce) { #time-toggle { transition: none; } }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <button id="time-toggle" type="button" aria-label="Night scene" aria-pressed="false" title="Switch to nighttime" hidden>
+    <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4L19 5"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.1A8.8 8.8 0 0 1 9.9 3.5a8.8 8.8 0 1 0 10.6 10.6Z"/><path d="M17.5 3v4m-2-2h4"/></svg>
+    <span>Day</span>
+  </button>
+  <div id="place" hidden>
+    <h1 class="name"></h1>
+    <p class="region"></p>
+    <div class="rule"></div>
+    <p class="how"><b>drag</b> to pull the ground · <b>scroll</b> to zoom · <b>swipe sideways</b> to turn · <b>arrows</b> to glide</p>
+  </div>
+  <div id="loading">
+    <div class="track" role="progressbar" aria-label="Loading the miniature" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="bar"></div></div>
+    <p class="what">loading</p>
+    <button class="retry" type="button" hidden>Try again</button>
+    <a class="original" hidden>Try the original loader</a>
+    <details class="error-details" hidden><summary>Error details</summary><pre></pre></details>
+  </div>
+  <script>
+    // Give the initial module download its portion of the same overall bar.
+    { const bar = document.querySelector('#loading .bar'); bar.style.width = '14%'; bar.parentElement.setAttribute('aria-valuenow', '14'); }
+  </script>
+</body>
+</html>

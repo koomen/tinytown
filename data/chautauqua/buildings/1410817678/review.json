@@ -1,0 +1,15 @@
+{
+ "verdict": "repair",
+ "summary": "The compact gabled silhouette, pale roof, high square gable opening, low horizontal opening, and offset entry make the studio recognizable, but the masonry treatment conflicts with the characteristic timber-clad appearance.",
+ "orientation": {
+  "status": "correct",
+  "summary": "SV1 is geolocated in the +u/+v quadrant and looks SSE toward the studio, exposing the NW-facing +u gable and its NE side. The reference cues place the low opening and understated right-hand entry on that viewed gable. The render\u2019s sole door is likewise on +u at the right side; no duplicate principal portal appears on the other three labeled faces."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The model uses conspicuous red brickwork, while the reference shows brown timber/shingle-like wall cladding; this changes a defining visual characteristic.",
+   "fix": "Replace the brick courses with simplified warm-brown timber or square-shingle cladding, retaining the dark base and restrained trim."
+  }
+ ]
+}

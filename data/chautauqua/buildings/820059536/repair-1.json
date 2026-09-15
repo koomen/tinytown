@@ -1,0 +1,55 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"849f41b07ba04f89337e2a37e089a4efb51f818dcd3b6c4bbacc6fb7582d6dcd\",\"operations\":[{\"op\":\"replace\",\"path\":\"/volumes/@auditorium/roof\",\"value\":{\"type\":\"flat\",\"lip\":false}},{\"op\":\"remove\",\"path\":\"/volumes/@entrance/faces/+u/storeys\"},{\"op\":\"replace\",\"path\":\"/volumes/@entrance/faces/+u/signs\",\"value\":[{\"text\":\"NORTON MEMORIAL HALL\",\"style\":\"carved\",\"at\":0.5,\"y\":11.4,\"w\":10.8,\"h\":0.75},{\"text\":\"\u2726\",\"style\":\"stone\",\"at\":0.105,\"y\":10.45,\"w\":2.35,\"h\":3.3},{\"text\":\"\u2726\",\"style\":\"stone\",\"at\":0.895,\"y\":10.45,\"w\":2.35,\"h\":3.3}]}]}",
+ "cues": [
+  "Five ceremonial arches and broad entrance stairs",
+  "Pale masonry with ornamental corner panels",
+  "Long flat-roofed auditorium",
+  "Raised rear stage block"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV4",
+  "AERIAL WEB1"
+ ],
+ "uncertainties": [
+  "The supplied roof already specifies flat geometry despite the sloping render; disabling its lip may not resolve an underlying renderer discrepancy.",
+  "Stone ornamental signs abstract the relief panels using supported components.",
+  "SV3 shows an unrelated timber interior and was excluded."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "entrance",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "WEB1"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "rear",
+   "face": "-u",
+   "role": "service",
+   "evidence": [
+    "MAP",
+    "SV2"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "auditorium",
+   "face": "-v",
+   "role": "secondary",
+   "evidence": [
+    "MAP",
+    "SV4"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

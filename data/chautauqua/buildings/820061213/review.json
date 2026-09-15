@@ -1,0 +1,20 @@
+{
+ "verdict": "repair",
+ "summary": "The compact one-storey form, pale hipped roof, southwest window, and single side entrance make the studio recognizable, but conspicuous surface treatments weaken fidelity.",
+ "orientation": {
+  "status": "correct",
+  "summary": "SV1 is located southwest of the studio and looks northeast, so it jointly exposes the +v (WSW) and +u (SSE) faces. The reference shows the rectangular window on the southwest-facing +v wall and the entrance on the adjacent side. The render matches this with a +v window and one unique principal door on +u; no duplicated principal portal is present."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The model uses pronounced red-brick wall texture, whereas the street view shows a brown-clad studio without visible masonry coursing.",
+   "fix": "Replace the brick pattern with subdued brown siding or shingle-like cladding while retaining the existing massing and white trim."
+  },
+  {
+   "severity": "minor",
+   "problem": "The pale roof has a chunky shingle pattern rather than the reference\u2019s smoother pale-metal character.",
+   "fix": "Use a cleaner light metal roof treatment with subtle seams and keep the low hipped silhouette and projecting eaves."
+  }
+ ]
+}

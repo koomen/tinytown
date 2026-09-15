@@ -1,0 +1,24 @@
+{
+ "wall": "#c4ad76",
+ "trim": "#eeeae0",
+ "roofColor": "#666963",
+ "pavilion": {
+  "axis": "u",
+  "height": 4.5,
+  "pitch": 0.15,
+  "bents": 5,
+  "endPosts": 4,
+  "postWidth": 0.85,
+  "columnColor": "#c4ad76",
+  "roofType": "flat",
+  "trimColor": "#eeeae0",
+  "floorH": 0.15,
+  "floorColor": "#aaa597",
+  "wallH": 0.8,
+  "railing": false,
+  "seatingRows": 6,
+  "furniture": false
+ },
+ "volumes": [],
+ "details": []
+}

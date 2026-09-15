@@ -1,0 +1,55 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"c1126f5234daf7b78813c5a1a5191efb694d3fd072687dedbe58562c5d774fa0\",\"operations\":[{\"op\":\"replace\",\"path\":\"/volumes/@south_bookstore/roof/maxH\",\"value\":1.5},{\"op\":\"replace\",\"path\":\"/volumes/@south_bookstore/cornice/height\",\"value\":0.45},{\"op\":\"replace\",\"path\":\"/volumes/@south_bookstore/faces/+v/storeys/0/windows\",\"value\":{\"type\":\"rect\",\"w\":5.15,\"h\":3.65,\"at\":[0.125,0.375,0.625,0.875],\"trim\":\"#f1ecdf\",\"glass\":\"#688381\",\"mullions\":true,\"frameW\":0.14,\"interior\":false}},{\"op\":\"replace\",\"path\":\"/volumes/@south_bookstore/faces/+v/pilasters\",\"value\":{\"at\":[0.015,0.25,0.5,0.75,0.985],\"w\":0.45,\"d\":0.15,\"height\":4.4,\"color\":\"#a65f49\",\"cap\":\"#eee7d7\"}},{\"op\":\"replace\",\"path\":\"/volumes/@hall/cornice\",\"value\":{\"height\":0.55,\"overhang\":0.35,\"color\":\"#eee7d7\",\"dentils\":false}},{\"op\":\"replace\",\"path\":\"/volumes/@hall/faces/-v/storeys/0/windows\",\"value\":{\"type\":\"arch\",\"w\":2.7,\"h\":4.65,\"at\":[0.23,0.5,0.77],\"trim\":\"#eee7d7\",\"glass\":\"#667874\",\"frameW\":0.14,\"mullions\":true,\"interior\":false}},{\"op\":\"replace\",\"path\":\"/volumes/@hall/faces/-u/storeys/0/windows\",\"value\":{\"type\":\"arch\",\"w\":2.1,\"h\":4.3,\"at\":[0.09,0.31,0.48,0.69,0.92],\"trim\":\"#eee7d7\",\"glass\":\"#647776\",\"frameW\":0.14,\"mullions\":true,\"interior\":false}},{\"op\":\"add\",\"path\":\"/volumes/@hall/faces/-u/pilasters\",\"value\":{\"at\":[0.15,0.295,0.44,0.585,0.73,0.87],\"w\":0.35,\"d\":0.2,\"height\":5.85,\"color\":\"#eee7d7\",\"cap\":\"#eee7d7\"}}]}",
+ "cues": [
+  "L-shaped warm-brick hall and lower southeast bookstore wing.",
+  "Broad cream-framed bookstore glazing beneath a shallow front gable.",
+  "Tall arched hall windows and strengthened cream cornice rhythm.",
+  "Public entrances remain on Clark Brick Walk."
+ ],
+ "references_used": [
+  "MAP",
+  "SV2",
+  "SV3",
+  "SV4",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "SV1 shows an intervening house and vegetation, not usable target-facade detail.",
+  "Fine window grids are simplified to catalog mullions.",
+  "The dark central roof field remains uncorrected: the supplied mansard component does not document separate top coloring."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "hall",
+   "face": "-u",
+   "role": "principal public entry; left portal",
+   "evidence": [
+    "MAP",
+    "SV2"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "hall",
+   "face": "-u",
+   "role": "secondary public entry; right portal",
+   "evidence": [
+    "MAP",
+    "SV2"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "south_bookstore",
+   "face": "-u",
+   "role": "secondary bookstore entry",
+   "evidence": [
+    "MAP",
+    "SV2",
+    "SV3"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "blueprint_json": "{\"wall\":\"#dce0d8\",\"trim\":\"#f4f0e5\",\"roofColor\":\"#777b77\",\"volumes\":[{\"id\":\"gate_booth\",\"u\":[-1.4,1.4],\"v\":[-3.7,-2.1],\"bottom\":0,\"height\":2.45,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.22,\"maxH\":0.4,\"overhang\":0.22},\"plinth\":{\"height\":0.12,\"color\":\"#85867c\"},\"faces\":{\"+u\":{\"storeys\":[{\"y\":1.25,\"windows\":{\"type\":\"rect\",\"w\":0.68,\"h\":0.9,\"at\":[0.5],\"trim\":\"#f4f0e5\",\"glass\":\"#75877e\",\"interior\":false}}],\"signs\":[{\"text\":\"STOP\",\"style\":\"red\",\"at\":0.5,\"y\":0.75,\"w\":0.57,\"h\":0.48}]},\"-u\":{\"storeys\":[{\"y\":1.2,\"windows\":{\"type\":\"rect\",\"w\":0.72,\"h\":0.95,\"at\":[0.5],\"trim\":\"#f4f0e5\",\"glass\":\"#75877e\",\"interior\":false}}],\"signs\":[{\"text\":\"STOP\",\"style\":\"red\",\"at\":0.5,\"y\":0.7,\"w\":0.6,\"h\":0.5}]},\"+v\":{\"doors\":[{\"at\":0.72,\"type\":\"rect\",\"w\":0.75,\"h\":2.08,\"color\":\"#b7c2b9\",\"surround\":\"#f4f0e5\",\"surroundW\":0.09}],\"storeys\":[{\"y\":1.22,\"windows\":{\"type\":\"rect\",\"w\":0.85,\"h\":0.93,\"at\":[0.27],\"trim\":\"#f4f0e5\",\"glass\":\"#71847b\",\"interior\":false}}]},\"-v\":{}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Tiny pale-painted attendant booth beside an open road lane.",
+  "Low gray gable roof with white overhanging trim.",
+  "Red STOP signs beneath end windows.",
+  "Booth on the NNW side; keep the envelope mostly open."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV3",
+  "SV4 \u0628\u064a\u062a"
+ ],
+ "uncertainties": [
+  "Booth dimensions and position are approximate; the footprint is a gate envelope, not a building perimeter.",
+  "Lane-facing staff door is inferred from the oblique SV2 view; its exact position is uncertain.",
+  "White lattice gate and flagpole are omitted because the supplied component catalog lacks suitable standalone components."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "gate_booth",
+   "face": "+v",
+   "role": "secondary staff entrance facing the road lane",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "SV2"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

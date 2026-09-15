@@ -1,0 +1,20 @@
+{
+ "verdict": "repair",
+ "summary": "The simple one-storey gabled silhouette is recognizable and pleasantly consistent, but the wall treatment is too brick-like and the principal-entry placement is not resolved by the supplied evidence.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The located SV1 camera looks SE toward the -u/NNW gable, where the reference shows a mostly blank wall with a tiny attic vent; the labeled render matches that face correctly. The model\u2019s sole door is instead centered on the opposite +u/SSE face. Neither SV1 nor the north-up aerial reveals that face or proves it is the principal entrance, so the +u placement cannot be approved."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The only principal door is on +u, but no supplied source verifies an entrance on that face.",
+   "fix": "Obtain face-resolved evidence of the entrance or mark the placement unresolved and revise it to the evidenced face once confirmed; retain only one principal portal."
+  },
+  {
+   "severity": "minor",
+   "problem": "The heavy masonry/brick wall texture conflicts with the reference cabin\u2019s muted reddish-brown timber or shingle cladding.",
+   "fix": "Replace the brick pattern with subdued wood shingles or simple timber siding while preserving the brown palette."
+  }
+ ]
+}

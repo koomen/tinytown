@@ -1,0 +1,121 @@
+{
+ "id": "820059469",
+ "addr": "10 Roberts Avenue",
+ "name": "Chautauqua Post Office / Bookstore / Visitors Center",
+ "frame": "787762de8b18421c8fd2881f1919c10a5fa0eb9916105707cad7ce4c369d1974",
+ "faces": {
+  "+u": {
+   "bearing": 60,
+   "width": 39.4,
+   "road": true,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_820059469_+u.png",
+     "pano": "wzI4lckSgUqLOJoYbxbVFA",
+     "dist": 49.5,
+     "off_axis_deg": 1,
+     "fov": 55,
+     "tilt": 90,
+     "heading": 241,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2098423,-79.4649115,414a,55y,240h,90t/data=!3m7!1e1!3m5!1swzI4lckSgUqLOJoYbxbVFA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DwzI4lckSgUqLOJoYbxbVFA%26yaw%3D240!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2098423,
+      "lon": -79.4649115
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 240,
+   "width": 39.4,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_820059469_-u.png",
+     "pano": "ga8bfj5kmK4nPU6NWwHadA",
+     "dist": 32.2,
+     "off_axis_deg": 4,
+     "fov": 75,
+     "tilt": 91,
+     "heading": 64,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2093847,-79.4660382,418a,75y,64h,91t/data=!3m7!1e1!3m5!1sga8bfj5kmK4nPU6NWwHadA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3Dga8bfj5kmK4nPU6NWwHadA%26yaw%3D64!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2093847,
+      "lon": -79.4660382
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 150,
+   "width": 24.3,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_820059469_+v.png",
+     "pano": "ehiyteV_wy74VmxT0Gp_6w",
+     "dist": 24.2,
+     "off_axis_deg": 39,
+     "fov": 65,
+     "tilt": 91,
+     "heading": 9,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2092012,-79.4654848,418a,65y,9h,91t/data=!3m7!1e1!3m5!1sehiyteV_wy74VmxT0Gp_6w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DehiyteV_wy74VmxT0Gp_6w%26yaw%3D9!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2092012,
+      "lon": -79.4654848
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 330,
+   "width": 24.3,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_820059469_-v.png",
+     "pano": "a7j_gUX0U-yuUE6eS7Vgbg",
+     "dist": 22.9,
+     "off_axis_deg": 12,
+     "fov": 68,
+     "tilt": 92,
+     "heading": 138,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2098746,-79.4658665,418a,68y,138h,92t/data=!3m7!1e1!3m5!1sa7j_gUX0U-yuUE6eS7Vgbg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3Da7j_gUX0U-yuUE6eS7Vgbg%26yaw%3D138!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2098746,
+      "lon": -79.4658665
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-09 18:02"
+}

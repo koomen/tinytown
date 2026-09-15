@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The compact gabled cabin is charming and broadly recognizable, but its two most characteristic materials are misrepresented, and the principal-entry placement remains unresolved.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The located SV1 camera faces the WSW (-v) wall and clearly supports the tall pale-trimmed window there. For a head-on -v view, +u is image-left; that NNW gable is only obliquely and incompletely visible, so SV1 does not establish a principal door on +u. The map and aerial establish bearings and roof alignment but do not prove the entrance. The render inventory has one door on +u and no duplicate portal, but that placement lacks conclusive source evidence."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The sole principal door is assigned to +u without source evidence that actually locates the entrance there.",
+   "fix": "Obtain or supply a view that exposes the NNW (+u) gable or another geolocated entrance source; then retain or relocate the single principal door accordingly."
+  },
+  {
+   "severity": "major",
+   "problem": "The roof is rendered as gray shingles, while SV1 shows a pale standing-seam metal roof\u2014a strong identifying feature.",
+   "fix": "Replace the shingle texture with pale metal panels and visible longitudinal seams, retaining the simple gable and modest overhangs."
+  },
+  {
+   "severity": "major",
+   "problem": "The walls read as masonry brick rather than the warm brown cedar-shingle cladding visible in SV1.",
+   "fix": "Use a small staggered shingle pattern with subdued brown variation, avoiding brick-like mortar courses."
+  }
+ ]
+}

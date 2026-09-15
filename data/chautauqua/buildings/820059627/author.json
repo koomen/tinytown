@@ -1,0 +1,47 @@
+{
+ "blueprint_json": "{\"wall\":\"#925c3d\",\"trim\":\"#cbb38a\",\"roofColor\":\"#777872\",\"volumes\":[{\"id\":\"hall\",\"u\":[-7,26.2],\"v\":[-12.8,12.8],\"bottom\":0,\"height\":6.8,\"roof\":{\"type\":\"mansard\",\"h\":7,\"inset\":6.5,\"overhang\":0.5},\"plinth\":{\"height\":0.65,\"color\":\"#948c79\"},\"cornice\":{\"height\":0.35,\"overhang\":0.45,\"color\":\"#513c2c\",\"dentils\":false},\"beltCourses\":[{\"y\":5.1,\"height\":0.25,\"color\":\"#b18a58\"}],\"faces\":{\"+u\":{\"doors\":[{\"at\":0.5,\"type\":\"double\",\"y\":0.65,\"w\":3.4,\"h\":2.8,\"color\":\"#925733\",\"surround\":\"#b18654\",\"surroundW\":0.18,\"steps\":4},{\"at\":0.085,\"type\":\"arch\",\"y\":0.65,\"w\":2.1,\"h\":3,\"color\":\"#322d23\",\"surround\":\"#ceb58a\",\"surroundW\":0.48,\"steps\":1},{\"at\":0.915,\"type\":\"arch\",\"y\":0.65,\"w\":2.1,\"h\":3,\"color\":\"#322d23\",\"surround\":\"#ceb58a\",\"surroundW\":0.48,\"steps\":1}],\"buttresses\":{\"at\":[0.28,0.72],\"w\":1.25,\"d\":1.6,\"height\":6.7,\"color\":\"#cfb78b\"},\"storeys\":[{\"y\":5.55,\"windows\":{\"type\":\"rect\",\"w\":1.65,\"h\":0.85,\"at\":[0.12,0.21,0.35,0.45,0.55,0.65,0.79,0.88],\"trim\":\"#ad8050\",\"glass\":\"#514837\",\"interior\":false}}],\"signs\":[{\"text\":\"LENNA HALL\",\"style\":\"carved\",\"at\":0.5,\"y\":5.15,\"w\":6,\"h\":0.5}]},\"-u\":{},\"+v\":{},\"-v\":{}}},{\"id\":\"south_shoulder\",\"u\":[1,18.2],\"v\":[9,16.8],\"bottom\":0,\"height\":4.1,\"roof\":{\"type\":\"hip\",\"ridge\":\"u\",\"pitch\":0.32,\"maxH\":2.5,\"overhang\":0.5},\"plinth\":{\"height\":0.4,\"color\":\"#948c79\"},\"faces\":{\"+v\":{},\"+u\":{},\"-u\":{}}},{\"id\":\"north_shoulder\",\"u\":[-0.2,15.8],\"v\":[-16.8,-9],\"bottom\":0,\"height\":4.1,\"roof\":{\"type\":\"hip\",\"ridge\":\"u\",\"pitch\":0.32,\"maxH\":2.5,\"overhang\":0.5},\"plinth\":{\"height\":0.4,\"color\":\"#948c79\"},\"faces\":{\"-v\":{},\"+u\":{},\"-u\":{}}},{\"id\":\"rear_annex\",\"u\":[-24,-5],\"v\":[-5.5,8.8],\"bottom\":0,\"height\":4,\"roof\":{\"type\":\"hip\",\"ridge\":\"u\",\"pitch\":0.24,\"maxH\":2.8,\"overhang\":0.45},\"plinth\":{\"height\":0.4,\"color\":\"#948c79\"},\"faces\":{\"-u\":{},\"+v\":{},\"-v\":{}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Broad, steep gray roof with a flattened crown and deep dark eaves.",
+  "Warm reddish timber walls and a narrow clerestory band.",
+  "Two oversized tan buttresses frame the central stepped entrance.",
+  "Dark arched side portals flank the principal facade.",
+  "Low roof shoulders and an offset western rear annex."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV3",
+  "SV4AERIAL"
+ ],
+ "uncertainties": [
+  "Roof facets and diagonal footprint edges are simplified into overlapping catalog volumes.",
+  "SV3 shows only close-up siding; vegetation obscures the north elevation in SV4.",
+  "Arched portals are simplified onto the principal facade; their precise recessed or angled geometry is unresolved.",
+  "Concealed secondary elevations and dimensions are approximate."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "hall",
+   "face": "+u",
+   "role": "principal central entrance",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "WEB1"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "hall",
+   "face": "+u",
+   "role": "paired secondary arched portals flanking the principal entrance",
+   "evidence": [
+    "SV1",
+    "WEB1"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

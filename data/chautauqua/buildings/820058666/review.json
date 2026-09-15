@@ -1,0 +1,20 @@
+{
+ "verdict": "insufficient-evidence",
+ "summary": "The miniature has a recognizable compact brown-cabin silhouette, broad hipped roof, dark raised base, and the characteristic solitary white-trimmed ENE window. Its simple stylization is coherent, but the principal entrance cannot be verified from the supplied evidence.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The labeled sheet and door inventory place the sole principal door on -u, the WSW-facing end (248\u00b0). Located SV1 views the building from the ENE/NNW side and establishes the +u ENE end with its solitary window, but it cannot reveal the opposite -u end. The north-up aerial is too small to identify a door. Thus the -u placement is plausible and not duplicated, but remains unconfirmed; the nearby-road hints do not resolve it."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry orientation is unresolved because no supplied reference shows the model\u2019s WSW (-u) end.",
+   "fix": "Provide a geolocated view or sufficiently clear aerial/photograph showing the WSW end, then retain or relocate the single principal door accordingly."
+  },
+  {
+   "severity": "minor",
+   "problem": "The model roof reads as patchy gray/white shingles, while the street reference shows a more uniformly pale silver, metal-like roof.",
+   "fix": "Use a consistent pale-silver roof finish and reduce the prominent shingle pattern while preserving the broad hipped form."
+  }
+ ]
+}

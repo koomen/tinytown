@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The compact one-storey gabled silhouette is charming and recognizable, but the principal entrance remains unverified and several prominent finishes diverge from the reference.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "SV1 is located southwest of the studio and looks east, placing the +u (NW gable) and -v (SW eave side) toward the camera. The tree heavily obscures the +u face, while the visible -v wall shows a tall window but no clearly identifiable entrance. The model has exactly one door, on +u, so it avoids duplicate portals, but neither SV1 nor the north-up aerial establishes that placement."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry placement on +u is unsupported by the supplied located imagery; the relevant face is obscured in SV1.",
+   "fix": "Keep a single principal door, but obtain clear face-specific evidence before assigning it to +u; otherwise leave orientation unresolved."
+  },
+  {
+   "severity": "major",
+   "problem": "The model uses a shingle-pattern roof, while the reference prominently shows a pale silver standing-seam metal roof.",
+   "fix": "Replace the shingle texture with broad pale metal panels and subtle raised seams, retaining the simple gable and projecting eaves."
+  },
+  {
+   "severity": "minor",
+   "problem": "Brick-like wall texture and broad paired windows weaken the reference\u2019s restrained brown hut character and tall, narrow window cue.",
+   "fix": "Use a simpler muted brown siding/shingle treatment and emphasize tall, narrow pale-trimmed windows."
+  }
+ ]
+}

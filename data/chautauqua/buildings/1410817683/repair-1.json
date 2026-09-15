@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"ef0414ad3501ffbf465c860cf79a246d780f9b04555d636e55c9cb81563f136a\",\"operations\":[]}",
+ "cues": [
+  "Compact reddish-brown cabin",
+  "Muted gray gable roof with ridge along u",
+  "Dark centered attic vent on Hurst-facing gable",
+  "Low rectangular foundation opening",
+  "Simple painted window trim"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The principal entrance is not visible in supplied references. Retained the single -u portal as a concealed-elevation approximation, not a confirmed placement; moving it would be equally unsupported.",
+  "Side windows are inferred. The attic vent is simplified using a dark, unglazed-looking opening."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP establishes face directions; SV1 shows the opposite +u gable but does not establish the entry location. AERIAL does not resolve door placement."
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

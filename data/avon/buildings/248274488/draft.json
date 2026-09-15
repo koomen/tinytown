@@ -1,0 +1,82 @@
+{
+  "_comment": "84 Prospect St: Frontier (telephone company) exchange office. One-storey red brick Colonial Revival: a steep gable-roofed pavilion on the north half of the road face with a cream lunette over a big gridded (glass-block) window, and a lower hip-roofed south half with a shuttered window, the red 'frontier' sign, a round medallion and a dark side door at the Post Office end. Cream cornice/trim, dark slate roof. Road face -u; left (0) = -v = NNE. OSM's notch at the road/+v corner is not there in the photos (the hip wing is coplanar with the gable), so the block is modelled as a full rectangle.",
+  "wall": "#8e4b3f",
+  "trim": "#e6e0d0",
+  "roofColor": "#4b4e53",
+  "volumes": [
+    {
+      "id": "main",
+      "u": [-11.5, 11.5],
+      "v": [-6.2, 6.2],
+      "height": 3.3,
+      "roof": { "type": "hip", "ridge": "u", "pitch": 0.3, "maxH": 2.0, "overhang": 0.35 },
+      "cornice": { "height": 0.35, "overhang": 0.25, "color": "#e6e0d0" },
+      "faces": {
+        "-u": {
+          "storeys": [
+            { "y": 1.1,
+              "windows": { "type": "rect", "w": 1.1, "h": 1.3, "at": [0.64], "trim": "#e6e0d0", "glass": "#b9c4c8", "shutters": "#e6e0d0" } },
+            { "y": 1.7,
+              "windows": { "type": "round", "w": 0.6, "h": 0.6, "at": [0.81], "trim": "#e6e0d0", "glass": "#e6e0d0", "mullions": false, "sill": false } }
+          ],
+          "signs": [
+            { "text": "frontier", "style": "red", "at": 0.52, "y": 1.45, "w": 1.3, "h": 0.6 }
+          ],
+          "doors": [
+            { "at": 0.93, "type": "rect", "w": 1.0, "h": 2.1, "color": "#3b3a3a", "surround": "#e6e0d0", "surroundW": 0.1, "steps": 1, "lamp": true }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            { "y": 1.1,
+              "windows": { "type": "rect", "w": 1.1, "h": 1.3, "at": [0.3, 0.55, 0.8], "trim": "#e6e0d0", "glass": "#b9c4c8" } }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            { "y": 1.1,
+              "windows": { "type": "rect", "w": 1.1, "h": 1.3, "at": [0.22, 0.4], "trim": "#e6e0d0", "glass": "#b9c4c8" } }
+          ],
+          "doors": [
+            { "at": 0.08, "type": "rect", "w": 1.0, "h": 2.1, "color": "#3b3a3a", "surround": "#e6e0d0", "surroundW": 0.1, "steps": 2 }
+          ]
+        },
+        "+u": {
+          "storeys": [
+            { "y": 1.1,
+              "windows": { "type": "rect", "w": 1.1, "h": 1.3, "at": [0.3, 0.72], "trim": "#e6e0d0", "glass": "#b9c4c8" } }
+          ]
+        }
+      }
+    },
+    {
+      "id": "gable-pavilion",
+      "u": [-11.6, 11.5],
+      "v": [-6.25, -0.6],
+      "height": 3.3,
+      "roof": { "type": "gable", "ridge": "u", "pitch": 0.5, "maxH": 2.6, "overhang": 0.35, "gableColor": "#8e4b3f" },
+      "cornice": { "height": 0.35, "overhang": 0.25, "color": "#e6e0d0" },
+      "faces": {
+        "-u": {
+          "storeys": [
+            { "y": 0.9,
+              "windows": { "type": "rect", "w": 2.4, "h": 1.7, "at": [0.5], "trim": "#e6e0d0", "glass": "#c9d1d3", "mullions": true } },
+            { "y": 3.55,
+              "windows": { "type": "arch", "w": 1.5, "h": 1.0, "at": [0.5], "trim": "#e6e0d0", "glass": "#c9d1d3", "sill": false } }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            { "y": 1.1,
+              "windows": { "type": "rect", "w": 1.1, "h": 1.3, "at": [0.5, 0.72, 0.88], "trim": "#e6e0d0", "glass": "#b9c4c8" } }
+          ]
+        }
+      }
+    }
+  ],
+  "details": [
+    { "type": "bush", "u": -13.0, "v": -5.2, "size": 1.1 },
+    { "type": "bush", "u": -13.0, "v": -2.0, "size": 1.0 },
+    { "type": "bush", "u": -13.0, "v": 2.6, "size": 1.0 }
+  ]
+}

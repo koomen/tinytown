@@ -1,0 +1,33 @@
+{
+ "blueprint_json": "{\"wall\":\"#895747\",\"trim\":\"#c5bba5\",\"roofColor\":\"#777b73\",\"volumes\":[{\"id\":\"studio\",\"u\":[-2.717,2.717],\"v\":[-2.16,2.16],\"bottom\":0,\"height\":3.05,\"roof\":{\"type\":\"gable\",\"ridge\":\"u\",\"pitch\":0.39,\"maxH\":1.68,\"overhang\":0.18},\"plinth\":{\"height\":0.16,\"color\":\"#666259\"},\"faces\":{\"-u\":{\"storeys\":[{\"y\":0.35,\"windows\":{\"type\":\"rect\",\"w\":1.2,\"h\":0.43,\"at\":[0.5],\"trim\":\"#534a40\",\"glass\":\"#292f2e\",\"mullions\":false,\"interior\":false}},{\"y\":3.48,\"windows\":{\"type\":\"rect\",\"w\":0.58,\"h\":0.58,\"at\":[0.5],\"trim\":\"#72503f\",\"glass\":\"#503d34\",\"mullions\":false,\"interior\":false}}]},\"+u\":{\"doors\":[{\"at\":0.5,\"type\":\"rect\",\"w\":0.92,\"h\":2.08,\"color\":\"#684d3e\",\"surround\":\"#b9ad93\",\"surroundW\":0.09,\"steps\":1}]},\"+v\":{},\"-v\":{\"storeys\":[{\"y\":1.25,\"windows\":{\"type\":\"rect\",\"w\":0.65,\"h\":1.05,\"at\":[0.5],\"trim\":\"#c5bba5\",\"glass\":\"#56635e\",\"mullions\":false}}]}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact reddish-brown timber cabin",
+  "Steep simple gable with ridge along u",
+  "Pale narrow roof-edge trim",
+  "Small dark attic vent centered on NNW gable",
+  "Wide dark vent low on the otherwise blank gable"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Entrance is not visible; the single +u entry is a provisional concealed-end placement, not corroborated.",
+  "Hidden-side window and dimensions are simplified estimates.",
+  "Catalog openings approximate the two visible ventilation grilles; siding texture is omitted."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

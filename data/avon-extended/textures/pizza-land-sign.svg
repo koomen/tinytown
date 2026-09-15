@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="200" viewBox="0 0 1200 200">
+  <title>Pizza Land — Est. 1960 — The Best Pizza Anywhere</title>
+  <!-- Red sign with pale rounded ends, central date medallion and ribbon,
+       redrawn from the exterior sign at 19 Park Place, Avon, New York. -->
+  <g stroke-linejoin="round">
+    <rect x="9" y="17" width="1182" height="137" rx="68.5" fill="#eee9d8" stroke="#807f72" stroke-width="6"/>
+    <rect x="53" y="21" width="1094" height="130" fill="#f4efde" stroke="#8e8b7d" stroke-width="3"/>
+    <rect x="67" y="32" width="1066" height="108" fill="#b53432"/>
+    <g fill="#f6f0df" font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="113" text-anchor="middle">
+      <text x="322" y="119" textLength="452" lengthAdjust="spacingAndGlyphs">PIZZA</text>
+      <text x="878" y="119" textLength="442" lengthAdjust="spacingAndGlyphs">LAND</text>
+    </g>
+    <ellipse cx="600" cy="84" rx="61" ry="67" fill="#b53432" stroke="#f6f0df" stroke-width="5"/>
+    <g fill="#f6f0df" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="bold" text-anchor="middle">
+      <text x="600" y="77" font-size="33">EST</text>
+      <text x="600" y="111" font-size="35">1960</text>
+    </g>
+    <path d="M416 152 L351 153 L368 169 L346 183 L421 177 M784 152 L849 153 L832 169 L854 183 L779 177" fill="#e9e7dc" stroke="#454a47" stroke-width="4"/>
+    <path d="M411 150 Q600 139 789 150 L783 182 Q600 172 417 182 Z" fill="#f3f0e4" stroke="#454a47" stroke-width="4"/>
+    <text x="600" y="170" fill="#343b38" font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="20" text-anchor="middle" textLength="344" lengthAdjust="spacingAndGlyphs">“THE BEST PIZZA ANYWHERE”</text>
+  </g>
+</svg>

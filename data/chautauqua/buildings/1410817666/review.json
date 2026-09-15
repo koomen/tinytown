@@ -1,0 +1,15 @@
+{
+ "verdict": "insufficient-evidence",
+ "summary": "The miniature is a coherent, charming single-storey brick practice hut with a clear gabled silhouette, pale roof, cream trim, restrained windows, and one non-duplicated portal. No obvious modeling defects are visible, but the principal entrance cannot be verified from the supplied evidence.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The actual door inventory places the sole entrance on -u, outward SE at 145\u00b0. The labeled face sheet consistently shows that door only on -u, while +u has one window and \u00b1v have windows. However, located SV1 approaches from the southwest and looks ENE nearly head-on toward the -v face; vegetation substantially obscures the target and does not establish whether the principal door is on -u. The north-up aerial clarifies the rectangular roof alignment but not facade openings. Thus neither the map nor aerial verifies the -u entrance."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry placement on -u remains unsubstantiated; the only geolocated street view addresses -v and is heavily occluded.",
+   "fix": "Provide a located, unobstructed view showing the SE-facing -u facade or another reliable site-specific source that identifies the entrance face; otherwise revise the door only after such evidence resolves its placement."
+  }
+ ]
+}

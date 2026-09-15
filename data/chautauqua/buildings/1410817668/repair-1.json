@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"16bbc20a1fcfd890d3b0d041af84c9883b116e06e7c007957193a3a769b20c4d\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#986454\"},{\"op\":\"replace\",\"path\":\"/roofColor\",\"value\":\"#dddcd2\"},{\"op\":\"replace\",\"path\":\"/volumes/@studio/roof/overhang\",\"value\":0.18},{\"op\":\"remove\",\"path\":\"/volumes/@studio/faces/-v/storeys\"}]}",
+ "cues": [
+  "Compact reddish-brown gabled studio.",
+  "Pale roof with modest eaves.",
+  "White-trimmed southwest window near the entrance end.",
+  "Southeast gable entry with three steps."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Timber cladding and smooth metal roofing cannot be specified through the supplied catalog; palette changes approximate their appearance.",
+  "The blueprint already places the observed window correctly on +v; the uncorroborated -v window was removed. Concealed elevations remain simplified."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

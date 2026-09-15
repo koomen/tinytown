@@ -1,0 +1,20 @@
+{
+ "verdict": "ready",
+ "summary": "A charming, readily recognizable Lenna Hall caricature. The broad steep truncated hip roof, deep eaves, reddish walls, clerestory strip, paired pale buttresses, central entrance, and flanking arches carry the identity well; the simplified annexes remain coherent at miniature scale.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The principal facade is correctly assigned to +u (outward ENE). Located SV1 views inward from east toward +u and shows the distinctive central entrance framed by two buttresses with dark arched portals at both sides, matching the +u render. SV2 views the opposite -u side and supports it being the comparatively plain rear. The actual inventory contains one central double door and two flanking arched doors only on +u, with no duplicated principal portal on the other faces."
+ },
+ "issues": [
+  {
+   "severity": "minor",
+   "problem": "The large flattened roof crown reads as a smooth, pale slab in the overview, unlike the continuously shingled gray roof in the references.",
+   "fix": "Apply the same shingle material and compatible gray tone to the crown, retaining only a subtle change in roof pitch."
+  },
+  {
+   "severity": "minor",
+   "problem": "The principal entrance is recognizable but its steps, landing, and railings are simplified enough to weaken the welcoming pavilion-like character visible in WEB1.",
+   "fix": "Add a clearer broad stair/landing and short dark railings beneath the central doors while keeping the forms chunky and miniature-friendly."
+  }
+ ]
+}

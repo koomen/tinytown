@@ -1,0 +1,121 @@
+{
+ "id": "820059454",
+ "addr": "17 Vincent Avenue",
+ "name": "The Chautauquan Daily / Logan Dormitory",
+ "frame": "1eb3d269acb9c3ca0486baa4e58c9a657bc305b84b5c771502bde2a73289bb3a",
+ "faces": {
+  "+u": {
+   "bearing": 232,
+   "width": 11.9,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_820059454_+u.png",
+     "pano": "1gf8uPU8QWdzGvITmMBzLQ",
+     "dist": 18.0,
+     "off_axis_deg": 12,
+     "fov": 55,
+     "tilt": 98,
+     "heading": 40,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2089902,-79.4669535,421a,55y,40h,98t/data=!3m7!1e1!3m5!1s1gf8uPU8QWdzGvITmMBzLQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8%26panoid%3D1gf8uPU8QWdzGvITmMBzLQ%26yaw%3D40!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2089902,
+      "lon": -79.4669535
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 52,
+   "width": 11.9,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_820059454_-u.png",
+     "pano": "YASunWoRvnpaLUr4dnkKRQ",
+     "dist": 15.1,
+     "off_axis_deg": 2,
+     "fov": 55,
+     "tilt": 99,
+     "heading": 229,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2093655,-79.4663963,419a,55y,229h,99t/data=!3m7!1e1!3m5!1sYASunWoRvnpaLUr4dnkKRQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9%26panoid%3DYASunWoRvnpaLUr4dnkKRQ%26yaw%3D229!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2093655,
+      "lon": -79.4663963
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 322,
+   "width": 29.3,
+   "road": true,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_820059454_+v.png",
+     "pano": "JeVz2dkiEE4bz-y6pLDbOA",
+     "dist": 54.1,
+     "off_axis_deg": 2,
+     "fov": 55,
+     "tilt": 92,
+     "heading": 144,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2096304,-79.4671048,417a,55y,144h,92t/data=!3m7!1e1!3m5!1sJeVz2dkiEE4bz-y6pLDbOA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3DJeVz2dkiEE4bz-y6pLDbOA%26yaw%3D144!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2096304,
+      "lon": -79.4671048
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 142,
+   "width": 29.3,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_820059454_-v.png",
+     "pano": "LNbcRdPCZOGlLExjAGI3tg",
+     "dist": 20.9,
+     "off_axis_deg": 10,
+     "fov": 80,
+     "tilt": 97,
+     "heading": 332,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2089885,-79.4665101,418a,80y,332h,97t/data=!3m7!1e1!3m5!1sLNbcRdPCZOGlLExjAGI3tg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7%26panoid%3DLNbcRdPCZOGlLExjAGI3tg%26yaw%3D332!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2089885,
+      "lon": -79.4665101
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-09 17:57"
+}

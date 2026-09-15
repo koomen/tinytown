@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The miniature has the right cream-and-gray palette and a plausible theater footprint, but its low generic massing and reduced entry treatment miss the reference building\u2019s most recognizable character.",
+ "orientation": {
+  "status": "correct",
+  "summary": "SV2 is a located, nearly head-on view of the NE-facing -u facade and shows the long veranda with the principal dark double doors. The labeled render places one dark double-door portal on -u, and the actual inventory confirms that sole door at outward bearing 56\u00b0 toward Pratt Avenue. No duplicated principal portal is visible; SV4 is an interior view and does not contradict this placement."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The model reads as a low single-story pavilion, while the street views show a taller, more vertical building form; the side elevation in SV1 is especially characteristic.",
+   "fix": "Increase the wall/eave height and restore the taller side-facade proportions while retaining the caricature scale."
+  },
+  {
+   "severity": "major",
+   "problem": "The principal -u entrance lacks the long raised timber veranda, prominent stairs, railings, posts, and sheltered porch depth visible in SV2.",
+   "fix": "Build out a continuous raised veranda across the entrance facade with posts, railing, steps, and the dark double doors centered among tall flanking windows."
+  },
+  {
+   "severity": "major",
+   "problem": "The oversized simple hip roof and recessed roof pocket do not capture the aerial\u2019s articulated intersecting roof silhouette and cross-gable character.",
+   "fix": "Reshape the roof into clearly legible linked hipped and cross-gabled volumes, emphasizing the entrance gable and avoiding the courtyard-like recess."
+  }
+ ]
+}

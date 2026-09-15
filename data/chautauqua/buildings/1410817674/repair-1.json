@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"22199a5cab47d8519f3e98b3eb010a2cf6879c5a42555a470f7722ca352d2a26\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#75604a\"},{\"op\":\"replace\",\"path\":\"/volumes/@studio/height\",\"value\":2.65},{\"op\":\"replace\",\"path\":\"/volumes/@studio/roof/pitch\",\"value\":0.2},{\"op\":\"replace\",\"path\":\"/volumes/@studio/roof/maxH\",\"value\":0.86},{\"op\":\"replace\",\"path\":\"/volumes/@studio/faces/+u/storeys/1/y\",\"value\":2.8}]}",
+ "cues": [
+  "Low brown practice hut with a shallow gray gable roof.",
+  "Single corner entrance on the northwest gable.",
+  "Low dark grille and small gable vent.",
+  "Restrained pale-trimmed southwest window."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The supplied catalog exposes no siding or wall-texture control; subdued brown reduces the masonry appearance but cannot replace brick with vertical siding.",
+  "Concealed elevations remain simplified."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

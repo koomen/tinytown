@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"0b12703ff90fac8771fc83965488f5bec514f5c7f148921019e579d109d17c28\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#a2734d\"},{\"op\":\"add\",\"path\":\"/volumes/@rear_ac/roofColor\",\"value\":\"#454b4b\"},{\"op\":\"add\",\"path\":\"/volumes/@rear_ac/trim\",\"value\":\"#454b4b\"}]}",
+ "cues": [
+  "Compact cinnamon-brown cabin with a simple gable roof.",
+  "Muted gray roof with restrained tan edging.",
+  "Tiny high vent on the northwest gable.",
+  "Low, shallow charcoal AC box; no northwest entrance."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The sole -u/SE entrance remains a concealed-elevation assumption, not a verified placement; retained without duplication.",
+  "Wood/shingle cladding is visible, but the supplied catalog exposes no wall-texture control. Palette adjustments cannot remove renderer-generated brickwork.",
+  "The northeast window is inferred."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "SV1 confirms the opposite +u gable has equipment but no visible door; neither SV1 nor AERIAL reveals the proposed entrance."
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

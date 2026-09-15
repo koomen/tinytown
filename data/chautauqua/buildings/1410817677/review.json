@@ -1,0 +1,25 @@
+{
+ "verdict": "insufficient-evidence",
+ "summary": "The compact gabled cabin silhouette is recognizable, but fa\u00e7ade materials and the northwest equipment treatment weaken the match, and the principal entrance cannot be verified from the supplied references.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "Located SV1 looks SSE toward the +u/NW gable and clearly shows a tiny high vent and low AC unit, with no principal door. The model instead places its sole door on the opposite -u/SE gable. This is plausible but unconfirmed: neither SV1 nor the aerial reveals that opposite fa\u00e7ade, so the door cannot be approved from the nearest-road hint or author plan."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry placement on the -u/SE face remains unsupported by visible source evidence.",
+   "fix": "Supply a geolocated view showing the SE gable or another source that clearly locates the entrance; otherwise leave orientation unresolved rather than inferring it."
+  },
+  {
+   "severity": "major",
+   "problem": "The model reads as red brick, while the reference cabin has warm cinnamon-brown shingle or wood cladding.",
+   "fix": "Replace the brick pattern with a subdued small-scale wood/shingle texture and restrained tan trim."
+  },
+  {
+   "severity": "major",
+   "problem": "The +u/NW wall has an oversized tan projecting element and window-like opening instead of the reference\u2019s tiny high vent and low dark AC box.",
+   "fix": "Remove the projecting tan piece, reduce the upper opening to a small vent, and add a compact dark AC unit low on the wall."
+  }
+ ]
+}

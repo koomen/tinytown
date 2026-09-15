@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"0fb60d023d99e7a08b0f6455eb0331938aced994e6719912e8e57660c21a370a\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#66534f\"}]}",
+ "cues": [
+  "Compact brown cabin with simple rectangular footprint.",
+  "Muted gray gable roof with pale rake trim.",
+  "Nearly blank NNW gable with tiny high vent.",
+  "Low centered utility grille and shallow dark plinth."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The single +u entrance is retained as a concealed-face inference, not a verified placement; no entrance is visible in SV1.",
+  "Darker brown reduces the red-masonry appearance, but the supplied catalog has no explicit timber/shingle wall-texture control.",
+  "Side windows remain simplified assumptions."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "SV1 shows the opposite -u gable without an entrance; MAP establishes orientation. Neither confirms the concealed +u door."
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

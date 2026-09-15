@@ -1,0 +1,5 @@
+{
+ "reason": "The photographed practice cabins have brown wood cladding. Explicit siding prevents the renderer from inferring red brick from their paint color. Original pipeline responses and critiques retained.",
+ "before": "a3c7e1a2feac1f8c6c54cf02b6cdd220a1766c0c7387a375c67c10f6566a35a0",
+ "after": "1832cafd8ebb8677340cf1c5c6a930c5c531f2bfc9c61536d553e7c2b2446939"
+}

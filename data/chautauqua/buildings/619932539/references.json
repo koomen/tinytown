@@ -1,0 +1,469 @@
+{
+ "version": 3,
+ "id": "619932539",
+ "name": "Chautauqua Amphitheater",
+ "location": "Chautauqua Institution, Chautauqua, New York",
+ "address": "31 Roberts Avenue",
+ "source_tags": {
+  "amenity": "theatre",
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 63.576,
+  "depth_v": 90.713,
+  "footprint_uv": [
+   [
+    31.8,
+    -32.4
+   ],
+   [
+    31.3,
+    14.2
+   ],
+   [
+    29.9,
+    17.2
+   ],
+   [
+    28.6,
+    19.9
+   ],
+   [
+    18.4,
+    20.3
+   ],
+   [
+    16.3,
+    20.2
+   ],
+   [
+    16.3,
+    27.7
+   ],
+   [
+    16.3,
+    44.5
+   ],
+   [
+    10.5,
+    44.7
+   ],
+   [
+    9.9,
+    44.0
+   ],
+   [
+    7.0,
+    44.8
+   ],
+   [
+    6.4,
+    44.9
+   ],
+   [
+    4.9,
+    45.2
+   ],
+   [
+    2.7,
+    45.4
+   ],
+   [
+    0.4,
+    45.3
+   ],
+   [
+    -1.9,
+    45.2
+   ],
+   [
+    -4.8,
+    44.5
+   ],
+   [
+    -7.5,
+    43.6
+   ],
+   [
+    -6.4,
+    40.7
+   ],
+   [
+    -18.1,
+    40.7
+   ],
+   [
+    -18.1,
+    28.0
+   ],
+   [
+    -18.0,
+    20.2
+   ],
+   [
+    -26.0,
+    20.4
+   ],
+   [
+    -28.2,
+    20.5
+   ],
+   [
+    -29.4,
+    18.1
+   ],
+   [
+    -31.1,
+    14.7
+   ],
+   [
+    -31.8,
+    -31.6
+   ],
+   [
+    -30.8,
+    -32.4
+   ],
+   [
+    -16.2,
+    -45.4
+   ],
+   [
+    15.8,
+    -45.4
+   ],
+   [
+    26.3,
+    -36.7
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 328,
+    "compass": "NNW",
+    "left_bearing": 58,
+    "right_bearing": 238,
+    "nearest_road_outward": {
+     "name": "Bowman Avenue",
+     "circular": false,
+     "distance_m": 3.2
+    },
+    "nearest_road_hint": true
+   },
+   "-u": {
+    "bearing": 148,
+    "compass": "SSE",
+    "left_bearing": 238,
+    "right_bearing": 58,
+    "nearest_road_outward": {
+     "name": "Palestine Avenue",
+     "circular": false,
+     "distance_m": 2.2
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 58,
+    "compass": "ENE",
+    "left_bearing": 148,
+    "right_bearing": 328,
+    "nearest_road_outward": {
+     "name": "South Terrace Avenue",
+     "circular": false,
+     "distance_m": 24.3
+    },
+    "nearest_road_hint": false
+   },
+   "-v": {
+    "bearing": 238,
+    "compass": "WSW",
+    "left_bearing": 328,
+    "right_bearing": 148,
+    "nearest_road_outward": {
+     "name": "Clark Brick Walk",
+     "circular": false,
+     "distance_m": 15.2
+    },
+    "nearest_road_hint": false
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/619932539/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/619932539/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/619932539/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  },
+  {
+   "id": "WEB1",
+   "kind": "web-image",
+   "path": "miniature/619932539/reference-6.jpg",
+   "caption": "Current Chautauqua Amphitheater at its 2017 opening. Most cached Street Views date to July 2012, BEFORE replacement: use those only for geographic orientation. May 2023 view and current aerial establish the replacement exterior. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)"
+  },
+  {
+   "id": "WEB2",
+   "kind": "web-image",
+   "path": "miniature/619932539/reference-7.jpg",
+   "caption": "Current 2017 Amphitheater: open sides, cream seating tiers, tall slender supports, stage and organ. Use integrated amphitheater component and resolve stage end from geolocated evidence. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)"
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua--20260909-215503-9a84fd/research/front_619932539_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2088851,
+    "lon": -79.4648299,
+    "position_xz": [
+     108.02,
+     55.09
+    ],
+    "position_uv": [
+     63.99,
+     11.85
+    ],
+    "looking_bearing": 168.0,
+    "looking_compass": "SSE",
+    "image_left_bearing": 78.0,
+    "image_right_bearing": 258.0,
+    "target_center_offset_deg": -9.8,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 20,
+    "fov": 80,
+    "tilt": 91,
+    "near_road": {
+     "name": "Roberts Avenue",
+     "circular": false,
+     "distance_m": 0.1
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2088851,-79.4648299,419a,80y,168h,91t/data=!3m7!1e1!3m5!1shwLWdgYhJAjxKH75ZMLMTQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DhwLWdgYhJAjxKH75ZMLMTQ%26yaw%3D168!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "hwLWdgYhJAjxKH75ZMLMTQ",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/619932539/reference-1.jpg",
+   "sha256": "710951893ba141c2338d170ec4482a60a12557fec4fd0db7b53106bb7727b3b6"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua--20260909-215503-9a84fd/research/front_619932539_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2076243,
+    "lon": -79.4638155,
+    "position_xz": [
+     191.66,
+     195.44
+    ],
+    "position_uv": [
+     -99.34,
+     7.64
+    ],
+    "looking_bearing": 321.0,
+    "looking_compass": "NW",
+    "image_left_bearing": 231.0,
+    "image_right_bearing": 51.0,
+    "target_center_offset_deg": 2.3,
+    "geometrically_facing_camera": [
+     "-u"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 6,
+    "fov": 79,
+    "tilt": 90,
+    "near_road": {
+     "name": "Janes Avenue",
+     "circular": false,
+     "distance_m": 10.6
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2076243,-79.4638155,417a,79y,321h,90t/data=!3m7!1e1!3m5!1sS_-GEmQeo4gpTPYiHWA1Mg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DS_-GEmQeo4gpTPYiHWA1Mg%26yaw%3D321!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "S_-GEmQeo4gpTPYiHWA1Mg",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/619932539/reference-2.jpg",
+   "sha256": "6d2e64a792f7c17806ba504d3718431e67d22ce45b660ae19fccda4581db22b6"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua--20260909-215503-9a84fd/research/front_619932539_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2086892,
+    "lon": -79.4638144,
+    "position_xz": [
+     191.76,
+     76.9
+    ],
+    "position_uv": [
+     0.85,
+     71.01
+    ],
+    "looking_bearing": 236.0,
+    "looking_compass": "SW",
+    "image_left_bearing": 146.0,
+    "image_right_bearing": 326.0,
+    "target_center_offset_deg": 1.0,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 2,
+    "fov": 80,
+    "tilt": 91,
+    "near_road": {
+     "name": "South Terrace Avenue",
+     "circular": false,
+     "distance_m": 0.4
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2086892,-79.4638144,410a,80y,236h,91t/data=!3m7!1e1!3m5!1sU9s1aUFgs5w11yiLSS-VkQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DU9s1aUFgs5w11yiLSS-VkQ%26yaw%3D236!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "U9s1aUFgs5w11yiLSS-VkQ",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/619932539/reference-3.jpg",
+   "sha256": "07c584f78009eed0c3c4567be35aa7537ad774e7cbe4c470cc97f0a6efdc255f"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua--20260909-215503-9a84fd/research/front_619932539_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2080822,
+    "lon": -79.4654648,
+    "position_xz": [
+     55.67,
+     144.47
+    ],
+    "position_uv": [
+     16.37,
+     -80.13
+    ],
+    "looking_bearing": 83.0,
+    "looking_compass": "E",
+    "image_left_bearing": 353.0,
+    "image_right_bearing": 173.0,
+    "target_center_offset_deg": -13.7,
+    "geometrically_facing_camera": [
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 25,
+    "fov": 80,
+    "tilt": 91,
+    "near_road": {
+     "name": "Waugh Avenue",
+     "circular": false,
+     "distance_m": 1.3
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2080822,-79.4654648,420a,80y,83h,91t/data=!3m7!1e1!3m5!1szpANyPdfMEB6d1I4dGOKAw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DzpANyPdfMEB6d1I4dGOKAw%26yaw%3D83!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "zpANyPdfMEB6d1I4dGOKAw",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/619932539/reference-4.jpg",
+   "sha256": "288d3ade316b511dcecf337423b23b488da7d021812807dfbe156c17e3f17fc6"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua--20260909-215503-9a84fd/research/aerial_619932539.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/619932539/reference-5.jpg",
+   "sha256": "cb3423131df018882d840d2dcc48f52f69fbc40785aee2a48d0f3a666b5c1da1"
+  },
+  {
+   "url": "https://chqdaily.com/wp-content/uploads/2017/06/062417_AMP_ec_06.jpg",
+   "page_url": "https://chqdaily.com/2017/06/new-amp-welcomes-chautauquas-2017-season/",
+   "title": "Current Chautauqua Amphitheater at its 2017 opening. Most cached Street Views date to July 2012, BEFORE replacement: use those only for geographic orientation. May 2023 view and current aerial establish the replacement exterior.",
+   "provider": "Chautauquan Daily",
+   "id": "WEB1",
+   "source_path": "data/chautauqua--20260909-215503-9a84fd/miniature/619932539/web-original-00dc4a1038d2101e",
+   "kind": "web-image",
+   "camera": {
+    "status": "unlocated",
+    "reason": "Web photo has no verified capture pose."
+   },
+   "caption": "Current Chautauqua Amphitheater at its 2017 opening. Most cached Street Views date to July 2012, BEFORE replacement: use those only for geographic orientation. May 2023 view and current aerial establish the replacement exterior. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)",
+   "path": "miniature/619932539/reference-6.jpg",
+   "sha256": "00dc4a1038d2101e741b0e71a84688ce4a90e5110a2fb2e4fbf5353efb269d99"
+  },
+  {
+   "url": "https://chqdaily.com/wp-content/uploads/2017/07/070117_AmpArtsSpecial_DM_03.jpg",
+   "page_url": "https://chqdaily.com/2017/07/chautauqua-institutions-amphitheater-opens-with-a-ribbon-cutting-and-performances/",
+   "title": "Current 2017 Amphitheater: open sides, cream seating tiers, tall slender supports, stage and organ. Use integrated amphitheater component and resolve stage end from geolocated evidence.",
+   "provider": "Chautauquan Daily",
+   "id": "WEB2",
+   "source_path": "data/chautauqua--20260909-215503-9a84fd/miniature/619932539/web-original-0cd77bedadb76347",
+   "kind": "web-image",
+   "camera": {
+    "status": "unlocated",
+    "reason": "Web photo has no verified capture pose."
+   },
+   "caption": "Current 2017 Amphitheater: open sides, cream seating tiers, tall slender supports, stage and organ. Use integrated amphitheater component and resolve stage end from geolocated evidence. (unlocated detail reference; verify identity and locate the facade using geolocated photographs before placing features)",
+   "path": "miniature/619932539/reference-7.jpg",
+   "sha256": "0cd77bedadb763476773e92cbfd12291936e37f25d9934447d0333b12870aba3"
+  }
+ ],
+ "search_query": "Chautauqua Amphitheater Chautauqua Institution, Chautauqua, New York building exterior",
+ "search_candidates": [
+  {
+   "url": "https://chqdaily.com/wp-content/uploads/2017/06/062417_AMP_ec_06.jpg",
+   "page_url": "https://chqdaily.com/2017/06/new-amp-welcomes-chautauquas-2017-season/",
+   "title": "Current Chautauqua Amphitheater at its 2017 opening. Most cached Street Views date to July 2012, BEFORE replacement: use those only for geographic orientation. May 2023 view and current aerial establish the replacement exterior.",
+   "provider": "Chautauquan Daily"
+  },
+  {
+   "url": "https://chqdaily.com/wp-content/uploads/2017/07/070117_AmpArtsSpecial_DM_03.jpg",
+   "page_url": "https://chqdaily.com/2017/07/chautauqua-institutions-amphitheater-opens-with-a-ribbon-cutting-and-performances/",
+   "title": "Current 2017 Amphitheater: open sides, cream seating tiers, tall slender supports, stage and organ. Use integrated amphitheater component and resolve stage end from geolocated evidence.",
+   "provider": "Chautauquan Daily"
+  }
+ ],
+ "warnings": []
+}

@@ -1,0 +1,64 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"da8fb9626d6d41e88c1f21d277cb34b5d51cde7eb4702b3b141d333bde833f38\",\"operations\":[{\"op\":\"replace\",\"path\":\"/volumes/@northwest_booth/faces/+v/storeys\",\"value\":[{\"y\":0.7,\"windows\":{\"type\":\"shop\",\"w\":2.1,\"h\":1.65,\"at\":[0.59],\"trim\":\"#eee8d8\",\"glass\":\"#455d5c\",\"interior\":false}}]},{\"op\":\"replace\",\"path\":\"/volumes/@southeast_booth/faces/+v/storeys\",\"value\":[{\"y\":0.7,\"windows\":{\"type\":\"shop\",\"w\":2.15,\"h\":1.65,\"at\":[0.61],\"trim\":\"#eee8d8\",\"glass\":\"#455d5c\",\"interior\":false}}]},{\"op\":\"replace\",\"path\":\"/volumes/@northwest_booth/faces/+u/porches/0/roofColor\",\"value\":\"#deded2\"},{\"op\":\"replace\",\"path\":\"/volumes/@southeast_booth/faces/-u/porches/0/roofColor\",\"value\":\"#deded2\"}]}",
+ "cues": [
+  "Two separated low brick booths, not a pitched-roof hall.",
+  "Broad pale flat canopies shelter open pedestrian passages.",
+  "Oversized cream-framed dark ticket windows.",
+  "ENTER faces southwest; EXIT faces northeast."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "SV2",
+  "SV3",
+  "SV4 \u0645\u0644AERIAL"
+ ],
+ "uncertainties": [
+  "The supplied blueprint already omits the dominant hipped pavilion seen in the initial renders; that neighboring mass is not added.",
+  "Exact canopy supports and passage widths are approximate; metal gate leaves are omitted.",
+  "Staff-door locations remain inferred."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "southeast_booth",
+   "face": "+v",
+   "role": "principal pedestrian ENTER approach through the open passage beside the booth, not its staff door",
+   "evidence": [
+    "MAP",
+    "SV1",
+    "SV3"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "northwest_booth",
+   "face": "-v",
+   "role": "pedestrian EXIT approach through the open passage beside the booth",
+   "evidence": [
+    "MAP",
+    "SV4"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "northwest_booth",
+   "face": "+u",
+   "role": "secondary staff access",
+   "evidence": [
+    "SV3"
+   ],
+   "confidence": "inferred"
+  },
+  {
+   "volume": "southeast_booth",
+   "face": "-u",
+   "role": "secondary staff access",
+   "evidence": [
+    "SV3",
+    "SV4"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

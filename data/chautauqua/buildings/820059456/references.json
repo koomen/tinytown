@@ -1,0 +1,307 @@
+{
+ "version": 3,
+ "id": "820059456",
+ "name": "6 Pratt Avenue",
+ "location": "Chautauqua Institution, Chautauqua, New York",
+ "address": "6 Pratt Avenue",
+ "source_tags": {
+  "building": "yes"
+ },
+ "street_view_counts": {
+  "directional": 4,
+  "additional": 0
+ },
+ "frame": {
+  "width_u": 11.401,
+  "depth_v": 9.352,
+  "footprint_uv": [
+   [
+    -5.7,
+    -4.7
+   ],
+   [
+    5.7,
+    -4.7
+   ],
+   [
+    5.7,
+    4.7
+   ],
+   [
+    -5.7,
+    4.5
+   ]
+  ],
+  "faces": {
+   "+u": {
+    "bearing": 331,
+    "compass": "NNW",
+    "left_bearing": 61,
+    "right_bearing": 241,
+    "nearest_road_outward": {
+     "name": "Center Avenue",
+     "circular": false,
+     "distance_m": 7.4
+    },
+    "nearest_road_hint": true
+   },
+   "-u": {
+    "bearing": 151,
+    "compass": "SSE",
+    "left_bearing": 241,
+    "right_bearing": 61,
+    "nearest_road_outward": {
+     "name": "Miller Avenue",
+     "circular": false,
+     "distance_m": 31.3
+    },
+    "nearest_road_hint": false
+   },
+   "+v": {
+    "bearing": 61,
+    "compass": "ENE",
+    "left_bearing": 151,
+    "right_bearing": 331,
+    "nearest_road_outward": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 10.3
+    },
+    "nearest_road_hint": false
+   },
+   "-v": {
+    "bearing": 241,
+    "compass": "WSW",
+    "left_bearing": 331,
+    "right_bearing": 151,
+    "nearest_road_outward": {
+     "name": "Wythe Avenue",
+     "circular": false,
+     "distance_m": 42.2
+    },
+    "nearest_road_hint": false
+   }
+  },
+  "rule": "Face names describe outward normals, camera heading looks inward. The nearest-road hint and postal address do not establish the principal entrance."
+ },
+ "attachments": [
+  {
+   "id": "MAP",
+   "kind": "orientation-map",
+   "path": "miniature/820059456/orientation.png",
+   "caption": "North-up map: footprint, blueprint face normals, named roads, numbered Street View camera positions and viewing arrows."
+  },
+  {
+   "id": "STREET-VIEWS",
+   "kind": "street-view-atlas",
+   "path": "miniature/820059456/street-views.jpg",
+   "caption": "Labeled camera views; SV numbers match the orientation map.",
+   "members": [
+    "SV1",
+    "SV2",
+    "SV3",
+    "SV4"
+   ]
+  },
+  {
+   "id": "AERIAL",
+   "kind": "aerial",
+   "path": "miniature/820059456/reference-5.jpg",
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone."
+  }
+ ],
+ "images": [
+  {
+   "id": "SV1",
+   "source_path": "data/chautauqua/research/front_820059456_+u.png",
+   "kind": "street-view",
+   "face": "+u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2091008,
+    "lon": -79.4663398,
+    "position_xz": [
+     -16.47,
+     31.08
+    ],
+    "position_uv": [
+     15.35,
+     3.08
+    ],
+    "looking_bearing": 169.0,
+    "looking_compass": "S",
+    "image_left_bearing": 79.0,
+    "image_right_bearing": 259.0,
+    "target_center_offset_deg": -6.8,
+    "geometrically_facing_camera": [
+     "+u"
+    ],
+    "requested_face": "+u",
+    "off_axis_deg": 18,
+    "fov": 68,
+    "tilt": 100,
+    "near_road": {
+     "name": "Center Avenue",
+     "circular": false,
+     "distance_m": 1.6
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2091008,-79.4663398,420a,68y,169h,100t/data=!3m7!1e1!3m5!1sfHwVkqsYXBaHFviqNCDTnw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DfHwVkqsYXBaHFviqNCDTnw%26yaw%3D169!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "fHwVkqsYXBaHFviqNCDTnw",
+   "additional_view": false,
+   "caption": "SV1: requested face +u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059456/reference-1.jpg",
+   "sha256": "9d90ab32b9bdba4ca078eaaa1540b3d385bee55e2e71922c1764e51d60385a12"
+  },
+  {
+   "id": "SV2",
+   "source_path": "data/chautauqua/research/front_820059456_-u.png",
+   "kind": "street-view",
+   "face": "-u",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2088209,
+    "lon": -79.4659744,
+    "position_xz": [
+     13.65,
+     62.24
+    ],
+    "position_uv": [
+     -26.53,
+     14.24
+    ],
+    "looking_bearing": 297.0,
+    "looking_compass": "WNW",
+    "image_left_bearing": 207.0,
+    "image_right_bearing": 27.0,
+    "target_center_offset_deg": 5.6,
+    "geometrically_facing_camera": [
+     "-u",
+     "+v"
+    ],
+    "requested_face": "-u",
+    "off_axis_deg": 34,
+    "fov": 55,
+    "tilt": 95,
+    "near_road": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 0.3
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2088209,-79.4659744,419a,55y,297h,95t/data=!3m7!1e1!3m5!1sELqf7CPZgoHqVX5HkgQQCA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3DELqf7CPZgoHqVX5HkgQQCA%26yaw%3D297!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "iFXRUILhBfbHUKBoSdM8og",
+   "additional_view": false,
+   "caption": "SV2: requested face -u; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059456/reference-2.jpg",
+   "sha256": "2f0c275d2cb198aa65a838d463e88b28a762a7a060a3fd4fc90ae295d1e93e18"
+  },
+  {
+   "id": "SV3",
+   "source_path": "data/chautauqua/research/front_820059456_+v.png",
+   "kind": "street-view",
+   "face": "+v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2090442,
+    "lon": -79.4661487,
+    "position_xz": [
+     -0.72,
+     37.38
+    ],
+    "position_uv": [
+     2.18,
+     13.78
+    ],
+    "looking_bearing": 227.0,
+    "looking_compass": "SW",
+    "image_left_bearing": 137.0,
+    "image_right_bearing": 317.0,
+    "target_center_offset_deg": 4.9,
+    "geometrically_facing_camera": [
+     "+v"
+    ],
+    "requested_face": "+v",
+    "off_axis_deg": 13,
+    "fov": 75,
+    "tilt": 100,
+    "near_road": {
+     "name": "Pratt Avenue",
+     "circular": false,
+     "distance_m": 1.3
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2090442,-79.4661487,419a,75y,227h,100t/data=!3m7!1e1!3m5!1sJgM0iXtqNKRtCEhjOr5jTA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DJgM0iXtqNKRtCEhjOr5jTA%26yaw%3D227!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "JgM0iXtqNKRtCEhjOr5jTA",
+   "additional_view": false,
+   "caption": "SV3: requested face +v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059456/reference-3.jpg",
+   "sha256": "6cfdb474247da8a14b84bddbfc8b00da510478acac81170b5393db80e0b8cfa5"
+  },
+  {
+   "id": "SV4",
+   "source_path": "data/chautauqua/research/front_820059456_-v.png",
+   "kind": "street-view",
+   "face": "-v",
+   "camera": {
+    "status": "located",
+    "source": "resolved-panorama-url",
+    "lat": 42.2089307,
+    "lon": -79.4666063,
+    "position_xz": [
+     -38.45,
+     50.02
+    ],
+    "position_uv": [
+     9.5,
+     -25.33
+    ],
+    "looking_bearing": 86.0,
+    "looking_compass": "E",
+    "image_left_bearing": 356.0,
+    "image_right_bearing": 176.0,
+    "target_center_offset_deg": -4.5,
+    "geometrically_facing_camera": [
+     "+u",
+     "-v"
+    ],
+    "requested_face": "-v",
+    "off_axis_deg": 25,
+    "fov": 55,
+    "tilt": 96,
+    "near_road": {
+     "name": "Center Avenue",
+     "circular": false,
+     "distance_m": 0.9
+    },
+    "limitation": "Approximate panorama pose; facing-camera sides are not proof of visibility, identity or lack of occlusion."
+   },
+   "capture_url": "https://www.google.com/maps/@42.2089307,-79.4666063,419a,55y,86h,96t/data=!3m7!1e1!3m5!1sdkgQ_kd1pBB-gc7LvuxMIg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6%26panoid%3DdkgQ_kd1pBB-gc7LvuxMIg%26yaw%3D86!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+   "pano": "dkgQ_kd1pBB-gc7LvuxMIg",
+   "additional_view": false,
+   "caption": "SV4: requested face -v; use resolved camera, not filename, to interpret visible sides.",
+   "path": "miniature/820059456/reference-4.jpg",
+   "sha256": "5bbdc7996f1796ac89a87c6779e9d56f0971f67da852b218bb64d242db5fc652"
+  },
+  {
+   "id": "AERIAL",
+   "source_path": "data/chautauqua/research/aerial_820059456.png",
+   "kind": "aerial",
+   "north_up": true,
+   "caption": "Aerial: north up. Match roof wings to the separate labeled footprint map; no facade orientation can be inferred from image-left alone.",
+   "path": "miniature/820059456/reference-5.jpg",
+   "sha256": "7150dd72b6a9487442a64c43ecd24a553e0d44035877c0067ae31d6452073e7c"
+  }
+ ],
+ "search_query": "6 Pratt Avenue Chautauqua Institution, Chautauqua, New York building exterior",
+ "search_candidates": [],
+ "warnings": [
+  "No useful image-search candidates; using available Street View/aerial evidence."
+ ]
+}

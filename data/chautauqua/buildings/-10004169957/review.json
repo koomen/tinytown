@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The open-lane gate arrangement is recognizable and stylistically coherent, but the signature entrance furniture is too small and generic to read clearly as Bryant Gate.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The labeled renders place the gate elements on the south verge: in the +u/east-face view looking west they fall image-left, and in the -u/west-face view looking east they fall image-right. The broad Chautauqua panel faces west toward located SV2, while the north-facing -v sheet shows its back. The lane remains open, and the empty door inventory is appropriate\u2014there is no principal doorway or duplicated portal."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The broad pale \u201cChautauqua\u201d sign\u2014the most identifying feature\u2014is undersized and visually subordinate to the generic brick marker.",
+   "fix": "Enlarge and clarify the west-facing pale sign panel, with a bold readable Chautauqua wordmark and stronger light-panel/dark-frame contrast."
+  },
+  {
+   "severity": "minor",
+   "problem": "The tall masonry marker and lower opposing post lack enough differentiation in height, mass, and finish to reproduce the characteristic gateway silhouette.",
+   "fix": "Make the warm brick marker taller and more substantial, while keeping the opposing post conspicuously slimmer and lower."
+  },
+  {
+   "severity": "minor",
+   "problem": "The sparse, nearly treeless setting weakens resemblance to the wooded entrance shown in every street view.",
+   "fix": "Add a few compact deciduous and evergreen masses behind the sign and along the fence without obscuring the open lane."
+  }
+ ]
+}

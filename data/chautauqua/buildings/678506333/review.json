@@ -1,0 +1,20 @@
+{
+ "verdict": "repair",
+ "summary": "The massing, brown-brick palette, raised gymnasium volume, glazed WSW frontage, and restrained miniature treatment are recognizable. The main weakness is the roof silhouette, which reads as pitched and ornamented rather than as the building\u2019s characteristic stepped flat roofs.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The principal entrance is correctly placed on the -v/WSW face: SV4 shows the two-storey pale-framed glazing and a single white-canopied entrance on that facade, matching the labeled -v render. The actual inventory has one double door there. The only other door is a secondary double door on the -u/SSE gymnasium face, consistent with SV2; there is no duplicated principal portal."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Broad roof surfaces appear visibly pitched, with bright toothed eaves, weakening the stepped flat-roof silhouette established by the aerial and street views.",
+   "fix": "Flatten the primary roof planes, clarify the stepped parapet heights, and replace the sawtooth-looking white edges with thin, clean coping bands."
+  },
+  {
+   "severity": "minor",
+   "problem": "The prominent rooftop solar-panel field visible in the aerial is absent, leaving the large southeastern roof unusually plain.",
+   "fix": "Add a simplified dark gridded solar array as a shallow rooftop detail without modeling every panel."
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "id": "820061524",
+ "addr": null,
+ "name": "Practice Studio 28",
+ "frame": "6b2dbd571f29e2665d9da30385e3a469361364e2947035a094a357830d45371e",
+ "faces": {
+  "-v": {
+   "bearing": 203,
+   "width": 9.0,
+   "road": true,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_820061524_-v.png",
+     "pano": "yqAn-cf9puhR9CONM9Y5eA",
+     "dist": 17.5,
+     "off_axis_deg": 4,
+     "fov": 55,
+     "tilt": 98,
+     "heading": 27,
+     "date": "Jun 2026",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2089213,-79.4717276,428a,55y,27h,98t/data=!3m7!1e1!3m5!1syqAn-cf9puhR9CONM9Y5eA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-8%26panoid%3DyqAn-cf9puhR9CONM9Y5eA%26yaw%3D27!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2089213,
+      "lon": -79.4717276
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-10 04:45"
+}

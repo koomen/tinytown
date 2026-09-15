@@ -1,0 +1,277 @@
+{
+  "wall": "#c3c2b4",
+  "trim": "#dddcd2",
+  "roofColor": "#817d73",
+  "volumes": [
+    {
+      "id": "southwest",
+      "u": [
+        -12.6,
+        5.5
+      ],
+      "v": [
+        -7.1,
+        3.0
+      ],
+      "height": 3.2,
+      "roof": {
+        "type": "gable",
+        "ridge": "u",
+        "pitch": 0.22,
+        "maxH": 2.2,
+        "overhang": 0.35,
+        "color": "#817d73"
+      },
+      "plinth": {
+        "height": 0.35,
+        "color": "#a29d90"
+      },
+      "faces": {
+        "-u": {
+          "storeys": [
+            {
+              "y": 1.0,
+              "windows": {
+                "type": "rect",
+                "w": 1.3,
+                "h": 1.35,
+                "at": [
+                  0.27,
+                  0.73
+                ],
+                "glass": "#59605b",
+                "frameW": 0.1,
+                "mullions": false
+              }
+            }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            {
+              "y": 1.0,
+              "windows": {
+                "type": "rect",
+                "w": 1.4,
+                "h": 1.35,
+                "at": [
+                  0.13,
+                  0.59,
+                  0.82
+                ],
+                "glass": "#59605b",
+                "frameW": 0.1,
+                "mullions": false
+              }
+            }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            {
+              "y": 1.0,
+              "windows": {
+                "type": "rect",
+                "w": 1.4,
+                "h": 1.35,
+                "at": [
+                  0.16,
+                  0.43
+                ],
+                "glass": "#59605b",
+                "frameW": 0.1,
+                "mullions": false
+              }
+            }
+          ]
+        },
+        "+u": {}
+      }
+    },
+    {
+      "id": "northeast",
+      "u": [
+        -1.6,
+        5.5
+      ],
+      "v": [
+        -3.0,
+        7.1
+      ],
+      "height": 3.2,
+      "roof": {
+        "type": "gable",
+        "ridge": "u",
+        "pitch": 0.22,
+        "maxH": 2.2,
+        "overhang": 0.35,
+        "color": "#817d73"
+      },
+      "plinth": {
+        "height": 0.35,
+        "color": "#a29d90"
+      },
+      "faces": {
+        "+u": {},
+        "+v": {
+          "storeys": [
+            {
+              "y": 1.0,
+              "windows": {
+                "type": "rect",
+                "w": 1.4,
+                "h": 1.35,
+                "at": [
+                  0.36,
+                  0.84
+                ],
+                "glass": "#59605b",
+                "frameW": 0.1,
+                "mullions": false
+              }
+            }
+          ]
+        },
+        "-v": {},
+        "-u": {}
+      }
+    },
+    {
+      "id": "northeast-raised",
+      "u": [
+        5.5,
+        12.6
+      ],
+      "v": [
+        -3.0,
+        7.1
+      ],
+      "height": 5.8,
+      "roof": {
+        "type": "hip",
+        "h": 1.1,
+        "overhang": 0.4,
+        "color": "#817d73"
+      },
+      "plinth": {
+        "height": 0.35,
+        "color": "#a29d90"
+      },
+      "faces": {
+        "+u": {
+          "storeys": [
+            {
+              "y": 1.0,
+              "windows": {
+                "type": "rect",
+                "w": 1.25,
+                "h": 1.35,
+                "at": [
+                  0.27,
+                  0.73
+                ],
+                "glass": "#59605b",
+                "frameW": 0.1,
+                "mullions": false
+              }
+            }
+          ]
+        },
+        "+v": {
+          "storeys": [
+            {
+              "y": 1.0,
+              "windows": {
+                "type": "rect",
+                "w": 1.4,
+                "h": 1.35,
+                "at": [
+                  0.58
+                ],
+                "glass": "#59605b",
+                "frameW": 0.1,
+                "mullions": false
+              }
+            }
+          ]
+        },
+        "-v": {
+          "storeys": [
+            {
+              "y": 3.92,
+              "windows": {
+                "type": "rect",
+                "w": 1.42,
+                "h": 1.38,
+                "at": [
+                  0.27,
+                  0.65
+                ],
+                "glass": "#4e5853",
+                "frameW": 0.09,
+                "mullions": false
+              }
+            },
+            {
+              "y": 1.05,
+              "windows": {
+                "type": "rect",
+                "w": 1.45,
+                "h": 1.32,
+                "at": [
+                  0.24
+                ],
+                "glass": "#4e5853",
+                "frameW": 0.09,
+                "mullions": false
+              }
+            }
+          ],
+          "doors": [
+            {
+              "at": 0.63,
+              "w": 1.08,
+              "h": 2.15,
+              "y": 0.2,
+              "color": "#494b40",
+              "surround": "#dddcd2",
+              "surroundW": 0.1,
+              "steps": 0,
+              "lamp": false
+            }
+          ],
+          "porches": [
+            {
+              "at": 0.5,
+              "w": 6.5,
+              "d": 1.35,
+              "height": 2.45,
+              "floorH": 0.2,
+              "floorColor": "#a29d90",
+              "posts": 2,
+              "postColor": "#bdbdb0",
+              "roof": "shed",
+              "pitch": 0.2,
+              "roofColor": "#817d73",
+              "railing": false,
+              "steps": 1,
+              "stepsAt": 0.63,
+              "stepsW": 1.45,
+              "style": "open"
+            }
+          ]
+        },
+        "-u": {}
+      },
+      "cornice": {
+        "height": 0.18,
+        "overhang": 0.4,
+        "dentils": false,
+        "color": "#dddcd2"
+      }
+    }
+  ],
+  "details": [],
+  "wallMaterial": "siding",
+  "notes": "2026-09-13 user photo correction: raised northeast end and shallow roof above long lower southwest wing; gray-taupe shingles, pale muted siding, dark northwest openings and small entrance canopy. Existing stepped footprint and OBB retained. Roof subtype, precise height and obscured openings are approximate; see blueprint_248675022.notes.md."
+}

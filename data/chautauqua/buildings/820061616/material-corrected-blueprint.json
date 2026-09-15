@@ -1,0 +1,68 @@
+{
+ "wall": "#a87868",
+ "trim": "#eee8db",
+ "roofColor": "#c3c2b9",
+ "volumes": [
+  {
+   "id": "studio",
+   "u": [
+    -2.7,
+    2.7
+   ],
+   "v": [
+    -2.2,
+    2.2
+   ],
+   "bottom": 0,
+   "height": 2.7,
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.38,
+    "maxH": 1.65,
+    "overhang": 0.22
+   },
+   "plinth": {
+    "height": 0.18,
+    "color": "#77766c"
+   },
+   "faces": {
+    "-u": {
+     "doors": [
+      {
+       "at": 0.5,
+       "type": "rect",
+       "w": 0.9,
+       "h": 2.1,
+       "color": "#685d54",
+       "surround": "#eee8db",
+       "surroundW": 0.1,
+       "steps": 2
+      }
+     ]
+    },
+    "+u": {},
+    "-v": {
+     "storeys": [
+      {
+       "y": 0.95,
+       "windows": {
+        "type": "rect",
+        "w": 0.8,
+        "h": 1.35,
+        "at": [
+         0.5
+        ],
+        "trim": "#eee8db",
+        "glass": "#526967"
+       }
+      }
+     ]
+    },
+    "+v": {}
+   }
+  }
+ ],
+ "details": [],
+ "wallMaterial": "siding"
+}

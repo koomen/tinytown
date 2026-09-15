@@ -1,0 +1,20 @@
+{
+ "verdict": "repair",
+ "summary": "The compact one-storey form and steep gable silhouette read clearly as a charming practice hut, but the materials are mischaracterized and the principal entrance cannot be verified from the supplied evidence.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The rendered door inventory contains one portal on +u, the SE gable. Located SV1 views the +u and +v faces from the southwest, but the target\u2019s +u end is substantially obscured and no principal door can be confidently assigned there; the north-up aerial provides roof placement only. The +u placement is therefore plausible but unresolved, while the face sheet confirms there is no duplicated principal portal."
+ },
+ "issues": [
+  {
+   "severity": "broken",
+   "problem": "Principal-entry placement on the +u/SE gable is not established by the visible reference evidence.",
+   "fix": "Obtain a clearly located view showing the target entrance or otherwise verify which face carries it; retain exactly one principal portal and update the labeled faces if verification identifies another face."
+  },
+  {
+   "severity": "major",
+   "problem": "Gray shingle courses and pronounced brickwork replace the reference\u2019s pale ribbed metal roof and simpler dark reddish-brown wall treatment, weakening recognition.",
+   "fix": "Use a light gray corrugated/standing-seam roof with modest overhangs and simplify the walls to dark red-brown boards or minimally textured cladding with restrained cream trim."
+  }
+ ]
+}

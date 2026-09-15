@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The massing, red-brick palette, low roofs, and centered Miller Avenue entrance suggest the library, but one elevation is materially wrong and the classical identity is underdeveloped.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The located SV1 camera looks SE inward toward the +u face and shows the principal centered gabled entrance. The labeled +u render places the sole actual door in its central risalit, outward NNW toward Miller Avenue. No principal portal is duplicated on -u, +v, or -v."
+ },
+ "issues": [
+  {
+   "severity": "broken",
+   "problem": "The +v render is a broad cream-colored elevation, while located SV3 identifies +v as a red-brick three-bay end with pale corner trim and arched brick panels. This also makes the overview massing read like two unrelated buildings.",
+   "fix": "Rebuild +v as the compact red-brick end shown in SV3, preserving its three-bay rhythm, pale quoins/cornice, and roof relationship."
+  },
+  {
+   "severity": "major",
+   "problem": "The +u entrance lacks the reference building\u2019s defining classical treatment: a clearly expressed pedimented center, pale corner quoins, belt courses, and a small columned/pilastered doorway surround. Dark vertical strips currently overpower the portal.",
+   "fix": "Strengthen the centered gabled risalit and add simplified pale classical trim around the entrance and building corners; remove or recolor the dark strips."
+  },
+  {
+   "severity": "minor",
+   "problem": "The end elevations omit the characteristic shallow blind arches above the lower windows and much of the broad dentilled cornice, reducing recognition.",
+   "fix": "Add restrained raised arch panels and a continuous pale dentilled cornice on the red-brick ends."
+  }
+ ]
+}

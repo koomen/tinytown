@@ -1,0 +1,20 @@
+{
+ "verdict": "repair",
+ "summary": "The long stepped mass and broad hipped roofs are plausible, but the miniature does not yet present the Hultquist Center\u2019s distinctive Miller Avenue veranda clearly enough for reliable recognition.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The principal entry is correctly assigned to +v (NNW/Miller Avenue). Located SV3 views the +v face from the north and shows the Hultquist Center sign and entrance beneath the four-arched veranda. The rendered inventory contains one double door on +v at the north end, with no duplicated principal portal on another face."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The signature +v facade is weak and malformed: its veranda reads as four arches beneath a conspicuous floating rectangular frame rather than the deep, roofed two-level porch visible in SV3.",
+   "fix": "Rebuild the +v end as a coherent two-story veranda tucked under the broad hip, with four large upper arches, pale columns and railings, and a clearly grounded lower porch."
+  },
+  {
+   "severity": "minor",
+   "problem": "The principal entrance lacks the readily recognizable \u201cHultquist Center\u201d identification visible above the right-hand doorway in SV3.",
+   "fix": "Add a simplified but legible sign above the +v entry and keep the doorway visibly integrated into the lower veranda."
+  }
+ ]
+}

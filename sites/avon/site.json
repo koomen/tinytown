@@ -1,0 +1,13 @@
+{
+  "title": "avon.town",
+  "description": "A tiny, interactive diorama of Avon, New York.",
+  "domain": "https://avon.town",
+  "deploy": [
+    {
+      "target": "town",
+      "route": "/avon"
+    }
+  ],
+  "plugin": "avon",
+  "landmarks": "landmarks.json"
+}

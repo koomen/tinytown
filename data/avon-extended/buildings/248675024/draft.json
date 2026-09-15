@@ -1,0 +1,443 @@
+{
+ "wall": "#858f83",
+ "wallMaterial": "siding",
+ "trim": "#4e574d",
+ "roofColor": "#484e4d",
+ "volumes": [
+  {
+   "id": "main",
+   "u": [
+    -9.1,
+    0.7
+   ],
+   "v": [
+    -7.3,
+    6.3
+   ],
+   "bottom": 0,
+   "height": 6.2,
+   "roof": {
+    "type": "gable",
+    "ridge": "v",
+    "pitch": 0.36,
+    "maxH": 3.1,
+    "overhang": 0.3
+   },
+   "plinth": {
+    "height": 0.2,
+    "color": "#777a6d"
+   },
+   "faces": {
+    "+v": {
+     "storeys": [
+      {
+       "y": 3.05,
+       "windows": {
+        "type": "rect",
+        "w": 1.65,
+        "h": 4.9,
+        "at": [
+         0.515
+        ],
+        "divisions": {
+         "vertical": [
+          0.5
+         ],
+         "horizontal": [
+          0.5
+         ]
+        },
+        "interior": false,
+        "trim": "#4e574d",
+        "glass": "#293b38"
+       }
+      },
+      {
+       "y": 0.7,
+       "windows": {
+        "type": "rect",
+        "w": 1.1,
+        "h": 1.4,
+        "at": [
+         0.22
+        ],
+        "mullions": false,
+        "glass": "#34423c"
+       }
+      }
+     ],
+     "porches": []
+    },
+    "-u": {
+     "storeys": [
+      {
+       "y": 3.4,
+       "windows": {
+        "type": "rect",
+        "w": 0.85,
+        "h": 1.5,
+        "at": [
+         0.25,
+         0.7
+        ],
+        "mullions": false,
+        "glass": "#41504a"
+       }
+      }
+     ],
+     "porches": [
+      {
+       "style": "open",
+       "at": 0.5588235294,
+       "w": 12,
+       "d": 8,
+       "floorH": 2.95,
+       "floorThickness": 0.22,
+       "height": 1,
+       "posts": 5,
+       "postColor": "#81503e",
+       "floorColor": "#925f49",
+       "roof": "none",
+       "railing": true,
+       "railSides": [
+        "front",
+        "left",
+        "right"
+       ],
+       "steps": 0,
+       "sideRailGaps": {
+        "left": {
+         "at": 0.084375,
+         "w": 1.2
+        },
+        "right": {
+         "at": 0.28125,
+         "w": 4.5
+        }
+       }
+      }
+     ]
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 1,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.4,
+        "at": [
+         0.3,
+         0.72
+        ],
+        "mullions": false
+       }
+      },
+      {
+       "y": 3.8,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.5,
+        "at": [
+         0.3,
+         0.72
+        ],
+        "mullions": false
+       }
+      }
+     ]
+    },
+    "+u": {
+     "storeys": [
+      {
+       "y": 3.6,
+       "windows": {
+        "type": "rect",
+        "w": 0.8,
+        "h": 1.5,
+        "at": [
+         0.25
+        ],
+        "mullions": false
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "garage_wing",
+   "u": [
+    0.4,
+    9.1
+   ],
+   "v": [
+    -1.8,
+    7.3
+   ],
+   "bottom": 0,
+   "height": 5.9,
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.3,
+    "maxH": 2.5,
+    "overhang": 0.3
+   },
+   "faces": {
+    "+v": {
+     "doors": [
+      {
+       "at": 0.27,
+       "type": "garage",
+       "w": 2.9,
+       "h": 2.35,
+       "color": "#55493d",
+       "panels": 4,
+       "lights": true,
+       "surround": "#554e43"
+      },
+      {
+       "at": 0.73,
+       "type": "garage",
+       "w": 2.9,
+       "h": 2.35,
+       "color": "#55493d",
+       "panels": 4,
+       "lights": true,
+       "surround": "#554e43"
+      }
+     ],
+     "storeys": [
+      {
+       "y": 3.4,
+       "windows": {
+        "type": "rect",
+        "w": 0.85,
+        "h": 1.65,
+        "at": [
+         0.28,
+         0.76
+        ],
+        "mullions": false,
+        "glass": "#39483e"
+       }
+      }
+     ]
+    },
+    "+u": {
+     "storeys": [
+      {
+       "y": 3.5,
+       "windows": {
+        "type": "rect",
+        "w": 0.9,
+        "h": 1.5,
+        "at": [
+         0.35,
+         0.72
+        ],
+        "mullions": false
+       }
+      }
+     ]
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 3.5,
+       "windows": {
+        "type": "rect",
+        "w": 0.85,
+        "h": 1.4,
+        "at": [
+         0.35,
+         0.75
+        ],
+        "mullions": false
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "entry_projection",
+   "u": [
+    -2.6,
+    0.4
+   ],
+   "v": [
+    5.8,
+    7.3
+   ],
+   "bottom": 0,
+   "height": 5.85,
+   "roof": {
+    "type": "gable",
+    "ridge": "v",
+    "pitch": 0.43,
+    "maxH": 1.3,
+    "overhang": 0.22
+   },
+   "faces": {
+    "+v": {
+     "doors": [
+      {
+       "at": 0.5,
+       "type": "rect",
+       "w": 1.05,
+       "h": 2.25,
+       "color": "#805137",
+       "surround": "#505449",
+       "surroundW": 0.13,
+       "steps": 2
+      }
+     ],
+     "storeys": [
+      {
+       "y": 3.05,
+       "windows": {
+        "type": "rect",
+        "w": 0.63,
+        "h": 1.25,
+        "at": [
+         0.35,
+         0.65
+        ],
+        "mullions": false,
+        "glass": "#304038"
+       }
+      },
+      {
+       "y": 4.5,
+       "windows": {
+        "type": "rect",
+        "w": 0.63,
+        "h": 1.25,
+        "at": [
+         0.35,
+         0.65
+        ],
+        "mullions": false,
+        "glass": "#304038"
+       }
+      }
+     ],
+     "porches": [
+      {
+       "style": "open",
+       "at": 0.5,
+       "w": 3.1,
+       "d": 1.25,
+       "height": 2.4,
+       "floorH": 0.15,
+       "posts": 2,
+       "postColor": "#53594c",
+       "roof": "shed",
+       "pitch": 0.22,
+       "roofColor": "#515853",
+       "railing": false,
+       "steps": 2
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "details": [
+  {
+   "type": "stair",
+   "u": -15.8,
+   "v": 6.8,
+   "y": 1.475,
+   "dir": [
+    1,
+    0
+   ],
+   "length": 2.2,
+   "height": 1.475,
+   "w": 1,
+   "construction": "open",
+   "color": "#925f49",
+   "railColor": "#81503e",
+   "railing": true
+  },
+  {
+   "type": "stair",
+   "u": -13.6,
+   "v": 8,
+   "y": 0,
+   "dir": [
+    -1,
+    0
+   ],
+   "length": 2.2,
+   "height": 1.475,
+   "w": 1,
+   "construction": "open",
+   "color": "#925f49",
+   "railColor": "#81503e",
+   "railing": true
+  },
+  {
+   "type": "landing",
+   "u": -16.45,
+   "v": 7.4,
+   "w": 1.3,
+   "length": 2.2,
+   "height": 1.475,
+   "y": 0,
+   "railSides": [
+    "front",
+    "back",
+    "left"
+   ],
+   "color": "#925f49",
+   "railColor": "#81503e",
+   "railing": true
+  },
+  {
+   "type": "stair",
+   "u": -9.775,
+   "v": -9.9,
+   "dir": [
+    0,
+    1
+   ],
+   "length": 4.2,
+   "height": 2.95,
+   "w": 1.2,
+   "y": 0,
+   "construction": "open",
+   "color": "#925f49",
+   "railing": true,
+   "railColor": "#81503e"
+  }
+ ],
+ "porches": [
+  {
+   "style": "open",
+   "d": 1,
+   "floorH": 2.95,
+   "floorThickness": 0.22,
+   "height": 1,
+   "posts": 5,
+   "postColor": "#81503e",
+   "floorColor": "#925f49",
+   "roof": "none",
+   "railing": true,
+   "railSides": [
+    "front"
+   ],
+   "steps": 0,
+   "face": "+v",
+   "u": [
+    -13.6,
+    -2.6
+   ],
+   "wall": 6.3
+  }
+ ]
+}

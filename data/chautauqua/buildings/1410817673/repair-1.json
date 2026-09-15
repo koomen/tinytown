@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"85e3c12f257b23dd032b29cc02ab7602c37f6b3a66969111cd6a56bcb0861037\",\"operations\":[{\"op\":\"replace\",\"path\":\"/wall\",\"value\":\"#886044\"},{\"op\":\"replace\",\"path\":\"/trim\",\"value\":\"#a48264\"},{\"op\":\"replace\",\"path\":\"/roofColor\",\"value\":\"#dce0d8\"}]}",
+ "cues": [
+  "Compact single-storey gabled studio.",
+  "Muted brown timber-like palette and pale roof.",
+  "Small centered vent in northwest gable.",
+  "Broad dark ventilation panel near ground level."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Entrance is unseen: retained the single +u door as an approximation; +u versus -v remains unresolved.",
+  "Catalog provides no documented timber-cladding or metal-roof texture selector; palette corrections cannot eliminate renderer-applied brick or shingles.",
+  "Pale roofing appears metal, but its material is not certain."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "SV1 shows the -u gable without an entrance; neither MAP nor AERIAL establishes the entrance on an unseen elevation."
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

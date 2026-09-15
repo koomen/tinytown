@@ -1,0 +1,20 @@
+{
+ "verdict": "repair",
+ "summary": "The compact steep-gabled silhouette, muted palette, pale roof trim, and paired dark vents make the cabin recognizable, but the exterior treatment and unverified entrance placement prevent approval.",
+ "orientation": {
+  "status": "uncertain",
+  "summary": "The located SV1 camera northwest of the cabin looks SE toward the -u/NNW gable; that visible gable clearly has the centered attic vent and low wall vent but no door, matching the rendered -u face. The only modeled door is on the opposite +u/SSE gable, which SV1 cannot show. Thus the model avoids duplicate portals and does not contradict the view, but no supplied source establishes that hidden +u door as the principal entry."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "Principal-entry placement remains unresolved: the sole +u/SSE door is hidden from the only geolocated street view.",
+   "fix": "Provide face-resolved evidence of the +u gable or another view locating the real entrance; otherwise mark or revise the entrance only when supported."
+  },
+  {
+   "severity": "minor",
+   "problem": "The model reads as red brick on several walls, while SV1 shows reddish-brown timber/shingle siding, weakening the cabin\u2019s characteristic appearance.",
+   "fix": "Replace the brick pattern with restrained reddish-brown wood or shingle siding while retaining the dark vents and pale trim."
+  }
+ ]
+}

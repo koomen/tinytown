@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The broad hip and Ames-facing gable give a useful starting silhouette, but the miniature is too generic and materially inaccurate to be reliably recognizable as 2 Ames.",
+ "orientation": {
+  "status": "correct",
+  "summary": "The principal door is correctly placed on the -v face, whose outward bearing is 140\u00b0 toward Ames Avenue. Located SV4 looks inward at 342\u00b0 and shows the small sheltered entrance at the right end of that Ames elevation; the actual inventory places a door near that end of -v. The second door on +u is consistent with the separate access/porch side seen obliquely in SV1 and should remain visibly secondary, not become a duplicate principal portal."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The Ames elevation lacks the reference\u2019s defining blue-gray upper story over a strongly expressed warm stacked-stone ground floor; the model instead reads as pale siding with a decorative glazed band.",
+   "fix": "Rebuild -v with a continuous stone-textured lower level, blue-gray lap siding above, widely spaced sash windows, paired attic window, and the small sheltered door at the far right."
+  },
+  {
+   "severity": "major",
+   "problem": "The other elevations omit the building\u2019s characteristic irregular additions: the stacked open balconies on +u, broad multi-pane enclosed sunrooms on -u, and shingled wall with end porch on +v.",
+   "fix": "Caricature these three large features as simplified projecting volumes with green/cream trim; prioritize their silhouettes and glazing patterns over exact window counts."
+  },
+  {
+   "severity": "minor",
+   "problem": "The four-face presentation heavily occludes the -u and -v elevations with neighboring masses, making visible defects and the principal entrance difficult to verify.",
+   "fix": "Provide unobstructed face renders or temporarily hide adjacent buildings while preserving the current face labels."
+  }
+ ]
+}

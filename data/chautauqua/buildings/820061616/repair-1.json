@@ -1,0 +1,30 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"adbfd5becc178145d30f5e440f402b8be6dbdac5704e64ec784ca868d1eadfaf\",\"operations\":[]}",
+ "cues": [
+  "Compact single-storey studio",
+  "Muted salmon-brown walls",
+  "Pale roof and ivory trim",
+  "Single entrance with small steps"
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The requested surface repair cannot be expressed with the supplied catalog: no wall siding or gabled standing-seam roof controls are documented. Existing geometry and entrance are preserved; brick and roof-tile textures remain unresolved."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

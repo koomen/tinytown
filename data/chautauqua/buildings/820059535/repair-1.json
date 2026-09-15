@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"5f1c355b4a2bb9dcd40fbd4da84cf1469317befa7be97406bad1013292003731\",\"operations\":[{\"op\":\"remove\",\"path\":\"/volumes/@auditorium/faces/-u/beltCourses\"}]}",
+ "cues": [
+  "Broad muted-gray hipped roof with cross-gable",
+  "Cream walls with pale trim and sage accents",
+  "Long raised timber veranda",
+  "Dark double entrance doors with tall flanking windows"
+ ],
+ "references_used": [
+  "MAP",
+  "SV2",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "SV1 shows a neighboring house; SV3 and SV4 show interiors and do not establish exterior details.",
+  "Concealed elevations remain approximate. Fallback renders do not depict this draft."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "entrance_wing",
+   "face": "-u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV2"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

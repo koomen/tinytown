@@ -1,0 +1,25 @@
+{
+ "verdict": "repair",
+ "summary": "The compact cottage massing and steep gable silhouette read clearly, but prominent surface and entrance details do not yet match the reference studio closely enough.",
+ "orientation": {
+  "status": "correct",
+  "summary": "SV1 is located southwest of the studio and looks NE, placing the camera against the +u (SE) and +v (SW) sides. It shows the white principal door on the SE gable end and a white-trimmed window on the adjacent SW wall. The labeled renders and door inventory correspond: the sole principal door is on +u, while +v carries the side window. No duplicate principal portal is present."
+ },
+ "issues": [
+  {
+   "severity": "major",
+   "problem": "The walls are rendered with a pronounced brick pattern, while the reference buildings have brown shingle or simple wood-clad walls.",
+   "fix": "Replace the brick texture with restrained brown shingle/wood siding at a miniature-friendly scale."
+  },
+  {
+   "severity": "major",
+   "problem": "The reference has a pale standing-seam metal roof, but the model uses gray asphalt-style shingles, including an overly dark roof on the reviewed studio.",
+   "fix": "Use a light silver-gray metal roof with subtle vertical seams and modest overhangs."
+  },
+  {
+   "severity": "minor",
+   "problem": "The principal door reads as a plain opaque brown/tan slab; the visible reference entrance is white and has a large divided-light glazed upper section.",
+   "fix": "Make the +u door white and add simplified divided-light glazing while retaining the small steps and trim."
+  }
+ ]
+}

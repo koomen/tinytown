@@ -1,0 +1,121 @@
+{
+ "id": "820059455",
+ "addr": "10 Center Avenue",
+ "name": "Christian Science House",
+ "frame": "de4912b59514ca1d469620569f0d73464371364ef1075270bbf3b18992c74a0d",
+ "faces": {
+  "+u": {
+   "bearing": 50,
+   "width": 11.1,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_820059455_+u.png",
+     "pano": "PMYo2HPrBwM0s3A7Bd9-aQ",
+     "dist": 14.4,
+     "off_axis_deg": 3,
+     "fov": 55,
+     "tilt": 100,
+     "heading": 233,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2092773,-79.4662299,419a,55y,233h,100t/data=!3m7!1e1!3m5!1sPMYo2HPrBwM0s3A7Bd9-aQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DPMYo2HPrBwM0s3A7Bd9-aQ%26yaw%3D233!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2092773,
+      "lon": -79.4662299
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 230,
+   "width": 11.1,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_820059455_-u.png",
+     "pano": "eTMdaNhMY4L62B_rcfAazw",
+     "dist": 19.7,
+     "off_axis_deg": 27,
+     "fov": 55,
+     "tilt": 97,
+     "heading": 23,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.208987,-79.4665396,421a,55y,23h,97t/data=!3m7!1e1!3m5!1seTMdaNhMY4L62B_rcfAazw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-7%26panoid%3DeTMdaNhMY4L62B_rcfAazw%26yaw%3D23!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.208987,
+      "lon": -79.4665396
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 140,
+   "width": 8.4,
+   "road": true,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_820059455_+v.png",
+     "pano": "Oq01bGvQjb_mTtL6EGnjcw",
+     "dist": 15.4,
+     "off_axis_deg": 32,
+     "fov": 55,
+     "tilt": 99,
+     "heading": 288,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2090944,-79.4661878,419a,55y,288h,99t/data=!3m7!1e1!3m5!1sOq01bGvQjb_mTtL6EGnjcw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9%26panoid%3DOq01bGvQjb_mTtL6EGnjcw%26yaw%3D288!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2090944,
+      "lon": -79.4661878
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 320,
+   "width": 8.4,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_820059455_-v.png",
+     "pano": "bjeaQ8m56yfh0r7yPZwQ4A",
+     "dist": 26.7,
+     "off_axis_deg": 7,
+     "fov": 55,
+     "tilt": 95,
+     "heading": 146,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2094129,-79.4666316,419a,55y,146h,95t/data=!3m7!1e1!3m5!1sbjeaQ8m56yfh0r7yPZwQ4A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-5%26panoid%3DbjeaQ8m56yfh0r7yPZwQ4A%26yaw%3D146!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2094129,
+      "lon": -79.4666316
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-09 17:57"
+}

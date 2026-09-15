@@ -1,0 +1,121 @@
+{
+ "id": "680211973",
+ "addr": "29 South Avenue",
+ "name": "Hall of Christ",
+ "frame": "901d438e42894975089bde92391035fa37e5913844c1d9d9b6bd01d8887577bc",
+ "faces": {
+  "+u": {
+   "bearing": 181,
+   "width": 22.9,
+   "road": false,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_680211973_+u.png",
+     "pano": "D_zbKfBiel_qQXMlVolndA",
+     "dist": 38.0,
+     "off_axis_deg": 11,
+     "fov": 55,
+     "tilt": 91,
+     "heading": 12,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2051411,-79.4639596,420a,55y,12h,91t/data=!3m7!1e1!3m5!1sD_zbKfBiel_qQXMlVolndA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DD_zbKfBiel_qQXMlVolndA%26yaw%3D12!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2051411,
+      "lon": -79.4639596
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 1,
+   "width": 22.9,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_680211973_-u.png",
+     "pano": "_XCHXrZ6yn0RoeTchstfUQ",
+     "dist": 20.5,
+     "off_axis_deg": 6,
+     "fov": 70,
+     "tilt": 92,
+     "heading": 175,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2059891,-79.4638837,420a,70y,175h,92t/data=!3m7!1e1!3m5!1s_XCHXrZ6yn0RoeTchstfUQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3D_XCHXrZ6yn0RoeTchstfUQ%26yaw%3D175!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2059891,
+      "lon": -79.4638837
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 271,
+   "width": 36.7,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_680211973_+v.png",
+     "pano": "RJPxAasgTstDBL3IaJDXiw",
+     "dist": 39.9,
+     "off_axis_deg": 25,
+     "fov": 61,
+     "tilt": 91,
+     "heading": 116,
+     "date": "May 2023",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2057967,-79.4644386,422a,61y,116h,91t/data=!3m7!1e1!3m5!1sRJPxAasgTstDBL3IaJDXiw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DRJPxAasgTstDBL3IaJDXiw%26yaw%3D116!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2057967,
+      "lon": -79.4644386
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 91,
+   "width": 36.7,
+   "road": true,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_680211973_-v.png",
+     "pano": "F-gen5BdWL0XWshzyau9Hw",
+     "dist": 27.2,
+     "off_axis_deg": 7,
+     "fov": 80,
+     "tilt": 91,
+     "heading": 277,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2056079,-79.4633973,418a,80y,277h,91t/data=!3m7!1e1!3m5!1sF-gen5BdWL0XWshzyau9Hw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DF-gen5BdWL0XWshzyau9Hw%26yaw%3D277!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2056079,
+      "lon": -79.4633973
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-10 04:38"
+}

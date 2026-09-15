@@ -1,0 +1,43 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"91ebf7684e5b21511935ec3a833d3716a22a092aeb94cacfd9453e504750faaf\",\"operations\":[{\"op\":\"replace\",\"path\":\"/volumes/@long-wing/cornice\",\"value\":{\"height\":0.1,\"overhang\":0.03,\"color\":\"#b9bab2\",\"dentils\":false}},{\"op\":\"replace\",\"path\":\"/volumes/@southwest-block/cornice\",\"value\":{\"height\":0.1,\"overhang\":0.03,\"color\":\"#b9bab2\",\"dentils\":false}}]}",
+ "cues": [
+  "Stepped brown-brick flat-roof wings",
+  "Two-storey pale-framed WSW glazing",
+  "Single white principal-entry canopy",
+  "Raised pale gymnasium roof"
+ ],
+ "references_used": [
+  "MAP",
+  "SV2",
+  "SV4",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Roofs already specify flat geometry; restrained coping replaces the broader edging.",
+  "The aerial solar grid is omitted because the supplied catalog has no supported rooftop-panel component."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "southwest-block",
+   "face": "-v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV4",
+    "AERIAL"
+   ],
+   "confidence": "observed"
+  },
+  {
+   "volume": "gymnasium",
+   "face": "-u",
+   "role": "secondary",
+   "evidence": [
+    "MAP",
+    "SV2"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

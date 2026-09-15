@@ -1,0 +1,121 @@
+{
+ "id": "619932540",
+ "addr": null,
+ "name": "Miller Bell Tower",
+ "frame": "494a3e3b30ac9a4a4ff8cd3802445889cefd6a58509eb51297c0ceeb37bc16cf",
+ "faces": {
+  "+u": {
+   "bearing": 221,
+   "width": 4.4,
+   "road": true,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_619932540_+u.png",
+     "pano": "JFkhtCiNdIbBTdzVaNmUAA",
+     "dist": 14.2,
+     "off_axis_deg": 4,
+     "fov": 55,
+     "tilt": 100,
+     "heading": 37,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2112291,-79.4622806,401a,55y,37h,100t/data=!3m7!1e1!3m5!1sJFkhtCiNdIbBTdzVaNmUAA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DJFkhtCiNdIbBTdzVaNmUAA%26yaw%3D37!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2112291,
+      "lon": -79.4622806
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-u": {
+   "bearing": 41,
+   "width": 4.4,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_619932540_-u.png",
+     "pano": "QKCgRalhbWBTQBY6HAzIfA",
+     "dist": 5.1,
+     "off_axis_deg": 38,
+     "fov": 80,
+     "tilt": 100,
+     "heading": 259,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2113699,-79.4620812,401a,80y,259h,100t/data=!3m7!1e1!3m5!1sQKCgRalhbWBTQBY6HAzIfA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DQKCgRalhbWBTQBY6HAzIfA%26yaw%3D259!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2113699,
+      "lon": -79.4620812
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "+v": {
+   "bearing": 311,
+   "width": 4.5,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_619932540_+v.png",
+     "pano": "GOVAgzYB21WUiFnkoWmAEQ",
+     "dist": 4.9,
+     "off_axis_deg": 8,
+     "fov": 80,
+     "tilt": 100,
+     "heading": 139,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2113916,-79.4622187,402a,80y,139h,100t/data=!3m7!1e1!3m5!1sGOVAgzYB21WUiFnkoWmAEQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3DGOVAgzYB21WUiFnkoWmAEQ%26yaw%3D139!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2113916,
+      "lon": -79.4622187
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  },
+  "-v": {
+   "bearing": 131,
+   "width": 4.5,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_619932540_-v.png",
+     "pano": "Oo-LEdAs-23zhpEqe5qngQ",
+     "dist": 15.9,
+     "off_axis_deg": 11,
+     "fov": 55,
+     "tilt": 99,
+     "heading": 300,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.2112615,-79.461973,401a,55y,300h,99t/data=!3m7!1e1!3m5!1sOo-LEdAs-23zhpEqe5qngQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9%26panoid%3DOo-LEdAs-23zhpEqe5qngQ%26yaw%3D300!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.2112615,
+      "lon": -79.461973
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-09 22:22"
+}

@@ -1,0 +1,32 @@
+{
+ "blueprint_json": "{\"wall\":\"#896a60\",\"trim\":\"#b5ab97\",\"roofColor\":\"#858782\",\"volumes\":[{\"id\":\"studio\",\"u\":[-4.5,4.5],\"v\":[-3.45,3.45],\"bottom\":0,\"height\":2.85,\"roof\":{\"type\":\"hip\",\"ridge\":\"u\",\"pitch\":0.23,\"maxH\":1.55,\"overhang\":0.35},\"plinth\":{\"height\":0.22,\"color\":\"#68685e\"},\"faces\":{\"-v\":{\"storeys\":[{\"y\":0.35,\"windows\":{\"type\":\"basement\",\"w\":1.05,\"h\":0.42,\"at\":[0.2,0.77],\"trim\":\"#746e62\",\"glass\":\"#343e3d\",\"mullions\":false,\"interior\":false}}]},\"+v\":{\"doors\":[{\"at\":0.5,\"type\":\"rect\",\"w\":0.95,\"h\":2.1,\"color\":\"#655c50\",\"surround\":\"#b5ab97\",\"surroundW\":0.09}],\"storeys\":[{\"y\":1.1,\"windows\":{\"type\":\"rect\",\"w\":0.7,\"h\":0.95,\"at\":[0.22,0.78],\"trim\":\"#b5ab97\",\"glass\":\"#53615f\",\"mullions\":false}}]},\"+u\":{},\"-u\":{}}}],\"details\":[]}",
+ "patch_json": "",
+ "cues": [
+  "Compact, single-storey masonry studio.",
+  "Broad muted-gray hipped roof with short ridge.",
+  "Warm brown walls and restrained trim.",
+  "Nearly blank road-facing wall with two low openings."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "Principal entrance remains unverified: the existing +v door is retained provisionally, not established by photographic evidence.",
+  "Concealed-side windows are simplified assumptions; supplied references cannot resolve the requested entrance verification.",
+  "Photographed metal roof is approximated with the catalog hip roof."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+v",
+   "role": "principal \u2014 provisional retained placement",
+   "evidence": [
+    "MAP establishes face bearings; SV1 shows the opposite -v elevation without a visible entrance.",
+    "AERIAL does not resolve a doorway; no supplied photograph corroborates +v placement."
+   ],
+   "confidence": "unknown"
+  }
+ ]
+}

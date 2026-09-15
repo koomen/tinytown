@@ -1,0 +1,31 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"2dcd6dd8a1a8ed8972e1fe00d6ab9cf59f45afa142ef97d82072951034005654\",\"operations\":[{\"op\":\"remove\",\"path\":\"/volumes/@studio/faces/-u/storeys/1\"}]}",
+ "cues": [
+  "Compact single-storey studio with a simple gabled roof.",
+  "Muted reddish-brown walls and pale painted trim.",
+  "Low dark opening on the northwest gable.",
+  "Restrained overhangs and a slightly raised dark base."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1",
+  "AERIAL"
+ ],
+ "uncertainties": [
+  "The concealed entrance remains provisionally on +u/SE; supplied references cannot establish its face.",
+  "The catalog provides no documented wall-texture control; the muted wall palette is preserved."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+u",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "inferred"
+  }
+ ]
+}

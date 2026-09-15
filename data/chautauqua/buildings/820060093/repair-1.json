@@ -1,0 +1,30 @@
+{
+ "blueprint_json": "",
+ "patch_json": "{\"base_hash\":\"8eca0b0be8c35092b77ed0a49179ea59c4bb53ff4f2735526b3d56b6dbc9781c\",\"operations\":[{\"op\":\"add\",\"path\":\"/volumes/@studio/wallMaterial\",\"value\":\"siding\"},{\"op\":\"replace\",\"path\":\"/volumes/@studio/faces/-u/storeys/0/windows/w\",\"value\":0.65},{\"op\":\"add\",\"path\":\"/volumes/@studio/faces/-u/storeys/0/windows/mullions\",\"value\":false}]}",
+ "cues": [
+  "Reddish-brown horizontal timber siding.",
+  "Low pale hipped roof and raised base.",
+  "Single narrow, off-center window with pale trim.",
+  "One SSE-side entrance with three steps."
+ ],
+ "references_used": [
+  "MAP",
+  "SV1"
+ ],
+ "uncertainties": [
+  "The catalog does not document a siding material selector; wallMaterial support requires confirmation.",
+  "Concealed elevations remain simplified."
+ ],
+ "entrance_plan": [
+  {
+   "volume": "studio",
+   "face": "+v",
+   "role": "principal",
+   "evidence": [
+    "MAP",
+    "SV1"
+   ],
+   "confidence": "observed"
+  }
+ ]
+}

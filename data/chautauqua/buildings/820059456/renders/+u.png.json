@@ -1,0 +1,73 @@
+{
+ "key": "d7bba5fc2700153a5e76d73bc8aeba3f86bd786a17b87aa8e2e8c338b57e33f8",
+ "url": "http://localhost:8734/?site=chautauqua&focus=820059456&side=%2Bu&dist=90.0&height=8&stage=detail&free=1&bp=820059456,-7967716565,1416154858,619932538,641329576,680211975,820059454,820059455,820059456,820059469,820059474,820059478,820059525,946894365&notrees=1",
+ "blueprint": "baedcf54e0cedb1c0d4503d5c4774970c4138cb64791382ea886d4db01cedebf",
+ "frame": "692f7c392c41ba495b4ef9353b3397d3a4247d271604964bc271223bcf197fb9",
+ "context": "a5cddbcbc0b3ec16b55887f76e249190f1a920557282da7c1883c699f0f8f05d",
+ "renderer": "89131a7d66bcf58bf3f154fbdd6f051755eb2a7a36103fce121472bfcc880ec1",
+ "view": "+u",
+ "stage": "detail",
+ "pose": null,
+ "neighbors": {
+  "619932538": {
+   "draft": true,
+   "frame": "014624bd612dd7f99b2aa16e47e9db3f48d8b6aa4224a75e1563fdbc65b578e1",
+   "blueprint": "16a6e14dc47db7839e376f8c6009783c5a56b1ce6f53385529a30062a1170f53"
+  },
+  "641329576": {
+   "draft": true,
+   "frame": "d3307d6aa10e71895dc5cc2763d1240edab5ed37755eb450e7e9bf73960d92af",
+   "blueprint": "b41981a3da3bc698be5ab741af889c3b13aac618820c25ab7ac7b5b129b0be88"
+  },
+  "680211975": {
+   "draft": true,
+   "frame": "ee83fcec7327b5fc6fa2fae9fb0ed23e54c3da3a5fe65e22858dee5c7e26eb4c",
+   "blueprint": "efaa7300ffdd3baa4eaa4e894ea51f3833be60653dc0dd45b57610f25159e25f"
+  },
+  "820059454": {
+   "draft": true,
+   "frame": "1eb3d269acb9c3ca0486baa4e58c9a657bc305b84b5c771502bde2a73289bb3a",
+   "blueprint": "f7feaa14a6de6d06bcc8108b9f2ecc6cc53f3281d7bdde835ceee90093500331"
+  },
+  "820059455": {
+   "draft": true,
+   "frame": "de4912b59514ca1d469620569f0d73464371364ef1075270bbf3b18992c74a0d",
+   "blueprint": "76a47ebe775cbe06594e94350d79e489de6ef2ec9c5dfca833b6e1e166394a64"
+  },
+  "820059469": {
+   "draft": true,
+   "frame": "787762de8b18421c8fd2881f1919c10a5fa0eb9916105707cad7ce4c369d1974",
+   "blueprint": "ff7fdac73af3fb8f5fb0e694df7b54e229a5666593c113a9ecdc5782d0655d70"
+  },
+  "820059474": {
+   "draft": true,
+   "frame": "19e43f54ba84048f08872907c9bc97b64642283221cf0a198494554dd86ae234",
+   "blueprint": "eba80cc8e9e3934aaae9b5c23cce8b6b942017ff0e750d319b4132841b82442a"
+  },
+  "820059478": {
+   "draft": true,
+   "frame": "ed6dae34792ca8a3c961fae0f0d95d3adda67674ade156043da5925d68cf8220",
+   "blueprint": "13c43b0e9be865ae5ca1dd3111b6ff8a0b59d630c727a89ebb83bb5364851f66"
+  },
+  "820059525": {
+   "draft": true,
+   "frame": "6b9811d5a57d59b2d06231aaaa3bb48dba21a0144b8bcd873744c14919d6cc05",
+   "blueprint": "d606b69329424853efe3fbcc7d81c1a84c3f602013d4221459d98288b32ec698"
+  },
+  "946894365": {
+   "draft": true,
+   "frame": "9d1624ff1bad168ad8bd8333cbb6b086e8ef6c888788805d6551f3901813ba72",
+   "blueprint": "8078d3aa75770b05e46d43f405220fa133c46dfdf36568c8fa6cb567f4763be3"
+  },
+  "1416154858": {
+   "draft": true,
+   "frame": "440c861ec977c736897b373778e38fce5ccb6354d863df246461168732d1d2aa",
+   "blueprint": "b8f86195920988071b177664aa29f73f3427d097078a8be1b3d92f75761e0c90"
+  },
+  "-7967716565": {
+   "draft": true,
+   "frame": "b13bb02aea30acbdc696bb0f448c10ed4fc96081fa46e2812e5372e5daef4f11",
+   "blueprint": "ef2e3825f50bf5849b5242533129bdc8444a996f818038da833f83682bb51c6f"
+  }
+ }
+}

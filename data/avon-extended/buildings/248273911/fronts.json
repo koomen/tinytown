@@ -1,0 +1,118 @@
+{
+ "id": "248273911",
+ "addr": "80 Prospect Street",
+ "name": "Avon Post Office",
+ "faces": {
+  "+u": {
+   "bearing": 285,
+   "width": 15.5,
+   "road": true,
+   "photos": [
+    {
+     "face": "+u",
+     "file": "front_248273911_+u.png",
+     "pano": "Yp74gKOE5usQ2weHn1X0ow",
+     "dist": 17.4,
+     "off_axis_deg": 4,
+     "fov": 60,
+     "tilt": 93,
+     "heading": 101,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9131702,-77.7457286,199a,60y,101h,93t/data=!3m7!1e1!3m5!1sYp74gKOE5usQ2weHn1X0ow!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3%26panoid%3DYp74gKOE5usQ2weHn1X0ow%26yaw%3D101!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  },
+  "-u": {
+   "bearing": 105,
+   "width": 15.5,
+   "road": false,
+   "photos": [
+    {
+     "face": "-u",
+     "file": "front_248273911_-u.png",
+     "pano": "Yp74gKOE5usQ2weHn1X0ow",
+     "dist": 36.4,
+     "off_axis_deg": 178,
+     "fov": 55,
+     "tilt": 91,
+     "heading": 103,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9131702,-77.7457286,199a,55y,103h,91t/data=!3m7!1e1!3m5!1sYp74gKOE5usQ2weHn1X0ow!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DYp74gKOE5usQ2weHn1X0ow%26yaw%3D103!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  },
+  "+v": {
+   "bearing": 15,
+   "width": 19.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_248273911_+v.png",
+     "pano": "4N7gyYlCSAYBY5NCobe8_g",
+     "dist": 32.9,
+     "off_axis_deg": 53,
+     "fov": 55,
+     "tilt": 91,
+     "heading": 142,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9134188,-77.7456326,199a,55y,142h,91t/data=!3m7!1e1!3m5!1s4N7gyYlCSAYBY5NCobe8_g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3D4N7gyYlCSAYBY5NCobe8_g%26yaw%3D142!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+     "face": "+v",
+     "file": "front_248273911_+v_2.png",
+     "pano": "1WpGx5rt8BF3Io8tKex6-g",
+     "dist": 40.1,
+     "off_axis_deg": 41,
+     "fov": 55,
+     "tilt": 91,
+     "heading": 154,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9135092,-77.7456007,199a,55y,154h,91t/data=!3m7!1e1!3m5!1s1WpGx5rt8BF3Io8tKex6-g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3D1WpGx5rt8BF3Io8tKex6-g%26yaw%3D154!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  },
+  "-v": {
+   "bearing": 195,
+   "width": 19.0,
+   "road": false,
+   "photos": [
+    {
+     "face": "-v",
+     "file": "front_248273911_-v.png",
+     "pano": "ckVUYS7Do47qohnyZQhvhw",
+     "dist": 28.0,
+     "off_axis_deg": 62,
+     "fov": 55,
+     "tilt": 92,
+     "heading": 77,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9129945,-77.7457647,199a,55y,77h,92t/data=!3m7!1e1!3m5!1sckVUYS7Do47qohnyZQhvhw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3DckVUYS7Do47qohnyZQhvhw%26yaw%3D77!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+     "face": "-v",
+     "file": "front_248273911_-v_2.png",
+     "pano": "Jx2vb7J_P_OIyKBEYXrYVQ",
+     "dist": 51.7,
+     "off_axis_deg": 2,
+     "fov": 55,
+     "tilt": 91,
+     "heading": 16,
+     "date": "Aug 2025",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.9126064,-77.7456074,199a,55y,16h,91t/data=!3m7!1e1!3m5!1sJx2vb7J_P_OIyKBEYXrYVQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1%26panoid%3DJx2vb7J_P_OIyKBEYXrYVQ%26yaw%3D16!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+    }
+   ],
+   "coverage": true
+  }
+ },
+ "captured": "2026-09-03 01:28"
+}

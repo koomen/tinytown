@@ -1,0 +1,37 @@
+{
+ "id": "1396730271",
+ "addr": null,
+ "name": "Practice Studio 67",
+ "frame": "5364f6288ccbd6ee5b59eb109d3dd36c2df690596ff123b68aa10115b813b4a5",
+ "faces": {
+  "+v": {
+   "bearing": 39,
+   "width": 4.4,
+   "road": true,
+   "photos": [
+    {
+     "face": "+v",
+     "file": "front_1396730271_+v.png",
+     "pano": "r3f4aMyE8H85ZQ9n-FaOfw",
+     "dist": 11.9,
+     "off_axis_deg": 42,
+     "fov": 61,
+     "tilt": 100,
+     "heading": 260,
+     "date": "Jul 2012",
+     "coverage": true,
+     "url": "https://www.google.com/maps/@42.209554,-79.4726449,429a,61y,260h,100t/data=!3m7!1e1!3m5!1sr3f4aMyE8H85ZQ9n-FaOfw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-10%26panoid%3Dr3f4aMyE8H85ZQ9n-FaOfw%26yaw%3D260!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D",
+     "position": {
+      "lat": 42.209554,
+      "lon": -79.4726449
+     }
+    }
+   ],
+   "coverage": true,
+   "status": "complete",
+   "attempts": 3,
+   "photo_limit": 1
+  }
+ },
+ "captured": "2026-09-10 04:45"
+}
