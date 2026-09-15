@@ -8,7 +8,8 @@
 //                            right moves the camera left
 //   two fingers              pinch zooms, twist rotates, and the ground point
 //                            under the midpoint stays under the fingers
-//   pan(vector)              slide the view (used by the arrow keys)
+//   pan(vector)              slide the view (used by the up/down arrow keys)
+//   rotate(radians)          turn around the point you're looking at (left/right arrows)
 //
 // State is (target on the ground, azimuth, distance); the elevation never
 // changes. Motion is smoothed toward goal values each frame.
@@ -163,6 +164,11 @@ export class IsoControls extends THREE.EventDispatcher {
   }
 
   // Slide the view (e.g. arrow keys); instant, no smoothing lag for the goal
+  // Turn around the look-at point; eased like the wheel and twist gestures.
+  rotate(radians) {
+    this._goal.theta += radians;
+  }
+
   pan(v) {
     // Preserve height above the ground when moving down a hill. Keeping a
     // constant world Y leaves the camera orbiting the air above lower streets.

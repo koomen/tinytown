@@ -38,6 +38,21 @@ async function fingerprints() {
   return { inputSha256:digest(await readFile(join(directory,'site.json'))), sourceSha256:source.digest('hex') };
 }
 const inputs = await fingerprints();
+
+// The existing manifest, when its fingerprints match the current inputs and
+// every chunk it names verifies; otherwise null. Exports are not byte-reproducible
+// (gzip output varies), so re-exporting current assets would only churn them.
+async function currentManifest() {
+  try {
+    const manifest = JSON.parse(await readFile(join(output,'manifest.json')));
+    if (JSON.stringify(inputs) !== JSON.stringify({inputSha256:manifest.inputSha256,sourceSha256:manifest.sourceSha256})) return null;
+    for (const record of streamAssetRecords(manifest)) {
+      const bytes = await readFile(join(output,record.file));
+      if (digest(bytes)!==record.sha256 || bytes.length!==record.bytes) return null;
+    }
+    return manifest;
+  } catch { return null; }
+}
 if (process.argv.includes('--check')) {
   const manifest = JSON.parse(await readFile(join(output,'manifest.json')));
   assertStreamAssetSizes(manifest);
@@ -47,6 +62,8 @@ if (process.argv.includes('--check')) {
     if (digest(bytes)!==record.sha256 || bytes.length!==record.bytes) throw new Error(`Invalid asset ${record.file}`);
   }
   console.log(`Streaming assets current: ${manifest.tiles.length} tiles`);
+} else if (!process.argv.includes('--force') && await currentManifest()) {
+  console.log(`Streaming assets current: ${(await currentManifest()).tiles.length} tiles (pass --force to re-export)`);
 } else {
   // Only an actual build needs the browser harness; --check runs anywhere Node does.
   const { withBrowser, waitFor } = await import('../browser.mjs');

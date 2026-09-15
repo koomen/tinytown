@@ -553,25 +553,25 @@ window.addEventListener('keyup', (e) => {
 });
 window.addEventListener('blur', () => held.clear());
 
-// Arrow keys glide the camera over the ground: up/down along the view
-// direction, left/right sideways. Speed scales with how far out you are.
-const _fwd = new THREE.Vector3(), _right = new THREE.Vector3(), _move = new THREE.Vector3();
+// Up/down arrows glide the camera along the view direction (speed scales
+// with how far out you are); left/right arrows turn around the look-at point,
+// in the same sense as a sideways trackpad swipe.
+const TURN_SPEED = 1.1; // radians per second
+const _fwd = new THREE.Vector3(), _move = new THREE.Vector3();
 function panWithKeys(dt) {
   if (held.size === 0) return;
+  const turn = (held.has('ArrowRight') ? -1 : 0) + (held.has('ArrowLeft') ? 1 : 0);
+  if (turn !== 0) {
+    if (controls.rotate) controls.rotate(turn * TURN_SPEED * dt);
+  }
+  const glide = (held.has('ArrowUp') ? 1 : 0) - (held.has('ArrowDown') ? 1 : 0);
+  if (glide === 0) return;
   const dist = camera.position.distanceTo(controls.target);
   const speed = dist * 0.35 * dt; // about a third of the orbit distance per second
   camera.getWorldDirection(_fwd);
   _fwd.y = 0;
   if (_fwd.lengthSq() < 1e-6) _fwd.set(0, 0, -1);
-  _fwd.normalize();
-  _right.crossVectors(_fwd, camera.up).normalize();
-  _move.set(0, 0, 0);
-  if (held.has('ArrowUp')) _move.add(_fwd);
-  if (held.has('ArrowDown')) _move.sub(_fwd);
-  if (held.has('ArrowRight')) _move.add(_right);
-  if (held.has('ArrowLeft')) _move.sub(_right);
-  if (_move.lengthSq() === 0) return;
-  _move.normalize().multiplyScalar(speed);
+  _move.copy(_fwd.normalize()).multiplyScalar(glide * speed);
   if (controls.pan) controls.pan(_move);
   else { camera.position.add(_move); controls.target.add(_move); }
 }

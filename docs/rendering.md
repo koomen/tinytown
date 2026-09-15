@@ -204,6 +204,6 @@ uniforms), `grain.value`, `lighting`, `quality`, `streaming.stats`,
 
 The camera is a fixed isometric tilt (`src/isocontrols.js`): drag grabs the
 ground so the point under the cursor stays under it; scroll zooms; horizontal
-scroll rotates around the look-at point; arrow keys glide. Each published
+scroll rotates around the look-at point; up/down arrows glide and left/right arrows turn. Each published
 miniature opens on a fixed view that resets on load; `?free=1` and `?focus=`
 views keep their camera per tab in `sessionStorage`.

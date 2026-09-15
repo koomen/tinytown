@@ -122,7 +122,8 @@ headless Chromium; streaming chunks are camera-sector geometry exported by
 Node. Both are keyed by a fingerprint of `site.json` and of the generator
 sources, so an unchanged input does no work. Commit the results: the deployed
 site never generates them. The stream export is not byte-reproducible, so
-expect new chunk names after every bake. Until a site is baked the viewer
+chunks are re-exported only when stale (or with `--force`), and then under new
+names. Until a site is baked the viewer
 falls back to in-browser generation and does not stream (`?stream=1` after
 baking).
 

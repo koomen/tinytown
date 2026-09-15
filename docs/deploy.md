@@ -111,8 +111,9 @@ git add data index.html && git commit
 
 If a check reports stale assets: `./town bake <site>` (needs the private
 browser and Node), `./town bake --viewer`, then commit the regenerated files.
-Stream export is not byte-reproducible, so chunk names change on every bake;
-commit the deletions too.
+Stream export is not byte-reproducible, so `town bake` re-exports chunks only
+when their fingerprint is stale (or with `--force`); when it does, chunk names
+change and the deletions are committed too.
 
 ## Preview a build locally
 

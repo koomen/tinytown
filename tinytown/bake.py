@@ -111,22 +111,29 @@ def bake_surfaces(paths, check=False):
 
 # --- streaming ----------------------------------------------------------------
 
-def bake_stream(paths, check=False):
+def bake_stream(paths, check=False, force=False):
     command = ['node', str(STREAM_SCRIPT), paths.relative(paths.data)]
     if check:
         command.append('--check')
+    elif force:
+        command.append('--force')
     return subprocess.run(command, cwd=paths.root).returncode == 0
 
 
 # --- the verb -----------------------------------------------------------------
 
-def bake(paths, *, check=False, surfaces=True, stream=True):
-    """Bake one site's runtime assets; with check=True only report whether they are current."""
+def bake(paths, *, check=False, surfaces=True, stream=True, force=False):
+    """Bake one site's runtime assets; with check=True only report whether they are current.
+
+    Assets whose fingerprints already match are left alone (exports are not
+    byte-reproducible, so rebuilding them would only churn the repository);
+    force=True re-exports the streaming chunks anyway.
+    """
     ok = True
     if surfaces:
         ok = bake_surfaces(paths, check) and ok
     if stream:
-        ok = bake_stream(paths, check) and ok
+        ok = bake_stream(paths, check, force) and ok
     return ok
 
 
@@ -192,6 +199,7 @@ def register(subparsers):
                                    description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('site', nargs='?', help="site name or data directory, e.g. avon or data/avon")
     parser.add_argument('--check', action='store_true', help='report whether assets are current; no browser needed')
+    parser.add_argument('--force', action='store_true', help='re-export streaming chunks even when they are current')
     only = parser.add_mutually_exclusive_group()
     only.add_argument('--surfaces-only', action='store_true')
     only.add_argument('--stream-only', action='store_true')
@@ -206,4 +214,5 @@ def _run(args):
         print('town bake: a site (or --viewer) is required', file=sys.stderr)
         return 2
     paths = site_paths(args.site)
-    return 0 if bake(paths, check=args.check, surfaces=not args.stream_only, stream=not args.surfaces_only) else 1
+    return 0 if bake(paths, check=args.check, surfaces=not args.stream_only, stream=not args.surfaces_only,
+                     force=args.force) else 1
