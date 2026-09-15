@@ -1,4 +1,4 @@
-// Avon at the domain root; the compact miniature remains available at /avon.
+// avon.town: the Avon miniature at the domain root; the original village-centre scene stays at /avon.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "avon-town",

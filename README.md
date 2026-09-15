@@ -21,7 +21,7 @@ village-centre miniature) and **[chautauqua.town](https://chautauqua.town)**
 git clone https://github.com/koomen/tinytown && cd tinytown
 python3 -m venv .venv && .venv/bin/pip install -e .   # Python 3.10+
 ./town serve
-# open http://localhost:8734/  (Extended Avon), /avon, /chautauqua, /?site=<name>
+# open http://localhost:8734/  (Avon), /avon (village centre), /chautauqua, /?site=<name>
 ```
 
 `town serve` needs only the standard library; `./town` picks up `.venv`
@@ -109,7 +109,7 @@ runs them). See [CLAUDE.md](CLAUDE.md) for what each tier needs.
 ## Deployment
 
 Two Cloudflare Workers upload the static `dist/` directories that
-`./town stage` stages: `avon-town` serves avon.town (`/` Extended Avon, `/avon`,
+`./town stage` stages: `avon-town` serves avon.town (`/` Avon, `/avon` village centre,
 `/avon-extended`, `/chautauqua`) and `chautauqua-miniature` serves
 chautauqua.town. Routes derive from `sites/*/site.json`. On push to `main`,
 Workers Builds runs `python3 -m tinytown stage --target …` with bare Python

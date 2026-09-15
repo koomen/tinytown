@@ -5,7 +5,7 @@ built in the browser or at request time; the Workers upload `dist/<target>/`.
 
 | Worker | Domain | Wrangler config | Dist | Routes |
 | --- | --- | --- | --- | --- |
-| `avon-town` | avon.town | `wrangler.jsonc` | `dist/town/` | `/` Extended Avon, `/avon` compact Avon, `/avon-extended` (+ alias `/extended`), `/chautauqua` |
+| `avon-town` | avon.town | `wrangler.avon.jsonc` | `dist/town/` | `/` Avon, `/avon` the original village-centre scene, `/avon-extended` (+ alias `/extended`), `/chautauqua` |
 | `chautauqua-miniature` | chautauqua.town | `wrangler.chautauqua.jsonc` | `dist/chautauqua/` | `/` Chautauqua |
 
 ## Routes are config
@@ -91,7 +91,7 @@ Both Workers are connected to the `koomen/tinytown` GitHub repository with
 `main` as the production branch and the repository root as the root directory.
 On every push to `main` Cloudflare runs the config's `build.command`
 (`python3 -m tinytown stage --target …`) and then deploys with Wrangler
-(`npx --yes wrangler@4.131.2 deploy --config wrangler.jsonc` and the
+(`npx --yes wrangler@4.131.2 deploy --config wrangler.avon.jsonc` and the
 Chautauqua equivalent, configured in the dashboard). Cloudflare manages the
 GitHub integration and tokens; there are no GitHub Actions and no secrets in
 the repository.

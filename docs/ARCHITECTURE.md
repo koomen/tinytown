@@ -43,7 +43,7 @@ tiny-town/
   tests/browser/       headless-browser drivers (*.mjs) and their check modules (checks/*.js)
   tests/run.sh         runs everything that does not need network or a model
   docs/                this file plus deep dives
-  wrangler.jsonc, wrangler.chautauqua.jsonc, _headers   Cloudflare
+  wrangler.avon.jsonc, wrangler.chautauqua.jsonc, _headers   Cloudflare
 ```
 
 ## Modules
@@ -175,7 +175,7 @@ Status of a building, derived by `state.building_status(paths, bid)`:
 dist directories and Wrangler configs:
 
 ```json
-{"town": {"dist": "dist/town", "wrangler": "wrangler.jsonc"},
+{"town": {"dist": "dist/town", "wrangler": "wrangler.avon.jsonc"},
  "chautauqua": {"dist": "dist/chautauqua", "wrangler": "wrangler.chautauqua.jsonc"}}
 ```
 

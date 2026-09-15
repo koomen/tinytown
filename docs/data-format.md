@@ -90,7 +90,7 @@ stored: `unreferenced`, `referenced`, `drafted`, `needs-repair`, `reviewed`,
 | `favicon.*`, `apple-touch-icon.png`, `social-preview.jpg` | Optional per-site icons and preview; the repository root files are the fallback. |
 
 `sites/deploy.json` maps deploy targets to their dist directory and Wrangler
-config: `{"town": {"dist": "dist/town", "wrangler": "wrangler.jsonc"}, …}`.
+config: `{"town": {"dist": "dist/town", "wrangler": "wrangler.avon.jsonc"}, …}`.
 
 ## What is gitignored, and why
 
