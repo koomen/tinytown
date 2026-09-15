@@ -5,7 +5,7 @@
   "compatibility_date": "2026-09-01",
   "routes": [{ "pattern": "chautauqua.town", "custom_domain": true }],
   "build": {
-    "command": "python3 -m tinytown deploy --target chautauqua"
+    "command": "python3 -m tinytown stage --target chautauqua"
   },
   "assets": {
     "directory": "./dist/chautauqua",

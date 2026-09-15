@@ -18,7 +18,7 @@ through the middle four independently of every other structure.
 | 5 | Review and repair, bounded | `town review`, `town lint` | draft, renders | `buildings/<id>/review.json`, `repair-N.json` |
 | 6 | Accept into the authored truth | `town accept` | drafts | `data/<site>/overrides.json` |
 | 7 | Build the scene and bake assets | `town build`, `town bake` | `source/`, `overrides.json`, the renderer in headless Chromium | `data/<site>/site.json`, `surfaces*.bin.gz`, `stream/` |
-| 8 | Stage and deploy | `town deploy`, `town verify`, `town serve` | scenes, `sites/`, `index.html`, `src/` | `dist/<target>/` |
+| 8 | Stage and deploy | `town stage`, `town verify`, `town serve` | scenes, `sites/`, `index.html`, `src/` | `dist/<target>/` |
 
 `town author` runs stages 3 through 6 for many buildings in one command. It is
 idempotent: status is derived from files on disk, so re-running it resumes.
@@ -67,7 +67,7 @@ and imports a module only when one of its verbs runs.
 | `model.py` | the model adapter (Codex CLI today); usage accounting; `BudgetExhausted` | | `miniature_model`, `model_runner`, the model parts of `fidelity_runner` |
 | `author.py` | per-building author/review/repair state machine; concurrency; budgets; scene critique; accept | `author`, `accept` | `miniature_pipeline`, `fidelity_runner`, `run_diorama`, `expand_diorama`, `expansion_queue`, `publish_*`, `merge_blueprints`, `production_baseline`, `renderer_snapshot` |
 | `bake.py` + `web/` | terrain/pavement surfaces, streaming chunks, viewer version stamping | `bake` | `precompute_surfaces`, `precompute.html`, `prepare_streaming.mjs`, `stream-export.*`, `stream-asset-limits.mjs`, `version_viewer` |
-| `deploy.py` | route documents, dist staging per target, dev server, live verification | `deploy`, `serve`, `verify` | `build_routes`, `build_deployment`, `site_routes`, `verify_deployment`, `serve.py` |
+| `deploy.py` | route documents, dist staging per target, dev server, live verification | `stage`, `serve`, `verify` | `build_routes`, `build_deployment`, `site_routes`, `verify_deployment`, `serve.py` |
 | `migrate.py` | one-time move from the pre-2026-09 layout | `migrate` | |
 
 Deleted outright, not ported: `resume_expansion`, `watch_expansion`,
@@ -88,7 +88,7 @@ Deleted outright, not ported: `resume_expansion`, `watch_expansion`,
    current inputs. Never keep a separate ledger of what is done.
 4. **`overrides.json` is the authored truth.** Drafts are proposals; `accept`
    is the only thing that writes blueprints into `overrides.json`.
-5. **Stdlib only on the deploy path.** `config`, `paths`, `state`, `deploy`,
+5. **Stdlib only on the deploy path.** `config`, `paths`, `state`, `deploy` (the `stage` verb),
    `bake --check`, and `site.build` must import nothing outside the standard
    library at module import time. Cloudflare runs them with bare `python3`.
    Import `PIL` and `websocket` lazily inside the functions that need them.
@@ -314,5 +314,5 @@ private browser is installed. Two golden checks guard the refactor:
 
 - `town build <site>` must reproduce the committed `data/<site>/site.json` for
   all three sites, byte for byte apart from the `name` field.
-- `town deploy --target town` and `--target chautauqua` must reproduce the
+- `town stage --target town` and `--target chautauqua` must reproduce the
   committed dist hashes apart from viewer `?v=` stamps.

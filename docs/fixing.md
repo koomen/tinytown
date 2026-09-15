@@ -20,8 +20,8 @@ argparse does not read `-u` as an option.
 | Water, pitch, pier or fence geometry is off | Edit `sites/<site>/landmarks.json` ([landmarks.md](landmarks.md)) and `./town build <site>`. |
 | Terrain seam, floating pavement, stale ground after a data edit | `./town build <site>` then `./town bake <site>` (surfaces and stream are fingerprinted on `site.json` and `src/`; `--check` tells you which is stale). |
 | The viewer loads old JavaScript or a stale manifest | `./town bake --viewer` restamps the `?v=` URLs in `index.html`. |
-| `town deploy` fails with "Baked assets are stale" | `./town bake <site>` for each named site, `./town bake --viewer`, commit `data/` and `index.html`. |
-| `town deploy` says the scene does not match its scope | `./town build <site>` after editing `sites/<site>/scope.json`; every scoped structure must also have a blueprint. |
+| `town stage` fails with "Baked assets are stale" | `./town bake <site>` for each named site, `./town bake --viewer`, commit `data/` and `index.html`. |
+| `town stage` says the scene does not match its scope | `./town build <site>` after editing `sites/<site>/scope.json`; every scoped structure must also have a blueprint. |
 | `town render --compare` or `town review` fails for want of images | Fronts and renders are gitignored. `./town refs <site> ID` (recapture) and `./town render <site> ID --face=… --force`. |
 | Lint warnings in `overrides.json` | `./town lint <site> --merged -q` lists them; fix through the manual loop and re-accept. |
 | Accept refuses a forced publication | It is telling the truth: inspection failed after two repairs. Fix the draft, or `./town accept <site> ID --force` knowingly. |

@@ -12,7 +12,7 @@ Worker, `wrangler.chautauqua.jsonc`) and at https://avon.town/chautauqua.
 - **Scoped.** Avon models every footprint in its box. Chautauqua's
   `sites/chautauqua/scope.json` freezes `building_ids`; `town build` includes
   only those structures, `town author --all` authors only those, and
-  `town deploy` refuses a scene whose ids differ from the scope or that still
+  `town stage` refuses a scene whose ids differ from the scope or that still
   has an unauthored structure. Keep the scope file in place (and named by
   `"scope"` in `site.json`) before any `--all` run, otherwise every mapped
   building in the box becomes work.
@@ -54,7 +54,7 @@ Worker, `wrangler.chautauqua.jsonc`) and at https://avon.town/chautauqua.
 ./town status chautauqua
 ./town author chautauqua 619932539 --reauthor 619932539 --accept   # the Amphitheater again
 ./town bake chautauqua
-./town deploy --target chautauqua && ./town serve --dist chautauqua --port 8735
+./town stage --target chautauqua && ./town serve --dist chautauqua --port 8735
 ```
 
 Browser checks specific to this site: `node tests/browser/run.mjs chautauqua`

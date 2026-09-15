@@ -9,7 +9,7 @@ Requirements
 ------------
 Authoring needs the OpenAI Codex CLI installed and logged in (`codex login`).
 Nothing here copies or reads API keys: the CLI holds its own credentials under
-`CODEX_HOME` (default `~/.codex`). `town build`/`town deploy` never import this
+`CODEX_HOME` (default `~/.codex`). `town build`/`town stage` never import this
 module, so a deploy machine does not need Codex.
 
 The call

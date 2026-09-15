@@ -1155,7 +1155,7 @@ def scope(paths, *, ids=None, ids_file=None, bounds=None, exclude=None, title=No
     if record != current:
         atomic_json(paths.scope, record)
     if not paths.config.exists():
-        # A brand-new site: give it the minimal config `build` and `deploy` read.
+        # A brand-new site: give it the minimal config `build` and `stage` read.
         atomic_json(paths.config, {"title": record.get("title", paths.name), "scope": paths.scope.name})
     elif not settings(paths).get("scope"):
         print(f"note: {paths.config} does not name a scope file; add \"scope\": \"{paths.scope.name}\" for build to honour it")

@@ -39,7 +39,7 @@ so it needs network access.
 ./town refs mytown --all                                          # Street View fronts and aerials per building
 ./town author mytown --all --accept                               # model authoring: needs the Codex CLI (`codex login`)
 ./town bake mytown                                                # terrain/pavement surfaces and streaming chunks
-./town deploy --target town                                       # after adding sites/mytown/site.json
+./town stage --target town                                       # after adding sites/mytown/site.json
 ```
 
 Each verb is idempotent: re-running it does the missing work and exits 0.
@@ -109,10 +109,10 @@ runs them). See [CLAUDE.md](CLAUDE.md) for what each tier needs.
 ## Deployment
 
 Two Cloudflare Workers upload the static `dist/` directories that
-`./town deploy` stages: `avon-town` serves avon.town (`/` Extended Avon, `/avon`,
+`./town stage` stages: `avon-town` serves avon.town (`/` Extended Avon, `/avon`,
 `/avon-extended`, `/chautauqua`) and `chautauqua-miniature` serves
 chautauqua.town. Routes derive from `sites/*/site.json`. On push to `main`,
-Workers Builds runs `python3 -m tinytown deploy --target …` with bare Python
+Workers Builds runs `python3 -m tinytown stage --target …` with bare Python
 and Node; it only checks that the committed surfaces, streams and viewer stamps
 are current, so bake before you push. Verify with
 `./town verify town https://avon.town`. Details: [docs/deploy.md](docs/deploy.md).

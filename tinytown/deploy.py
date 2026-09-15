@@ -5,7 +5,7 @@ directory. Its routes come from the `deploy` placements in sites/*/site.json:
 the site at `/` is the target's root; other sites get `/<route>.html`
 documents that pin the shared viewer to their scene.
 
-Standard library only: Cloudflare runs `python3 -m tinytown deploy` with bare python3.
+Standard library only: Cloudflare runs `python3 -m tinytown stage` with bare python3.
 """
 import argparse
 from functools import partial
@@ -382,7 +382,7 @@ def verify(bundle, domain, site, attempts=12, delay=10):
 
 def register(subparsers):
     targets = list(config.deploy_targets())
-    deploy = subparsers.add_parser('deploy', help='stage dist/<target> for Cloudflare',
+    deploy = subparsers.add_parser('stage', help='stage dist/<target> for Cloudflare',
                                    description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     deploy.add_argument('--target', choices=targets + ['all'], default='all')
     deploy.add_argument('--no-check', action='store_true', help='skip the bake --check and viewer stamp checks')
@@ -407,7 +407,7 @@ def _run_deploy(args):
         try:
             print(build(target, check=not args.no_check))
         except ValueError as error:
-            print(f'town deploy {target}: {error}', file=sys.stderr)
+            print(f'town stage {target}: {error}', file=sys.stderr)
             return 1
     return 0
 

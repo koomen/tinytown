@@ -14,7 +14,7 @@ codex login                                           # only for `town author` (
 ```
 
 `./town` runs `python -B -m tinytown` with `.venv/bin/python` when present
-(`PIPELINE_PYTHON` overrides). `serve`, `build`, `deploy`, `bake --check`,
+(`PIPELINE_PYTHON` overrides). `serve`, `build`, `stage`, `bake --check`,
 `status`, `plan`, `lint` need only the standard library.
 
 ## Verbs
@@ -83,13 +83,13 @@ codex login                                           # only for `town author` (
 4. `overrides.json` is the authored truth; `accept` is the only thing that
    writes blueprints into it. Drafts are proposals.
 5. Standard library only at import time for `config`, `paths`, `state`,
-   `deploy`, `bake --check`, `site.build`; import `PIL`/`websocket` lazily.
+   `stage`, `bake --check`, `site.build`; import `PIL`/`websocket` lazily.
 6. Python >= 3.10, Node >= 22. One browser harness (`browser.py` / `browser.mjs`).
 7. Verbs are idempotent.
 
 ## Gotchas
 
-- `town deploy` (and the Cloudflare build) fails if surfaces, streams or the
+- `town stage` (and the Cloudflare build) fails if surfaces, streams or the
   viewer stamps are stale. Bake, restamp, commit `data/` + `index.html` first.
 - Stream export is not byte-reproducible: chunk names change on every bake;
   commit the deletions with the additions.
@@ -123,15 +123,15 @@ node tests/browser/run.mjs [--list | name… | all]             # headless suite
 
 Golden checks: `./town build <site>` must reproduce the committed
 `data/<site>/site.json` for all three sites (apart from `name`), and
-`./town deploy` must reproduce the committed dist hashes apart from `?v=`
+`./town stage` must reproduce the committed dist hashes apart from `?v=`
 stamps. `tests/browser/chautauqua-browser.py` needs
-`./town deploy --target chautauqua` first.
+`./town stage --target chautauqua` first.
 
 ## Deploy checklist
 
 1. `for s in avon avon-extended chautauqua; do ./town bake "$s" --check; done`
 2. `./town bake --viewer --check`
-3. `./town deploy` (stages both targets; same checks Cloudflare runs)
+3. `./town stage` (stages both targets; same checks Cloudflare runs)
 4. `tests/run.sh`
 5. Commit `data/`, `index.html`, `sites/`, `_headers`; push to `main`.
 6. `./town verify town https://avon.town` and

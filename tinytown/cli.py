@@ -22,7 +22,7 @@ VERBS = {
     'accept': 'author',
     'status': 'state',
     'bake': 'bake',
-    'deploy': 'deploy',
+    'stage': 'deploy',
     'serve': 'deploy',
     'verify': 'deploy',
     'browser': 'browser',

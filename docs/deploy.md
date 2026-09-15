@@ -1,6 +1,6 @@
 # Deployment
 
-Two Cloudflare Workers serve static assets built by `town deploy`. Nothing is
+Two Cloudflare Workers serve static assets built by `town stage`. Nothing is
 built in the browser or at request time; the Workers upload `dist/<target>/`.
 
 | Worker | Domain | Wrangler config | Dist | Routes |
@@ -30,15 +30,15 @@ targets to dist directories and Wrangler files.
 
 To add a site to an existing target, add a placement. To add a target, add an
 entry to `sites/deploy.json`, a `wrangler.<target>.jsonc` whose `build.command`
-is `python3 -m tinytown deploy --target <target>` and whose `assets.directory`
+is `python3 -m tinytown stage --target <target>` and whose `assets.directory`
 is the dist directory, and connect a Worker to it in Cloudflare.
 
-## What `town deploy` does
+## What `town stage` does
 
 ```sh
-./town deploy                      # every target
-./town deploy --target town        # one target
-./town deploy --target chautauqua --no-check   # skip the staleness checks (local experiments only)
+./town stage                      # every target
+./town stage --target town        # one target
+./town stage --target chautauqua --no-check   # skip the staleness checks (local experiments only)
 ```
 
 For each target it:
@@ -80,7 +80,7 @@ Viewer modules carry a `?v=<hash of src/>` stamp in the import map (written by
 `town bake --viewer`) so a cached pre-update `main.js` can never consume a newer
 manifest. When you add a route, add its `no-cache` line here.
 
-Only the staged `dist/<target>` directory is uploaded, and `town deploy`
+Only the staged `dist/<target>` directory is uploaded, and `town stage`
 copies runtime files alone (viewer, scenes, surfaces, streams, textures,
 icons). Nothing under `data/*/source`, `data/*/buildings`, or `overrides.json`
 ever reaches Cloudflare.
@@ -90,7 +90,7 @@ ever reaches Cloudflare.
 Both Workers are connected to the `koomen/tinytown` GitHub repository with
 `main` as the production branch and the repository root as the root directory.
 On every push to `main` Cloudflare runs the config's `build.command`
-(`python3 -m tinytown deploy --target …`) and then deploys with Wrangler
+(`python3 -m tinytown stage --target …`) and then deploys with Wrangler
 (`npx --yes wrangler@4.131.2 deploy --config wrangler.jsonc` and the
 Chautauqua equivalent, configured in the dashboard). Cloudflare manages the
 GitHub integration and tokens; there are no GitHub Actions and no secrets in
@@ -104,7 +104,7 @@ push**: `data/<site>/site.json`, `surfaces*`, `stream/` and `index.html`.
 ```sh
 for s in avon avon-extended chautauqua; do ./town bake "$s" --check; done
 ./town bake --viewer --check
-./town deploy                       # stages both targets locally; fails like Cloudflare would
+./town stage                       # stages both targets locally; fails like Cloudflare would
 tests/run.sh
 git add data index.html && git commit
 ```
@@ -123,7 +123,7 @@ commit the deletions too.
 ```
 
 The dev server disables caching, generates route documents the same way
-`town deploy` does, and serves `?site=<name>` previews for any `data/<name>/`.
+`town stage` does, and serves `?site=<name>` previews for any `data/<name>/`.
 
 ## Verify a live deployment
 
@@ -136,4 +136,4 @@ The dev server disables caching, generates route documents the same way
 `verify` compares the live `index.html`, `src/main.js`, `site.json`,
 `surfaces.json` and `stream/manifest.json` byte for byte with `dist/<target>/`
 (ignoring the Cloudflare Web Analytics beacon), retrying for about two minutes
-while the deployment propagates. Build the dist first with `./town deploy`.
+while the deployment propagates. Build the dist first with `./town stage`.

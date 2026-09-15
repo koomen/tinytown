@@ -21,7 +21,7 @@ building formats are in [STYLE_SCHEMA.md](STYLE_SCHEMA.md) and
 | `overrides.json` | you, `town accept`, `town scope` | **The authored truth** (below). |
 | `site.json` | `town build` | The built scene. Regenerable from `source/` + `overrides.json`; committed so the viewer and Cloudflare need no build step. |
 | `surfaces.json`, `surfaces-<hash>.bin.gz` | `town bake` | Baked terrain and pavement. The index records `inputSha256` (of `site.json`), `sourceSha256` (of `src/*.js` + the precompute page), `compressedSha256`, byte counts and the build profile. Only one `surfaces-*.bin.gz` is kept per site. |
-| `stream/manifest.json`, `stream/<chunk>-<hash>.bin.gz` | `town bake` | Camera-sector geometry: `base[-part-N]`, `detail-<x>_<z>` tiles and, for large maps, `region-<x>_<z>` chunks. The manifest records `inputSha256`, `sourceSha256`, per-file sha256 and sizes; `town deploy` verifies every file against it. |
+| `stream/manifest.json`, `stream/<chunk>-<hash>.bin.gz` | `town bake` | Camera-sector geometry: `base[-part-N]`, `detail-<x>_<z>` tiles and, for large maps, `region-<x>_<z>` chunks. The manifest records `inputSha256`, `sourceSha256`, per-file sha256 and sizes; `town stage` verifies every file against it. |
 | `textures/` | you | Curated images referenced from blueprints (`signs[].image`, murals). Paths in blueprints are repository-relative (`data/avon/textures/…`). Only referenced textures are deployed. |
 | `buildings/<id>/` | stages 3–6 | Everything about one structure (below). |
 | `frame_review.json` | `town build` | Ids whose footprint frame changed since their blueprint was accepted; `town plan` lists them as `review-frame`. |
@@ -82,7 +82,7 @@ stored: `unreferenced`, `referenced`, `drafted`, `needs-repair`, `reviewed`,
 | File | Contents |
 | --- | --- |
 | `site.json` | `title`, `description` (both required to deploy), `domain`, `deploy` placements (`[{"target", "route", "aliases"?}]`), `plugin` (module name under `tinytown/plugins/`), `scope` (scope file name), `landmarks` and `outline` (sidecar file names, relative to this directory; `../avon/landmarks.json` shares a sidecar), `social_image` (`alt`, `width`, `height`). |
-| `scope.json` | Frozen `building_ids`, optional `exclusions`, `bounds`, `title`, plus whatever notes the author keeps (Chautauqua records `practice_ids`, `gates`, a `source_map`). Maintained by `town scope`; honoured by `town build` and checked by `town deploy`. |
+| `scope.json` | Frozen `building_ids`, optional `exclusions`, `bounds`, `title`, plus whatever notes the author keeps (Chautauqua records `practice_ids`, `gates`, a `source_map`). Maintained by `town scope`; honoured by `town build` and checked by `town stage`. |
 | `labels.json` | `{id: name}` known names for structures OSM does not name; `town author` uses it by default. |
 | `web-references.json` | `{id: [{url, page_url, title, provider?}]}` curated web images for the packet. |
 | `landmarks.json` | Geographic (`[lon, lat]`) landmark features the plugin projects into the local frame ([landmarks.md](landmarks.md)). |

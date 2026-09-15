@@ -4,7 +4,7 @@
 # ///
 """Check the standalone Chautauqua release at desktop and phone sizes.
 
-Build it first: ./town deploy --target chautauqua. Run: ./town browser setup, then
+Build it first: ./town stage --target chautauqua. Run: ./town browser setup, then
 .venv/bin/python tests/browser/chautauqua-browser.py (or uv run for the inline deps).
 """
 import base64

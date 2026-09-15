@@ -17,7 +17,7 @@ node --version                                           # 22+ for bake and test
 ```
 
 `./town` prefers `.venv/bin/python` automatically (`PIPELINE_PYTHON` overrides
-it). `town serve`, `town build`, `town deploy` and `town bake --check` need
+it). `town serve`, `town build`, `town stage` and `town bake --check` need
 nothing beyond the standard library.
 
 ## 1. Fetch the public data
@@ -60,7 +60,7 @@ or anything with a boundary, freeze a scope:
 
 This writes `sites/mytown/scope.json` (and a minimal `sites/mytown/site.json`
 naming it if none exists). `town build` then includes only those ids and
-`town deploy` insists the scene matches. Re-running with the same arguments
+`town stage` insists the scene matches. Re-running with the same arguments
 changes nothing.
 
 A site can also be carved out of another site's downloads without refetching:
@@ -160,11 +160,11 @@ A plugin is optional: `tinytown/plugins/mytown.py` with any of
 ## 8. Stage, check, push, verify
 
 ```sh
-./town deploy --target town              # dist/town/, after bake --check and viewer checks
+./town stage --target town              # dist/town/, after bake --check and viewer checks
 ./town serve --dist town                 # preview exactly what will be uploaded
 tests/run.sh
 git add data/mytown sites/mytown index.html _headers && git commit
-git push                                  # Cloudflare Workers Builds runs `python3 -m tinytown deploy --target town`
+git push                                  # Cloudflare Workers Builds runs `python3 -m tinytown stage --target town`
 ./town verify town https://avon.town mytown
 ```
 
