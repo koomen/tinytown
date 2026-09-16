@@ -272,7 +272,8 @@ export function bake(root, { preserveInstances = false, compactNormals = false }
 }
 
 // Share repeated rounded frames, pillars, and other plain kit parts on phones.
-// Surface shaders (especially pane UV IDs), signs and animated objects follow
+// Explicitly marked opaque parts may also share their original material (lamp
+// bulbs retain emission). Surface shaders, signs and animated objects follow
 // the normal bake path. Keep small groups merged to avoid excessive draw calls.
 function instanceRepeatedParts(root) {
   root.updateMatrixWorld(true);
@@ -280,8 +281,10 @@ function instanceRepeatedParts(root) {
   const visit = o => {
     if (!o.visible || o.userData.keep) return;
     if (o.isMesh && !o.isInstancedMesh && !Array.isArray(o.material)
-        && isPlain(o.material) && o.matrixWorld.determinant() > 0) {
-      const key = `${o.geometry.uuid}:${!!o.material.vertexColors}:${o.userData.castShadow !== false}`;
+        && (isPlain(o.material) || (o.userData.instanceSharedMaterial && !isStandalone(o.material)))
+        && o.matrixWorld.determinant() > 0) {
+      const materialKey = isPlain(o.material) ? `plain:${!!o.material.vertexColors}` : o.material.uuid;
+      const key = `${o.geometry.uuid}:${materialKey}:${o.userData.castShadow !== false}`;
       if (!groups.has(key)) groups.set(key, []);
       groups.get(key).push(o);
     }
@@ -294,16 +297,17 @@ function instanceRepeatedParts(root) {
     const first = objects[0], geometry = first.geometry;
     const savedBytes = geometry.attributes.position.count * 30 * (objects.length - 1);
     if (!first.userData.instanceVegetation && (objects.length < 6 || savedBytes < 65536)) continue;
-    const mesh = new THREE.InstancedMesh(geometry, first.material.vertexColors ? vmat : imat, objects.length);
+    const plain = isPlain(first.material);
+    const mesh = new THREE.InstancedMesh(geometry, plain ? (first.material.vertexColors ? vmat : imat) : first.material, objects.length);
     if(first.userData.instanceVegetation)mesh.userData.instanceVegetation=true;
     mesh.userData.castShadow = first.userData.castShadow !== false;
     objects.forEach((o, i) => {
       mesh.setMatrixAt(i, matrix.multiplyMatrices(inverseRoot, o.matrixWorld));
-      mesh.setColorAt(i, o.material.color);
+      if (plain) mesh.setColorAt(i, o.material.color);
       o.removeFromParent();
     });
     mesh.instanceMatrix.needsUpdate = true;
-    mesh.instanceColor.needsUpdate = true;
+    if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
     mesh.computeBoundingBox();
     mesh.computeBoundingSphere();
     root.add(mesh);

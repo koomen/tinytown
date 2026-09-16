@@ -137,6 +137,7 @@ function streetLighting(street, count) {
 export function createLighting({ scene, renderer, sun, hemi, skyUniforms, environments, vignette, bloom, quality, wake }) {
   let mode = document.documentElement.dataset.time === 'night' ? 'night' : 'day';
   let target = mode === 'night' ? 1 : 0;
+  let lastUpdate = performance.now();
   NIGHT.value = target;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const button = document.getElementById('time-toggle');
@@ -159,6 +160,7 @@ export function createLighting({ scene, renderer, sun, hemi, skyUniforms, enviro
     if (next !== 'day' && next !== 'night') return;
     mode = next;
     target = mode === 'night' ? 1 : 0;
+    lastUpdate = performance.now();
     if (reducedMotion.matches) NIGHT.value = target;
     if (persist) {
       try { localStorage.setItem('town-time', mode); } catch { /* storage unavailable */ }
@@ -196,10 +198,16 @@ export function createLighting({ scene, renderer, sun, hemi, skyUniforms, enviro
       button.hidden = false;
     },
     update(dt, camera, focus) {
-      const step = dt / 1.15;
+      // Camera/smoke motion uses a capped frame delta. A UI fade should still
+      // finish in 1.15 seconds when shader compilation or a slow GPU delays a
+      // frame, rather than stretching across dozens of expensive frames.
+      const now = performance.now();
+      const step = Math.max(dt, (now - lastUpdate) / 1000) / 1.15;
+      lastUpdate = now;
       NIGHT.value += Math.sign(target-NIGHT.value)*Math.min(Math.abs(target-NIGHT.value),step);
-      // Slow frames must not let the idle timer stop a transition midway.
-      if(NIGHT.value!==target)wake();
+      // Request the next transition frame after this render's shader work.
+      // A long compile must not consume the idle window before that request.
+      if(NIGHT.value!==target)queueMicrotask(wake);
       const n = NIGHT.value;
       for (const key of ['zenith','horizon','ground']) tint(skyUniforms[key].value,key);
       skyUniforms.nightAmount.value = n;

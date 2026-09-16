@@ -70,7 +70,8 @@ streetlights with a soft halo and a pool of light following the terrain (six
 nearby real lights, three on phones, also light walls and trees). The camera
 and geometry stay put; the transition respects reduced motion and the choice
 is saved in `localStorage` (`town-time`). `?time=day|night` in the URL takes
-precedence. `src/lighting.js` holds both profiles;
+precedence. Fades follow elapsed time and resume after slow shader compilation.
+`src/lighting.js` holds both profiles;
 `window.__town.lighting.setMode('night')` switches from the console.
 Streetlights are procedural placements, not surveyed locations; a style's
 `nightWindows: "all"` keeps every window of a building lit.
@@ -99,9 +100,13 @@ first and swaps in detail sectors as they come into view.
   shadow traversal; panning prioritises the new view and unloads distant detail.
 - Repeated trees share one canopy library per miniature and are instanced per
   sector; distant crowns keep shape and colour without leaf dabs.
-- Large maps also split the distant landscape into 400 m regions. Startup
+- Streetlamp poles and bulbs share geometry; instanced bulbs retain their
+  original emissive material and day/night behavior.
+- Large maps split the distant landscape into 400 m regions. Dense smaller
+  miniatures whose coarse geometry exceeds 32 MiB use 200 m regions. Startup
   loads the shared base and the opening camera's regions; visited regions stay
-  resident.
+  resident. The full building and terrain generators load only for authoring
+  views or the original loader.
 - Zooming out simplifies sectors by projected screen size, central detail
   outlasting peripheral. At the usual 26° field of view central detail loads
   to about 1800 m and stays until about 2075 m (`src/stream-policy.js`).

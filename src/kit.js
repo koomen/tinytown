@@ -790,18 +790,22 @@ export function buildPebbles(rng, n, cx, cz, spread) {
   return g;
 }
 
+let lampPoleGeometry, lampBulbGeometry, lampBulbMaterial;
 export function buildLamp(rng) {
   const g = new THREE.Group();
-  const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.1, 3.4, 7), mat(P.lampPole));
+  const pole = new THREE.Mesh(lampPoleGeometry ||= new THREE.CylinderGeometry(0.07, 0.1, 3.4, 7), mat(P.lampPole));
   pole.position.y = 1.7;
   g.add(pole);
   g.add(rbox(0.9, 0.09, 0.09, P.lampPole, 0.04, 0.42, 3.4, 0));
   const head = new THREE.Mesh(
-    new RoundedBoxGeometry(0.42, 0.22, 0.26, 2, 0.08),
-    new THREE.MeshStandardMaterial({ color: P.lampGlow, emissive: P.lampGlow, emissiveIntensity: 1.6, roughness: 0.7 })
+    lampBulbGeometry ||= new RoundedBoxGeometry(0.42, 0.22, 0.26, 2, 0.08),
+    lampBulbMaterial ||= new THREE.MeshStandardMaterial({ color: P.lampGlow, emissive: P.lampGlow, emissiveIntensity: 1.6, roughness: 0.7 })
   );
   head.position.set(0.82, 3.34, 0);
   head.name = 'streetlamp-bulb';
+  // The baker can instance these identical opaque emitters without changing
+  // their material. Keep one bulb mesh instead of expanding it per fixture.
+  head.userData.instanceSharedMaterial = true;
   g.add(head);
   g.add(rbox(0.5, 0.06, 0.34, P.lampPole, 0.02, 0.82, 3.48, 0));
   wobble(g, rng, 0.015, 0);

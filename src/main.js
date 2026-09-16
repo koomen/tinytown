@@ -19,7 +19,6 @@ import { BokehPass } from 'three/addons/postprocessing/BokehPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
-import { generateSite } from './site.js';
 import { takeSurfaceAsset } from './site-data.js';
 import { loadingProgress } from './loading-progress.js';
 import { P } from './palette.js';
@@ -402,9 +401,14 @@ async function build() {
       const {createStreamDebug}=await import('./stream-debug.js');
       streamDebug=createStreamDebug({scene,street,streaming,manifest:siteResult.manifest,wake:wakeRendering});
     }
-  } else street = await generateSite(siteData, siteData.seed ?? siteName, {
-    trees: !params.has('notrees'), onStage: stageDone, memoryOptimized: quality.memoryOptimized, surfaceAsset,
-  });
+  } else {
+    // Prepared scenes do not need the building/terrain generators and their
+    // many dependencies. Load them only for authoring or the original loader.
+    const {generateSite} = await import('./site.js');
+    street = await generateSite(siteData, siteData.seed ?? siteName, {
+      trees: !params.has('notrees'), onStage: stageDone, memoryOptimized: quality.memoryOptimized, surfaceAsset,
+    });
+  }
   timing.build = Math.round(performance.now() - tb);
   console.log("build profile (ms):", street.prof.map(([n, t]) => `${n} ${t}`).join(" · "));
   if (!streamEnabled) try { localStorage.setItem(PROF_KEY, JSON.stringify(street.prof)); } catch { /* storage unavailable */ } // paces the next visit's bar

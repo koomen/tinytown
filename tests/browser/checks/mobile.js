@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { bake, bakeMobile } from '../../../src/bake.js';
-import { rbox, imat, buildTree, scatterTufts } from '../../../src/kit.js';
+import { rbox, imat, buildTree, buildLamp, scatterTufts } from '../../../src/kit.js';
 import { makeRng } from '../../../src/rng.js';
 import { paneUV, surfaceMaterial } from '../../../src/materials.js';
 
@@ -65,6 +65,48 @@ export async function checkMobileGeometry() {
     assert(n.normalized && n.array instanceof Int16Array, 'Mobile normals must use compact storage');
     for (let i = 0; i < n.count; i++) assert(Math.abs(Math.hypot(n.getX(i), n.getY(i), n.getZ(i)) - 1) < 1e-4, 'Packed normal lost precision');
   }
+
+  const lamps = () => {
+    const group = new THREE.Group(), rng = makeRng('shared-lamps');
+    group.position.set(-15, 2, 8); group.rotation.y = .3;
+    let alternate;
+    for (let i = 0; i < 24; i++) {
+      const lamp = buildLamp(rng);
+      lamp.position.set(i * 3, i * .2, i % 3);
+      lamp.scale.setScalar(1.7);
+      const bulb = lamp.getObjectByName('streetlamp-bulb');
+      if (i % 2) {
+        alternate ||= bulb.material.clone();
+        alternate.emissiveIntensity = .8;
+        bulb.material = alternate;
+      }
+      group.add(lamp);
+    }
+    return group;
+  };
+  const sourceLamps = lamps(), sourceEmissions = new Set();
+  sourceLamps.traverse(o => { if (o.name === 'streetlamp-bulb') sourceEmissions.add(o.material.emissiveIntensity); });
+  const lampsBefore = stats(bake(sourceLamps)), sharedLamps = await bakeMobile(lamps());
+  const lampsAfter = stats(sharedLamps);
+  assert(lampsBefore.triangles === lampsAfter.triangles, 'Lamp instancing changed geometry');
+  assert(lampsBefore.bounds.min.distanceTo(lampsAfter.bounds.min) < 1e-4
+    && lampsBefore.bounds.max.distanceTo(lampsAfter.bounds.max) < 1e-4, 'Lamp instancing moved fixtures');
+  assert(lampsAfter.bytes < lampsBefore.bytes / 4, 'Lamp bulbs must share geometry');
+  const bulbs = sharedLamps.children.filter(o => o.isInstancedMesh && o.material.emissive?.getHex());
+  assert(bulbs.length === 2 && bulbs.every(o => o.count === 12), 'Distinct bulb materials were combined');
+  assert(bulbs.every(o => !o.instanceColor), 'Shared emissive materials must not receive a second color tint');
+  assert(bulbs.map(o => o.material.emissiveIntensity).sort().join(',') === [...sourceEmissions].sort().join(','), 'Bulb emission changed');
+  // Streaming stores addon geometries as raw buffers, not constructor names.
+  const json = sharedLamps.toJSON(), geometries = new Map();
+  sharedLamps.traverse(o => {
+    if (!o.geometry || geometries.has(o.geometry.uuid)) return;
+    const geometry = new THREE.BufferGeometry().copy(o.geometry);
+    geometry.uuid = o.geometry.uuid;
+    geometries.set(geometry.uuid, geometry.toJSON());
+  });
+  json.geometries = [...geometries.values()];
+  const restored = await new THREE.ObjectLoader().parseAsync(json);
+  assert(stats(restored).triangles === lampsBefore.triangles, 'Stream serialization lost lamp instances');
 
   for (let i = 0; i < 24; i++) {
     const fullRng = makeRng(i), lightRng = makeRng(i);

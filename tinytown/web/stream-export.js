@@ -261,14 +261,16 @@ export async function exportStream(url, seed, write) {
   }
   const info={size:street.size,offset,bottom:street.bottom,landscape:street.landscape,lamps:street.lamps.map(p=>p.toArray()),
     ground:{nx,nz,xs,zs,heights},lampPoolHeights:new Float32Array(lampPoolHeights)};
-  // Regional maps used to put every sector's distant geometry in a single
-  // startup download. Keep exactly the same meshes, but deliver 400 m regions
-  // when the camera needs them. Small miniatures retain their single base.
+  // Dense miniatures can have a large startup payload despite covering fewer
+  // sectors than a regional map. Split by geometry cost as well as extent,
+  // retaining the exact meshes. Use smaller regions on compact maps so an
+  // opening view does not also download several dense nearby neighborhoods.
   const regions=[];
-  if(cells.size>256) {
+  if(cells.size>256 || resources(coarse)>32*1024*1024) {
+    const span=cells.size>256?4:2;
     const groups=new Map();
     for(const sector of [...coarse.children]) {
-      const [x,z]=sector.name.split('_').map(Number),id=`${Math.floor(x/4)}_${Math.floor(z/4)}`;
+      const [x,z]=sector.name.split('_').map(Number),id=`${Math.floor(x/span)}_${Math.floor(z/span)}`;
       if(!groups.has(id))groups.set(id,new THREE.Group());
       groups.get(id).add(sector);
     }

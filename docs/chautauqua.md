@@ -62,6 +62,33 @@ Browser checks specific to this site: `node tests/browser/run.mjs chautauqua`
 `hultquist`, `amphitheater-lod`, `pavilion-lod`, `barrel-lod`, `boats`,
 `fountain-lighting`, `gate-barrier`, `diorama-outline`.
 
+`node tests/browser/run.mjs chautauqua-streaming` checks the prepared miniature
+on desktop and phones: a bounded opening download, complete visible sectors,
+panning, the whole-map overview, and a direct Amphitheater link at night.
+
+## Load performance
+
+Measured September 15, 2026 against `8513ce3`: headless Chromium, 1440 × 1000,
+cold cache, 20 Mbps download and 50 ms latency; timing is the median of three
+runs. The opening contains the same buildings and trees, with all 946
+structures still available to explore.
+
+| Metric | Before | Regional loading + shared lamps |
+| --- | ---: | ---: |
+| First rendered frame | 15.57 s | 10.67 s |
+| Loading overlay fully gone | 16.19 s | 11.28 s |
+| Opening landscape download | 28.48 MiB | 14.62 MiB |
+| Resident base/region geometry and textures at first frame | 138.11 MiB | 69.62 MiB |
+
+Dense grounds now use 200 m landscape regions, streetlamps share their pole
+and bulb geometry, and streaming skips the procedural generator modules.
+The phone opening downloads 13.50 MiB. Actual timings depend on the connection
+and GPU; reproduce the desktop measurement after staging with:
+
+```sh
+TOWN_BENCH_ROOT=dist/chautauqua TOWN_BENCH_RUNS=3 TOWN_BENCH_MBPS=20 node tests/browser/load-benchmark.mjs
+```
+
 ## Sources
 
 Scope was matched against the Institution grounds map
