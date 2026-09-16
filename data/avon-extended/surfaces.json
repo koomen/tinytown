@@ -4,11 +4,11 @@
   "sha256": "ff543e074891c8ecf6eac476097ec3bc318d8644389174b2f50d046d58c832fe",
   "rawBytes": 120081095,
   "compressedBytes": 20957729,
-  "buildMs": 21498,
+  "buildMs": 22629,
   "prof": [
     [
       "ground",
-      10062
+      10155
     ],
     [
       "streets and curbs",
@@ -16,19 +16,19 @@
     ],
     [
       "centre lines",
-      16236
+      16227
     ],
     [
       "sidewalks",
-      16280
+      16272
     ],
     [
       "paths",
-      19742
+      19883
     ]
   ],
   "file": "surfaces-2b47a0b51a14d605.bin.gz",
   "inputSha256": "54c7428e6ed807869654b355433a81d892aa88f63265060a79a837c588a9706c",
-  "sourceSha256": "4859099d32a16698dbfdafdc572b65682723cf9a8fd7eed908187d3cdd0ef81c",
+  "sourceSha256": "be96b149c66d5390de1bcfb2a78a3475ad4ecdb854a35d6816421212670b93b4",
   "compressedSha256": "2b47a0b51a14d605ce1dc74857cf6814a1cccf24c195eaa1700cac4cc3725548"
 }

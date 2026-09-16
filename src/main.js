@@ -358,9 +358,7 @@ async function stageDone(name) {
   if (i >= 0) aimAtStage(i + 1);
   await new Promise((r) => setTimeout(r, 0));
 }
-// Rendering has finished: reveal the result immediately, rather than waiting
-// up to another 1.5 seconds for a loading-bar transition that may have ended
-// while the main thread was compiling shaders.
+// The opening scenery has finished: fade the progress panel away.
 function loadingDone() {
   loading.classList.add('done');
   setTimeout(() => loading.remove(), 600);
@@ -615,8 +613,7 @@ if (params.get('stage') === 'massing') {
   for (const b of siteData.buildings) if (b.blueprint) b.blueprint = massingBlueprint(b.blueprint);
 }
 // The place gets a quiet caption in the corner: "Avon" big, "New York" under
-// it (split on the last comma of the title). It sits under the loader until
-// the first frame is up.
+// it (split on the last comma of the title).
 const title = siteData.title || siteData.name || siteName;
 document.title = title;
 const comma = title.lastIndexOf(',');
@@ -697,11 +694,22 @@ function render(dt = 0) {
   vignette.uniforms.time.value = animationTime % 60;
   composer.render();
 }
+// Draw the base immediately and repaint as opening regions arrive, so the
+// miniature takes shape behind the progress panel during preparation.
+renderLoop = createRenderLoop(render);
+const syncRenderVisibility = () => {
+  if (document.hidden) held.clear();
+  renderLoop.setVisible(!document.hidden && !graphicsLost);
+};
+document.addEventListener('visibilitychange', syncRenderVisibility);
+syncRenderVisibility();
 // Shader compilation can take several seconds on a phone. Reserve completion
 // for the rendered frame so a full bar never precedes another apparent wait.
 try {
   await streaming?.prepare(camera,controls.target,p=>progress(0.92+p*0.03,'loading the opening view'));
 } catch(error) {
+  renderLoop.setVisible(false);
+  document.removeEventListener('visibilitychange', syncRenderVisibility);
   streaming?.dispose(); // stop pending region retries while the startup error UI is open
   throw error;
 }
@@ -709,12 +717,6 @@ progress(0.96, 'lighting the scene');
 await nextFrame();
 { const tr = performance.now(); render(); timing.firstRender = Math.round(performance.now() - tr); timing.total = Math.round(performance.now()); }
 progress(1);
-renderLoop = createRenderLoop(render);
-document.addEventListener('visibilitychange', () => {
-  if (document.hidden) held.clear();
-  renderLoop.setVisible(!document.hidden && !graphicsLost);
-});
-renderLoop.setVisible(!document.hidden && !graphicsLost);
 loadingDone();
 
 // Handy for poking at the scene from the console
