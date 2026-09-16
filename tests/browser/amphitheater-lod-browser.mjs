@@ -12,7 +12,8 @@ await withBrowser(new URL('../../',import.meta.url).pathname,async page=>{
     const {bakeMobile}=await import('/src/bake.js');
     const {compactFarAttributes}=await import('/src/far-geometry.js');
     const site=await(await fetch('/data/chautauqua/site.json')).json();
-    const {checkAmphitheaterAccess}=await import('/tests/browser/checks/amphitheater.js');
+    const {checkAmphitheater,checkAmphitheaterAccess}=await import('/tests/browser/checks/amphitheater.js');
+    checkAmphitheater();
     checkAmphitheaterAccess(site);
     const building=site.buildings.find(b=>b.id===619932539);
     const full=buildBlueprint(makeRng('amphitheater-lod'),building,building.blueprint,3,[]);

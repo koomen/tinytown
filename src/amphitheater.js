@@ -69,10 +69,13 @@ function perimeter(group,layout,groundAt,trim) {
     }
   }
 }
-function roof(outline,eave,rise,color,name='amphitheater-roof') {
+function roofRidge(outline) {
   const lo=Math.min(...outline.map(p=>p[0])),hi=Math.max(...outline.map(p=>p[0]));
   const half=Math.max(...outline.map(p=>Math.abs(p[1]))),run=Math.min(half*.72,(hi-lo)*.35);
-  const ridgeMin=lo+run,ridgeMax=hi-run;
+  return [lo+run,hi-run];
+}
+function roof(outline,eave,rise,color,name='amphitheater-roof') {
+  const [ridgeMin,ridgeMax]=roofRidge(outline);
   const top=outline.map(([x,z])=>[Math.max(ridgeMin,Math.min(ridgeMax,x)),z<0?-.18:.18]);
   const positions=[...outline.map(([x,z])=>[x,eave,z]),...top.map(([x,z])=>[x,eave+rise,z])].flat();
   const n=outline.length,indices=[];
@@ -182,9 +185,12 @@ export function buildAmphitheater(obb,spec={},ground=null) {
   }
   const canopy=add(roof(roofOutline,eave,rise,roofColor));
   if(spec.monitor!==false) {
-    const cx=(start+front)/2,ml=(front-start)*.56;
+    // Include the cap's end overhangs in the ridge length so neither end
+    // extends above the sloping hips, where the monitor would float.
+    const [ridgeMin,ridgeMax]=roofRidge(roofOutline),overhang=.4;
+    const cx=(ridgeMin+ridgeMax)/2,ml=ridgeMax-ridgeMin-2*overhang;
     add(box(ml,1.1,2.4,trim,cx,eave+rise+.45,0),'amphitheater-monitor');
-    const monitor=[[cx-ml/2-0.4,-1.6],[cx+ml/2+.4,-1.6],[cx+ml/2+.4,1.6],[cx-ml/2-.4,1.6]];
+    const monitor=[[ridgeMin,-1.6],[ridgeMax,-1.6],[ridgeMax,1.6],[ridgeMin,1.6]];
     add(roof(monitor,eave+rise+1,.55,roofColor,'amphitheater-monitor-roof'));
     for(const side of [-1,1])for(let i=0;i<9;i++)
       add(box(ml/12,.5,.05,'#59625b',cx+(-.44+i*.88/8)*ml,eave+rise+.5,side*1.22),'amphitheater-monitor-louver');

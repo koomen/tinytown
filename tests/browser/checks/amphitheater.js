@@ -53,6 +53,18 @@ export function checkAmphitheater() {
     if(Math.sign(axis==='u'?position.x:position.z)!==(stageEnd==='positive'?1:-1))throw new Error('Stage house is on the wrong end');
     // Probe the actual roof in canonical coordinates, with its parent transforms.
     const roof=named['amphitheater-roof'][0],L=amphitheaterLayout(obb,spec);
+    // Measure the built apex rather than repeating its construction formula.
+    // The entire monitor cap must fit that ridge, including both overhangs.
+    roof.geometry.computeBoundingBox();
+    const vertices=roof.geometry.attributes.position,apex=roof.geometry.boundingBox.max.y,ridge=[];
+    for(let i=0;i<vertices.count;i++)if(Math.abs(vertices.getY(i)-apex)<1e-5)ridge.push(vertices.getX(i));
+    const cap=named['amphitheater-monitor-roof'][0];cap.geometry.computeBoundingBox();
+    const bounds=cap.geometry.boundingBox;
+    if(Math.abs(bounds.min.x-Math.min(...ridge))>1e-5||Math.abs(bounds.max.x-Math.max(...ridge))>1e-5)
+      throw new Error('Roof monitor cap extends beyond the canopy apex');
+    const monitor=named['amphitheater-monitor'][0];monitor.geometry.computeBoundingBox();
+    if(monitor.position.x+monitor.geometry.boundingBox.min.x<bounds.min.x||monitor.position.x+monitor.geometry.boundingBox.max.x>bounds.max.x)
+      throw new Error('Roof monitor body extends beyond its cap');
     const hit=(x,z)=>{
       const point=roof.localToWorld(new THREE.Vector3(x,30,z));
       return new THREE.Raycaster(point,new THREE.Vector3(0,-1,0)).intersectObject(roof).length>0;
