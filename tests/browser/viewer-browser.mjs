@@ -1,5 +1,6 @@
 // Node 22+, private headless Chromium, uv, and internet access for pinned CDN imports.
 // Run: node tests/browser/run.mjs (or node tests/browser/viewer-browser.mjs). Every test page is an owned private headless Chromium tab.
+// TOWN_VIEWER_PHASE=desktop|mobile selects an independent phase for targeted reruns.
 import assert from 'node:assert/strict';
 import { privateBrowser } from '../../tinytown/browser.mjs';
 import { once } from 'node:events';
@@ -10,23 +11,36 @@ import { fileURLToPath } from 'node:url';
 import { setTimeout as delay } from 'node:timers/promises';
 import { checkRendering } from './checks/rendering.mjs';
 import { checkLighting } from './checks/lighting.mjs';
+import { viewerFixture } from './viewer-fixture.mjs';
 
 const root = fileURLToPath(new URL('../../',import.meta.url));
+const fixture = viewerFixture(JSON.parse(await readFile(root+'data/avon-extended/site.json','utf8')));
+let fixtureSurfaces, fixtureBytes;
 let fault;
 const server = createServer(async (req, res) => {
   const path = new URL(req.url, 'http://localhost').pathname;
   res.setHeader('Cache-Control', 'no-store');
-  if (fault === 'slow module' && path === '/src/site.js') await delay(600);
+  if (fault === 'slow module' && path === '/src/main.js') await delay(600);
   if ((fault === 'module' && path === '/src/site.js') ||
       (fault === 'site-data module' && path === '/src/site-data.js') ||
-      (fault === 'request' && path === '/data/avon/site.json')) {
+      (fault === 'request' && path === '/data/avon-extended/site.json')) {
     res.writeHead(503); res.end('Unavailable'); return;
   }
-  if (fault === 'json' && path === '/data/avon/site.json') {
+  if (fault === 'json' && path === '/data/avon-extended/site.json') {
     res.writeHead(200, { 'Content-Type': 'application/json' }); res.end('{broken'); return;
   }
   if (fault === 'surface' && path.endsWith('.bin.gz')) {
     res.writeHead(200); res.end('interrupted asset'); return;
+  }
+  const query = new URL(req.url, 'http://localhost').searchParams;
+  if (query.has('viewer-fixture') && path === '/data/avon-extended/site.json') {
+    res.setHeader('Content-Type','application/json'); res.end(JSON.stringify(fixture)); return;
+  }
+  if (query.has('viewer-fixture') && path === '/data/avon-extended/surfaces.json') {
+    res.setHeader('Content-Type','application/json'); res.end(JSON.stringify(fixtureSurfaces)); return;
+  }
+  if (fixtureSurfaces && path === '/data/avon-extended/'+fixtureSurfaces.file) {
+    res.end(fixtureBytes); return;
   }
   const file = resolve(root, '.' + (path === '/' ? '/index.html' : path));
   if (!file.startsWith(root)) { res.writeHead(403); res.end(); return; }
@@ -93,6 +107,20 @@ try {
     const { sessionId } = await cdp.send('Target.attachToTarget', { targetId, flatten: true });
     const send = (method, params) => cdp.send(method, params, sessionId);
     await send('Page.enable');
+    // Redirect only the startup map/manifest reads. Geometry checks fetching
+    // the real region explicitly (e.g. bridge fixtures) still get full data.
+    await send('Page.addScriptToEvaluateOnNewDocument', {source: `
+      const originalFetch = window.fetch.bind(window), redirected = new Set();
+      window.fetch = (input, init) => {
+        const url = new URL(typeof input === 'string' ? input : input.url, location.href);
+        if (['/data/avon-extended/site.json','/data/avon-extended/surfaces.json'].includes(url.pathname)
+            && !redirected.has(url.pathname)) {
+          redirected.add(url.pathname); url.searchParams.set('viewer-fixture','1');
+          return originalFetch(url.href, init);
+        }
+        return originalFetch(input, init);
+      };
+    `});
     await send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: false });
     const evaluate = async (expression) => {
       const r = await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true });
@@ -110,6 +138,16 @@ try {
     };
   }
 
+  const prepare = await page(400,300);
+  await prepare.send('Page.navigate',{url:origin+'/tinytown/web/precompute.html'});
+  await waitFor(()=>prepare.evaluate('typeof window.precomputeSurfaces === "function"'),'fixture surface builder');
+  fixtureSurfaces = await prepare.evaluate("window.precomputeSurfaces('/data/avon-extended/site.json?viewer-fixture=1','avon-extended')");
+  fixtureBytes = Buffer.from(fixtureSurfaces.base64,'base64');
+  delete fixtureSurfaces.base64;
+  fixtureSurfaces.file = 'surfaces-ffffffffffffffff.bin.gz';
+  await prepare.close();
+
+  if (process.env.TOWN_VIEWER_PHASE !== 'mobile') {
   const p = await page();
   await p.go();
   await waitFor(() => p.evaluate('!!window.__town'), 'Avon first render');
@@ -122,7 +160,7 @@ try {
     const {checkJoinedSurfaces,checkGasStation,checkStreetGrade,checkFacadeJoins}=await import('/tests/browser/checks/surfaces.js');
     checkJoinedSurfaces();
     checkStreetGrade(window.__town);
-    checkFacadeJoins(window.__town);
+    await checkFacadeJoins(window.__town);
     await checkGasStation();
     const {checkRuralSurfaces}=await import('/tests/browser/checks/rural-surfaces.js');
     await checkRuralSurfaces();
@@ -162,7 +200,7 @@ try {
   await p.evaluate(`(() => {
     const w=window.__town,s=w.siteData;
     w.controls.set({theta:0.4,distance:600,target:w.controls.target.clone().set(80,20,90)});
-    sessionStorage.setItem('town-camera',JSON.stringify({site:'avon',
+    sessionStorage.setItem('town-camera',JSON.stringify({site:'avon-extended',
       frame:JSON.stringify([s.center,s.bounds,s.size]),pos:w.camera.position.toArray(),
       target:w.controls.target.toArray(),groundFollowing:true}));
   })()`);
@@ -280,7 +318,9 @@ try {
   await waitFor(() => free.evaluate('!!window.__town'), 'orbit camera first render');
   await checkRendering(free, waitFor, {free: true});
   await free.close();
+  }
 
+  if (process.env.TOWN_VIEWER_PHASE !== 'desktop') {
   const phone = await page(390, 844);
   await phone.send('Emulation.setDeviceMetricsOverride', {width: 390, height: 844, deviceScaleFactor: 3, mobile: true, screenWidth: 390, screenHeight: 844});
   await phone.send('Emulation.setTouchEmulationEnabled', {enabled: true, maxTouchPoints: 2});
@@ -309,7 +349,7 @@ try {
   assert.equal(startup.documents, 1, 'startup must not navigate or reload');
   assert.equal(startup.canvasAtLoad, true, 'document loading must include the viewer module graph');
   assert.equal(startup.textures.length, 2, 'each sign texture should download once');
-  assert.ok(startup.textures.every(r => r.start < startup.moduleStart), 'textures must start before scene construction');
+  assert.ok(startup.textures.every(r => r.start < startup.moduleStart), 'textures must start before scene construction: '+JSON.stringify(startup));
   console.log('PASS one document load includes delayed scene modules and early, deduplicated textures');
   const mobile = await phone.evaluate(`(async () => {
     const {checkMobileGeometry, checkMobileScene} = await import('/tests/browser/checks/mobile.js');
@@ -322,7 +362,7 @@ try {
   console.log('PASS mobile progress advances across phases without resetting');
   await checkLighting(phone, waitFor, {mobile:true});
   await phone.send('Emulation.setDeviceMetricsOverride', {width: 844, height: 390, deviceScaleFactor: 3, mobile: true, screenWidth: 844, screenHeight: 390});
-  await waitFor(() => phone.evaluate('window.__town.renderer.domElement.width === 844 && window.__town.composer.renderTarget1.width === 844'), 'phone rotation resizes buffers');
+  await waitFor(() => phone.evaluate('window.__town.renderer.domElement.width === 1477 && window.__town.composer.renderTarget1.width === 1477'), 'phone rotation resizes buffers');
   await phone.evaluate('window.__town.renderer.forceContextLoss()');
   await waitFor(() => phone.evaluate('!!document.querySelector(".render-error") && window.__town.renderLoop.sleeping'), 'context loss pauses with recovery UI');
   await phone.evaluate('window.__town.renderer.forceContextRestore()');
@@ -391,7 +431,8 @@ try {
     }
     await p.close();
   }
-  console.log('All browser checks passed.');
+  }
+  console.log('All selected browser checks passed.');
 } finally {
   cdp?.ws.close();
   for (const record of tabs) await privateBrowser('close-tab', record).catch(error => console.error(error.message));

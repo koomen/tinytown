@@ -4,7 +4,8 @@
 import { loadSurfaceAsset, surfaceKey } from './surface-assets.js';
 import { useStreaming } from './stream-policy.js';
 export const params = new URLSearchParams(location.search);
-export const siteName = params.get('site') || document.querySelector('meta[name="town-site"]')?.content || 'avon';
+const requestedSite = params.get('site') || document.querySelector('meta[name="town-site"]')?.content || 'avon-extended';
+export const siteName = requestedSite === 'avon' ? 'avon-extended' : requestedSite;
 // Published miniatures stream by default; authoring and unprepared sites need
 // the original blueprints. ?stream=0 explicitly selects the original loader.
 // Older Safari and HTTP previews over a phone's LAN may lack the decoder or

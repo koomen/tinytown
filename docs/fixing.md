@@ -1,7 +1,7 @@
 # Fixing a miniature
 
 Something looks wrong. Find the symptom, run the verb. Every command takes the
-site name (`avon`, `avon-extended`, `chautauqua`, or a new one) and, where it
+site name (`avon-extended`, `chautauqua`, or a new one) and, where it
 applies, OSM way ids. Spell negative faces `--face=-u` / `--faces=-u` so
 argparse does not read `-u` as an option.
 
@@ -31,19 +31,19 @@ argparse does not read `-u` as an option.
 ## The manual loop for one building
 
 ```sh
-./town brief avon 247541316                          # buildings/247541316/brief.md + footprint.png
-./town refs avon 247541316 --faces=all               # or --faces=+u,-v; --force to recapture
-$EDITOR data/avon/buildings/247541316/draft.json     # the blueprint, in the u/v frame
-./town lint avon 247541316                           # errors exit 1
-./town render avon 247541316 --face=+u --face=-v --compare   # renders/compare-<face>.png beside the photo
-./town render avon 247541316 --iso --with 247541280  # diorama camera, neighbours' drafts loaded
-./town review avon 247541316 --record                # lint + geometry audit + render evidence -> review.json
-./town accept avon 247541316                         # into overrides.json, rebuilds site.json
-./town bake avon                                     # new surfaces and stream chunks
+./town brief avon-extended 247541316                          # buildings/247541316/brief.md + footprint.png
+./town refs avon-extended 247541316 --faces=all               # or --faces=+u,-v; --force to recapture
+$EDITOR data/avon-extended/buildings/247541316/draft.json     # the blueprint, in the u/v frame
+./town lint avon-extended 247541316                           # errors exit 1
+./town render avon-extended 247541316 --face=+u --face=-v --compare   # renders/compare-<face>.png beside the photo
+./town render avon-extended 247541316 --iso --with 247541280  # diorama camera, neighbours' drafts loaded
+./town review avon-extended 247541316 --record                # lint + geometry audit + render evidence -> review.json
+./town accept avon-extended 247541316                         # into overrides.json, rebuilds site.json
+./town bake avon-extended                                     # new surfaces and stream chunks
 ```
 
 `town render` previews the draft through the dev server with
-`?site=avon&free=1&bp=247541316&focus=247541316&side=+u&dist=60&notrees=1`,
+`?site=avon-extended&free=1&bp=247541316&focus=247541316&side=+u&dist=60&notrees=1`,
 so you can also open that URL in a normal browser and orbit. `--no-bp` renders
 the currently accepted state for comparison; `--dist` and `--eye` move the
 camera; `--stage massing` hides facade detail. Re-running with unchanged inputs
@@ -57,9 +57,9 @@ accepting several buildings in a row.
 ## Checking your work
 
 ```sh
-./town status avon --ids 247541316            # derived status of one building
-./town plan avon --limit 8                    # what still needs work, in priority order
-./town lint avon --merged -q                  # every accepted blueprint
-./town bake avon --check && ./town bake --viewer --check
+./town status avon-extended --ids 247541316            # derived status of one building
+./town plan avon-extended --limit 8                    # what still needs work, in priority order
+./town lint avon-extended --merged -q                  # every accepted blueprint
+./town bake avon-extended --check && ./town bake --viewer --check
 tests/run.sh
 ```

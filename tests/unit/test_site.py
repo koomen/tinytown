@@ -15,7 +15,7 @@ from tinytown import site as S
 from tinytown.paths import ROOT, SitePaths, site_paths
 
 REQUEST = {"center": {"lat": 42.91201, "lon": -77.74548}, "size_m": {"w": 420, "h": 380}}
-GOLDEN_SITES = ("avon", "avon-extended", "chautauqua")
+GOLDEN_SITES = ("avon-extended", "chautauqua")
 
 
 def elevation(center, value=100):
@@ -98,7 +98,7 @@ class GoldenScenes(unittest.TestCase):
                 self.assertTrue(got == want, f"{name}: build() differs from committed site.json in {summarize(got, want)}")
 
     def test_build_is_deterministic_and_leaves_the_scene_untouched_without_write(self):
-        paths = site_paths("avon")
+        paths = site_paths("avon-extended")
         before = paths.scene.read_bytes()
         first = S.build(paths, write=False)
         second = S.build(paths, write=False)
@@ -320,7 +320,7 @@ class LandmarkTests(TempRoot):
 
 class OutlineTests(TempRoot):
     def test_existing_rectangular_sites_stay_opt_out(self):
-        for name in ("avon", "avon-extended"):
+        for name in ("avon-extended",):
             self.assertIsNone(S.site_outline({"name": name, "center": {"lat": 42, "lon": -79}}, {}, {}, site_paths(name)))
         self.assertNotIn("outline", S.build(self.make()))
 

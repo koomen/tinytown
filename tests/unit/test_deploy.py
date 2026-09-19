@@ -24,6 +24,20 @@ SITES = {
 }
 
 
+class AvonRoutes(unittest.TestCase):
+    def test_compact_scene_is_removed_and_legacy_route_uses_full_avon(self):
+        from tinytown import config
+        self.assertNotIn('avon', config.all_sites(ROOT))
+        self.assertFalse((ROOT / 'data/avon').exists())
+        routes = config.routes('avon', ROOT)
+        for route in ('/', '/avon', '/avon-extended', '/extended'):
+            self.assertEqual(routes[route], 'avon-extended')
+            self.assertIn('content="avon-extended"', preview_document(route, ROOT))
+        settings = config.site_config('avon-extended', ROOT)
+        self.assertEqual(settings['landmarks'], 'landmarks.json')
+        self.assertTrue((ROOT / 'sites/avon-extended/landmarks.json').is_file())
+
+
 class DeployTargets(unittest.TestCase):
     def setUp(self):
         temporary = tempfile.TemporaryDirectory()

@@ -23,8 +23,8 @@ sidecar named by the `landmarks` key in `site.json`, project its geographic
 `[lon, lat]` coordinates into the site's local frame with
 `site.geo_point(site['center'])`, and hand the rest of each feature through
 unchanged. Because the sidecar is geographic, one survey serves every site that
-shares the ground: `sites/avon-extended/site.json` points at
-`../avon/landmarks.json`.
+shares the ground. Avon keeps its survey in
+`sites/avon-extended/landmarks.json`.
 
 ```json
 {"features": [

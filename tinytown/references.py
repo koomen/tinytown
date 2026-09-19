@@ -1,12 +1,12 @@
 """Stage 3: gather references per building into data/<site>/buildings/<id>/.
 
-    ./town refs avon 1090362846 1090362845            # head-on Street View captures, all four faces
-    ./town refs avon 1090362846 --faces=-v,+u --dists 20,35
-    ./town refs avon --list queue.txt --workers 2 --force
-    ./town refs avon --all --aerials                  # also crop aerials (sources.crop_aerials)
-    ./town refs avon 1090362846 --web --extra-views 1 # also assemble the model packet (references.json)
-    ./town brief avon 1090362846                      # buildings/<id>/brief.md + footprint.png
-    ./town plan avon --limit 8                        # which structures still need research
+    ./town refs avon-extended 1090362846 1090362845            # head-on Street View captures, all four faces
+    ./town refs avon-extended 1090362846 --faces=-v,+u --dists 20,35
+    ./town refs avon-extended --list queue.txt --workers 2 --force
+    ./town refs avon-extended --all --aerials                  # also crop aerials (sources.crop_aerials)
+    ./town refs avon-extended 1090362846 --web --extra-views 1 # also assemble the model packet (references.json)
+    ./town brief avon-extended 1090362846                      # buildings/<id>/brief.md + footprint.png
+    ./town plan avon-extended --limit 8                        # which structures still need research
 
 Everything recorded about one structure lives in buildings/<id>/:
 

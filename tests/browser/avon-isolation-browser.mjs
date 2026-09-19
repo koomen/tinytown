@@ -18,7 +18,7 @@ await withBrowser(new URL('../../dist/avon/',import.meta.url).pathname,async pag
   throw error;
  });
  // The root document is the extended miniature (config.routes: '/' -> avon-extended).
- for(const [label,url,count] of [['root','/?time=day',1644],['compact','/avon?time=night',199],
+ for(const [label,url,count] of [['root','/?time=day',1644],['alias','/avon?time=night',1644],
    ['extended','/avon-extended?time=day&focus=248675024&dist=180',1644],
    ['chautauqua','/chautauqua?time=day&quality=mobile&resolution=0.5',946]]) {
   await page.go(url);
@@ -38,12 +38,7 @@ await withBrowser(new URL('../../dist/avon/',import.meta.url).pathname,async pag
   if(state.stream)assert.deepEqual(state.stream.failures,[]);
   assert.equal(new URL(state.url).pathname,url.split('?')[0]);
   assert.equal(new URL(state.url).search,'?'+url.split('?')[1]);
-  if(label==='compact') {
-   assert.equal(state.renderer,'/src/main.js');
-   assert.equal(state.landscape,undefined);
-   assert.ok(state.resources.includes('/data/avon/stream/manifest.json'));
-   assert.ok(!state.resources.some(p=>p.includes('avon-extended')));
-  } else if(label==='extended'||label==='root') {
+  if(label==='alias'||label==='extended'||label==='root') {
    assert.equal(state.renderer,'/src/main.js');
    assert.ok(state.landscape.trees>9000);assert.ok(state.landscape.understory>3000);
    assert.ok(state.resources.includes('/data/avon-extended/stream/manifest.json'));

@@ -21,7 +21,7 @@ const screenshot=async(page,name)=>{
   await writeFile(new URL(name+'.png',output),Buffer.from(shot.data,'base64'));
 };
 let reference;
-// The camera reference comes from compact Avon at its production route on the checkout.
+// The camera reference comes from Avon at its production route on the checkout.
 await withBrowser(root,async page=>{
   await page.go('/avon?time=day');await ready(page);
   await move(page,-30,12);await ready(page);
@@ -32,11 +32,11 @@ await withBrowser(root,async page=>{
 await withBrowser(root+'dist/avon',async page=>{
   const errors=[];
   page.events.add(m=>{if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails);});
-  for(const [site,mobile] of [['avon',false],['avon',true],['avon-extended',true],['chautauqua',true]]) {
+  for(const [site,mobile] of [['avon-extended',false],['avon-extended',true],['chautauqua',true]]) {
     await page.send('Emulation.setDeviceMetricsOverride',{width:mobile?390:1440,height:mobile?844:960,
       deviceScaleFactor:mobile?2:1,mobile});
     await page.go('/'+site+'?time=day&quality='+(mobile?'mobile':'desktop'));await ready(page);
-    if(site==='avon'&&!mobile) {
+    if(site==='avon-extended'&&!mobile) {
       await move(page,-30,12);await ready(page);
       assert.deepEqual(await page.evaluate('({camera:__town.camera.position.toArray(),target:__town.controls.target.toArray()})'),reference);
       await screenshot(page,'avon-shared');
@@ -72,7 +72,7 @@ await withBrowser(root+'dist/avon',async page=>{
     }
     assert.ok(samples.at(-1).evictions>samples[0].evictions,'Panning must release the previous neighborhood');
     assert.ok(samples.at(-1).loads>samples[0].loads,'Panning must load the new neighborhood');
-    if(site!=='avon')assert.ok(samples.some(s=>s.instancedTrees>0),'New landscape detail must instance the original tree style');
+    assert.ok(samples.some(s=>s.instancedTrees>0),'New landscape detail must instance the original tree style');
     await move(page,0,0,2600);await ready(page);
     assert.equal(await page.evaluate('__town.streaming.stats.residentBytes'),0,'Overview must release all detailed scenery');
     results.push({site,mobile,samples});

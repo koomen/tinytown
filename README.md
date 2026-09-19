@@ -9,8 +9,7 @@ so the miniature is recognisably *that* town. Everything is one Python package
 (`tinytown/`) behind one CLI, `./town`.
 
 Live: **[avon.town](https://avon.town)** (Avon, New York, 3.3 × 3.6 km, 1,644
-structures), **[avon.town/avon](https://avon.town/avon)** (the original
-village-centre miniature) and **[chautauqua.town](https://chautauqua.town)**
+structures) and **[chautauqua.town](https://chautauqua.town)**
 (Chautauqua Institution, 946 structures).
 
 ![Avon, New York as a miniature](social-preview.jpg)
@@ -21,7 +20,7 @@ village-centre miniature) and **[chautauqua.town](https://chautauqua.town)**
 git clone https://github.com/koomen/tinytown && cd tinytown
 python3 -m venv .venv && .venv/bin/pip install -e .   # Python 3.10+
 ./town serve
-# open http://localhost:8734/  (Avon), /avon (village centre), /chautauqua, /?site=<name>
+# open http://localhost:8734/  (Avon), /avon (alias), /chautauqua, /?site=<name>
 ```
 
 `town serve` needs only the standard library; `./town` picks up `.venv`
@@ -109,7 +108,7 @@ runs them). See [CLAUDE.md](CLAUDE.md) for what each tier needs.
 ## Deployment
 
 Two Cloudflare Workers upload the static `dist/` directories that
-`./town stage` stages: `avon-town` serves avon.town (`/` Avon, `/avon` village centre,
+`./town stage` stages: `avon-town` serves avon.town (`/` Avon, `/avon` alias,
 `/avon-extended`, `/chautauqua`) and `chautauqua-miniature` serves
 chautauqua.town. Routes derive from `sites/*/site.json`. On push to `main`,
 Workers Builds runs `python3 -m tinytown stage --target …` with bare Python

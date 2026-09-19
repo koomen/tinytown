@@ -7,8 +7,8 @@ import { setTimeout as delay } from 'node:timers/promises';
 import { withBrowser, waitFor } from '../../tinytown/browser.mjs';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'../..');
-const manifest=JSON.parse(await readFile(root+'/data/avon/stream/manifest.json'));
-const expectedBuildings=JSON.parse(await readFile(root+'/data/avon/site.json')).buildings.length;
+const manifest=JSON.parse(await readFile(root+'/data/avon-extended/stream/manifest.json'));
+const expectedBuildings=JSON.parse(await readFile(root+'/data/avon-extended/site.json')).buildings.length;
 const requests=[],errors=[];
 let fault='';
 await withBrowser(root,async page=>{

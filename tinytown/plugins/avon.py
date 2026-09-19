@@ -2,10 +2,10 @@
 
 Hooks (see tinytown/site.py):
     landmarks(site, paths)  authored features from the "landmarks" sidecar named
-                            in sites/<site>/site.json (sites/avon/landmarks.json)
+                            in sites/<site>/site.json (sites/avon-extended/landmarks.json)
 
 The sidecar stores geographic [lon, lat] coordinates so the same features fall
-in the right place for any site sharing the survey (avon, avon-extended). No
+in the right place for any site sharing the survey (including avon-extended). No
 approximate locations, generated stream paths, or guessed baseball diamonds.
 """
 import json

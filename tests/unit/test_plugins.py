@@ -11,7 +11,7 @@ import unittest
 from tinytown.paths import ROOT, site_paths
 from tinytown.plugins import avon, chautauqua
 
-AVON_LANDMARKS = ROOT / "sites/avon/landmarks.json"
+AVON_LANDMARKS = ROOT / "sites/avon-extended/landmarks.json"
 
 
 class AvonLandmarks(unittest.TestCase):
@@ -54,12 +54,10 @@ class AvonLandmarks(unittest.TestCase):
         self.assertTrue(oval["closed"])
         self.assertGreater(max(p[1] for p in oval["pts"]) - min(p[1] for p in oval["pts"]), 300)
 
-    def test_both_avon_sites_share_the_survey_through_their_config(self):
+    def test_avon_uses_its_own_survey_through_its_config(self):
         site = dict(center=dict(lat=42.91201, lon=-77.74548))
-        compact = avon.landmarks(site, site_paths("avon"))
         extended = avon.landmarks(site, site_paths("avon-extended"))
-        self.assertEqual(compact, extended)
-        self.assertEqual(compact, avon.authored_features(site, AVON_LANDMARKS))
+        self.assertEqual(extended, avon.authored_features(site, AVON_LANDMARKS))
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             (root / "sites" / "bare").mkdir(parents=True)

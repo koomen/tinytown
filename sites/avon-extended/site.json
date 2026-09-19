@@ -11,10 +11,11 @@
       "target": "avon",
       "route": "/avon-extended",
       "aliases": [
-        "/extended"
+        "/extended",
+        "/avon"
       ]
     }
   ],
   "plugin": "avon",
-  "landmarks": "../avon/landmarks.json"
+  "landmarks": "landmarks.json"
 }

@@ -19,7 +19,7 @@ const edgeDistance = (p, a, b) => {
 };
 
 export async function checkPolygonBlueprint() {
-  const bp = await (await fetch('/data/avon/buildings/248274499/draft.json')).json();
+  const bp = await (await fetch('/data/avon-extended/buildings/248274499/draft.json')).json();
   assert(bp.volumes.length === 1, 'Wadsworth should have one continuous building volume');
   const vol = bp.volumes[0], pts = vol.polygon;
   const frame = { obb: { cx: 0, cz: 0, angle: 0 } };

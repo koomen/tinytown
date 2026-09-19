@@ -155,7 +155,7 @@ has a filled masonry base; the existing post-supported landing is the default.
   "signs": [ { "text": "...", "style": "gold-on-black"|"carved"|"stone"|"board"|"red"|"navy"|"green"|"bronze"|"ghost",
                "shape": "plaque"|"arch",                            // plaque: rounded tablet (edge colour follows the style)
                "at": f, "y": m, "w": m, "h": m, "out": m },      // out: default 0.1 (ghost: 0, flush with the wall)
-             { "image": "data/avon/textures/firehall_mural.jpg", "at": f, "y": m, "w": m, "h": m } ],   // a photo flat on the wall (murals); path relative to the page
+             { "image": "data/avon-extended/textures/firehall_mural.jpg", "at": f, "y": m, "w": m, "h": m } ],   // a photo flat on the wall (murals); path relative to the page
   "pilasters": { "at": [f, ...], "w": m, "d": m, "height": m, "color": ..., "cap": ... },   // corner piers with caps
   "buttresses": { "at": [f, ...], "w": m, "d": m, "height": m, "color": ... },
   "bays": [ { "at": f, "w": 2.4, "d": 0.8, "y0": 0, "y1": m | "h": m,                          // bay window: a box out of the wall, windows on front and sides

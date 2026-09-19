@@ -83,7 +83,7 @@
 
 ## Update 2026-09-03 — real mural
 The "AVON" navy sign panel is replaced by the actual mural: `signs[].image =
-data/avon/textures/firehall_mural.jpg` (24 × 3.33 m, centred 2.35 m up the hall's
+data/avon-extended/textures/firehall_mural.jpg` (24 × 3.33 m, centred 2.35 m up the hall's
 -u face). Source: Google Street View pano `lPAX7O6w7hXiPweAo6weVg` (Aug 2021,
 reached through "See more dates" — the 2025 pano has a pole in front),
 shot at 60° fov / heading 74° / 2× scale, then perspective-corrected with

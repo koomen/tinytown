@@ -94,8 +94,8 @@ codex login                                           # only for `town author` (
 - Stream export is not byte-reproducible, so chunks are only re-exported when
   their fingerprint is stale (or with `bake --force`); when they are, chunk
   names change and you commit the deletions with the additions.
-- `/` on avon.town is `avon-extended`; `/avon` is the compact village-centre
-  miniature; `/extended` is an alias. Routes come from `sites/*/site.json`,
+- `/` on avon.town is `avon-extended`; `/avon` and `/extended` are aliases of the same
+  larger miniature. Routes come from `sites/*/site.json`,
   `_headers` still lists them by hand.
 - `--faces=-u`, `--face=-u`: the `=` keeps argparse from reading `-u` as an option.
 - Keep `town refs --workers` at 2; 3+ makes Google flaky.
@@ -123,14 +123,14 @@ node tests/browser/run.mjs [--list | name… | all]             # headless suite
 ```
 
 Golden checks: `./town build <site>` must reproduce the committed
-`data/<site>/site.json` for all three sites (apart from `name`), and
+`data/<site>/site.json` for both sites (apart from `name`), and
 `./town stage` must reproduce the committed dist hashes apart from `?v=`
 stamps. `tests/browser/chautauqua-browser.py` needs
 `./town stage --target chautauqua` first.
 
 ## Deploy checklist
 
-1. `for s in avon avon-extended chautauqua; do ./town bake "$s" --check; done`
+1. `for s in avon-extended chautauqua; do ./town bake "$s" --check; done`
 2. `./town bake --viewer --check`
 3. `./town stage` (stages both targets; same checks Cloudflare runs)
 4. `tests/run.sh`

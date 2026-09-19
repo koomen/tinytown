@@ -78,7 +78,7 @@
     "-u": {
      "signs": [
       {
-       "image": "data/avon/textures/firehall_mural.jpg",
+       "image": "data/avon-extended/textures/firehall_mural.jpg",
        "at": 0.5,
        "y": 2.35,
        "w": 24,

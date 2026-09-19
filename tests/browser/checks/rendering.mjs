@@ -13,7 +13,12 @@ export async function checkRendering(p, waitFor, { free = false } = {}) {
       return original.apply(this, args);
     };
   })()`);
-  const sleeping = () => waitFor(() => p.evaluate('window.__town.renderLoop.sleeping'), `${label} sleeps`, 20000);
+  const sleeping = async () => {
+    // Test idle scheduling after damping settles without requiring hundreds
+    // of expensive software-rendered frames. Camera motion is checked below.
+    await p.evaluate('for (let i=0;i<240;i++) window.__town.controls.update()');
+    await waitFor(() => p.evaluate('window.__town.renderLoop.sleeping'), `${label} sleeps`, 20000);
+  };
   const snapshot = () => p.evaluate(`(() => {
     const w = window.__town;
     return {count: window.__renderProbe.count, time: w.vignette.uniforms.time.value,

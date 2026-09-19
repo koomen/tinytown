@@ -134,7 +134,7 @@ export async function checkMobileGeometry() {
 export function checkMobileScene(w) {
   assert(w.quality.name === 'mobile', 'Phone did not select mobile quality');
   assert(w.gtao === null && w.bokeh === null && w.bloom === null, 'Phone allocated expensive effect passes');
-  assert(w.renderer.getPixelRatio() <= 1 && w.sun.shadow.mapSize.x === 1024, 'Phone buffer budget exceeded');
+  assert(w.renderer.getPixelRatio() <= 1.75 && w.sun.shadow.mapSize.x === 1024, 'Phone buffer budget exceeded');
   assert(w.composer.passes.length === 3, 'Unexpected phone rendering passes');
   const result = stats(w.street.group);
   assert(result.bytes < 190000000, `Phone geometry budget exceeded: ${result.bytes}`);

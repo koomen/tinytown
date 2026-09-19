@@ -4,7 +4,7 @@ import { packSceneJSON, unpackSceneJSON } from '../../src/stream-format.js';
 import { selectDetailTiles, detailVisible, groundSampler, useStreaming } from '../../src/stream-policy.js';
 
 test('Every published miniature streams with explicit opt-out and complete authoring views',()=>{
-  const mode=(query='',site='avon')=>useStreaming(new URLSearchParams(query),site);
+  const mode=(query='',site='avon-extended')=>useStreaming(new URLSearchParams(query),site);
   assert.equal(mode(),true);
   assert.equal(mode('','avon-extended'),true);
   assert.equal(mode('','chautauqua'),true);

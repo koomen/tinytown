@@ -69,7 +69,6 @@ const FREE_CAMERA = params.has('free');
 // Both Avon maps share the same world origin and circle.
 const AVON_OPENING_VIEW = { target: [-25, 25], lift: 3, azimuth: 2, distance: 320, aspect: 1752 / 1408 };
 const OPENING_VIEW = !FREE_CAMERA && !params.has('focus') ? {
-  avon: AVON_OPENING_VIEW,
   'avon-extended': AVON_OPENING_VIEW,
   chautauqua: { target: [35, 37], lift: 6, azimuth: -2.2, distance: 280, aspect: 1440 / 1726 },
 }[siteName] : null;

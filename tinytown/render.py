@@ -1,10 +1,10 @@
 """Render a building (with its draft blueprint) through the viewer in headless Chromium.
 
-    ./town render avon 247541316                  # road face, photo-like view
-    ./town render avon 247541316 --face=+u --face=-v
-    ./town render avon 247541316 --face=+u --dist 40 --iso
-    ./town render avon 247541316 --face=+u --compare
-    ./town render avon 247541316 --with 247541280 1090362847
+    ./town render avon-extended 247541316                  # road face, photo-like view
+    ./town render avon-extended 247541316 --face=+u --face=-v
+    ./town render avon-extended 247541316 --face=+u --dist 40 --iso
+    ./town render avon-extended 247541316 --face=+u --compare
+    ./town render avon-extended 247541316 --with 247541280 1090362847
 
 The viewer is loaded from the dev server with
 `?site=<site>&free=1&bp=<id>&focus=<id>&side=<face>&dist=<m>`, so the draft

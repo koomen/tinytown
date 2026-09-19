@@ -170,7 +170,7 @@ Status of a building, derived by `state.building_status(paths, bid)`:
 ```
 
 `scope`, `landmarks` and `outline` name sidecar files relative to
-`sites/<site>/` (`../avon/landmarks.json` shares one). `title` and
+`sites/<site>/` (for example, `landmarks.json`). `title` and
 `description` are required to deploy. `sites/deploy.json` maps targets to
 dist directories and Wrangler configs:
 

@@ -5,7 +5,7 @@ built in the browser or at request time; the Workers upload `dist/<target>/`.
 
 | Worker | Domain | Wrangler config | Dist | Routes |
 | --- | --- | --- | --- | --- |
-| `avon-town` | avon.town | `wrangler.avon.jsonc` | `dist/avon/` | `/` Avon, `/avon` the original village-centre scene, `/avon-extended` (+ alias `/extended`), `/chautauqua` |
+| `avon-town` | avon.town | `wrangler.avon.jsonc` | `dist/avon/` | `/` Avon, `/avon` an alias of the larger scene, `/avon-extended` (+ alias `/extended`), `/chautauqua` |
 | `chautauqua-miniature` | chautauqua.town | `wrangler.chautauqua.jsonc` | `dist/chautauqua/` | `/` Chautauqua |
 
 ## Routes are config
@@ -102,7 +102,7 @@ push**: `data/<site>/site.json`, `surfaces*`, `stream/` and `index.html`.
 ## Pre-push checklist
 
 ```sh
-for s in avon avon-extended chautauqua; do ./town bake "$s" --check; done
+for s in avon-extended chautauqua; do ./town bake "$s" --check; done
 ./town bake --viewer --check
 ./town stage                       # stages both targets locally; fails like Cloudflare would
 tests/run.sh
@@ -130,7 +130,7 @@ The dev server disables caching, generates route documents the same way
 
 ```sh
 ./town verify town https://avon.town                 # root site (avon-extended)
-./town verify town https://avon.town avon            # another site on the target
+./town verify town https://avon.town chautauqua      # another site on the target
 ./town verify chautauqua https://chautauqua.town
 ```
 

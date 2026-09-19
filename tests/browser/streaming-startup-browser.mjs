@@ -6,10 +6,10 @@ import { fileURLToPath } from 'node:url';
 import { withBrowser, waitFor } from '../../tinytown/browser.mjs';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'../..');
-const manifest=JSON.parse(await readFile(root+'/data/avon/stream/manifest.json'));
-const expectedBuildings=JSON.parse(await readFile(root+'/data/avon/site.json')).buildings.length;
+const manifest=JSON.parse(await readFile(root+'/data/avon-extended/stream/manifest.json'));
+const expectedBuildings=JSON.parse(await readFile(root+'/data/avon-extended/site.json')).buildings.length;
 const firstBase=manifest.base.parts?.[0]||manifest.base;
-const base=await readFile(root+'/data/avon/stream/'+firstBase.file);
+const base=await readFile(root+'/data/avon-extended/stream/'+firstBase.file);
 let fault='',releaseDownload;
 await withBrowser(root,async page=>{
   await page.send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true,screenWidth:390,screenHeight:844});
@@ -36,7 +36,7 @@ await withBrowser(root,async page=>{
   const result=await page.evaluate(`(async()=>{
     const THREE=await import('three');
     const {decodeStream,StreamObjectLoader}=await import('./src/stream-loader.js');
-    const bytes=new Uint8Array(await (await fetch('./data/avon/stream/${tile.file}')).arrayBuffer());
+    const bytes=new Uint8Array(await (await fetch('./data/avon-extended/stream/${tile.file}')).arrayBuffer());
     const parts=[bytes.subarray(0,13),bytes.subarray(13)];
     let ticks=0;const heartbeat=setInterval(()=>ticks++,0);
     const json=await decodeStream(parts,${tile.rawBytes});clearInterval(heartbeat);
@@ -109,7 +109,7 @@ await withBrowser(root,async page=>{
   console.log('PASS asynchronous startup errors show retry');
 },{route:async(req,res)=>{
   const path=new URL(req.url,'http://localhost').pathname;
-  if((path==='/src/stream-worker.js'&&['worker','both'].includes(fault)) || (path==='/data/avon/site.json'&&fault==='both')){res.writeHead(503);res.end('Temporary failure');return true;}
+  if((path==='/src/stream-worker.js'&&['worker','both'].includes(fault)) || (path==='/data/avon-extended/site.json'&&fault==='both')){res.writeHead(503);res.end('Temporary failure');return true;}
   if(path.endsWith('/'+firstBase.file)&&['pause','stall'].includes(fault)){
     res.writeHead(200,{'Content-Type':'application/octet-stream','Content-Length':base.length});
     const split=Math.round(base.length/4);res.write(base.subarray(0,split));

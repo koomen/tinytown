@@ -390,7 +390,7 @@ const imageTextures = new Map();
 
 function signEl(spec) {
   const w = spec.w || 4, h = spec.h || 0.7;
-  if (spec.image) { // a photo (mural, painted panel) mapped flat onto the wall; path is relative to the page, e.g. data/avon/textures/x.jpg
+  if (spec.image) { // a photo (mural, painted panel) mapped flat onto the wall; path is relative to the page, e.g. data/avon-extended/textures/x.jpg
     // A sign can appear on several faces. Reuse its preloaded image/texture
     // instead of starting another request once the first preload is consumed.
     let tex = imageTextures.get(spec.image);

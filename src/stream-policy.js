@@ -3,7 +3,7 @@ import {axisFraction} from './terrain-grid.js';
 export function useStreaming(params, siteName) {
   const requested=params.get('stream');
   const authoring=['bp','isolate','stage','procedural','notrees','nobake'].some(key=>params.has(key));
-  return !authoring && requested!=='0' && (['avon','avon-extended','chautauqua'].includes(siteName) || requested==='1');
+  return !authoring && requested!=='0' && (['avon-extended','chautauqua'].includes(siteName) || requested==='1');
 }
 
 // Use the projected span of a nominal 100 m sector, as a fraction of the

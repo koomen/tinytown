@@ -4,9 +4,10 @@ import { trimCoveredWalls } from '../../../src/wall-union.js';
 import { createStreetGrade, ROAD_LEVEL, WALK_LEVEL } from '../../../src/street-grade.js';
 import { buildBlueprint, blueprintFrontages } from '../../../src/blueprint.js';
 import { makeRng } from '../../../src/rng.js';
+import { generateSite } from '../../../src/site.js';
 
 export async function checkGasStation() {
-  const site=await (await fetch('/data/avon/site.json')).json();
+  const site=await (await fetch('/data/avon-extended/site.json')).json();
   const station=site.buildings.find(b=>b.id===248274710);
   const root=buildBlueprint(makeRng('gas-regression'),{...station,obb:{cx:0,cz:0,angle:0}},station.blueprint,0,[]);
   root.updateMatrixWorld(true);
@@ -26,7 +27,7 @@ export async function checkGasStation() {
 }
 
 export async function checkLaundromatWalls() {
-  const site = await (await fetch('/data/avon/site.json')).json();
+  const site = await (await fetch('/data/avon-extended/site.json')).json();
   const building = site.buildings.find(b => b.id === 248251398);
   const root = buildBlueprint(makeRng('laundromat-walls'), {...building, obb: {cx: 0, cz: 0, angle: 0}}, building.blueprint, 0, []);
   root.updateMatrixWorld(true);
@@ -139,7 +140,7 @@ export function checkStreetGrade(town) {
   }
 }
 
-export function checkFacadeJoins(town) {
+export async function checkFacadeJoins(town) {
   const building=town.siteData.buildings.find(b=>b.id===248274499);
   const columns=buildBlueprint(makeRng('capital-joins'),{...building,obb:{cx:0,cz:0,angle:0}},building.blueprint,0,[]);
   columns.updateMatrixWorld(true);
@@ -172,11 +173,11 @@ export function checkFacadeJoins(town) {
     return Math.abs(h.point.y-bounds.max.y)<0.015;
   });
   if(hits.length!==1) throw new Error(`Porch deck and foundation overlap (${hits.length} surfaces)`);
-  checkBuildingRoofAndFoundation(town);
+  await checkBuildingRoofAndFoundation(town);
   return capitals;
 }
 
-export function checkBuildingRoofAndFoundation(town) {
+export async function checkBuildingRoofAndFoundation(town) {
   const school = town.siteData.buildings.find(b => b.id === 248273904);
   const model = buildBlueprint(makeRng('portico-join'), {...school, obb: {cx: 0, cz: 0, angle: 0}}, school.blueprint, 0, []);
   model.updateMatrixWorld(true);
@@ -196,9 +197,16 @@ export function checkBuildingRoofAndFoundation(town) {
     if (!ray.intersectObject(roof).length || !ray.intersectObject(cornice).length) throw new Error('Main roof does not cover a portico column');
   }
 
-  const shed = town.siteData.buildings.find(b => b.id === 249567063);
-  const base = town.street.surfaces.floors.find(b => b.id === shed.id).base;
-  town.street.group.updateMatrixWorld(true);
+  // Exercise a procedural shed on a slope independently of the live site's
+  // authored buildings (the larger Avon scene has a blueprint for the old shed).
+  const shed = {id: 'foundation-shed', pts: [[-5,-4],[5,-4],[5,4],[-5,4]],
+    centroid: [0,0], obb: {cx:0,cz:0,w:10,d:8,angle:0}, area:80, fill:1,
+    style: {kind:'garage',floors:1,roof:'gable',wall:'white',roofColor:'grey'}};
+  const street = await generateSite({name:'foundation-test',size:{w:40,h:40},
+    terrain:{x0:-20,x1:20,z0:-20,z1:20,cols:2,rows:2,values:[0,0,4,4]},
+    buildings:[shed],roads:[],areas:[],pois:[],extras:[]}, 'foundation-test');
+  const base = street.surfaces.floors.find(b => b.id === shed.id).base;
+  street.group.updateMatrixWorld(true);
   let samples = 0;
   for (let i = 0; i < shed.pts.length; i++) {
     const p = shed.pts[i], q = shed.pts[(i + 1) % shed.pts.length];
@@ -206,9 +214,9 @@ export function checkBuildingRoofAndFoundation(town) {
     if (normal.x * ((p[0] + q[0]) / 2 - shed.centroid[0]) + normal.z * ((p[1] + q[1]) / 2 - shed.centroid[1]) < 0) normal.negate();
     for (const t of [0.2, 0.5, 0.8]) for (const height of [-0.3, -0.13, -0.04]) {
       const x = p[0] + t * (q[0] - p[0]), z = p[1] + t * (q[1] - p[1]), y = base + height;
-      if (y <= town.street.surfaces.grade(x, z) + 0.04) continue;
+      if (y <= street.surfaces.grade(x, z) + 0.04) continue;
       const ray = new THREE.Raycaster(new THREE.Vector3(x, y, z).addScaledVector(normal, 0.3), normal.clone().negate(), 0, 0.6);
-      const hits = ray.intersectObject(town.street.group, true).filter(hit => {
+      const hits = ray.intersectObject(street.group, true).filter(hit => {
         for (let o = hit.object; o; o = o.parent) if (!o.visible) return false;
         return Math.abs(hit.distance - 0.3) < 0.015;
       });
