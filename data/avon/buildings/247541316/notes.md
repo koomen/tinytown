@@ -65,3 +65,13 @@ hipped roof and a brick chimney at its west edge toward the south end.
 
 ## Confidence
 High on the Park Place front and the Genesee Street gable end; medium on the rear volumes.
+
+## Street View correction — 2026-09-19
+
+User-supplied Street View shows the narrow connector immediately right of Pizza Land
+as white-painted masonry with a low flat roof, a small window and a white door.
+The front remains at v=-5.6, 2.1 m behind the main street facade (v=-7.7).
+Use a 4.2 m wall with a shallow white cap; this height is estimated from the photo.
+Remove the incorrect seven-metre tan mass and upper side windows in Avon Extended;
+replace the hipped connector roof in compact Avon. Retain each site's existing rear
+footprint and the adjacent salon volumes.

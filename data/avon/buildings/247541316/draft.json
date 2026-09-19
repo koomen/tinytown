@@ -5,115 +5,446 @@
   "volumes": [
     {
       "id": "front-block",
-      "u": [-12.8, 8.8],
-      "v": [-7.7, 0.5],
+      "u": [
+        -12.8,
+        8.8
+      ],
+      "v": [
+        -7.7,
+        0.5
+      ],
       "height": 7.0,
       "wall": "#96553f",
       "upperWall": "#e9e6de",
       "split": 3.6,
-      "roof": { "type": "gable", "ridge": "u", "pitch": 0.42, "overhang": 0.45, "color": "#4d4c4a", "gableColor": "#e9e6de" },
-      "beltCourses": [ { "y": 3.6, "height": 0.3, "color": "#efede7" } ],
+      "roof": {
+        "type": "gable",
+        "ridge": "u",
+        "pitch": 0.42,
+        "overhang": 0.45,
+        "color": "#4d4c4a",
+        "gableColor": "#e9e6de"
+      },
+      "beltCourses": [
+        {
+          "y": 3.6,
+          "height": 0.3,
+          "color": "#efede7"
+        }
+      ],
       "faces": {
         "-v": {
           "storefronts": [
-            { "range": [0.02, 0.16], "y": 0.9, "h": 2.0, "frame": "#efede7", "kick": "#7d4534" },
-            { "range": [0.25, 0.37], "y": 0.9, "h": 2.0, "frame": "#efede7", "kick": "#7d4534" },
-            { "range": [0.41, 0.52], "y": 0.9, "h": 2.0, "frame": "#efede7", "kick": "#7d4534" },
-            { "range": [0.62, 0.74], "y": 0.9, "h": 2.0, "frame": "#efede7", "kick": "#7d4534" },
-            { "range": [0.78, 0.90], "y": 0.9, "h": 2.0, "frame": "#efede7", "kick": "#7d4534" }
+            {
+              "range": [
+                0.02,
+                0.16
+              ],
+              "y": 0.9,
+              "h": 2.0,
+              "frame": "#efede7",
+              "kick": "#7d4534"
+            },
+            {
+              "range": [
+                0.25,
+                0.37
+              ],
+              "y": 0.9,
+              "h": 2.0,
+              "frame": "#efede7",
+              "kick": "#7d4534"
+            },
+            {
+              "range": [
+                0.41,
+                0.52
+              ],
+              "y": 0.9,
+              "h": 2.0,
+              "frame": "#efede7",
+              "kick": "#7d4534"
+            },
+            {
+              "range": [
+                0.62,
+                0.74
+              ],
+              "y": 0.9,
+              "h": 2.0,
+              "frame": "#efede7",
+              "kick": "#7d4534"
+            },
+            {
+              "range": [
+                0.78,
+                0.9
+              ],
+              "y": 0.9,
+              "h": 2.0,
+              "frame": "#efede7",
+              "kick": "#7d4534"
+            }
           ],
           "doors": [
-            { "at": 0.205, "type": "rect", "w": 1.1, "h": 2.5, "color": "#7a4a28", "surround": "#efede7", "surroundW": 0.18, "steps": 1, "fanlight": true },
-            { "at": 0.565, "type": "rect", "w": 1.1, "h": 2.5, "color": "#7a4a28", "surround": "#efede7", "surroundW": 0.18, "steps": 1, "fanlight": true },
-            { "at": 0.955, "type": "rect", "w": 1.0, "h": 2.5, "color": "#7a4a28", "surround": "#efede7", "surroundW": 0.18, "steps": 2, "fanlight": true }
+            {
+              "at": 0.205,
+              "type": "rect",
+              "w": 1.1,
+              "h": 2.5,
+              "color": "#7a4a28",
+              "surround": "#efede7",
+              "surroundW": 0.18,
+              "steps": 1,
+              "fanlight": true
+            },
+            {
+              "at": 0.565,
+              "type": "rect",
+              "w": 1.1,
+              "h": 2.5,
+              "color": "#7a4a28",
+              "surround": "#efede7",
+              "surroundW": 0.18,
+              "steps": 1,
+              "fanlight": true
+            },
+            {
+              "at": 0.955,
+              "type": "rect",
+              "w": 1.0,
+              "h": 2.5,
+              "color": "#7a4a28",
+              "surround": "#efede7",
+              "surroundW": 0.18,
+              "steps": 2,
+              "fanlight": true
+            }
           ],
           "signs": [
-            { "text": "Veronica's Family Hair Salon", "style": "gold-on-black", "at": 0.195, "y": 3.02, "w": 3.6, "h": 0.62 },
-            { "text": "Alliance Group Insurance", "style": "board", "at": 0.5, "y": 3.02, "w": 2.8, "h": 0.7 },
-            { "text": "Coastal Staffing", "style": "board", "at": 0.82, "y": 3.02, "w": 3.2, "h": 0.62 }
+            {
+              "text": "Veronica's Family Hair Salon",
+              "style": "gold-on-black",
+              "at": 0.195,
+              "y": 3.02,
+              "w": 3.6,
+              "h": 0.62
+            },
+            {
+              "text": "Alliance Group Insurance",
+              "style": "board",
+              "at": 0.5,
+              "y": 3.02,
+              "w": 2.8,
+              "h": 0.7
+            },
+            {
+              "text": "Coastal Staffing",
+              "style": "board",
+              "at": 0.82,
+              "y": 3.02,
+              "w": 3.2,
+              "h": 0.62
+            }
           ],
           "storeys": [
-            { "y": 4.7,
-              "windows": { "type": "rect", "w": 1.05, "h": 1.5, "at": [0.06, 0.2, 0.35, 0.5, 0.64, 0.79, 0.93], "trim": "#efede7", "shutters": "#2b2b2e" } }
+            {
+              "y": 4.7,
+              "windows": {
+                "type": "rect",
+                "w": 1.05,
+                "h": 1.5,
+                "at": [
+                  0.06,
+                  0.2,
+                  0.35,
+                  0.5,
+                  0.64,
+                  0.79,
+                  0.93
+                ],
+                "trim": "#efede7",
+                "shutters": "#2b2b2e"
+              }
+            }
           ]
         },
         "-u": {
           "storefronts": [
-            { "range": [0.34, 0.62], "y": 0.9, "h": 1.9, "frame": "#efede7", "kick": "#7d4534" }
+            {
+              "range": [
+                0.34,
+                0.62
+              ],
+              "y": 0.9,
+              "h": 1.9,
+              "frame": "#efede7",
+              "kick": "#7d4534"
+            }
           ],
           "doors": [
-            { "at": 0.82, "type": "rect", "w": 1.0, "h": 2.4, "color": "#efede7", "surround": "#efede7", "surroundW": 0.16, "steps": 1, "fanlight": true }
+            {
+              "at": 0.82,
+              "type": "rect",
+              "w": 1.0,
+              "h": 2.4,
+              "color": "#efede7",
+              "surround": "#efede7",
+              "surroundW": 0.16,
+              "steps": 1,
+              "fanlight": true
+            }
           ],
           "storeys": [
-            { "y": 4.7,
-              "windows": { "type": "rect", "w": 1.05, "h": 1.5, "at": [0.22, 0.5, 0.78], "trim": "#efede7", "shutters": "#2b2b2e" } },
-            { "y": 8.0,
-              "windows": { "type": "gothic", "w": 0.6, "h": 1.2, "at": [0.5], "trim": "#efede7", "sill": false } }
+            {
+              "y": 4.7,
+              "windows": {
+                "type": "rect",
+                "w": 1.05,
+                "h": 1.5,
+                "at": [
+                  0.22,
+                  0.5,
+                  0.78
+                ],
+                "trim": "#efede7",
+                "shutters": "#2b2b2e"
+              }
+            },
+            {
+              "y": 8.0,
+              "windows": {
+                "type": "gothic",
+                "w": 0.6,
+                "h": 1.2,
+                "at": [
+                  0.5
+                ],
+                "trim": "#efede7",
+                "sill": false
+              }
+            }
           ]
         }
       }
     },
     {
       "id": "brick-wing",
-      "u": [-12.8, -3.0],
-      "v": [0.5, 7.7],
+      "u": [
+        -12.8,
+        -3.0
+      ],
+      "v": [
+        0.5,
+        7.7
+      ],
       "height": 6.3,
       "wall": "#8f4b3d",
-      "roof": { "type": "hip", "h": 2.0, "overhang": 0.4, "color": "#4d4c4a" },
-      "cornice": { "height": 0.3, "overhang": 0.4, "dentils": false, "color": "#efede7" },
-      "chimneys": [ { "u": -12.3, "v": 6.4 } ],
+      "roof": {
+        "type": "hip",
+        "h": 2.0,
+        "overhang": 0.4,
+        "color": "#4d4c4a"
+      },
+      "cornice": {
+        "height": 0.3,
+        "overhang": 0.4,
+        "dentils": false,
+        "color": "#efede7"
+      },
+      "chimneys": [
+        {
+          "u": -12.3,
+          "v": 6.4
+        }
+      ],
       "faces": {
         "-u": {
           "storeys": [
-            { "y": 1.0, "windows": { "type": "rect", "w": 1.2, "h": 1.6, "at": [0.28], "trim": "#efede7", "shutters": "#e9e6de" } },
-            { "y": 4.1, "windows": { "type": "rect", "w": 1.2, "h": 1.5, "at": [0.28, 0.72], "trim": "#efede7", "shutters": "#e9e6de" } }
+            {
+              "y": 1.0,
+              "windows": {
+                "type": "rect",
+                "w": 1.2,
+                "h": 1.6,
+                "at": [
+                  0.28
+                ],
+                "trim": "#efede7",
+                "shutters": "#e9e6de"
+              }
+            },
+            {
+              "y": 4.1,
+              "windows": {
+                "type": "rect",
+                "w": 1.2,
+                "h": 1.5,
+                "at": [
+                  0.28,
+                  0.72
+                ],
+                "trim": "#efede7",
+                "shutters": "#e9e6de"
+              }
+            }
           ],
           "doors": [
-            { "at": 0.66, "type": "rect", "w": 1.0, "h": 2.4, "color": "#7a4a28", "surround": "#efede7", "surroundW": 0.18, "steps": 1, "fanlight": true }
+            {
+              "at": 0.66,
+              "type": "rect",
+              "w": 1.0,
+              "h": 2.4,
+              "color": "#7a4a28",
+              "surround": "#efede7",
+              "surroundW": 0.18,
+              "steps": 1,
+              "fanlight": true
+            }
           ]
         },
         "+v": {
           "storeys": [
-            { "y": 1.0, "windows": { "type": "rect", "w": 1.2, "h": 1.6, "at": [0.3, 0.7], "trim": "#efede7", "shutters": "#e9e6de" } },
-            { "y": 4.1, "windows": { "type": "rect", "w": 1.2, "h": 1.5, "at": [0.3, 0.7], "trim": "#efede7", "shutters": "#e9e6de" } }
+            {
+              "y": 1.0,
+              "windows": {
+                "type": "rect",
+                "w": 1.2,
+                "h": 1.6,
+                "at": [
+                  0.3,
+                  0.7
+                ],
+                "trim": "#efede7",
+                "shutters": "#e9e6de"
+              }
+            },
+            {
+              "y": 4.1,
+              "windows": {
+                "type": "rect",
+                "w": 1.2,
+                "h": 1.5,
+                "at": [
+                  0.3,
+                  0.7
+                ],
+                "trim": "#efede7",
+                "shutters": "#e9e6de"
+              }
+            }
           ]
         }
       }
     },
     {
       "id": "rear-stone",
-      "u": [-3.0, 12.8],
-      "v": [0.5, 7.7],
+      "u": [
+        -3.0,
+        12.8
+      ],
+      "v": [
+        0.5,
+        7.7
+      ],
       "height": 3.4,
       "wall": "#e2ded4",
-      "roof": { "type": "hip", "h": 1.6, "overhang": 0.35, "color": "#7d7b76" },
-      "cornice": { "height": 0.25, "overhang": 0.35, "dentils": false, "color": "#efede7" },
+      "roof": {
+        "type": "hip",
+        "h": 1.6,
+        "overhang": 0.35,
+        "color": "#7d7b76"
+      },
+      "cornice": {
+        "height": 0.25,
+        "overhang": 0.35,
+        "dentils": false,
+        "color": "#efede7"
+      },
       "faces": {
         "+v": {
           "storeys": [
-            { "y": 1.1, "windows": { "type": "rect", "w": 1.3, "h": 1.3, "at": [0.2, 0.55], "trim": "#efede7" } }
+            {
+              "y": 1.1,
+              "windows": {
+                "type": "rect",
+                "w": 1.3,
+                "h": 1.3,
+                "at": [
+                  0.2,
+                  0.55
+                ],
+                "trim": "#efede7"
+              }
+            }
           ],
           "doors": [
-            { "at": 0.8, "type": "rect", "w": 1.0, "h": 2.2, "color": "#efede7", "surround": "#d8d3c8", "surroundW": 0.12, "fanlight": false, "lamp": false }
+            {
+              "at": 0.8,
+              "type": "rect",
+              "w": 1.0,
+              "h": 2.2,
+              "color": "#efede7",
+              "surround": "#d8d3c8",
+              "surroundW": 0.12,
+              "fanlight": false,
+              "lamp": false
+            }
           ]
         }
       }
     },
     {
       "id": "stone-link",
-      "u": [8.8, 12.8],
-      "v": [-5.6, 0.6],
-      "height": 3.3,
+      "u": [
+        8.8,
+        12.8
+      ],
+      "v": [
+        -5.6,
+        0.6
+      ],
+      "height": 4.2,
       "wall": "#e2ded4",
-      "roof": { "type": "hip", "h": 1.2, "overhang": 0.3, "color": "#7d7b76" },
-      "cornice": { "height": 0.22, "overhang": 0.3, "dentils": false, "color": "#efede7" },
+      "roof": {
+        "type": "flat",
+        "lip": false,
+        "color": "#7d7b76"
+      },
+      "cornice": {
+        "height": 0.18,
+        "overhang": 0.12,
+        "dentils": false,
+        "color": "#efede7"
+      },
       "faces": {
         "-v": {
           "storeys": [
-            { "y": 1.3, "windows": { "type": "rect", "w": 0.8, "h": 0.8, "at": [0.25], "trim": "#efede7" } }
+            {
+              "y": 1.3,
+              "windows": {
+                "type": "rect",
+                "w": 0.8,
+                "h": 0.8,
+                "at": [
+                  0.25
+                ],
+                "trim": "#efede7"
+              }
+            }
           ],
           "doors": [
-            { "at": 0.65, "type": "rect", "w": 0.9, "h": 2.1, "color": "#efede7", "surround": "#d8d3c8", "surroundW": 0.12, "fanlight": false, "lamp": false }
+            {
+              "at": 0.65,
+              "type": "rect",
+              "w": 0.9,
+              "h": 2.1,
+              "color": "#efede7",
+              "surround": "#d8d3c8",
+              "surroundW": 0.12,
+              "fanlight": false,
+              "lamp": false
+            }
           ]
         }
       }
