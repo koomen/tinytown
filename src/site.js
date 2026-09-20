@@ -1101,13 +1101,26 @@ function buildStreetClock(rng, ex) {
 }
 
 // Gas-station style canopy on posts
-function buildCanopy(rng, ex) {
+export function buildCanopy(rng, ex, grade = () => 0) {
   const g = new THREE.Group();
   const w = ex.w || 14, d = ex.d || 9, h = ex.height || 5;
+  const c = Math.cos(ex.rotation || 0), s = Math.sin(ex.rotation || 0);
+  const base = grade(ex.x, ex.z);
+  const floor = (u, v) => grade(ex.x + c*u + s*v, ex.z - s*u + c*v) - base + 0.08;
   g.add(rbox(w, 0.5, d, col(WALL_COLORS, ex.color, WALL_COLORS.white), 0.1, 0, h, 0));
   g.add(rbox(w + 0.1, 0.5, d + 0.1, col(WALL_COLORS, ex.trim, WALL_COLORS.navy), 0.08, 0, h - 0.3, 0));
-  for (const sx of [-1, 1]) for (const sz of [-1, 1]) g.add(box(0.4, h, 0.4, 0xd9d5cc, sx * (w / 2 - 2), h / 2, sz * (d / 2 - 2)));
-  g.add(rbox(w, 0.15, d, P.laneLight, 0.03, 0, 0.08, 0));
+  for (const sx of [-1, 1]) for (const sz of [-1, 1]) {
+    const u = sx * (w / 2 - 2), v = sz * (d / 2 - 2), bottom = floor(u, v) - 0.05;
+    const post = box(0.4, h - bottom, 0.4, 0xd9d5cc, u, (h + bottom) / 2, v);
+    post.name = 'canopy-post';
+    g.add(post);
+  }
+  const color = new THREE.Color(P.laneLight);
+  const pad = new THREE.Mesh(pavementGeometry([
+    [[-w/2,-d/2],[w/2,-d/2],[w/2,d/2],[-w/2,d/2]],
+  ], floor, () => color, 0.25), vmat);
+  pad.name = 'canopy-pavement';
+  g.add(pad);
   return g;
 }
 
@@ -1393,6 +1406,15 @@ export async function generateSite(site, seed = 'site', opts = {}) {
     const pts=line&&f.closed&&f.pts.length?[...f.pts,f.pts[0]]:f.pts;
     return {pts,holes:f.holes,line,width,bb:bboxOf(pts,(line?width:0)+1.2)};
   });
+  // Canopy pavement also needs the grass relief removed across every terrain
+  // triangle it touches, just like the mapped paving above.
+  for (const ex of site.extras || []) if (ex.type === 'canopy') {
+    const c=Math.cos(ex.rotation||0),s=Math.sin(ex.rotation||0);
+    const w=(ex.w||14)/2,d=(ex.d||9)/2;
+    const pts=[[-w,-d],[w,-d],[w,d],[-w,d]].map(([u,v])=>
+      [ex.x+c*u+s*v,ex.z-s*u+c*v]);
+    landmarkPatches.push({pts,line:false,width:0,bb:bboxOf(pts,1.2)});
+  }
   // Grass bumps fade out within a metre of sidewalks, paths and lots, whose
   // slabs sit close to the ground
   const bumpScale = (x, z, reach = 0) => {
@@ -1701,6 +1723,10 @@ export async function generateSite(site, seed = 'site', opts = {}) {
       if (distToPolyline(f.pts, x, z) < f.width / 2 + pad) return true;
     }
     for (const ex of site.extras || []) {
+      if (ex.type === 'canopy') {
+        const c = Math.cos(ex.rotation || 0), s = Math.sin(ex.rotation || 0), dx = x-ex.x, dz = z-ex.z;
+        if (Math.abs(c*dx-s*dz) < (ex.w || 14)/2+pad && Math.abs(s*dx+c*dz) < (ex.d || 9)/2+pad) return true;
+      }
       if (ex.type === 'plaza' && Math.max(Math.abs(x - ex.x), Math.abs(z - ex.z)) < (ex.size || 10) / 2 + pad + 1) return true;
       if (ex.type === 'memorial' && Math.hypot(x - ex.x, z - ex.z) < (ex.size || 2.4) / 2 + pad + 0.5) return true;
     }
@@ -1995,7 +2021,7 @@ export async function generateSite(site, seed = 'site', opts = {}) {
     else if (ex.type === 'wall') { m = buildStoneWall(rng, -ex.length / 2, ex.length / 2, 0); m.rotation.y = ex.angle || 0; }
     else if (ex.type === 'flowers') m = buildFlowerCluster(rng, ex.count || 12);
     else if (ex.type === 'clock') m = buildStreetClock(rng, ex);
-    else if (ex.type === 'canopy') m = buildCanopy(rng, ex);
+    else if (ex.type === 'canopy') m = buildCanopy(rng, ex, yAt);
     else if (ex.type === 'plaza') m = buildPlaza(rng, ex);
     else if (ex.type === 'memorial') m = buildMemorial(rng, ex);
     if (opts.onScene && m && ['monument','gazebo','clock','memorial'].includes(ex.type)) m.userData.streamBase = true;

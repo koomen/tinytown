@@ -87,4 +87,6 @@ Identity: high. Front face layout: high (two head-on shots). West face: high (he
 East and south faces: unknown, left plain.
 
 ## Owner correction — 2026-09-19
-The supplied overhead image places the canopy northwest of the store, diagonally forward toward the circle and East Main Street. Its edges run approximately east-west/north-south rather than parallel to the angled store. Approximate center (68.3, 37.3), 14 x 9 m, rotation 0. This refines the west-side description above with the forecourt setback and orientation.
+The supplied overhead image places the canopy northwest of the store, diagonally forward toward the circle and East Main Street. Its edges run approximately east-west/north-south rather than parallel to the angled store. Approximate center (67.65, 39.7), 14 x 9 m, rotation 0. This refines the west-side description above with the forecourt setback and orientation.
+
+Moved the canopy another 2.5 m back from the Main Street sidewalk, preserving its orientation, per owner feedback.
