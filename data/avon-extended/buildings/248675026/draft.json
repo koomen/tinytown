@@ -7,8 +7,8 @@
     {
       "id": "main-south",
       "u": [
-        -5.0,
-        6.2
+        -3.75,
+        7.45
       ],
       "v": [
         -7.9,
@@ -84,7 +84,7 @@
       },
       "chimneys": [
         {
-          "u": 4.25,
+          "u": 5.5,
           "v": -1.35
         }
       ]
@@ -92,8 +92,8 @@
     {
       "id": "east-double-garage",
       "u": [
-        -13.2,
-        -5.0
+        -14.45,
+        -6.25
       ],
       "v": [
         -4.0,
@@ -177,8 +177,8 @@
     {
       "id": "west-wing",
       "u": [
-        6.2,
-        13.2
+        7.45,
+        14.45
       ],
       "v": [
         -4.0,
@@ -258,8 +258,8 @@
     {
       "id": "projecting-front-window",
       "u": [
-        -5.5,
-        6.7
+        -4.25,
+        7.95
       ],
       "v": [
         3.3,
@@ -352,12 +352,50 @@
           ]
         }
       }
+    },
+    {
+      "id": "garage-breezeway",
+      "u": [
+        -6.25,
+        -3.75
+      ],
+      "v": [
+        -2.5,
+        1.9
+      ],
+      "height": 2.6,
+      "roof": {
+        "type": "gable",
+        "ridge": "u",
+        "pitch": 0.22,
+        "maxH": 0.8,
+        "overhang": 0.25
+      },
+      "plinth": {
+        "height": 0.32,
+        "color": "#77776d"
+      },
+      "faces": {
+        "+v": {
+          "doors": [
+            {
+              "at": 0.5,
+              "w": 0.9,
+              "h": 2.1,
+              "color": "#41483f",
+              "surround": "#c4c0ad",
+              "surroundW": 0.1,
+              "lights": true
+            }
+          ]
+        }
+      }
     }
   ],
   "details": [
     {
       "type": "stair",
-      "u": 7.8,
+      "u": 9.05,
       "v": 11.72,
       "y": -0.2,
       "dir": [
@@ -395,11 +433,10 @@
       "railingGap": 1.7,
       "face": "+v",
       "u": [
-        -5.5,
-        9.1
+        -4.25,
+        10.35
       ],
-      "wall": 7.9,
-      "_comment": "Shallow north-facing deck, extended 2.4 m to join west return. +u is geographic west; fronts Spring Street. Renderer slab backs 0.04 m into wall. Stair is a separate terrain-seated detail; retain stepsAt and railingGap for its opening."
+      "wall": 7.9
     },
     {
       "style": "open",
@@ -420,8 +457,7 @@
         3.3,
         7.98
       ],
-      "wall": 6.74,
-      "_comment": "West return: physical slab u 6.70..9.10, v 3.30..7.98. The 0.12 m overlap interlocks two 0.06 m rounded slab edges; flat walking tops meet at v 7.92 with no coplanar area. North end open to front deck; south end meets west wing."
+      "wall": 7.99
     }
   ]
 }

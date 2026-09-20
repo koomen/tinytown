@@ -20,6 +20,7 @@ import { surfaceMaterial } from './materials.js';
 import { buildRoadWaterBridges } from './road-water-bridges.js';
 import { buildTennisCourt } from './tennis-court.js';
 import { buildStadiumBleachers } from './stadium-bleachers.js';
+import { buildBasketballHoop } from './basketball-hoop.js';
 
 export function signBrand(text = '') {
   const value = String(text).toLowerCase().replace(/[^a-z]/g, '');
@@ -98,6 +99,7 @@ export function buildLandmarks(features = [], {grade = () => 0, grid = null,
       g.add(buildAmphitheaterGarden(f,grade));
     }
     if(f.kind==='paving') g.add(buildOrnamentalPaving(f,grade,grid));
+    if(f.kind==='basketball-hoop') g.add(buildBasketballHoop(f,grade));
     if(f.kind==='bleachers') {
       g.userData.streamKind='landmark';
       g.add(buildStadiumBleachers(f,grade,grid));

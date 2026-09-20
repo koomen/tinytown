@@ -90,7 +90,7 @@ ENUMS = {
     "parapet.type": {"pediment", "mission", "arch", "stepped", "flat"},
     "sign.style": {"gold-on-black", "carved", "stone", "board", "red", "navy", "green", "bronze", "ghost"},
     "sign.shape": {"plaque", "arch", "rect", "cutout"},
-    "detail.type": {"lawnsign", "cross", "bush", "flag", "ramp", "stair", "landing"},
+    "detail.type": {"lawnsign", "cross", "bush", "flag", "ramp", "stair", "landing", "keyboard-tribute"},
     "detail.construction": {"solid", "open"},
     "porch.style": {"open", "carport"},
     "porch.roof": {"hip", "flat", "gable", "shed", "main", "none"},

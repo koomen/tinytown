@@ -26,3 +26,15 @@ Both segments keep the +0.68 m floor and existing entrance threshold. The outer 
 Actual production seating was measured from the full Avon Extended site, not an isolated approximation. Building base is -22.9434235353. The stair toe ground is roughly 0.19–0.20 m below that base; the explicit flight gives measured bottom risers of 0.166–0.177 m. The earlier built-in porch stair at this location would have produced a roughly 0.32 m bottom riser. This correction does not change the building base or the shared renderer. The relocated stair and reduced deck remain west of driveway 762801101, with at least 1.6999 m deck-to-driveway-edge clearance.
 
 Roof volumes, facade openings, footprint vertices, OBB, front metadata, style, and the already corrected driveway are preserved exactly. Evidence is in `runs/model-edits-20260913/299-deck-refinement`: full integrated baseline guard and integration sidecar; before/after isolation views; actual-terrain front, oblique, north, and contact renders; baked-stream round-trip renders; `dimension-report.json`; and `validation.json`. Lint passes with zero errors and warnings. Geometry probes confirm open entrance and wrap routes, level deck joint and threshold, and grounded stairs. The production bake/pack/unpack/StreamObjectLoader round-trip preserves the model bounds within 0.000001 m and produces no browser exceptions. Parent integration should replace only this blueprint in aggregate and overrides, retain all existing geometry metadata, and regenerate scene streams.
+
+## Owner correction — September 19, 2026
+
+Extended the two-door garage 2.5 m east, retaining its 8.2 m width, and added
+an approximately 2.5 m wide recessed breezeway with a north-facing entry door.
+The enlarged footprint has a recentered authoring frame; the main house,
+windows, chimney, wraparound deck and stairs retain their previous world positions.
+Replaced the narrow driveway ribbon with a mapped asphalt polygon: the final
+right/west edge runs straight to the house, while the left/east side opens into
+a 6.1 m (20 ft) deep rectangular apron before both garage doors. Added basketball
+hoops at the east and north edges, facing inward. Dimensions are approximate,
+based on the owner's description rather than a new survey.

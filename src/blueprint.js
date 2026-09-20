@@ -13,6 +13,7 @@
 // well-chosen windows rather than every real one.
 
 import * as THREE from 'three';
+import { buildKeyboardTribute } from './keyboard-tribute.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import { P } from './palette.js';
 import { WALL_COLORS, ROOF_COLORS, col } from './colors.js';
@@ -1491,6 +1492,8 @@ export function buildBlueprint(rng, b, bp, baseY, smokes, wallBottom = -1.2) {
       m.rotation.y = d.rotation ?? (obb.angle - Math.PI / 4); // every flag in the village flies toward the south-east, whatever its building's frame
     } else if (d.type === 'landing') {
       m = stairLanding(d); m.rotation.y = d.rotation || 0;
+    } else if (d.type === 'keyboard-tribute') {
+      m = buildKeyboardTribute(); m.rotation.y = d.rotation || 0;
     } else if (d.type === 'ramp' || d.type === 'stair') {
       // starts at (u, v) at grade and climbs in direction `dir` (u, v)
       m = accessEl(d);

@@ -248,6 +248,9 @@ plus its shop wing).
 ```
 { "type": "lawnsign", "text": "...", "style": "red"|"navy"|..., "u": , "v": , "w": m, "h": m, "rotation": radians }
 { "type": "cross"|"bush"|"flag", "u": , "v": , "size": m, "height": m }
+{ "type": "keyboard-tribute", "u": , "v": , "y": 0.65, "rotation": 0 }
+// Owner-requested keyboard on an X stand with a laid bouquet of white roses. 88 keys, 1.50 m wide;
+// y is the supporting deck height. Keys face +v before rotation.
 { "type": "ramp"|"stair", "u": , "v": , "dir": [du, dv], "length": m, "height": m, "w": 1.2,   // starts at (u, v) at grade and climbs toward dir
   "landing": m, "railing": true, "color": ..., "railColor": ... }                             // wheelchair ramp (sloped deck) or an exterior stair (steps) with rails
 // Stair construction:"open" gives thin treads and two stringers, with open
