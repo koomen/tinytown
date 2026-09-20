@@ -105,3 +105,6 @@ separate from the two small columns at the doorway and the side-return colonnade
 The previous six-column front was incorrect. Replaced it with four columns, with the
 inner pair framing the entrance, and removed the extra generated porch posts. The
 photo does not establish the full side-return count; that existing count is unchanged.
+
+## Owner correction — 2026-09-19
+Added the broad rear/east parking lot from the supplied satellite reference, with the Temple Street entrance opening into the parking court. Restricted the service-road centerline to the northern entrance so the lot no longer reads as a through street. Only the rear grass garden has a white vinyl fence, with both ends meeting the building; the broader parking lot is unfenced.

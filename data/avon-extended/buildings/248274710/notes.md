@@ -85,3 +85,6 @@ so 0.44 on a 6.8 m span = 3.0 m rise; hip uses min(span, length).
 Identity: high. Front face layout: high (two head-on shots). West face: high (head-on shot
 + crop). Heights: medium (scaled from brick / door). Cooler box position/height: medium-low.
 East and south faces: unknown, left plain.
+
+## Owner correction — 2026-09-19
+The supplied overhead image places the canopy northwest of the store, diagonally forward toward the circle and East Main Street. Its edges run approximately east-west/north-south rather than parallel to the angled store. Approximate center (68.3, 37.3), 14 x 9 m, rotation 0. This refines the west-side description above with the forecourt setback and orientation.

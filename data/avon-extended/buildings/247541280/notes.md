@@ -65,3 +65,6 @@ front of the west half (outside the footprint, not modelled).
 
 ## Confidence
 High on identity, front bays, colours and massing; medium on the flank/rear openings.
+
+## Owner correction — 2026-09-19
+Moved the chimney from Avon Fitness to the rear roof immediately behind the right end of the mansard, matching the supplied street view.
