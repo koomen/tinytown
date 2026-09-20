@@ -5,6 +5,7 @@ import { NIGHT } from './lighting.js';
 
 const cache = new Map();
 export const usesPaneUV = kind => kind === 'glass' || kind === 'shop';
+export const usesSurfaceUV = kind => usesPaneUV(kind) || kind === 'plowed';
 
 export function surfaceMaterial(kind, color = 0xffffff, vertexColors = false, { nightWindows = 'varied' } = {}) {
   const allOn = usesPaneUV(kind) && nightWindows === 'all';
@@ -18,7 +19,7 @@ export function surfaceMaterial(kind, color = 0xffffff, vertexColors = false, { 
   if (allOn) m.userData.nightWindows = 'all';
   m.onBeforeCompile = shader => {
     shader.uniforms.nightAmount = NIGHT;
-    const varyings = `varying vec3 vSurfacePos; varying vec3 vSurfaceNormal; ${glass ? 'varying vec2 vPaneUv;' : ''}`;
+    const varyings = `varying vec3 vSurfacePos; varying vec3 vSurfaceNormal; ${glass ? 'varying vec2 vPaneUv;' : ''} ${kind === 'plowed' ? 'varying vec2 vFieldUv;' : ''}`;
     shader.vertexShader = shader.vertexShader.replace('#include <common>', `#include <common>\n${varyings}`)
       .replace('#include <begin_vertex>', `#include <begin_vertex>
         vec4 surfacePosition = vec4(transformed, 1.0);
@@ -33,6 +34,7 @@ export function surfaceMaterial(kind, color = 0xffffff, vertexColors = false, { 
         mat3 mm = mat3(modelMatrix);
         surfaceNormal /= vec3(dot(mm[0],mm[0]),dot(mm[1],mm[1]),dot(mm[2],mm[2]));
         vSurfaceNormal = normalize(mm * surfaceNormal);
+        ${kind === 'plowed' ? 'vFieldUv = uv;' : ''}
         ${glass ? `vPaneUv = uv;
           if (uv.x < 2.0) {
             float id = 1.0 + floor(fract(sin(dot(modelMatrix[3].xyz,vec3(12.9898,37.719,78.233)))*43758.5453)*4096.0);
@@ -83,6 +85,18 @@ export function surfaceMaterial(kind, color = 0xffffff, vertexColors = false, { 
           }
           if(tone<0.12) diffuseColor.rgb=mix(diffuseColor.rgb,vec3(0.34,0.25,0.14),edge*0.26);`
           : 'diffuseColor.rgb *= mix(0.70,1.0,smoothstep(0.0,0.32,uv.y));'}`;
+    } else if (kind === 'plowed') {
+      treatment = `
+        vec2 p=vSurfacePos.xz;
+        float footprint=max(length(dFdx(p)),length(dFdy(p)));
+        float broad=landNoise(p*.065+vec2(17,8));
+        float clods=landNoise(p*5.0);
+        float detail=1.0-smoothstep(.12,.8,footprint);
+        // Fade subpixel furrows rather than aliasing into wide moire stripes.
+        float rows=1.0-smoothstep(.2,.65,fwidth(vFieldUv.x));
+        float furrow=cos(vFieldUv.x*6.2831853);
+        diffuseColor.rgb *= .92+.16*broad+(clods-.5)*.23*detail+furrow*.13*rows;
+      `;
     } else if (kind === 'terrain' || kind === 'riverbank' || kind === 'gravel') {
       treatment = `
         vec2 p=vSurfacePos.xz;

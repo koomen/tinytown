@@ -21,6 +21,8 @@ import { buildRoadWaterBridges } from './road-water-bridges.js';
 import { buildTennisCourt } from './tennis-court.js';
 import { buildStadiumBleachers } from './stadium-bleachers.js';
 import { buildBasketballHoop } from './basketball-hoop.js';
+import { buildCornfield } from './cornfield.js';
+import { buildCroplandSurface } from './cropland.js';
 
 export function signBrand(text = '') {
   const value = String(text).toLowerCase().replace(/[^a-z]/g, '');
@@ -93,6 +95,11 @@ export function buildLandmarks(features = [], {grade = () => 0, grid = null,
   const root = new THREE.Group(); root.name='mapped-landmarks';
   for(const f of features) {
     if(!f.pts?.length) continue;
+    if(f.kind==='cropland') {
+      root.add(buildCroplandSurface(f,grade,grid));
+      if(f.crop?.type==='corn')root.add(buildCornfield(f,grade));
+      continue;
+    }
     const g=new THREE.Group();g.name=`landmark-${f.kind}-${f.id}`;g.userData.source=f.source;
     if(f.kind==='garden' && f.garden?.type==='carnahan-jackson') {
       g.userData.streamKind='landmark';

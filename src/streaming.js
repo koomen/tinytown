@@ -4,6 +4,7 @@ import { decodeStream, StreamObjectLoader } from './stream-loader.js';
 import { selectDetailTiles, detailVisible, groundSampler } from './stream-policy.js';
 import { surfaceMaterial } from './materials.js';
 import { grainy } from './kit.js';
+import { restoreCornSpriteMaterial } from './corn-sprites.js';
 
 const MiB = 1024*1024;
 // Tiles own their instance buffers, materials, textures and ordinary geometry.
@@ -29,7 +30,8 @@ async function decode(bytes,rawBytes,options,sharedGeometries={}) {
   group.traverse(o=>{
     for(const m of o.material ? (Array.isArray(o.material)?o.material:[o.material]) : []) {
       if(seen.has(m)) continue; seen.add(m);
-      if(m.userData.surface) {
+      if(m.userData.cornSprite) restoreCornSpriteMaterial(m);
+      else if(m.userData.surface) {
         const template=surfaceMaterial(m.userData.surface,m.color.getHex(),m.vertexColors,{nightWindows:m.userData.nightWindows});
         m.onBeforeCompile=template.onBeforeCompile; m.customProgramCacheKey=template.customProgramCacheKey;
       } else if(m.vertexColors || o.isInstancedMesh) grainy(m);

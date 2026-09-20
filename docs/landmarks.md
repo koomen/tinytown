@@ -40,7 +40,7 @@ Kinds the renderer (`src/landmarks.js`, `buildLandmarks(features, {grade})`)
 understands include `water` (closed polygon, or an open centreline with
 `width`), `track` (centreline with `width`), `pitch`, `playground`, `paving`,
 `gravel`, `beach`, `pier`, `parking-row`, `barrier`, `gate-barrier`,
-`bleachers`, `garden`, `park-sign`, `school-sign`, `school-forecourt`, and
+`bleachers`, `garden`, `cropland`, `park-sign`, `school-sign`, `school-forecourt`, and
 site-specific grounds such as `andriaccios-ground`. Pitch `bases` are
 `[home, first, second, third]`; the renderer never guesses diamond orientation
 from a boundary. Polygon `holes` use the same coordinate convention. Every
@@ -54,6 +54,23 @@ instead of sinking between endpoints. Water extraction omits tunnel/culvert
 and covered segments; an untagged river centreline defaults to a visual width
 (40 m for the Genesee, 25 m elsewhere; an explicit OSM `width` wins). These are
 visual approximations, not surveyed bank polygons.
+
+Corn fields use `kind: "cropland"`, `closed: true` and
+`crop: {"type": "corn", "angle": -0.25, "height": 1.9, "rowSpacing": 0.8}`.
+The angle is in radians from local south toward east; dimensions are metres.
+Trace separate cultivated polygons around woodland, drainage, solar arrays
+and buildings. Individual corn stalks are planted about 28 cm apart along
+rows. Each stalk is one upright quad that turns toward the camera; there are
+no crossing cards or horizontal foliage images. Four stalk silhouettes share
+one small atlas. Compact instanced attributes store position and height in
+centimetres. Distant fields retain individual plants at a lower density.
+Alpha cutouts write depth without blending. Corn uses the ground's AO/focus
+depth (color-pass layer 1) and adds no animation or stalk shadow draws.
+Every cropland polygon also has brown plowed soil draped over the terrain,
+including its unplanted headland. Procedural furrows follow `crop.angle` and
+`crop.rowSpacing`, fading below pixel size. Field coordinates survive surface
+batching and streaming; the soil needs no texture download. Cropland suppresses
+grass bumps and random vegetation. Omit `crop.type` for a bare plowed field.
 
 ## Outlines
 

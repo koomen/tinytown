@@ -10,10 +10,17 @@ export class StreamObjectLoader extends THREE.ObjectLoader {
   parseGeometries(records=[]) {
     const geometries={...this.sharedGeometries};
     for(const {uuid,type,data} of records) {
-      if(type!=='BufferGeometry')throw new Error('Unsupported streamed geometry');
-      const geometry=new THREE.BufferGeometry();geometry.uuid=uuid;
+      if(!['BufferGeometry','InstancedBufferGeometry'].includes(type))throw new Error('Unsupported streamed geometry');
+      const geometry=type==='InstancedBufferGeometry'?new THREE.InstancedBufferGeometry():new THREE.BufferGeometry();geometry.uuid=uuid;
       for(const [name,a] of Object.entries(data.attributes))
-        geometry.setAttribute(name,new THREE.BufferAttribute(a.array,a.itemSize,a.normalized));
+        geometry.setAttribute(name,a.isInstancedBufferAttribute
+          ?new THREE.InstancedBufferAttribute(a.array,a.itemSize,a.normalized,a.meshPerAttribute)
+          :new THREE.BufferAttribute(a.array,a.itemSize,a.normalized));
+      if(geometry.isInstancedBufferGeometry) {
+        geometry.instanceCount=data.instanceCount;
+        if(data.boundingBox)geometry.boundingBox=new THREE.Box3(new THREE.Vector3().fromArray(data.boundingBox.min),new THREE.Vector3().fromArray(data.boundingBox.max));
+        if(data.boundingSphere)geometry.boundingSphere=new THREE.Sphere(new THREE.Vector3().fromArray(data.boundingSphere.center),data.boundingSphere.radius);
+      }
       if(data.index)geometry.setIndex(new THREE.BufferAttribute(data.index.array,1));
       for(const {start,count,materialIndex} of data.groups||[])geometry.addGroup(start,count,materialIndex);
       geometries[uuid]=geometry;

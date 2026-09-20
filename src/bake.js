@@ -25,7 +25,7 @@
 
 import * as THREE from 'three';
 import { vmat, imat } from './kit.js';
-import { surfaceMaterial, usesPaneUV } from './materials.js';
+import { surfaceMaterial, usesPaneUV, usesSurfaceUV } from './materials.js';
 
 // A "plain" material differs from vmat only by its colour, so it can become
 // vertex colours under vmat with no visible change.
@@ -113,7 +113,7 @@ class Batch {
         const px = e[0] * x + e[4] * y + e[8] * z + e[12], py = e[1] * x + e[5] * y + e[9] * z + e[13], pz = e[2] * x + e[6] * y + e[10] * z + e[14];
         pos[o] = px; pos[o + 1] = py; pos[o + 2] = pz;
         if (uv && s.geo.attributes.uv) {
-          uv[(vo+i)*2] = s.geo.attributes.uv.getX(si) + paneId*2;
+          uv[(vo+i)*2] = s.geo.attributes.uv.getX(si) + (usesPaneUV(this.material.userData.surface) ? paneId*2 : 0);
           uv[(vo+i)*2+1] = s.geo.attributes.uv.getY(si);
         }
         if (px < minX) minX = px; if (px > maxX) maxX = px;
@@ -177,7 +177,7 @@ export function bake(root, { preserveInstances = false, compactNormals = false }
   const route = (material, geo, matrix, tint, start = 0, count = -1) => {
     if (material.userData.surface) {
       const {surface:kind,nightWindows} = material.userData, key = `surface:${kind}:${nightWindows || 'varied'}`;
-      if (!byMat.has(key)) byMat.set(key, new Batch(surfaceMaterial(kind, 0xffffff, true, {nightWindows}), true, usesPaneUV(kind), compactNormals));
+      if (!byMat.has(key)) byMat.set(key, new Batch(surfaceMaterial(kind, 0xffffff, true, {nightWindows}), true, usesSurfaceUV(kind), compactNormals));
       byMat.get(key).add(geo, matrix, tint, !!material.vertexColors, start, count);
     } else if (isPlain(material)) {
       plain.add(geo, matrix, tint, !!material.vertexColors, start, count);

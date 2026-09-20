@@ -3448,6 +3448,1191 @@
         ]
       ],
       "source": "User aerial photograph 2026-09-13 at 16.05.55; Esri World Imagery retained at runs/model-edits-20260913/avon-football/aerial-field.png. East straightaway grandstand footprint traced 2026-09-14; row count, railings and central press box dimensions are visual approximations."
+    },
+    {
+      "id": "avon-school-corn-north",
+      "kind": "cropland",
+      "name": "Corn field east of Avon High School \u2014 north",
+      "closed": true,
+      "crop": {
+        "type": "corn",
+        "angle": 1.32,
+        "height": 1.9,
+        "rowSpacing": 0.8
+      },
+      "source": "User identifies corn fields east of Avon High School, 2026-09-20. Cultivated boundaries and row directions traced from Esri World Imagery export on 2026-09-20 (runs/cornfields/aerial-metadata.json); standing summer corn is a stylized seasonal depiction. Solar array, wooded dividers, drainage margins, homes and road verges excluded.",
+      "coordinates": [
+        [
+          -77.735398438,
+          42.907890011
+        ],
+        [
+          -77.734742188,
+          42.907787011
+        ],
+        [
+          -77.733554688,
+          42.907581009
+        ],
+        [
+          -77.733015625,
+          42.90746084
+        ],
+        [
+          -77.732796875,
+          42.90731206
+        ],
+        [
+          -77.73259375,
+          42.907146113
+        ],
+        [
+          -77.732507813,
+          42.906877163
+        ],
+        [
+          -77.732445313,
+          42.906648269
+        ],
+        [
+          -77.733351563,
+          42.906802773
+        ],
+        [
+          -77.7341875,
+          42.906968721
+        ],
+        [
+          -77.735007813,
+          42.907123224
+        ],
+        [
+          -77.735710938,
+          42.907243393
+        ]
+      ]
+    },
+    {
+      "id": "avon-school-corn-southwest",
+      "kind": "cropland",
+      "name": "Corn field east of Avon High School \u2014 southwest",
+      "closed": true,
+      "crop": {
+        "type": "corn",
+        "angle": -0.25,
+        "height": 1.9,
+        "rowSpacing": 0.8
+      },
+      "source": "User identifies corn fields east of Avon High School, 2026-09-20. Cultivated boundaries and row directions traced from Esri World Imagery export on 2026-09-20 (runs/cornfields/aerial-metadata.json); standing summer corn is a stylized seasonal depiction. Solar array, wooded dividers, drainage margins, homes and road verges excluded.",
+      "coordinates": [
+        [
+          -77.735742188,
+          42.905303496
+        ],
+        [
+          -77.735328125,
+          42.905217658
+        ],
+        [
+          -77.734921875,
+          42.905143266
+        ],
+        [
+          -77.7346875,
+          42.905103208
+        ],
+        [
+          -77.734625,
+          42.905211936
+        ],
+        [
+          -77.73453125,
+          42.905280606
+        ],
+        [
+          -77.734382813,
+          42.905217658
+        ],
+        [
+          -77.734210938,
+          42.905034538
+        ],
+        [
+          -77.734140625,
+          42.904965868
+        ],
+        [
+          -77.7341875,
+          42.904805637
+        ],
+        [
+          -77.734296875,
+          42.904513786
+        ],
+        [
+          -77.734445313,
+          42.904101759
+        ],
+        [
+          -77.734578125,
+          42.903809906
+        ],
+        [
+          -77.734679688,
+          42.903729789
+        ],
+        [
+          -77.734914063,
+          42.903735511
+        ],
+        [
+          -77.73528125,
+          42.90379846
+        ],
+        [
+          -77.735609375,
+          42.903712621
+        ],
+        [
+          -77.735945313,
+          42.903638226
+        ],
+        [
+          -77.736257813,
+          42.903701175
+        ],
+        [
+          -77.73621875,
+          42.903912913
+        ],
+        [
+          -77.736101563,
+          42.904244825
+        ],
+        [
+          -77.73596875,
+          42.904674018
+        ],
+        [
+          -77.735882813,
+          42.904805637
+        ],
+        [
+          -77.735585938,
+          42.904817082
+        ],
+        [
+          -77.735421875,
+          42.904914365
+        ],
+        [
+          -77.735476563,
+          42.905045983
+        ],
+        [
+          -77.735773438,
+          42.905131821
+        ]
+      ]
+    },
+    {
+      "id": "avon-school-corn-east",
+      "kind": "cropland",
+      "name": "Corn field east of Avon High School \u2014 east",
+      "closed": true,
+      "crop": {
+        "type": "corn",
+        "angle": -0.25,
+        "height": 1.9,
+        "rowSpacing": 0.8
+      },
+      "source": "User identifies corn fields east of Avon High School, 2026-09-20. Cultivated boundaries and row directions traced from Esri World Imagery export on 2026-09-20 (runs/cornfields/aerial-metadata.json); standing summer corn is a stylized seasonal depiction. Solar array, wooded dividers, drainage margins, homes and road verges excluded.",
+      "coordinates": [
+        [
+          -77.733242188,
+          42.906562433
+        ],
+        [
+          -77.73278125,
+          42.906488042
+        ],
+        [
+          -77.732234375,
+          42.906390761
+        ],
+        [
+          -77.731960938,
+          42.906322092
+        ],
+        [
+          -77.731679688,
+          42.906259146
+        ],
+        [
+          -77.731242188,
+          42.906156142
+        ],
+        [
+          -77.731289063,
+          42.905921523
+        ],
+        [
+          -77.731398438,
+          42.905601065
+        ],
+        [
+          -77.7315,
+          42.905446558
+        ],
+        [
+          -77.731679688,
+          42.905395056
+        ],
+        [
+          -77.73184375,
+          42.905440836
+        ],
+        [
+          -77.731984375,
+          42.905555285
+        ],
+        [
+          -77.73209375,
+          42.905778462
+        ],
+        [
+          -77.732148438,
+          42.906001637
+        ],
+        [
+          -77.73215625,
+          42.906144698
+        ],
+        [
+          -77.732203125,
+          42.906030249
+        ],
+        [
+          -77.732148438,
+          42.90565829
+        ],
+        [
+          -77.732023438,
+          42.905446558
+        ],
+        [
+          -77.731835938,
+          42.905337831
+        ],
+        [
+          -77.731585938,
+          42.905326386
+        ],
+        [
+          -77.7316875,
+          42.905080318
+        ],
+        [
+          -77.731828125,
+          42.904668295
+        ],
+        [
+          -77.731992188,
+          42.904273438
+        ],
+        [
+          -77.732148438,
+          42.90379846
+        ],
+        [
+          -77.732320313,
+          42.903283421
+        ],
+        [
+          -77.73259375,
+          42.903271975
+        ],
+        [
+          -77.732851563,
+          42.903306311
+        ],
+        [
+          -77.733195313,
+          42.903369261
+        ],
+        [
+          -77.7335625,
+          42.903472269
+        ],
+        [
+          -77.733765625,
+          42.903592445
+        ],
+        [
+          -77.734,
+          42.903735511
+        ],
+        [
+          -77.734171875,
+          42.903890022
+        ],
+        [
+          -77.73415625,
+          42.90414754
+        ],
+        [
+          -77.734015625,
+          42.904548121
+        ],
+        [
+          -77.733859375,
+          42.905000203
+        ],
+        [
+          -77.7336875,
+          42.905446558
+        ],
+        [
+          -77.733546875,
+          42.905847131
+        ],
+        [
+          -77.733375,
+          42.906299203
+        ]
+      ]
+    },
+    {
+      "id": "avon-school-corn-northeast",
+      "kind": "cropland",
+      "name": "Corn field west of Pole Bridge Road",
+      "closed": true,
+      "crop": {
+        "type": "corn",
+        "angle": -0.25,
+        "height": 1.9,
+        "rowSpacing": 0.8
+      },
+      "source": "User identifies corn fields east of Avon High School, 2026-09-20. Cultivated boundaries and row directions traced from Esri World Imagery export on 2026-09-20 (runs/cornfields/aerial-metadata.json); standing summer corn is a stylized seasonal depiction. Solar array, wooded dividers, drainage margins, homes and road verges excluded.",
+      "coordinates": [
+        [
+          -77.731546875,
+          42.908982953
+        ],
+        [
+          -77.731195313,
+          42.909023008
+        ],
+        [
+          -77.730960938,
+          42.908982953
+        ],
+        [
+          -77.73075,
+          42.90894862
+        ],
+        [
+          -77.730460938,
+          42.908908565
+        ],
+        [
+          -77.730585938,
+          42.908530901
+        ],
+        [
+          -77.73075,
+          42.908050234
+        ],
+        [
+          -77.730898438,
+          42.907655398
+        ],
+        [
+          -77.731015625,
+          42.90738645
+        ],
+        [
+          -77.731367188,
+          42.907449396
+        ],
+        [
+          -77.73165625,
+          42.90748373
+        ],
+        [
+          -77.731851563,
+          42.907443673
+        ],
+        [
+          -77.7320625,
+          42.907426507
+        ],
+        [
+          -77.732023438,
+          42.907769844
+        ],
+        [
+          -77.731851563,
+          42.908124623
+        ],
+        [
+          -77.73178125,
+          42.908427901
+        ],
+        [
+          -77.731664063,
+          42.9087369
+        ]
+      ]
+    },
+    {
+      "id": "avon-corn-pole-bridge-east-west",
+      "kind": "cropland",
+      "name": "Corn field east of Pole Bridge Road",
+      "closed": true,
+      "crop": {
+        "type": "corn",
+        "angle": -0.21,
+        "height": 1.9,
+        "rowSpacing": 0.8
+      },
+      "source": "User identifies corn fields east of Avon High School, 2026-09-20. Cultivated boundaries and row directions traced from Esri World Imagery export on 2026-09-20 (runs/cornfields/aerial-metadata.json); standing summer corn is a stylized seasonal depiction. Solar array, wooded dividers, drainage margins, homes and road verges excluded.",
+      "coordinates": [
+        [
+          -77.728203125,
+          42.909005842
+        ],
+        [
+          -77.727585938,
+          42.908902843
+        ],
+        [
+          -77.727609375,
+          42.908548068
+        ],
+        [
+          -77.727585938,
+          42.908330624
+        ],
+        [
+          -77.727484375,
+          42.908158957
+        ],
+        [
+          -77.72734375,
+          42.908055957
+        ],
+        [
+          -77.727351563,
+          42.907907178
+        ],
+        [
+          -77.72746875,
+          42.907317783
+        ],
+        [
+          -77.727179688,
+          42.90723767
+        ],
+        [
+          -77.726765625,
+          42.907066
+        ],
+        [
+          -77.727023438,
+          42.906299203
+        ],
+        [
+          -77.7273125,
+          42.905274883
+        ],
+        [
+          -77.727578125,
+          42.90425627
+        ],
+        [
+          -77.7279375,
+          42.902997286
+        ],
+        [
+          -77.7283125,
+          42.901967189
+        ],
+        [
+          -77.72871875,
+          42.901864178
+        ],
+        [
+          -77.72928125,
+          42.901932852
+        ],
+        [
+          -77.729390625,
+          42.902035862
+        ],
+        [
+          -77.729445313,
+          42.902482239
+        ],
+        [
+          -77.729570313,
+          42.903037345
+        ],
+        [
+          -77.729671875,
+          42.903558109
+        ],
+        [
+          -77.729671875,
+          42.903844241
+        ],
+        [
+          -77.7295625,
+          42.904313496
+        ],
+        [
+          -77.729335938,
+          42.905005925
+        ],
+        [
+          -77.729070313,
+          42.905789906
+        ],
+        [
+          -77.728875,
+          42.90648232
+        ],
+        [
+          -77.72871875,
+          42.907174725
+        ],
+        [
+          -77.7285625,
+          42.907895734
+        ],
+        [
+          -77.728328125,
+          42.908731178
+        ]
+      ]
+    },
+    {
+      "id": "avon-corn-pole-bridge-east-east",
+      "kind": "cropland",
+      "name": "Corn field east of Pole Bridge Road",
+      "closed": true,
+      "crop": {
+        "type": "corn",
+        "angle": -0.21,
+        "height": 1.9,
+        "rowSpacing": 0.8
+      },
+      "source": "User identifies corn fields east of Avon High School, 2026-09-20. Cultivated boundaries and row directions traced from Esri World Imagery export on 2026-09-20 (runs/cornfields/aerial-metadata.json); standing summer corn is a stylized seasonal depiction. Solar array, wooded dividers, drainage margins, homes and road verges excluded.",
+      "coordinates": [
+        [
+          -77.72615625,
+          42.908496568
+        ],
+        [
+          -77.726007813,
+          42.90850229
+        ],
+        [
+          -77.726007813,
+          42.901967189
+        ],
+        [
+          -77.726734375,
+          42.902024417
+        ],
+        [
+          -77.72759375,
+          42.902007248
+        ],
+        [
+          -77.728195313,
+          42.90195002
+        ],
+        [
+          -77.727953125,
+          42.902802713
+        ],
+        [
+          -77.727648438,
+          42.903912913
+        ],
+        [
+          -77.72734375,
+          42.905074596
+        ],
+        [
+          -77.727046875,
+          42.906167587
+        ],
+        [
+          -77.726734375,
+          42.907083167
+        ],
+        [
+          -77.7264375,
+          42.907952956
+        ],
+        [
+          -77.726296875,
+          42.908353513
+        ]
+      ]
+    },
+    {
+      "id": "avon-driving-park-corn-north",
+      "kind": "cropland",
+      "name": "Field north of Avon Driving Park \u2014 north",
+      "closed": true,
+      "crop": {
+        "type": "corn",
+        "angle": 1.53,
+        "height": 1.9,
+        "rowSpacing": 0.8
+      },
+      "source": "Cultivated soil boundaries and planting directions traced from Esri World Imagery on 2026-09-20, export bbox=-77.770,42.905,-77.751,42.9245, imageSR=3857, size=2100,2800 (runs/plowed-fields/driving-park-aerial.json). Five cultivated plots directly north of Driving Park; riverbanks, wooded margins, farmyard, homes, ponds and recreation turf excluded. Corn is a stylized seasonal depiction requested for the mapped fields, not a crop identification from the harvested aerial.",
+      "coordinates": [
+        [
+          -77.767156493,
+          42.912501266
+        ],
+        [
+          -77.766776122,
+          42.912334117
+        ],
+        [
+          -77.766224584,
+          42.91212518
+        ],
+        [
+          -77.76575863,
+          42.912006782
+        ],
+        [
+          -77.765159545,
+          42.911930171
+        ],
+        [
+          -77.764512914,
+          42.91185356
+        ],
+        [
+          -77.763875793,
+          42.911839631
+        ],
+        [
+          -77.763723644,
+          42.911804808
+        ],
+        [
+          -77.763733154,
+          42.911554081
+        ],
+        [
+          -77.763552478,
+          42.911393894
+        ],
+        [
+          -77.763181616,
+          42.91126853
+        ],
+        [
+          -77.762715661,
+          42.911108342
+        ],
+        [
+          -77.7623448,
+          42.911003872
+        ],
+        [
+          -77.762192651,
+          42.910836718
+        ],
+        [
+          -77.762192651,
+          42.910676529
+        ],
+        [
+          -77.762411364,
+          42.909931297
+        ],
+        [
+          -77.762439892,
+          42.909471617
+        ],
+        [
+          -77.76233529,
+          42.909158196
+        ],
+        [
+          -77.762411364,
+          42.908900494
+        ],
+        [
+          -77.762620569,
+          42.90847563
+        ],
+        [
+          -77.762905847,
+          42.90814131
+        ],
+        [
+          -77.763077014,
+          42.908002009
+        ],
+        [
+          -77.763210144,
+          42.907974149
+        ],
+        [
+          -77.763676098,
+          42.908008974
+        ],
+        [
+          -77.764351257,
+          42.908078624
+        ],
+        [
+          -77.765140527,
+          42.9081831
+        ],
+        [
+          -77.765806176,
+          42.908301505
+        ],
+        [
+          -77.76641477,
+          42.90835026
+        ],
+        [
+          -77.766966308,
+          42.90841991
+        ],
+        [
+          -77.76746079,
+          42.908454735
+        ],
+        [
+          -77.767812633,
+          42.90851742
+        ],
+        [
+          -77.768021837,
+          42.90864279
+        ],
+        [
+          -77.768202513,
+          42.908775124
+        ],
+        [
+          -77.768459264,
+          42.908858704
+        ],
+        [
+          -77.768573375,
+          42.908956213
+        ],
+        [
+          -77.768611412,
+          42.909109442
+        ],
+        [
+          -77.768544847,
+          42.909388038
+        ],
+        [
+          -77.768173986,
+          42.910558129
+        ],
+        [
+          -77.767917235,
+          42.911226742
+        ],
+        [
+          -77.76771754,
+          42.911568011
+        ],
+        [
+          -77.767384716,
+          42.912250542
+        ]
+      ]
+    },
+    {
+      "id": "avon-driving-park-corn-northeast",
+      "kind": "cropland",
+      "name": "Field north of Avon Driving Park \u2014 northeast",
+      "closed": true,
+      "crop": {
+        "type": "corn",
+        "angle": 0.92,
+        "height": 1.9,
+        "rowSpacing": 0.8
+      },
+      "source": "Cultivated soil boundaries and planting directions traced from Esri World Imagery on 2026-09-20, export bbox=-77.770,42.905,-77.751,42.9245, imageSR=3857, size=2100,2800 (runs/plowed-fields/driving-park-aerial.json). Five cultivated plots directly north of Driving Park; riverbanks, wooded margins, farmyard, homes, ponds and recreation turf excluded. Corn is a stylized seasonal depiction requested for the mapped fields, not a crop identification from the harvested aerial.",
+      "coordinates": [
+        [
+          -77.763019958,
+          42.911916242
+        ],
+        [
+          -77.762658606,
+          42.912041605
+        ],
+        [
+          -77.762382837,
+          42.912194825
+        ],
+        [
+          -77.762173633,
+          42.912292329
+        ],
+        [
+          -77.761964428,
+          42.91252216
+        ],
+        [
+          -77.761593567,
+          42.912640557
+        ],
+        [
+          -77.761327307,
+          42.912724131
+        ],
+        [
+          -77.761127612,
+          42.912654486
+        ],
+        [
+          -77.760956445,
+          42.912494301
+        ],
+        [
+          -77.76036687,
+          42.912299294
+        ],
+        [
+          -77.759834351,
+          42.912166967
+        ],
+        [
+          -77.75958711,
+          42.911999817
+        ],
+        [
+          -77.759615637,
+          42.911686409
+        ],
+        [
+          -77.759634656,
+          42.911533187
+        ],
+        [
+          -77.759568091,
+          42.911352106
+        ],
+        [
+          -77.759396924,
+          42.911122272
+        ],
+        [
+          -77.759178211,
+          42.910955119
+        ],
+        [
+          -77.759064099,
+          42.910781001
+        ],
+        [
+          -77.759035572,
+          42.910558129
+        ],
+        [
+          -77.759073609,
+          42.910279538
+        ],
+        [
+          -77.759159192,
+          42.910175066
+        ],
+        [
+          -77.759511035,
+          42.910188995
+        ],
+        [
+          -77.760072083,
+          42.910265608
+        ],
+        [
+          -77.760690186,
+          42.910321326
+        ],
+        [
+          -77.760946936,
+          42.91037008
+        ],
+        [
+          -77.761061047,
+          42.910460622
+        ],
+        [
+          -77.761051538,
+          42.910544199
+        ],
+        [
+          -77.760908899,
+          42.910613847
+        ],
+        [
+          -77.760661658,
+          42.910676529
+        ],
+        [
+          -77.760604602,
+          42.910718318
+        ],
+        [
+          -77.760747241,
+          42.910801895
+        ],
+        [
+          -77.761080066,
+          42.910885472
+        ],
+        [
+          -77.761622095,
+          42.911038695
+        ],
+        [
+          -77.762107068,
+          42.911212813
+        ],
+        [
+          -77.762630078,
+          42.911373
+        ],
+        [
+          -77.762896338,
+          42.911470505
+        ],
+        [
+          -77.763096032,
+          42.911547117
+        ],
+        [
+          -77.763134069,
+          42.911679445
+        ]
+      ]
+    },
+    {
+      "id": "avon-driving-park-corn-spring-west",
+      "kind": "cropland",
+      "name": "Field north of Avon Driving Park \u2014 spring-west",
+      "closed": true,
+      "crop": {
+        "type": "corn",
+        "angle": 0.22,
+        "height": 1.9,
+        "rowSpacing": 0.8
+      },
+      "source": "Cultivated soil boundaries and planting directions traced from Esri World Imagery on 2026-09-20, export bbox=-77.770,42.905,-77.751,42.9245, imageSR=3857, size=2100,2800 (runs/plowed-fields/driving-park-aerial.json). Five cultivated plots directly north of Driving Park; riverbanks, wooded margins, farmyard, homes, ponds and recreation turf excluded. Corn is a stylized seasonal depiction requested for the mapped fields, not a crop identification from the harvested aerial.",
+      "coordinates": [
+        [
+          -77.760747241,
+          42.909144266
+        ],
+        [
+          -77.760414417,
+          42.909095512
+        ],
+        [
+          -77.760015027,
+          42.909025863
+        ],
+        [
+          -77.759472998,
+          42.908914424
+        ],
+        [
+          -77.759777295,
+          42.90809952
+        ],
+        [
+          -77.760091101,
+          42.90812738
+        ],
+        [
+          -77.760376379,
+          42.90819703
+        ],
+        [
+          -77.760652148,
+          42.908315435
+        ],
+        [
+          -77.760823315,
+          42.90844777
+        ],
+        [
+          -77.760927917,
+          42.90861493
+        ],
+        [
+          -77.760927917,
+          42.908837809
+        ],
+        [
+          -77.760804297,
+          42.909025863
+        ]
+      ]
+    },
+    {
+      "id": "avon-driving-park-corn-spring-west-small",
+      "kind": "cropland",
+      "name": "Field north of Avon Driving Park \u2014 spring-west-small",
+      "closed": true,
+      "crop": {
+        "type": "corn",
+        "angle": 1.33,
+        "height": 1.9,
+        "rowSpacing": 0.8
+      },
+      "source": "Cultivated soil boundaries and planting directions traced from Esri World Imagery on 2026-09-20, export bbox=-77.770,42.905,-77.751,42.9245, imageSR=3857, size=2100,2800 (runs/plowed-fields/driving-park-aerial.json). Five cultivated plots directly north of Driving Park; riverbanks, wooded margins, farmyard, homes, ponds and recreation turf excluded. Corn is a stylized seasonal depiction requested for the mapped fields, not a crop identification from the harvested aerial.",
+      "coordinates": [
+        [
+          -77.759206738,
+          42.909067652
+        ],
+        [
+          -77.758873914,
+          42.909011933
+        ],
+        [
+          -77.758598145,
+          42.908949248
+        ],
+        [
+          -77.758569617,
+          42.908851739
+        ],
+        [
+          -77.758617163,
+          42.908809949
+        ],
+        [
+          -77.758978516,
+          42.908858704
+        ],
+        [
+          -77.759292322,
+          42.908928353
+        ]
+      ]
+    },
+    {
+      "id": "avon-driving-park-corn-spring-east",
+      "kind": "cropland",
+      "name": "Field north of Avon Driving Park \u2014 spring-east",
+      "closed": true,
+      "crop": {
+        "type": "corn",
+        "angle": 0.54,
+        "height": 1.9,
+        "rowSpacing": 0.8
+      },
+      "source": "Cultivated soil boundaries and planting directions traced from Esri World Imagery on 2026-09-20, export bbox=-77.770,42.905,-77.751,42.9245, imageSR=3857, size=2100,2800 (runs/plowed-fields/driving-park-aerial.json). Five cultivated plots directly north of Driving Park; riverbanks, wooded margins, farmyard, homes, ponds and recreation turf excluded. Corn is a stylized seasonal depiction requested for the mapped fields, not a crop identification from the harvested aerial.",
+      "coordinates": [
+        [
+          -77.756106715,
+          42.912793776
+        ],
+        [
+          -77.755669288,
+          42.91266145
+        ],
+        [
+          -77.75525088,
+          42.912543053
+        ],
+        [
+          -77.754832472,
+          42.912410727
+        ],
+        [
+          -77.754746888,
+          42.912257507
+        ],
+        [
+          -77.754794435,
+          42.912041605
+        ],
+        [
+          -77.754994129,
+          42.911909277
+        ],
+        [
+          -77.755174806,
+          42.911783914
+        ],
+        [
+          -77.755336463,
+          42.911547117
+        ],
+        [
+          -77.755574195,
+          42.911428717
+        ],
+        [
+          -77.755792908,
+          42.911338177
+        ],
+        [
+          -77.756087696,
+          42.911240671
+        ],
+        [
+          -77.756249354,
+          42.911219777
+        ],
+        [
+          -77.756239844,
+          42.911386929
+        ],
+        [
+          -77.756334937,
+          42.911568011
+        ],
+        [
+          -77.756525123,
+          42.911686409
+        ],
+        [
+          -77.756591688,
+          42.911790879
+        ],
+        [
+          -77.756601197,
+          42.911923206
+        ],
+        [
+          -77.756876966,
+          42.91203464
+        ],
+        [
+          -77.756962549,
+          42.91203464
+        ],
+        [
+          -77.756629725,
+          42.912473408
+        ]
+      ]
     }
   ]
 }

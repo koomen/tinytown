@@ -58,7 +58,7 @@ container.appendChild(renderer.domElement);
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(26, window.innerWidth / window.innerHeight, 0.5, 900);
-camera.layers.enable(1); // transparent lamplight is visible only in the color pass
+camera.layers.enable(1); // lamplight and upright crop sprites use the color pass
 
 // Fixed isometric-style view: the tilt never changes. Wheel zooms, horizontal
 // scroll rotates around the point you're looking at, dragging pulls the
@@ -257,8 +257,8 @@ if (quality.postprocessing) {
   bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 0.22, 0.7, 0.85);
   composer.addPass(bloom);
 
-  // Pools and halos add light; treating their quads as solid geometry creates
-  // square contact shadows and incorrect focus. Keep the real ground depth.
+  // Light pools and shader-positioned crop sprites cannot use the plain
+  // override materials. Keep their underlying ground's AO and focus depth.
   for (const pass of [gtao, bokeh]) {
     const render = pass.render.bind(pass);
     pass.render = (...args) => {

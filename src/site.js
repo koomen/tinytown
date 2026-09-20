@@ -1401,7 +1401,7 @@ export async function generateSite(site, seed = 'site', opts = {}) {
 
   // Mapped horizontal features sit only a few centimetres above the grade;
   // their clearance must also remove grass bumps under sand, water and courts.
-  const landmarkPatches=(site.landmarks||[]).filter(f=>['track','gravel','water','pitch','playground','beach','pier','garden','paving','bleachers'].includes(f.kind)).map(f=>{
+  const landmarkPatches=(site.landmarks||[]).filter(f=>['track','gravel','water','pitch','playground','beach','pier','garden','paving','bleachers','cropland'].includes(f.kind)).map(f=>{
     const line=f.kind==='track'||(['water','pier'].includes(f.kind)&&!f.closed),width=(f.width||4)/2;
     const pts=line&&f.closed&&f.pts.length?[...f.pts,f.pts[0]]:f.pts;
     return {pts,holes:f.holes,line,width,bb:bboxOf(pts,(line?width:0)+1.2)};
@@ -1714,7 +1714,7 @@ export async function generateSite(site, seed = 'site', opts = {}) {
         const pts=f.closed && f.pts.length ? [...f.pts,f.pts[0]] : f.pts;
         return distToPolyline(pts,x,z)<(f.width||4)/2+pad;
       }
-      return ['gravel','pitch','playground','water','beach','pier','garden','paving','bleachers'].includes(f.kind) && polygonFeatureDistance(f,x,z)<pad;
+      return ['gravel','pitch','playground','water','beach','pier','garden','paving','bleachers','cropland'].includes(f.kind) && polygonFeatureDistance(f,x,z)<pad;
     })) return true;
     if (entrancePaving.some(p => signedDistToPoly(p,x,z)<pad)) return true;
     if (onEntranceApproach(x,z,pad)) return true;

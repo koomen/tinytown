@@ -9,16 +9,20 @@ import { packSceneJSON, STREAM_VERSION, STREAM_PART_BYTES } from '../../src/stre
 
 const CELL = 100;
 const tick = () => new Promise(resolve=>setTimeout(resolve,0));
-function sceneJSON(root, extra = {}, sharedGeometries = new Set()) {
+export function sceneJSON(root, extra = {}, sharedGeometries = new Set()) {
   const meta = Object.fromEntries(['geometries','materials','textures','images','shapes','skeletons','animations','nodes'].map(k=>[k,{}]));
   root.traverse(o => {
     const g = o.geometry;
     if (!g || meta.geometries[g.uuid]) return;
     if(sharedGeometries.has(g)) {meta.geometries[g.uuid]={uuid:g.uuid,shared:true};return;}
-    const attr = a => ({itemSize:a.itemSize,type:a.array.constructor.name,array:a.array,normalized:a.normalized});
-    meta.geometries[g.uuid] = {uuid:g.uuid,type:'BufferGeometry',data:{
+    const attr = a => ({itemSize:a.itemSize,type:a.array.constructor.name,array:a.array,normalized:a.normalized,
+      ...(a.isInstancedBufferAttribute?{isInstancedBufferAttribute:true,meshPerAttribute:a.meshPerAttribute}:{})});
+    meta.geometries[g.uuid] = {uuid:g.uuid,type:g.isInstancedBufferGeometry?'InstancedBufferGeometry':'BufferGeometry',data:{
       attributes:Object.fromEntries(Object.entries(g.attributes).map(([k,a])=>[k,attr(a)])),
       ...(g.index ? {index:attr(g.index)} : {}), groups:g.groups,
+      ...(g.isInstancedBufferGeometry?{instanceCount:g.instanceCount,
+        boundingBox:{min:g.boundingBox.min.toArray(),max:g.boundingBox.max.toArray()},
+        boundingSphere:{center:g.boundingSphere.center.toArray(),radius:g.boundingSphere.radius}}:{}),
     }};
   });
   const {object} = root.toJSON(meta);
@@ -51,6 +55,7 @@ export function coarseModel(root) {
   if (!root.userData.streamKind) return out;
   root.traverse(o=>{
     if (!o.isMesh || o.isInstancedMesh) return;
+    if (o.userData.streamDetailOnly) return; // a dedicated proxy supplies this model's far view
     const tree=root.userData.streamKind==='tree';
     // Broadleaf canopy groups contain core first, leaf dabs second. Trunks
     // have no vertex colors; conifers are a single colored mesh at the root.
@@ -58,13 +63,15 @@ export function coarseModel(root) {
     // Structural shells can use plain materials (for example a metal barrel
     // roof). Keep those explicitly marked meshes as well as textured surfaces.
     const keep = !tree
-      ? o.userData.streamCoarse || (Array.isArray(o.material) ? o.material : [o.material]).some(m=>m?.userData?.surface && !['glass','shop'].includes(m.userData.surface))
+      ? o.userData.streamCoarse || o.userData.streamCoarseOnly || (Array.isArray(o.material) ? o.material : [o.material]).some(m=>m?.userData?.surface && !['glass','shop'].includes(m.userData.surface))
       : true;
     if (!keep) return;
     const geometry=tree&&o.geometry.attributes.color
       ? (o.parent!==root ? coarseCanopy(o.geometry) : coarseConifer(o.geometry)) : o.geometry;
     const clone = new THREE.Mesh(geometry,o.material);
+    clone.name=o.name;
     clone.userData=structuredClone(o.userData);
+    clone.layers.mask=o.layers.mask;
     o.matrixWorld.decompose(clone.position,clone.quaternion,clone.scale);
     out.add(clone);
   });
@@ -246,7 +253,10 @@ export async function exportStream(url, seed, write) {
     for(const [name,a] of Object.entries(compactFarAttributes(o.geometry.attributes,{
       preservePosition:(x,y,z)=>fixedFarPositions.has(farPositionKey(x,y,z)) || bridgeBounds.some(b=>Math.abs(x-b.x)<b.w && Math.abs(z-b.z)<b.d),
     }))) {
-      o.geometry.setAttribute(name,new THREE.BufferAttribute(a.array,a.itemSize,a.normalized));
+      const old=o.geometry.getAttribute(name);
+      o.geometry.setAttribute(name,old.isInstancedBufferAttribute
+        ?new THREE.InstancedBufferAttribute(a.array,a.itemSize,a.normalized,old.meshPerAttribute)
+        :new THREE.BufferAttribute(a.array,a.itemSize,a.normalized));
     }
   });
   fixedFarPositions.clear();
