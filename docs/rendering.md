@@ -212,3 +212,49 @@ ground so the point under the cursor stays under it; scroll zooms; horizontal
 scroll rotates around the look-at point; up/down arrows glide and left/right arrows turn. Each published
 miniature opens on a fixed view that resets on load; `?free=1` and `?focus=`
 views keep their camera per tab in `sessionStorage`.
+
+## Live bounded previews
+
+The local change queue serves unique `/previews/<id>/` links from each task's
+workspace. `tinytown/preview.py` builds the site's current source and overrides
+with `build(write=False)`, resolves a building id, address or landmark name,
+and crops roads, terrain, areas and nearby structures before procedural
+rendering. No surfaces or streaming bake is required. Preview lighting is a
+simple inspection light rig; production post-processing remains in the main
+viewer.
+
+A preview spec is `{"site":"avon-extended","target":"75 South Avenue",
+"radius":60}`. An explicit `"center":[x,z]` uses site coordinates in metres
+and takes precedence over a target. Radius defaults to 60 metres and is limited
+to 10–200 metres. Ambiguous names report an error; use an exact id or center.
+Draft building files are not accepted automatically: the scene uses overrides.
+
+For an asset without a property, use
+`{"asset":{"module":"src/my-asset.js","export":"preview"}}`. The module
+exports an async or synchronous `preview({THREE})` function returning a Three.js
+`Object3D` or `{group: Object3D}`. This adapter can call an existing asset builder
+with its required arguments. Its returned bounds determine the initial camera.
+Only workspace-relative JavaScript module paths are accepted.
+
+The preview shell watches `/previews/<id>/events` SSE `preview` events carrying
+`{"fingerprint":"…"}`. The initial fingerprint establishes a baseline;
+subsequent edits reload after a 450 ms debounce. Reloads fetch uncached modules
+and scene data, preserving the orbit camera in session storage. Invalid JSON,
+module imports and generator errors appear in the viewport, which keeps
+watching for the next edit. Source polling includes source modules, site input
+files, overrides and textures, and excludes generated streams and surface bakes.
+
+Stock asset adapters use the current town generators and need no property or
+custom wrapper. For example:
+
+```sh
+./town preview --asset tinytown/web/preview-assets.js --export tree
+./town preview --asset tinytown/web/preview-assets.js --export bench
+./town preview --asset tinytown/web/preview-assets.js --export playground
+./town preview --asset tinytown/web/preview-assets.js --export fountain
+```
+
+The tree and bench use fixed seeds so edits can be compared without random
+variation. The playground includes a wooden playset and swings. Custom module
+paths must be under `src/` or named `tinytown/web/preview*.js`, matching the
+preview server's permitted runtime files.

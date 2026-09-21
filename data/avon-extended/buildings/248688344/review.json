@@ -1,0 +1,18 @@
+{
+ "draft_hash": "9aaf98c8c91498c5f2b157d8cea825b36cd2982128ec0de8f70e4a726f4d449f",
+ "frame": "2aa777fc13afd20ba83eacc7372737a0c8371f4a98cc2d3e1926caeca5a974a2",
+ "passed": true,
+ "findings": [],
+ "geometry": [
+  {
+   "id": "south-bedroom-garage/north-living-wing/v-coplanar",
+   "finding": "Wall planes coincide over a shared extent; inspect exposed faces for z-fighting."
+  }
+ ],
+ "report": null,
+ "renderer_signature": "5bd82e03800f88824e32d1721a3a8a9b81d076c27d3fbcbb3a44238bce05c1bf",
+ "model": null,
+ "stage": "detail",
+ "repairs": 0,
+ "timestamp": 1789958484.180489
+}

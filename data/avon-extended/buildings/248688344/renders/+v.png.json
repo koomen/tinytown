@@ -1,0 +1,44 @@
+{
+ "key": "01dae8f8bfcedf65c9fb860c10057ae389a163c6a3559f24f5fc05915c8fe22a",
+ "url": "http://127.0.0.1:50246/?site=avon-extended&focus=248688344&side=%2Bv&dist=44&height=3&stage=detail&free=1&bp=248688344&notrees=1&isolate=248688344",
+ "blueprint": "9aaf98c8c91498c5f2b157d8cea825b36cd2982128ec0de8f70e4a726f4d449f",
+ "frame": "2aa777fc13afd20ba83eacc7372737a0c8371f4a98cc2d3e1926caeca5a974a2",
+ "context": "2ed87164f396c349d5544e7b4515c0069c531a0df64a61736908d9a443585246",
+ "renderer": "5bd82e03800f88824e32d1721a3a8a9b81d076c27d3fbcbb3a44238bce05c1bf",
+ "view": "+v",
+ "stage": "detail",
+ "pose": null,
+ "neighbors": {
+  "248688345": {
+   "draft": false,
+   "frame": "1cd924429c182ff37e5a3b8ec49e74e74ba5fe4ea20a29a5ec8dc518116433de",
+   "blueprint": "33edbbff37099693c2dfceb248145f7ecafd9833a01ad3217d96b96a60a65a54"
+  },
+  "248688486": {
+   "draft": false,
+   "frame": "102eb0e6735bc79e6946860385c987b52a484364458648b95af21da8c0c546bb",
+   "blueprint": "90cc1e4228bdbfe27a10e654fffe9bb605c1d747e990174964c4c412fe471b5b"
+  },
+  "248688487": {
+   "draft": false,
+   "frame": "84430c4c8ba667d8c164ddd8edf0ef946aad4eb6037495ced0ed613bf8ba04df",
+   "blueprint": "b2b58c88319b3723f3caac6dd00845b1e069636895daa0733dea5e3d823bc929"
+  },
+  "874305108": {
+   "draft": false,
+   "frame": "54cca53831123e42b5ad3ac44af9948851f1e4ab5239ca512a70946be9a6dd8f",
+   "blueprint": "70d7de0e2dc008d3b49e164c8b7d43178a507aa3b4f3d5fc842e58cd661bdf0a"
+  },
+  "874305109": {
+   "draft": false,
+   "frame": "7673bc1a4f4bcf9ebec8464ed25b87f5f5de3a2be7199036f19d358155a0abb4",
+   "blueprint": "3b8d019ba87f98e6de8ab3d712826f75f3329088d0bc87ed583d430e78407236"
+  }
+ },
+ "browser": {
+  "provider": "headless-chromium",
+  "version": "151.0.7922.34",
+  "headless": true,
+  "graphics": "swiftshader"
+ }
+}

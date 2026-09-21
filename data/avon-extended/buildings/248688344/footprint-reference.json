@@ -1,0 +1,84 @@
+{
+ "z": 19,
+ "px": [
+  768,
+  768
+ ],
+ "bounds": {
+  "north": 42.92022922733792,
+  "south": 42.91872071217828,
+  "west": -77.74200439453125,
+  "east": -77.73994445800781
+ },
+ "source": "Esri World Imagery",
+ "reviewed": "2026-09-20",
+ "image": "runs/290-north/aerial-19.jpg",
+ "traced_roof_pixels": [
+  [
+   337,
+   394
+  ],
+  [
+   394,
+   406
+  ],
+  [
+   384,
+   448
+  ],
+  [
+   330,
+   436
+  ],
+  [
+   351,
+   391
+  ],
+  [
+   360,
+   356
+  ],
+  [
+   402,
+   367
+  ],
+  [
+   393,
+   405
+  ]
+ ],
+ "original_frame": {
+  "cx": 361.334,
+  "cz": -823.617,
+  "angle": -2.92,
+  "w": 14.618,
+  "d": 11.502
+ },
+ "wall_outline_original_uv": [
+  [
+   -7.3,
+   -5.2
+  ],
+  [
+   5,
+   -5.2
+  ],
+  [
+   5,
+   4.5
+  ],
+  [
+   2.3,
+   4.5
+  ],
+  [
+   2.3,
+   13.1
+  ],
+  [
+   -7.3,
+   13.1
+  ]
+ ],
+ "notes": "Approximate eaves-to-wall trace; roof parallax and resolution limit dimensional accuracy. Preserve original bearing. North living wing projects beyond the source OSM rectangle; west/front wall is recessed about 2.7 m behind the garage front."
+}

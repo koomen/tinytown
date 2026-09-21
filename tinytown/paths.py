@@ -9,6 +9,55 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE_NAME = re.compile(r'[a-z0-9]+(?:-[a-z0-9]+)*')
 
 
+class ChangePaths:
+    """Local development queue, isolated workspaces and standalone previews."""
+
+    def __init__(self, root=ROOT):
+        self.root = Path(root).resolve()
+
+    directory = property(lambda self: self.root / 'runs' / 'changes')
+    database = property(lambda self: self.directory / 'queue.sqlite3')
+    lock = property(lambda self: self.directory / 'server.lock')
+    server = property(lambda self: self.directory / 'server.json')
+    browser_runtime = property(lambda self: self.root / 'runs' / 'headless-browser' / 'runtime')
+
+    def change(self, change_id):
+        if not re.fullmatch(r'[a-f0-9]{12}', change_id):
+            raise ValueError('Invalid change id')
+        return self.directory / change_id
+
+    def workspace(self, change_id):
+        return self.change(change_id) / 'workspace'
+
+    def bake(self, change_id, build_id):
+        if not re.fullmatch(r'[a-f0-9]{12}', build_id):
+            raise ValueError('Invalid bake id')
+        return self.change(change_id) / 'bakes' / build_id
+
+    def merge_backup(self, change_id, iteration):
+        return self.change(change_id) / f'workspace-before-merge-{int(iteration)}'
+
+    def worker_report(self, change_id):
+        return self.workspace(change_id) / 'runs' / 'change-worker' / 'report.json'
+
+    def worker_reporter(self, change_id):
+        return self.worker_report(change_id).with_name('report.py')
+
+    def attachments(self, change_id):
+        return self.change(change_id) / 'attachments'
+
+    def attachment(self, change_id, attachment):
+        if not re.fullmatch(r'[a-f0-9]{12}', attachment['id']) or attachment['extension'] not in {'png', 'jpg', 'webp'}:
+            raise ValueError('Invalid screenshot id or format')
+        return self.attachments(change_id) / f"{attachment['id']}.{attachment['extension']}"
+
+    def worker_images(self, change_id):
+        return self.worker_report(change_id).parent / 'images'
+
+    def worker_browser_state(self, change_id):
+        return self.workspace(change_id) / 'runs' / 'headless-browser'
+
+
 class BuildingPaths:
     """Everything recorded about one structure: data/<site>/buildings/<id>/."""
 

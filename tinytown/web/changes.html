@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TinyTown · Changes</title>
+  <link rel="stylesheet" href="/tinytown/web/changes.css">
+  <script src="/tinytown/web/changes.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1><a href="/changes">TinyTown / Changes</a></h1>
+    <div class="server-status"><span><span id="worker-count">—</span> running</span><span id="connection" class="connection" role="status">Connecting…</span></div>
+  </header>
+  <main>
+    <div id="notice" class="notice" role="alert" hidden></div>
+    <section class="composer panel" aria-labelledby="composer-title">
+      <h2 id="composer-title">New change</h2>
+      <form id="create-form">
+        <label class="sr-only" for="request">Describe your change</label>
+        <textarea id="request" name="request" rows="2" required maxlength="30000" placeholder="Describe a change…"></textarea>
+        <div id="create-images" class="attachments" aria-label="Screenshots to attach"></div>
+        <div class="attachment-controls"><button id="create-attach" type="button">Attach screenshots</button><span class="muted">Or paste or drop images</span><input id="create-files" type="file" accept="image/png,image/jpeg,image/webp" multiple hidden></div>
+        <div class="composer-footer"><details class="preview-options"><summary>Preview</summary><div class="preview-fields"><label>Town<select id="create-site" name="site"><option value="">Select town</option></select></label><label class="target-field">Address, building, or landmark<input name="target"></label><label>Radius (m)<input name="radius" type="number" value="60" min="10" max="200"></label></div><div class="standalone-preview"><button id="create-preview" type="button">Create preview</button><a id="standalone-preview-link" target="_blank" rel="noopener" hidden>Open preview</a></div></details><button class="primary" type="submit">Add to queue</button></div>
+      </form>
+    </section>
+    <div class="board" aria-label="Change queue">
+      <section class="lane" aria-labelledby="queued-title"><div class="lane-heading"><h2 id="queued-title">Queued</h2><span id="queued-count" class="count">0</span></div><div id="queued-list" class="cards"></div></section>
+      <section class="lane" aria-labelledby="running-title"><div class="lane-heading"><h2 id="running-title">Running</h2><span id="running-count" class="count">0</span></div><div id="running-list" class="cards"></div></section>
+      <section class="lane" aria-labelledby="pending_approval-title"><div class="lane-heading"><h2 id="pending_approval-title">Pending approval</h2><span id="pending_approval-count" class="count">0</span></div><div id="pending_approval-list" class="cards"></div></section>
+    </div>
+    <details class="history"><summary>History <span id="history-count" class="count">0</span></summary><div id="history-list" class="history-list"></div></details>
+  </main>
+  <dialog id="detail-dialog" aria-labelledby="detail-title">
+    <div class="detail-header"><div><p id="detail-status" class="muted"></p><h2 id="detail-title"></h2></div><button id="close-detail" class="icon-button" aria-label="Close change details">Close</button></div>
+    <div class="detail-body">
+      <p id="detail-meta" class="muted"></p>
+      <p id="detail-progress" role="status" hidden></p>
+      <p id="report-error" class="notice" hidden></p>
+      <p id="review-warning" class="review-warning" role="status" hidden></p>
+      <section><h3>Request</h3><p id="detail-request" class="prose"></p><div id="detail-images" class="attachments" aria-label="Attached screenshots"></div><div id="detail-attachment-controls" class="attachment-controls"><button id="detail-attach" type="button">Attach screenshots</button><span id="attachment-note" class="muted"></span><input id="detail-files" type="file" accept="image/png,image/jpeg,image/webp" multiple hidden></div></section>
+      <section id="summary-section" hidden><h3>Summary</h3><p id="detail-summary" class="prose"></p></section>
+      <p id="detail-error" class="notice" hidden></p>
+      <section><div class="bake-controls"><label>Town <select id="bake-site"></select></label><button id="bake-change">Bake world</button><span id="bake-status" role="status"></span></div><p id="bake-error" class="notice" hidden></p><details id="bake-details" hidden><summary>Bake log</summary><pre id="bake-log"></pre></details></section>
+      <section class="preview-section"><div class="section-heading"><h3>Preview</h3><div class="preview-links"><a id="preview-link" target="_blank" rel="noopener" hidden>Open preview</a><a id="map-link" target="_blank" rel="noopener">Whole map</a></div></div><div id="preview-empty" class="empty-preview">No preview</div><iframe id="preview-frame" title="Live preview of this change" hidden></iframe><details id="detail-preview-options"><summary>Set location</summary><form id="preview-form"><div class="preview-fields"><label>Town<select id="detail-site" name="site" required><option value="">Select town</option></select></label><label class="target-field">Address, building, or landmark<input name="target" required></label><label>Radius (m)<input name="radius" type="number" min="10" max="200" value="60" required></label></div><button type="submit">Update preview</button></form></details></section>
+      <section><div class="tabs" role="tablist" aria-label="Agent activity"><button id="log-tab" role="tab" aria-selected="true" aria-controls="log-panel">Activity</button><button id="diff-tab" role="tab" aria-selected="false" aria-controls="diff-panel" tabindex="-1">Changes <span id="file-count"></span></button></div><pre id="log-panel" role="tabpanel" aria-labelledby="log-tab" tabindex="0"></pre><pre id="diff-panel" role="tabpanel" aria-labelledby="diff-tab" tabindex="0" hidden></pre></section>
+      <form id="feedback-form" hidden><label for="feedback">Feedback</label><textarea id="feedback" name="feedback" required rows="2" maxlength="30000" placeholder="Describe the adjustment…"></textarea><div id="feedback-images" class="attachments" aria-label="Screenshots for the next pass"></div><div class="attachment-controls"><button id="feedback-attach" type="button">Attach screenshots</button><span class="muted">Or paste or drop images</span><input id="feedback-files" type="file" accept="image/png,image/jpeg,image/webp" multiple hidden><button type="submit">Iterate</button></div></form>
+    </div>
+    <div class="detail-actions"><p id="approval-note" class="muted"></p><div><button id="cancel-change" hidden>Cancel</button><button id="discard-change" hidden>Discard</button><button id="retry-change" hidden>Retry</button><button id="approve-change" class="primary" hidden>Approve & apply</button></div></div>
+  </dialog>
+</body>
+</html>

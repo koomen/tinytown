@@ -28,6 +28,12 @@ automatically (`pip install -e .` also puts a `town` command on your PATH, and
 `python3 -m tinytown …` always works). The viewer loads Three.js from a CDN,
 so it needs network access.
 
+For an interactive source-editing queue, run `./town changes serve --workers 2`
+and open the printed dashboard URL. Independent Codex workers prepare changes
+in isolated snapshots; review the live preview, give feedback, and approve
+before changes reach your checkout. Requires a logged-in Codex CLI.
+See [the change queue guide](docs/changes.md).
+
 ## Make your own town
 
 ```sh
@@ -51,7 +57,7 @@ Prerequisites, by stage: Python ≥ 3.10 with `pillow` and `websocket-client`
 (installed by `pip install -e .`); Node ≥ 22 for `bake` and tests; the private
 headless Chromium from `./town browser setup` for `refs`, `render`, `author`,
 `bake` and browser tests; the [OpenAI Codex CLI](https://github.com/openai/codex)
-logged in for `author` only; network for OSM/USGS/Esri fetches, Street View
+logged in for `author` and change-queue workers; network for OSM/USGS/Esri fetches, Street View
 capture and the Three.js CDN.
 
 ## The look
@@ -89,7 +95,7 @@ CLAUDE.md            notes for coding agents
 
 Docs: [ARCHITECTURE.md](docs/ARCHITECTURE.md) · [pipeline.md](docs/pipeline.md) ·
 [data-format.md](docs/data-format.md) · [authoring.md](docs/authoring.md) ·
-[fixing.md](docs/fixing.md) · [rendering.md](docs/rendering.md) ·
+[fixing.md](docs/fixing.md) · [rendering.md](docs/rendering.md) · [changes.md](docs/changes.md) ·
 [deploy.md](docs/deploy.md) · [landmarks.md](docs/landmarks.md) ·
 [chautauqua.md](docs/chautauqua.md) · [BLUEPRINT_SCHEMA.md](docs/BLUEPRINT_SCHEMA.md) ·
 [STYLE_SCHEMA.md](docs/STYLE_SCHEMA.md) · [MINIATURE_KIT.md](docs/MINIATURE_KIT.md)

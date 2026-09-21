@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {buildMappedParking,planParkingRows} from '../../../src/mapped-parking.js';
+import {buildMappedParking,planParkingRows,buildParkingPaint} from '../../../src/mapped-parking.js';
 import {shiftLandmark} from '../../../src/landmark-frame.js';
 import {coarseModel} from '../../../tinytown/web/stream-export.js';
 
@@ -23,6 +23,17 @@ export function checkMappedParking(){
   const duplicate={...rows[0],id:'duplicate'};
   assert(planParkingRows([rows[0],duplicate],options).length===planParkingRows([rows[0]],options).length,'Overlapping authored rows created overlapping cars');
   const models=buildMappedParking(rows,options);models.updateMatrixWorld(true);
+  const foldedGrade=(x,z)=>.08*Math.abs(x)+.03*z;
+  const paint=buildParkingPaint(rows.map(r=>({...r,paint:true})),{lots:[lot],surfaceY:foldedGrade,
+    grid:{xs:[-30,0,30],zs:[-20,0,20]}});
+  assert(paint.children.length>20,'Surveyed stall paint missing');
+  for(const stripe of paint.children) {
+    const positions=stripe.geometry.attributes.position,normals=stripe.geometry.attributes.normal;
+    for(let i=0;i<positions.count;i++) {
+      assert(Math.abs(positions.getY(i)-foldedGrade(positions.getX(i),positions.getZ(i))-.025)<1e-5,'Paint detached from paved grade');
+      assert(normals.getY(i)>0,'Paint faces away from overhead camera');
+    }
+  }
   for(const car of models.children){
     assert(car.userData.streamKind==='landmark','Cars need individual streaming sectors');
     assert(coarseModel(car).children.length===6,'Coarse view lost the existing car silhouette');

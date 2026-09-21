@@ -2,6 +2,7 @@
 // landmark; every support samples its own foot so it follows the terrain.
 import * as THREE from 'three';
 import { box, mat } from './kit.js';
+import { buildSchoolPlayset, buildSchoolSwings, buildRoundPicnicTable } from './school-playground.js';
 
 const C = { wood:0x826044, lightWood:0x9b7955, darkWood:0x634936, roof:0x775645,
   green:0x267c76, metal:0x727a6e, chain:0x9d9d8d, seat:0x284e46,
@@ -200,8 +201,8 @@ function bench(group,ground,equipment) {
     rod(group,[x,.4,.23],[x,.95,.36],.04,C.iron);
     rod(group,[x,.41,-.24],[x,.41,.3],.045,C.iron);
   }
-  for(let i=0;i<3;i++)group.add(box(length,.06,.135,C.lightWood,0,.47,-.16+i*.16));
-  for(let i=0;i<3;i++)group.add(box(length,.105,.055,C.lightWood,0,.66+i*.135,.3+i*.025));
+  for(let i=0;i<3;i++)group.add(box(length,.06,.135,equipment.color??C.lightWood,0,.47,-.16+i*.16));
+  for(let i=0;i<3;i++)group.add(box(length,.105,.055,equipment.color??C.lightWood,0,.66+i*.135,.3+i*.025));
 }
 
 export function buildPlaygroundEquipment(equipment = [],grade = () => 0) {
@@ -215,6 +216,9 @@ export function buildPlaygroundEquipment(equipment = [],grade = () => 0) {
     const ground=(u,v)=>grade(x+c*u+s*v,z-s*u+c*v)+.12-base;
     if(item.type==='swings')swings(group,ground,item);
     else if(item.type==='wooden-playset')playTowers(group,ground,item.size==='small');
+    else if(item.type==='school-playset')group.add(buildSchoolPlayset(ground));
+    else if(item.type==='school-swings')group.add(buildSchoolSwings(ground));
+    else if(item.type==='round-picnic-table')group.add(buildRoundPicnicTable(ground));
     else if(item.type==='spring-seesaw')springSeesaw(group,ground);
     else if(item.type==='bench')bench(group,ground,item);
     root.add(group);

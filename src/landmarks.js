@@ -21,6 +21,7 @@ import { buildRoadWaterBridges } from './road-water-bridges.js';
 import { buildTennisCourt } from './tennis-court.js';
 import { buildStadiumBleachers } from './stadium-bleachers.js';
 import { buildBasketballHoop } from './basketball-hoop.js';
+import { buildBasketballCourt } from './basketball-court.js';
 import { buildCornfield } from './cornfield.js';
 import { buildCroplandSurface } from './cropland.js';
 
@@ -162,7 +163,8 @@ export function buildLandmarks(features = [], {grade = () => 0, grid = null,
         g.userData.streamKind='landmark';
         g.add(buildFootballField(f,grade,grid));
       }
-      if(court) g.add(ribbon(f.pts,.12,grade,'#e9e4cf',true,.15,grid));
+      if(f.sport==='basketball' && f.basketball) g.add(buildBasketballCourt(f,grade,grid));
+      if(court && !f.basketball) g.add(ribbon(f.pts,.12,grade,'#e9e4cf',true,.15,grid));
       // Base positions must be independently surveyed in the data; a field
       // polygon alone does not establish home plate or the infield direction.
       if(f.bases?.length===4) {

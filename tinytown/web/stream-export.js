@@ -71,6 +71,9 @@ export function coarseModel(root) {
     const clone = new THREE.Mesh(geometry,o.material);
     clone.name=o.name;
     clone.userData=structuredClone(o.userData);
+    // Coarse tiles have no individual stalks to switch back to. Their canopy
+    // must stay visible even while a nearby detail tile is still downloading.
+    if(clone.userData.cornLOD)delete clone.userData.cornLOD;
     clone.layers.mask=o.layers.mask;
     o.matrixWorld.decompose(clone.position,clone.quaternion,clone.scale);
     out.add(clone);

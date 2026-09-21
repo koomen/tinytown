@@ -1,0 +1,240 @@
+{
+ "wall": "#aa9f83",
+ "wallMaterial": "siding",
+ "trim": "#dfd9be",
+ "roofColor": "#60635e",
+ "volumes": [
+  {
+   "id": "south-bedroom-garage",
+   "u": [
+    -6.15,
+    6.15
+   ],
+   "v": [
+    -9.15,
+    0.55
+   ],
+   "height": 5.25,
+   "roof": {
+    "type": "hip",
+    "pitch": 0.16,
+    "maxH": 1.3,
+    "overhang": 0.4
+   },
+   "cornice": {
+    "height": 0.16,
+    "overhang": 0.4,
+    "color": "#dfd9be",
+    "dentils": false
+   },
+   "faces": {
+    "+u": {
+     "storeys": [
+      {
+       "y": 4.03,
+       "windows": {
+        "type": "rect",
+        "w": 1.95,
+        "h": 0.95,
+        "at": [
+         0.25,
+         0.77
+        ],
+        "trim": "#dfd9be",
+        "glass": "#465951",
+        "interior": false,
+        "divisions": {
+         "vertical": [
+          0.5
+         ],
+         "horizontal": [],
+         "width": 0.04
+        }
+       }
+      },
+      {
+       "y": 1.0,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 0.64,
+        "at": [
+         0.23
+        ],
+        "trim": "#dfd9be",
+        "glass": "#465951",
+        "interior": false,
+        "divisions": {
+         "vertical": [
+          0.5
+         ],
+         "horizontal": [],
+         "width": 0.04
+        }
+       }
+      }
+     ],
+     "doors": [
+      {
+       "type": "garage",
+       "at": 0.7,
+       "w": 4.85,
+       "h": 2.18,
+       "color": "#d5d0ba",
+       "surround": "#dfd9be",
+       "surroundW": 0.07,
+       "panels": 5,
+       "lights": true,
+       "lamp": false
+      }
+     ]
+    },
+    "+v": {
+     "storeys": [
+      {
+       "y": 4.03,
+       "windows": {
+        "type": "rect",
+        "w": 1.0,
+        "h": 0.95,
+        "at": [
+         0.87
+        ],
+        "trim": "#dfd9be",
+        "glass": "#465951",
+        "interior": false,
+        "divisions": {
+         "vertical": [
+          0.5
+         ],
+         "horizontal": [],
+         "width": 0.04
+        }
+       }
+      }
+     ]
+    },
+    "-u": {},
+    "-v": {}
+   }
+  },
+  {
+   "id": "north-living-wing",
+   "u": [
+    -6.15,
+    3.45
+   ],
+   "v": [
+    0.55,
+    9.15
+   ],
+   "height": 3.65,
+   "roof": {
+    "type": "hip",
+    "pitch": 0.16,
+    "maxH": 1.1,
+    "overhang": 0.4
+   },
+   "cornice": {
+    "height": 0.16,
+    "overhang": 0.4,
+    "color": "#dfd9be",
+    "dentils": false
+   },
+   "faces": {
+    "+u": {
+     "storeys": [
+      {
+       "y": 1.9,
+       "windows": {
+        "type": "rect",
+        "w": 2.25,
+        "h": 1.25,
+        "at": [
+         0.23
+        ],
+        "trim": "#dfd9be",
+        "glass": "#465951",
+        "interior": false,
+        "divisions": {
+         "vertical": [
+          0.5
+         ],
+         "horizontal": [],
+         "width": 0.04
+        }
+       }
+      },
+      {
+       "y": 1.9,
+       "windows": {
+        "type": "rect",
+        "w": 1.95,
+        "h": 1.25,
+        "at": [
+         0.63
+        ],
+        "trim": "#dfd9be",
+        "glass": "#465951",
+        "interior": false,
+        "divisions": {
+         "vertical": [
+          0.5
+         ],
+         "horizontal": [],
+         "width": 0.04
+        }
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.89,
+       "y": 0.8,
+       "w": 1.0,
+       "h": 2.32,
+       "color": "#354c43",
+       "surround": "#dfd9be",
+       "surroundW": 0.065,
+       "steps": 3,
+       "lamp": false
+      }
+     ]
+    },
+    "+v": {},
+    "-u": {},
+    "-v": {}
+   },
+   "wall": "#877e69",
+   "upperWall": "#aa9f83",
+   "split": 1.6
+  },
+  {
+   "id": "north-brick-chimney",
+   "u": [
+    1.4,
+    2.3
+   ],
+   "v": [
+    8.9,
+    9.65
+   ],
+   "height": 5.45,
+   "wall": "#83533b",
+   "wallMaterial": "brick",
+   "roof": {
+    "type": "flat",
+    "lip": false,
+    "color": "#817765"
+   },
+   "faces": {},
+   "cornice": {
+    "height": 0.1,
+    "overhang": 0.05,
+    "color": "#9d947e",
+    "dentils": false
+   }
+  }
+ ],
+ "details": []
+}

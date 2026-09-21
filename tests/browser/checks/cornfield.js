@@ -53,11 +53,19 @@ export async function checkCornfield() {
   field.updateMatrixWorld(true);
   const coarse=coarseModel(field);
   assert(coarse.children.length===1 && coarse.children[0].visible,'distant field uses one visible mesh');
-  assert(coarse.children[0].geometry.isInstancedBufferGeometry,'distant corn must remain individual upright sprites');
-  assert(coarse.children[0].geometry.instanceCount===Math.ceil(g.instanceCount/3),'distant plants use reduced density');
+  const canopy=coarse.children[0],farTriangles=canopy.geometry.index.count/3;
+  assert(!canopy.geometry.isInstancedBufferGeometry && !canopy.material.transparent && !canopy.material.alphaTest,'distant rows use opaque foliage without per-stalk instances or alpha overdraw');
+  assert(farTriangles<g.instanceCount*2*.1,'distant rows reduce triangles by over 90 percent');
+  assert(!canopy.userData.cornLOD,'coarse fallback stays visible until detail arrives');
+  const cp=canopy.geometry.attributes.position;
+  for(let i=0;i<cp.count;i++) {
+    const x=cp.getX(i)+canopy.position.x,z=cp.getZ(i)+canopy.position.z,y=cp.getY(i)+canopy.position.y;
+    assert(inside(x,z),'distant row canopy must respect the concave field boundary');
+    assert(Math.abs(y-grade(x,z)-feature.crop.height*(i%4===0||i%4===3?.25:.82))<.0001,'distant rows follow the terrain');
+  }
   assert(coarse.children[0].layers.mask===plants.layers.mask,'far plants must retain the color-pass layer');
   const detail=await bakeMobile(field);
-  assert(!detail.getObjectByName('corn-distant-stalks'),'far stalks must not overlap nearby stalks');
+  assert(detail.getObjectByName('corn-row-canopy'),'detail stream retains the cheap rows for moderate zoom');
   const blob=packSceneJSON(sceneJSON(detail)),json=unpackSceneJSON(await blob.arrayBuffer());
   const restored=await new StreamObjectLoader().parseAsync(json);
   const sprites=restored.getObjectByName('corn-individual-stalks');
@@ -66,16 +74,31 @@ export async function checkCornfield() {
   assert(sprites.material.map.image.width===512 && sprites.material.userData.cornSprite,'atlas and shader identity must survive streaming');
   assert(sprites.material.map.premultiplyAlpha,'leaf colors must retain their coverage filtering after streaming');
   restoreCornSpriteMaterial(sprites.material);
-  const renderer=new THREE.WebGLRenderer({antialias:false}),scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(35,1,.1,300);
+  const renderer=new THREE.WebGLRenderer({antialias:false}),scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(35,1,.1,3000);
   renderer.setSize(128,128);camera.layers.enable(1);scene.add(restored,new THREE.HemisphereLight(0xffffff,0x555544,2));
   for(const theta of [0,Math.PI/2,Math.PI]) {
     camera.position.set(40+Math.sin(theta)*60,40,40+Math.cos(theta)*60);camera.lookAt(40,3,40);renderer.render(scene,camera);
     assert(renderer.info.render.triangles===g.instanceCount*2,'all individual plants must render after streaming');
   }
+  camera.position.set(40,350,500);camera.lookAt(40,3,40);renderer.render(scene,camera);
+  assert(renderer.info.render.triangles===farTriangles,'moderate zoom must submit only the row canopy after binary streaming');
+  assert(sprites.geometry.instanceCount===0,'distant stalk instances are not submitted to the GPU');
+  camera.zoom=8;camera.updateProjectionMatrix();renderer.render(scene,camera);
+  assert(renderer.info.render.triangles===g.instanceCount*2,'camera zoom restores detailed stalks');
+  camera.zoom=1;camera.updateProjectionMatrix();
+  const ortho=new THREE.OrthographicCamera(-250,250,250,-250,.1,3000);ortho.layers.enable(1);
+  ortho.position.copy(camera.position);ortho.lookAt(40,3,40);renderer.render(scene,ortho);
+  assert(renderer.info.render.triangles===farTriangles,'orthographic overview uses row canopy');
+  ortho.zoom=20;ortho.updateProjectionMatrix();renderer.render(scene,ortho);
+  assert(renderer.info.render.triangles===g.instanceCount*2,'orthographic close-up restores stalks');
+  const fallback=await new StreamObjectLoader().parseAsync(unpackSceneJSON(await packSceneJSON(sceneJSON(coarse)).arrayBuffer()));
+  scene.remove(restored);scene.add(fallback);renderer.render(scene,ortho);
+  assert(renderer.info.render.triangles===farTriangles,'nearby coarse fallback remains visible during tile loading');
+  scene.remove(fallback);scene.add(restored);
   assert(renderer.info.programs.every(p=>p.diagnostics?.runnable!==false),'billboard shader must compile');
   scene.add(streamedSoil);renderer.render(scene,camera);
   assert(renderer.info.programs.every(p=>p.diagnostics?.runnable!==false),'streamed plowed soil shader must compile');
   renderer.dispose();
   restored.traverse(o=>{if(o.isMesh)assert(!o.castShadow,'corn should not add shadow draws');});
-  return {stalks:g.instanceCount,triangles:g.instanceCount*2,instanceBytes:a.array.byteLength};
+  return {stalks:g.instanceCount,triangles:g.instanceCount*2,farTriangles,instanceBytes:a.array.byteLength};
 }

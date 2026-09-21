@@ -27,6 +27,8 @@ VERBS = {
     'verify': 'deploy',
     'browser': 'browser',
     'migrate': 'migrate',
+    'changes': 'changes',
+    'preview': 'changes',
 }
 
 

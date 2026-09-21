@@ -2,6 +2,7 @@
 import * as THREE from 'three';
 import { cornSpriteGeometry, cornSpriteMaterial } from './corn-sprites.js';
 import { cornfieldRows } from './cornfield-layout.js';
+import { cornCanopy, restoreCornLOD } from './corn-lod.js';
 
 const noise=n=>(Math.sin(n*127.1+311.7)*43758.5453%1+1)%1;
 
@@ -42,8 +43,12 @@ export function buildCornfield(feature,grade=()=>0) {
     mesh.layers.set(1);root.add(mesh);return mesh;
   };
   const near=make(1,'corn-individual-stalks');near.userData.streamDetailOnly=true;
-  // Distant fields keep individual upright plants, at a lower sampling density.
-  const far=make(3,'corn-distant-stalks');far.visible=false;far.userData.streamCoarseOnly=true;
+  const far=cornCanopy(rows,height,grade,origin);root.add(far);
+  const bounds=near.geometry.boundingBox;
+  for(const mesh of [near,far]) {
+    mesh.userData.cornLOD={height,min:bounds.min.toArray(),max:bounds.max.toArray()};
+    restoreCornLOD(mesh);
+  }
   root.userData.corn={rows:rows.length,stalks:stalks.length,triangles:stalks.length*2};
   return root;
 }

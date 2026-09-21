@@ -1,8 +1,26 @@
 // Surveyed parking rows use the same little cars and real sedan scale as Avon.
 // Only explicitly authored rows opt a lot out of the generic parking planner.
 import * as THREE from 'three';
-import {buildCar} from './kit.js';
+import {buildCar, mat} from './kit.js';
 import {makeRng} from './rng.js';
+import {planParkingMarkings} from './parking-markings.js';
+import {ribbonStrip} from './landmark-ribbon.js';
+import {drapeTriangles} from './landmark-drape.js';
+
+export function buildParkingPaint(rows=[], options={}) {
+  const group=new THREE.Group();group.name='parking-paint';
+  for(const line of planParkingMarkings(rows,options)) {
+    const strip=ribbonStrip(line.pts,line.width);
+    const data=drapeTriangles(strip.positions,strip.indices,options.surfaceY||(()=>0),options.grid,.025);
+    const geometry=new THREE.BufferGeometry();
+    geometry.setAttribute('position',new THREE.Float32BufferAttribute(data.positions,3));
+    geometry.setIndex(data.indices);geometry.computeVertexNormals();
+    const stripe=new THREE.Mesh(geometry,mat(line.color));
+    stripe.userData.parkingRowId=line.rowId;stripe.userData.parkingLotId=line.parkingLotId;
+    group.add(stripe);
+  }
+  return group;
+}
 
 const SCALE=1.3,LENGTH=3.7*SCALE,WIDTH=1.75*SCALE;
 function inside(ring,x,z){let hit=false;for(let i=0,j=ring.length-1;i<ring.length;j=i++){
@@ -33,7 +51,7 @@ export function planParkingRows(rows=[],{lots=[],surfaceY=()=>0,roadEdge=()=>Inf
         if(footprint.some((p,i)=>{
           const q=footprint[(i+1)%4];for(let k=0;k<=6;k++){
             const px=p[0]+(q[0]-p[0])*k/6,pz=p[1]+(q[1]-p[1])*k/6;
-            if(!inside(outline,px,pz)||roadEdge(px,pz)<.2||Math.abs(px)>W/2-1||Math.abs(pz)>H/2-1)return true;
+            if(!inside(outline,px,pz)||roadEdge(px,pz,row)<.2||Math.abs(px)>W/2-1||Math.abs(pz)>H/2-1)return true;
           }return false;
         })||result.some(p=>!separated(footprint,p.footprint)))continue;
         // Fit the four wheels to the local paved grade, preserving pitch and

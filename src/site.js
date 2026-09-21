@@ -24,7 +24,7 @@ import { polygonDistanceField } from './polygon-distance.js';
 import { unpackSurfaces } from './surface-assets.js';
 import { createStreetGrade, ROAD_LEVEL, WALK_LEVEL } from './street-grade.js';
 import { buildParking } from './parking.js';
-import { buildMappedParking } from './mapped-parking.js';
+import { buildMappedParking, buildParkingPaint } from './mapped-parking.js';
 import { bridgeGrade } from './bridge-grade.js';
 import { amphitheaterGrade } from './amphitheater-grade.js';
 import { amphitheaterGardenGrade } from './amphitheater-garden-grade.js';
@@ -1651,6 +1651,13 @@ export async function generateSite(site, seed = 'site', opts = {}) {
   g.add(buildRailways(railways, { grade, roadDistance, W, H }));
   const mappedLandmarks=buildLandmarks(site.landmarks||[],{grade,grid,
     waterGrade:crossingWater,roadCrossings:roadCrossings.crossings});
+  const parkingRows=(site.landmarks||[]).filter(f=>f.kind==='parking-row');
+  // Surveyed paint defines the internal aisles. Coarse OSM service centerlines
+  // sometimes cross the photographed bays; retain the public-road exclusion.
+  const publicParkingRoads=vehicular.filter(r=>r.class!=='service');
+  const parkingRoadEdge=(x,z,row)=>Math.min(...(row?.paint?publicParkingRoads:vehicular)
+    .map(r=>stripSDF(r.pts,r.width/2,r.closed,x,z)));
+  g.add(buildParkingPaint(parkingRows,{lots,surfaceY:slabY,grid,roadEdge:parkingRoadEdge}));
   const landmarkModels=mappedLandmarks.children.filter(model=>model.userData.streamKind);
   for(const model of landmarkModels) model.removeFromParent();
   g.add(mappedLandmarks);
@@ -1998,7 +2005,6 @@ export async function generateSite(site, seed = 'site', opts = {}) {
   }
 
   // --- parked cars, in rows in the lots and along the on-street bays (parking.js) ----
-  const parkingRows=(site.landmarks||[]).filter(f=>f.kind==='parking-row');
   const mappedParkingLotIds=new Set(parkingRows.map(f=>String(f.parkingLotId)));
   const genericParking=buildParking(rng,{lots,surfaceY:slabY,roadEdge,W,H});
   const mappedLots=lots.filter(l=>mappedParkingLotIds.has(String(l.id)));
@@ -2007,7 +2013,7 @@ export async function generateSite(site, seed = 'site', opts = {}) {
   }
   g.add(genericParking);
   const mappedCars=buildMappedParking(parkingRows,{lots,surfaceY:slabY,
-    roadEdge:(x,z)=>Math.min(...vehicular.map(r=>stripSDF(r.pts,r.width/2,r.closed,x,z))),W,H});
+    roadEdge:parkingRoadEdge,W,H});
   for(const car of [...mappedCars.children]) g.add(await emitModel(car));
 
   await mark('trees, lamps, cars');

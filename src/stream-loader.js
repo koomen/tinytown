@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { restoreCornLOD } from './corn-lod.js';
 
 // Exported scenes contain raw BufferGeometry attributes, already typed by the
 // binary decoder. ObjectLoader normally allocates a second copy of every one.
@@ -6,6 +7,9 @@ export class StreamObjectLoader extends THREE.ObjectLoader {
   constructor(sharedGeometries={}) {
     super();
     this.sharedGeometries=sharedGeometries;
+  }
+  parseObject(data,geometries,materials,textures,animations) {
+    return restoreCornLOD(super.parseObject(data,geometries,materials,textures,animations));
   }
   parseGeometries(records=[]) {
     const geometries={...this.sharedGeometries};

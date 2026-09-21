@@ -1,0 +1,58 @@
+[
+ {
+  "file": "fronts/north-avenue-north.png",
+  "pano": "Mpta_nY6jnZXv3V3UjsEXw",
+  "position": {
+   "lat": 42.919758,
+   "lon": -77.7417283
+  },
+  "heading": 125.04184971592247,
+  "fov": 28,
+  "tilt": 92,
+  "url": "https://www.google.com/maps/@42.919758,-77.7417283,199a,28y,125h,92t/data=!3m7!1e1!3m5!1sMpta_nY6jnZXv3V3UjsEXw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3DMpta_nY6jnZXv3V3UjsEXw%26yaw%3D125!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D",
+  "date": "Aug 2023",
+  "coverage": true
+ },
+ {
+  "file": "fronts/north-avenue-entry.png",
+  "pano": "nSgKBT_-m3ggfKJVAWprew",
+  "position": {
+   "lat": 42.9195749,
+   "lon": -77.7417744
+  },
+  "heading": 107.35706352381192,
+  "fov": 28,
+  "tilt": 92,
+  "url": "https://www.google.com/maps/@42.9195749,-77.7417744,199a,28y,107h,92t/data=!3m7!1e1!3m5!1snSgKBT_-m3ggfKJVAWprew!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3DnSgKBT_-m3ggfKJVAWprew%26yaw%3D107!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D",
+  "date": "Aug 2023",
+  "coverage": true
+ },
+ {
+  "file": "fronts/north-avenue-south.png",
+  "pano": "AnllPWAMM7b5CNpS3eks_Q",
+  "position": {
+   "lat": 42.919366,
+   "lon": -77.7418329
+  },
+  "heading": 85.75684181885424,
+  "fov": 28,
+  "tilt": 92,
+  "url": "https://www.google.com/maps/@42.919366,-77.7418329,199a,28y,86h,92t/data=!3m7!1e1!3m5!1sAnllPWAMM7b5CNpS3eks_Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3DAnllPWAMM7b5CNpS3eks_Q%26yaw%3D86!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D",
+  "date": "Aug 2025",
+  "coverage": true
+ },
+ {
+  "file": "fronts/north-avenue-far-south.png",
+  "pano": "ZHwf_0UMR25aLxJ9V0HBpQ",
+  "position": {
+   "lat": 42.9191058,
+   "lon": -77.7419196
+  },
+  "heading": 64.61666366361408,
+  "fov": 28,
+  "tilt": 92,
+  "url": "https://www.google.com/maps/@42.9191058,-77.7419196,199a,28y,65h,92t/data=!3m7!1e1!3m5!1sZHwf_0UMR25aLxJ9V0HBpQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2%26panoid%3DZHwf_0UMR25aLxJ9V0HBpQ%26yaw%3D65!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D",
+  "date": "Aug 2025",
+  "coverage": true
+ }
+]

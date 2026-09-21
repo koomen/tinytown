@@ -1,0 +1,4 @@
+interface:
+  display_name: "Queue TinyTown Change"
+  short_description: "Queue independent Astra changes with live previews"
+  default_prompt: "Use $queue-change to queue this TinyTown change and attach a live preview."

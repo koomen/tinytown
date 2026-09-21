@@ -5253,6 +5253,1110 @@
           42.912473408
         ]
       ]
+    },
+    {
+      "id": "avon-parking-middle-north",
+      "kind": "parking-row",
+      "parkingLotId": 248362379,
+      "coordinates": [
+        [
+          -77.73916192737751,
+          42.90777652719919
+        ],
+        [
+          -77.73877091933272,
+          42.90770206470429
+        ]
+      ],
+      "spacing": 2.9945,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-middle-cross-north",
+      "kind": "parking-row",
+      "parkingLotId": 248362379,
+      "coordinates": [
+        [
+          -77.73913064673393,
+          42.907650513693596
+        ],
+        [
+          -77.73883348061989,
+          42.90759323474229
+        ]
+      ],
+      "spacing": 2.7837,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-middle-cross-south",
+      "kind": "parking-row",
+      "parkingLotId": 248362379,
+      "coordinates": [
+        [
+          -77.73914628705573,
+          42.90760182658838
+        ],
+        [
+          -77.7388491209417,
+          42.90754454759181
+        ]
+      ],
+      "spacing": 2.7837,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-middle-west",
+      "kind": "parking-row",
+      "parkingLotId": 248362379,
+      "coordinates": [
+        [
+          -77.73926358946915,
+          42.90749013249575
+        ],
+        [
+          -77.73940826244572,
+          42.907086313703125
+        ]
+      ],
+      "spacing": 2.9047,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-middle-center-west",
+      "kind": "parking-row",
+      "parkingLotId": 248362379,
+      "coordinates": [
+        [
+          -77.73911500641212,
+          42.90750158830943
+        ],
+        [
+          -77.73930660035406,
+          42.906966026742886
+        ]
+      ],
+      "spacing": 2.9348,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-middle-center-east",
+      "kind": "parking-row",
+      "parkingLotId": 248362379,
+      "coordinates": [
+        [
+          -77.73905244512497,
+          42.907487268542006
+        ],
+        [
+          -77.7392440390669,
+          42.90695170685103
+        ]
+      ],
+      "spacing": 2.9348,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-middle-east",
+      "kind": "parking-row",
+      "parkingLotId": 248362379,
+      "coordinates": [
+        [
+          -77.73885694110258,
+          42.90742426152576
+        ],
+        [
+          -77.73904071488363,
+          42.90690874715551
+        ]
+      ],
+      "spacing": 2.9655,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-middle-south-west",
+      "kind": "parking-row",
+      "parkingLotId": 248362379,
+      "coordinates": [
+        [
+          -77.73934570115856,
+          42.90685719548136
+        ],
+        [
+          -77.73939653220437,
+          42.90671113217049
+        ]
+      ],
+      "spacing": 2.7966,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-middle-south-east",
+      "kind": "parking-row",
+      "parkingLotId": 248362379,
+      "coordinates": [
+        [
+          -77.73928313987138,
+          42.90684573954794
+        ],
+        [
+          -77.7393339709172,
+          42.906699676209925
+        ]
+      ],
+      "spacing": 2.7966,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-middle-accessible",
+      "kind": "parking-row",
+      "parkingLotId": 248362379,
+      "coordinates": [
+        [
+          -77.73909154592944,
+          42.90677700390255
+        ],
+        [
+          -77.73913064673393,
+          42.90666817230732
+        ]
+      ],
+      "spacing": 3.1319,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-middle-trackside",
+      "kind": "parking-row",
+      "parkingLotId": 249547654,
+      "coordinates": [
+        [
+          -77.73946691365242,
+          42.90767342525923
+        ],
+        [
+          -77.73967414791616,
+          42.907092041647765
+        ]
+      ],
+      "spacing": 2.9082,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-west-a-north",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73683933959153,
+          42.90549678850032
+        ],
+        [
+          -77.73689885883611,
+          42.90532780953706
+        ]
+      ],
+      "spacing": 2.7751,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-west-a-upper",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73692407885501,
+          42.90525620814173
+        ],
+        [
+          -77.73697754529503,
+          42.90510441290857
+        ]
+      ],
+      "spacing": 2.9085,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-west-a-middle",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73699772131016,
+          42.90504713159139
+        ],
+        [
+          -77.73710263658872,
+          42.90474926788398
+        ]
+      ],
+      "spacing": 2.8536,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-west-a-lower",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73712281260383,
+          42.904691986236806
+        ],
+        [
+          -77.73717123504011,
+          42.90455451006639
+        ]
+      ],
+      "spacing": 3.161,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-west-a-south",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73725093029978,
+          42.90432824653509
+        ],
+        [
+          -77.73731044954435,
+          42.90415926436874
+        ]
+      ],
+      "spacing": 2.7753,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-west-b-north",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73677286822392,
+          42.90548418669531
+        ],
+        [
+          -77.7368323874685,
+          42.90531520769753
+        ]
+      ],
+      "spacing": 2.7751,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-west-b-upper",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73685760748738,
+          42.905243606287534
+        ],
+        [
+          -77.73691107392743,
+          42.90509181102336
+        ]
+      ],
+      "spacing": 2.9085,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-west-b-middle",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73693124994254,
+          42.90503452969445
+        ],
+        [
+          -77.73703616522111,
+          42.90473666592617
+        ]
+      ],
+      "spacing": 2.8537,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-west-b-lower",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73705634123623,
+          42.90467938426727
+        ],
+        [
+          -77.73710476367249,
+          42.904541908068765
+        ]
+      ],
+      "spacing": 3.161,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-west-b-south",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73718445893218,
+          42.904315644491206
+        ],
+        [
+          -77.73724397817675,
+          42.90414666229032
+        ]
+      ],
+      "spacing": 2.7753,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-middle-a-north",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73660473476467,
+          42.905450963742496
+        ],
+        [
+          -77.73666425400926,
+          42.90528198465362
+        ]
+      ],
+      "spacing": 2.7752,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-middle-a-upper",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73668947402813,
+          42.90521038320508
+        ],
+        [
+          -77.73674294046818,
+          42.905058587859074
+        ]
+      ],
+      "spacing": 2.9086,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-middle-a-middle",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73676311648329,
+          42.9050013064993
+        ],
+        [
+          -77.73686803176186,
+          42.904703442570494
+        ]
+      ],
+      "spacing": 2.8536,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-middle-a-lower",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73688820777697,
+          42.90464616088073
+        ],
+        [
+          -77.73693663021322,
+          42.904508684608125
+        ]
+      ],
+      "spacing": 3.1608,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-middle-a-south",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73701632547292,
+          42.904282420908615
+        ],
+        [
+          -77.7370758447175,
+          42.90411343861669
+        ]
+      ],
+      "spacing": 2.7753,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-middle-b-north",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73653826339707,
+          42.90543836192815
+        ],
+        [
+          -77.73659778264162,
+          42.90526938280472
+        ]
+      ],
+      "spacing": 2.7753,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-middle-b-upper",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73662300266052,
+          42.90519778134152
+        ],
+        [
+          -77.73667646910057,
+          42.9050459859645
+        ]
+      ],
+      "spacing": 2.9085,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-middle-b-middle",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73669664511569,
+          42.904988704593016
+        ],
+        [
+          -77.73680156039426,
+          42.90469084060332
+        ]
+      ],
+      "spacing": 2.8536,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-middle-b-lower",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73682173640934,
+          42.90463355890183
+        ],
+        [
+          -77.73687015884563,
+          42.904496082601135
+        ]
+      ],
+      "spacing": 3.161,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-middle-b-south",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73694985410529,
+          42.90426981885539
+        ],
+        [
+          -77.73700937334988,
+          42.90410083652889
+        ]
+      ],
+      "spacing": 2.7753,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-east-a-north",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.7363701299378,
+          42.90540513895063
+        ],
+        [
+          -77.73642964918237,
+          42.90523615973613
+        ]
+      ],
+      "spacing": 2.7753,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-east-a-upper",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73645486920127,
+          42.90516455823436
+        ],
+        [
+          -77.7365083356413,
+          42.905012762775506
+        ]
+      ],
+      "spacing": 2.9084,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-east-a-middle",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73652851165642,
+          42.904955481373165
+        ],
+        [
+          -77.736633426935,
+          42.904657617222966
+        ]
+      ],
+      "spacing": 2.8536,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-east-a-lower",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73665360295011,
+          42.904600335490606
+        ],
+        [
+          -77.73670202538638,
+          42.904462859115796
+        ]
+      ],
+      "spacing": 3.161,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-east-a-south",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73678172064606,
+          42.90423659524812
+        ],
+        [
+          -77.73684123989064,
+          42.90406761283055
+        ]
+      ],
+      "spacing": 2.7754,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-east-b-north",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.7363036585702,
+          42.905392537126886
+        ],
+        [
+          -77.73636317781477,
+          42.90522355787786
+        ]
+      ],
+      "spacing": 2.7752,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-east-b-upper",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73638839783365,
+          42.905151956361436
+        ],
+        [
+          -77.7364418642737,
+          42.905000160871566
+        ]
+      ],
+      "spacing": 2.9086,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-east-b-middle",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.7364620402888,
+          42.904942879457494
+        ],
+        [
+          -77.73656695556738,
+          42.90464501524641
+        ]
+      ],
+      "spacing": 2.8536,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-east-b-lower",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73658713158248,
+          42.904587733502346
+        ],
+        [
+          -77.73663555401875,
+          42.90445025709942
+        ]
+      ],
+      "spacing": 3.161,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-east-b-south",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73671524927845,
+          42.90422399318551
+        ],
+        [
+          -77.73677476852302,
+          42.90405501073339
+        ]
+      ],
+      "spacing": 2.7753,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-building-edge",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73713650570556,
+          42.905041403456735
+        ],
+        [
+          -77.73723816779722,
+          42.90475499604578
+        ]
+      ],
+      "spacing": 2.9948,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-high-building-edge-south",
+      "kind": "parking-row",
+      "parkingLotId": 248362381,
+      "coordinates": [
+        [
+          -77.73728508876258,
+          42.904657617222966
+        ],
+        [
+          -77.73732809964751,
+          42.90454591779557
+        ]
+      ],
+      "spacing": 3.23,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-inn-west",
+      "kind": "parking-row",
+      "parkingLotId": "avon-inn-parking",
+      "coordinates": [
+        [
+          -77.7432880202757,
+          42.91056403169623
+        ],
+        [
+          -77.74338690657905,
+          42.910269419013524
+        ]
+      ],
+      "spacing": 2.8144,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": -1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-inn-east",
+      "kind": "parking-row",
+      "parkingLotId": "avon-inn-parking",
+      "coordinates": [
+        [
+          -77.74311002492966,
+          42.91047951180836
+        ],
+        [
+          -77.74318254155213,
+          42.91026217442161
+        ]
+      ],
+      "spacing": 2.7673,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-fire-north",
+      "kind": "parking-row",
+      "parkingLotId": 248362384,
+      "coordinates": [
+        [
+          -77.7463314793384,
+          42.910520417614514
+        ],
+        [
+          -77.74603138398675,
+          42.91046000802537
+        ]
+      ],
+      "spacing": 2.8194,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0.6,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-fire-south",
+      "kind": "parking-row",
+      "parkingLotId": 248362384,
+      "coordinates": [
+        [
+          -77.74644690062748,
+          42.91041892947095
+        ],
+        [
+          -77.74611382776467,
+          42.91034885422669
+        ]
+      ],
+      "spacing": 2.8254,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": -0.45,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": "avon-parking-fire-east",
+      "kind": "parking-row",
+      "parkingLotId": 248362384,
+      "coordinates": [
+        [
+          -77.74584341217307,
+          42.91041651308453
+        ],
+        [
+          -77.74591596269765,
+          42.91023286744039
+        ]
+      ],
+      "spacing": 3.0402,
+      "depth": 5.4,
+      "occupancy": 0.24,
+      "face": 1,
+      "yawOffset": 0,
+      "paint": true,
+      "backLine": true,
+      "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
     }
   ]
 }

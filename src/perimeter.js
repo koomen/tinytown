@@ -3,14 +3,15 @@ import { box, mat } from './kit.js';
 import { perimeterPanels } from './perimeter-layout.js';
 import { buildVinylFence } from './vinyl-fence.js';
 
-let meshMaterial;
-function chainLink() {
-  if (meshMaterial) return meshMaterial;
+const meshMaterials=new Map();
+function chainLink(color='#788179') {
+  if (meshMaterials.has(color)) return meshMaterials.get(color);
   const canvas=document.createElement('canvas');canvas.width=canvas.height=64;
-  const c=canvas.getContext('2d');c.strokeStyle='#788179';c.lineWidth=5;
+  const c=canvas.getContext('2d');c.strokeStyle=color;c.lineWidth=5;
   c.beginPath();c.moveTo(0,32);c.lineTo(32,0);c.lineTo(64,32);c.lineTo(32,64);c.closePath();c.stroke();
   const texture=new THREE.CanvasTexture(canvas);texture.wrapS=texture.wrapT=THREE.RepeatWrapping;texture.repeat.set(10,7);
-  meshMaterial=new THREE.MeshStandardMaterial({map:texture,alphaTest:.35,side:THREE.DoubleSide,roughness:.9});
+  const meshMaterial=new THREE.MeshStandardMaterial({map:texture,alphaTest:.35,side:THREE.DoubleSide,roughness:.9});
+  meshMaterials.set(color,meshMaterial);
   return meshMaterial;
 }
 export function buildPerimeter(feature, grade) {
@@ -22,7 +23,8 @@ export function buildPerimeter(feature, grade) {
     const ya=grade(...a),yb=grade(...b),length=Math.hypot(b[0]-a[0],b[1]-a[1]);
     const geometry=new THREE.BufferGeometry();
     geometry.setAttribute('position',new THREE.Float32BufferAttribute([a[0],ya+.08,a[1],b[0],yb+.08,b[1],b[0],yb+h,b[1],a[0],ya+h,a[1]],3));
-    geometry.setAttribute('uv',new THREE.Float32BufferAttribute([0,0,length/3,0,length/3,1,0,1],2));
+    const v=feature.meshColor?(h-.08)/2.1:1;
+    geometry.setAttribute('uv',new THREE.Float32BufferAttribute([0,0,length/3,0,length/3,v,0,v],2));
     geometry.setIndex([0,1,2,0,2,3]);geometry.computeVertexNormals();
     if(feature.style==='pickets') {
       const count=Math.ceil(length/.3);
@@ -32,7 +34,7 @@ export function buildPerimeter(feature, grade) {
       }
       geometry.dispose();
     } else {
-      const panel=new THREE.Mesh(geometry,feature.style==='wall'?mat(feature.color ?? '#b8ad91'):chainLink());
+      const panel=new THREE.Mesh(geometry,feature.style==='wall'?mat(feature.color ?? '#b8ad91'):chainLink(feature.meshColor));
       panel.name='perimeter-panel';root.add(panel);
     }
     for(const p of [a,b]) {

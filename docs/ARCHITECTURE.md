@@ -66,6 +66,11 @@ and imports a module only when one of its verbs runs.
 | `browser.py` + `browser.mjs` | one headless Chromium harness for Python and Node | `browser` | `headless`, `private_browser`, `browser.mjs`, `setup_browser` (deleted: `agent_browser`, `terminal_browser`) |
 | `model.py` | the model adapter (Codex CLI today); usage accounting; `BudgetExhausted` | | `miniature_model`, `model_runner`, the model parts of `fidelity_runner` |
 | `author.py` | per-building author/review/repair state machine; concurrency; budgets; scene critique; accept | `author`, `accept` | `miniature_pipeline`, `fidelity_runner`, `run_diorama`, `expand_diorama`, `expansion_queue`, `publish_*`, `merge_blueprints`, `production_baseline`, `renderer_snapshot` |
+| `changes.py` | local source-change queue, isolated workspaces, worker events, approval, dashboard and preview URLs | `changes`, `preview` | |
+| `change_bakes.py` | task bake snapshots, serialized bake jobs and immutable map serving | `changes bake` | |
+| `change_merge.py` | three-way text and structured JSON merge rules | | |
+| `preview.py` | cropped and whole-map live-source scenes and preview documents | | |
+| `change_worker.py` | standalone worker progress/preview reporter, scoped to one queue pass | `changes report` | |
 | `bake.py` + `web/` | terrain/pavement surfaces, streaming chunks, viewer version stamping | `bake` | `precompute_surfaces`, `precompute.html`, `prepare_streaming.mjs`, `stream-export.*`, `stream-asset-limits.mjs`, `version_viewer` |
 | `deploy.py` | route documents, dist staging per target, dev server, live verification | `stage`, `serve`, `verify` | `build_routes`, `build_deployment`, `site_routes`, `verify_deployment`, `serve.py` |
 | `migrate.py` | one-time move from the pre-2026-09 layout | `migrate` | |
@@ -100,6 +105,14 @@ Deleted outright, not ported: `resume_expansion`, `watch_expansion`,
    work and exits 0.
 
 ## Data layout
+
+The source-change queue stores its own requests, events and isolated Git
+workspaces under gitignored `runs/changes/`. This is job state for source edits,
+not a second ledger of per-building authoring status. Snapshots include dirty
+source files but exclude ignored private files and generated bake assets.
+Approval merges against the snapshot baseline before applying any files to the
+checkout. Overlapping edits queue an isolated repair pass and return for review.
+Task world bakes use separate immutable snapshots; Whole map serves their assets. See [changes.md](changes.md).
 
 ```
 data/<site>/
