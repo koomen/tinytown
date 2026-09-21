@@ -158,7 +158,10 @@ export function buildLandmarks(features = [], {grade = () => 0, grid = null,
       }
       const court = ['tennis','basketball','volleyball','pickleball'].includes(f.sport);
       g.add(surface(f.pts,grade,f.color || (court ? '#87938b' : '#739460'),.09,grid));
-      if(f.sport==='american_football' && f.football) g.add(buildFootballField(f,grade,grid));
+      if(f.sport==='american_football' && f.football) {
+        g.userData.streamKind='landmark';
+        g.add(buildFootballField(f,grade,grid));
+      }
       if(court) g.add(ribbon(f.pts,.12,grade,'#e9e4cf',true,.15,grid));
       // Base positions must be independently surveyed in the data; a field
       // polygon alone does not establish home plate or the infield direction.

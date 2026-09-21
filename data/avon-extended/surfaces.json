@@ -1,34 +1,34 @@
 {
   "version": 6,
-  "key": "4a2911d176764959b939fba0e580b3a5ccdabc11eceed0f8eba678d6cbece39c",
-  "sha256": "a2d5fa3fa473b577582d3df9ac3fb4299a0a58f4c15b4ff6b7bec715d50cbcca",
+  "key": "f3021015136a3591a80767ac154e17e2e5031d8bd425c84e7e71614897d77218",
+  "sha256": "474fde8b0e98a93939ae332351da5afbf9bfb20d0a5841b3a3bf83810755bfdf",
   "rawBytes": 120723263,
-  "compressedBytes": 21003059,
-  "buildMs": 17720,
+  "compressedBytes": 21003667,
+  "buildMs": 18997,
   "prof": [
     [
       "ground",
-      7788
+      7816
     ],
     [
       "streets and curbs",
-      11435
+      11597
     ],
     [
       "centre lines",
-      13068
+      13256
     ],
     [
       "sidewalks",
-      13102
+      13292
     ],
     [
       "paths",
-      16380
+      17137
     ]
   ],
-  "file": "surfaces-ea289bcbc53a4cb1.bin.gz",
-  "inputSha256": "bfab0033e053a0d57b8a919e0631a9bd0f93fc5d54693d2fea481e79edc06303",
-  "sourceSha256": "412ddacafea1610faea901875c5c1ca7b6e1f1c4217680a7f4c2f3824c9ccb09",
-  "compressedSha256": "ea289bcbc53a4cb156db982046d27fbc7e61411789631c103e302c694f072354"
+  "file": "surfaces-0f25dd05e41fb9cb.bin.gz",
+  "inputSha256": "8ad570b6642f939f72322548e31c92a08e9265098333113a925d9baa1f11873a",
+  "sourceSha256": "90d7ab1b1a1be1e21a1a550161cd2e93cc8b497d97946b61f0d3d45fcaedd366",
+  "compressedSha256": "0f25dd05e41fb9cba01c0d73fbf5123c3976787d2abcdc7ae01830327fe72473"
 }

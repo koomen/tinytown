@@ -144,7 +144,7 @@ export function buildFootballField(feature, grade = () => 0, grid = null) {
   geometry.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); geometry.setIndex(data.indices); geometry.computeVertexNormals();
   geometry.computeBoundingBox(); geometry.computeBoundingSphere();
   const mesh = new THREE.Mesh(geometry, footballFieldMaterial(feature.football.branding, feature.image));
-  mesh.name = 'football-field-paint'; mesh.receiveShadow = true; root.add(mesh);
+  mesh.name = 'football-field-paint'; mesh.receiveShadow = true; mesh.userData.streamCoarse = true; root.add(mesh);
   const crossAxis = new THREE.Vector3(ux, 0, uz).normalize();
   const longAxis = new THREE.Vector3(vx, 0, vz).normalize();
   const tube = (a,b,r,name) => {
@@ -165,7 +165,59 @@ export function buildFootballField(feature, grade = () => 0, grid = null) {
     tube(left,right,.095,'football-goalpost-crossbar');
     for(const p of [left,right])tube(p,p.clone().add(new THREE.Vector3(0,4.6,0)),.075,'football-goalpost-upright');
   }
+  root.add(buildStadiumLights(feature, grade));
   root.userData.football = {branding:feature.football.branding, yardNumbers:[10,20,30,40,50,40,30,20,10], sidelines:2, endzoneMarks:2};
+  return root;
+}
+
+// Four banks outside the track wash opposite halves of the field. Kept lens
+// anchors survive geometry batching and reconstruct the bounded runtime lights.
+export function buildStadiumLights(feature, grade = () => 0) {
+  const root = new THREE.Group(); root.name = 'stadium-lights';
+  if (!feature.football || feature.pts?.length !== 4) return root;
+  const [sw, se, ne, nw] = feature.pts;
+  const across = new THREE.Vector3(ne[0] - nw[0], 0, ne[1] - nw[1]);
+  const along = new THREE.Vector3(sw[0] - nw[0], 0, sw[1] - nw[1]);
+  const width = across.length();
+  if (!Number.isFinite(width * along.length()) || width < 1 || along.length() < 1 ||
+      Math.abs(across.x * along.z - across.z * along.x) < 1e-6) return root;
+  const crossAxis = across.clone().normalize();
+  const metal = mat('#929ca2', {roughness:.5, metalness:.55});
+  const housing = mat('#39464e', {roughness:.6, metalness:.4});
+  const lens = mat('#edf6ff', {emissive:'#e4f1ff', emissiveIntensity:0, roughness:.25});
+  lens.userData.nightEmission = {day:0, night:2};
+  const add = (geometry, material, name, position) => {
+    const mesh = new THREE.Mesh(geometry, material); mesh.name = name;
+    mesh.position.copy(position); mesh.castShadow = mesh.receiveShadow = true;
+    mesh.userData.streamCoarse = true; root.add(mesh); return mesh;
+  };
+  for (const side of [-1, 1]) for (const end of [.1, .9]) {
+    const base = new THREE.Vector3(nw[0], 0, nw[1]).addScaledVector(across, .5)
+      .addScaledVector(along, end).addScaledVector(crossAxis, side * (width / 2 + 24));
+    base.y = grade(base.x, base.z);
+    add(new THREE.CylinderGeometry(.65,.8,.65,12), mat('#9b9e97'), 'stadium-light-footing', base.clone().add(new THREE.Vector3(0,.2,0)));
+    add(new THREE.CylinderGeometry(.18,.36,24,12), metal, 'stadium-light-pole', base.clone().add(new THREE.Vector3(0,12,0)));
+    const position = base.clone().add(new THREE.Vector3(0,24,0));
+    const target = new THREE.Vector3(nw[0],0,nw[1]).addScaledVector(across,.5)
+      .addScaledVector(along,end < .5 ? .3 : .7);
+    target.y = grade(target.x,target.z) + .15;
+    const orientation = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0,0,1),target.clone().sub(position).normalize());
+    const beam = add(new THREE.BoxGeometry(5.1,.2,.3), metal, 'stadium-light-crossarm', position);
+    beam.quaternion.copy(orientation);
+    for (let row=0; row<2; row++) for (let col=0; col<4; col++) {
+      const offset = new THREE.Vector3((col-1.5)*1.22,(row-.5)*.86,0).applyQuaternion(orientation);
+      const body = add(new THREE.BoxGeometry(1.08,.7,.35),housing,'stadium-floodlight-housing',position.clone().add(offset));
+      body.quaternion.copy(orientation);
+      const face = add(new THREE.PlaneGeometry(.92,.54),lens,'stadium-floodlight-lens',
+        body.position.clone().add(new THREE.Vector3(0,0,.181).applyQuaternion(orientation)));
+      face.quaternion.copy(orientation); face.userData.keep = true; face.userData.castShadow = false; face.castShadow = false;
+      // One physical light per bank, independent of the number of LED panels.
+      if (row===0 && col===1) face.userData.nightSpotlight = {
+        color:'#e4f1ff', intensity:4125, distance:160, angle:.95, penumbra:.55,
+        target:target.clone().sub(face.position).applyQuaternion(orientation.clone().invert()).toArray(),
+      };
+    }
+  }
   return root;
 }
 
