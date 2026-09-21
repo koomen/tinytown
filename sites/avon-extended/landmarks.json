@@ -6357,6 +6357,160 @@
       "paint": true,
       "backLine": true,
       "source": "Rows traced from Esri World Imagery overhead export, 2026-09-20; stall spacing and paint width approximated. Drive aisles and entrance gaps retained; edge rows inset to fit mapped pavement. Imagery acquisition date unavailable."
+    },
+    {
+      "id": 140641607,
+      "kind": "pitch",
+      "name": "Avon school tennis courts",
+      "sport": "tennis",
+      "closed": true,
+      "color": "#526b60",
+      "tennis": {
+        "courts": 5,
+        "endEdge": [
+          0,
+          1
+        ],
+        "fenceHeight": 3.05
+      },
+      "coordinates": [
+        [
+          -77.741366029,
+          42.906109024
+        ],
+        [
+          -77.740448713,
+          42.905930241
+        ],
+        [
+          -77.740564048,
+          42.905613933
+        ],
+        [
+          -77.741481364,
+          42.905792716
+        ]
+      ],
+      "openings": [
+        {
+          "coordinates": [
+            -77.740485406,
+            42.905937392
+          ],
+          "width": 1.8
+        }
+      ],
+      "source": "Five courts and shared enclosure traced from Esri World Imagery zoom-19 tiles (148924..148926, 192835..192837), accessed 2026-09-20; acquisition date unavailable. Replaces OSM way 140641607. Regulation tennis markings and nets; fence height, colors and track-facing entrance width are approximations. Reference mosaic: runs/tennis-courts/aerial.jpg."
+    },
+    {
+      "id": 140641609,
+      "kind": "pitch",
+      "name": "Avon school basketball court north",
+      "sport": "basketball",
+      "closed": true,
+      "color": "#526b60",
+      "basketball": {
+        "endEdge": [
+          0,
+          1
+        ],
+        "hoopStyle": "school",
+        "sidelineInset": 3.2
+      },
+      "coordinates": [
+        [
+          -77.740448713,
+          42.905930241
+        ],
+        [
+          -77.740191221,
+          42.905881125
+        ],
+        [
+          -77.740248889,
+          42.905722971
+        ],
+        [
+          -77.740506381,
+          42.905772087
+        ]
+      ],
+      "source": "Two compact basketball courts adjoining the five tennis courts, traced from the retained Esri World Imagery zoom-19 mosaic runs/tennis-courts/aerial.jpg (tiles 148924..148926, 192835..192837), accessed 2026-09-20; acquisition date unavailable. Replaces the blank OSM basketball pad 140641609. Court markings, school-style hoops, fence height and entrance width approximated from the aerial.",
+      "streamCoarse": true
+    },
+    {
+      "id": "avon-school-basketball-south",
+      "kind": "pitch",
+      "name": "Avon school basketball court south",
+      "sport": "basketball",
+      "closed": true,
+      "color": "#526b60",
+      "basketball": {
+        "endEdge": [
+          0,
+          1
+        ],
+        "hoopStyle": "school",
+        "sidelineInset": 3.2
+      },
+      "coordinates": [
+        [
+          -77.740506381,
+          42.905772087
+        ],
+        [
+          -77.740248889,
+          42.905722971
+        ],
+        [
+          -77.740306556,
+          42.905564816
+        ],
+        [
+          -77.740564048,
+          42.905613933
+        ]
+      ],
+      "source": "Two compact basketball courts adjoining the five tennis courts, traced from the retained Esri World Imagery zoom-19 mosaic runs/tennis-courts/aerial.jpg (tiles 148924..148926, 192835..192837), accessed 2026-09-20; acquisition date unavailable. Replaces the blank OSM basketball pad 140641609. Court markings, school-style hoops, fence height and entrance width approximated from the aerial.",
+      "streamCoarse": true
+    },
+    {
+      "id": "avon-school-basketball-fence",
+      "kind": "barrier",
+      "name": "Avon school basketball enclosure",
+      "style": "chain_link",
+      "height": 3.05,
+      "color": "#3c4945",
+      "meshColor": "#52605a",
+      "coordinates": [
+        [
+          -77.740448713,
+          42.905930241
+        ],
+        [
+          -77.740191221,
+          42.905881125
+        ],
+        [
+          -77.740306556,
+          42.905564816
+        ],
+        [
+          -77.740564048,
+          42.905613933
+        ]
+      ],
+      "openings": [
+        {
+          "coordinates": [
+            -77.740319967,
+            42.905905683
+          ],
+          "width": 1.8
+        }
+      ],
+      "source": "Two compact basketball courts adjoining the five tennis courts, traced from the retained Esri World Imagery zoom-19 mosaic runs/tennis-courts/aerial.jpg (tiles 148924..148926, 192835..192837), accessed 2026-09-20; acquisition date unavailable. Replaces the blank OSM basketball pad 140641609. Court markings, school-style hoops, fence height and entrance width approximated from the aerial. Three outer sides share the existing tennis divider fence; entrance faces the running-track path.",
+      "streamCoarse": true
     }
   ]
 }

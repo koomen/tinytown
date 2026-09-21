@@ -155,6 +155,7 @@ export function buildLandmarks(features = [], {grade = () => 0, grid = null,
     }
     if(f.kind==='pitch') {
       if(f.sport==='tennis' && f.tennis) {
+        g.userData.streamKind='landmark';
         g.add(buildTennisCourt(f,grade,grid));root.add(g);continue;
       }
       const court = ['tennis','basketball','volleyball','pickleball'].includes(f.sport);
@@ -183,6 +184,12 @@ export function buildLandmarks(features = [], {grade = () => 0, grid = null,
       if(f.surface==='gravel')pad.material=surfaceMaterial('gravel',color);
       g.add(pad);
       g.add(buildPlaygroundEquipment(f.equipment,grade));
+    }
+    // Authored installations can retain their small markings and hardware in
+    // the distant map as well as the source preview.
+    if(f.streamCoarse) {
+      g.userData.streamKind='landmark';
+      g.traverse(o=>{if(o.isMesh)o.userData.streamCoarse=true;});
     }
     root.add(g);
   }

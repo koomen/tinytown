@@ -13,7 +13,7 @@ export function buildBasketballCourt(feature,grade=()=>0,grid=null) {
   const width=Math.hypot(b[0]-a[0],b[1]-a[1]),ux=(b[0]-a[0])/width,uz=(b[1]-a[1])/width;
   const vx=-uz,vz=ux,point=(u,v)=>[center[0]+ux*u+vx*v,center[1]+uz*u+vz*v];
   const depths=feature.pts.map(p=>(p[0]-center[0])*vx+(p[1]-center[1])*vz);
-  const hw=width/2-.85,hl=(Math.max(...depths)-Math.min(...depths))/2-1;
+  const hw=width/2-(feature.basketball.sidelineInset??.85),hl=(Math.max(...depths)-Math.min(...depths))/2-1;
   const line=(points,name='basketball-line',closed=false)=>{
     const strip=ribbonStrip(points.map(p=>point(...p)),.075,closed);
     const d=drapeTriangles(strip.positions,strip.indices,grade,grid,.155);
