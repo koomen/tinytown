@@ -43,13 +43,19 @@ class AvonLandmarks(unittest.TestCase):
         first = avon.authored_features(site, AVON_LANDMARKS)
         second = avon.authored_features(other, AVON_LANDMARKS)
         shift = .001 * 111320 * math.cos(math.radians(42.91201))
-        self.assertEqual(len([f for f in first if len(f.get("bases", [])) == 4]), 2)
+        # Two Driving Park diamonds and three school diamonds.
+        self.assertEqual(len([f for f in first if len(f.get("bases", [])) == 4]), 5)
         for a, b in zip(first, second):
             for p, q in zip(a["pts"], b["pts"]):
                 self.assertAlmostEqual(p[0] - q[0], shift, delta=.002)
                 self.assertEqual(p[1], q[1])
             for ea, eb in zip(a.get("equipment", []), b.get("equipment", [])):
                 self.assertAlmostEqual(ea["position"][0] - eb["position"][0], shift, delta=.002)
+            for sa, sb in zip(a.get("baseball", {}).get("surfaces", []),
+                              b.get("baseball", {}).get("surfaces", [])):
+                for p, q in zip(sa["pts"], sb["pts"]):
+                    self.assertAlmostEqual(p[0] - q[0], shift, delta=.002)
+                    self.assertEqual(p[1], q[1])
         oval = next(f for f in first if f["kind"] == "track")
         self.assertTrue(oval["closed"])
         self.assertGreater(max(p[1] for p in oval["pts"]) - min(p[1] for p in oval["pts"]), 300)

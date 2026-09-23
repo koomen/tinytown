@@ -75,8 +75,9 @@ export function brandSignMaterial(brand, aspect = 3) {
   return material;
 }
 
-function surface(points, grade, color, lift = .09, grid = null) {
+function surface(points, grade, color, lift = .09, grid = null, holes = []) {
   const shape = new THREE.Shape(points.map(p => new THREE.Vector2(p[0], -p[1])));
+  for (const ring of holes) shape.holes.push(new THREE.Path(ring.map(([x,z]) => new THREE.Vector2(x,-z))));
   const geometry = new THREE.ShapeGeometry(shape), pos = geometry.attributes.position;
   for (let i=0; i<pos.count; i++) { const x=pos.getX(i), z=-pos.getY(i); pos.setXYZ(i,x,grade(x,z)+lift,z); }
   if(grid) {
@@ -159,7 +160,11 @@ export function buildLandmarks(features = [], {grade = () => 0, grid = null,
         g.add(buildTennisCourt(f,grade,grid));root.add(g);continue;
       }
       const court = ['tennis','basketball','volleyball','pickleball'].includes(f.sport);
-      g.add(surface(f.pts,grade,f.color || (court ? '#87938b' : '#739460'),.09,grid));
+      const playingSurfaces=f.baseball?.surfaces || [];
+      // Nested surveyed patches cut holes in their parent surface. Coplanar
+      // grass/dirt overlays flicker at map distance and after stream merging.
+      g.add(surface(f.pts,grade,f.color || (court ? '#87938b' : '#739460'),.09,grid,
+        playingSurfaces.length ? [playingSurfaces[0].pts] : []));
       if(f.sport==='american_football' && f.football) {
         g.userData.streamKind='landmark';
         g.add(buildFootballField(f,grade,grid));
@@ -168,14 +173,36 @@ export function buildLandmarks(features = [], {grade = () => 0, grid = null,
       if(court && !f.basketball) g.add(ribbon(f.pts,.12,grade,'#e9e4cf',true,.15,grid));
       // Base positions must be independently surveyed in the data; a field
       // polygon alone does not establish home plate or the infield direction.
+      for (const [i, patch] of playingSurfaces.entries()) {
+        const mesh = surface(patch.pts,grade,patch.color,.13,grid,
+          playingSurfaces[i+1] ? [playingSurfaces[i+1].pts] : []);
+        mesh.name = `baseball-${patch.role}`;g.add(mesh);
+      }
       if(f.bases?.length===4) {
-        if (f.infield !== 'grass') g.add(surface(f.bases,grade,'#bd9570',.13,grid));
-        else for (const [x,z] of [...f.bases,[(f.bases[0][0]+f.bases[2][0])/2,(f.bases[0][1]+f.bases[2][1])/2]]) {
+        if (!f.baseball?.surfaces && f.infield !== 'grass') g.add(surface(f.bases,grade,'#bd9570',.13,grid));
+        else if (!f.baseball?.surfaces) for (const [x,z] of [...f.bases,[(f.bases[0][0]+f.bases[2][0])/2,(f.bases[0][1]+f.bases[2][1])/2]]) {
           const ring=Array.from({length:16},(_,i)=>[x+Math.cos(i*Math.PI/8)*1.5,z+Math.sin(i*Math.PI/8)*1.5]);
           g.add(surface(ring,grade,'#bd9570',.14,grid));
         }
-        g.add(ribbon([f.bases[3],f.bases[0],f.bases[1]],.13,grade,'#eee7cf',false,.16,grid));
-        for(const [x,z] of f.bases) g.add(box(.48,.05,.48,'#f6f0df',x,grade(x,z)+.18,z));
+        const home=f.bases[0],first=f.bases[1],third=f.bases[3];
+        const extend=(base,length)=>{
+          const d=Math.hypot(base[0]-home[0],base[1]-home[1]);
+          return length ? home.map((v,i)=>v+(base[i]-v)*length/d) : base;
+        };
+        const line=ribbon([extend(third,f.baseball?.foulLengths?.[1]),home,extend(first,f.baseball?.foulLengths?.[0])],.13,grade,'#eee7cf',false,playingSurfaces.length ? .23 : .16,grid);
+        line.name='baseball-foul-lines';g.add(line);
+        const angle=-Math.atan2(first[1]-home[1],first[0]-home[0]);
+        for(const [x,z] of f.bases) {
+          const base=box(.48,.05,.48,'#f6f0df',x,grade(x,z)+(playingSurfaces.length ? .25 : .18),z);
+          if(playingSurfaces.length)base.rotation.y=angle;
+          base.name='baseball-base';g.add(base);
+        }
+        if(f.baseball?.pitcher) {
+          const [x,z]=f.baseball.pitcher;
+          const rubber=box(.61,.045,.15,'#f6f0df',x,grade(x,z)+.25,z);
+          rubber.rotation.y=-Math.atan2(third[1]-first[1],third[0]-first[0]);
+          rubber.name='baseball-pitching-rubber';g.add(rubber);
+        }
       }
       if(f.sport==='baseball' && f.baseball) g.add(buildBaseball(f,grade));
     }

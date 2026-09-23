@@ -641,7 +641,7 @@
     {
       "id": 133759501,
       "kind": "pitch",
-      "name": null,
+      "name": "Avon school north softball field",
       "sport": "baseball",
       "closed": true,
       "width": 4,
@@ -653,8 +653,12 @@
           42.9034463
         ],
         [
-          -77.7392126,
-          42.9034349
+          -77.739112973,
+          42.903393728
+        ],
+        [
+          -77.739027143,
+          42.903376045
         ],
         [
           -77.7384916,
@@ -674,78 +678,8 @@
         ]
       ],
       "baseball": {
-        "source": "Esri World Imagery, data/avon-extended/satellite.jpg; fence, backstop and shelter positions hand traced 2026-09-13. Driving Park shelter finish and baseball emblems from user CleanShot 2026-09-13 14.30.45 photograph. Heights and small construction dimensions are model approximations.",
-        "fences": [
-          {
-            "height": 3.6,
-            "coordinates": [
-              [
-                -77.73927659,
-                42.90351958
-              ],
-              [
-                -77.73929535,
-                42.90346653
-              ],
-              [
-                -77.73925245,
-                42.9034292
-              ],
-              [
-                -77.73916394,
-                42.90341152
-              ]
-            ]
-          },
-          {
-            "height": 1.55,
-            "openings": [
-              {
-                "width": 2.5,
-                "coordinates": [
-                  -77.73925245,
-                  42.90361192
-                ]
-              },
-              {
-                "width": 2.5,
-                "coordinates": [
-                  -77.73897886,
-                  42.90338401
-                ]
-              },
-              {
-                "width": 3.2,
-                "coordinates": [
-                  -77.73842901,
-                  42.90359031
-                ]
-              }
-            ],
-            "coordinates": [
-              [
-                -77.73927659,
-                42.90351958
-              ],
-              [
-                -77.73916394,
-                42.90394395
-              ],
-              [
-                -77.73837269,
-                42.90381232
-              ],
-              [
-                -77.73850143,
-                42.90331721
-              ],
-              [
-                -77.73916394,
-                42.90341152
-              ]
-            ]
-          }
-        ],
+        "source": "Esri World Imagery, data/avon-extended/satellite.jpg; fence, backstop and shelter positions hand traced 2026-09-13. Driving Park shelter finish and baseball emblems from user CleanShot 2026-09-13 14.30.45 photograph. Heights and small construction dimensions are model approximations. User correction 2026-09-21: the smallest school field has no perimeter fence or backstop.",
+        "fences": [],
         "dugouts": [
           {
             "angle": -1.509315,
@@ -767,13 +701,733 @@
               42.90339776
             ]
           }
+        ],
+        "surfaces": [
+          {
+            "role": "infield-dirt",
+            "coordinates": [
+              [
+                -77.739199721,
+                42.903460392
+              ],
+              [
+                -77.739188876,
+                42.903480483
+              ],
+              [
+                -77.739163779,
+                42.903488302
+              ],
+              [
+                -77.739129002,
+                42.903634761
+              ],
+              [
+                -77.739112625,
+                42.903685776
+              ],
+              [
+                -77.739083934,
+                42.90369625
+              ],
+              [
+                -77.739028462,
+                42.903694322
+              ],
+              [
+                -77.738955173,
+                42.903677388
+              ],
+              [
+                -77.738890873,
+                42.903652468
+              ],
+              [
+                -77.738840955,
+                42.903615575
+              ],
+              [
+                -77.738805425,
+                42.903565363
+              ],
+              [
+                -77.738786045,
+                42.903507238
+              ],
+              [
+                -77.738788054,
+                42.903465502
+              ],
+              [
+                -77.73880436,
+                42.903427956
+              ],
+              [
+                -77.73884391,
+                42.903394696
+              ],
+              [
+                -77.738920821,
+                42.903403585
+              ],
+              [
+                -77.739124648,
+                42.903442093
+              ],
+              [
+                -77.739153346,
+                42.903430271
+              ],
+              [
+                -77.739181945,
+                42.903437306
+              ]
+            ],
+            "color": "#bd9570"
+          },
+          {
+            "role": "infield-grass",
+            "coordinates": [
+              [
+                -77.73914052,
+                42.90348671
+              ],
+              [
+                -77.739109593,
+                42.903582024
+              ],
+              [
+                -77.739084438,
+                42.903600618
+              ],
+              [
+                -77.73894675,
+                42.903577621
+              ],
+              [
+                -77.738916418,
+                42.903559793
+              ],
+              [
+                -77.738934769,
+                42.903473776
+              ],
+              [
+                -77.738951025,
+                42.903445659
+              ],
+              [
+                -77.738985092,
+                42.903433893
+              ],
+              [
+                -77.739106681,
+                42.903455375
+              ]
+            ],
+            "color": "#739460"
+          },
+          {
+            "role": "pitching-mound",
+            "coordinates": [
+              [
+                -77.739003879,
+                42.903521324
+              ],
+              [
+                -77.73900429,
+                42.903518306
+              ],
+              [
+                -77.739005477,
+                42.903515413
+              ],
+              [
+                -77.739007393,
+                42.903512755
+              ],
+              [
+                -77.739009965,
+                42.903510435
+              ],
+              [
+                -77.739013094,
+                42.903508541
+              ],
+              [
+                -77.73901666,
+                42.903507147
+              ],
+              [
+                -77.739020525,
+                42.903506306
+              ],
+              [
+                -77.739024542,
+                42.90350605
+              ],
+              [
+                -77.739028555,
+                42.90350639
+              ],
+              [
+                -77.739032411,
+                42.903507312
+              ],
+              [
+                -77.739035962,
+                42.903508781
+              ],
+              [
+                -77.739039071,
+                42.90351074
+              ],
+              [
+                -77.739041618,
+                42.903513114
+              ],
+              [
+                -77.739043506,
+                42.903515812
+              ],
+              [
+                -77.739044661,
+                42.90351873
+              ],
+              [
+                -77.739045041,
+                42.903521756
+              ],
+              [
+                -77.73904463,
+                42.903524774
+              ],
+              [
+                -77.739043443,
+                42.903527667
+              ],
+              [
+                -77.739041527,
+                42.903530326
+              ],
+              [
+                -77.739038955,
+                42.903532645
+              ],
+              [
+                -77.739035826,
+                42.903534539
+              ],
+              [
+                -77.73903226,
+                42.903535933
+              ],
+              [
+                -77.739028395,
+                42.903536774
+              ],
+              [
+                -77.739024378,
+                42.90353703
+              ],
+              [
+                -77.739020365,
+                42.90353669
+              ],
+              [
+                -77.739016509,
+                42.903535768
+              ],
+              [
+                -77.739012958,
+                42.903534299
+              ],
+              [
+                -77.739009849,
+                42.90353234
+              ],
+              [
+                -77.739007302,
+                42.903529967
+              ],
+              [
+                -77.739005415,
+                42.903527268
+              ],
+              [
+                -77.739004259,
+                42.90352435
+              ]
+            ],
+            "color": "#bd9570"
+          }
+        ],
+        "pitcher": [
+          -77.73902446,
+          42.90352154
+        ],
+        "foulLengths": [
+          43,
+          48
+        ],
+        "playingSurfaceSource": "User feedback 2026-09-21: replace the solid brown smaller infields with grass-centered diamonds matching the larger school field. Large-field surface outlines scaled and oriented to the existing small-field bases; pitching patches centered on the existing pitching positions. Illustrative styling, not a new aerial survey."
+      },
+      "streamCoarse": true,
+      "bases": [
+        [
+          -77.739163935,
+          42.903458669
+        ],
+        [
+          -77.738943994,
+          42.903421339
+        ],
+        [
+          -77.738893032,
+          42.903582447
+        ],
+        [
+          -77.739112973,
+          42.903619776
         ]
-      }
+      ],
+      "infield": "grass"
+    },
+    {
+      "id": "avon-school-south-softball",
+      "name": "Avon school south softball field",
+      "kind": "pitch",
+      "sport": "baseball",
+      "closed": true,
+      "width": 4,
+      "tags": {},
+      "source": "Esri World Imagery z19, school grounds aerial inspected 2026-09-21 (42.902627586–42.908160072 N, 77.741317749–77.737197876 W). Dirt edges, grass island and pitching areas hand traced; base layout follows visible diamond orientation, with small marking positions approximated.",
+      "streamCoarse": true,
+      "coordinates": [
+        [
+          -77.739496529,
+          42.902653128
+        ],
+        [
+          -77.739306092,
+          42.902623656
+        ],
+        [
+          -77.739104927,
+          42.902623656
+        ],
+        [
+          -77.738919854,
+          42.902651163
+        ],
+        [
+          -77.738761604,
+          42.902692423
+        ],
+        [
+          -77.738624811,
+          42.902747435
+        ],
+        [
+          -77.738512158,
+          42.90282799
+        ],
+        [
+          -77.738434374,
+          42.902926227
+        ],
+        [
+          -77.738402188,
+          42.903028393
+        ],
+        [
+          -77.738412917,
+          42.903144313
+        ],
+        [
+          -77.739019096,
+          42.903266126
+        ],
+        [
+          -77.739222944,
+          42.903301491
+        ],
+        [
+          -77.739316821,
+          42.903256302
+        ],
+        [
+          -77.739367736,
+          42.903142348
+        ]
+      ],
+      "bases": [
+        [
+          -77.739220262,
+          42.903242549
+        ],
+        [
+          -77.739276588,
+          42.903081441
+        ],
+        [
+          -77.739056647,
+          42.903040182
+        ],
+        [
+          -77.73900032,
+          42.90320129
+        ]
+      ],
+      "baseball": {
+        "playingSurfaceSource": "User feedback 2026-09-21: replace the solid brown smaller infields with grass-centered diamonds matching the larger school field. Large-field surface outlines scaled and oriented to the existing small-field bases; pitching patches centered on the existing pitching positions. Illustrative styling, not a new aerial survey.",
+        "source": "Esri World Imagery z19, school grounds aerial inspected 2026-09-21 (42.902627586–42.908160072 N, 77.741317749–77.737197876 W). Dirt edges, grass island and pitching areas hand traced; base layout follows visible diamond orientation, with small marking positions approximated. User correction 2026-09-21: retain the backstop, with side fences along the two baselines only and an open outfield.",
+        "pitcher": [
+          -77.739134431,
+          42.903134489
+        ],
+        "foulLengths": [
+          63,
+          65
+        ],
+        "surfaces": [
+          {
+            "role": "infield-dirt",
+            "coordinates": [
+              [
+                -77.739217069,
+                42.903268863
+              ],
+              [
+                -77.739189745,
+                42.903260412
+              ],
+              [
+                -77.739179594,
+                42.903241748
+              ],
+              [
+                -77.738979382,
+                42.903212747
+              ],
+              [
+                -77.738909743,
+                42.903199506
+              ],
+              [
+                -77.73889603,
+                42.903178135
+              ],
+              [
+                -77.738899961,
+                42.903137328
+              ],
+              [
+                -77.738924898,
+                42.903083747
+              ],
+              [
+                -77.73896059,
+                42.903036972
+              ],
+              [
+                -77.739012381,
+                42.903001064
+              ],
+              [
+                -77.73908212,
+                42.902976061
+              ],
+              [
+                -77.739162346,
+                42.902963134
+              ],
+              [
+                -77.739219583,
+                42.90296558
+              ],
+              [
+                -77.739270738,
+                42.902978457
+              ],
+              [
+                -77.739315473,
+                42.903008352
+              ],
+              [
+                -77.739301492,
+                42.903064787
+              ],
+              [
+                -77.739243922,
+                42.903214
+              ],
+              [
+                -77.739259484,
+                42.903235409
+              ],
+              [
+                -77.739249167,
+                42.903256307
+              ]
+            ],
+            "color": "#bd9570"
+          },
+          {
+            "role": "infield-grass",
+            "coordinates": [
+              [
+                -77.739182317,
+                42.903224657
+              ],
+              [
+                -77.739052213,
+                42.903199674
+              ],
+              [
+                -77.739027275,
+                42.90318072
+              ],
+              [
+                -77.739062025,
+                42.903079853
+              ],
+              [
+                -77.739087197,
+                42.903057929
+              ],
+              [
+                -77.739204831,
+                42.903073434
+              ],
+              [
+                -77.739243045,
+                42.903086056
+              ],
+              [
+                -77.739258406,
+                42.903111416
+              ],
+              [
+                -77.739226109,
+                42.903200461
+              ]
+            ],
+            "color": "#739460"
+          },
+          {
+            "role": "pitching-mound",
+            "coordinates": [
+              [
+                -77.739135204,
+                42.903119338
+              ],
+              [
+                -77.739139336,
+                42.90311971
+              ],
+              [
+                -77.73914328,
+                42.903120651
+              ],
+              [
+                -77.739146883,
+                42.903122124
+              ],
+              [
+                -77.739150009,
+                42.903124071
+              ],
+              [
+                -77.739152536,
+                42.903126419
+              ],
+              [
+                -77.739154367,
+                42.903129078
+              ],
+              [
+                -77.739155432,
+                42.903131944
+              ],
+              [
+                -77.739155689,
+                42.903134908
+              ],
+              [
+                -77.73915513,
+                42.903137856
+              ],
+              [
+                -77.739153775,
+                42.903140674
+              ],
+              [
+                -77.739151677,
+                42.903143255
+              ],
+              [
+                -77.739148916,
+                42.903145499
+              ],
+              [
+                -77.739145598,
+                42.90314732
+              ],
+              [
+                -77.739141852,
+                42.903148648
+              ],
+              [
+                -77.739137821,
+                42.903149431
+              ],
+              [
+                -77.739133658,
+                42.903149641
+              ],
+              [
+                -77.739129526,
+                42.903149268
+              ],
+              [
+                -77.739125582,
+                42.903148327
+              ],
+              [
+                -77.739121978,
+                42.903146854
+              ],
+              [
+                -77.739118853,
+                42.903144907
+              ],
+              [
+                -77.739116326,
+                42.903142559
+              ],
+              [
+                -77.739114495,
+                42.9031399
+              ],
+              [
+                -77.73911343,
+                42.903137034
+              ],
+              [
+                -77.739113173,
+                42.90313407
+              ],
+              [
+                -77.739113732,
+                42.903131122
+              ],
+              [
+                -77.739115087,
+                42.903128304
+              ],
+              [
+                -77.739117185,
+                42.903125723
+              ],
+              [
+                -77.739119946,
+                42.903123479
+              ],
+              [
+                -77.739123263,
+                42.903121658
+              ],
+              [
+                -77.73912701,
+                42.903120331
+              ],
+              [
+                -77.739131041,
+                42.903119547
+              ]
+            ],
+            "color": "#bd9570"
+          }
+        ],
+        "fences": [
+          {
+            "height": 3.6,
+            "coordinates": [
+              [
+                -77.739319503,
+                42.903207184
+              ],
+              [
+                -77.739281952,
+                42.903281844
+              ],
+              [
+                -77.739222944,
+                42.903301491
+              ],
+              [
+                -77.73912102,
+                42.903281844
+              ]
+            ]
+          },
+          {
+            "height": 1.6,
+            "coordinates": [
+              [
+                -77.739319503,
+                42.903207184
+              ],
+              [
+                -77.739496529,
+                42.902653128
+              ]
+            ]
+          },
+          {
+            "height": 1.6,
+            "coordinates": [
+              [
+                -77.73912102,
+                42.903281844
+              ],
+              [
+                -77.738412917,
+                42.903144313
+              ]
+            ]
+          }
+        ],
+        "dugouts": [
+          {
+            "coordinates": [
+              -77.739319503,
+              42.903193431
+            ],
+            "angle": -1.82,
+            "length": 5.8,
+            "depth": 2.05,
+            "style": "school"
+          },
+          {
+            "coordinates": [
+              -77.739099562,
+              42.903293632
+            ],
+            "angle": 2.891593,
+            "length": 5.8,
+            "depth": 2.05,
+            "style": "school"
+          }
+        ]
+      },
+      "infield": "grass"
     },
     {
       "id": 133759508,
       "kind": "pitch",
-      "name": null,
+      "name": "Avon school baseball field",
       "sport": "baseball",
       "closed": true,
       "width": 4,
@@ -919,8 +1573,297 @@
               42.90453926
             ]
           }
+        ],
+        "surfaces": [
+          {
+            "role": "infield-dirt",
+            "coordinates": [
+              [
+                -77.740164399,
+                42.904674821
+              ],
+              [
+                -77.740148306,
+                42.904704291
+              ],
+              [
+                -77.740110755,
+                42.904716079
+              ],
+              [
+                -77.740059793,
+                42.904930229
+              ],
+              [
+                -77.740035653,
+                42.905004887
+              ],
+              [
+                -77.739992738,
+                42.905020604
+              ],
+              [
+                -77.739909589,
+                42.90501864
+              ],
+              [
+                -77.739799619,
+                42.904995063
+              ],
+              [
+                -77.739703059,
+                42.904959699
+              ],
+              [
+                -77.739627957,
+                42.904906653
+              ],
+              [
+                -77.739574313,
+                42.90483396
+              ],
+              [
+                -77.739544809,
+                42.904749479
+              ],
+              [
+                -77.739547491,
+                42.904688574
+              ],
+              [
+                -77.739571631,
+                42.904633562
+              ],
+              [
+                -77.73963064,
+                42.904584445
+              ],
+              [
+                -77.739745975,
+                42.904596233
+              ],
+              [
+                -77.740051746,
+                42.90464928
+              ],
+              [
+                -77.740094662,
+                42.904631598
+              ],
+              [
+                -77.740137577,
+                42.904641421
+              ]
+            ],
+            "color": "#bd9570"
+          },
+          {
+            "role": "infield-grass",
+            "coordinates": [
+              [
+                -77.740075886,
+                42.904714114
+              ],
+              [
+                -77.740030289,
+                42.904853607
+              ],
+              [
+                -77.739992738,
+                42.904881112
+              ],
+              [
+                -77.739786208,
+                42.904849677
+              ],
+              [
+                -77.73974061,
+                42.904824137
+              ],
+              [
+                -77.739767432,
+                42.904698397
+              ],
+              [
+                -77.739791572,
+                42.904657139
+              ],
+              [
+                -77.739842534,
+                42.904639456
+              ],
+              [
+                -77.740024924,
+                42.904668927
+              ]
+            ],
+            "color": "#739460"
+          },
+          {
+            "role": "pitching-mound",
+            "coordinates": [
+              [
+                -77.739889473,
+                42.904753408
+              ],
+              [
+                -77.739890065,
+                42.904749
+              ],
+              [
+                -77.739891821,
+                42.904744762
+              ],
+              [
+                -77.739894671,
+                42.904740856
+              ],
+              [
+                -77.739898507,
+                42.904737432
+              ],
+              [
+                -77.739903181,
+                42.904734622
+              ],
+              [
+                -77.739908514,
+                42.904732534
+              ],
+              [
+                -77.7399143,
+                42.904731248
+              ],
+              [
+                -77.739920318,
+                42.904730814
+              ],
+              [
+                -77.739926336,
+                42.904731248
+              ],
+              [
+                -77.739932122,
+                42.904732534
+              ],
+              [
+                -77.739937455,
+                42.904734622
+              ],
+              [
+                -77.739942129,
+                42.904737432
+              ],
+              [
+                -77.739945965,
+                42.904740856
+              ],
+              [
+                -77.739948816,
+                42.904744762
+              ],
+              [
+                -77.739950571,
+                42.904749
+              ],
+              [
+                -77.739951164,
+                42.904753408
+              ],
+              [
+                -77.739950571,
+                42.904757816
+              ],
+              [
+                -77.739948816,
+                42.904762054
+              ],
+              [
+                -77.739945965,
+                42.904765961
+              ],
+              [
+                -77.739942129,
+                42.904769384
+              ],
+              [
+                -77.739937455,
+                42.904772194
+              ],
+              [
+                -77.739932122,
+                42.904774282
+              ],
+              [
+                -77.739926336,
+                42.904775568
+              ],
+              [
+                -77.739920318,
+                42.904776002
+              ],
+              [
+                -77.7399143,
+                42.904775568
+              ],
+              [
+                -77.739908514,
+                42.904774282
+              ],
+              [
+                -77.739903181,
+                42.904772194
+              ],
+              [
+                -77.739898507,
+                42.904769384
+              ],
+              [
+                -77.739894671,
+                42.904765961
+              ],
+              [
+                -77.739891821,
+                42.904762054
+              ],
+              [
+                -77.739890065,
+                42.904757816
+              ]
+            ],
+            "color": "#bd9570"
+          }
+        ],
+        "pitcher": [
+          -77.739920318,
+          42.904753408
+        ],
+        "foulLengths": [
+          92,
+          91
+        ],
+        "playingSurfaceSource": "Esri World Imagery z19, school grounds aerial inspected 2026-09-21 (42.902627586–42.908160072 N, 77.741317749–77.737197876 W). Dirt edges, grass island and pitching areas hand traced; base layout follows visible diamond orientation, with small marking positions approximated."
+      },
+      "streamCoarse": true,
+      "bases": [
+        [
+          -77.740110755,
+          42.904672856
+        ],
+        [
+          -77.739780843,
+          42.904621774
+        ],
+        [
+          -77.739711106,
+          42.904859501
+        ],
+        [
+          -77.740035653,
+          42.904908618
         ]
-      }
+      ],
+      "infield": "grass"
     },
     {
       "id": 134399651,
@@ -1154,106 +2097,6 @@
             "coordinates": [
               -77.7646637,
               42.90649409
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": 140641618,
-      "kind": "pitch",
-      "name": null,
-      "sport": "baseball",
-      "closed": true,
-      "width": 4,
-      "tags": {},
-      "source": "https://www.openstreetmap.org/way/140641618",
-      "coordinates": [
-        [
-          -77.7384031,
-          42.9041016
-        ],
-        [
-          -77.7380418,
-          42.9040431
-        ],
-        [
-          -77.738121,
-          42.9037806
-        ],
-        [
-          -77.7383414,
-          42.9038163
-        ],
-        [
-          -77.7384823,
-          42.9038391
-        ]
-      ],
-      "baseball": {
-        "source": "Esri World Imagery, data/avon-extended/satellite.jpg; fence, backstop and shelter positions hand traced 2026-09-13. Driving Park shelter finish and baseball emblems from user CleanShot 2026-09-13 14.30.45 photograph. Heights and small construction dimensions are model approximations.",
-        "use": "mapped practice enclosure; no visible base diamond",
-        "fences": [
-          {
-            "height": 1.25,
-            "openings": [
-              {
-                "width": 3,
-                "coordinates": [
-                  -77.73822245,
-                  42.90407235
-                ]
-              }
-            ],
-            "coordinates": [
-              [
-                -77.7384031,
-                42.9041016
-              ],
-              [
-                -77.7380418,
-                42.9040431
-              ],
-              [
-                -77.738121,
-                42.9037806
-              ],
-              [
-                -77.7383414,
-                42.9038163
-              ],
-              [
-                -77.7384823,
-                42.9038391
-              ],
-              [
-                -77.7384031,
-                42.9041016
-              ]
-            ]
-          }
-        ],
-        "dugouts": [
-          {
-            "angle": 2.924024,
-            "length": 4.5,
-            "depth": 1.8,
-            "height": 1.95,
-            "style": "practice",
-            "coordinates": [
-              -77.73821716,
-              42.9040899
-            ]
-          },
-          {
-            "angle": 1.353327,
-            "length": 4.5,
-            "depth": 1.8,
-            "height": 1.95,
-            "style": "practice",
-            "coordinates": [
-              -77.73805745,
-              42.90390797
             ]
           }
         ]
@@ -4011,7 +4854,7 @@
     {
       "id": "avon-high-school-monument-sign",
       "kind": "school-sign",
-      "name": "Avon High School \u2014 Home of the Braves",
+      "name": "Avon High School — Home of the Braves",
       "closed": false,
       "coordinates": [
         [
@@ -4035,7 +4878,7 @@
         ]
       ],
       "angle": 1.314,
-      "source": "User entrance photo 2026-09-13; anchored to south_classrooms main entrance and mapped footway 249547678 (u\u2248-60,v81.1..114.7), visible in cached Esri aerial. Beds, planters and ornamental trees are photo estimates. The northern library-side entrance and other campus buildings are preserved.",
+      "source": "User entrance photo 2026-09-13; anchored to south_classrooms main entrance and mapped footway 249547678 (u≈-60,v81.1..114.7), visible in cached Esri aerial. Beds, planters and ornamental trees are photo estimates. The northern library-side entrance and other campus buildings are preserved.",
       "thresholdLift": 0.24,
       "replacesRoadIds": [
         249547678
@@ -4072,7 +4915,7 @@
     {
       "id": "avon-school-corn-north",
       "kind": "cropland",
-      "name": "Corn field east of Avon High School \u2014 north",
+      "name": "Corn field east of Avon High School — north",
       "closed": true,
       "crop": {
         "type": "corn",
@@ -4135,7 +4978,7 @@
     {
       "id": "avon-school-corn-southwest",
       "kind": "cropland",
-      "name": "Corn field east of Avon High School \u2014 southwest",
+      "name": "Corn field east of Avon High School — southwest",
       "closed": true,
       "crop": {
         "type": "corn",
@@ -4258,7 +5101,7 @@
     {
       "id": "avon-school-corn-east",
       "kind": "cropland",
-      "name": "Corn field east of Avon High School \u2014 east",
+      "name": "Corn field east of Avon High School — east",
       "closed": true,
       "crop": {
         "type": "corn",
@@ -4706,7 +5549,7 @@
     {
       "id": "avon-driving-park-corn-north",
       "kind": "cropland",
-      "name": "Field north of Avon Driving Park \u2014 north",
+      "name": "Field north of Avon Driving Park — north",
       "closed": true,
       "crop": {
         "type": "corn",
@@ -4885,7 +5728,7 @@
     {
       "id": "avon-driving-park-corn-northeast",
       "kind": "cropland",
-      "name": "Field north of Avon Driving Park \u2014 northeast",
+      "name": "Field north of Avon Driving Park — northeast",
       "closed": true,
       "crop": {
         "type": "corn",
@@ -5052,7 +5895,7 @@
     {
       "id": "avon-driving-park-corn-spring-west",
       "kind": "cropland",
-      "name": "Field north of Avon Driving Park \u2014 spring-west",
+      "name": "Field north of Avon Driving Park — spring-west",
       "closed": true,
       "crop": {
         "type": "corn",
@@ -5115,7 +5958,7 @@
     {
       "id": "avon-driving-park-corn-spring-west-small",
       "kind": "cropland",
-      "name": "Field north of Avon Driving Park \u2014 spring-west-small",
+      "name": "Field north of Avon Driving Park — spring-west-small",
       "closed": true,
       "crop": {
         "type": "corn",
@@ -5158,7 +6001,7 @@
     {
       "id": "avon-driving-park-corn-spring-east",
       "kind": "cropland",
-      "name": "Field north of Avon Driving Park \u2014 spring-east",
+      "name": "Field north of Avon Driving Park — spring-east",
       "closed": true,
       "crop": {
         "type": "corn",

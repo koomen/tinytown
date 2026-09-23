@@ -39,6 +39,11 @@ def authored_features(site, path):
             # Keys the survey leaves out stay out (the renderer treats absent and
             # empty alike, and the authored overrides were generated that way).
             baseball = dict(f['baseball'])
+            if baseball.get('surfaces'):
+                baseball['surfaces'] = [dict(surface, pts=[project(p) for p in surface['coordinates']])
+                                        for surface in baseball['surfaces']]
+            if baseball.get('pitcher'):
+                baseball['pitcher'] = project(baseball['pitcher'])
             if baseball.get('fences'):
                 fences = []
                 for raw_fence in baseball['fences']:

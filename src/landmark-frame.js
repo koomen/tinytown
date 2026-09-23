@@ -11,6 +11,8 @@ export function shiftLandmark(feature, dx, dz) {
   if (feature.equipment) result.equipment = feature.equipment.map(e =>
     ({...e, ...(e.position ? {position: point(e.position)} : {})}));
   if (feature.baseball) result.baseball = {...feature.baseball,
+    ...(feature.baseball.surfaces ? {surfaces: feature.baseball.surfaces.map(s => ({...s, pts: s.pts.map(point)}))} : {}),
+    ...(feature.baseball.pitcher ? {pitcher: point(feature.baseball.pitcher)} : {}),
     fences: (feature.baseball.fences || []).map(f => ({...f, pts: f.pts.map(point),
       ...(f.openings ? {openings: openings(f.openings)} : {})})),
     dugouts: (feature.baseball.dugouts || []).map(d => ({...d, position: point(d.position)})),
