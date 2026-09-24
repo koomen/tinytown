@@ -11,17 +11,27 @@ behaviour; the pipeline that produces the data is in [pipeline.md](pipeline.md).
 The rendering is layered to get a soft, cozy, miniature feel in the spirit of
 Tiny Glade / Islands & Trains:
 
-- a pale blue gradient sky dome that also lights the scene (PMREM environment)
-  plus one warm, low sun with blurred VSM shadows. VSM needs `shadow.bias = 0`;
+- a soft blue gradient sky dome, warming to cream at the horizon, that also
+  lights the scene (PMREM environment) plus one honeyed late-afternoon sun
+  with blurred VSM shadows. VSM needs `shadow.bias = 0`;
   a large negative bias removes shadows. Shadow coverage follows the visible
   neighbourhood with room for offscreen casters; small pans reuse the cached
   shadow map (`shadowMap.autoUpdate = false`), larger pans, zoom changes,
   streamed geometry and day/night changes refresh it.
-- a cool sky fill against the gold sun, so shadows drift blue rather than grey,
-  and fresh, vivid lawn and foliage greens.
+- a runtime look layer (`src/look.js`) chained onto every lit material at
+  compile time, from albedo, world normal and world position alone, so it
+  never touches baked geometry and is excluded from the stream fingerprint:
+  indirect light is part desaturated and tinted teal-lavender, so shade reads
+  as cool colour rather than a louder green or a grey hole; greens get broad
+  meadow drifts, a mown patchwork and crowns that warm toward the sky and cool
+  underneath; near-black albedo (shingles, trim) lifts to slate; grey paving
+  gets a faint neutral patina so warm asphalt never turns mauve in the sun;
+  water leans teal; instanced vegetation sways a few centimetres in a light
+  wind while the viewer is awake. Tunable live via `window.__town.look`.
 - post-processing: GTAO ambient occlusion, tilt-shift depth of field whose focus
-  and blur scale track the camera, bloom on lamps and windows, ACES tone
-  mapping, then a grade: a little saturation and contrast, a split tone
+  and blur scale track the camera, bloom on lamps and windows, Neutral tone
+  mapping (ACES pushed greens toward neon and roofs toward black), then a
+  grade: a little saturation and contrast, a split tone
   (shadows lifted and cooled, highlights warmed), fine animated film grain and
   a warm vignette.
 - a faint world-space grain baked into the shared materials (`grainy` in

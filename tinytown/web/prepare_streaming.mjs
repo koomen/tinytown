@@ -26,7 +26,7 @@ async function fingerprints() {
   const available = await readdir(join(root, 'src'));
   // Include all generator helpers without relying on the list staying current.
   for (const file of available) if (file.endsWith('.js') && !['main.js','site-data.js','streaming.js',
-    'stream-policy.js','stream-debug.js','stream-loader.js','stream-worker.js','bootstrap.js','isocontrols.js','quality.js','context-recovery.js','render-loop.js','loading-progress.js','lighting.js'].includes(file)) {
+    'stream-policy.js','stream-debug.js','stream-loader.js','stream-worker.js','bootstrap.js','isocontrols.js','quality.js','context-recovery.js','render-loop.js','loading-progress.js','lighting.js','look.js'].includes(file)) {
     if (!sources.includes(file)) sources.push(file);
   }
   const files = Object.fromEntries(sources.filter(f=>available.includes(f)).map(f=>['src/'+f, join(root,'src',f)]));

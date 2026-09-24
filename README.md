@@ -62,9 +62,10 @@ capture and the Three.js CDN.
 
 ## The look
 
-A pale sky dome lights the scene alongside one warm, low sun with soft VSM
-shadows; GTAO, tilt-shift depth of field, bloom, ACES and a split-tone grade
-finish the frame. Materials are procedural (brick, stone, siding, shingles)
+A soft sky dome lights the scene alongside one honeyed, low sun with soft VSM
+shadows; a runtime look layer (`src/look.js`) cools the shade toward teal,
+lets lawns and crowns drift in hue and sways the trees; GTAO, tilt-shift depth
+of field, bloom, Neutral tone mapping and a split-tone grade finish the frame. Materials are procedural (brick, stone, siding, shingles)
 with a faint world-space grain so flat vertex colour reads as plaster, asphalt
 or turf. Trees are gently lobed canopies wearing hundreds of small leaf dabs
 that light as one soft ball. Roads are coloured by where they are, never by

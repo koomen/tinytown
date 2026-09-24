@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { P } from './palette.js';
 
 // Shared by the batched glass shaders, lamp halos, and pools of lamplight.
 // Changing time of day never rebuilds geometry or recompiles a material.
@@ -51,13 +50,13 @@ export function createNightSpotlights(scene,limit=4) {
 }
 
 export const DAY = {
-  zenith: P.skyZenith, horizon: P.skyHorizon, ground: P.skyGround, haze: P.haze,
-  // Clear daylight: direct sun carries the scene, with cool sky light in shade.
-  // Keep whites bright without washing the shaded faces and lawns in bloom.
-  key: 0xffecd0, keyIntensity: 3.6, sky: 0xb2cff4, bounce: 0xb59a78,
-  fill: 0.26, environment: 0.30, exposure: 1.0,
-  bloom: 0.08, threshold: 1.0, saturation: 1.09, contrast: 1.07, lift: 0.008,
-  shadowRadius: 2.5, shadowRadiusMobile: 1,
+  zenith: 0x7fb6e6, horizon: 0xf2e6d6, ground: 0xd9dfd6, haze: 0xe4e3d8,
+  // Late-afternoon sun: a honeyed key and a generous lavender sky in the
+  // shade, so shadows read as cool colour rather than grey holes.
+  key: 0xffe4bc, keyIntensity: 3.6, sky: 0xb4c6ee, bounce: 0xbfa582,
+  fill: 0.46, environment: 0.34, exposure: 1.0,
+  bloom: 0.16, threshold: 0.92, saturation: 1.05, contrast: 1.06, lift: 0.02,
+  shadowRadius: 4, shadowRadiusMobile: 1.5,
 };
 export const NIGHT_SCENE = {
   zenith: 0x111b38, horizon: 0x374461, ground: 0x19253b, haze: 0x202f4b,

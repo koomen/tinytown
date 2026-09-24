@@ -21,12 +21,12 @@ import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { takeSurfaceAsset } from './site-data.js';
 import { loadingProgress } from './loading-progress.js';
-import { P } from './palette.js';
 import { GRAIN } from './kit.js';
 import { params, siteName, siteRequest, streamEnabled, streamDirectory } from './site-data.js';
 import { renderQuality } from './quality.js';
 import { installContextRecovery } from './context-recovery.js';
 import { createLighting, DAY, NIGHT_SCENE } from './lighting.js';
+import { applyLook, LOOK } from './look.js';
 
 const T0 = performance.now(); // module start (after imports resolved)
 const timing = { moduleStart: Math.round(T0) };
@@ -51,8 +51,10 @@ renderer.shadowMap.type = THREE.VSMShadowMap;
 // Each frame renders the scene several times (main, GTAO normals, bokeh depth);
 // those passes can all reuse the same shadow map.
 renderer.shadowMap.autoUpdate = false;
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 0.94;
+// Neutral keeps the pastel hues of a painted toy; ACES pushed greens toward
+// neon and roofs toward black.
+renderer.toneMapping = THREE.NeutralToneMapping;
+renderer.toneMappingExposure = DAY.exposure;
 container.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
@@ -97,9 +99,9 @@ renderer.domElement.addEventListener('wheel', wakeRendering, { passive: true });
 // One gradient shader serves both the visible dome and the environment map.
 
 const skyUniforms = {
-  zenith: { value: new THREE.Color(P.skyZenith) },
-  horizon: { value: new THREE.Color(P.skyHorizon) },
-  ground: { value: new THREE.Color(P.skyGround) },
+  zenith: { value: new THREE.Color(DAY.zenith) },
+  horizon: { value: new THREE.Color(DAY.horizon) },
+  ground: { value: new THREE.Color(DAY.ground) },
   sunDir: { value: new THREE.Vector3(0.6, 0.5, 0.3).normalize() },
   nightAmount: { value: 0 },
 };
@@ -154,9 +156,7 @@ const environments = {};
   for (const key of ['zenith', 'horizon', 'ground']) skyUniforms[key].value.set(NIGHT_SCENE[key]);
   skyUniforms.nightAmount.value = 1;
   environments.night = pmrem.fromScene(envScene, 0.02).texture;
-  skyUniforms.zenith.value.set(P.skyZenith);
-  skyUniforms.horizon.value.set(P.skyHorizon);
-  skyUniforms.ground.value.set(P.skyGround);
+  for (const key of ['zenith', 'horizon', 'ground']) skyUniforms[key].value.set(DAY[key]);
   skyUniforms.nightAmount.value = 0;
   scene.environment = environments.day;
   scene.environmentIntensity = DAY.environment;
@@ -165,7 +165,7 @@ const environments = {};
   pmrem.dispose();
 }
 
-scene.fog = new THREE.Fog(P.haze, 120, 320);
+scene.fog = new THREE.Fog(DAY.haze, 120, 320);
 
 // --- Lights ---------------------------------------------------------------
 
@@ -405,6 +405,7 @@ async function build() {
     street = await generateSite(siteData, siteData.seed ?? siteName, {
       trees: !params.has('notrees'), onStage: stageDone, memoryOptimized: quality.memoryOptimized, surfaceAsset,
     });
+    applyLook(street.group);
   }
   timing.build = Math.round(performance.now() - tb);
   console.log("build profile (ms):", street.prof.map(([n, t]) => `${n} ${t}`).join(" · "));
@@ -691,6 +692,7 @@ function render(dt = 0) {
   scene.fog.far = Math.max(dist * 2.6, dist + 150);
   animateSmoke(dt, animationTime);
   vignette.uniforms.time.value = animationTime % 60;
+  LOOK.time.value = animationTime % 3600;
   composer.render();
 }
 // Draw the base immediately and repaint as opening regions arrive, so the
@@ -719,4 +721,4 @@ progress(1);
 loadingDone();
 
 // Handy for poking at the scene from the console
-window.__town = { scene, camera, renderer, composer, controls, sun, hemi, gtao, bokeh, bloom, vignette, lighting, grain: GRAIN, quality, renderLoop, build, frameCamera, lookAtBuilding, get siteData() { return siteData; }, get street() { return street; }, get streaming() { return streaming; }, timing };
+window.__town = { scene, camera, renderer, composer, controls, sun, hemi, gtao, bokeh, bloom, vignette, lighting, look: LOOK, grain: GRAIN, quality, renderLoop, build, frameCamera, lookAtBuilding, get siteData() { return siteData; }, get street() { return street; }, get streaming() { return streaming; }, timing };

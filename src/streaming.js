@@ -5,6 +5,7 @@ import { selectDetailTiles, detailVisible, groundSampler } from './stream-policy
 import { surfaceMaterial } from './materials.js';
 import { grainy } from './kit.js';
 import { restoreCornSpriteMaterial } from './corn-sprites.js';
+import { applyLook } from './look.js';
 
 const MiB = 1024*1024;
 // Tiles own their instance buffers, materials, textures and ordinary geometry.
@@ -37,6 +38,7 @@ async function decode(bytes,rawBytes,options,sharedGeometries={}) {
       } else if(m.vertexColors || o.isInstancedMesh) grainy(m);
     }
   });
+  applyLook(group);
   const byId=new Map();group.traverse(o=>byId.set(o.uuid,o));
   const smokes=(json.smokes||[]).map(e=>({...e,puffs:e.puffs.map(p=>({...p,mesh:byId.get(p.uuid)}))}));
   return {group,info:json.info,smokes};

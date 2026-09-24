@@ -173,9 +173,13 @@ try {
     const count=checkSurfaceBaking();
     const programs=window.__town.renderer.info.programs;
     if(programs.some(p => p.diagnostics?.runnable===false)) throw new Error('Scene shader failed to compile');
+    const unstyled=new Set();
+    window.__town.street.group.traverse(o=>{for(const m of [].concat(o.material||[]))
+      if(m.isMeshStandardMaterial && !m.userData.cornSprite && !m.userData.look)unstyled.add(m.type+':'+(m.userData.surface||''));});
+    if(unstyled.size) throw new Error('Lit materials missing the look layer: '+[...unstyled].join(', '));
     return count;
   })()`);
-  console.log(`PASS joined street surfaces, pub/spa sidewalk heights, surface shaders, pane batching (${surfaces} batches), and entrance alignment`);
+  console.log(`PASS joined street surfaces, pub/spa sidewalk heights, surface shaders and look layer, pane batching (${surfaces} batches), and entrance alignment`);
   const framing = await p.evaluate(`(() => {
     const {controls, camera} = window.__town;
     const initial = camera.position.distanceTo(controls.target);
