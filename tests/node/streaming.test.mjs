@@ -67,6 +67,24 @@ test('overlapping neighbors cannot consume the mobile budget before the focused 
   assert.deepEqual(selectDetailTiles(tiles,{budgetBytes:12,maxTiles:6}),[],'focus priority cannot exceed the memory budget');
 });
 
+test('overlapping bounds prefer the nearer center regardless of arrival order or residency',()=>{
+  // At the firehouse frontage (2, 95), all three bounds contain the target.
+  // The 40 MiB phone budget fits either neighbor beside the focused tile,
+  // but not both. Keeping the old neighbor would hide the garage doors.
+  const tiles=[
+    {id:'-1_0',distance:0,centerDistance:76,visible:true,memoryBytes:21.27},
+    {id:'-1_1',distance:0,centerDistance:70,visible:true,memoryBytes:13.77},
+    {id:'0_0',distance:0,centerDistance:62,visible:true,focused:true,memoryBytes:6.51},
+  ];
+  for(let mask=0;mask<8;mask++) {
+    const candidates=tiles.map((t,i)=>({...t,resident:!!(mask&(1<<i))}));
+    for(const order of [candidates,[...candidates].reverse()]) {
+      assert.deepEqual(selectDetailTiles(order,{budgetBytes:40,maxTiles:6}),['0_0','-1_1']);
+      assert.deepEqual(selectDetailTiles(order,{budgetBytes:80,maxTiles:12}),['0_0','-1_1','-1_0']);
+    }
+  }
+});
+
 const projectionScale=1/Math.tan(26*Math.PI/360);
 const detailAt=(distance,focusDistance=0,resident=false,scale=projectionScale)=>detailVisible({
   cameraDepth:distance,viewDistance:distance,focusDistance,resident,projectionScale:scale,

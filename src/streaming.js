@@ -232,7 +232,9 @@ export async function loadStreamedSite(manifest,directory,{mobile=false,changed,
         }
         t.box.clampPoint(focus,point);
         const near=Math.hypot(point.x-focus.x,point.z-focus.z);
-        t.box.getCenter(point).applyMatrix4(camera.matrixWorldInverse);
+        t.box.getCenter(point);
+        const centerDistance=Math.hypot(point.x-focus.x,point.z-focus.z);
+        point.applyMatrix4(camera.matrixWorldInverse);
         t.box.getSize(extent).multiplyScalar(.5);
         const view=camera.matrixWorldInverse.elements;
         const depthRadius=Math.abs(view[2])*extent.x+Math.abs(view[6])*extent.y+Math.abs(view[10])*extent.z;
@@ -240,7 +242,7 @@ export async function loadStreamedSite(manifest,directory,{mobile=false,changed,
           cameraDepth:-point.z,depthRadius,projectionScale:camera.projectionMatrix.elements[5],
           focusDistance:near,viewDistance:distance,resident:resident.has(t.id),
         });
-        return {...t,visible,distance:near+1,focused:t.id===focusTileId,resident:resident.has(t.id)};
+        return {...t,visible,distance:near,centerDistance,focused:t.id===focusTileId,resident:resident.has(t.id)};
       });
       desired=selectDetailTiles(candidates,{budgetBytes,maxTiles});
       desiredRegions=[...new Set(candidates.filter(t=>visibleSectors.includes(t.id)).sort((a,b)=>a.distance-b.distance)

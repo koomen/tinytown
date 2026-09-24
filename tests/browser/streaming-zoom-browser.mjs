@@ -24,15 +24,20 @@ await withBrowser(root,async page=>{
     await page.send('Emulation.setDeviceMetricsOverride',{width:mobile?390:1440,height:mobile?844:960,
       deviceScaleFactor:mobile?2:1,mobile});
     await page.go('/?site=avon-extended&time=day&quality='+(mobile?'mobile':'desktop'));await ready();
+    // Portrait framing widens the vertical FOV. Compare equal projected
+    // sector sizes instead of expecting the same metre cutoff in both views.
+    const zoomScale=await page.evaluate('__town.camera.projectionMatrix.elements[5]')*Math.tan(13*Math.PI/180);
     const samples=[];
     for(const distance of [600,740,760,1000,1200,1400,1600,1800,2000,2200,2600]) {
-      await move(distance);await ready();
+      await move(distance*zoomScale);await ready();
       const state=await page.evaluate(`(()=>{
         const w=__town,s=w.streaming.stats,coarse=w.street.group.getObjectByName('stream-coarse');
+        const sectors=s.totalRegions?coarse.children.flatMap(region=>region.children):coarse.children;
         return {...s,distance:w.controls.distance,lost:w.renderer.getContext().isContextLost(),
-          coarseVisibilityCorrect:coarse.children.every(o=>o.visible===(s.visibleSectors.includes(o.name)&&!s.resident.includes(o.name)))};
+          coarseVisibilityCorrect:sectors.every(o=>o.visible===(s.visibleSectors.includes(o.name)&&!s.resident.includes(o.name)))};
       })()`);
-      assert.ok(Math.abs(state.distance-distance)<.01);
+      state.referenceDistance=distance;
+      assert.ok(Math.abs(state.distance-distance*zoomScale)<.01);
       assert.equal(state.lost,false);assert.deepEqual(state.failures,[]);
       assert.ok(state.residentBytes<=state.budgetBytes && state.cacheBytes<=state.cacheBudgetBytes);
       assert.ok(state.resident.length<=(mobile?6:12));
@@ -47,12 +52,12 @@ await withBrowser(root,async page=>{
       }
     }
     assert.deepEqual(samples[2].resident,samples[1].resident,'crossing the former cutoff keeps the same detail');
-    assert.ok(new Set(samples.filter(s=>s.distance>=1000).map(s=>s.resident.length)).size>=3,
+    assert.ok(new Set(samples.filter(s=>s.referenceDistance>=1000).map(s=>s.resident.length)).size>=3,
       'detail falls away in several sector steps instead of all at once');
-    await move(1000);await ready();
+    await move(1000*zoomScale);await ready();
     const restored=await page.evaluate('__town.streaming.stats');
     assert.ok(restored.resident.length>0 && restored.loads>samples.at(-1).loads,'zooming back restores detail');
-    for(const distance of [1005,995,1000]) {await move(distance);await ready();}
+    for(const distance of [1005,995,1000]) {await move(distance*zoomScale);await ready();}
     assert.equal(await page.evaluate('__town.streaming.stats.loads'),restored.loads,'small zoom reversals avoid reloading');
     results.push({mobile,samples});
     console.log('PASS extended zoom',JSON.stringify({mobile,samples:samples.map(s=>({distance:s.distance,
