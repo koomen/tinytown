@@ -9,21 +9,32 @@ implementation and `./town author --help` the option list.
 
 ## Requirements
 
-Authoring is the only stage that needs a model. It shells out to the OpenAI
-Codex CLI (`codex exec`), so `codex` must be installed and logged in
-(`codex login`); credentials stay in `CODEX_HOME` (default `~/.codex`) and are
-never read or copied. Model aliases come from `tinytown/model.py`:
+Authoring is the only stage that needs a model. Two providers are supported,
+chosen per role by the model name (`tinytown/model.py`):
 
-| Alias | Model | Default role |
-| --- | --- | --- |
-| `astra` | `gpt-6-astra` | author and repairs (`--author-model`) |
-| `sol` | `gpt-5.6-sol` | building review, scene critique, baseline comparison (`--reviewer-model`) |
-| `terra`, `luna` | `gpt-5.6-terra`, `gpt-5.6-luna` | alternatives; any literal model id also works |
+- **OpenAI** through the Codex CLI (`codex exec`): `codex` must be installed
+  and logged in (`codex login`); credentials stay in `CODEX_HOME` (default
+  `~/.codex`) and are never read or copied. `--codex PATH` selects another binary.
+- **Anthropic** through the Messages API: `pip install -e '.[anthropic]'` and
+  `ANTHROPIC_API_KEY` in the environment (read by the SDK, never logged).
 
-Each call is a fresh, non-interactive session with the model's tools disabled,
-the images attached and a strict JSON schema for the response. Token usage is
-measured from the CLI's event stream, never estimated. `--codex PATH` selects
-another binary; a different backend can register itself in `model.BACKENDS`.
+| Alias | Model | Provider | Default role |
+| --- | --- | --- | --- |
+| `astra` | `gpt-6-astra` | OpenAI | author and repairs (`--author-model`) |
+| `sol` | `gpt-5.6-sol` | OpenAI | building review, scene critique, baseline comparison (`--reviewer-model`) |
+| `terra`, `luna` | `gpt-5.6-terra`, `gpt-5.6-luna` | OpenAI | alternatives |
+| `opus` | `claude-opus-5-5` | Anthropic | alternative author or reviewer |
+| `sonnet`, `fable`, `haiku` | `claude-sonnet-5`, `claude-fable-5-1`, `claude-haiku-4-5-20251001` | Anthropic | alternatives |
+
+Any literal model id also works; ids starting `claude-` go to Anthropic. Roles
+can mix providers, e.g. `--author-model opus --reviewer-model sol`; a reviewer
+from a different model family is less inclined to approve its own style.
+
+Each call is a fresh, non-interactive request with no tools, the images
+attached and a strict JSON schema for the response. Token usage is measured
+from the provider's reports, never estimated. The kit and style examples are
+sent as a cacheable prompt prefix (Anthropic prompt caching; Codex receives the
+joined text). A different backend can register itself in `model.BACKENDS`.
 
 It also needs the private headless browser (`./town browser setup`) for Street
 View capture and renders, network access, and the `pillow` and

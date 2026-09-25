@@ -7,10 +7,14 @@ Standard library only.
 
 Requirements
 ------------
-Authoring needs the OpenAI Codex CLI installed and logged in (`codex login`).
-Nothing here copies or reads API keys: the CLI holds its own credentials under
-`CODEX_HOME` (default `~/.codex`). `town build`/`town stage` never import this
-module, so a deploy machine does not need Codex.
+Codex models (`astra`, `sol`, `terra`, `luna`, any other literal id) need the
+OpenAI Codex CLI installed and logged in (`codex login`); the CLI holds its own
+credentials under `CODEX_HOME` (default `~/.codex`). Anthropic models (`opus`,
+`sonnet`, `fable`, `haiku`, any literal `claude-*` id) need the `anthropic`
+package (`pip install -e '.[anthropic]'`) and credentials the SDK resolves
+itself (`ANTHROPIC_API_KEY`, `ANTHROPIC_AUTH_TOKEN` or an `ant auth login`
+profile). Nothing here reads, copies or logs a key. `town build`/`town stage`
+never import this module, and `anthropic` is imported only inside a call.
 
 The call
 --------
@@ -32,10 +36,27 @@ Environment
               a default for `thread=` because an author call must not resume
               the operator's own conversation.
 
+Prompt segments
+---------------
+`prompt` is a string or a list of segments `[{'text': str, 'cache': bool}, ...]`
+(plain strings are accepted as uncached segments). Put the stable prefix (task,
+MINIATURE_KIT, style examples) first with `cache: True` and the per-building
+text after it. The Codex backend joins the segment texts into one string, so
+a segmented prompt produces exactly the same Codex call as the joined string;
+the Anthropic backend sends each segment as a text block and marks the cached
+ones with `cache_control` (at most 3 breakpoints; the system instructions use
+the fourth). `prompt_text(prompt)` returns the joined string.
+
 Backends
 --------
-`execute()` talks to the model through a `Backend`; `CodexBackend` is the only
-implementation. A new backend must implement
+`execute()` talks to the model through a `Backend`, chosen from the model's
+provider (`provider(name)`): `CodexBackend` (`codex exec`) or
+`AnthropicBackend` (the Messages API with a JSON-schema output format). A
+Backend instance or a registered backend name passed as `binary=` always wins;
+any other `binary` string is the Codex binary path and applies to Codex models
+only. `effort` low/medium/high maps to Codex `model_reasoning_effort` and to
+Anthropic adaptive thinking plus `output_config.effort` (Haiku 4.5 takes no
+effort and runs without thinking). A new backend must implement
 
     run(directory, prompt, schema, images, model, effort, timeout, cancel) -> dict
 
@@ -49,6 +70,7 @@ persist the record. Register it in `BACKENDS` under a name; `execute(...,
 binary=<name>)` then selects it, while any other string is treated as a path
 to a Codex binary.
 """
+import base64
 from datetime import datetime
 import hashlib
 import json
@@ -66,6 +88,8 @@ from .state import fingerprint
 # alias -> model id. Aliases are what the CLI and site configs use.
 MODELS = {'astra': 'gpt-6-astra', 'sol': 'gpt-5.6-sol',
           'terra': 'gpt-5.6-terra', 'luna': 'gpt-5.6-luna'}
+ANTHROPIC_MODELS = {'opus': 'claude-opus-5-5', 'sonnet': 'claude-sonnet-5',
+                    'fable': 'claude-fable-5-1', 'haiku': 'claude-haiku-4-5-20251001'}
 
 TOKEN_FIELDS = ('input_tokens', 'cached_input_tokens', 'cache_write_input_tokens',
                 'output_tokens', 'reasoning_output_tokens')
@@ -94,8 +118,36 @@ class BudgetExhausted(Exception):
 
 
 def resolve_model(name):
-    """'astra' -> 'gpt-6-astra'; unknown names pass through as literal model ids."""
-    return MODELS.get(name, name)
+    """'astra' -> 'gpt-6-astra', 'opus' -> 'claude-opus-5-5'; unknown names pass through as literal model ids."""
+    return MODELS.get(name) or ANTHROPIC_MODELS.get(name) or name
+
+
+def provider(name):
+    """'anthropic' for an Anthropic alias or a literal claude-* id, else 'codex'."""
+    return 'anthropic' if name in ANTHROPIC_MODELS or str(resolve_model(name)).startswith('claude-') else 'codex'
+
+
+def resolve(name):
+    """(backend name, model id) for an alias or literal model id."""
+    return provider(name), resolve_model(name)
+
+
+def prompt_segments(prompt):
+    """A str or list of segments -> [{'text', 'cache'}]; empty texts dropped."""
+    if isinstance(prompt, str):
+        return [{'text': prompt, 'cache': False}]
+    segments = []
+    for item in prompt:
+        segment = {'text': item, 'cache': False} if isinstance(item, str) else {
+            'text': item['text'], 'cache': bool(item.get('cache'))}
+        if segment['text']:
+            segments.append(segment)
+    return segments
+
+
+def prompt_text(prompt):
+    """The prompt as one string: segment texts joined without separators."""
+    return prompt if isinstance(prompt, str) else ''.join(s['text'] for s in prompt_segments(prompt))
 
 
 def object_schema(properties):
@@ -257,6 +309,7 @@ class CodexBackend:
         return command
 
     def run(self, directory, prompt, schema, images, model, effort, timeout, cancel):
+        prompt = prompt_text(prompt)
         directory = Path(directory).resolve()
         directory.mkdir(parents=True, exist_ok=True)
         (directory / 'instructions.txt').write_text(self.instructions)
@@ -309,24 +362,215 @@ class CodexBackend:
         return result
 
 
-BACKENDS = {'codex': CodexBackend}
+# Anthropic output ceilings: a blueprint plus adaptive thinking fits comfortably; streaming avoids HTTP timeouts.
+ANTHROPIC_MAX_TOKENS = 64000
+ANTHROPIC_CACHE_BREAKPOINTS = 3  # the API allows 4; the system instructions take one
+# JSON-schema keywords the structured-output format does not accept; the caller validates the result.
+UNSUPPORTED_SCHEMA_KEYS = frozenset({'maxItems', 'minItems', 'uniqueItems', 'minimum', 'maximum', 'exclusiveMinimum',
+                                     'exclusiveMaximum', 'multipleOf', 'minLength', 'maxLength', 'pattern'})
+MEDIA_TYPES = {'.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.gif': 'image/gif'}
+OVERLOADED_ERROR = 'anthropic overloaded'
+RATE_LIMITED_ERROR = 'anthropic rate limited'
 
 
-def backend_for(binary='codex', thread=None):
-    """A Backend instance passes through; a registered name is looked up; any other string is a Codex binary path."""
+def api_schema(value):
+    """`schema` without keywords the Messages API structured-output format rejects."""
+    if isinstance(value, dict):
+        return {k: api_schema(v) for k, v in value.items() if k not in UNSUPPORTED_SCHEMA_KEYS}
+    if isinstance(value, list):
+        return [api_schema(v) for v in value]
+    return value
+
+
+def _default_client(timeout):
+    try:
+        import anthropic
+    except ImportError as exc:
+        raise RuntimeError("Anthropic models need the anthropic package: pip install -e '.[anthropic]'") from exc
+    # Our own ATTEMPTS loop retries; the SDK retrying inside a bounded call would hide the time spent.
+    return anthropic.Anthropic(timeout=timeout, max_retries=0)
+
+
+class AnthropicBackend:
+    """One Messages API request, streamed, with a JSON-schema output format and no tools.
+
+    Writes instructions.txt, prompt.txt, schema.json, request.json (the request
+    without image data or credentials), events.jsonl (stream event types and
+    the final message metadata) and, on success, response.json into
+    `directory`, matching the Codex backend's scratch layout.
+    """
+
+    def __init__(self, instructions=INSTRUCTIONS, client_factory=None):
+        self.instructions = instructions
+        self.client_factory = client_factory or _default_client
+
+    @staticmethod
+    def thinking(model, effort):
+        """Request fields for `effort` on `model`: adaptive thinking + output_config.effort; Haiku 4.5 gets neither."""
+        if model.startswith('claude-haiku-4'):
+            return {}, {}
+        return {'thinking': {'type': 'adaptive'}}, {'effort': effort if effort in ('low', 'medium', 'high', 'xhigh', 'max') else 'medium'}
+
+    def request(self, prompt, schema, images, model, effort):
+        """(request kwargs, loggable copy without image bytes)."""
+        # Cache matching runs from the start of the request, so the cacheable prefix (every
+        # segment up to the last cached one: task, kit, examples) comes first, then the
+        # per-building images, then the uncached tail.
+        segments = prompt_segments(prompt)
+        cached = [i for i, s in enumerate(segments) if s['cache']][-ANTHROPIC_CACHE_BREAKPOINTS:]
+        split = cached[-1] + 1 if cached else 0
+        content, logged = [], []
+
+        def text(i, segment):
+            block = {'type': 'text', 'text': segment['text']}
+            if i in cached:
+                block['cache_control'] = {'type': 'ephemeral'}
+            content.append(block)
+            logged.append(block)
+        for i, segment in enumerate(segments[:split]):
+            text(i, segment)
+        for image in images:
+            path = Path(image)
+            media = MEDIA_TYPES.get(path.suffix.lower(), 'image/png')
+            data = base64.standard_b64encode(path.read_bytes()).decode()
+            content.append({'type': 'image', 'source': {'type': 'base64', 'media_type': media, 'data': data}})
+            logged.append({'type': 'image', 'path': str(path.resolve()), 'media_type': media, 'bytes': path.stat().st_size})
+        for i, segment in enumerate(segments[split:], split):
+            text(i, segment)
+        thinking, output_config = self.thinking(model, effort)
+        output_config = {**output_config, 'format': {'type': 'json_schema', 'schema': api_schema(schema)}}
+        kwargs = {'model': model, 'max_tokens': ANTHROPIC_MAX_TOKENS,
+                  'system': [{'type': 'text', 'text': self.instructions, 'cache_control': {'type': 'ephemeral'}}],
+                  'messages': [{'role': 'user', 'content': content}], 'output_config': output_config, **thinking}
+        return kwargs, {**kwargs, 'messages': [{'role': 'user', 'content': logged}]}
+
+    @staticmethod
+    def usage(message_usage):
+        get = (lambda key: (message_usage.get(key) if isinstance(message_usage, dict) else getattr(message_usage, key, 0)) or 0)
+        read, write = get('cache_read_input_tokens'), get('cache_creation_input_tokens')
+        usage = {'input_tokens': get('input_tokens') + read + write, 'cached_input_tokens': read,
+                 'cache_write_input_tokens': write, 'output_tokens': get('output_tokens'), 'reasoning_output_tokens': 0}
+        usage['total_tokens'] = usage['input_tokens'] + usage['output_tokens']
+        return usage
+
+    @staticmethod
+    def classify(exc):
+        """A short error string for an SDK exception; overload and rate limits are marked transient."""
+        status = getattr(exc, 'status_code', None)
+        name = type(exc).__name__
+        body = getattr(exc, 'body', None)
+        kind = ((body or {}).get('error') or {}).get('type') if isinstance(body, dict) else None
+        if status == 529 or kind == 'overloaded_error' or name == 'OverloadedError':
+            return OVERLOADED_ERROR
+        if status == 429 or name == 'RateLimitError':
+            return RATE_LIMITED_ERROR
+        if name in ('APITimeoutError',):
+            return TIMEOUT_ERROR
+        message = getattr(exc, 'message', None) or str(exc)
+        return f'anthropic {status or name}: {message}'[:500]
+
+    def run(self, directory, prompt, schema, images, model, effort, timeout, cancel):
+        directory = Path(directory).resolve()
+        directory.mkdir(parents=True, exist_ok=True)
+        (directory / 'instructions.txt').write_text(self.instructions)
+        (directory / 'prompt.txt').write_text(prompt_text(prompt))
+        (directory / 'schema.json').write_text(json.dumps(schema))
+        start = time.time()
+        state = {'message': None, 'exception': None, 'events': []}
+        stop = threading.Event()
+        kwargs = None
+        try:
+            kwargs, logged = self.request(prompt, schema, images, model, effort)
+            (directory / 'request.json').write_text(json.dumps(logged, indent=1))
+        except OSError as exc:
+            state['exception'] = exc
+
+        def call():
+            try:
+                client = self.client_factory(timeout)
+                with client.messages.stream(**kwargs) as stream:
+                    for event in stream:
+                        state['events'].append(getattr(event, 'type', type(event).__name__))
+                        if stop.is_set():
+                            return
+                    state['message'] = stream.get_final_message()
+            except BaseException as exc:  # reported, never raised: the caller persists the record
+                state['exception'] = exc
+
+        error = None
+        if kwargs is not None:
+            worker = threading.Thread(target=call, daemon=True, name='anthropic-call')
+            worker.start()
+            while worker.is_alive():
+                if cancel.is_set() or time.time() - start >= timeout:
+                    error = CANCELLED_ERROR if cancel.is_set() else TIMEOUT_ERROR
+                    stop.set()
+                    worker.join(2)
+                    break
+                worker.join(.2)
+        finished = time.time()
+        message = None if error else state['message']
+        if error is None and state['exception'] is not None:
+            error = self.classify(state['exception'])
+        result = {'response': None, 'error': None, 'raw': str(directory / 'response.json'), 'started_at': start,
+                  'finished_at': finished, 'elapsed_seconds': finished - start, 'duration': finished - start,
+                  'model': model, 'effort': effort, 'directory': str(directory), 'thread_id': None,
+                  'command': ['anthropic.messages.stream', model], 'usage': empty_usage(), 'usage_complete': False,
+                  'completed_turns': 0, 'failed': False, 'returncode': None}
+        record = {'events': state['events'][-200:]}
+        if message is not None:
+            result['usage'] = self.usage(getattr(message, 'usage', None) or {})
+            result['usage_complete'] = True
+            result['completed_turns'] = 1
+            result['returncode'] = 0
+            stop_reason = getattr(message, 'stop_reason', None)
+            record.update(id=getattr(message, 'id', None), stop_reason=stop_reason, usage=result['usage'],
+                          request_id=getattr(message, '_request_id', None))
+            text = ''.join(getattr(b, 'text', '') for b in getattr(message, 'content', []) or []
+                           if getattr(b, 'type', None) == 'text')
+            if stop_reason == 'refusal':
+                error = 'anthropic refusal'
+            elif stop_reason == 'max_tokens':
+                error = 'anthropic response truncated (max_tokens)'
+            else:
+                try:
+                    result['response'] = json.loads(text)
+                    (directory / 'response.json').write_text(text)
+                except ValueError as exc:
+                    error = f'response is not JSON: {exc}'
+        else:
+            result['failed'] = True
+        result['error'] = error
+        if error:
+            result['usage_complete'] = message is not None and result['usage_complete']
+            record['error'] = error
+        (directory / 'events.jsonl').write_text(json.dumps(record) + '\n')
+        return result
+
+
+BACKENDS = {'codex': CodexBackend, 'anthropic': AnthropicBackend}
+
+
+def backend_for(binary='codex', thread=None, model=None):
+    """A Backend instance passes through; a registered non-Codex name is looked up; otherwise the model's provider
+    decides, and any other `binary` string is the Codex binary path."""
     if not isinstance(binary, str):
         return binary
     factory = BACKENDS.get(binary)
-    if factory is None:
-        return CodexBackend(binary, thread)
-    return factory(thread=thread) if factory is CodexBackend else factory()
+    if factory is not None and factory is not CodexBackend:
+        return factory()
+    if model is not None and provider(model) == 'anthropic':
+        return BACKENDS['anthropic']()
+    return CodexBackend(binary if factory is None else 'codex', thread)
 
 
 def execute(directory, prompt, schema, images, *, model, effort='medium', timeout=120,
             cancel=None, binary='codex', thread=None):
     """One bounded, schema-constrained model response with measured usage.
 
-    `model` may be an alias from MODELS or a literal model id. `images` are
+    `model` may be an alias from MODELS / ANTHROPIC_MODELS or a literal model id;
+    its provider picks the backend. `prompt` is a str or a list of segments
+    (see "Prompt segments" above). `images` are
     paths attached to the prompt. `cancel` is a threading.Event; when set the
     call is stopped and reported as cancelled. `thread` resumes an existing
     Codex thread (rarely wanted: every author and reviewer call is fresh).
@@ -346,17 +590,20 @@ def execute(directory, prompt, schema, images, *, model, effort='medium', timeou
         error            None, or one of: 'call time limit reached', 'cancelled',
                          'codex exited <n>', 'missing terminal token usage',
                          'unexpected tool call in bounded-response transport',
-                         or the OSError/ValueError text from reading response.json
+                         or the OSError/ValueError text from reading response.json;
+                         Anthropic: 'anthropic overloaded', 'anthropic rate limited',
+                         'anthropic refusal', 'anthropic response truncated (max_tokens)',
+                         'anthropic <status>: <message>', 'response is not JSON: ...'
         thread_id        from the thread.started event, or None
         completed_turns, failed, returncode, model, effort, directory, command,
         started_at, finished_at, elapsed_seconds
 
-    `capacity_rejection(result)` and `timeout_interruption(result)` classify a
-    failed result from the files left in `directory`.
+    `capacity_rejection(result)`, `timeout_interruption(result)` and
+    `anthropic_transient(result)` classify a failed result.
     """
     if cancel is None:
         cancel = threading.Event()
-    backend = backend_for(binary, thread)
+    backend = backend_for(binary, thread, model)
     return backend.run(directory, prompt, schema, list(images or ()), resolve_model(model), effort, timeout, cancel)
 
 
@@ -404,6 +651,16 @@ def capacity_rejection(result):
         return None
     return {'kind': 'capacity-admission-rejection', 'events_sha256': hashlib.sha256(raw).hexdigest(),
             'thread_id': events[0].get('thread_id')}
+
+
+def anthropic_transient(result):
+    """An Anthropic overload or rate limit: no response, retry after backing off. Evidence or None."""
+    if not _failed(result) or result.get('error') not in (OVERLOADED_ERROR, RATE_LIMITED_ERROR):
+        return None
+    if not str(result.get('model', '')).startswith('claude-') or result.get('response') is not None:
+        return None
+    kind = 'anthropic-overloaded' if result['error'] == OVERLOADED_ERROR else 'anthropic-rate-limited'
+    return {'kind': kind, 'directory': result.get('directory'), 'finished_at': result.get('finished_at')}
 
 
 def timeout_interruption(result):

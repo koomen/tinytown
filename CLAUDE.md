@@ -10,7 +10,7 @@ Notes for coding agents working in this repository. Read
 python3 -m venv .venv && .venv/bin/pip install -e .   # Python >= 3.10; pillow, websocket-client
 ./town browser setup                                  # private headless Chromium -> runs/headless-browser/ (render, bake, browser tests)
 node --version                                        # >= 22 for bake and tests
-codex login                                           # only for `town author` (OpenAI Codex CLI)
+codex login                                           # `town author` with OpenAI models; Claude models need pip install -e ".[anthropic]" + ANTHROPIC_API_KEY
 ```
 
 `./town` runs `python -B -m tinytown` with `.venv/bin/python` when present

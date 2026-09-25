@@ -12,7 +12,8 @@ stages and the files they write are summarised in
 git clone https://github.com/koomen/tinytown && cd tinytown
 python3 -m venv .venv && .venv/bin/pip install -e .      # Python 3.10+; pillow, websocket-client; `town` on PATH
 ./town browser setup                                     # private headless Chromium into runs/headless-browser/
-codex login                                              # only for `town author`
+codex login                                              # for `town author` with OpenAI models
+# or: .venv/bin/pip install -e ".[anthropic]" and export ANTHROPIC_API_KEY for Claude models
 node --version                                           # 22+ for bake and tests
 ```
 
@@ -95,7 +96,7 @@ manual verbs are for when you want to inspect or steer.
 
 ```sh
 ./town author mytown --dry-run                  # status and next step per building; no model, no browser
-./town author mytown --all --accept             # stages 3–6 for every unauthored structure (Codex CLI required)
+./town author mytown --all --accept             # stages 3–6 for every unauthored structure (Codex CLI or ANTHROPIC_API_KEY, per model)
 ./town author mytown 247541316 248290075        # just these
 ./town author mytown --reauthor 247541316       # again, compared against the accepted blueprint
 ./town accept mytown --all-reviewed             # if you ran without --accept
