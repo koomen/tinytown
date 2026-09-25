@@ -1,0 +1,4 @@
+interface:
+  display_name: "Queue TinyTown Change"
+  short_description: "Queue changes, watch workers, and track merge steps"
+  default_prompt: "Use $queue-change to submit and watch this TinyTown change, then report what remains to reach local main."
