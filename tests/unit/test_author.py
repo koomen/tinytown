@@ -17,6 +17,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from tinytown import author, cli, model, review  # noqa: E402
+from tinytown.model import prompt_text  # noqa: E402
 from tinytown.paths import SitePaths  # noqa: E402
 from tinytown.review import MAX_REPAIRS, POLICY, read_review  # noqa: E402
 from tinytown.state import atomic_json, building_frame, building_status, fingerprint, read_json  # noqa: E402
@@ -64,11 +65,12 @@ class FakeModel:
                  binary='codex', thread=None):
         directory = Path(directory)
         role = directory.name.split('-', 3)[3]
+        prompt = prompt_text(prompt)
         with self.lock:
             queue = self.scripts.get(role, [])
             item = queue.pop(0) if queue else None
             call = {'role': role, 'building': directory.parent.name, 'prompt': prompt, 'images': [str(i) for i in images],
-                    'model': model, 'timeout': timeout, 'directory': str(directory)}
+                    'model': model, 'effort': effort, 'timeout': timeout, 'directory': str(directory)}
             self.calls.append(call)
         if callable(item):
             item = item(call)
@@ -165,7 +167,7 @@ class FakeReferences:
         image = b.dir / 'reference-1.jpg'
         image.parent.mkdir(parents=True, exist_ok=True)
         image.write_bytes(b'jpg')
-        record = {'id': 'SV1', 'kind': 'street-view', 'path': paths.relative(image), 'caption': 'SV1: requested face -v',
+        record = {'id': 'SV1', 'kind': 'street-view', 'face': '-v', 'path': paths.relative(image), 'caption': 'SV1: requested face -v',
                   'camera': {'status': 'located'}}
         return {'version': 3, 'id': bid, 'name': name, 'location': location, 'address': building.get('addr'),
                 'source_tags': building.get('tags', {}),
@@ -230,6 +232,7 @@ class Fixture(unittest.TestCase):
     def run_author(self, ids=None, **options):
         options.setdefault('workers', 1)
         options.setdefault('scene_review', False)
+        options.setdefault('self_checks', 0)
         options.setdefault('log', lambda text: None)
         return author.author(self.paths, ids, **options)
 
@@ -310,10 +313,11 @@ class Authoring(Fixture):
         self.assertEqual((review['draft_hash'], review['passed'], review['report']['verdict'], review['model']),
                          (fingerprint(BP), True, 'ready', 'sol'))
         self.assertEqual(review['renderer_signature'], 'renderer-1')
-        self.assertEqual(set(review['renders']), {'overview', 'faces'})
-        # the review saw the reference image, then the overview and the four-face sheet
+        self.assertEqual(set(review['renders']), {'overview', 'pairs'})
+        # the review saw the reference image, then the photo|render pairs and the overview
         review_call = next(c for c in self.model.calls if c['role'] == 'review')
-        self.assertEqual([Path(p).name for p in review_call['images']], ['reference-1.jpg', 'initial-overview.png', 'initial-faces.jpg'])
+        self.assertEqual([Path(p).name for p in review_call['images']], ['reference-1.jpg', 'initial-pairs.jpg', 'initial-overview.png'])
+        self.assertIn('reference-1.jpg', (b.renders / 'initial-pairs.jpg').read_text(), 'the photo sits beside its render')
         self.assertIn('"actual_doors"', review_call['prompt'])
         self.assertEqual(result['accepted'], ['1'])
         self.assertEqual(result['buildings']['1']['status'], 'accepted')
@@ -338,7 +342,7 @@ class Authoring(Fixture):
         self.assertIn('REFERENCE PACKET', prompt)
         self.assertIn('"location":"Avon, New York"', prompt)
         self.assertIn('APPROVED STYLE EXAMPLES', prompt)
-        self.assertIn('Keep blueprint under 3500 output tokens.', prompt)
+        self.assertIn('Keep blueprint under 8000 output tokens.', prompt)
         self.assertIn('entrance_plan', prompt)
         self.assertEqual(self.model.calls[0]['model'], 'astra')
         self.assertEqual(self.model.calls[1]['model'], 'sol')
@@ -423,7 +427,7 @@ class Authoring(Fixture):
         self.assertIn(f'REPAIR PASS 2 OF {MAX_REPAIRS}', second['prompt'])
         self.assertIn('"base_hash":"' + fingerprint(BP2) + '","operations"', second['prompt'])
         self.assertIn('"review":{"verdict":"repair"', second['prompt'])
-        self.assertEqual([Path(p).name for p in second['images']], ['reference-1.jpg', 'repaired-overview.png', 'repaired-faces.jpg'])
+        self.assertEqual([Path(p).name for p in second['images']], ['reference-1.jpg', 'repaired-pairs.jpg', 'repaired-overview.png'])
         # a fresh run has nothing left to do for it
         self.assertEqual(self.run_author(['1'])['buildings']['1']['steps'], [])
         self.assertEqual(self.model.roles(), {'author': 1, 'review': MAX_REPAIRS + 1, 'repair': MAX_REPAIRS})
@@ -443,7 +447,7 @@ class Authoring(Fixture):
     def test_invalid_author_response_goes_straight_to_repair(self):
         self.model.script('author', response(BAD)).script('repair', response(BP)).script('review', READY)
         result = self.run_author(['1'])
-        self.assertEqual(result['buildings']['1']['steps'], ['references', 'author 0', 'repair 1', 'render repaired', 'review 1'])
+        self.assertEqual(result['buildings']['1']['steps'], ['references', 'author 0', 'fix 0', 'repair 1', 'render repaired', 'review 1'])
         record = read_json(self.paths.building('1').author)
         self.assertEqual(record['blueprint'], BAD)
         self.assertTrue(record['validation_errors'])
@@ -530,7 +534,7 @@ class Authoring(Fixture):
         self.assertEqual(result['counts'], {'reviewed': 2})
         self.assertTrue(FakeBrowser.urls and 'bp=1,2' in FakeBrowser.urls[0])
         scene_call = next(c for c in self.model.calls if c['role'] == 'scene-review')
-        self.assertEqual([Path(p).name for p in scene_call['images']], ['scene.png', 'initial-faces.jpg', 'initial-faces.jpg'])
+        self.assertEqual([Path(p).name for p in scene_call['images']], ['scene.png', 'initial-pairs.jpg', 'initial-pairs.jpg'])
         self.assertTrue(scene_call['prompt'].startswith(author.SCENE_TASK))
         # a third run has the same drafts: no further critique
         self.run_author(['1', '2'], scene_review=True)
@@ -549,7 +553,7 @@ class Authoring(Fixture):
         prompt = self.model.calls[0]['prompt']
         self.assertIn('PUBLISHED PRODUCTION BASELINE', prompt)
         self.assertIn('REFINEMENT: prefer a small patch', prompt)
-        self.assertNotIn('Keep blueprint under 3500', prompt)
+        self.assertNotIn('Keep blueprint under 8000', prompt)
         self.assertEqual(self.model.roles(), {'author': 1, 'review': 3, 'repair': 2, 'baseline-comparison': 3})
         comparison = read_json(author.comparison_path(self.paths.building('1')))
         self.assertEqual((comparison['verdict'], comparison['baseline_hash'], comparison['candidate_hash'], comparison['reviewer']),
@@ -662,6 +666,317 @@ class Accepting(Fixture):
         self.assertIn('unreferenced  2  next: references', self.out.getvalue())
         with self.assertRaises(SystemExit):
             parser.parse_args(['author', 'trial', '--reasoning-effort', 'xhigh'])
+
+
+def scored(verdict, overall, **extra):
+    """A review response with rubric scores (every criterion = overall)."""
+    base = READY if verdict == 'ready' else REPAIR
+    return {**base, 'scores': {**{k: overall for k in review.SCORE_KEYS}, 'overall': overall}, **extra}
+
+
+UNCERTAIN = {'verdict': 'insufficient-evidence', 'summary': 'no photo shows the door',
+             'orientation': {'status': 'uncertain', 'summary': 'entrance unverified'},
+             'issues': [{'severity': 'major', 'problem': 'Principal entrance is unverified by any photograph.',
+                         'fix': 'Confirm the entrance face.'}]}
+
+
+class OrientationPolicy(Fixture):
+    def test_kinds_and_policy(self):
+        house = building('9')
+        self.assertEqual((author.building_kind(house), author.orientation_policy(house)), ('house', 'lenient'))
+        shop = {**building('9'), 'style': {'kind': 'commercial'}}
+        self.assertEqual((author.building_kind(shop), author.orientation_policy(shop)), ('commercial', 'strict'))
+        garage = {**building('9', tags={'building': 'garage'}), 'style': {}}
+        self.assertEqual(author.orientation_policy(garage), 'lenient')
+        historic = building('9', tags={'building': 'house', 'historic': 'yes'})
+        self.assertEqual(author.orientation_policy(historic), 'strict')
+        big = {**building('9'), 'area': 900}
+        self.assertEqual(author.orientation_policy(big), 'strict')
+        church = {**building('9', tags={'amenity': 'place_of_worship'}), 'style': {}}
+        self.assertEqual(author.building_kind(church), 'church')
+
+    def test_report_needs_repair_by_policy(self):
+        self.assertTrue(review.report_needs_repair(UNCERTAIN))
+        self.assertFalse(review.report_needs_repair(UNCERTAIN, 'lenient'), 'evidence gaps are not repairable')
+        wrong = {**READY, 'orientation': {'status': 'incorrect', 'summary': 'mirrored'}}
+        self.assertTrue(review.report_needs_repair(wrong, 'lenient'))
+        visible = {**READY, 'issues': [{'severity': 'major', 'problem': 'roof ridge runs the wrong way', 'fix': 'ridge v'}]}
+        self.assertTrue(review.report_needs_repair(visible, 'lenient'))
+
+    def test_uncertain_house_is_reviewed_without_a_repair_but_a_shop_is_repaired(self):
+        self.site['buildings'][1]['style'] = {'kind': 'commercial'}
+        atomic_json(self.paths.scene, self.site)
+        self.model.script('author', response(BP), response(BP2)).script('review', UNCERTAIN, UNCERTAIN, READY)
+        self.model.script('repair', response(BP3))
+        result = self.run_author(['1', '2'])
+        self.assertEqual(result['buildings']['1']['steps'], ['references', 'author 0', 'render initial', 'review 0'])
+        one = read_json(self.paths.building('1').review)
+        self.assertEqual((one['passed'], one['orientation_policy']), (True, 'lenient'))
+        self.assertIn('repair 1', result['buildings']['2']['steps'])
+        self.assertEqual(read_json(self.paths.building('2').review)['orientation_policy'], 'strict')
+        prompts = [c['prompt'] for c in self.model.calls if c['role'] == 'review']
+        self.assertIn('ORIENTATION POLICY: lenient', prompts[0])
+        self.assertIn('ORIENTATION POLICY: strict', prompts[1])
+        self.assertEqual(author.accept(self.paths, ['1'], out=lambda *a: None), ['1'])
+
+
+class Validation(Fixture):
+    def test_schema_describes_nesting_and_catches_types(self):
+        schema = review.blueprint_json_schema()
+        self.assertFalse(schema['additionalProperties'])
+        self.assertEqual(schema['properties']['volumes']['items'], {'$ref': '#/$defs/volume'})
+        self.assertIn('gambrel', schema['$defs']['roof']['properties']['type']['enum'])
+        self.assertEqual(review.schema_errors(BP), [])
+        bad = {'volumes': [{'id': 'main', 'u': [-1, 1], 'v': [-1, 1], 'height': '7', 'roof': {'type': 'dome', 'lip': 'no'},
+                            'faces': {'-v': {'doors': {'at': 0.5}}}}]}
+        errors = review.schema_errors(bad)
+        self.assertTrue(any('height: expected number' in e for e in errors))
+        self.assertTrue(any("roof.type: 'dome'" in e for e in errors))
+        self.assertTrue(any('lip: expected boolean' in e for e in errors))
+        self.assertTrue(any('doors: expected an array' in e for e in errors))
+        self.assertTrue(any(e.startswith('schema: ') for e in author.validate(bad, building('1'))))
+
+    def test_fix_call_repairs_validation_without_a_repair_round(self):
+        broken = {'volumes': [{'id': 'main', 'u': [-10, 10], 'v': [-4, 4], 'height': 5, 'color': '#aabbcc'}]}
+        ops = [{'op': 'remove', 'path': '/volumes/@main/color'}]
+        self.model.script('author', response(broken)).script('fix', response(patch_ops=ops, base=broken)).script('review', READY)
+        result = self.run_author(['1'])
+        self.assertEqual(result['buildings']['1']['steps'], ['references', 'author 0', 'fix 0', 'render initial', 'review 0'])
+        b = self.paths.building('1')
+        record = read_json(b.author)
+        self.assertEqual((record['blueprint'], record['validation_errors'], record['invalid_blueprint']), (BP, [], broken))
+        self.assertTrue(record['initial_validation_errors'])
+        self.assertEqual(len(record['fixes']), 1)
+        self.assertFalse(b.repair(1).exists(), 'no repair round consumed')
+        self.assertEqual(read_json(b.draft), BP)
+        fix = next(c for c in self.model.calls if c['role'] == 'fix')
+        self.assertEqual(fix['images'], [])
+        self.assertIn('"base_hash":"' + fingerprint(broken), fix['prompt'])
+        self.assertEqual(self.status('1'), 'reviewed')
+
+    def test_a_failed_fix_is_recorded_once_and_the_repair_follows(self):
+        self.model.script('author', response(BAD)).script('fix', response(BAD)).script('repair', response(BP)).script('review', READY)
+        result = self.run_author(['1'])
+        self.assertEqual(result['buildings']['1']['steps'][:4], ['references', 'author 0', 'fix 0', 'repair 1'])
+        self.assertEqual(self.model.roles()['fix'], 1)
+        self.assertTrue(read_json(self.paths.building('1').author)['fixes'][0]['validation_errors'])
+
+
+class Budgets(Fixture):
+    def test_per_building_cap_stops_one_building_and_the_run_continues(self):
+        self.model.usage = 20_000
+        self.model.script('author', response(BP), response(BP2)).script('review', REPAIR, READY).script('repair', response(BP3))
+        result = self.run_author(['1', '2'], max_tokens_per_building=45_000)
+        self.assertIn('building token budget exhausted', result['buildings']['1']['error'])
+        self.assertIsNone(result['stopped'])
+        self.assertEqual(result['buildings']['2']['status'], 'reviewed')
+
+    def test_efforts_per_role_and_the_combined_flag(self):
+        self.model.script('author', response(BP)).script('review', READY)
+        self.run_author(['1'])
+        self.assertEqual([(c['role'], c['effort']) for c in self.model.calls], [('author', 'high'), ('review', 'medium')])
+        run = author.Run(self.paths, ['1'], reasoning_effort='low', log=lambda t: None)
+        self.assertEqual((run.author_effort, run.reviewer_effort), ('low', 'low'))
+        defaults = author.Run(self.paths, ['1'], log=lambda t: None)
+        self.assertEqual((defaults.budget.max_tokens, defaults.max_tokens_per_building, defaults.call_timeout),
+                         (None, author.MAX_TOKENS_PER_BUILDING, 300))
+
+    def test_cli_accepts_the_new_flags(self):
+        parser = cli.build_parser({'author', 'accept'})
+        args = parser.parse_args(['author', 'trial', '--author-effort', 'medium', '--reviewer-effort', 'low',
+                                  '--self-checks', '2', '--max-tokens-per-building', '0'])
+        self.assertEqual((args.author_effort, args.reviewer_effort, args.self_checks, args.max_tokens_per_building,
+                          args.max_tokens, args.max_seconds), ('medium', 'low', 2, 0, None, None))
+        with self.assertRaises(SystemExit):
+            parser.parse_args(['author', 'trial', '--self-checks', '3'])
+
+
+class Examples(unittest.TestCase):
+    def site(self):
+        def b(bid, kind, area, tags=None):
+            return {'id': bid, 'tags': tags or {}, 'area': area, 'style': {'kind': kind, 'roof': 'gable'}}
+        return {'buildings': [b('1', 'house', 150), b('2', 'house', 160), b('3', 'house', 1000), b('4', 'garage', 40),
+                              b('5', 'commercial', 300), b('6', 'house', 140), b('7', 'house', 155), b('8', 'house', 150)]}
+
+    def overrides(self):
+        gable = lambda h: {'volumes': [{'id': 'main', 'u': [-5, 5], 'v': [-4, 4], 'height': h,  # noqa: E731
+                                        'roof': {'type': 'gable', 'ridge': 'u'}}]}
+        bps = {str(i): gable(i) for i in range(1, 9)}
+        bps['7']['volumes'][0]['profile'] = [[0, 0]]  # legacy custom geometry is never an example
+        reviews = {str(i): {'status': 'ready'} for i in range(1, 9)}
+        reviews['8'] = {'status': 'needs-attention', 'publication': {'forced': True}}
+        return {'blueprints': bps, 'miniature_review': reviews}
+
+    def test_retrieval_prefers_same_kind_and_size_and_is_deterministic(self):
+        site, overrides = self.site(), self.overrides()
+        candidates = author.example_candidates(site, overrides)
+        self.assertEqual({c['id'] for c in candidates}, {'1', '2', '3', '4', '5', '6'})
+        chosen = author.select_examples(site['buildings'][0], candidates, count=3)
+        self.assertEqual([e['source_id'] for e in chosen], ['2', '6', '3'])
+        self.assertEqual(chosen, author.select_examples(site['buildings'][0], candidates, count=3))
+        self.assertTrue(all(e['source_id'] != '1' for e in chosen))
+        garage = author.select_examples(site['buildings'][3], candidates, count=1)
+        self.assertNotEqual(garage[0]['source_id'], '4', 'the only garage is itself')
+
+    def test_character_cap_and_fallback(self):
+        site, overrides = self.site(), self.overrides()
+        candidates = author.example_candidates(site, overrides)
+        fallback = [{'source_id': 'x', 'blueprint': BP}, {'source_id': 'y', 'blueprint': BP2}]
+        self.assertEqual([e['source_id'] for e in author.select_examples(site['buildings'][0], [], fallback)], ['x', 'y'])
+        tiny = author.select_examples(site['buildings'][0], candidates, fallback, max_chars=200)
+        self.assertLessEqual(sum(len(json.dumps(e['blueprint'], separators=(',', ':'))) for e in tiny if e['source_id'] not in 'xy'), 200)
+        self.assertGreaterEqual(len(tiny), 2)
+
+
+class BestDraft(Fixture):
+    def test_exhausted_repairs_publish_the_best_scoring_draft(self):
+        self.model.script('author', response(BP))
+        self.model.script('review', scored('repair', 4), scored('repair', 2), scored('repair', 3))
+        self.model.script('repair', response(BP2), response(BP3))
+        self.run_author(['1'])
+        b = self.paths.building('1')
+        self.assertEqual(read_json(b.draft), BP, 'the first draft scored best')
+        record = read_json(b.review)
+        self.assertEqual(record['draft_hash'], fingerprint(BP))
+        self.assertEqual(record['selected_draft']['latest_hash'], fingerprint(BP3))
+        self.assertEqual(record['selected_draft']['score'][0], 4)
+        self.assertEqual({h['draft_hash'] for h in record['history']}, {fingerprint(BP2), fingerprint(BP3)})
+        self.assertTrue(record['repairs_exhausted'])
+        self.assertEqual(self.status('1'), 'reviewed')
+        self.assertEqual(self.run_author(['1'])['buildings']['1']['steps'], [], 'idempotent')
+        author.accept(self.paths, ['1'], force=True, out=lambda *a: None)
+        publication = read_json(self.paths.overrides)['miniature_review']['1']['publication']
+        self.assertEqual((publication['blueprint_hash'], publication['selected_draft']['latest_hash']),
+                         (fingerprint(BP), fingerprint(BP3)))
+
+    def test_the_last_draft_stays_when_it_scores_best(self):
+        self.model.script('author', response(BP))
+        self.model.script('review', scored('repair', 2), scored('repair', 3), scored('repair', 3))
+        self.model.script('repair', response(BP2), response(BP3))
+        self.run_author(['1'])
+        self.assertEqual(read_json(self.paths.building('1').draft), BP3, 'ties keep the latest draft')
+        self.assertNotIn('selected_draft', read_json(self.paths.building('1').review))
+
+
+class SelfCheck(Fixture):
+    def test_the_author_revises_from_its_render_before_review(self):
+        ops = [{'op': 'replace', 'path': '/volumes/@main/height', 'value': 7}]
+        self.model.script('author', response(BP)).script('self-check', response(patch_ops=ops, base=BP)).script('review', READY)
+        result = self.run_author(['1'], self_checks=1)
+        self.assertEqual(result['buildings']['1']['steps'],
+                         ['references', 'author 0', 'render initial', 'self-check 1', 'render initial-check-1', 'review 0'])
+        b = self.paths.building('1')
+        self.assertEqual(read_json(b.draft)['volumes'][0]['height'], 7)
+        check = read_json(author.self_check_path(b, 1))
+        self.assertEqual((check['phase'], check['base_hash']), ('initial-check-1', fingerprint(BP)))
+        call = next(c for c in self.model.calls if c['role'] == 'self-check')
+        self.assertIn('SELF-CHECK 1 OF 1', call['prompt'])
+        self.assertEqual([Path(p).name for p in call['images']], ['reference-1.jpg', 'initial-pairs.jpg', 'initial-overview.png'])
+        self.assertEqual(read_json(b.review)['phase'], 'initial-check-1')
+        self.assertFalse(b.repair(1).exists(), 'a self-check is not a repair')
+        self.assertEqual(self.run_author(['1'], self_checks=1)['buildings']['1']['steps'], [])
+
+    def test_an_unchanged_self_check_goes_straight_to_review(self):
+        self.model.script('author', response(BP)).script('self-check', response(patch_ops=[], base=BP)).script('review', READY)
+        result = self.run_author(['1'], self_checks=1)
+        self.assertEqual(result['buildings']['1']['steps'], ['references', 'author 0', 'render initial', 'self-check 1', 'review 0'])
+        self.assertIsNone(read_json(author.self_check_path(self.paths.building('1'), 1))['phase'])
+
+
+class HumanFeedback(Fixture):
+    def feedback(self, bid, text, draft):
+        atomic_json(self.paths.building(bid).human_feedback, {'entries': [
+            {'id': 'f1', 'text': text, 'draft_hash': fingerprint(draft), 'at': 'now', 'job': None, 'source': 'cli'}]})
+
+    def test_feedback_repairs_a_passed_draft_without_a_repair_round(self):
+        self.model.script('author', response(BP)).script('review', READY)
+        self.run_author(['1'])
+        self.feedback('1', 'Make the main block taller.', BP)
+        ops = [{'op': 'replace', 'path': '/volumes/@main/height', 'value': 7}]
+        self.model.script('repair', response(patch_ops=ops, base=BP)).script('review', READY)
+        result = self.run_author(['1'])
+        self.assertEqual(result['buildings']['1']['steps'], ['human-repair 1', 'render initial', 'review 0'])
+        b = self.paths.building('1')
+        self.assertEqual(read_json(b.draft)['volumes'][0]['height'], 7)
+        record = read_json(author.human_repair_path(b, 1))
+        self.assertEqual((record['role'], record['feedback_ids']), ('human-repair', ['f1']))
+        call = [c for c in self.model.calls if c['role'] == 'repair'][0]
+        self.assertIn('HUMAN REVIEW (highest priority)', call['prompt'])
+        self.assertIn('Make the main block taller.', call['prompt'])
+        self.assertFalse(b.repair(1).exists(), 'a human repair is not an automated repair round')
+        self.assertEqual(author.pending_feedback(b), [])
+        self.assertEqual(self.run_author(['1'])['buildings']['1']['steps'], [])
+
+    def test_feedback_on_an_accepted_building_reopens_it_and_accept_needs_no_comparison(self):
+        self.accept_site('1', BP)
+        self.feedback('1', 'Taller, please.', BP)
+        ops = [{'op': 'replace', 'path': '/volumes/@main/height', 'value': 7}]
+        self.model.script('repair', response(patch_ops=ops, base=BP)).script('review', READY)
+        result = self.run_author(['1'], accept=True)
+        self.assertEqual(result['accepted'], ['1'])
+        self.assertEqual(read_json(self.paths.overrides)['blueprints']['1']['volumes'][0]['height'], 7)
+        self.assertEqual(self.model.roles()['baseline-comparison'], 0)
+
+    def test_an_invalid_answer_is_not_retried_forever(self):
+        self.model.script('author', response(BP)).script('review', READY)
+        self.run_author(['1'])
+        self.feedback('1', 'Add a porch.', BP)
+        self.model.script('repair', response(BAD)).script('fix', response(BAD))
+        self.run_author(['1'])
+        b = self.paths.building('1')
+        self.assertEqual(read_json(b.draft), BP)
+        self.assertEqual(author.pending_feedback(b), [])
+        self.assertEqual(author.completed_human_repairs(b), 1)
+
+    def test_legacy_accepted_buildings_are_skipped_and_feedback_starts_from_their_blueprint(self):
+        ov = read_json(self.paths.overrides)
+        ov['blueprints']['1'] = BP
+        atomic_json(self.paths.overrides, ov)
+        result = self.run_author(all=True, dry_run=True)
+        self.assertEqual(result['skipped'].get('1'), 'accepted')
+        b = self.paths.building('1')
+        atomic_json(b.human_feedback, {'entries': [{'id': 'f1', 'text': 'Taller.', 'draft_hash': None}]})
+        ops = [{'op': 'replace', 'path': '/volumes/@main/height', 'value': 7}]
+        self.model.script('repair', response(patch_ops=ops, base=BP)).script('review', READY)
+        result = self.run_author(['1'])
+        self.assertEqual(result['buildings']['1']['steps'], ['references', 'render initial', 'human-repair 1',
+                                                             'render initial', 'review 0'])
+        self.assertEqual(read_json(b.draft)['volumes'][0]['height'], 7)
+
+    def test_a_failed_human_repair_call_leaves_the_feedback_pending(self):
+        self.model.script('author', response(BP)).script('review', READY)
+        self.run_author(['1'])
+        self.feedback('1', 'Taller.', BP)
+        self.model.script('repair', None, None, None)
+        self.run_author(['1'])
+        b = self.paths.building('1')
+        self.assertTrue(read_json(author.human_repair_path(b, 1))['error'])
+        self.assertEqual([e['id'] for e in author.pending_feedback(b)], ['f1'])
+
+    def test_a_human_draft_is_not_replaced_by_a_stale_fix_or_a_better_scored_draft(self):
+        b = self.paths.building('1')
+        atomic_json(b.draft, BP2)
+        repair = {'base_hash': fingerprint(BP), 'validation_errors': ['x'], 'response': {}, 'error': None}
+        self.assertFalse(author.fix_applies(b, repair), 'a newer draft superseded the invalid repair')
+        atomic_json(b.draft, BP)
+        self.assertTrue(author.fix_applies(b, repair))
+        atomic_json(author.human_repair_path(b, 1), {'role': 'human-repair', 'draft_hash': fingerprint(BP2)})
+        self.assertTrue(author.human_requested(b, BP2))
+        self.assertFalse(author.human_requested(b, BP))
+
+
+class FixBase(Fixture):
+    def test_a_failed_patch_is_fixed_against_the_blueprint_it_aimed_at(self):
+        self.model.script('author', response(BP)).script('review', REPAIR)
+        stale = {'blueprint_json': '', 'patch_json': json.dumps({'base_hash': 'stale', 'operations': []}),
+                 'cues': [], 'references_used': [], 'uncertainties': [], 'entrance_plan': []}
+        ops = [{'op': 'replace', 'path': '/volumes/@main/height', 'value': 6}]
+        self.model.script('repair', stale).script('fix', response(patch_ops=ops, base=BP)).script('review', READY)
+        self.run_author(['1'], max_repairs=1)
+        fix = next(c for c in self.model.calls if c['role'] == 'fix')
+        self.assertIn('"base_blueprint"', fix['prompt'])
+        self.assertIn('failed_patch_json', fix['prompt'])
+        self.assertEqual(read_json(self.paths.building('1').draft), BP2)
 
 
 if __name__ == '__main__':

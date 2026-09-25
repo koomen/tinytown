@@ -14,7 +14,7 @@ the wall-top elevation above building ground; bottom defaults to -1.2.
 Face +u is the end at maximum u, -u minimum u, +v maximum v, -v minimum v.
 Positions at and range run 0..1 left to right when viewing that face from outside.
 Use supplied compass bearings to interpret photographs. Connected wings may overlap.
-Set root or volume `wallMaterial` to `siding`, `brick`, `stone`, or `plaster`
+Set root or volume `wallMaterial` to `siding`, `vertical-wood` (board-and-batten), `brick`, `stone`, or `plaster`
 when the cladding is known. This overrides color-based material inference;
 small wooden cabins should use `wallMaterial:"siding"`.
 
@@ -43,24 +43,52 @@ unresolved placement explicitly in entrance_plan and uncertainties.
 All colors must be six-digit hex strings. Volume height >=1.5; bottom below height.
 u/v ranges ascend and are at least 0.2 m wide. Openings have positive dimensions.
 Leave entrance gaps with explicit window positions. Volume IDs must be unique.
+Two-tone walls (brick base, siding above): volume `"upperWall":"#d8d0bd","split":3.4`
+recolors the wall above `split` metres.
+
+Cross gables, ells, rear additions and projecting pavilions are SEPARATE
+overlapping volumes whose roofs meet the main roof, not one bounding box. A
+wing's ridge runs perpendicular to the main ridge for a cross gable; a lower
+rear addition can use a shed-like low-pitch gable or flat roof.
 
 ## Roof and silhouette components
+
+Every roof may set its own `color`; `gableColor` colors the triangular gable-end
+walls (e.g. shingled gables above clapboard).
 
 - Flat: `{"type":"flat","lip":false}`.
 - Gable or hip: type gable/hip, ridge u/v, pitch 0.15–0.65, maxH in metres,
   overhang 0.1–0.5. Gable ends are on the ridge-axis faces. Rise is the FULL
   perpendicular span times pitch, capped by maxH. Supply maxH to control it.
+  An ordinary house gable is pitch ~0.3–0.45; steep Victorian cottages ~0.55–0.65.
+  Hip with `"flatTop":true` (optional `run` inset metres) truncates to a flat deck.
+- Gambrel (barns, Dutch Colonial): `{"type":"gambrel","ridge":"u","h":4,"kneeH":0.62,"kneeIn":0.28,"overhang":0.4}`.
+  `h` is ridge height above the eave; `kneeH` the knee as a fraction of h; `kneeIn`
+  the knee set in as a fraction of the half-span. Steep lower, shallow upper slope.
 - Barrel: `{"type":"barrel","ridge":"u","h":1.4,"overhang":0.25,"color":"#aab3b0"}`
   gives a continuously curved circular-segment metal roof with standing seams
   and wall-colored curved ends, for shallow curved metal roofs.
   `h` is its rise, at most half the smaller span; no dormers.
-- Mansard: `{"type":"mansard","h":2,"inset":1,"overhang":0.2}` gives perimeter
-  slopes and a broad flat top, useful for historic schools and commercial blocks.
+- Mansard: `{"type":"mansard","h":2,"inset":1,"overhang":0.2,"capColor":"#4d5256"}` gives
+  perimeter slopes and a broad flat top, useful for historic schools and commercial blocks.
+- Dormers on ANY gable, hip, gambrel or mansard roof (not barrel):
+  `"roof":{...,"dormers":{"faces":["-v"],"count":2,"w":0.9,"h":1.1,"style":"gable","type":"rect","y":0.5}}`.
+  `faces` lists sloped faces (gable ends are skipped; omit for all slopes);
+  `count` spaces evenly or `at:[0.3,0.7]` places them; `style` gable|shed (a
+  wide shed dormer: larger `w`, `style:"shed"`); `type` rect|arch; `y` sill
+  above the eave; optional `color`, `trim`, `roofColor`, `depth`. Use dormers
+  for windows poking out of a slope, a separate volume for a full cross gable.
+- Church cross on a gable end: roof `"cross":true,"crossEnd":"+","crossSize":1.2`.
 - Cornice on volume: `{"height":0.25,"overhang":0.15,"color":"#ddd3bc","dentils":false}`.
-- Chimneys on volume: `[{"u":1,"v":0}]`.
-- Plinth on volume: `{"height":0.3,"color":"#9c9789"}`.
-- Belt courses on volume: `[{"y":3.5,"height":0.18,"color":"#dbccb5"}]`.
-- Towers on volume: `[{"u":0,"v":0,"w":2,"height":12,"wall":"#cabfa6","spire":true,"spireH":0.6,"cross":true}]`.
+- `chimneys` on volume: `[{"u":1,"v":0}]`.
+- `plinth` on volume: `{"height":0.3,"color":"#9c9789"}`.
+- `beltCourses` on volume: `[{"y":3.5,"height":0.18,"color":"#dbccb5"}]`.
+- `cupola` on the ridge of a volume: `{"width":1.6,"color":"#ece6d8","u":0,"v":0}` (u/v offsets from the volume centre).
+- `towers` on volume: `[{"u":0,"v":0,"w":2,"height":12,"wall":"#cabfa6","spire":true,"spireH":0.6,"cross":true,"windowType":"gothic"}]`;
+  `windows:false` omits the tower's openings.
+- Flat-roofed angled or concave footprints may replace `u`/`v` with
+  `"polygon":[[u,v],...]` (counter-clockwise, no repeat); its faces are named
+  `edge0`, `edge1`, `edge2`... (edge i joins point i to i+1), plus `default`.
 
 An open timber shelter can use top-level `pavilion` instead of volumes:
 `{"wall":"#b48b58","roofColor":"#594638","pavilion":{"axis":"u","height":3.1,"pitch":0.43,"bents":3,"furniture":true},"details":[]}`.
@@ -91,7 +119,11 @@ its OSM outline is not a building perimeter.
 
 - storeys: `[{"y":4,"windows":{"type":"arch","w":1.2,"h":2.1,"at":[0.2,0.5,0.8],"trim":"#e7dec8","glass":"#78837b","hood":true,"keystone":true}}]`.
   Window types: rect, arch, gothic, round, shop, basement, clock. Use count + margin OR
-  explicit at positions. Optional mullions false, shutters color, planter true.
+  explicit at positions, OR a tight cluster `"center":0.5,"spread":1.4,"count":3`
+  (spread = metres between centres). Optional mullions false, shutters color,
+  planter true|color, sill false, frameW, hood true|color. A storey's
+  `"skip":[[0.4,0.6]]` drops windows in those face fractions (e.g. behind a
+  door); `out` pushes it off the wall plane.
   Set `interior: false` for decorative or church glazing that should have no
   household blinds or curtains; ordinary windows keep their existing treatment.
   A round window can use `tracery: "rose"` for six clover-shaped panes around a
@@ -105,14 +137,22 @@ its OSM outline is not a building perimeter.
   volume whose `bottom` is the belfry ceiling. Do not enclose it with glass.
 
 - doors: `[{"at":0.5,"type":"double","w":1.6,"h":2.5,"color":"#2f4549","surround":"#ded1b6","surroundW":0.14,"fanlight":true,"steps":2}]`.
-  Types: rect, arch, gothic, double, garage. Optional y lifts the door.
+  Types: rect, arch, gothic, double, garage. Optional y lifts the door (onto a
+  porch floor: `y` = porch `floorH`); `lamp:true` adds a wall lantern.
+  Garage: `{"at":0.3,"type":"garage","w":2.6,"h":2.3,"color":"#e4e1da","panels":4,"lights":true}`.
+  `groundEntrance:true` marks a door above y 1.5 that meets uphill ground.
 - parapets: `[{"type":"mission","at":0.5,"width":4,"height":1.5,"depth":0.2,"color":"#ad604a","trim":"#d8cbb1","cross":true}]`.
-  Types: mission, pediment, arch, stepped, flat. Parapets start at the volume eave;
+  Types: mission, pediment, arch, stepped, flat. Optional `text:"OPERA 1876"`,
+  `textStyle:"carved"`, `roundel:true|diameter`, `crossSize`. Parapets start at the volume eave;
   use this integrated component, not extra coplanar wall panels.
 - buttresses: `{"at":[0.02,0.98],"w":0.5,"d":0.45,"height":6,"color":"#c5bba3"}`.
 - pilasters: `{"at":[0.05,0.95],"w":0.35,"d":0.2,"height":3.5,"color":"#bea46e","cap":"#d9c393"}`.
 - storefronts: `[{"range":[0.1,0.9],"y":0.4,"h":2.5,"frame":"#354d3e","kick":"#354d3e"}]`.
-- awnings: `[{"range":[0.1,0.9],"y":3,"depth":1.2,"color":"#384b63"}]`.
+- awnings: `[{"range":[0.1,0.9],"y":3,"depth":1.2,"color":"#384b63","stripes":"#e8e1cf"}]` (stripes optional).
+- bays (bay windows): `[{"at":0.3,"w":2.4,"d":0.8,"y0":0.5,"y1":3.2,"count":2,"sides":true,"roof":"hip","trim":"#e8e1cf"}]`.
+  A box out of the wall with windows on front and sides; roof hip|flat|none;
+  the face's own storeys fill it unless `storeys` is given. A whole projecting
+  pavilion or two-storey tower bay is a separate volume instead.
 - signs: `[{"text":"SHOP","style":"gold-on-black","at":0.5,"y":3.4,"w":3,"h":0.5}]`.
   For manual asset curation, the renderer also supports `image` plus
   `shape: "cutout"` on small SVG signs, preserving the transparent silhouette.
@@ -154,7 +194,40 @@ its OSM outline is not a building perimeter.
   It has a thin floor and four ground-reaching posts. Railing sides are local
   `left:-u`, `right:+u`, `front:+v`, `back:-v`; omit the edge joining flights.
   Optional rotation turns the whole platform about its centre.
+  Open porch across part or all of a face: `range:[0,1]` instead of `at`+`w`;
+  `roof` hip|gable|flat|shed; `railing:true` leaves a `railingGap` (m) at the
+  steps; `stepsAt` (fraction) and `stepsW` place the steps (default: the first
+  door behind the porch). Keep the door and windows on the wall behind it.
+  `style:"carport"`: open roofed bay, no floor or railing.
+  Wraparound or multi-volume porch: a TOP-LEVEL `porches` entry with `face`,
+  the span along the wall and the wall plane, e.g.
+  `{"style":"open","face":"-v","u":[-6,4],"wall":-4,"d":2.4,"height":2.6,"floorH":0.5,"roof":"hip","railing":true}`
+  (for faces ±u use `"v":[v0,v1],"wall":u`). Combine two entries (-v and +u)
+  for an L-shaped wraparound; omit their shared `railSides` edge.
   A simple entry gable uses `{"at":0.5,"w":2,"d":1,"height":2.7,"pitch":0.3,"wall":"#c6bba4","roofColor":"#555d61","cross":true,"door":{"type":"arch","w":1,"h":2}}`.
+
+Free-standing `details` (u/v frame): `{"type":"bush","u":6,"v":-5,"size":1.2}`,
+`flag` (`height`), `cross`, `lawnsign` (`text`,`style`,`w`,`h`,`rotation`),
+`ramp` (like stair: `dir`,`length`,`height`,`w`,`railing`), `stair`, `landing`.
+
+## House recipes (fit the actual footprint; these are shapes, not answers)
+
+Gable cottage, front porch, dormers (footprint 10 x 8, front -v):
+```json
+{"wall":"#d9d2c0","wallMaterial":"siding","trim":"#f0ebe0","roofColor":"#5b5f63","volumes":[{"id":"main","u":[-5,5],"v":[-4,4],"height":5.6,
+ "roof":{"type":"gable","ridge":"u","pitch":0.45,"maxH":3.6,"overhang":0.35,"dormers":{"faces":["-v"],"count":2,"w":0.9,"h":1.0}},
+ "chimneys":[{"u":3,"v":0.5}],"faces":{
+ "-v":{"storeys":[{"y":0.9,"windows":{"type":"rect","w":0.9,"h":1.6,"at":[0.2,0.8],"shutters":"#3f5a4a"}},{"y":3.4,"windows":{"type":"rect","w":0.8,"h":1.3,"at":[0.3,0.7]}}],
+  "doors":[{"at":0.5,"w":1,"h":2.2,"y":0.5,"color":"#7a3b2e"}],
+  "porches":[{"style":"open","range":[0.05,0.95],"d":2.2,"height":2.5,"floorH":0.5,"roof":"hip","pitch":0.25,"railing":true,"steps":2}]},
+ "+u":{"storeys":[{"y":0.9,"windows":{"type":"rect","w":0.9,"h":1.6,"count":2}},{"y":4.2,"windows":{"type":"rect","w":0.7,"h":1.1,"at":[0.5]}}]}}}]}
+```
+Gambrel barn: one volume, `"roof":{"type":"gambrel","ridge":"u","h":4.5}`, a
+`garage` or `double` door on a gable-end face, `gableColor` for the gable walls.
+Upright-and-wing farmhouse or ell: a two-storey gable volume plus a lower,
+perpendicular gable volume overlapping it, with a top-level porch across the
+wing's front. Rear shed addition: a low volume against the back wall with a
+low-pitch gable or flat roof, its top below the main eave.
 
 Reuse integrated components. Do not emit custom profile polygons, moldings,
 floating facade panels, image assets, hand-built arcade spandrels or roof carriers.

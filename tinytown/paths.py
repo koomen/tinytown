@@ -79,6 +79,7 @@ class BuildingPaths:
     footprint = property(lambda self: self.dir / 'footprint.png')
     images = property(lambda self: self.dir / 'images')
     renders = property(lambda self: self.dir / 'renders')
+    human_feedback = property(lambda self: self.dir / 'human-feedback.json')
 
     def repair(self, n):
         return self.dir / f'repair-{int(n)}.json'

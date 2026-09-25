@@ -103,8 +103,10 @@ manual verbs are for when you want to inspect or steer.
 ./town status mytown
 ```
 
-Defaults: `astra` authors, `sol` reviews, 3 workers, 100,000 tokens and 600 s
-per run, at most 2 repairs per building, then forced publication that `accept`
+Defaults: `astra` authors (high effort), `sol` reviews (medium), 3 workers,
+300,000 tokens per building and no run-wide cap, one self-check of the
+author's own render, one validation fix per response, at most 2 repairs per
+building, then forced publication of the best-scoring draft that `accept`
 refuses without `--force`. The policy is in [authoring.md](authoring.md); the
 hand loop (edit `draft.json`, `town lint`, `town render --compare`,
 `town review --record`, `town accept`) is in [fixing.md](fixing.md). `accept`

@@ -99,6 +99,134 @@ ENUMS = {
     "dormers.style": {"gable", "shed"},
 }
 
+# --- blueprint JSON Schema -----------------------------------------------------
+# A JSON Schema view of KEYS/ENUMS: nesting, container types, numeric/boolean
+# leaves and enums, `additionalProperties: false` on every schema object. The
+# model's response carries the blueprint as a JSON string (strict response
+# schemas cannot express this recursive, mostly-optional shape), so
+# `schema_errors` checks the parsed blueprint locally. Unknown keys stay lint's
+# job (its "unknown key" warnings are validation errors in author.validate).
+
+CHILDREN = {
+    'top': {'volumes': ('volume', 'array'), 'porches': ('porch', 'array'), 'details': ('detail', 'array'),
+            'bridge': ('bridge', 'object'), 'pavilion': ('pavilion', 'object'), 'fountain': ('fountain', 'object'),
+            'amphitheater': ('amphitheater', 'object')},
+    'volume': {'roof': ('roof', 'object'), 'cornice': ('cornice', 'object'), 'plinth': ('plinth', 'object'),
+               'beltCourses': ('beltCourse', 'array'), 'cupola': ('cupola', 'object'), 'towers': ('tower', 'array'),
+               'chimneys': ('chimney', 'array'), 'faces': ('face', 'map')},
+    'roof': {'dormers': ('dormers', 'object')},
+    'face': {'storeys': ('storey', 'array'), 'doors': ('door', 'array'), 'storefronts': ('storefront', 'array'),
+             'awnings': ('awning', 'array'), 'parapets': ('parapet', 'array'), 'signs': ('sign', 'array'),
+             'pilasters': ('pilasters', 'object'), 'buttresses': ('buttresses', 'object'), 'porches': ('porch', 'array'),
+             'bays': ('bay', 'array'), 'arcade': ('arcade', 'object')},
+    'storey': {'windows': ('windows', 'object')},
+    'bay': {'storeys': ('storey', 'array')},
+    'porch': {'door': ('door', 'object')},
+}
+SCHEMA_ENUMS = {('windows', 'type'): 'window.type', ('door', 'type'): 'door.type', ('roof', 'type'): 'roof.type',
+                ('top', 'wallMaterial'): 'wallMaterial', ('volume', 'wallMaterial'): 'wallMaterial',
+                ('roof', 'ridge'): 'roof.ridge', ('parapet', 'type'): 'parapet.type', ('sign', 'style'): 'sign.style',
+                ('sign', 'shape'): 'sign.shape', ('detail', 'type'): 'detail.type',
+                ('detail', 'construction'): 'detail.construction', ('porch', 'style'): 'porch.style',
+                ('porch', 'roof'): 'porch.roof', ('bay', 'roof'): 'bay.roof', ('awning', 'type'): 'awning.type',
+                ('dormers', 'style'): 'dormers.style'}
+NUMBER_KEYS = {'height', 'bottom', 'pitch', 'maxH', 'overhang', 'depth', 'floorH', 'floorThickness', 'rise',
+               'frameW', 'surroundW', 'spireH', 'kneeH', 'kneeIn', 'inset', 'margin', 'capHeight', 'capOverhang',
+               'postWidth', 'wallH', 'rotation', 'postHeight', 'length', 'foundationDepth', 'y0', 'y1', 'transomY',
+               'trimWidth', 'trimDepth', 'crossSize', 'basinHeight', 'rimWidth', 'pylonWidth', 'roofRise',
+               'backstageDepth', 'archRise', 'deckThickness', 'pierWidth', 'girderHeight', 'abutmentWidth',
+               'approachLength', 'approachWidth', 'approachPlateau', 'stepsW', 'approachDepth'}
+# Leaves that also take another form in the renderer (`fanlight:"dark"`,
+# `planter:"#hex"`, `width:"full"`, `posts:true`, `divisions:{...}`) stay untyped.
+INTEGER_KEYS = {'count', 'steps', 'bents', 'arches', 'rows', 'seatingRows', 'endPosts'}
+BOOLEAN_KEYS = {'lip', 'dentils', 'spire', 'cross', 'keystone', 'interior', 'jets', 'railing',
+                'furniture', 'monitor', 'tracks', 'groundEntrance', 'lights', 'flatTop', 'fitUnderEave'}
+PAIR_KEYS = {('volume', 'u'), ('volume', 'v'), ('storefront', 'range'), ('awning', 'range'), ('porch', 'range')}
+
+
+def _leaf_schema(kind, key):
+    if (kind, key) in SCHEMA_ENUMS:
+        return {'enum': sorted(ENUMS[SCHEMA_ENUMS[kind, key]])}
+    if (kind, key) in PAIR_KEYS:
+        return {'type': 'array', 'items': {'type': 'number'}, 'minItems': 2, 'maxItems': 2}
+    if key in INTEGER_KEYS:
+        return {'type': 'integer'}
+    if key in NUMBER_KEYS:
+        return {'type': 'number'}
+    if key in BOOLEAN_KEYS:
+        return {'type': 'boolean'}
+    return {}
+
+
+def blueprint_json_schema():
+    """The blueprint as a JSON Schema (draft 2020-12) with shared `$defs` per KEYS section."""
+    defs = {}
+    for kind, keys in KEYS.items():
+        if '.' in kind:
+            continue
+        properties = {}
+        for key in sorted(keys):
+            child = CHILDREN.get(kind, {}).get(key)
+            if child is None:
+                properties[key] = _leaf_schema(kind, key)
+                continue
+            ref = {'$ref': f'#/$defs/{child[0]}'}
+            properties[key] = (ref if child[1] == 'object' else {'type': 'array', 'items': ref} if child[1] == 'array'
+                               else {'type': 'object', 'additionalProperties': {'anyOf': [ref, {'type': 'string'}]}})
+        defs[kind] = {'type': 'object', 'properties': properties, 'additionalProperties': False}
+    top = defs.pop('top')
+    return {'$schema': 'https://json-schema.org/draft/2020-12/schema', 'title': 'TinyTown blueprint', **top, '$defs': defs}
+
+
+def schema_errors(bp):
+    """Container, numeric, boolean and enum violations of blueprint_json_schema(); unknown keys are lint's."""
+    errors = []
+
+    def value_error(kind, key, value, where):
+        leaf = _leaf_schema(kind, key)
+        kinds = {'number': (int, float), 'integer': (int,), 'boolean': (bool,), 'array': (list,)}
+        expected = leaf.get('type')
+        if 'enum' in leaf:
+            if value not in leaf['enum']:
+                errors.append(f'{where}: {value!r} is not one of {leaf["enum"]}')
+        elif expected and (not isinstance(value, kinds[expected]) or
+                           (expected in ('number', 'integer') and isinstance(value, bool)) or
+                           (expected == 'integer' and isinstance(value, float) and not value.is_integer())):
+            errors.append(f'{where}: expected {expected}, got {type(value).__name__}')
+        elif expected == 'array' and (len(value) != 2 or not all(isinstance(x, (int, float)) and not isinstance(x, bool)
+                                                                 for x in value)):
+            errors.append(f'{where}: expected two numbers')
+
+    def walk(kind, value, where):
+        if not isinstance(value, dict):
+            errors.append(f'{where}: expected an object')
+            return
+        for key, item in value.items():
+            if key not in KEYS.get(kind, ()):
+                continue
+            child = CHILDREN.get(kind, {}).get(key)
+            path = f'{where}.{key}'
+            if child is None:
+                if item is not None:
+                    value_error(kind, key, item, path)
+            elif child[1] == 'object':
+                walk(child[0], item, path)
+            elif child[1] == 'array':
+                if not isinstance(item, list):
+                    errors.append(f'{path}: expected an array')
+                else:
+                    for index, element in enumerate(item):
+                        walk(child[0], element, f'{path}[{index}]')
+            elif not isinstance(item, dict):
+                errors.append(f'{path}: expected an object keyed by face')
+            else:
+                for name, element in item.items():
+                    if not isinstance(element, str):  # a face may be an alias such as default: "blank"
+                        walk(child[0], element, f'{path}.{name}')
+    walk('top', bp, 'top')
+    return errors
+
+
 def swatches(root=ROOT):
     src = (Path(root) / "src" / "colors.js").read_text()
     return set(re.findall(r"\b([a-z]+):\s*(?:0x[0-9a-fA-F]{6}|null)", src))
@@ -1030,24 +1158,77 @@ def report_errors(paths, site, building, blueprint, report, stage='detail'):
 #   "model": str | null,                     reviewer model alias
 #   "stage": "detail" | "massing",
 #   "repairs": int,                          completed_repairs() when the review was made
+#   "orientation_policy": "strict"|"lenient", which orientation statuses block `passed`
+#   "history": [record, ...],                earlier drafts' reviews, newest last (HISTORY_LIMIT)
 #   "timestamp": float
 # }
+# The model report carries `scores` {silhouette, roof, materials, entrance,
+# details, overall} (1-5); review_score() ranks drafts of one building.
 # Legacy files holding a bare model response ({verdict, summary, ...}) read back
 # wrapped in this shape with draft_hash null, so they never count as current.
 
 REPAIR_VERDICTS = ('repair', 'insufficient-evidence')
 BAD_ORIENTATION = ('incorrect', 'uncertain')
 BAD_SEVERITY = ('major', 'broken')
+# Orientation policy. `strict` (landmarks, commercial, civic, institutional and
+# large buildings): an unresolved principal entrance blocks `ready`. `lenient`
+# (ordinary houses, garages, sheds, outbuildings): only a demonstrably wrong
+# entrance blocks; "uncertain" is recorded but a repair cannot supply missing
+# evidence, so it does not spend a repair round. A duplicated or mirrored
+# principal entrance is reported as `incorrect` and blocks under both.
+ORIENTATION_POLICIES = ('strict', 'lenient')
+LENIENT_ORIENTATION = ('incorrect',)
+SCORE_KEYS = ('silhouette', 'roof', 'materials', 'entrance', 'details')
+HISTORY_LIMIT = 8
+# An issue that only reports missing evidence ("principal entrance unverified")
+# is not an edit the author can make. Under the lenient policy it never asks
+# for a repair, whatever severity the reviewer gave it.
+EVIDENCE_ONLY = re.compile(r"unverif|not (?:been )?(?:established|confirmed|verified|corroborated)|"
+                           r"cannot (?:be )?(?:established|confirmed|verified|determined)|no (?:visible |supplied )?evidence|"
+                           r"evidence (?:does not|cannot)|insufficient evidence|unresolved|could not be located", re.I)
 
 
-def report_needs_repair(report):
-    """Does a model review response (verdict/orientation/issues) ask for a repair?"""
+def bad_orientation(policy='strict'):
+    """Orientation statuses that block `ready` under `policy`."""
+    return LENIENT_ORIENTATION if policy == 'lenient' else BAD_ORIENTATION
+
+
+def evidence_only(issue):
+    """Does this issue only report missing evidence (nothing to edit in the blueprint)?"""
+    if not isinstance(issue, dict):
+        return False
+    text = f"{issue.get('problem', '')} {issue.get('fix', '')}"
+    return bool(EVIDENCE_ONLY.search(text))
+
+
+def report_needs_repair(report, policy='strict'):
+    """Does a model review response (verdict/orientation/issues) ask for a repair?
+
+    Under the lenient orientation policy an `insufficient-evidence` verdict, an
+    `uncertain` orientation and evidence-only issues do not: a repair edits the
+    blueprint, it cannot produce photographs.
+    """
     review = report or {}
     if not isinstance(review, dict):
         return False
-    return bool(review.get('verdict') in REPAIR_VERDICTS or
-                (review.get('orientation') or {}).get('status') in BAD_ORIENTATION or
-                any(isinstance(x, dict) and x.get('severity') in BAD_SEVERITY for x in review.get('issues') or []))
+    issues = [x for x in review.get('issues') or [] if isinstance(x, dict)]
+    if policy == 'lenient':
+        issues = [x for x in issues if not evidence_only(x)]
+        verdicts = ('repair',)
+    else:
+        verdicts = REPAIR_VERDICTS
+    return bool(review.get('verdict') in verdicts or
+                (review.get('orientation') or {}).get('status') in bad_orientation(policy) or
+                any(x.get('severity') in BAD_SEVERITY for x in issues))
+
+
+def review_score(record):
+    """(overall, sum of rubric scores) from a review record or report; None when unscored."""
+    report = (record or {}).get('report', record) if isinstance(record, dict) else None
+    scores = (report or {}).get('scores') if isinstance(report, dict) else None
+    if not isinstance(scores, dict) or not isinstance(scores.get('overall'), (int, float)):
+        return None
+    return (scores['overall'], sum(scores.get(k) or 0 for k in SCORE_KEYS))
 
 
 def read_review(paths, bid):
@@ -1062,18 +1243,37 @@ def read_review(paths, bid):
             'repairs': None, 'timestamp': None, 'legacy': True}
 
 
+def _history(previous, digest):
+    """Earlier reviews of other drafts, newest last; the previous record joins them when its draft differs."""
+    if not isinstance(previous, dict) or 'draft_hash' not in previous:
+        return []
+    history = [h for h in previous.get('history') or [] if isinstance(h, dict)]
+    if previous.get('draft_hash') not in (None, digest) and previous.get('report') is not None:
+        history.append({k: copy.deepcopy(v) for k, v in previous.items() if k != 'history'})
+    return [h for h in history if h.get('draft_hash') != digest][-HISTORY_LIMIT:]
+
+
 def write_review(paths, bid, draft, report, *, renderer_signature=None, model=None, findings=(),
-                 geometry=None, frame=None, stage='detail'):
-    """Record a review of `draft`; returns the record. Idempotent: an identical verdict is not rewritten."""
+                 geometry=None, frame=None, stage='detail', orientation_policy='strict'):
+    """Record a review of `draft`; returns the record. Idempotent: an identical verdict is not rewritten.
+
+    Reviews of earlier drafts are kept in `history` (newest last, at most
+    HISTORY_LIMIT) so the best-scoring draft can be published when repairs run out.
+    """
     paths = _paths(paths)
     b = paths.building(bid)
     findings = [str(x) for x in findings]
-    record = {'draft_hash': fingerprint(draft), 'frame': frame,
-              'passed': not findings and not report_needs_repair(report),
+    digest = fingerprint(draft)
+    record = {'draft_hash': digest, 'frame': frame,
+              'passed': not findings and not report_needs_repair(report, orientation_policy),
               'findings': findings, 'geometry': copy.deepcopy(list(geometry or [])),
               'report': copy.deepcopy(report), 'renderer_signature': renderer_signature, 'model': model,
-              'stage': stage, 'repairs': completed_repairs(paths, bid), 'timestamp': time.time()}
+              'stage': stage, 'repairs': completed_repairs(paths, bid), 'orientation_policy': orientation_policy,
+              'timestamp': time.time()}
     previous = read_json(b.review)
+    history = _history(previous, digest)
+    if history:
+        record['history'] = history
     if isinstance(previous, dict) and all(previous.get(k) == v for k, v in record.items() if k != 'timestamp'):
         return previous
     atomic_json(b.review, record)
@@ -1177,12 +1377,13 @@ def scene_repairs(paths, state):
     selected = []
     for verdict in (state.get('scene_review') or {}).get('buildings', []):
         bid = str(verdict['id'])
-        failed = (verdict.get('verdict') != 'ready' or
-                  (verdict.get('orientation') or {}).get('status') in BAD_ORIENTATION)
-        if not failed or completed_repairs(paths, bid) >= MAX_REPAIRS:
-            continue
         b = paths.building(bid)
         record = read_review(paths, bid)
+        policy = (record or {}).get('orientation_policy', 'strict')
+        failed = (verdict.get('verdict') != 'ready' or
+                  (verdict.get('orientation') or {}).get('status') in bad_orientation(policy))
+        if not failed or completed_repairs(paths, bid) >= MAX_REPAIRS:
+            continue
         if record is None or record.get('draft_hash') is None:
             draft = read_json(b.draft)
             if draft is None:
@@ -1224,7 +1425,7 @@ def publication_record(st, bp, run_id, scene, repairs, *, retroactive=False):
     passed = st['status'] == 'ready'
     if not passed and repairs < MAX_REPAIRS:
         return None
-    return {'published': True, 'forced': not passed, 'policy': POLICY,
+    record = {'published': True, 'forced': not passed, 'policy': POLICY,
             'reason': 'inspection-passed' if passed else 'repair-limit-reached',
             'inspection_passed': passed, 'inspection_status': st['status'],
             'repair_attempts': repairs, 'repair_limit': MAX_REPAIRS,
@@ -1234,6 +1435,9 @@ def publication_record(st, bp, run_id, scene, repairs, *, retroactive=False):
                            'scene': copy.deepcopy(scene),
                            'baseline_comparison': copy.deepcopy(st.get('baseline_comparison')),
                            'validation_errors': copy.deepcopy(st.get('validation_errors', []))}}
+    if st.get('selected_draft'):  # the best-scoring draft was published instead of the last one
+        record['selected_draft'] = copy.deepcopy(st['selected_draft'])
+    return record
 
 
 def review_record(st, run_id):

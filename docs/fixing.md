@@ -14,6 +14,8 @@ argparse does not read `-u` as an option.
 | A footprint OSM still has but the lot is empty | `overrides.json → buildings → {ID: {"demolished": true}}`, then `./town build <site>`. |
 | A building should be authored again | `./town author <site> --reauthor ID --accept`. The candidate is compared against the accepted blueprint; it replaces it only if approved (`comparison.json`). |
 | `town author` says `failed` for a building | Read `buildings/ID/author.json` (`error`, `attempts`). `--reauthor ID` clears it; `--dry-run` first to see the next step. |
+| A published miniature is not the last draft | Repairs ran out and an earlier draft scored better: `review.json` `selected_draft` has both scores, `history` the other drafts' reviews. |
+| `town author` stops one building with `building token budget exhausted` | It reached `--max-tokens-per-building` (300,000); resume with a larger cap or `0` for none. |
 | Wrong colours, floors, sign text on a non-blueprint building | Edit the style in `overrides.json → buildings` ([STYLE_SCHEMA.md](STYLE_SCHEMA.md)), `./town build <site>`. |
 | Road too wide, missing centre line, wrong surface | `overrides.json → roads` keyed by name or way id (`width`, `lanes`, `marking`, `surface`); `./town build <site>`. |
 | A prop, tree or parking area is missing | `overrides.json → extras` / `areas` in local metres (x east, z south); `./town build <site>`. |
