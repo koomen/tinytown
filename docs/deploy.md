@@ -129,8 +129,8 @@ The dev server disables caching, generates route documents the same way
 ## Verify a live deployment
 
 ```sh
-./town verify town https://avon.town                 # root site (avon-extended)
-./town verify town https://avon.town chautauqua      # another site on the target
+./town verify avon https://avon.town                 # root site (avon-extended)
+./town verify avon https://avon.town chautauqua      # another site on the target
 ./town verify chautauqua https://chautauqua.town
 ```
 

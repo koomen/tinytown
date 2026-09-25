@@ -34,7 +34,7 @@ codex login                                           # only for `town author` (
 | `accept <site> [ids…] [--all-reviewed] [--force] [--no-rebuild]` | reviewed drafts -> `overrides.json`, then `build`; the only writer of blueprints |
 | `status <site> [--ids…]` | derived per-building status |
 | `bake <site> [--check] [--surfaces-only\|--stream-only]`, `bake --viewer [--check]` | surfaces + stream chunks for a site; `?v=` stamps in `index.html` |
-| `deploy [--target avon\|chautauqua\|all] [--no-check]` | stage `dist/<target>/` after `bake --check` and viewer checks |
+| `stage [--target avon\|chautauqua\|all] [--no-check]` | stage `dist/<target>/` after `bake --check` and viewer checks |
 | `serve [--port 8734] [--dist [TARGET]]` | dev server: `/`, `/avon`, `/chautauqua`, `/?site=<name>`; or a built dist |
 | `verify <target> <domain> [site]` | live files match `dist/<target>/` |
 | `browser setup\|status\|cleanup\|stop` | the private headless Chromium |
@@ -135,7 +135,7 @@ stamps. `tests/browser/chautauqua-browser.py` needs
 3. `./town stage` (stages both targets; same checks Cloudflare runs)
 4. `tests/run.sh`
 5. Commit `data/`, `index.html`, `sites/`, `_headers`; push to `main`.
-6. `./town verify town https://avon.town` and
+6. `./town verify avon https://avon.town` and
    `./town verify chautauqua https://chautauqua.town`.
 
 Do not commit `dist/`, `runs/`, `.venv/`, or any image under

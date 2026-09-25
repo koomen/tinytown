@@ -166,7 +166,7 @@ A plugin is optional: `tinytown/plugins/mytown.py` with any of
 tests/run.sh
 git add data/mytown sites/mytown index.html _headers && git commit
 git push                                  # Cloudflare Workers Builds runs `python3 -m tinytown stage --target avon`
-./town verify town https://avon.town mytown
+./town verify avon https://avon.town mytown
 ```
 
 ## Growing an existing town

@@ -121,7 +121,7 @@ chautauqua.town. Routes derive from `sites/*/site.json`. On push to `main`,
 Workers Builds runs `python3 -m tinytown stage --target …` with bare Python
 and Node; it only checks that the committed surfaces, streams and viewer stamps
 are current, so bake before you push. Verify with
-`./town verify town https://avon.town`. Details: [docs/deploy.md](docs/deploy.md).
+`./town verify avon https://avon.town`. Details: [docs/deploy.md](docs/deploy.md).
 
 ## Credits and attribution
 
