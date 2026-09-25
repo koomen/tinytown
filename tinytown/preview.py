@@ -4,6 +4,7 @@ import html
 import json
 import math
 from pathlib import Path
+import re
 from urllib.parse import urlencode
 
 from .paths import SitePaths
@@ -53,6 +54,25 @@ def _center(data, spec):
     return [sum(p[i] for p in pts) / len(pts) for i in (0, 1)]
 
 
+def _drafts(spec):
+    """Building ids whose buildings/<id>/draft.json replaces the accepted blueprint in the preview."""
+    drafts = spec.get('drafts', [])
+    if not isinstance(drafts, list) or len(drafts) > 20 or not all(
+            isinstance(bid, (str, int)) and re.fullmatch(r'-?[A-Za-z0-9_]{1,40}', str(bid)) for bid in drafts):
+        raise ValueError('drafts must list at most 20 building ids')
+    return [str(bid) for bid in drafts]
+
+
+def _apply_drafts(data, paths, spec):
+    """Like the viewer's ?bp=: preview proposals without touching overrides.json."""
+    wanted = set(_drafts(spec))
+    for building in data.get('buildings', []):
+        if str(building.get('id')) in wanted:
+            draft = paths.building(str(building['id'])).draft
+            if draft.is_file():
+                building['blueprint'] = json.loads(draft.read_text())
+
+
 def _polygon(pts, bounds):
     for axis, bound, sign in ((0, bounds[0], 1), (0, bounds[2], -1), (1, bounds[1], 1), (1, bounds[3], -1)):
         output = []
@@ -83,7 +103,9 @@ def scene(root, spec):
     radius = float(spec.get('radius', 60))
     if not math.isfinite(radius) or not 10 <= radius <= 200:
         raise ValueError('preview radius must be between 10 and 200 metres')
-    data = build(SitePaths(spec.get('site', 'avon-extended'), root), write=False)
+    paths = SitePaths(spec.get('site', 'avon-extended'), root)
+    data = build(paths, write=False)
+    _apply_drafts(data, paths, spec)
     x, z = _center(data, spec)
     bounds = [x-radius, z-radius, x+radius, z+radius]
     def nearby(item):
@@ -137,6 +159,7 @@ def fingerprint(root, spec):
         for directory in (paths.site_dir, paths.source, paths.textures):
             files.update(directory.rglob('*'))
         files.add(paths.overrides)
+        files.update(paths.building(bid).draft for bid in _drafts(spec))
     digest = hashlib.sha256(json.dumps(spec, sort_keys=True).encode())
     for path in sorted(files):
         try:
@@ -183,6 +206,7 @@ def validate_spec(root, spec):
         _asset(spec)
     else:
         SitePaths(spec.get('site', 'avon-extended'), root)
+        _drafts(spec)
         radius = float(spec.get('radius', 60))
         if not math.isfinite(radius) or not 10 <= radius <= 200:
             raise ValueError('preview radius must be between 10 and 200 metres')

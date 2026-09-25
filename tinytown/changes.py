@@ -1,7 +1,9 @@
-"""Local change queue: independent Codex workspaces, human review and live previews.
+"""Local change queue: independent agent workspaces, building jobs, human review and live previews.
 
-This development service is separate from the static deployment/authoring path.
-It uses Git and the installed Codex; screenshot uploads also use Pillow.
+This development service is separate from the static deployment path. Code
+changes run the installed Codex CLI or Claude Code (change_agents.py) in Git
+snapshots; building jobs run the bounded `town author` pipeline in the main
+checkout (building_jobs.py). Screenshot uploads also use Pillow.
 """
 from contextlib import contextmanager
 from datetime import datetime, timezone
@@ -26,10 +28,11 @@ from urllib.request import Request, urlopen
 import uuid
 
 from .paths import ROOT, ChangePaths
-from . import change_worker, change_images, change_bakes, change_merge
+from . import change_worker, change_images, change_bakes, change_merge, change_steps, change_commit
+from . import building_jobs, change_agents
 
 PORT = 8735
-MODEL = 'gpt-6-astra'
+MODEL = change_agents.Codex.default_model  # records made before agent choice ran Codex with this model
 TERMINAL = {'pending_approval', 'approved', 'failed', 'cancelled', 'discarded'}
 
 
@@ -62,7 +65,7 @@ def stop_saved_worker(record):
 
 
 def public_record(record):
-    result = {**{key: value for key, value in record.items()
+    result = {'kind': 'code', **{key: value for key, value in record.items()
             if key not in {'baseline_modes', 'worker_pid', 'worker_identity', 'worker_revision', 'worker_preview_revision'}},
             'map_url': f'/previews/{record["id"]}/map/'}
     if 'bake' in result:
@@ -104,15 +107,22 @@ def validate_preview(root, spec):
 
 
 class ChangeQueue(change_bakes.Bakes):
-    def __init__(self, root=ROOT, workers=2, binary='codex', timeout=3600):
+    def __init__(self, root=ROOT, workers=2, binary='codex', timeout=3600, *, agent='codex', model=None,
+                 claude_binary='claude', building_workers=1):
         self.root = Path(root).resolve()
         self.paths = ChangePaths(self.root)
         self.paths.directory.mkdir(parents=True, exist_ok=True)
         self.workers = max(1, min(int(workers), 8))
+        # Building jobs render through the one private browser; keep them few and apart from code workers.
+        self.building_workers = max(0, min(int(building_workers), 4))
         self.binary, self.timeout = binary, timeout
+        self.binaries = {'codex': binary, 'claude': claude_binary}
+        self.agent = change_agents.agent(agent).name
+        self.model = change_agents.validate_model(model) or change_agents.agent(agent).default_model
         self.lock = threading.RLock()
         self.halt = threading.Event()
         self.threads, self.processes, self.active = [], {}, set()
+        self.building_runs = {}
         self.bake_process = None
         self.base_url = None
         with self.db() as db:
@@ -136,6 +146,7 @@ class ChangeQueue(change_bakes.Bakes):
             db.close()
 
     def _save(self, record):
+        change_steps.prepare(record)
         record['updated_at'] = now()
         with self.db() as db:
             row = db.execute('SELECT number FROM change_numbers WHERE id=?', (record['id'],)).fetchone()
@@ -152,7 +163,7 @@ class ChangeQueue(change_bakes.Bakes):
         with self.db() as db:
             records = [dict(json.loads(row[0]), number=row[1]) for row in db.execute(
                 'SELECT record, number FROM changes JOIN change_numbers USING (id) ORDER BY number')]
-        return records
+        return [change_steps.prepare(record) for record in records]
 
     def get(self, change_id, detail=False):
         reference = str(change_id).removeprefix('#')
@@ -163,7 +174,7 @@ class ChangeQueue(change_bakes.Bakes):
                 row = db.execute('SELECT record, number FROM changes JOIN change_numbers USING (id) WHERE number=?', (int(reference),)).fetchone()
         if not row:
             raise ValueError('Unknown change')
-        record = dict(json.loads(row[0]), number=row[1])
+        record = change_steps.prepare(dict(json.loads(row[0]), number=row[1]))
         directory = self.paths.change(record['id'])
         if detail:
             record = self.bake_info(record)
@@ -174,6 +185,8 @@ class ChangeQueue(change_bakes.Bakes):
                         stream.seek(max(0, bake_log.stat().st_size - 30000))
                         record['bake_log'] = stream.read().decode(errors='replace')
             log = directory / f"iteration-{record['iteration']}.jsonl"
+            if not log.exists():
+                log = directory / f"iteration-{record['iteration']}.log"  # building jobs write plain text
             if log.exists():
                 with log.open('rb') as stream:
                     stream.seek(max(0, log.stat().st_size - 60000))
@@ -220,7 +233,7 @@ class ChangeQueue(change_bakes.Bakes):
             raise ValueError('Unknown screenshot')
         return self.paths.attachment(record['id'], attachment), attachment['mime']
 
-    def create(self, request, title=None, preview=None, attachments=None):
+    def create(self, request, title=None, preview=None, attachments=None, agent=None, model=None, escalation=None):
         if not isinstance(request, str) or not request.strip():
             raise ValueError('Describe the requested change')
         if len(request) > 50000:
@@ -228,25 +241,76 @@ class ChangeQueue(change_bakes.Bakes):
         if title is not None and not isinstance(title, str):
             raise ValueError('Title must be text')
         spec = validate_preview(self.root, preview)
-        change_id = uuid.uuid4().hex[:12]
-        record = dict(id=change_id, title=(title or request.strip().splitlines()[0])[:140],
-                      request=request.strip(), status='queued', created_at=now(), iteration=1,
-                      model=MODEL, summary='', error=None, files=[], feedback=[], preview=spec,
-                      worker_status='', progress=None, worker_outcome='working', report_error=None,
-                      preview_url=f'/previews/{change_id}/' if spec else None)
+        worker = change_agents.agent(agent or self.agent)
+        model = change_agents.validate_model(model) or (self.model if worker.name == self.agent else worker.default_model)
+        record = self._new_record(request, title, spec, kind='code', agent=worker.name, model=model)
+        if escalation:
+            record['escalation'] = escalation
         with self.lock:
             return self._save_with_images(record, attachments)
 
-    def iterate(self, change_id, feedback, attachments=None):
+    def _new_record(self, request, title, spec, **fields):
+        change_id = uuid.uuid4().hex[:12]
+        return {**dict(id=change_id, title=(title or request.strip().splitlines()[0])[:140],
+                       request=request.strip(), status='queued', created_at=now(), iteration=1,
+                       model=MODEL, summary='', error=None, files=[], feedback=[], preview=spec,
+                       worker_status='', progress=None, worker_outcome='working', report_error=None,
+                       preview_url=f'/previews/{change_id}/' if spec else None), **fields}
+
+    def create_building_job(self, site, ids, mode='author', options=None, title=None):
+        """Queue the bounded authoring pipeline for buildings of one site (building_jobs.py)."""
+        fields = building_jobs.job_fields(self.root, site, ids, mode, options)
+        request, spec = fields.pop('request'), validate_preview(self.root, fields.pop('preview'))
+        fields['model'] = fields['options'].get('author_model') or 'author defaults'
+        default_title = fields.pop('title')
+        with self.lock:
+            taken = building_jobs.claimed_in(self.list(), site)
+            clash = [bid for bid in fields['building_ids'] if bid in taken]
+            if clash:
+                raise ValueError(f'Already in change #{taken[clash[0]]} (queued, running or awaiting approval): '
+                                 f'{", ".join(clash[:5])}. Approve, iterate or discard it first.')
+            record = self._new_record(request, title or default_title, spec, **fields)
+            record['agent'] = 'town author'
+            return self._save(record)
+
+    def escalate(self, site, bid, note='', agent=None, model=None):
+        """Hand one building to a coding agent: a code change whose snapshot includes the building's images."""
+        bid = building_jobs.validate_id(bid)
+        request = building_jobs.escalation_request(self.root, site, bid, note if isinstance(note, str) else '')
+        spec = {'site': site, 'target': bid, 'radius': 60, 'drafts': [bid]}
+        with self.lock:
+            taken = building_jobs.claimed_in(self.list(), site)
+            if bid in taken:
+                raise ValueError(f'Building {bid} is already in change #{taken[bid]} (queued, running or awaiting '
+                                 'approval). Approve, iterate or discard it first.')
+            return self.create(request, f'Improve {site} {bid}', spec, agent=agent, model=model,
+                               escalation={'site': site, 'id': bid})
+
+    def iterate(self, change_id, feedback, attachments=None, buildings=None):
         if not isinstance(feedback, str) or not feedback.strip() or len(feedback) > 50000:
             raise ValueError('Enter feedback (up to 50,000 characters)')
         with self.lock:
             record = self.get(change_id)
             if record['status'] not in {'pending_approval', 'failed', 'cancelled'}:
                 raise ValueError('Wait for the current pass to finish before iterating')
+            if record.get('kind') == 'building':
+                if attachments:
+                    raise ValueError('Building feedback is text; the reviewer already sees the renders')
+                ids = building_jobs.validate_ids(buildings) if buildings else [
+                    bid for bid in record['building_ids'] if not record.get('buildings', {}).get(bid, {}).get('commit')]
+                if any(bid not in record['building_ids'] for bid in ids):
+                    raise ValueError('Feedback names a building outside this job')
+                for bid in ids:
+                    building_jobs.write_feedback(self.root, record['site'], bid, feedback, job=record['id'])
+                record['feedback'].append({'text': feedback.strip(), 'at': now(), 'buildings': ids})
+                record.update(status='queued', iteration=record['iteration'] + 1, error=None,
+                              worker_status='', progress=None, worker_outcome='working', report_error=None, review_warning=None)
+                change_steps.reset(record)
+                return self._save(record)
             record['feedback'].append({'text': feedback.strip(), 'at': now()})
             record.update(status='queued', iteration=record['iteration'] + 1, error=None,
                           worker_status='', progress=None, worker_outcome='working', report_error=None, review_warning=None)
+            change_steps.reset(record)
             return self._save_with_images(record, attachments)
 
     def retry(self, change_id):
@@ -256,6 +320,45 @@ class ChangeQueue(change_bakes.Bakes):
                 raise ValueError('Only failed, cancelled, or discarded changes can be retried')
             record.update(status='queued', iteration=record['iteration'] + 1, error=None,
                           worker_status='', progress=None, worker_outcome='working', report_error=None, review_warning=None)
+            change_steps.reset(record)
+            return self._save(record)
+
+    def steps(self, change_id, *, text=None, step_id=None, done=None):
+        with self.lock:
+            record = self.get(change_id)
+            if text is not None:
+                if step_id is not None or done is not None:
+                    raise ValueError('Add a step or update one, not both')
+                if not isinstance(text, str) or not text.strip() or len(text) > 2000:
+                    raise ValueError('Enter a final step (up to 2000 characters)')
+                if len(record['final_steps']) >= 100:
+                    raise ValueError('A change can have at most 100 final steps')
+                record['final_steps'].insert(-1, {'id': uuid.uuid4().hex[:12],
+                    'text': text.strip(), 'done': False, 'source': 'operator'})
+            else:
+                if type(done) is not bool:
+                    raise ValueError('Step completion must be true or false')
+                step = next((s for s in record['final_steps'] if s['id'] == step_id), None)
+                if step is None or step_id == 'apply' or (step_id == 'main' and record['integration'].get('commit')):
+                    raise ValueError('Choose an editable final step')
+                if record['status'] in {'queued', 'running', 'discarded'}:
+                    raise ValueError('Wait for the worker to finish before recording completed steps')
+                if step_id == 'main' and done:
+                    if record['status'] != 'approved' or any(not s['done'] for s in record['final_steps'] if s['id'] != 'main'):
+                        raise ValueError('Apply the change and complete its other final steps first')
+                step['done'] = done
+                if done:
+                    step['completed_at'] = now()
+                else:
+                    step.pop('completed_at', None)
+                if step_id == 'plan':
+                    record['final_steps_iteration'] = record['iteration'] if done else None
+            # Additional work or a reopened prerequisite invalidates completion.
+            if not record['integration'].get('commit') and any(not s['done'] for s in record['final_steps'] if s['id'] != 'main'):
+                main = next((s for s in record['final_steps'] if s['id'] == 'main'), None)
+                if main:
+                    main['done'] = False
+                    main.pop('completed_at', None)
             return self._save(record)
 
     @staticmethod
@@ -277,10 +380,16 @@ class ChangeQueue(change_bakes.Bakes):
                 raise ValueError('Only queued or running changes can be cancelled')
             record['status'] = 'cancelled'
             self._save(record)
-            process = self.processes.get(record['id'])
-            if process:
-                self._terminate(process)
+            self._stop_worker(record['id'])
             return record
+
+    def _stop_worker(self, change_id):
+        process = self.processes.get(change_id)
+        if process:
+            self._terminate(process)
+        run = self.building_runs.get(change_id)
+        if run:
+            run.halt('cancelled from the change queue')  # in-flight model calls finish and are recorded
 
     def set_preview(self, change_id, spec):
         with self.lock:
@@ -300,9 +409,7 @@ class ChangeQueue(change_bakes.Bakes):
                 return record
             record['status'] = 'discarded'
             self._save(record)
-            process = self.processes.get(record['id'])
-            if process:
-                self._terminate(process)
+            self._stop_worker(record['id'])
             return record
 
     def create_preview(self, spec):
@@ -348,6 +455,9 @@ class ChangeQueue(change_bakes.Bakes):
         if workspace.exists():
             shutil.rmtree(workspace)  # only an incomplete snapshot owned by this queue
         baseline_modes = self._copy_source(self.root, workspace)
+        if record.get('escalation'):
+            # Photos and renders are gitignored, so they are copied beside the snapshot's draft and stay out of the diff.
+            building_jobs.copy_images(self.root, workspace, record['escalation']['site'], record['escalation']['id'])
         self._init_snapshot(workspace)
         record['baseline'] = git(workspace, 'rev-parse', 'HEAD').strip()
         record['baseline_modes'] = baseline_modes
@@ -406,6 +516,15 @@ Preserve the already-approved checkout changes AND the requested task changes. T
 baseline is now the current checkout. Resolve conflicts, run relevant checks, and return for
 review; do not apply to the parent checkout. Never merely choose one side of a conflict.
 Your final response must summarize changes, tests, and any remaining limitations honestly.
+Before finishing, publish all steps still required to integrate this change into local main:
+  "$PIPELINE_PYTHON" "$TOWN_CHANGE_REPORTER" --clear-final-steps --final-step "The concrete remaining step"
+Repeat --final-step for each required rebuild, check, migration, or other follow-up. Include exact
+commands and affected sites when known, and include committing any regenerated production assets.
+Read CLAUDE.md's rebuild rules: source or authored-data changes may require production bakes and
+viewer stamps after approval. A task's preview bake does not rebuild the main checkout.
+If no extra steps remain, explicitly report --clear-final-steps alone. Do this on blocked passes too.
+Approval applies and commits your source delta to local main; the queue tracks the remaining steps.
+Do not list approval or the initial source commit as custom steps; the queue records those itself.
 If a check remains blocked, preserve your edits and report the exact unchecked part.
 The user can still review and approve saved edits; do not claim blocked checks passed.
 A previous pass may have already edited this workspace. Continue from its current files.
@@ -487,6 +606,8 @@ Attached screenshots (in image order; use these as reference for the request and
                                        ('outcome', 'worker_outcome'), ('title', 'title'), ('summary', 'summary')):
                     if source in report:
                         current[target] = report[source]
+                if 'final_steps' in report:
+                    change_steps.worker_steps(current, report['final_steps'])
                 current.update(worker_revision=report['revision'], worker_updated_at=now(), report_error=None)
                 self._save(current)
         except (OSError, ValueError, TypeError, KeyError) as error:
@@ -501,12 +622,9 @@ Attached screenshots (in image order; use these as reference for the request and
         directory = self.paths.change(record['id'])
         output = directory / f"iteration-{record['iteration']}.txt"
         log = directory / f"iteration-{record['iteration']}.jsonl"
+        worker = change_agents.agent(record.get('agent', 'codex'))
         prompt = self._prompt(record)
-        (directory / f"iteration-{record['iteration']}.prompt.txt").write_text(prompt)
-        command = [self.binary, 'exec', '--model', MODEL, '--approve-for-me',
-                   '-c', 'model_reasoning_effort="high"',
-                   '--json', '--color', 'never', '--output-last-message', str(output),
-                   '--cd', str(workspace)]
+        image_files = []
         if record.get('attachments'):
             images = self.paths.worker_images(record['id'])
             if images.is_symlink():
@@ -518,10 +636,16 @@ Attached screenshots (in image order; use these as reference for the request and
                 if target.is_symlink():
                     raise ValueError('Worker screenshots must not be symlinks')
                 shutil.copyfile(source, target)
-                command.extend(['--image', str(target)])
-        command.append('-')
+                image_files.append(target)
+        prompt += worker.prompt_note(image_files)
+        (directory / f"iteration-{record['iteration']}.prompt.txt").write_text(prompt)
+        output.unlink(missing_ok=True)
+        command = worker.command(self.binaries.get(worker.name) or worker.default_binary,
+                                 record.get('model') or worker.default_model, workspace, output, image_files)
         env = dict(os.environ, PIPELINE_PYTHON=sys.executable)
-        env.pop('CODEX_THREAD_ID', None)
+        # Never resume or nest inside the operator's own agent session.
+        for name in ('CODEX_THREAD_ID', 'CLAUDECODE', 'CLAUDE_CODE_ENTRYPOINT', 'CLAUDE_CODE_SSE_PORT'):
+            env.pop(name, None)
         env.update(TOWN_CHANGE_ID=record['id'], TOWN_CHANGE_ITERATION=str(record['iteration']),
                    TOWN_CHANGE_NUMBER=str(record['number']),
                    TOWN_BROWSER_RUNTIME=str(self.paths.browser_runtime),
@@ -557,7 +681,8 @@ Attached screenshots (in image order; use these as reference for the request and
                             self._save(current)
                         previous_size = size
                 if process.returncode:
-                    raise RuntimeError(f'Codex exited with code {process.returncode}. See the agent log.')
+                    agent_name = 'Codex' if worker.name == 'codex' else 'Claude Code'
+                    raise RuntimeError(f'{agent_name} exited with code {process.returncode}. See the agent log.')
             finally:
                 self._terminate(process)
                 self._ingest_report(record)  # Capture final reports even from very short runs.
@@ -568,18 +693,7 @@ Attached screenshots (in image order; use these as reference for the request and
                         current.pop('worker_pid', None)
                         current.pop('worker_identity', None)
                         self._save(current)
-        completed = False
-        for line in log.read_text(errors='replace').splitlines():
-            try:
-                event = json.loads(line)
-            except ValueError:
-                continue
-            if event.get('type') in {'turn.failed', 'error'}:
-                raise RuntimeError(str(event.get('error') or event.get('message') or 'Agent failed'))
-            completed |= event.get('type') == 'turn.completed'
-        if not completed:
-            raise RuntimeError('Codex exited without completing a turn. See the agent log.')
-        return output.read_text() if output.exists() else 'Agent completed. Review the diff and preview.'
+        return worker.finish(log, output)
 
     def _collect(self, record):
         workspace = self.paths.workspace(record['id'])
@@ -607,15 +721,42 @@ Attached screenshots (in image order; use these as reference for the request and
                       review_warning=str(error) if files else None, error=None if files else str(error))
         return self._save(record)
 
+    def _next(self, kind):
+        """Claim the oldest queued record of this worker kind; building jobs never share a building."""
+        with self.lock:
+            records = self.list()
+            running = [r for r in records if r['status'] == 'running']
+            for record in records:
+                if record['status'] != 'queued' or record['id'] in self.active or record.get('kind', 'code') != kind:
+                    continue
+                if kind == 'building' and building_jobs.busy(record, running):
+                    continue
+                self.active.add(record['id'])
+                record['status'] = 'running'
+                return self._save(record)
+        return None
+
+    def _work_buildings(self):
+        while not self.halt.is_set():
+            record = self._next('building')
+            if record is None:
+                self.halt.wait(.3)
+                continue
+            try:
+                building_jobs.work(self, record)
+            except Exception as error:
+                with self.lock:
+                    current = self.get(record['id'])
+                    if current['status'] == 'running':
+                        current.update(status='failed', error=f'{type(error).__name__}: {error}', worker_outcome='blocked')
+                        self._save(current)
+            finally:
+                with self.lock:
+                    self.active.discard(record['id'])
+
     def _work(self):
         while not self.halt.is_set():
-            with self.lock:
-                queued = [r for r in self.list() if r['status'] == 'queued' and r['id'] not in self.active]
-                record = queued[0] if queued else None
-                if record:
-                    self.active.add(record['id'])
-                    record['status'] = 'running'
-                    self._save(record)
+            record = self._next('code')
             if record is None:
                 self.halt.wait(.3)
                 continue
@@ -665,10 +806,11 @@ Attached screenshots (in image order; use these as reference for the request and
                     self._record_problem(record, 'Queue server interrupted. Review saved edits or iterate to continue.')
                 elif record['status'] == 'failed' and record.get('baseline'):
                     self._record_problem(record, record.get('error') or 'Worker stopped before completing its checks.')
-        for _ in range(self.workers):
-            thread = threading.Thread(target=self._work, daemon=True)
-            thread.start()
-            self.threads.append(thread)
+        for target, count in ((self._work, self.workers), (self._work_buildings, self.building_workers)):
+            for _ in range(count):
+                thread = threading.Thread(target=target, daemon=True)
+                thread.start()
+                self.threads.append(thread)
         self.start_bakes()
 
     def stop(self):
@@ -676,6 +818,8 @@ Attached screenshots (in image order; use these as reference for the request and
         with self.lock:
             for process in list(self.processes.values()):
                 self._terminate(process)
+            for run in list(self.building_runs.values()):
+                run.halt('queue server stopped')
             if self.bake_process:
                 self._terminate(self.bake_process)
         for thread in self.threads:
@@ -737,6 +881,7 @@ Attached screenshots (in image order; use these as reference for the request and
                           worker_revision=-1, worker_preview_revision=-1,
                           worker_status='Queued to resolve merge conflicts',
                           merge={'status': 'repairing', 'files': [item[0] for item in conflicts]})
+            change_steps.reset(record)
             record['files'] = self._collect(record)
             return self._save(record)
         except Exception:
@@ -748,14 +893,39 @@ Attached screenshots (in image order; use these as reference for the request and
         finally:
             if staging.exists(): shutil.rmtree(staging)
 
-    def approve(self, change_id):
+    def approve(self, change_id, buildings=None, force=False):
+        with self.lock:
+            try:
+                record = self.get(change_id)
+                if record.get('kind') == 'building':
+                    return building_jobs.approve(self, record, buildings, bool(force))
+                if buildings or force:
+                    raise ValueError('Building selection and force apply only to building jobs')
+                record = self._approve(change_id)
+                if record.get('escalation') and record['status'] == 'approved':
+                    record = self._save(building_jobs.after_escalation(self, record))
+                return record
+            except (ValueError, OSError, subprocess.CalledProcessError) as error:
+                message = str(error)
+                if isinstance(error, subprocess.CalledProcessError) and error.stderr:
+                    message = error.stderr.decode(errors='replace') if isinstance(error.stderr, bytes) else error.stderr
+                record = self.get(change_id)
+                if record['status'] == 'pending_approval':
+                    record['integration']['error'] = message.strip()
+                    record['final_steps'] = [s for s in record['final_steps'] if s['id'] != 'integration-blocker']
+                    record['final_steps'].insert(-1, {'id': 'integration-blocker', 'text': message.strip(),
+                                                    'done': False, 'source': 'queue'})
+                    self._save(record)
+                raise
+
+    def _approve(self, change_id):
         with self.lock:
             record = self.get(change_id)
             if record['status'] != 'pending_approval':
                 raise ValueError('Only a completed change can be approved')
             workspace = self.paths.workspace(record['id'])
             files = self._collect(record)
-            updates, conflicts, merged_files = [], [], []
+            updates, conflicts, merged_files, commit_changes = [], [], [], []
             for name in files:
                 target = safe_path(self.root, name)
                 source = safe_path(workspace, name)
@@ -770,6 +940,7 @@ Attached screenshots (in image order; use these as reference for the request and
                 actual_mode = stat.S_IMODE(target.stat().st_mode) if target.is_file() else None
                 baseline_mode = record.get('baseline_modes', {}).get(name)
                 desired_mode = stat.S_IMODE(source.stat().st_mode) if source.is_file() else None
+                commit_changes.append((name, baseline, desired, baseline_mode, desired_mode))
                 try:
                     merged = change_merge.content(name, baseline, actual, desired)
                     mode = change_merge.value(baseline_mode, actual_mode, desired_mode)
@@ -781,38 +952,44 @@ Attached screenshots (in image order; use these as reference for the request and
                     merged_files.append(name)
             if conflicts:
                 return self._repair_merge(record, updates, conflicts)
-            # Approval operations are serialized. Also detect outside edits made
-            # while preparing the merge, before writing any file.
-            for name, _, _, expected, mode in updates:
-                target = safe_path(self.root, name)
-                if (target.read_bytes() if target.is_file() else None) != expected or (stat.S_IMODE(target.stat().st_mode) if target.is_file() else None) != mode:
-                    raise ValueError('Checkout changed during approval; approve again')
-            applied = []
-            try:
-                for name, content, mode, original, original_mode in updates:
+            message = f"Change #{record['number']}: {record['title']}"
+            with change_commit.prepare(self.root, commit_changes, message) as publish:
+                # Approval operations are serialized. Also detect outside edits made
+                # while preparing the merge, before writing any file.
+                for name, _, _, expected, mode in updates:
                     target = safe_path(self.root, name)
-                    applied.append((target, original, original_mode))
-                    if content is not None:
-                        target.parent.mkdir(parents=True, exist_ok=True)
-                        descriptor, temporary_name = tempfile.mkstemp(prefix='.town-change-', dir=target.parent)
-                        os.close(descriptor)
-                        temporary = Path(temporary_name)
-                        try:
-                            temporary.write_bytes(content); temporary.chmod(mode)
-                            os.replace(temporary, target)
-                        finally:
-                            temporary.unlink(missing_ok=True)
-                    else:
-                        target.unlink(missing_ok=True)
-            except Exception:
-                for target, content, mode in reversed(applied):
-                    if content is None:
-                        target.unlink(missing_ok=True)
-                    else:
-                        target.write_bytes(content); target.chmod(mode)
-                raise
-            record.update(status='approved', error=None, files=files,
+                    if (target.read_bytes() if target.is_file() else None) != expected or (stat.S_IMODE(target.stat().st_mode) if target.is_file() else None) != mode:
+                        raise ValueError('Checkout changed during approval; approve again')
+                applied = []
+                try:
+                    for name, content, mode, original, original_mode in updates:
+                        target = safe_path(self.root, name)
+                        applied.append((target, original, original_mode))
+                        if content is not None:
+                            target.parent.mkdir(parents=True, exist_ok=True)
+                            descriptor, temporary_name = tempfile.mkstemp(prefix='.town-change-', dir=target.parent)
+                            os.close(descriptor)
+                            temporary = Path(temporary_name)
+                            try:
+                                temporary.write_bytes(content); temporary.chmod(mode)
+                                os.replace(temporary, target)
+                            finally:
+                                temporary.unlink(missing_ok=True)
+                        else:
+                            target.unlink(missing_ok=True)
+                    integration = publish()
+                except Exception:
+                    for target, content, mode in reversed(applied):
+                        if content is None:
+                            target.unlink(missing_ok=True)
+                        else:
+                            target.write_bytes(content); target.chmod(mode)
+                    raise
+            record.update(status='approved', error=None, files=files, integration={**integration, 'applied_at': now()},
                           merge={'status': 'merged', 'files': merged_files})
+            for step in record['final_steps']:
+                if step['id'] == 'integration-blocker':
+                    step.update(done=True, completed_at=now())
             return self._save(record)
 
 
@@ -872,7 +1049,14 @@ class ChangeHandler(http.server.BaseHTTPRequestHandler):
                 return self.reply({'sites': [{'name': name, 'title': config.site_config(name, self.queue.root).get('title', name)}
                                              for name in config.all_sites(self.queue.root)]})
             if path == '/api/health':
-                return self.reply({'service': 'tinytown-changes', 'root': str(self.queue.root), 'screenshots': True})
+                return self.reply({'service': 'tinytown-changes', 'root': str(self.queue.root), 'screenshots': True,
+                                   'buildings': True})
+            if path == '/api/agents':
+                return self.reply({'default': self.queue.agent, 'model': self.queue.model,
+                                   'agents': [{'name': a.name, 'model': self.queue.model if a.name == self.queue.agent else a.default_model}
+                                              for a in change_agents.AGENTS.values()]})
+            if path == '/api/buildings' or path.startswith('/api/buildings/'):
+                return self.buildings(path)
             if path == '/api/events':
                 return self.events('changes', self.payload)
             if path.startswith('/api/changes/'):
@@ -892,6 +1076,23 @@ class ChangeHandler(http.server.BaseHTTPRequestHandler):
             pass
         except Exception as error:
             self.reply({'error': str(error)}, 500)
+
+    def buildings(self, path):
+        parts = path.strip('/').split('/')
+        query = {key: values[0] for key, values in parse_qs(urlsplit(self.path).query).items()}
+        records = self.queue.list()
+        if len(parts) == 2:
+            site = query.get('site', '')
+            return self.reply(building_jobs.query(self.queue.root, site, group=query.get('group') or None, q=query.get('q'),
+                                                  offset=query.get('offset', 0), limit=query.get('limit', 100),
+                                                  active=building_jobs.active_in(records, site)))
+        if len(parts) == 4:
+            return self.reply(building_jobs.details(self.queue.root, parts[2], parts[3],
+                                                    active=building_jobs.active_in(records, parts[2])))
+        if len(parts) >= 6 and parts[4] == 'files':
+            image, mime = building_jobs.image_file(self.queue.root, parts[2], parts[3], '/'.join(parts[5:]))
+            return self.reply(image.read_bytes(), content_type=mime)
+        return self.reply({'error': 'Not found'}, 404)
 
     def file(self, path):
         if not path.is_file():
@@ -991,7 +1192,14 @@ class ChangeHandler(http.server.BaseHTTPRequestHandler):
             if not isinstance(body, dict):
                 raise ValueError('Expected a JSON object')
             if path == '/api/changes':
-                return self.reply(public_record(self.queue.create(body.get('request'), body.get('title'), body.get('preview'), body.get('attachments'))), 201)
+                return self.reply(public_record(self.queue.create(body.get('request'), body.get('title'), body.get('preview'), body.get('attachments'),
+                                                                  agent=body.get('agent') or None, model=body.get('model') or None)), 201)
+            if path == '/api/buildings/jobs':
+                return self.reply(public_record(self.queue.create_building_job(
+                    body.get('site'), body.get('ids'), body.get('mode') or 'author', body.get('options'), body.get('title'))), 201)
+            if path == '/api/buildings/escalate':
+                return self.reply(public_record(self.queue.escalate(body.get('site'), body.get('id'), body.get('note') or '',
+                                                                    agent=body.get('agent') or None, model=body.get('model') or None)), 201)
             if path == '/api/previews':
                 return self.reply(self.queue.create_preview(body), 201)
             parts = path.strip('/').split('/')
@@ -999,14 +1207,18 @@ class ChangeHandler(http.server.BaseHTTPRequestHandler):
                 return self.reply({'error': 'Not found'}, 404)
             change_id, action = parts[2:]
             if action == 'iterate':
-                record = self.queue.iterate(change_id, body.get('feedback'), body.get('attachments'))
+                record = self.queue.iterate(change_id, body.get('feedback'), body.get('attachments'), body.get('buildings'))
             elif action == 'bake':
                 record = self.queue.request_bake(change_id, body.get('site'))
             elif action == 'attachments':
                 record = self.queue.add_attachments(change_id, body.get('attachments'))
             elif action == 'preview':
                 record = self.queue.set_preview(change_id, body)
-            elif action in {'approve', 'retry', 'cancel', 'discard'}:
+            elif action == 'steps':
+                record = self.queue.steps(change_id, text=body.get('text'), step_id=body.get('step_id'), done=body.get('done'))
+            elif action == 'approve':
+                record = self.queue.approve(change_id, body.get('buildings'), body.get('force') is True)
+            elif action in {'retry', 'cancel', 'discard'}:
                 record = getattr(self.queue, action)(change_id)
             else:
                 raise ValueError('Unknown action')
@@ -1017,8 +1229,10 @@ class ChangeHandler(http.server.BaseHTTPRequestHandler):
             self.reply({'error': str(error)}, 500)
 
 
-def serve(port=None, workers=2, root=ROOT, binary='codex', timeout=3600):
-    queue = ChangeQueue(root, workers, binary, timeout)
+def serve(port=None, workers=2, root=ROOT, binary='codex', timeout=3600, *, agent='codex', model=None,
+          claude_binary='claude', building_workers=1):
+    queue = ChangeQueue(root, workers, binary, timeout, agent=agent, model=model, claude_binary=claude_binary,
+                        building_workers=building_workers)
     with queue.paths.lock.open('a') as lock:
         try:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -1112,19 +1326,56 @@ def _run(args):
             print(json.dumps(change_worker.publish(args), indent=2))
             return 0
         if args.verb == 'changes' and args.action == 'serve':
-            serve(args.port, args.workers, binary=args.binary, timeout=args.timeout)
+            serve(args.port, args.workers, binary=args.binary, timeout=args.timeout, agent=args.agent, model=args.model,
+                  claude_binary=args.claude_binary, building_workers=args.building_workers)
             return 0
         args.port = ensure_server(args.port)
         if args.verb == 'preview':
             result = api(args.port, '/api/previews', _spec(args) or {})
         elif args.action == 'add':
-            result = api(args.port, '/api/changes', {'request': args.request, 'title': args.title, 'preview': _spec(args)})
+            result = api(args.port, '/api/changes', {'request': args.request, 'title': args.title, 'preview': _spec(args),
+                                                     'agent': args.agent, 'model': args.model})
+        elif args.action == 'add-building':
+            result = api(args.port, '/api/buildings/jobs', {'site': args.site, 'ids': args.ids, 'title': args.title,
+                                                            'mode': 'reauthor' if args.reauthor else 'author',
+                                                            'options': _options(args.option)})
+        elif args.action == 'escalate':
+            result = api(args.port, '/api/buildings/escalate', {'site': args.site, 'id': args.building, 'note': args.note,
+                                                                'agent': args.agent, 'model': args.model})
+        elif args.action == 'buildings':
+            from urllib.parse import urlencode
+            query = {k: v for k, v in (('site', args.site), ('group', args.group), ('q', args.query),
+                                       ('offset', args.offset), ('limit', args.limit)) if v not in (None, '')}
+            result = api(args.port, '/api/buildings?' + urlencode(query))
+            for row in result['rows']:
+                flags = ' forced' if row['forced'] else ''
+                job = f' #{row["job"]}' if row.get('job') else ''
+                print(f'{row["group"]:15} {row["status"]:13} {row["id"]:>14}  {row.get("name") or row.get("address") or ""}{flags}{job}')
+            print(' '.join(f'{k}={v}' for k, v in result['counts'].items() if v), f'(showing {len(result["rows"])} of {result["total"]})')
+            print(f'http://127.0.0.1:{args.port}/changes?view=buildings')
+            return 0
         elif args.action == 'list':
             result = api(args.port, '/api/changes')
         elif args.action == 'show':
             result = api(args.port, f'/api/changes/{quote(args.id, safe="")}')
+        elif args.action == 'watch':
+            from .change_watch import watch
+            path = f'/api/changes/{quote(args.id, safe="")}' if args.id else '/api/changes'
+            print(f'http://127.0.0.1:{args.port}/changes', file=sys.stderr)
+            return watch(lambda: api(args.port, path), interval=args.interval,
+                         timeout=args.timeout, as_json=args.json)
+        elif args.action == 'steps':
+            path = f'/api/changes/{quote(args.id, safe="")}'
+            if args.add is not None or args.done is not None or args.reopen is not None:
+                body = {'text': args.add} if args.add is not None else {'step_id': args.done or args.reopen, 'done': args.done is not None}
+                result = api(args.port, path + '/steps', body)
+            else:
+                result = api(args.port, path)
+            result = {key: result.get(key) for key in ('id', 'number', 'status', 'final_steps', 'integration')}
         else:
-            body = {'feedback': args.feedback} if args.action == 'iterate' else {'site': args.site} if args.action == 'bake' else {}
+            body = ({'feedback': args.feedback, 'buildings': args.building} if args.action == 'iterate' else
+                    {'site': args.site} if args.action == 'bake' else
+                    {'buildings': args.building, 'force': args.force} if args.action == 'approve' else {})
             result = api(args.port, f'/api/changes/{quote(args.id, safe="")}/{args.action}', body)
         print(json.dumps(result, indent=2))
         print(f'http://127.0.0.1:{args.port}' + result.get('url', f'/changes#{result.get("number", result["id"])}' if 'id' in result else '/changes'))
@@ -1143,10 +1394,30 @@ def _preview_flags(parser):
     change_worker.preview_flags(parser)
 
 
+def _options(pairs):
+    """KEY=VALUE author options; values parse as JSON when they can (numbers, true/false), else text."""
+    options = {}
+    for pair in pairs or []:
+        key, separator, value = pair.partition('=')
+        if not separator or not key:
+            raise ValueError(f'Author options are KEY=VALUE, got {pair!r}')
+        try:
+            options[key.replace('-', '_')] = json.loads(value)
+        except ValueError:
+            options[key.replace('-', '_')] = value
+    return options
+
+
+def _agent_flags(parser):
+    parser.add_argument('--agent', choices=sorted(change_agents.AGENTS), help='Coding agent (default: the server\'s)')
+    parser.add_argument('--model', help='Model id or alias for that agent')
+
+
 def register(subparsers):
-    parser = subparsers.add_parser('changes', help='Queue independent Astra changes and review them live')
+    parser = subparsers.add_parser('changes', help='Queue agent changes and building authoring jobs; review them live')
     actions = parser.add_subparsers(dest='action', required=True)
-    for action in ('serve', 'add', 'list', 'show', 'iterate', 'approve', 'cancel', 'retry', 'discard', 'report', 'bake'):
+    for action in ('serve', 'add', 'add-building', 'buildings', 'escalate', 'list', 'show', 'watch', 'steps', 'iterate',
+                   'approve', 'cancel', 'retry', 'discard', 'report', 'bake'):
         child = actions.add_parser(action)
         child.set_defaults(run=_run)
         if action == 'report':
@@ -1157,16 +1428,55 @@ def register(subparsers):
             child.add_argument('--workers', type=int, default=2)
             child.add_argument('--binary', default='codex')
             child.add_argument('--timeout', type=int, default=3600, help='Seconds allowed per agent pass')
+            child.add_argument('--agent', choices=sorted(change_agents.AGENTS), default='codex',
+                               help='Default coding agent for code changes')
+            child.add_argument('--model', help='Default model for that agent (codex: gpt-6-astra, claude: claude-opus-5-5)')
+            child.add_argument('--claude-binary', default='claude')
+            child.add_argument('--building-workers', type=int, default=1,
+                               help='Concurrent building jobs (each renders through the private browser)')
         if action == 'add':
             child.add_argument('request')
             child.add_argument('--title')
             _preview_flags(child)
-        if action in {'show', 'iterate', 'approve', 'cancel', 'retry', 'discard', 'bake'}:
+            _agent_flags(child)
+        if action == 'add-building':
+            child.add_argument('site')
+            child.add_argument('ids', nargs='+', help='Structure ids')
+            child.add_argument('--reauthor', action='store_true', help='Author again even if accepted; compared against the accepted blueprint')
+            child.add_argument('--option', action='append', metavar='KEY=VALUE',
+                               help='town author option, e.g. author_model=opus or max_tokens=200000 (repeatable)')
+            child.add_argument('--title')
+        if action == 'buildings':
+            child.add_argument('site')
+            child.add_argument('--group', choices=building_jobs.GROUPS)
+            child.add_argument('--query', help='Id, name or address substring')
+            child.add_argument('--offset', type=int)
+            child.add_argument('--limit', type=int, default=100)
+        if action == 'escalate':
+            child.add_argument('site')
+            child.add_argument('building', help='Structure id')
+            child.add_argument('--note', default='', help='Extra instructions for the agent')
+            _agent_flags(child)
+        if action in {'show', 'steps', 'iterate', 'approve', 'cancel', 'retry', 'discard', 'bake'}:
             child.add_argument('id', help='Change number or full change ID')
+        if action == 'watch':
+            child.add_argument('id', nargs='?', help='Change number or ID; omit to watch the queue')
+            child.add_argument('--interval', type=int, default=2, help='Seconds between updates (1–60)')
+            child.add_argument('--timeout', type=int, default=0, help='Stop watching after this many seconds; 0 waits until review or stop')
+            child.add_argument('--json', action='store_true', help='Print one JSON object per update')
+        if action == 'steps':
+            group = child.add_mutually_exclusive_group()
+            group.add_argument('--add', help='Record another required step')
+            group.add_argument('--done', metavar='STEP_ID', help='Record that a step was completed')
+            group.add_argument('--reopen', metavar='STEP_ID', help='Mark a step unfinished again')
         if action == 'bake':
             child.add_argument('--site', help='Town to bake (defaults to the task preview town)')
         if action == 'iterate':
             child.add_argument('feedback')
+        if action in {'iterate', 'approve'}:
+            child.add_argument('--building', action='append', metavar='ID', help='Building job: only this building (repeatable)')
+        if action == 'approve':
+            child.add_argument('--force', action='store_true', help='Building job: publish even when accept refuses')
     parser = subparsers.add_parser('preview', help='Create a live source preview without baking')
     parser.add_argument('--port', type=int, help='Dashboard port (auto-select by default)')
     _preview_flags(parser)

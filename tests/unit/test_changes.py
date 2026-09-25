@@ -28,7 +28,9 @@ class ChangeQueueFixture(unittest.TestCase):
         self.write('src/delete.js', 'delete me\n')
         self.write('data/example/stream/manifest.json', '{}')
         self.write('data/example/surfaces.json', '{}')
-        self.git('init', '-q')
+        self.git('init', '-q', '-b', 'main')
+        self.git('config', 'user.name', 'Test')
+        self.git('config', 'user.email', 'test@example.invalid')
         self.git('add', '.')
         self.git('-c', 'user.name=Test', '-c', 'user.email=test@example.invalid',
                  'commit', '-qm', 'baseline')

@@ -3,6 +3,10 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {withBrowser, waitFor, REPO_ROOT} from '../../tinytown/browser.mjs';
 
+const buildingRows = [
+  {id:'101', name:'Firehouse', address:'1 Main', kind:'civic', status:'referenced', group:'needs-author', verdict:null, forced:false, repairs:0, job:null},
+  {id:'102', name:null, address:'2 Main', kind:'house', status:'accepted', group:'needs-attention', verdict:'repair', forced:true, repairs:2, job:null},
+];
 let changes = [], stream, lastMutation, log = 'Agent activity', imageCount = 0, screenshots = true;
 const png = 'iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAEklEQVR4nGPUCpjGwMDAxAAGAAx+ARQMYvN+AAAAAElFTkSuQmCC';
 const imageInput = (selector, kind = 'paste', name = 'screen.png') => `(() => {
@@ -17,6 +21,17 @@ async function route(req, res) {
   if (!req.url.startsWith('/api/')) return false;
   if (req.url === '/api/events') {res.writeHead(200, {'Content-Type':'text/event-stream'}); stream = res; broadcast(); return true;}
   if (req.url === '/api/health') {res.setHeader('Content-Type', 'application/json'); res.end(JSON.stringify({screenshots})); return true;}
+  if (req.url === '/api/agents') {res.setHeader('Content-Type', 'application/json'); res.end(JSON.stringify({default:'codex', agents:[{name:'codex', model:'gpt-6-astra'}, {name:'claude', model:'claude-opus-5-5'}]})); return true;}
+  if (req.method === 'GET' && req.url.startsWith('/api/buildings')) {
+    res.setHeader('Content-Type', 'application/json');
+    const url = new URL(req.url, 'http://x');
+    if (url.pathname === '/api/buildings') {
+      const group = url.searchParams.get('group');
+      const rows = buildingRows.filter(row => !group || row.group === group);
+      res.end(JSON.stringify({site:url.searchParams.get('site'), total:rows.length, offset:0, limit:100, groups:['needs-author', 'needs-attention', 'accepted'], counts:{'needs-author':1, 'needs-attention':1, accepted:0}, rows}));
+    } else res.end(JSON.stringify({...buildingRows[0], review:{verdict:'repair', summary:'Porch too deep.', issues:[{severity:'major', problem:'Porch too deep', fix:'Halve it'}]}, cues:['Red doors'], feedback:[], images:[], preview:{site:'test-town', target:'101', radius:60, drafts:['101']}}));
+    return true;
+  }
   if (req.method === 'GET' && req.url.includes('/attachments/')) {res.setHeader('Content-Type', 'image/png'); res.end(Buffer.from(png, 'base64')); return true;}
   res.setHeader('Content-Type', 'application/json');
   if (req.method === 'POST') {
@@ -24,10 +39,22 @@ async function route(req, res) {
     assert.equal(req.headers['x-tinytown'], 'changes');
     lastMutation = {url:req.url, body:JSON.parse(body)};
     if (req.url === '/api/previews') {res.end(JSON.stringify({id:'preview-1', url:'/previews/preview-1/'})); return true;}
+    if (req.url === '/api/buildings/jobs') {
+      changes.push({id:'building-1', number:9, kind:'building', site:'test-town', title:'Author test-town 101', request:'Author 101', building_ids:lastMutation.body.ids,
+        buildings:{101:{status:'reviewed', steps:['author 0', 'review 0'], refused:'forced publication'}}, status:'pending_approval', iteration:1, attachments:[], final_steps:[]});
+      res.end(JSON.stringify(changes.at(-1))); broadcast(); return true;
+    }
     if (req.url === '/api/changes') changes.push({id:'test-1', number:1, title:'A greener main street', ...lastMutation.body, attachments:[], status:'queued', iteration:1, created_at:new Date().toISOString(), updated_at:new Date().toISOString()});
     else if (req.url.endsWith('/iterate')) {changes[0].status = 'queued'; changes[0].iteration++;}
     else if (req.url.endsWith('/bake')) changes[0].bake = {id:'abcdef123456',site:lastMutation.body.site,status:'queued'};
-    else if (req.url.endsWith('/approve')) changes[0].status = 'approved';
+    else if (req.url.endsWith('/approve')) {
+      changes[0].status = 'approved'; changes[0].integration = {target_branch:'main', commit:'a'.repeat(40)};
+      for (const step of changes[0].final_steps || []) if (['apply', 'main'].includes(step.id)) step.done = true;
+    }
+    else if (req.url.endsWith('/steps')) {
+      if (lastMutation.body.text) changes[0].final_steps.push({id:'manual', text:lastMutation.body.text, source:'operator', done:false});
+      else changes[0].final_steps.find(step => step.id === lastMutation.body.step_id).done = lastMutation.body.done;
+    }
     else if (req.url.endsWith('/discard')) changes[0].status = 'discarded';
     else if (req.url.endsWith('/retry')) changes[0].status = 'queued';
     for (const item of lastMutation.body.attachments || []) {
@@ -36,7 +63,7 @@ async function route(req, res) {
     }
     res.end(JSON.stringify(changes[0])); broadcast(); return true;
   }
-  res.end(JSON.stringify(req.url === '/api/sites' ? {sites:[{name:'test-town', title:'Test town'}]} : req.url === '/api/changes' ? {changes, workers:2} : {...changes[0], log, diff:'diff --git a/tree.js b/tree.js'})); return true;
+  res.end(JSON.stringify(req.url === '/api/sites' ? {sites:[{name:'test-town', title:'Test town'}]} : req.url === '/api/changes' ? {changes, workers:2} : {...(changes.find(c => req.url === `/api/changes/${c.id}`) || changes[0]), log, diff:'diff --git a/tree.js b/tree.js'})); return true;
 }
 await withBrowser(REPO_ROOT, async ({go, evaluate, send}) => {
   await go('/changes');
@@ -155,9 +182,29 @@ await withBrowser(REPO_ROOT, async ({go, evaluate, send}) => {
   assert.equal(await evaluate(`document.querySelectorAll('#feedback-images img').length`), 0);
   changes[0].status = 'pending_approval'; broadcast();
   await waitFor(() => evaluate(`!document.querySelector('#approve-change').hidden`), 'second review', 10000);
+  changes[0].final_steps = [
+    {id:'plan', text:'Final steps reported', source:'queue', done:true},
+    {id:'apply', text:'Apply to checkout', source:'queue', done:false},
+    {id:'bake', text:'Rebuild assets <script>plain text</script>', source:'worker', done:false},
+    {id:'main', text:'Commit to local main', source:'queue', done:false},
+  ]; broadcast();
+  await waitFor(() => evaluate(`document.querySelectorAll('.final-step').length === 4`), 'worker final steps', 10000);
+  assert.equal(await evaluate(`document.querySelector('[data-step-id="main"]').disabled`), true);
+  assert.equal(await evaluate(`document.querySelector('#final-steps script')`), null, 'step text is not HTML');
   await evaluate(`document.querySelector('#approve-change').click()`);
   await waitFor(() => evaluate(`document.querySelector('#detail-status').textContent === 'Approved'`), 'approval', 10000);
   assert.equal(lastMutation.url, '/api/changes/test-1/approve');
+  assert.equal(await evaluate(`document.querySelector('#finalizing-count').textContent`), '1');
+  assert.equal(await evaluate(`document.querySelector('#integration-status').textContent.includes('aaaaaaaaaaaa')`), true);
+  assert.equal(await evaluate(`document.querySelector('[data-step-id="main"]').checked`), true);
+  await evaluate(`document.querySelector('[data-step-id="bake"]').click()`);
+  await waitFor(() => evaluate(`document.querySelector('#finalizing-section').hidden`), 'finished steps move to history', 10000);
+  assert.deepEqual(lastMutation.body, {step_id:'bake', done:true});
+  await evaluate(`document.querySelector('[data-step-id="bake"]').click()`);
+  await waitFor(() => evaluate(`!document.querySelector('#finalizing-section').hidden`), 'reopen final step', 10000);
+  await evaluate(`document.querySelector('#final-step-text').value = 'Commit regenerated assets'; document.querySelector('#final-step-form').requestSubmit()`);
+  await waitFor(() => evaluate(`document.querySelector('[data-step-id="manual"]') !== null`), 'append final step after approval', 10000);
+  assert.equal(lastMutation.body.text, 'Commit regenerated assets');
   changes[0].status = 'failed'; broadcast();
   await waitFor(() => evaluate(`document.querySelector('#detail-status').textContent === 'Failed' && !document.querySelector('#feedback-form').hidden`), 'failed repair feedback', 10000);
   await evaluate(`document.querySelector('#feedback').value = 'Repair the geometry first'; document.querySelector('#feedback-form').requestSubmit()`);
@@ -190,5 +237,34 @@ await withBrowser(REPO_ROOT, async ({go, evaluate, send}) => {
   changes.push({id:'test-3', number:3, title:'Third', status:'queued'}, {id:'test-2', number:2, title:'Second', status:'queued'}); broadcast();
   await waitFor(() => evaluate(`document.querySelectorAll('#queued-list .change-card').length === 3`), 'ordered queue', 10000);
   assert.deepEqual(await evaluate(`[...document.querySelectorAll('#queued-list h3')].map(el => el.textContent)`), ['#1 · A greener main street', '#2 · Second', '#3 · Third']);
-  console.log('PASS page-wide screenshot drops, numbered changes/links/order, review despite blocked checks, stable modal, and mobile layout');
+  await send('Emulation.setDeviceMetricsOverride', {width:1200,height:900,deviceScaleFactor:1,mobile:false});
+  await evaluate(`location.hash = ''`);
+  await evaluate(`document.querySelector('#view-buildings').click()`);
+  await waitFor(() => evaluate(`!document.querySelector('#buildings-view').hidden && document.querySelectorAll('#buildings-rows tr').length === 2`), 'buildings view', 10000);
+  assert.equal(await evaluate(`new URLSearchParams(location.search).get('view')`), 'buildings');
+  assert.equal(await evaluate(`document.querySelector('#changes-view').hidden`), true);
+  assert.equal(await evaluate(`document.querySelectorAll('#buildings-rows .badge.warn').length`), 1, 'forced publications are flagged');
+  await evaluate(`[...document.querySelectorAll('#building-groups button')].find(b => b.textContent.startsWith('Needs attention')).click()`);
+  await waitFor(() => evaluate(`document.querySelectorAll('#buildings-rows tr').length === 1`), 'group filter', 10000);
+  await evaluate(`[...document.querySelectorAll('#building-groups button')][0].click()`);
+  await waitFor(() => evaluate(`document.querySelectorAll('#buildings-rows tr').length === 2`), 'all groups', 10000);
+  await send('Emulation.setDeviceMetricsOverride', {width:390,height:844,deviceScaleFactor:1,mobile:false});
+  assert.equal(await evaluate(`document.documentElement.scrollWidth <= innerWidth`), true, 'mobile buildings view must not overflow');
+  await send('Emulation.setDeviceMetricsOverride', {width:1200,height:900,deviceScaleFactor:1,mobile:false});
+  await evaluate(`document.querySelector('#buildings-rows button.link').click()`);
+  await waitFor(() => evaluate(`document.querySelector('#building-dialog').open && document.querySelector('#building-issues li')?.textContent.includes('Porch too deep')`), 'building details', 10000);
+  assert.equal(await evaluate(`document.querySelectorAll('#escalate-agent option').length`), 2, 'agent choices');
+  await evaluate(`document.querySelector('#close-building').click()`);
+  await evaluate(`document.querySelector('#buildings-rows input[type=checkbox]').click()`);
+  await waitFor(() => evaluate(`!document.querySelector('#author-selected').disabled`), 'selection enables author', 10000);
+  await evaluate(`document.querySelector('#author-selected').click()`);
+  await waitFor(() => evaluate(`document.querySelector('#detail-dialog').open && !document.querySelector('#building-job-section').hidden`), 'building job modal', 10000);
+  assert.deepEqual(lastMutation.body, {site:'test-town', ids:['101'], mode:'author'});
+  assert.equal(await evaluate(`document.querySelector('#changes-view').hidden`), false);
+  assert.equal(await evaluate(`document.querySelector('#approve-change').textContent`), 'Accept & commit');
+  await waitFor(() => evaluate(`!document.querySelector('#approve-force').hidden`), 'approve anyway for a refused building', 10000);
+  await evaluate(`[...document.querySelectorAll('.building-job button')].find(b => b.textContent === 'Accept anyway').click()`);
+  await waitFor(() => lastMutation.url === '/api/changes/building-1/approve', 'per-building forced accept', 10000);
+  assert.deepEqual(lastMutation.body, {buildings:['101'], force:true});
+  console.log('PASS page-wide screenshot drops, numbered changes/links/order, review despite blocked checks, stable modal, mobile layout, the Buildings view and building jobs');
 }, {route});

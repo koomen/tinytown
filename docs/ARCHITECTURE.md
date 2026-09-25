@@ -69,6 +69,9 @@ and imports a module only when one of its verbs runs.
 | `changes.py` | local source-change queue, isolated workspaces, worker events, approval, dashboard and preview URLs | `changes`, `preview` | |
 | `change_bakes.py` | task bake snapshots, serialized bake jobs and immutable map serving | `changes bake` | |
 | `change_merge.py` | three-way text and structured JSON merge rules | | |
+| `change_commit.py` | task-only local main commits, preserving unrelated working-tree and index edits | | |
+| `change_steps.py` | persistent final integration steps for queued source changes | `changes steps` | |
+| `change_watch.py` | read-only queue status watcher | `changes watch` | |
 | `preview.py` | cropped and whole-map live-source scenes and preview documents | | |
 | `change_worker.py` | standalone worker progress/preview reporter, scoped to one queue pass | `changes report` | |
 | `bake.py` + `web/` | terrain/pavement surfaces, streaming chunks, viewer version stamping | `bake` | `precompute_surfaces`, `precompute.html`, `prepare_streaming.mjs`, `stream-export.*`, `stream-asset-limits.mjs`, `version_viewer` |
@@ -111,7 +114,9 @@ workspaces under gitignored `runs/changes/`. This is job state for source edits,
 not a second ledger of per-building authoring status. Snapshots include dirty
 source files but exclude ignored private files and generated bake assets.
 Approval merges against the snapshot baseline before applying any files to the
-checkout. Overlapping edits queue an isolated repair pass and return for review.
+checkout and committing the task delta to local main. Unrelated checkout and
+index edits are preserved. Overlapping edits queue an isolated repair pass and
+return for review. Remaining integration steps persist separately from approval.
 Task world bakes use separate immutable snapshots; Whole map serves their assets. See [changes.md](changes.md).
 
 ```

@@ -31,6 +31,8 @@ class MergeValues(unittest.TestCase):
 class ApprovalMerges(ChangeQueueFixture):
     def test_parallel_approvals_preserve_both_json_changes(self):
         self.write('src/settings.json', '{"left":0,"right":0}')
+        self.git('add', 'src/settings.json')
+        self.git('commit', '-qm', 'settings baseline')
         first = self.complete()
         second = self.complete()
         self.queue.stop()
@@ -42,10 +44,14 @@ class ApprovalMerges(ChangeQueueFixture):
             results = list(pool.map(lambda r: self.queue.approve(r['id']), (first, second)))
         self.assertTrue(all(r['status'] == 'approved' for r in results))
         self.assertEqual(json.loads((self.root / 'src/settings.json').read_text()), {'left': 1, 'right': 1})
+        self.assertEqual(json.loads(self.git('show', 'main:src/settings.json')), {'left': 1, 'right': 1})
+        self.assertNotEqual(results[0]['integration']['commit'], results[1]['integration']['commit'])
 
     def test_conflicts_run_repair_and_return_for_review(self):
         record = self.complete()
         self.write('src/main.js', 'approved first task\n')
+        self.git('add', 'src/main.js')
+        self.git('commit', '-qm', 'previous approval')
         self.set_worker("inputs=json.loads(Path('runs/change-worker/merge.json').read_text())\n"
                         "assert Path(inputs[0]['current']).read_text() == 'approved first task\\n'\n"
                         "assert Path(inputs[0]['task']).read_text() == 'worker edit\\n'\n"

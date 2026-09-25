@@ -12,7 +12,7 @@ import sys
 import tempfile
 
 LIMIT = 32000
-FIELDS = {'iteration', 'revision', 'status', 'progress', 'preview', 'preview_revision', 'outcome', 'title', 'summary'}
+FIELDS = {'iteration', 'revision', 'status', 'progress', 'preview', 'preview_revision', 'outcome', 'title', 'summary', 'final_steps'}
 
 
 def validate_report(value):
@@ -34,6 +34,11 @@ def validate_report(value):
         raise ValueError('Outcome must be working, complete, or blocked')
     if value.get('preview') is not None and not isinstance(value['preview'], dict):
         raise ValueError('Preview must be an object or null')
+    if 'final_steps' in value:
+        steps = value['final_steps']
+        if (not isinstance(steps, list) or len(steps) > 40 or
+                any(not isinstance(step, str) or not step.strip() or len(step) > 2000 for step in steps)):
+            raise ValueError('Final steps must be a list of up to 40 nonempty strings, each up to 2000 characters')
     return value
 
 
@@ -50,6 +55,8 @@ def preview_spec(args):
             spec['target'] = args.target
         if getattr(args, 'center', None):
             spec['center'] = [float(n) for n in args.center.split(',')]
+        if getattr(args, 'draft', None):
+            spec['drafts'] = list(dict.fromkeys(args.draft))
         return spec
     return None
 
@@ -62,6 +69,8 @@ def preview_flags(parser):
     parser.add_argument('--asset', help='JS module exporting a preview factory')
     parser.add_argument('--export', default='preview')
     parser.add_argument('--whole-map', action='store_true', help='Preview the entire town from source')
+    parser.add_argument('--draft', action='append', metavar='ID',
+                        help='Show buildings/<ID>/draft.json instead of the accepted blueprint (repeatable)')
 
 
 def report_flags(parser):
@@ -70,6 +79,8 @@ def report_flags(parser):
     parser.add_argument('--title', help='Short descriptive change title')
     parser.add_argument('--summary', help='Current findings or final summary')
     parser.add_argument('--outcome', choices=['working', 'complete', 'blocked'])
+    parser.add_argument('--final-step', action='append', help='Append a remaining step to reach local main (repeatable)')
+    parser.add_argument('--clear-final-steps', action='store_true', help='Replace the previous final steps; alone reports no extra steps')
     parser.add_argument('--clear-preview', action='store_true')
     preview_flags(parser)
 
@@ -94,6 +105,10 @@ def publish(args):
         for key in ('status', 'progress', 'title', 'summary', 'outcome'):
             if getattr(args, key, None) is not None:
                 report[key] = getattr(args, key)
+        if getattr(args, 'clear_final_steps', False):
+            report['final_steps'] = []
+        if getattr(args, 'final_step', None):
+            report['final_steps'] = list(dict.fromkeys([*report.get('final_steps', []), *args.final_step]))
         spec = preview_spec(args)
         if spec is not None and args.clear_preview:
             raise ValueError('Choose a preview or --clear-preview, not both')
