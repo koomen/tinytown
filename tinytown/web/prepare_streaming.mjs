@@ -40,8 +40,8 @@ async function fingerprints() {
 const inputs = await fingerprints();
 
 // The existing manifest, when its fingerprints match the current inputs and
-// every chunk it names verifies; otherwise null. Exports are not byte-reproducible
-// (gzip output varies), so re-exporting current assets would only churn them.
+// every chunk it names verifies; otherwise null. Exports are byte-reproducible,
+// so re-exporting current assets would only spend the time to get the same files.
 async function currentManifest() {
   try {
     const manifest = JSON.parse(await readFile(join(output,'manifest.json')));

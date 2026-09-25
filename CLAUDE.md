@@ -91,9 +91,9 @@ codex login                                           # only for `town author` (
 
 - `town stage` (and the Cloudflare build) fails if surfaces, streams or the
   viewer stamps are stale. Bake, restamp, commit `data/` + `index.html` first.
-- Stream export is not byte-reproducible, so chunks are only re-exported when
-  their fingerprint is stale (or with `bake --force`); when they are, chunk
-  names change and you commit the deletions with the additions.
+- Stream export is byte-reproducible: chunks are only re-exported when their
+  fingerprint is stale (or with `bake --force`), and then only chunks whose
+  contents changed get new names. Commit the deletions with the additions.
 - `/` on avon.town is `avon-extended`; `/avon` and `/extended` are aliases of the same
   larger miniature. Routes come from `sites/*/site.json`,
   `_headers` still lists them by hand.

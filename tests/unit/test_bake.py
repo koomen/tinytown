@@ -100,6 +100,33 @@ class SurfaceFingerprints(Fixture):
             self.assertEqual(run.call_args.args[0][2:], ['data/ridge'])
 
 
+class ParallelBake(Fixture):
+    def test_a_full_bake_exports_the_stream_while_surfaces_bake(self):
+        order = []
+        with patch.object(module.subprocess, 'Popen') as popen, patch.object(module, 'bake_surfaces') as surfaces:
+            popen.side_effect = lambda *args, **kwargs: order.append('stream') or popen.return_value
+            surfaces.side_effect = lambda paths: order.append('surfaces') or True
+            popen.return_value.wait.return_value = 0
+            self.assertTrue(bake(self.paths, force=True))
+            self.assertEqual(order, ['stream', 'surfaces'], 'the exporter starts first and runs alongside')
+            self.assertEqual(popen.call_args.args[0][2:], ['data/ridge', '--force'])
+            self.assertEqual(popen.call_args.kwargs['cwd'], self.root)
+            popen.return_value.wait.return_value = 1
+            self.assertFalse(bake(self.paths), 'a failed stream export fails the bake')
+            popen.return_value.wait.return_value = 0
+            surfaces.side_effect = None
+            surfaces.return_value = False
+            self.assertFalse(bake(self.paths), 'a failed surface bake fails the bake')
+
+    def test_a_surface_error_stops_the_exporter(self):
+        with patch.object(module.subprocess, 'Popen') as popen, patch.object(module, 'bake_surfaces') as surfaces:
+            surfaces.side_effect = RuntimeError('precompute failed')
+            with self.assertRaises(RuntimeError):
+                bake(self.paths)
+            popen.return_value.terminate.assert_called_once()
+            popen.return_value.wait.assert_called_once()
+
+
 class ViewerStamp(Fixture):
     def test_stamps_follow_the_module_graph_and_check_reports_staleness(self):
         self.assertFalse(stamp_viewer(self.root, check=True), 'unstamped viewer is stale')

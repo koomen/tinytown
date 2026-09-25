@@ -121,9 +121,9 @@ Surfaces are precomputed terrain and pavement rendered by the generator in
 headless Chromium; streaming chunks are camera-sector geometry exported by
 Node. Both are keyed by a fingerprint of `site.json` and of the generator
 sources, so an unchanged input does no work. Commit the results: the deployed
-site never generates them. The stream export is not byte-reproducible, so
-chunks are re-exported only when stale (or with `--force`), and then under new
-names. Until a site is baked the viewer
+site never generates them. Both exports are byte-reproducible: the same inputs
+give the same files, and a re-export renames only the chunks whose contents
+changed. The two run side by side when both are stale. Until a site is baked the viewer
 falls back to in-browser generation and does not stream (`?stream=1` after
 baking).
 

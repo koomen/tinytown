@@ -8,7 +8,36 @@ import { landscapeTreeProxy } from '../../src/vegetation.js';
 import { packSceneJSON, STREAM_VERSION, STREAM_PART_BYTES } from '../../src/stream-format.js';
 
 const CELL = 100;
-const tick = () => new Promise(resolve=>setTimeout(resolve,0));
+// An offline export has no frame to keep responsive. bakeMobile's default
+// setTimeout(0) yields nest, get clamped to 4 ms, and left the export mostly idle.
+const NO_YIELD = {yieldBuild:async()=>{}};
+// three.js UUIDs are random, so every export used to produce new bytes and new
+// chunk names. Renumber them per chunk in order of appearance, which makes a
+// chunk's bytes depend only on its contents. Geometries shared from the base's
+// tree library (`shared`: live uuid -> stable id) keep one id in every chunk.
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+export function stableIds(json, shared = new Map()) {
+  const local = new Map();
+  const id = uuid => shared.get(uuid) ?? local.get(uuid)
+    ?? local.set(uuid,`00000000-0000-4000-8000-${local.size.toString(16).padStart(12,'0')}`).get(uuid);
+  // Copies rather than edits: toJSON hands out live userData objects.
+  const copy = value => {
+    if (typeof value === 'string') return value.length === 36 && UUID.test(value) ? id(value) : value;
+    if (!value || typeof value !== 'object' || ArrayBuffer.isView(value)) return value;
+    if (Array.isArray(value)) return value.map(copy);
+    return Object.fromEntries(Object.entries(value).map(([k,v])=>[k,copy(v)]));
+  };
+  return copy(json);
+}
+// A content-derived id (version nibble 5, so never a renumbered local id).
+async function geometryId(g) {
+  const parts=[];
+  for (const [name,a] of Object.entries(g.attributes)) parts.push(`${name}:${a.itemSize}:${a.normalized}:${a.array.constructor.name};`,a.array);
+  if (g.index) parts.push('index;',g.index.array);
+  parts.push(JSON.stringify(g.groups));
+  const h=[...new Uint8Array(await crypto.subtle.digest('SHA-256',await new Blob(parts).arrayBuffer()))].map(v=>v.toString(16).padStart(2,'0')).join('');
+  return `${h.slice(0,8)}-${h.slice(8,12)}-5${h.slice(13,16)}-8${h.slice(17,20)}-${h.slice(20,32)}`;
+}
 export function sceneJSON(root, extra = {}, sharedGeometries = new Set()) {
   const meta = Object.fromEntries(['geometries','materials','textures','images','shapes','skeletons','animations','nodes'].map(k=>[k,{}]));
   root.traverse(o => {
@@ -97,9 +126,9 @@ export async function exportStream(url, seed, write) {
   const street = await generateSite(site,site.seed??seed,{
     async onModel(model) {
       model.updateMatrixWorld(true);
-      const simple=await bakeMobile(coarseModel(model));
+      const simple=await bakeMobile(coarseModel(model),NO_YIELD);
       const kind=model.userData.streamKind;
-      const compact=await bakeMobile(model);
+      const compact=await bakeMobile(model,NO_YIELD);
       compact.userData.streamKind=kind;
       preparedCoarse.set(compact,simple);
       return compact;
@@ -186,7 +215,7 @@ export async function exportStream(url, seed, write) {
   }
   const records=[];
   const coarse = new THREE.Group();
-  const treeLibrary=new THREE.Group(),sharedTrees=new Set();
+  const treeLibrary=new THREE.Group(),sharedTrees=new Set(),sharedIds=new Map();
   treeLibrary.name='stream-tree-library';treeLibrary.visible=false;
   const resizedTextures=new Set();
   async function save(name,root,extra={},sharedGeometries=new Set()) {
@@ -208,7 +237,7 @@ export async function exportStream(url, seed, write) {
         }
       }
     });
-    const blob=packSceneJSON(sceneJSON(root,extra,sharedGeometries));
+    const blob=packSceneJSON(stableIds(sceneJSON(root,extra,sharedGeometries),sharedIds));
     const compressed=new Uint8Array(await new Response(blob.stream().pipeThrough(new CompressionStream('gzip'))).arrayBuffer());
     const hash=await crypto.subtle.digest('SHA-256',compressed);
     const sha=[...new Uint8Array(hash)].map(v=>v.toString(16).padStart(2,'0')).join('');
@@ -229,13 +258,15 @@ export async function exportStream(url, seed, write) {
     return {...record,file};
   }
   for (const cell of cells.values()) {
-    const model = await bakeMobile(cell.detail);
+    const model = await bakeMobile(cell.detail,NO_YIELD);
+    const added=[];
     model.traverse(o=>{
       if(!o.userData.instanceVegetation || sharedTrees.has(o.geometry))return;
-      sharedTrees.add(o.geometry);
+      sharedTrees.add(o.geometry);added.push(o.geometry);
       treeLibrary.add(new THREE.Mesh(o.geometry,o.material));
     });
-    const simple = await bakeMobile(cell.coarse);
+    for(const g of added) sharedIds.set(g.uuid,await geometryId(g));
+    const simple = await bakeMobile(cell.coarse,NO_YIELD);
     simple.name=cell.id; coarse.add(simple);
     const b=new THREE.Box3().setFromObject(model);
     const uuids=new Set();model.traverse(o=>uuids.add(o.uuid));
@@ -245,9 +276,8 @@ export async function exportStream(url, seed, write) {
     records.push({id:cell.id,bounds:[b.min.toArray(),b.max.toArray()],...(await save(`detail-${cell.id}`,model,{smokes},sharedTrees))});
     console.log(`Prepared ${cell.id} (${records.length}/${cells.size})`);
     model.traverse(o=>{if(o.geometry&&!sharedTrees.has(o.geometry))o.geometry.dispose();});
-    await tick();
   }
-  const bakedBase=await bakeMobile(base);
+  const bakedBase=await bakeMobile(base,NO_YIELD);
   bakedBase.add(treeLibrary);
   bakedBase.add(coarse);
   coarse.name='stream-coarse';

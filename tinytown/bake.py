@@ -111,13 +111,17 @@ def bake_surfaces(paths, check=False):
 
 # --- streaming ----------------------------------------------------------------
 
-def bake_stream(paths, check=False, force=False):
+def stream_command(paths, check=False, force=False):
     command = ['node', str(STREAM_SCRIPT), paths.relative(paths.data)]
     if check:
         command.append('--check')
     elif force:
         command.append('--force')
-    return subprocess.run(command, cwd=paths.root).returncode == 0
+    return command
+
+
+def bake_stream(paths, check=False, force=False):
+    return subprocess.run(stream_command(paths, check, force), cwd=paths.root).returncode == 0
 
 
 # --- the verb -----------------------------------------------------------------
@@ -125,16 +129,27 @@ def bake_stream(paths, check=False, force=False):
 def bake(paths, *, check=False, surfaces=True, stream=True, force=False):
     """Bake one site's runtime assets; with check=True only report whether they are current.
 
-    Assets whose fingerprints already match are left alone (exports are not
-    byte-reproducible, so rebuilding them would only churn the repository);
+    Assets whose fingerprints already match are left alone, which saves the
+    work (both exports are byte-reproducible, so a rebuild would change nothing);
     force=True re-exports the streaming chunks anyway.
     """
-    ok = True
-    if surfaces:
-        ok = bake_surfaces(paths, check) and ok
-    if stream:
-        ok = bake_stream(paths, check, force) and ok
-    return ok
+    if check or not (surfaces and stream):
+        ok = True
+        if surfaces:
+            ok = bake_surfaces(paths, check) and ok
+        if stream:
+            ok = bake_stream(paths, check, force) and ok
+        return ok
+    # Each export is single-threaded JavaScript in its own browser context, so
+    # the stream export runs in the background while this process does surfaces.
+    exporter = subprocess.Popen(stream_command(paths, force=force), cwd=paths.root)
+    try:
+        ok = bake_surfaces(paths)
+    except BaseException:
+        exporter.terminate()
+        exporter.wait()
+        raise
+    return (exporter.wait() == 0) and ok
 
 
 # --- viewer version stamps ----------------------------------------------------
