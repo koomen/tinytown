@@ -281,7 +281,7 @@ export async function exportStream(url, seed, write) {
   const coarse = new THREE.Group();
   const treeLibrary=new THREE.Group(),sharedTrees=new Set(),sharedIds=new Map();
   treeLibrary.name='stream-tree-library';treeLibrary.visible=false;
-  const resizedTextures=new Set();
+  const resizedTextures=new WeakSet();
   async function save(name,root,extra={},sharedGeometries=new Set()) {
     root.traverse(o=>{
       const color=o.geometry?.attributes.color;
@@ -303,6 +303,9 @@ export async function exportStream(url, seed, write) {
     });
     const blob=packSceneJSON(stableIds(sceneJSON(root,extra,sharedGeometries),sharedIds));
     const compressed=new Uint8Array(await new Response(blob.stream().pipeThrough(new CompressionStream('gzip'))).arrayBuffer());
+    // The gzip header's OS byte is the host's (3 on Linux, 19 on macOS); use
+    // 255 (unknown) so the same inputs give the same bytes on any builder.
+    compressed[9]=255;
     const hash=await crypto.subtle.digest('SHA-256',compressed);
     const sha=[...new Uint8Array(hash)].map(v=>v.toString(16).padStart(2,'0')).join('');
     const record={sha256:sha,bytes:compressed.length,rawBytes:blob.size,memoryBytes:Math.ceil(resources(root,sharedGeometries))};
@@ -343,6 +346,9 @@ export async function exportStream(url, seed, write) {
     records.push({id:cell.id,area:leaf.area,bounds:[b.min.toArray(),b.max.toArray()],...(await save(`detail-${cell.id}`,model,{smokes},sharedTrees))});
     console.log(`Prepared ${cell.id} (${records.length}/${leaves.length})`);
     model.traverse(o=>{if(o.geometry&&!sharedTrees.has(o.geometry))o.geometry.dispose();});
+    // Collect finished tiles regularly (the harness exposes gc). Left to itself,
+    // V8 grows toward the host's RAM and Cloudflare's 8 GB builder runs out.
+    if(records.length%25===0)globalThis.gc?.();
   }
   const bakedBase=await bakeMobile(base,NO_YIELD);
   bakedBase.add(treeLibrary);

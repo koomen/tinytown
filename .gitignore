@@ -39,6 +39,9 @@ data/*/buildings/*/*.sha256
 data/*/buildings/*/renders/*.png
 data/*/buildings/*/web-original-*
 
-# Streaming build scratch
-data/*/stream/.prepare-*
+# Baked runtime assets: build output of `town bake` (and of `town stage`, which
+# Cloudflare runs on every deploy). Never committed.
+data/*/stream/
+data/*/surfaces.json
+data/*/surfaces-*.bin.gz
 *.egg-info/

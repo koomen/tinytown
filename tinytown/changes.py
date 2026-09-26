@@ -519,9 +519,10 @@ Your final response must summarize changes, tests, and any remaining limitations
 Before finishing, publish all steps still required to integrate this change into local main:
   "$PIPELINE_PYTHON" "$TOWN_CHANGE_REPORTER" --clear-final-steps --final-step "The concrete remaining step"
 Repeat --final-step for each required rebuild, check, migration, or other follow-up. Include exact
-commands and affected sites when known, and include committing any regenerated production assets.
-Read CLAUDE.md's rebuild rules: source or authored-data changes may require production bakes and
-viewer stamps after approval. A task's preview bake does not rebuild the main checkout.
+commands and affected sites when known. Baked surfaces and stream chunks are build output, never
+committed: Cloudflare bakes them on every deploy, so do not list bakes or asset commits as steps.
+Read CLAUDE.md's rebuild rules: viewer (`src/`) changes still need `./town bake --viewer` stamps
+committed in index.html after approval.
 If no extra steps remain, explicitly report --clear-final-steps alone. Do this on blocked passes too.
 Approval applies and commits your source delta to local main; the queue tracks the remaining steps.
 Do not list approval or the initial source commit as custom steps; the queue records those itself.

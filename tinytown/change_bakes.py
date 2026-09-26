@@ -47,7 +47,7 @@ def fingerprint(root, site, version=2):
             stamp.update(path.name.encode()); stamp.update(path.read_bytes())
     if version >= 2:
         for path in sorted((Path(root) / 'tinytown/web').rglob('*')):
-            if path.is_file() and path.suffix in {'.html', '.css', '.js', '.mjs'}:
+            if path.is_file() and path.suffix in {'.html', '.css', '.js', '.mjs', '.woff2'}:
                 stamp.update(str(path.relative_to(root)).encode()); stamp.update(path.read_bytes())
     return stamp.hexdigest()
 

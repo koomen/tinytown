@@ -5,7 +5,9 @@ directory. Its routes come from the `deploy` placements in sites/*/site.json:
 the site at `/` is the target's root; other sites get `/<route>.html`
 documents that pin the shared viewer to their scene.
 
-Standard library only: Cloudflare runs `python3 -m tinytown stage` with bare python3.
+Baked assets (surfaces, stream chunks) are build output, not committed: `stage`
+bakes whatever is stale first, which is what Cloudflare's build runs
+(scripts/cloudflare-build.sh). Importing this module stays standard library only.
 """
 import argparse
 from functools import partial
@@ -253,20 +255,34 @@ def copy_scene(root, destination, site):
 
 
 def precheck(sites, root=ROOT):
-    """Baked assets and the viewer stamp must be current; building never generates them."""
+    """Baked assets and the viewer stamp must be current (`stage --no-bake`)."""
     ok = all([bake(SitePaths(site, root), check=True) for site in sites])
     if not stamp_viewer(root, check=True) or not ok:
         raise ValueError('Baked assets are stale; see the messages above')
 
 
-def build(target, root=ROOT, check=True):
-    """Stage dist/<target> for one deploy target; returns the destination directory."""
+def prebake(sites, root=ROOT):
+    """Bake each site's stale surfaces and streams and restamp the viewer; current assets are kept."""
+    for site in sites:
+        # One export at a time: the builder's 8 GB cannot hold both at once.
+        if not bake(SitePaths(site, root), parallel=False):
+            raise ValueError(f'Baking {site} failed; see the messages above')
+    stamp_viewer(root)
+
+
+def build(target, root=ROOT, check=True, bake_assets=True):
+    """Stage dist/<target> for one deploy target; returns the destination directory.
+
+    bake_assets bakes stale assets first; otherwise check=True requires them current.
+    """
     root = Path(root).resolve()
     destination = root / config.deploy_targets(root)[target]['dist']
     table = config.routes(target, root)
     root_name = table['/']
     sites = config.sites_for_target(target, root)
-    if check:
+    if bake_assets:
+        prebake(sites, root)
+    elif check:
         precheck(sites, root)
     if destination.is_symlink():
         raise ValueError('Build destination must not be a symlink')
@@ -386,7 +402,8 @@ def register(subparsers):
     deploy = subparsers.add_parser('stage', help='stage dist/<target> for Cloudflare',
                                    description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     deploy.add_argument('--target', choices=targets + ['all'], default='all')
-    deploy.add_argument('--no-check', action='store_true', help='skip the bake --check and viewer stamp checks')
+    deploy.add_argument('--no-bake', action='store_true',
+                        help='stage the baked assets already on disk; fail if they are stale instead of baking')
     deploy.set_defaults(run=_run_deploy)
 
     server = subparsers.add_parser('serve', help='dev server for the viewer (route documents, ?site= previews)')
@@ -406,7 +423,7 @@ def _run_deploy(args):
     targets = list(config.deploy_targets()) if args.target == 'all' else [args.target]
     for target in targets:
         try:
-            print(build(target, check=not args.no_check))
+            print(build(target, bake_assets=not args.no_bake))
         except ValueError as error:
             print(f'town stage {target}: {error}', file=sys.stderr)
             return 1

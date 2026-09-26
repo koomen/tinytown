@@ -21,6 +21,7 @@ window.precomputeSurfaces = async (url, seed) => {
   const hash = await crypto.subtle.digest('SHA-256', raw);
   const sha256 = [...new Uint8Array(hash)].map(v => v.toString(16).padStart(2, '0')).join('');
   const compressed = new Uint8Array(await new Response(packed.stream().pipeThrough(new CompressionStream('gzip'))).arrayBuffer());
+  compressed[9] = 255; // gzip OS byte: identical output on any builder
   const strings = [];
   for (let i = 0; i < compressed.length; i += 32768) strings.push(String.fromCharCode(...compressed.subarray(i, i + 32768)));
   return { version: SURFACE_VERSION, key: await surfaceKey(site, seed), sha256,

@@ -17,8 +17,8 @@ through the middle four independently of every other structure.
 | 4 | Author a blueprint per building | `town author` | building references, `overrides.json` | `buildings/<id>/draft.json`, `author.json` |
 | 5 | Review and repair, bounded | `town review`, `town lint` | draft, renders | `buildings/<id>/review.json`, `repair-N.json` |
 | 6 | Accept into the authored truth | `town accept` | drafts | `data/<site>/overrides.json` |
-| 7 | Build the scene and bake assets | `town build`, `town bake` | `source/`, `overrides.json`, the renderer in headless Chromium | `data/<site>/site.json`, `surfaces*.bin.gz`, `stream/` |
-| 8 | Stage and deploy | `town stage`, `town verify`, `town serve` | scenes, `sites/`, `index.html`, `src/` | `dist/<target>/` |
+| 7 | Build the scene and bake assets | `town build`, `town bake` | `source/`, `overrides.json`, the renderer in headless Chromium | `data/<site>/site.json` (committed), `surfaces*.bin.gz`, `stream/` (gitignored) |
+| 8 | Stage and deploy | `town stage` (bakes what is stale), `town verify`, `town serve` | scenes, `sites/`, `index.html`, `src/` | `dist/<target>/` |
 
 `town author` runs stages 3 through 6 for many buildings in one command. It is
 idempotent: status is derived from files on disk, so re-running it resumes.
@@ -44,6 +44,7 @@ tiny-town/
   tests/run.sh         runs everything that does not need network or a model
   docs/                this file plus deep dives
   wrangler.avon.jsonc, wrangler.chautauqua.jsonc, _headers   Cloudflare
+  scripts/cloudflare-build.sh   Workers Builds step (wrangler build.command): toolchain, then town stage
 ```
 
 ## Modules
@@ -96,9 +97,10 @@ Deleted outright, not ported: `resume_expansion`, `watch_expansion`,
    current inputs. Never keep a separate ledger of what is done.
 4. **`overrides.json` is the authored truth.** Drafts are proposals; `accept`
    is the only thing that writes blueprints into `overrides.json`.
-5. **Stdlib only on the deploy path.** `config`, `paths`, `state`, `deploy` (the `stage` verb),
+5. **Stdlib only at import time.** `config`, `paths`, `state`, `deploy`,
    `bake --check`, and `site.build` must import nothing outside the standard
-   library at module import time. Cloudflare runs them with bare `python3`.
+   library at module import time (`stage --no-bake` runs with bare `python3`;
+   `stage` bakes, so Cloudflare's build installs the package and browser first).
    Import `PIL` and `websocket` lazily inside the functions that need them.
 6. **Python 3.10 or newer**; Node 22 or newer for anything under `web/` and
    for tests.
@@ -130,8 +132,8 @@ data/<site>/
   overrides.json           the authored truth: buildings, blueprints, blueprint_frames,
                            roads, extras, landmarks, areas, miniature_review, ...
   site.json                built scene (stage 7); regenerable from source + overrides
-  surfaces.json  surfaces-<hash>.bin.gz      baked terrain and pavement
-  stream/manifest.json  stream/<chunk>-<hash>.bin.gz   baked geometry chunks
+  surfaces.json  surfaces-<hash>.bin.gz      baked terrain and pavement (gitignored build output)
+  stream/manifest.json  stream/<chunk>-<hash>.bin.gz   baked geometry chunks (gitignored build output)
   textures/                curated images referenced from blueprints
   frame_review.json        ids whose footprint frame drifted under an accepted blueprint (written by build)
   buildings/<id>/          everything about one structure
@@ -319,7 +321,7 @@ def stamp_viewer(root=ROOT, check=False) -> bool
 # deploy.py
 def route_document(site, root=ROOT, target=None, fixed_site=True) -> str   # target defaults to the first in sites/deploy.json
 def preview_document(url, root=ROOT, target=None) -> str | None
-def build(target, root=ROOT, check=True) -> Path   # dist/<target>
+def build(target, root=ROOT, check=True, bake_assets=True) -> Path   # dist/<target>; bakes stale assets first
 def serve(port=8734, root=ROOT)
 def verify(bundle, domain, site, attempts=12, delay=10) -> bool
 ```
@@ -331,6 +333,7 @@ def verify(bundle, domain, site, attempts=12, delay=10) -> bool
 private browser is installed. Two golden checks guard the refactor:
 
 - `town build <site>` must reproduce the committed `data/<site>/site.json` for
-  all three sites, byte for byte apart from the `name` field.
-- `town stage --target avon` and `--target chautauqua` must reproduce the
-  committed dist hashes apart from viewer `?v=` stamps.
+  both sites, byte for byte apart from the `name` field.
+- Bakes are byte-reproducible: the same inputs give the same surfaces and
+  stream chunks on any Linux builder. A macOS bake matches except chunks whose
+  textures contain canvas text, where glyph anti-aliasing differs by OS.

@@ -6,6 +6,35 @@
 {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}
 </script>
 <script type="module">
-import { exportStream } from '/tinytown/web/stream-export.js';
-window.exportStream = exportStream;
+// Canvas sign textures ask for Georgia, Arial and Nunito. Linux builders have
+// none of them, so bundled metric-compatible substitutes (tinytown/web/fonts/)
+// are registered under those names; document fonts shadow installed fonts of
+// the same family, so every OS bakes identical textures. Weight ranges mirror
+// how the real two-weight families resolve (600-900 pick bold).
+const FACES = [
+  ['Georgia', 'gelasio-latin-400-normal', '1 599', 'normal'],
+  ['Georgia', 'gelasio-latin-400-italic', '1 599', 'italic'],
+  ['Georgia', 'gelasio-latin-700-normal', '600 1000', 'normal'],
+  ['Georgia', 'gelasio-latin-700-italic', '600 1000', 'italic'],
+  ['Arial', 'arimo-latin-400-normal', '1 599', 'normal'],
+  ['Arial', 'arimo-latin-400-italic', '1 599', 'italic'],
+  ['Arial', 'arimo-latin-700-normal', '600 1000', 'normal'],
+  ['Arial', 'arimo-latin-700-italic', '600 1000', 'italic'],
+  ['Nunito', 'nunito-latin-700-normal', '1 749', 'normal'],
+  ['Nunito', 'nunito-latin-800-normal', '750 1000', 'normal'],
+];
+// The exporter is published only once every face has loaded; a failed font
+// makes exportStream throw instead of baking with fallback fonts.
+try {
+  await Promise.all(FACES.map(async ([family, file, weight, style]) => {
+    const face = new FontFace(family, `url(/tinytown/web/fonts/${file}.woff2)`, { weight, style });
+    document.fonts.add(face);
+    try { await face.load(); } catch (error) { throw new Error(`Bake font ${file}.woff2 failed to load: ${error.message || error}`); }
+  }));
+  const { exportStream } = await import('/tinytown/web/stream-export.js');
+  window.exportStream = exportStream;
+} catch (error) {
+  console.error(error);
+  window.exportStream = () => { throw error; };
+}
 </script>

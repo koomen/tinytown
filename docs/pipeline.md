@@ -18,8 +18,9 @@ node --version                                           # 22+ for bake and test
 ```
 
 `./town` prefers `.venv/bin/python` automatically (`PIPELINE_PYTHON` overrides
-it). `town serve`, `town build`, `town stage` and `town bake --check` need
-nothing beyond the standard library.
+it). `town serve`, `town build`, `town stage --no-bake` and `town bake --check`
+need nothing beyond the standard library; `town stage` bakes, so it needs the
+full toolchain.
 
 ## 1. Fetch the public data
 
@@ -116,19 +117,21 @@ writes `overrides.json` and rebuilds `site.json`.
 
 ```sh
 ./town bake mytown              # surfaces-<hash>.bin.gz + surfaces.json, stream/manifest.json + chunks
-./town bake mytown --check      # are they current? (no browser; this is what Cloudflare runs)
+./town bake mytown --check      # are they current? (no browser; what `town stage --no-bake` runs)
 ./town bake --viewer            # restamp index.html after editing src/
 ```
 
 Surfaces are precomputed terrain and pavement rendered by the generator in
 headless Chromium; streaming chunks are camera-sector geometry exported by
 Node. Both are keyed by a fingerprint of `site.json` and of the generator
-sources, so an unchanged input does no work. Commit the results: the deployed
-site never generates them. Both exports are byte-reproducible: the same inputs
-give the same files, and a re-export renames only the chunks whose contents
-changed. The two run side by side when both are stale. Until a site is baked the viewer
-falls back to in-browser generation and does not stream (`?stream=1` after
-baking).
+sources, so an unchanged input does no work. The results are gitignored build
+output: `town stage` bakes whatever is stale, and Cloudflare bakes on every
+deploy ([deploy.md](deploy.md)). Bake locally to view a site as deployed. Both
+exports are byte-reproducible: the same inputs give the same files, and a
+re-export renames only the chunks whose contents changed, so rebuilds stay
+cheap. The two run side by side when both are stale. Until a site is baked the
+viewer falls back to in-browser generation and does not stream (`?stream=1`
+after baking); a fresh clone has no baked assets.
 
 ## 7. Add the site to a deploy target
 
@@ -164,11 +167,11 @@ A plugin is optional: `tinytown/plugins/mytown.py` with any of
 ## 8. Stage, check, push, verify
 
 ```sh
-./town stage --target avon              # dist/avon/, after bake --check and viewer checks
+./town stage --target avon              # bakes what is stale, then dist/avon/
 ./town serve --dist avon                 # preview exactly what will be uploaded
 tests/run.sh
 git add data/mytown sites/mytown index.html _headers && git commit
-git push                                  # Cloudflare Workers Builds runs `python3 -m tinytown stage --target avon`
+git push                                  # Workers Builds runs scripts/cloudflare-build.sh avon (bake + stage)
 ./town verify avon https://avon.town mytown
 ```
 

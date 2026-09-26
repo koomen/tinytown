@@ -199,8 +199,8 @@ records to local `main` with the separate-index commit described above. When
 `accept` refuses (a forced publication after two failed repairs, or an
 unapproved re-authoring), the reasons appear on the building and **Accept
 anyway** publishes with `--force`. A failed commit restores `overrides.json`
-and `site.json`. The final-step list reminds you to `./town bake SITE` and commit
-the regenerated assets.
+and `site.json`. No bake step follows: baked assets are build output that
+Cloudflare regenerates on deploy.
 
 **Feedback** on a building job is a human review. It is appended to
 `buildings/<id>/human-feedback.json` (entries with `text`, the `draft_hash` it
@@ -239,7 +239,7 @@ Before finishing, workers report any remaining integration work:
 
 ```sh
 ./town changes report --clear-final-steps \
-  --final-step './town bake avon-extended, then ./town bake --viewer; commit regenerated assets to local main' \
+  --final-step './town bake --viewer; commit the restamped index.html to local main' \
   --final-step 'Run the affected browser review after rebuilding'
 ```
 
@@ -283,22 +283,22 @@ running. Timeout and Ctrl-C stop the watcher, never the job.
 
 Every task has a persistent **To local main** checklist. The queue records
 approval and the source commit automatically. Workers report remaining checks,
-production rebuilds, generated-file commits, and other follow-ups. If a worker
+viewer restamps, and other follow-ups; baked surfaces and streams are never
+steps, since Cloudflare bakes them on deploy. If a worker
 omits the report, an explicit step remains to review and record what is needed.
 Blocked workers retain this checklist too. Older approvals stay in History
 unless they have explicitly recorded unfinished work; missing historical
 commit or report metadata does not create new obligations.
 
 Approved changes with unfinished steps appear under **Final steps**, outside
-collapsed History. A committed source change is not a claim that its production
-assets or all checks are complete. A task preview bake does not rebuild assets
-in the main checkout.
+collapsed History. A committed source change is not a claim that all checks
+are complete. A task preview bake does not rebuild assets in the main checkout.
 
 Add steps or check them off in the task modal, or use:
 
 ```sh
 ./town changes steps 4
-./town changes steps 4 --add 'Rebuild affected assets and commit them to local main'
+./town changes steps 4 --add 'Run node tests/browser/run.mjs streaming after ./town bake avon-extended'
 ./town changes steps 4 --done STEP_ID
 ./town changes steps 4 --reopen STEP_ID
 ```

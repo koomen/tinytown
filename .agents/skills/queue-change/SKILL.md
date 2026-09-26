@@ -92,9 +92,11 @@ all rebuilds or other follow-ups are finished. Workers report those into the
 persistent final-step checklist; approved changes with unfinished steps remain
 visible on the dashboard. Missing reports leave an explicit review step.
 
-Inspect the checklist and the repository's rebuild rules. Complete remaining
-work within the user's authorized scope, including required generated assets
-and their local commits, and mark steps done only after actually doing them:
+Inspect the checklist and the repository's rebuild rules. Baked surfaces and
+streams are never committed (Cloudflare bakes them on deploy). Complete
+remaining work within the user's authorized scope, including a restamped
+`index.html` (`./town bake --viewer`) after `src/` edits, and mark steps done
+only after actually doing them:
 
 ```sh
 ./town changes steps 4 --add 'Concrete remaining step, with command and scope'

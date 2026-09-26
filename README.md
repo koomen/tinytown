@@ -44,7 +44,7 @@ See [the change queue guide](docs/changes.md).
 ./town refs mytown --all                                          # Street View fronts and aerials per building
 ./town author mytown --all --accept                               # model authoring: needs the Codex CLI (`codex login`)
 ./town bake mytown                                                # terrain/pavement surfaces and streaming chunks
-./town stage --target avon                                       # after adding sites/mytown/site.json
+./town stage --target avon                                       # after adding sites/mytown/site.json; bakes what is stale
 ```
 
 Each verb is idempotent: re-running it does the missing work and exits 0.
@@ -87,10 +87,11 @@ tinytown/            the package, one module per stage: sources, site, reference
 index.html, src/     the viewer (Three.js modules, served as-is)
 sites/<site>/        site config: site.json (title, deploy routes, plugin), scope, labels, landmarks
 sites/deploy.json    deploy targets -> dist directory and Wrangler config
-data/<site>/         the miniature: source/, overrides.json, site.json, surfaces*, stream/, buildings/<id>/
+data/<site>/         the miniature: source/, overrides.json, site.json, buildings/<id>/ (+ baked surfaces*, stream/, gitignored)
 tests/               unit/ (python unittest), node/ (node --test), browser/ (headless drivers), run.sh
 docs/                ARCHITECTURE.md (the contract) and the guides below
 wrangler*.jsonc, _headers   Cloudflare Workers
+scripts/cloudflare-build.sh  Workers Builds step: bake and stage one target
 CLAUDE.md            notes for coding agents
 ```
 
@@ -110,7 +111,9 @@ tests/run.sh
 Runs the Python unit tests (`tests/unit`, no network or model), the Node tests
 (`tests/node`) and, when the private browser is installed, the headless viewer
 suite (`node tests/browser/run.mjs`; `--list` names the other drivers, `all`
-runs them). See [CLAUDE.md](CLAUDE.md) for what each tier needs.
+runs them). Baked assets are not committed, so on a fresh clone the streaming
+drivers need `./town bake avon-extended` (or `town stage`) first. See
+[CLAUDE.md](CLAUDE.md) for what each tier needs.
 
 ## Deployment
 
@@ -118,9 +121,11 @@ Two Cloudflare Workers upload the static `dist/` directories that
 `./town stage` stages: `avon-town` serves avon.town (`/` Avon, `/avon` alias,
 `/avon-extended`, `/chautauqua`) and `chautauqua-miniature` serves
 chautauqua.town. Routes derive from `sites/*/site.json`. On push to `main`,
-Workers Builds runs `python3 -m tinytown stage --target …` with bare Python
-and Node; it only checks that the committed surfaces, streams and viewer stamps
-are current, so bake before you push. Verify with
+`wrangler deploy` runs `scripts/cloudflare-build.sh <target>`, which installs
+the package and the private headless browser and runs `town stage`: baked
+surfaces and streams are build output, generated on every deploy and never
+committed. Commit `index.html` restamped (`./town bake --viewer`) after editing
+`src/`. Verify with
 `./town verify avon https://avon.town`. Details: [docs/deploy.md](docs/deploy.md).
 
 ## Credits and attribution
@@ -144,8 +149,8 @@ business or institution shown.
 
 ## License
 
-Code is released under the MIT License (see [LICENSE](LICENSE)). The committed
-derived data under `data/` (`site.json`, `overrides.json`, `surfaces*.bin.gz`,
-`stream/`) is derived from OpenStreetMap and is available under the
+Code is released under the MIT License (see [LICENSE](LICENSE)). The derived
+data under `data/` (committed `site.json` and `overrides.json`, and the deployed
+`surfaces*.bin.gz` and `stream/` baked from them) is derived from OpenStreetMap and is available under the
 [Open Database License 1.0](https://opendatacommons.org/licenses/odbl/1-0/)
 with the attribution "© OpenStreetMap contributors".

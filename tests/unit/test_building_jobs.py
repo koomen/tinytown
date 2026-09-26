@@ -159,7 +159,8 @@ class BuildingJobTests(BuildingFixture):
         record = self.wait(record['id'], 'pending_approval')
         self.assertEqual({e['status'] for e in record['buildings'].values()}, {'reviewed'})
         self.assertIn('101: review ready', record['log'])
-        self.assertTrue(any('./town bake town' in s['text'] for s in record['final_steps']))
+        # Baked assets are build output: no bake or asset-commit step to reach main.
+        self.assertFalse(any(s['source'] == 'worker' for s in record['final_steps']))
         head = self.git('rev-parse', 'HEAD').strip()
         scratch = Path(self.root, f'data/{SITE}/buildings/101')
         for name in ('author.json', 'human-feedback.json', 'renders/initial-overview.png.json'):

@@ -19,9 +19,9 @@ building formats are in [STYLE_SCHEMA.md](STYLE_SCHEMA.md) and
 | `source/sv_index.json` | `town refs` | Street View panorama index built while capturing (pano ids, positions, dates). |
 | `source/composition.json` | `town scope --source` / migration | Provenance of a composed site: bounds, structure counts, which ids were imported and from where. |
 | `overrides.json` | you, `town accept`, `town scope` | **The authored truth** (below). |
-| `site.json` | `town build` | The built scene. Regenerable from `source/` + `overrides.json`; committed so the viewer and Cloudflare need no build step. |
-| `surfaces.json`, `surfaces-<hash>.bin.gz` | `town bake` | Baked terrain and pavement. The index records `inputSha256` (of `site.json`), `sourceSha256` (of `src/*.js` + the precompute page), `compressedSha256`, byte counts and the build profile. Only one `surfaces-*.bin.gz` is kept per site. |
-| `stream/manifest.json`, `stream/<chunk>-<hash>.bin.gz` | `town bake` | Camera-sector geometry: `base[-part-N]`, `detail-<x>_<z>` tiles and, for large maps, `region-<x>_<z>` chunks. The manifest records `inputSha256`, `sourceSha256`, per-file sha256 and sizes; `town stage` verifies every file against it. |
+| `site.json` | `town build` | The built scene. Regenerable from `source/` + `overrides.json`; committed (golden against `town build`); Cloudflare bakes from it but never rebuilds it. |
+| `surfaces.json`, `surfaces-<hash>.bin.gz` | `town bake`, `town stage` | **Gitignored** build output; Cloudflare bakes it on deploy. Baked terrain and pavement. The index records `inputSha256` (of `site.json`), `sourceSha256` (of `src/*.js` + the precompute page), `compressedSha256`, byte counts and the build profile. Only one `surfaces-*.bin.gz` is kept per site. |
+| `stream/manifest.json`, `stream/<chunk>-<hash>.bin.gz` | `town bake`, `town stage` | **Gitignored** build output, like surfaces. Camera-sector geometry: `base[-part-N]`, `detail-<x>_<z>` tiles and, for large maps, `region-<x>_<z>` chunks. The manifest records `inputSha256`, `sourceSha256`, per-file sha256 and sizes; `town stage` verifies every file against it. |
 | `textures/` | you | Curated images referenced from blueprints (`signs[].image`, murals). Paths in blueprints are repository-relative (`data/avon-extended/textures/…`). Only referenced textures are deployed. |
 | `buildings/<id>/` | stages 3–6 | Everything about one structure (below). |
 | `frame_review.json` | `town build` | Ids whose footprint frame changed since their blueprint was accepted; `town plan` lists them as `review-frame`. |
@@ -98,16 +98,16 @@ config: `{"avon": {"dist": "dist/avon", "wrangler": "wrangler.avon.jsonc"}, …}
 | --- | --- |
 | `data/*/source/satellite.jpg` | Esri World Imagery is research reference only and may not be redistributed. `town fetch` restores it (cached responses live in `data/.town-cache/`, also ignored). |
 | `data/*/buildings/*/fronts/`, `images/`, `*.png`, `*.jpg`, `web-original-*` | Street View captures, aerial crops, web photos and renders are third-party or regenerable. Only the JSON records describing them are committed, so `town render --compare` and `town review` fail closed until you re-render or re-capture. |
-| `data/*/stream/.prepare-*` | Streaming export scratch. |
+| `data/*/stream/`, `data/*/surfaces.json`, `data/*/surfaces-*.bin.gz` | Baked runtime assets: build output of `town bake` and `town stage`, which Cloudflare runs on every deploy ([deploy.md](deploy.md)). |
 | `/runs/` | The private headless browser runtime and model-call scratch (`runs/model-calls/`). |
 | `/dist/`, `.wrangler/` | Deploy staging; Cloudflare rebuilds it. |
 | `.venv/`, `__pycache__/`, `.env*`, `*.pem`, `*.key` | Local environment and (nonexistent) secrets. |
 
 ## Licensing of the data
 
-Code in this repository is MIT licensed (see `LICENSE`). The committed derived
-data (`data/*/site.json`, `overrides.json`, `surfaces*.bin.gz`, `stream/`) is
-derived from OpenStreetMap (© OpenStreetMap contributors) and is available
+Code in this repository is MIT licensed (see `LICENSE`). The derived data
+(committed `data/*/site.json` and `overrides.json`, and the deployed
+`surfaces*.bin.gz` and `stream/` baked from them) is derived from OpenStreetMap (© OpenStreetMap contributors) and is available
 under the Open Database License (ODbL) 1.0 with that attribution. Elevation
 comes from the USGS 3D Elevation Program (public domain). Imagery from Esri,
 Google Street View and the web is used locally as reference only and is never

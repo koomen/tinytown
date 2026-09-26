@@ -150,12 +150,12 @@ class DeployTargets(unittest.TestCase):
                 self.assertEqual(content.read().decode(), preview_document(path, self.root))
 
     def test_dist_directories_have_no_route_documents_to_render(self):
-        destination = build('town', self.root, check=False)
+        destination = build('town', self.root, check=False, bake_assets=False)
         self.assertIsNone(preview_document('/', destination))
         self.assertIsNone(preview_document('/compact', destination))
 
     def test_shared_build_publishes_every_route_with_one_renderer_and_no_research(self):
-        destination = build('town', self.root, check=False)
+        destination = build('town', self.root, check=False, bake_assets=False)
         self.assertEqual(destination, self.root / 'dist/town')
         index = (destination / 'index.html').read_bytes()
         self.assertEqual(index, (destination / 'hillview.html').read_bytes())
@@ -183,7 +183,7 @@ class DeployTargets(unittest.TestCase):
                 self.assertFalse((destination / f'data/{site}/{excluded}').exists(), excluded)
 
     def test_standalone_build_publishes_only_its_site_with_its_own_assets(self):
-        destination = build('lakeside', self.root, check=False)
+        destination = build('lakeside', self.root, check=False, bake_assets=False)
         self.assertEqual(destination, self.root / 'dist/lakeside')
         self.assertEqual((destination / 'index.html').read_text(), route_document('lakeside', self.root, target='lakeside'))
         self.assertEqual(sorted(p.name for p in destination.glob('*.html')), ['index.html'])
@@ -197,48 +197,57 @@ class DeployTargets(unittest.TestCase):
     def test_scoped_sites_must_match_their_scope_and_be_fully_authored(self):
         self.write('sites/lakeside/scope.json', '{"building_ids":["2","3"]}')
         with self.assertRaisesRegex(ValueError, 'does not match its scope'):
-            build('lakeside', self.root, check=False)
+            build('lakeside', self.root, check=False, bake_assets=False)
         self.write('sites/lakeside/scope.json', '{"building_ids":["2"]}')
         scene = json.dumps({'buildings': [{'id': 2}]}).encode()
         self.write('data/lakeside/site.json', scene)
         with self.assertRaisesRegex(ValueError, 'unauthored'):
-            build('lakeside', self.root, check=False)
+            build('lakeside', self.root, check=False, bake_assets=False)
         # Sites without a scope are not checked.
         self.write('data/lakeside/site.json', json.dumps({'buildings': [{'id': 2, 'blueprint': {'image': 'data/lakeside/textures/mural.jpg'}}]}))
         self.write('data/compact/site.json', scene)
         self.write('data/compact/stream/manifest.json', json.dumps({'inputSha256': hashlib.sha256(scene).hexdigest(),
                    'base': {'parts': []}, 'tiles': []}))
-        build('town', self.root, check=False)
+        build('town', self.root, check=False, bake_assets=False)
 
     def test_invalid_assets_do_not_replace_a_previous_build(self):
-        destination = build('town', self.root, check=False)
+        destination = build('town', self.root, check=False, bake_assets=False)
         original = (destination / 'lakeside.html').read_bytes()
         self.write('data/lakeside/surfaces-aabb.bin.gz', b'broken asset')
         with self.assertRaisesRegex(ValueError, 'does not match'):
-            build('town', self.root, check=False)
+            build('town', self.root, check=False, bake_assets=False)
         self.assertEqual((destination / 'lakeside.html').read_bytes(), original)
 
     def test_corrupt_region_does_not_replace_a_previous_build(self):
-        destination = build('town', self.root, check=False)
+        destination = build('town', self.root, check=False, bake_assets=False)
         old = (destination / 'data/hillview/stream/region--1_0-aabb.bin.gz').read_bytes()
         self.write('data/hillview/stream/region--1_0-aabb.bin.gz', b'corrupt')
         with self.assertRaisesRegex(ValueError, 'does not match'):
-            build('town', self.root, check=False)
+            build('town', self.root, check=False, bake_assets=False)
         self.assertEqual((destination / 'data/hillview/stream/region--1_0-aabb.bin.gz').read_bytes(), old)
 
-    def test_build_checks_baked_assets_and_the_viewer_stamp_first(self):
+    def test_build_bakes_stale_assets_and_stamps_the_viewer_first(self):
+        with patch('tinytown.deploy.bake', return_value=True) as bake, patch('tinytown.deploy.stamp_viewer', return_value=True) as stamp:
+            self.assertTrue(build('town', self.root).is_dir())
+        self.assertEqual(sorted(call.args[0].name for call in bake.call_args_list), ['compact', 'hillview', 'lakeside'])
+        self.assertTrue(all(call.kwargs == {'parallel': False} for call in bake.call_args_list))
+        stamp.assert_called_once_with(self.root.resolve())
+        with patch('tinytown.deploy.bake', return_value=False), patch('tinytown.deploy.stamp_viewer', return_value=True):
+            with self.assertRaisesRegex(ValueError, 'Baking lakeside failed'):
+                build('lakeside', self.root)
+
+    def test_no_bake_checks_baked_assets_and_the_viewer_stamp_first(self):
         with patch('tinytown.deploy.bake', return_value=True) as bake, patch('tinytown.deploy.stamp_viewer', return_value=False):
             with self.assertRaisesRegex(ValueError, 'stale'):
-                build('town', self.root)
+                build('town', self.root, bake_assets=False)
         self.assertEqual(sorted(call.args[0].name for call in bake.call_args_list), ['compact', 'hillview', 'lakeside'])
         self.assertTrue(all(call.kwargs == {'check': True} for call in bake.call_args_list))
         with patch('tinytown.deploy.bake', return_value=False), patch('tinytown.deploy.stamp_viewer', return_value=True):
             with self.assertRaisesRegex(ValueError, 'stale'):
-                build('lakeside', self.root)
+                build('lakeside', self.root, bake_assets=False)
         with patch('tinytown.deploy.bake', return_value=True) as bake, patch('tinytown.deploy.stamp_viewer', return_value=True):
-            self.assertTrue(build('lakeside', self.root).is_dir())
+            self.assertTrue(build('lakeside', self.root, bake_assets=False).is_dir())
         self.assertEqual([call.args[0].name for call in bake.call_args_list], ['lakeside'])
-
 
 if __name__ == '__main__':
     unittest.main()

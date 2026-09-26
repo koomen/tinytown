@@ -460,8 +460,9 @@ def finish(queue, record, summary, log=print):
             lines.append(f'Stopped: {summary["stopped"]}. Retry to resume.')
         current.update(summary='\n'.join(lines), files=[], progress=100)
         from . import change_steps
-        change_steps.worker_steps(current, [f'./town bake {current["site"]}, then commit the regenerated '
-                                            f'data/{current["site"]}/ assets to local main'])
+        # Baked assets are build output (Cloudflare bakes on deploy), so an
+        # accepted blueprint needs no further step to reach local main.
+        change_steps.worker_steps(current, [])
         if ready:
             current.update(status='pending_approval', error=None, worker_outcome='complete', worker_status='Ready for review',
                            review_warning='\n'.join(errors + ([f'Stopped: {summary["stopped"]}'] if summary.get('stopped') else [])) or None)

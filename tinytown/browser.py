@@ -366,7 +366,10 @@ def serve(key):
                     '--enable-automation',
                     '--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader',
                     '--max-active-webgl-contexts=32', '--disable-background-networking',
-                    '--no-first-run', '--no-default-browser-check', '--mute-audio'])
+                    '--no-first-run', '--no-default-browser-check', '--mute-audio',
+                    # Offline exports call gc() between tiles: V8 sizes its heap from
+                    # host RAM, which overruns an 8 GB CI container before it collects.
+                    '--js-flags=--expose-gc'])
             try:
                 port, endpoint = (profile / 'DevToolsActivePort').read_text().splitlines()[:2]
                 record = {'provider': PROVIDER, 'key': key, 'pid': os.getpid(), 'port': int(port),

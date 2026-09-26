@@ -14,7 +14,7 @@ codex login                                           # `town author` with OpenA
 ```
 
 `./town` runs `python -B -m tinytown` with `.venv/bin/python` when present
-(`PIPELINE_PYTHON` overrides). `serve`, `build`, `stage`, `bake --check`,
+(`PIPELINE_PYTHON` overrides). `serve`, `build`, `stage --no-bake`, `bake --check`,
 `status`, `plan`, `lint` need only the standard library.
 
 ## Verbs
@@ -34,7 +34,7 @@ codex login                                           # `town author` with OpenA
 | `accept <site> [ids…] [--all-reviewed] [--force] [--no-rebuild]` | reviewed drafts -> `overrides.json`, then `build`; the only writer of blueprints |
 | `status <site> [--ids…]` | derived per-building status |
 | `bake <site> [--check] [--surfaces-only\|--stream-only]`, `bake --viewer [--check]` | surfaces + stream chunks for a site; `?v=` stamps in `index.html` |
-| `stage [--target avon\|chautauqua\|all] [--no-check]` | stage `dist/<target>/` after `bake --check` and viewer checks |
+| `stage [--target avon\|chautauqua\|all] [--no-bake]` | bake stale surfaces/streams and restamp the viewer, then stage `dist/<target>/`; `--no-bake` fails on stale instead |
 | `serve [--port 8734] [--dist [TARGET]]` | dev server: `/`, `/avon`, `/chautauqua`, `/?site=<name>`; or a built dist |
 | `verify <target> <domain> [site]` | live files match `dist/<target>/` |
 | `browser setup\|status\|cleanup\|stop` | the private headless Chromium |
@@ -44,8 +44,9 @@ codex login                                           # `town author` with OpenA
 
 - **Viewer or generator (`src/`)**: `./town bake <site>` for every affected site
   (surfaces are fingerprinted on all `src/*.js`; streams on the generator
-  modules), then `./town bake --viewer`, then commit the regenerated `data/`
-  and `index.html`. `./town bake <site> --check` says what is stale.
+  modules) to view it locally, then `./town bake --viewer` and commit
+  `index.html` (its `?v=` stamps hash `src/`). Baked assets are gitignored;
+  Cloudflare bakes them on deploy. `./town bake <site> --check` says what is stale.
 - **Authored data (`data/<site>/overrides.json`, `sites/<site>/landmarks.json`,
   `scope.json`)**: `./town build <site>` then `./town bake <site>`.
 - **A blueprint**: edit `buildings/<id>/draft.json` -> `town lint` ->
@@ -68,7 +69,9 @@ codex login                                           # `town author` with OpenA
 | `sites/deploy.json` | target -> `{dist, wrangler}` |
 | `data/<site>/source/` | stage-1 inputs (`satellite.jpg` gitignored; cache in `data/.town-cache/`) |
 | `data/<site>/overrides.json` | the authored truth: `buildings`, `blueprints`, `blueprint_frames`, `miniature_review`, `roads`, `extras`, `areas`, `landmarks`, `footprints`, `authored_buildings`, `authored_roads`, `notes`, `seed`, `title` |
-| `data/<site>/site.json`, `surfaces*`, `stream/`, `textures/` | built scene and runtime assets (committed, deployed) |
+| `data/<site>/site.json`, `textures/` | built scene and textures (committed, deployed) |
+| `data/<site>/surfaces*`, `stream/` | baked runtime assets (gitignored build output of `bake`/`stage`; deployed) |
+| `scripts/cloudflare-build.sh` | Workers Builds entry point (wrangler `build.command`): venv, browser, libs, `town stage` |
 | `data/<site>/buildings/<id>/` | per-building records; images gitignored |
 | `tests/unit`, `tests/node`, `tests/browser`, `tests/run.sh` | see Tests |
 | `runs/` | gitignored: browser runtime, `runs/model-calls/` scratch |
@@ -83,17 +86,22 @@ codex login                                           # `town author` with OpenA
 4. `overrides.json` is the authored truth; `accept` is the only thing that
    writes blueprints into it. Drafts are proposals.
 5. Standard library only at import time for `config`, `paths`, `state`,
-   `stage`, `bake --check`, `site.build`; import `PIL`/`websocket` lazily.
+   `deploy`, `bake --check`, `site.build`; import `PIL`/`websocket` lazily.
+   (`stage` itself bakes, so running it needs the full toolchain.)
 6. Python >= 3.10, Node >= 22. One browser harness (`browser.py` / `browser.mjs`).
 7. Verbs are idempotent.
 
 ## Gotchas
 
-- `town stage` (and the Cloudflare build) fails if surfaces, streams or the
-  viewer stamps are stale. Bake, restamp, commit `data/` + `index.html` first.
+- Surfaces and streams are never committed. `town stage` bakes what is stale
+  first; Cloudflare runs `scripts/cloudflare-build.sh <target>` (via wrangler's
+  `build.command`) on Ubuntu 24.04 without root, within a 20-minute limit.
+  See `docs/deploy.md`.
+- A fresh clone has no baked assets: `./town bake <site>` before viewing
+  streamed sites locally (otherwise the viewer falls back to `?stream=0`).
 - Stream export is byte-reproducible: chunks are only re-exported when their
   fingerprint is stale (or with `bake --force`), and then only chunks whose
-  contents changed get new names. Commit the deletions with the additions.
+  contents changed get new names, so local rebuilds stay cheap.
 - `/` on avon.town is `avon-extended`; `/avon` and `/extended` are aliases of the same
   larger miniature. Routes come from `sites/*/site.json`,
   `_headers` still lists them by hand.
@@ -124,19 +132,26 @@ node tests/browser/run.mjs [--list | name… | all]             # headless suite
 
 Golden checks: `./town build <site>` must reproduce the committed
 `data/<site>/site.json` for both sites (apart from `name`), and
-`./town stage` must reproduce the committed dist hashes apart from `?v=`
-stamps. `tests/browser/chautauqua-browser.py` needs
-`./town stage --target chautauqua` first.
+bakes are byte-reproducible: two Linux builds (Cloudflare) give identical
+chunks, and a macOS bake matches them except chunks with canvas text (glyph
+anti-aliasing differs by OS; fonts are bundled in `tinytown/web/fonts/`). `tests/browser/chautauqua-browser.py` needs
+`./town stage --target chautauqua` first; `avon-isolation` and
+`miniature-sectors` need `./town stage --target avon`. Drivers that read
+baked streams need `./town bake avon-extended` first (`streaming`,
+`streaming-startup`, `streaming-regions`, `regional-streaming`,
+`streaming-zoom`, `firehouse-lod`, `camera-depth`, `viewer-cache`) or
+`./town bake chautauqua` (`chautauqua-streaming`). The default `viewer` suite
+needs no bake.
 
 ## Deploy checklist
 
-1. `for s in avon-extended chautauqua; do ./town bake "$s" --check; done`
-2. `./town bake --viewer --check`
-3. `./town stage` (stages both targets; same checks Cloudflare runs)
-4. `tests/run.sh`
-5. Commit `data/`, `index.html`, `sites/`, `_headers`; push to `main`.
-6. `./town verify avon https://avon.town` and
+1. `./town bake --viewer --check` (else `./town bake --viewer`)
+2. `./town stage` (bakes what is stale, stages both targets; what Cloudflare runs)
+3. `tests/run.sh`
+4. Commit `data/` (baked files are ignored), `index.html`, `sites/`, `_headers`;
+   push to `main`. Cloudflare bakes and deploys each Worker.
+5. `./town verify avon https://avon.town` and
    `./town verify chautauqua https://chautauqua.town`.
 
-Do not commit `dist/`, `runs/`, `.venv/`, or any image under
-`data/*/buildings/`.
+Do not commit `dist/`, `runs/`, `.venv/`, baked `surfaces*`/`stream/`, or any
+image under `data/*/buildings/`.

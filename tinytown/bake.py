@@ -126,14 +126,16 @@ def bake_stream(paths, check=False, force=False):
 
 # --- the verb -----------------------------------------------------------------
 
-def bake(paths, *, check=False, surfaces=True, stream=True, force=False):
+def bake(paths, *, check=False, surfaces=True, stream=True, force=False, parallel=True):
     """Bake one site's runtime assets; with check=True only report whether they are current.
 
     Assets whose fingerprints already match are left alone, which saves the
     work (both exports are byte-reproducible, so a rebuild would change nothing);
-    force=True re-exports the streaming chunks anyway.
+    force=True re-exports the streaming chunks anyway. parallel=False runs the
+    two exports one after the other, halving peak browser memory (Cloudflare
+    builds have 8 GB).
     """
-    if check or not (surfaces and stream):
+    if check or not (surfaces and stream) or not parallel:
         ok = True
         if surfaces:
             ok = bake_surfaces(paths, check) and ok

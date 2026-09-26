@@ -31,6 +31,8 @@ async function fingerprints() {
   }
   const files = Object.fromEntries(sources.filter(f=>available.includes(f)).map(f=>['src/'+f, join(root,'src',f)]));
   for (const name of EXPORTER) files[relative(root, join(web, name)).split(sep).join('/')] = join(web, name);
+  // The bundled sign fonts stream-export.html registers shape baked textures.
+  for (const name of await readdir(join(web, 'fonts'))) if (name.endsWith('.woff2')) files['tinytown/web/fonts/'+name] = join(web, 'fonts', name);
   const source = createHash('sha256');
   for (const label of Object.keys(files).sort()) {
     source.update(label+'\0'); source.update(await readFile(files[label]));
@@ -71,9 +73,23 @@ if (process.argv.includes('--check')) {
   const staging = await mkdtemp(join(output,'.prepare-'));
   try {
     await withBrowser(root, async page => {
-      page.events.add(m => { if (m.method === 'Runtime.consoleAPICalled') console.log(m.params.args.map(a=>a.value??a.description).join(' ')); });
-      await page.go('/' + relative(root, join(web, 'stream-export.html')).split(sep).join('/'));
-      await waitFor(()=>page.evaluate('typeof window.exportStream === "function"'), 'exporter');
+      page.events.add(m => {
+        if (m.method === 'Runtime.consoleAPICalled') console.log(m.params.args.map(a=>a.value??a.description).join(' '));
+        // A module that fails to load leaves exportStream undefined; say why.
+        if (m.method === 'Runtime.exceptionThrown') console.error('Exporter page error:', m.params.exceptionDetails.exception?.description ?? m.params.exceptionDetails.text);
+        if (m.method === 'Network.loadingFailed' && !m.params.canceled) console.error('Exporter request failed:', m.params.errorText, requests.get(m.params.requestId) ?? '');
+        if (m.method === 'Network.requestWillBeSent') requests.set(m.params.requestId, m.params.request.url);
+      });
+      const requests = new Map();
+      await page.send('Network.enable');
+      // The exporter loads three.js from a CDN. A stalled module fetch on a CI
+      // builder used to hang here for the full timeout; reload instead.
+      const exporterURL = '/' + relative(root, join(web, 'stream-export.html')).split(sep).join('/');
+      for (let attempt = 1; ; attempt++) {
+        await page.go(exporterURL);
+        try { await waitFor(()=>page.evaluate('typeof window.exportStream === "function"'), 'exporter', 60000); break; }
+        catch (error) { if (attempt === 3) throw error; console.error(`Exporter not ready after 60 s; reloading (attempt ${attempt + 1} of 3)`); }
+      }
       const siteURL = '/'+relative(root,directory).split(sep).join('/')+'/site.json';
       const manifest = await page.evaluate(`window.exportStream(${JSON.stringify(siteURL)}, ${JSON.stringify(directory.split(sep).at(-1))}, async (file,bytes)=>{
         const r=await fetch('/__stream_asset/'+file,{method:'POST',body:bytes});
