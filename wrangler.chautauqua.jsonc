@@ -10,5 +10,12 @@
   "assets": {
     "directory": "./dist/chautauqua",
     "html_handling": "auto-trailing-slash"
+  },
+  // `wrangler deploy --env staging`: the chautauqua-miniature-staging Worker at staging.chautauqua.town,
+  // built by Workers Builds from the `staging` branch. Routes are not inherited.
+  "env": {
+    "staging": {
+      "routes": [{ "pattern": "staging.chautauqua.town", "custom_domain": true }]
+    }
   }
 }

@@ -138,6 +138,26 @@ against `town build`), `overrides.json`, `source/`, `textures/`, `sites/`,
 only; the build restamps them anyway, but commit `./town bake --viewer` after
 editing `src/` so the repository's `index.html` matches.
 
+## Staging
+
+Each wrangler config has a `staging` environment: the `avon-town-staging` and
+`chautauqua-miniature-staging` Workers at `staging.avon.town` and
+`staging.chautauqua.town`, with the same build script and dist directory as
+production. They are Git-connected to the `staging` branch (Workers Builds:
+branch `staging`, build command empty, deploy command
+`npx --yes wrangler@4.131.2 deploy --config wrangler.<target>.jsonc --env staging`).
+Push a branch there to watch Cloudflare bake and deploy it before merging to
+`main`:
+
+```sh
+git push origin HEAD:staging
+./town verify avon https://staging.avon.town
+./town verify chautauqua https://staging.chautauqua.town
+```
+
+`npx wrangler deploy --config wrangler.<target>.jsonc --env staging` deploys a
+local build there instead.
+
 ## Pre-push checklist
 
 ```sh

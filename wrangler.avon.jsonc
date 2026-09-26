@@ -10,5 +10,12 @@
   "assets": {
     "directory": "./dist/avon",
     "html_handling": "auto-trailing-slash"
+  },
+  // `wrangler deploy --env staging`: the avon-town-staging Worker at staging.avon.town,
+  // built by Workers Builds from the `staging` branch. Routes are not inherited.
+  "env": {
+    "staging": {
+      "routes": [{ "pattern": "staging.avon.town", "custom_domain": true }]
+    }
   }
 }
