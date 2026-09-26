@@ -32,7 +32,8 @@ await withBrowser(root,async page=>{
   // Compare the worker/zero-copy loader to Three's standard loader using a
   // real prepared tile. Check values AND buffer identity, including normalized
   // colors/normals, index buffers, groups and instanced matrices.
-  const tile=manifest.tiles.find(t=>t.id==='-1_0');
+  // The downtown cell is split into quadrants; use its largest piece.
+  const tile=manifest.tiles.filter(t=>t.id==='-1_0'||t.id.startsWith('-1_0q')).sort((a,b)=>b.rawBytes-a.rawBytes)[0];
   const result=await page.evaluate(`(async()=>{
     const THREE=await import('three');
     const {decodeStream,StreamObjectLoader}=await import('./src/stream-loader.js');

@@ -10,6 +10,13 @@ const stream=resolve(process.env.TOWN_TEST_STREAM_DIR||root+'data/avon-extended/
 const output=resolve(root,'runs/firehouse-lod');
 await mkdir(output,{recursive:true});
 const samples=[];
+// The firehouse's tile is whichever nominal square holds its center; dense
+// cells are split into quadrants, so look it up rather than naming it.
+const FIREHOUSE=[-5,122];
+const manifest=JSON.parse(await readFile(resolve(stream,'manifest.json'),'utf8'));
+const firehouse=manifest.tiles.find(({area:[x,z,size]=[]})=>FIREHOUSE[0]>=x&&FIREHOUSE[0]<x+size&&FIREHOUSE[1]>=z&&FIREHOUSE[1]<z+size)?.id;
+assert.ok(firehouse,'firehouse tile');
+assert.ok(manifest.tiles.every(t=>t.memoryBytes<=12*2**20 || t.bounds[1][0]-t.bounds[0][0]>300),'dense blocks are split below a third of the phone budget');
 await withBrowser(root,async page=>{
   const errors=[];
   page.events.add(m=>{if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails);});
@@ -27,14 +34,14 @@ await withBrowser(root,async page=>{
   const check=async(label)=>{
     const state=await page.evaluate(`(()=>{
       const w=__town,s=w.streaming.stats;
-      return {...s,coarse:w.street.group.getObjectByName('stream-coarse').getObjectByName('-1_1').visible,
+      return {...s,coarse:w.street.group.getObjectByName('stream-coarse').getObjectByName(${JSON.stringify(firehouse)}).visible,
         lost:w.renderer.getContext().isContextLost()};
     })()`);
-    assert.ok(state.resident.includes('-1_1'),label+': firehouse garage doors must remain detailed');
+    assert.ok(state.resident.includes(firehouse),label+': firehouse garage doors must remain detailed');
     assert.equal(state.coarse,false,label+': coarse firehouse must be hidden');
     assert.equal(state.lost,false);assert.deepEqual(state.failures,[]);
     assert.ok(state.residentBytes<=state.budgetBytes && state.cacheBytes<=state.cacheBudgetBytes);
-    assert.ok(state.resident.length<= (state.budgetBytes===40*2**20?6:12));
+    assert.ok(state.residentWeight<=state.maxTiles+1e-9);
     samples.push({label,...state});
   };
   const shot=async(name)=>{
@@ -59,6 +66,23 @@ await withBrowser(root,async page=>{
     }
     for(const theta of [0,.9,2,3.4]) {
       await move(2,95,100,theta);await check(`rotate ${mobile} ${theta}`);
+    }
+    // The firehouse in view while the target is on a neighboring block: the
+    // reported iPhone failure. Aim from the far side of each target.
+    for(const [x,z] of [[-20,40],[30,60],[-60,20],[-80,120],[-50,50]]) for(const distance of [80,150]) {
+      const theta=await page.evaluate(`(()=>{
+        const w=__town,target=w.controls.target.clone().set(${x},w.street.surfaces.grade(${x},${z})+3,${z});
+        const house=w.camera.position.clone().set(${FIREHOUSE[0]},w.street.surfaces.grade(${FIREHOUSE[0]},${FIREHOUSE[1]})+4,${FIREHOUSE[1]});
+        let best=null;
+        for(let theta=0;theta<6.28;theta+=0.3925) {
+          w.controls.set({target,distance:${distance},theta});w.camera.updateMatrixWorld();
+          const p=house.clone().project(w.camera),d=w.camera.position.distanceTo(house);
+          if(Math.abs(p.x)<0.7&&Math.abs(p.y)<0.7&&p.z<1&&(!best||d<best.d))best={theta,d};
+        }
+        return best?.theta??null;
+      })()`);
+      if(theta===null)continue;
+      await move(x,z,distance,theta);await check(`${mobile?'phone':'desktop'} target ${x},${z} at ${distance}`);
     }
     if(mobile) {
       await page.send('Emulation.setDeviceMetricsOverride',{width:844,height:390,deviceScaleFactor:2,mobile:true,screenWidth:844,screenHeight:390});

@@ -56,13 +56,14 @@ await withBrowser(root+'dist/avon',async page=>{
         let instancedTrees=0;
         w.street.group.traverse(o=>{if(o.isInstancedMesh&&o.userData.instanceVegetation)instancedTrees+=o.count;});
         return {...s,lost:w.renderer.getContext().isContextLost(),instancedTrees,
-          coarseVisibilityCorrect:coarse.children.every(o=>o.visible===(s.visibleSectors.includes(o.name)&&!s.resident.includes(o.name))),
+          // Regional sites nest the named coarse sectors inside region groups.
+          coarseVisibilityCorrect:coarse.children.flatMap(o=>o.name?[o]:o.children).every(o=>o.visible===(s.visibleSectors.includes(o.name)&&!s.resident.includes(o.name))),
           sharedTreeGeometries:s.sharedTreeGeometries};
       })()`);
       assert.equal(state.lost,false);assert.deepEqual(state.failures,[]);
       assert.ok(state.resident.length>0 && state.resident.length<state.totalTiles,
         JSON.stringify({site,mobile,i,x,z,state}));
-      assert.ok(state.resident.length<=(mobile?6:12));
+      assert.ok(state.residentWeight<=(mobile?6:12)+1e-9,'a split quadrant counts a quarter sector');
       assert.ok(state.residentBytes<=state.budgetBytes && state.cacheBytes<=state.cacheBudgetBytes);
       assert.ok(state.resident.every(id=>state.visibleSectors.includes(id)));
       assert.ok(state.visibleSectors.length<state.totalTiles,'Offscreen sectors must be culled');

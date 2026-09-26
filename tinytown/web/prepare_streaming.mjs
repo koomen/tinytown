@@ -92,13 +92,13 @@ if (process.argv.includes('--check')) {
       // Only one asset revision per site; chunks the new manifest no longer names go.
       const current = new Set(streamAssetRecords(manifest).map(record => record.file));
       for (const file of await readdir(output)) {
-        if (/^(base(?:-part-\d+)?|(?:detail|region)--?\d+_-?\d+)-[a-f0-9]{16}\.bin\.gz$/.test(file) && !current.has(file)) await rm(join(output, file));
+        if (/^(base(?:-part-\d+)?|(?:detail|region)--?\d+_-?\d+(?:q[0-3]+)?)-[a-f0-9]{16}\.bin\.gz$/.test(file) && !current.has(file)) await rm(join(output, file));
       }
 
     }, {route:async (req,res)=>{
       if (!req.url.startsWith('/__stream_asset/')) return false;
       const file=req.url.slice('/__stream_asset/'.length);
-      if (req.method!=='POST' || !/^(base(?:-part-\d+)?|(?:detail|region)--?\d+_-?\d+)-[a-f0-9]{16}\.bin\.gz$/.test(file)) { res.writeHead(400); res.end(); return true; }
+      if (req.method!=='POST' || !/^(base(?:-part-\d+)?|(?:detail|region)--?\d+_-?\d+(?:q[0-3]+)?)-[a-f0-9]{16}\.bin\.gz$/.test(file)) { res.writeHead(400); res.end(); return true; }
       const chunks=[]; for await (const chunk of req) chunks.push(chunk);
       try {await writeFile(join(staging,file),Buffer.concat(chunks));res.end('ok');}
       catch(error) {console.error(`Stream asset write failed: ${error.message}`);res.writeHead(500);res.end(error.message);}

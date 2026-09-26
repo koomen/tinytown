@@ -92,7 +92,7 @@ await withBrowser(root,async page=>{
   await move(-30,12,2600);await ready();
   const overview=await stats();
   assert.equal(overview.residentBytes,0);
-  assert.equal(await page.evaluate("__town.street.group.getObjectByName('stream-coarse').children.every(o=>o.visible===__town.streaming.stats.visibleSectors.includes(o.name))"),true);
+  assert.equal(await page.evaluate("__town.street.group.getObjectByName('stream-coarse').children.flatMap(o=>o.name?[o]:o.children).every(o=>o.visible===__town.streaming.stats.visibleSectors.includes(o.name))"),true);
   const baselineGeometries=await page.evaluate('__town.renderer.info.memory.geometries');
   for(let i=0;i<2;i++) {
     await move(-30,12);await ready();await move(-30,12,2600);await ready();
@@ -112,7 +112,7 @@ await withBrowser(root,async page=>{
   // Fresh page/cache: a failed detail transfer must leave a usable coarse map.
   fault='failure';await page.go('/avon?quality=mobile');
   await waitFor(()=>page.evaluate('!!window.__town && __town.streaming.stats.failures.length>0'),'failed detail fallback');
-  assert.equal(await page.evaluate("__town.street.group.getObjectByName('stream-coarse').children.every(o=>o.visible===__town.streaming.stats.visibleSectors.includes(o.name))"),true);
+  assert.equal(await page.evaluate("__town.street.group.getObjectByName('stream-coarse').children.flatMap(o=>o.name?[o]:o.children).every(o=>o.visible===(__town.streaming.stats.visibleSectors.includes(o.name)&&!__town.streaming.stats.resident.includes(o.name)))"),true);
   fault='';await ready();await checkBudget();
   console.log('PASS interrupted tile stays coarse and retries successfully');
 

@@ -33,7 +33,7 @@ SOCIAL_PREVIEW = 'social-preview.jpg'
 SITE_ASSETS = ICONS + (SOCIAL_PREVIEW,)
 HEADERS = '_headers'
 SURFACE_FILE = re.compile(r'surfaces-[0-9a-f]+\.bin\.gz')
-STREAM_FILE = re.compile(r'(?:base(?:-part-\d+)?|(?:detail|region)--?\d+_-?\d+)-[0-9a-f]+\.bin\.gz')
+STREAM_FILE = re.compile(r'(?:base(?:-part-\d+)?|(?:detail|region)--?\d+_-?\d+(?:q[0-3]+)?)-[0-9a-f]+\.bin\.gz')
 TEXTURE = re.compile(rf'data/{SITE_NAME.pattern}/textures/[^/]+')
 DEFAULT_PORT = 8734
 

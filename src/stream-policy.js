@@ -24,6 +24,7 @@ export function detailVisible({cameraDepth, depthRadius=0, projectionScale, focu
 
 // Reserve detail for the sector under the target before overlapping neighbor
 // bounds consume the budget. Elsewhere prefer nearby and already resident tiles.
+// maxTiles counts 100 m sectors: a split quadrant weighs a quarter.
 // Overlapping bounds can all contain the target (distance zero). Break those
 // ties by their centers, not residency or tile ID, so a previously loaded
 // neighbor cannot indefinitely displace the block being inspected.
@@ -33,11 +34,12 @@ export function selectDetailTiles(candidates, { budgetBytes, maxTiles }) {
     a.distance*(a.resident ? 0.8 : 1)-b.distance*(b.resident ? 0.8 : 1) ||
     (a.centerDistance??0)-(b.centerDistance??0) || a.id.localeCompare(b.id));
   const selected = [];
-  let bytes = 0;
+  let bytes = 0, weight = 0;
   for (const tile of ordered) {
-    if (selected.length >= maxTiles) break;
+    const w = tile.weight ?? 1;
+    if (weight + w > maxTiles + 1e-9) continue;
     if (bytes + tile.memoryBytes > budgetBytes) continue;
-    selected.push(tile.id); bytes += tile.memoryBytes;
+    selected.push(tile.id); bytes += tile.memoryBytes; weight += w;
   }
   return selected;
 }

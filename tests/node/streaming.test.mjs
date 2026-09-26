@@ -85,6 +85,15 @@ test('overlapping bounds prefer the nearer center regardless of arrival order or
   }
 });
 
+test('split quadrants count a quarter sector against the tile limit',()=>{
+  const quarter=(id,distance)=>({id,distance,visible:true,memoryBytes:1,weight:0.25});
+  const tiles=[quarter('a',0),quarter('b',1),quarter('c',2),quarter('d',3),
+    {id:'whole',distance:4,visible:true,memoryBytes:1},quarter('e',5)];
+  assert.deepEqual(selectDetailTiles(tiles,{budgetBytes:100,maxTiles:2}),['a','b','c','d','whole']);
+  assert.deepEqual(selectDetailTiles(tiles,{budgetBytes:100,maxTiles:1.5}),['a','b','c','d','e'],
+    'a whole sector that no longer fits leaves room for smaller quadrants');
+});
+
 const projectionScale=1/Math.tan(26*Math.PI/360);
 const detailAt=(distance,focusDistance=0,resident=false,scale=projectionScale)=>detailVisible({
   cameraDepth:distance,viewDistance:distance,focusDistance,resident,projectionScale:scale,

@@ -39,9 +39,9 @@ export function createStreamDebug({scene,street,streaming,manifest,wake}) {
     z0:street.offset.z-street.size.d/2,z1:street.offset.z+street.size.d/2};
   const lines=new Map();
   for(const tile of manifest.tiles) {
-    const [cx,cz]=tile.id.split('_').map(Number),size=manifest.cellSize;
-    const x0=Math.max(bounds.x0,cx*size),x1=Math.min(bounds.x1,(cx+1)*size);
-    const z0=Math.max(bounds.z0,cz*size),z1=Math.min(bounds.z1,(cz+1)*size);
+    const [cx,cz]=tile.id.split('_').map(Number),[ax,az,size]=tile.area||[cx*manifest.cellSize,cz*manifest.cellSize,manifest.cellSize];
+    const x0=Math.max(bounds.x0,ax),x1=Math.min(bounds.x1,ax+size);
+    const z0=Math.max(bounds.z0,az),z1=Math.min(bounds.z1,az+size);
     if(x1<=x0 || z1<=z0)continue;
     const corners=[[x0,z0],[x1,z0],[x1,z1],[x0,z1]],points=[];
     for(let edge=0;edge<4;edge++) {

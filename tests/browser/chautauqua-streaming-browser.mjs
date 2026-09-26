@@ -73,7 +73,10 @@ for(const mobile of [false,true]) {
     console.log('PASS Chautauqua exploration and full overview',JSON.stringify({mobile}));
 
     await page.go('/chautauqua?focus=619932539&dist=180&time=night');await ready();await check();
-    assert.ok((await stats()).resident.includes('1_1'),'Amphitheater focus link loads its detail');
+    // Dense cells are split into quadrants: find the tile that holds the Amphitheater.
+    const {obb}=manifest.map.buildings.find(b=>String(b.id)==='619932539');
+    const amphitheater=manifest.tiles.find(({area:[x,z,size]})=>obb.cx>=x&&obb.cx<x+size&&obb.cz>=z&&obb.cz<z+size).id;
+    assert.ok((await stats()).resident.includes(amphitheater),'Amphitheater focus link loads its detail');
     if(mobile) {
       await page.evaluate("__town.lighting.setMode('day',{persist:false})");
       await waitFor(()=>page.evaluate('__town.lighting.fixtures.lights.every(l=>l.intensity===0)'),'day lighting');

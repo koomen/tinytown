@@ -216,6 +216,8 @@ export async function loadStreamedSite(manifest,directory,{mobile=false,changed,
       if(disposed)return;
       const distance=camera.position.distanceTo(focus);
       const focusTileId=`${Math.floor(focus.x/100)}_${Math.floor(focus.z/100)}`;
+      // Split tiles name their nominal square; older manifests only have 100 m ids.
+      const focused=t=>t.area ? focus.x>=t.area[0] && focus.x<t.area[0]+t.area[2] && focus.z>=t.area[1] && focus.z<t.area[1]+t.area[2] : t.id===focusTileId;
       camera.updateMatrixWorld();
       frustum.setFromProjectionMatrix(projection.multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse));
       visibleSectors=[];
@@ -244,7 +246,7 @@ export async function loadStreamedSite(manifest,directory,{mobile=false,changed,
           cameraDepth:-point.z,depthRadius,projectionScale:camera.projectionMatrix.elements[5],
           focusDistance:near,viewDistance:distance,resident:resident.has(t.id),
         });
-        return {...t,visible,distance:near,centerDistance,focused:t.id===focusTileId,resident:resident.has(t.id)};
+        return {...t,visible,distance:near,centerDistance,focused:focused(t),weight:t.area?(t.area[2]/100)**2:1,resident:resident.has(t.id)};
       });
       desired=selectDetailTiles(candidates,{budgetBytes,maxTiles});
       desiredRegions=[...new Set(candidates.filter(t=>visibleSectors.includes(t.id)).sort((a,b)=>a.distance-b.distance)
@@ -257,7 +259,7 @@ export async function loadStreamedSite(manifest,directory,{mobile=false,changed,
     },
     get stats() {return {
       detailEnabled,totalTiles:tiles.length,visibleSectors:[...visibleSectors],resident:[...resident.keys()],desired:[...desired],loading:inflight?.id??null,
-      baseBytes:manifest.base.memoryBytes+regions.filter(r=>loadedRegions.has(r.id)).reduce((n,r)=>n+r.memoryBytes,0),residentBytes:residentBytes(),budgetBytes,cacheBytes,cacheBudgetBytes,
+      baseBytes:manifest.base.memoryBytes+regions.filter(r=>loadedRegions.has(r.id)).reduce((n,r)=>n+r.memoryBytes,0),residentBytes:residentBytes(),residentWeight:[...resident.keys()].reduce((n,id)=>{const area=byId.get(id).area;return n+(area?(area[2]/100)**2:1);},0),maxTiles,budgetBytes,cacheBytes,cacheBudgetBytes,
       loadedRegions:[...loadedRegions],desiredRegions:desiredRegions.map(r=>r.id),totalRegions:regions.length,
       sharedTreeGeometries:sharedGeometrySet.size,
       stagingRawBytes:inflight?.record.rawBytes??0,downloadBytes,loads,evictions,cacheHits,

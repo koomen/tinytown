@@ -40,7 +40,7 @@ await withBrowser(root,async page=>{
       assert.ok(Math.abs(state.distance-distance*zoomScale)<.01);
       assert.equal(state.lost,false);assert.deepEqual(state.failures,[]);
       assert.ok(state.residentBytes<=state.budgetBytes && state.cacheBytes<=state.cacheBudgetBytes);
-      assert.ok(state.resident.length<=(mobile?6:12));
+      assert.ok(state.residentWeight<=(mobile?6:12)+1e-9,'at most 6 (phone) or 12 sectors of detail; a quadrant counts a quarter');
       assert.ok(state.resident.every(id=>state.visibleSectors.includes(id)));
       assert.equal(state.coarseVisibilityCorrect,true);
       if(distance<=1600)assert.ok(state.resident.length>0,`useful detail remains at ${distance}`);

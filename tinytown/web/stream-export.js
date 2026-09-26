@@ -8,6 +8,9 @@ import { landscapeTreeProxy } from '../../src/vegetation.js';
 import { packSceneJSON, STREAM_VERSION, STREAM_PART_BYTES } from '../../src/stream-format.js';
 
 const CELL = 100;
+// Detail tiles above this estimated memory are split into quadrants; phones
+// hold 40 MiB of detail, so one tile should stay well under a quarter of it.
+const DETAIL_CAP = 8*1024*1024, MIN_SECTOR = 25;
 // An offline export has no frame to keep responsive. bakeMobile's default
 // setTimeout(0) yields nest, get clamped to 4 ms, and left the export mostly idle.
 const NO_YIELD = {yieldBuild:async()=>{}};
@@ -139,13 +142,18 @@ export async function exportStream(url, seed, write) {
   if(imageErrors.length)throw new Error('Missing scene images: '+imageErrors.join(', '));
   staging.position.copy(street.group.position);
   staging.updateMatrixWorld(true);
+  // Items are first collected per 100 m cell. A cell whose estimated detail
+  // memory exceeds DETAIL_CAP is split into quadrants (down to MIN_SECTOR), so
+  // one dense block cannot take most of a phone's detail budget. Quadrant ids
+  // append q0-q3 per level ('-1_0q2', '-1_0q21'); `area` records each tile's
+  // nominal square, since bounds grow with whatever crosses the square's edge.
   const base = new THREE.Group(), cells = new Map(), fixedFarPositions = new Set();
   function cellAt(x,z) {
-    const id=`${Math.floor(x/CELL)}_${Math.floor(z/CELL)}`;
-    if (!cells.has(id)) cells.set(id,{id,detail:new THREE.Group(),coarse:new THREE.Group()});
+    const i=Math.floor(x/CELL),j=Math.floor(z/CELL),id=`${i}_${j}`;
+    if (!cells.has(id)) cells.set(id,{id,i,j,items:[]});
     return cells.get(id);
   }
-  const bounds = new THREE.Box3(), center = new THREE.Vector3(), matrix = new THREE.Matrix4(), color = new THREE.Color();
+  const bounds = new THREE.Box3(), center = new THREE.Vector3(), extent = new THREE.Vector3(), matrix = new THREE.Matrix4(), color = new THREE.Color();
   const bridgeBounds=site.buildings.filter(b=>b.blueprint?.bridge).map(b=>{
     const o=b.obb,c=Math.abs(Math.cos(o.angle)),s=Math.abs(Math.sin(o.angle));
     return {x:o.cx,z:o.cz,w:(c*o.w+s*o.d)/2+3,d:(s*o.w+c*o.d)/2+3};
@@ -155,63 +163,119 @@ export async function exportStream(url, seed, write) {
     for(const [name,a] of Object.entries(record.attributes)) g.setAttribute(name,new THREE.BufferAttribute(a.array,a.itemSize,a.normalized));
     g.setIndex(new THREE.BufferAttribute(record.index,1));return g;
   };
+  // Items carry [resource, bytes] pairs; a tile's estimate counts each shared
+  // array or texture once, however many of its models use it.
+  const surfaceRefs=record=>[...Object.values(record.attributes).map(a=>a.array),record.index].map(a=>[a,a.byteLength]);
+  const estimate=items=>{const seen=new Map();for(const item of items)for(const [key,bytes] of item.refs)seen.set(key,bytes);return [...seen.values()].reduce((n,b)=>n+b,0);};
   function splitSurface(root) {
     for(const o of [...root.children]) splitSurface(o);
     if(!root.isMesh) return;
     if(root.isInstancedMesh || Array.isArray(root.material) || !isDrapedSurface(root.name)) {base.attach(root);return;}
     const world=root.geometry.clone().applyMatrix4(root.matrixWorld);
     const attributes=Object.fromEntries(Object.entries(world.attributes).map(([key,a])=>[key,{array:a.array,itemSize:a.itemSize,normalized:a.normalized}]));
-    for(const tile of partitionSurface(attributes,world.index?.array,{
+    const options={
       heightAt:street.surfaces.grade, interiorDrop:root.name==='ground'?.2:0,
       preserve:(x,z)=>root.name==='landmark-ribbon' || bridgeBounds.some(b=>Math.abs(x-b.x)<b.w && Math.abs(z-b.z)<b.d),
-    })) {
-      const [i,j]=tile.id.split('_').map(Number),cell=cellAt((i+.5)*CELL,(j+.5)*CELL);
-      const detail=new THREE.Mesh(geometryFrom(tile.detail),root.material);
-      const coarse=new THREE.Mesh(geometryFrom(tile.coarse),root.material);
-      cell.detail.add(detail);
-      // The road surface supplies its distant outline. Millimetre curb and
-      // paint strips remain exact in the nearby tile without resident copies.
-      if(!['curb','ribbon'].includes(root.name)) {
-        const p=tile.coarse.attributes.position.array;
-        for(let i=0;i<tile.coarse.fixed.length;i++) if(tile.coarse.fixed[i]) fixedFarPositions.add(farPositionKey(p[i*3],p[i*3+1],p[i*3+2]));
-        cell.coarse.add(coarse);
-      }
-      else coarse.geometry.dispose();
+    };
+    for(const tile of partitionSurface(attributes,world.index?.array,options)) {
+      const [i,j]=tile.id.split('_').map(Number);
+      cellAt((i+.5)*CELL,(j+.5)*CELL).items.push({kind:'surface',root,options,tile,x:(i+.5)*CELL,z:(j+.5)*CELL,refs:surfaceRefs(tile.detail)});
     }
     world.dispose();
   }
-  for (const child of [...staging.children]) {
+  // Pre-bake memory resources, with textures at the size save() will resize them to.
+  function modelRefs(root) {
+    const refs=new Map();
+    root.traverse(o=>{
+      if(o.geometry) for(const a of [...Object.values(o.geometry.attributes),o.geometry.index].filter(Boolean))refs.set(a.array,a.array.byteLength);
+      for(const m of o.material ? [o.material].flat() : []) for(const t of Object.values(m)) if(t?.isTexture) {
+        const w=t.image?.width||0,h=t.image?.height||0,scale=Math.min(1,1024/Math.max(w,h,1));
+        refs.set(t,Math.round(w*scale)*Math.round(h*scale)*16/3);
+      }
+    });
+    return [...refs];
+  }
+  const queue=[...staging.children];
+  while (queue.length) {
+    const child=queue.shift();
     if (child.userData.streamSurface) {splitSurface(child);staging.remove(child);continue;}
     if (child.userData.streamBase) { base.attach(child); continue; }
     if (child.isInstancedMesh) {
-      const partitions = new Map();
       for (let i=0;i<child.count;i++) {
         child.getMatrixAt(i,matrix); matrix.premultiply(child.matrixWorld);
         center.setFromMatrixPosition(matrix);
-        const cell=cellAt(center.x,center.z);
-        if (!partitions.has(cell)) partitions.set(cell,[]);
-        partitions.get(cell).push(i);
-      }
-      for (const [cell,indices] of partitions) {
-        const part=new THREE.InstancedMesh(child.geometry,child.material,indices.length);
-        indices.forEach((i,k)=>{
-          child.getMatrixAt(i,matrix);part.setMatrixAt(k,matrix.premultiply(child.matrixWorld));
-          if (child.instanceColor) {child.getColorAt(i,color);part.setColorAt(k,color);}
-        });
-        cell.detail.add(part);
+        const item={kind:'instance',child,index:i,x:center.x,z:center.z};
+        item.refs=[[item,child.instanceColor?76:64]];
+        cellAt(center.x,center.z).items.push(item);
       }
     } else {
       bounds.setFromObject(child).getCenter(center);
       if (!Number.isFinite(center.x)) continue;
-      const cell=cellAt(center.x,center.z);
       const simple=preparedCoarse.get(child);
-      if(simple) {
-        // Models were compacted before the staging group's geographic shift.
-        simple.applyMatrix4(staging.matrixWorld);
-        cell.coarse.add(simple);
-      } else cell.coarse.add(coarseModel(child));
-      cell.detail.attach(child);
+      bounds.getSize(extent);
+      if (!simple && !child.isMesh && child.children.length && Math.max(extent.x,extent.z)>CELL*1.5) {
+        // A loose group of props spread over several sectors: file each part
+        // under its own sector instead of stretching one tile's bounds across the map.
+        for (const part of [...child.children]) {staging.attach(part);queue.push(part);}
+        staging.remove(child);continue;
+      }
+      // Models were compacted before the staging group's geographic shift.
+      if(simple) simple.applyMatrix4(staging.matrixWorld);
+      cellAt(center.x,center.z).items.push({kind:'model',object:child,coarse:simple||coarseModel(child),x:center.x,z:center.z,refs:modelRefs(child)});
     }
+  }
+  const leaves=[];
+  function place(cell,items,x0,z0,size,id) {
+    if(size<=MIN_SECTOR || estimate(items)<=DETAIL_CAP) {leaves.push({id,cell,area:[x0,z0,size],items});return;}
+    const half=size/2,quadrants=[[],[],[],[]];
+    for(const item of items) quadrants[(item.z>=z0+half?2:0)+(item.x>=x0+half?1:0)].push(item);
+    quadrants.forEach((part,k)=>{if(part.length)place(cell,part,x0+(k&1)*half,z0+(k>>1)*half,half,`${id}${size===CELL?'q':''}${k}`);});
+  }
+  for (const cell of cells.values()) {
+    let items=cell.items;
+    if(estimate(items)>DETAIL_CAP) {
+      // Re-cut this cell's surfaces at the finest sector size. Every exposed
+      // edge stays exact, so the outer boundary still matches the neighbours.
+      items=items.flatMap(item=>item.kind!=='surface' ? [item] :
+        partitionSurface(item.tile.detail.attributes,item.tile.detail.index,{...item.options,cellSize:MIN_SECTOR}).map(tile=>{
+          const [i,j]=tile.id.split('_').map(Number);
+          return {...item,tile,x:(i+.5)*MIN_SECTOR,z:(j+.5)*MIN_SECTOR,refs:surfaceRefs(tile.detail)};
+        }));
+    }
+    place(cell,items,cell.i*CELL,cell.j*CELL,CELL,cell.id);
+    // Leaves own the items now. Holding the full list here would keep every
+    // source model and its geometry alive until the whole export finishes.
+    cell.items=null;
+  }
+  function assemble(leaf) {
+    const detail=new THREE.Group(),coarse=new THREE.Group(),instances=new Map();
+    for(const item of leaf.items) {
+      if(item.kind==='model') {coarse.add(item.coarse);detail.attach(item.object);}
+      else if(item.kind==='instance') {
+        if(!instances.has(item.child))instances.set(item.child,[]);
+        instances.get(item.child).push(item.index);
+      } else {
+        const {root,tile}=item;
+        detail.add(new THREE.Mesh(geometryFrom(tile.detail),root.material));
+        // The road surface supplies its distant outline. Millimetre curb and
+        // paint strips remain exact in the nearby tile without resident copies.
+        if(!['curb','ribbon'].includes(root.name)) {
+          const p=tile.coarse.attributes.position.array;
+          for(let i=0;i<tile.coarse.fixed.length;i++) if(tile.coarse.fixed[i]) fixedFarPositions.add(farPositionKey(p[i*3],p[i*3+1],p[i*3+2]));
+          coarse.add(new THREE.Mesh(geometryFrom(tile.coarse),root.material));
+        }
+      }
+    }
+    for (const [child,indices] of instances) {
+      const part=new THREE.InstancedMesh(child.geometry,child.material,indices.length);
+      indices.forEach((i,k)=>{
+        child.getMatrixAt(i,matrix);part.setMatrixAt(k,matrix.premultiply(child.matrixWorld));
+        if (child.instanceColor) {child.getColorAt(i,color);part.setColorAt(k,color);}
+      });
+      detail.add(part);
+    }
+    leaf.items=null;
+    return {detail,coarse};
   }
   const records=[];
   const coarse = new THREE.Group();
@@ -257,7 +321,10 @@ export async function exportStream(url, seed, write) {
     await write(file,compressed);
     return {...record,file};
   }
-  for (const cell of cells.values()) {
+  const sectorCells=new Map();
+  for (const leaf of leaves) {
+    const cell={id:leaf.id,...assemble(leaf)};
+    sectorCells.set(leaf.id,[leaf.cell.i,leaf.cell.j]);
     const model = await bakeMobile(cell.detail,NO_YIELD);
     const added=[];
     model.traverse(o=>{
@@ -273,8 +340,8 @@ export async function exportStream(url, seed, write) {
     const smokes=street.smokes.filter(e=>e.puffs.every(p=>uuids.has(p.mesh.uuid))).map(e=>({
       x:e.x,z:e.z,baseY:e.baseY,puffs:e.puffs.map(p=>({uuid:p.mesh.uuid,t:p.t,speed:p.speed,drift:p.drift})),
     }));
-    records.push({id:cell.id,bounds:[b.min.toArray(),b.max.toArray()],...(await save(`detail-${cell.id}`,model,{smokes},sharedTrees))});
-    console.log(`Prepared ${cell.id} (${records.length}/${cells.size})`);
+    records.push({id:cell.id,area:leaf.area,bounds:[b.min.toArray(),b.max.toArray()],...(await save(`detail-${cell.id}`,model,{smokes},sharedTrees))});
+    console.log(`Prepared ${cell.id} (${records.length}/${leaves.length})`);
     model.traverse(o=>{if(o.geometry&&!sharedTrees.has(o.geometry))o.geometry.dispose();});
   }
   const bakedBase=await bakeMobile(base,NO_YIELD);
@@ -313,7 +380,7 @@ export async function exportStream(url, seed, write) {
     const span=cells.size>256?4:2;
     const groups=new Map();
     for(const sector of [...coarse.children]) {
-      const [x,z]=sector.name.split('_').map(Number),id=`${Math.floor(x/span)}_${Math.floor(z/span)}`;
+      const [x,z]=sectorCells.get(sector.name),id=`${Math.floor(x/span)}_${Math.floor(z/span)}`;
       if(!groups.has(id))groups.set(id,new THREE.Group());
       groups.get(id).add(sector);
     }
