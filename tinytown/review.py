@@ -363,6 +363,15 @@ def lint_face(L, spec, key, vol, where, L_face, H):
                 else:
                     L.num(course['height'], where_m, 'height', .01, 1, allow_none=False)
                     L.num(course['depth'], where_m, 'depth', .01, 1, allow_none=False)
+    roof = vol.get("roof") or {}
+    top_ok, gable = H + 0.3, False  # gable: openings may rise into a gable end or mansard
+    if roof.get("type") in ("gable", "gambrel") and key in FACES:
+        W, D = vol["u"][1] - vol["u"][0], vol["v"][1] - vol["v"][0]
+        ridge_u = (roof.get("ridge") or ("u" if W >= D else "v")) == "u"
+        if key[1] == ("u" if ridge_u else "v"):  # a gable end: windows may rise into the gable
+            top_ok, gable = H + (roof.get("h") or min((D if ridge_u else W) * (roof.get("pitch") or (0.62 if roof.get("type") == "gambrel" else 0.55)), roof.get("maxH") or 9)), True
+    elif roof.get("type") == "mansard":
+        top_ok, gable = H + (roof.get("h") or 2.6), True
     for i, st in enumerate(spec.get("storeys") or []):
         w = f"{where}.storeys[{i}]"
         if not L.keys(st, "storey", w):
@@ -422,15 +431,6 @@ def lint_face(L, spec, key, vol, where, L_face, H):
             fr = [m + ((k + 0.5) / n) * (1 - 2 * m) for k in range(n)]
         if len(fr) * ww > L_face * 0.92:
             L.warn(w, f"{len(fr)} windows × {ww} m = {len(fr) * ww:.1f} m on a {L_face:.1f} m face — they will touch or overlap")
-        roof = vol.get("roof") or {}
-        top_ok = H + 0.3
-        if roof.get("type") in ("gable", "gambrel") and key in FACES:
-            W, D = vol["u"][1] - vol["u"][0], vol["v"][1] - vol["v"][0]
-            ridge_u = (roof.get("ridge") or ("u" if W >= D else "v")) == "u"
-            if key[1] == ("u" if ridge_u else "v"):  # a gable end: windows may rise into the gable
-                top_ok = H + (roof.get("h") or min((D if ridge_u else W) * (roof.get("pitch") or (0.62 if roof.get("type") == "gambrel" else 0.55)), roof.get("maxH") or 9))
-        elif roof.get("type") == "mansard":
-            top_ok = H + (roof.get("h") or 2.6)
         if isinstance(st.get("y"), (int, float)) and st["y"] + wh > top_ok:
             L.warn(w, f"storey top {st['y'] + wh:.1f} m is above the eaves ({H} m) on a face that is not a gable end; it will poke out of the roof")
         for f in fr:
@@ -449,6 +449,12 @@ def lint_face(L, spec, key, vol, where, L_face, H):
         if "groundEntrance" in d and not isinstance(d["groundEntrance"], bool):
             L.err(w, "`groundEntrance` must be true or false")
         L.num(d.get("y"), w, "y", 0, H if d.get("groundEntrance") is True else 3)
+        if d.get("type") != "garage" and not gable and all(isinstance(d.get(k, 0), (int, float)) for k in ("y", "steps", "h", "surroundW")):
+            # doorEl stacks the door on its steps, which start at `y`: y + steps + leaf + surround
+            dtop = (d.get("y") or 0) + (d.get("steps") or 0) * 0.18 + (d.get("h") or 2.5) + (d.get("surroundW") or 0.22)
+            if dtop > H:
+                L.warn(w, f"door top {dtop:.2f} m (y + steps + h + surround) is above the eaves ({H} m); it will poke through the roof"
+                          + (" — `y` already lifts the steps, drop it or a step" if d.get("y") and d.get("steps") else ""))
         dw = (d.get("w") or (1.8 if d.get("type") == "double" else 2.6 if d.get("type") == "garage" else 1.2)) / L_face
         for f, ww in ground_windows:
             if abs(f - d.get("at", 0.5)) < (dw + ww) / 2 * 0.9:

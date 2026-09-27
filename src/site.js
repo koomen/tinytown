@@ -15,7 +15,8 @@ import {
 } from './kit.js';
 
 import { WALL_COLORS, ROOF_COLORS, col } from './colors.js';
-import { buildBlueprint, blueprintFrontages } from './blueprint.js';
+import { buildBlueprint, blueprintFrontages, blueprintDoorstep } from './blueprint.js';
+import { buildFigure } from './figure.js';
 import { foundationSupportsVolume } from './foundation-support.js';
 import { facadeMaterial, surfaceMaterial, usesPaneUV } from './materials.js';
 import { bakeMobile } from './bake.js';
@@ -2030,10 +2031,16 @@ export async function generateSite(site, seed = 'site', opts = {}) {
     else if (ex.type === 'canopy') m = buildCanopy(rng, ex, yAt);
     else if (ex.type === 'plaza') m = buildPlaza(rng, ex);
     else if (ex.type === 'memorial') m = buildMemorial(rng, ex);
+    else if (ex.type === 'figure') m = buildFigure(ex);
     if (opts.onScene && m && ['monument','gazebo','clock','memorial'].includes(ex.type)) m.userData.streamBase = true;
     if (!m) continue;
     m.position.set(ex.x, yAt(ex.x, ex.z), ex.z);
     if (ex.rotation) m.rotation.y = ex.rotation;
+    // A figure anchored to a building stands at that blueprint's door: on
+    // its top step, or on the ground beside it (`along`/`out`)
+    const host = ex.building !== undefined && buildings.find(b => String(b.id) === String(ex.building));
+    const step = host && blueprintDoorstep(host, ex);
+    if (step) { m.position.set(step.x, step.y === null ? yAt(step.x, step.z) : host.base + step.y, step.z); m.rotation.y = step.rotation; }
     g.add(m);
   }
 

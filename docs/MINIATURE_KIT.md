@@ -139,6 +139,9 @@ its OSM outline is not a building perimeter.
 - doors: `[{"at":0.5,"type":"double","w":1.6,"h":2.5,"color":"#2f4549","surround":"#ded1b6","surroundW":0.14,"fanlight":true,"steps":2}]`.
   Types: rect, arch, gothic, double, garage. Optional y lifts the door (onto a
   porch floor: `y` = porch `floorH`); `lamp:true` adds a wall lantern.
+  `steps` (0.18 m each) already raise the door: the flight starts at `y`, so
+  do not also set `y` to the floor height. Keep y + steps·0.18 + h + surroundW
+  below the eaves.
   Garage: `{"at":0.3,"type":"garage","w":2.6,"h":2.3,"color":"#e4e1da","panels":4,"lights":true}`.
   `groundEntrance:true` marks a door above y 1.5 that meets uphill ground.
 - parapets: `[{"type":"mission","at":0.5,"width":4,"height":1.5,"depth":0.2,"color":"#ad604a","trim":"#d8cbb1","cross":true}]`.

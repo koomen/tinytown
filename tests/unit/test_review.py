@@ -69,6 +69,18 @@ class LintBasics(unittest.TestCase):
         bp['volumes'][1]['id'] = 'porch'
         self.assertFalse(any('sticks out' in w for w in lint_blueprint(bp, self.b, 'x').warnings))
 
+    def test_door_lifted_by_y_and_steps_above_the_eaves_warns(self):
+        door = {'at': 0.5, 'y': 0.4, 'h': 2.05, 'surroundW': 0.12, 'steps': 3}   # top 0.4 + 0.54 + 2.05 + 0.12
+        bp = {'volumes': [{'id': 'main', 'u': [-5, 5], 'v': [-4, 4], 'height': 2.9,
+                           'roof': {'type': 'gable', 'ridge': 'u'}, 'faces': {'+v': {'doors': [door]}}}]}
+        warnings = [w for w in lint_blueprint(bp, self.b, 'x').warnings if 'door top' in w]
+        self.assertEqual(len(warnings), 1, warnings)
+        self.assertIn('door top 3.11 m', warnings[0]); self.assertIn('`y` already lifts the steps', warnings[0])
+        del door['y']
+        self.assertFalse([w for w in lint_blueprint(bp, self.b, 'x').warnings if 'door top' in w])
+        door['y'] = 0.4; bp['volumes'][0]['faces'] = {'+u': {'doors': [door]}}   # a gable end has room above
+        self.assertFalse([w for w in lint_blueprint(bp, self.b, 'x').warnings if 'door top' in w])
+
     def test_open_pavilion_has_no_enclosing_building_volumes(self):
         b = {'id': 1, 'obb': {'cx': 0, 'cz': 0, 'angle': 0, 'w': 12, 'd': 10}, 'pts': [[-6, -5], [6, -5], [6, 5], [-6, 5]]}
         blueprint = {'pavilion': {'height': 3.1, 'pitch': .43, 'bents': 3, 'furniture': True}, 'volumes': []}

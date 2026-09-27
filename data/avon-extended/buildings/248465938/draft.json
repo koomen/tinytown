@@ -1,0 +1,151 @@
+{
+ "wall": "#deded0",
+ "wallMaterial": "siding",
+ "trim": "#f1eee3",
+ "roofColor": "#484c4e",
+ "volumes": [
+  {
+   "id": "main",
+   "u": [
+    -12.6,
+    8.65
+   ],
+   "v": [
+    -7.3,
+    2.8
+   ],
+   "bottom": 0,
+   "height": 2.9,
+   "roof": {
+    "type": "gable",
+    "ridge": "u",
+    "pitch": 0.2,
+    "maxH": 1.5,
+    "overhang": 0.35
+   },
+   "plinth": {
+    "height": 0.65,
+    "color": "#a77661"
+   },
+   "chimneys": [
+    {
+     "u": 0.8,
+     "v": -2.1
+    }
+   ],
+   "faces": {
+    "+v": {
+     "storeys": [
+      {
+       "y": 1.05,
+       "windows": {
+        "type": "rect",
+        "w": 1,
+        "h": 1.2,
+        "at": [
+         0.1221,
+         0.2035,
+         0.6269,
+         0.692,
+         0.7571
+        ],
+        "trim": "#f1eee3",
+        "glass": "#53625f",
+        "shutters": "#39483d"
+       }
+      }
+     ],
+     "doors": [
+      {
+       "at": 0.464,
+       "type": "rect",
+       "w": 1,
+       "h": 2.05,
+       "color": "#c3c8b8",
+       "surround": "#f1eee3",
+       "surroundW": 0.12,
+       "steps": 3
+      }
+     ]
+    },
+    "-u": {
+     "storeys": [
+      {
+       "y": 1.05,
+       "windows": {
+        "type": "rect",
+        "w": 1.15,
+        "h": 1.2,
+        "at": [
+         0.32,
+         0.7
+        ],
+        "glass": "#64716c"
+       }
+      }
+     ]
+    },
+    "-v": {
+     "storeys": [
+      {
+       "y": 1.05,
+       "windows": {
+        "type": "rect",
+        "w": 1.2,
+        "h": 1.2,
+        "at": [
+         0.3487,
+         0.5848,
+         0.8209
+        ],
+        "glass": "#64716c"
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "garage",
+   "u": [
+    4.7,
+    12.6
+   ],
+   "v": [
+    -7.3,
+    7.3
+   ],
+   "bottom": 0,
+   "height": 2.8,
+   "wall": "#e2e4da",
+   "wallMaterial": "siding",
+   "roof": {
+    "type": "gable",
+    "ridge": "v",
+    "pitch": 0.24,
+    "maxH": 1.7,
+    "overhang": 0.3
+   },
+   "faces": {
+    "+v": {
+     "doors": [
+      {
+       "at": 0.5,
+       "type": "garage",
+       "w": 5.7,
+       "h": 2.25,
+       "color": "#333633",
+       "surround": "#f1eee3",
+       "surroundW": 0.15,
+       "panels": 0,
+       "lights": false
+      }
+     ]
+    },
+    "+u": {},
+    "-v": {}
+   }
+  }
+ ],
+ "details": []
+}

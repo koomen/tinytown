@@ -296,6 +296,33 @@
       "z": 635,
       "scale": 1.7,
       "source": "Owner-requested scattered trees on the front lawn of 299 Spring Street, 2026-09-20."
+    },
+    {
+      "type": "figure",
+      "character": "master-chief",
+      "building": 248465938,
+      "volume": "main",
+      "face": "+v",
+      "door": 0,
+      "along": -2.0,
+      "out": 1.5,
+      "mirror": true,
+      "x": -460.69,
+      "z": 1242.25,
+      "note": "Master Chief (Halo) guarding the front door of 275 Linden Street: left of the front steps seen from the street, on the lawn 1.5 m out from the wall, facing the street; mirrored so both rifles point away from the door. Placement follows the blueprint's front door (along/out); x/z is that spot, used for preview cropping and as a fallback."
+    },
+    {
+      "type": "figure",
+      "character": "master-chief",
+      "building": 248465938,
+      "volume": "main",
+      "face": "+v",
+      "door": 0,
+      "along": 2.0,
+      "out": 1.5,
+      "x": -457.37,
+      "z": 1244.49,
+      "note": "Master Chief (Halo) guarding the front door of 275 Linden Street: right of the front steps seen from the street, on the lawn 1.5 m out from the wall, facing the street. Placement follows the blueprint's front door (along/out); x/z is that spot, used for preview cropping and as a fallback."
     }
   ],
   "buildings": {
@@ -251838,7 +251865,6 @@
                 {
                   "at": 0.464,
                   "type": "rect",
-                  "y": 0.4,
                   "w": 1,
                   "h": 2.05,
                   "color": "#c3c8b8",
@@ -375764,8 +375790,28 @@
       }
     },
     "248465938": {
-      "status": "ready",
-      "run": "20260910-115731-cea8a1"
+      "status": "needs-attention",
+      "run": "20260927-140904-bf1d7b",
+      "publication": {
+        "published": true,
+        "forced": true,
+        "policy": "operator-forced",
+        "reason": "operator-forced",
+        "inspection_passed": false,
+        "inspection_status": "needs-attention",
+        "repair_attempts": 0,
+        "repair_limit": 2,
+        "retroactive": false,
+        "published_at": 1790543344.124154,
+        "run": "20260927-140904-bf1d7b",
+        "blueprint_hash": "bf1d7b70e4ab3810ee196bc470d0d70ccbca8ace989d81b73e5726e9cc1f463a",
+        "inspection": {
+          "building": null,
+          "scene": null,
+          "baseline_comparison": null,
+          "validation_errors": []
+        }
+      }
     },
     "248547133": {
       "status": "ready",

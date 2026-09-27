@@ -808,6 +808,35 @@ function faceFrame(vol, key) {
   return { n, t, L, cu, cv, rotY, at };
 }
 
+// Where a figure stands at a blueprint door, facing out of the wall: world
+// x/z, y above the building base, rotation. By default it is the door's top
+// step (doorEl's geometry). `along` (metres along the wall from the door
+// centre, positive to the right seen from outside) and `out` (metres out from
+// the wall) stand it on the ground beside the door instead, with y null so the
+// caller drops it onto the terrain. `volume`, `face` and `door` (an index into
+// the face's doors) narrow the search; by default it is the first non-garage door.
+export function blueprintDoorstep(b, { volume, face, door, along, out } = {}) {
+  const bp = b.blueprint;
+  if (!bp) return null;
+  const c = Math.cos(b.obb.angle), s = Math.sin(b.obb.angle);
+  const beside = along !== undefined || out !== undefined;
+  for (const vol of bp.volumes || []) {
+    if (volume !== undefined && vol.id !== volume) continue;
+    for (const key of faceKeys(vol)) {
+      if (face !== undefined && key !== face) continue;
+      const doors = (vol.faces?.[key] ?? vol.faces?.default)?.doors || [];
+      const d = door !== undefined ? doors[door] : doors.find(d => d.type !== 'garage');
+      if (!d || d.type === 'garage') continue;
+      const fr = faceFrame(vol, key), steps = d.steps || 0;
+      const p = beside ? fr.at((d.at ?? 0.5) + (along ?? 0) / fr.L, out ?? 1, 0)
+        : fr.at(d.at ?? 0.5, 0.08 + (steps ? 0.36 : 0.4), (d.y ?? 0) + steps * 0.18);
+      const nx = c * fr.n[0] - s * fr.n[1], nz = s * fr.n[0] + c * fr.n[1];
+      return { x: b.obb.cx + c * p.x - s * p.z, z: b.obb.cz + s * p.x + c * p.z, y: beside ? null : p.y, rotation: Math.atan2(nx, nz) };
+    }
+  }
+  return null;
+}
+
 // Ground-level entrances in the same frame as their rendered facades. Used
 // for paving and gardens, including clipped/angled commercial corners.
 export function blueprintFrontages(b, { floorDatumOnly = false } = {}) {
