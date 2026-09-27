@@ -3,10 +3,11 @@
 // Small dimensions and planting placement are photo-based approximations.
 import * as THREE from 'three';
 import {box, mat} from './kit.js';
+import {GARDEN_BRIDGE, GARDEN_LOOP, GARDEN_LOOP_WIDTH} from './amphitheater-garden-grade.js';
 
 const C={red:0x923c32,redLight:0xa94d3e,redDark:0x73342d,
   stone:0x92927e,lightStone:0xb6b29c,darkStone:0x686f5c,
-  flag:0xb6b2a1,soil:0x626449,water:0x547f76,foam:0xd8e6d4,
+  flag:0xb6b2a1,soil:0x626449,water:0x547f76,
   leaf:0x43633e,leafLight:0x5f7748,leafDark:0x304e35};
 const up=new THREE.Vector3(0,1,0);
 
@@ -80,23 +81,8 @@ export function buildAmphitheaterGarden(feature, grade=()=>0) {
         .13+(j%3)*.018,(level-bottom)/6+.03,.115,j+row,'garden-pool-masonry',false);
     }
   });
-  const waterfall=(a,b,label)=>{
-    const middle=[(a[0]+b[0])/2,a[1]-.06,(a[2]+b[2])/2];
-    curve([a,middle,b],.073,water,'garden-running-water');
-    curve([a.map((v,i)=>v+(i===0?.015:0)),[middle[0]+.015,middle[1]+.016,middle[2]],
-      [b[0],b[1]+.014,b[2]]],.018,C.foam,'garden-water-highlight',false);
-    for(let i=0;i<3;i++)rock(b[0]+(i-1)*.15,b[1]+.015,b[2]+i*.055,.11,.035,.065,i,'garden-splash',false);
-    root.userData.garden[label]=[a,b];
-  };
-  // Retain the small source at the upper bowl. The three bowls stand apart;
-  // no oversized stone bridges or tubular spillways connect them.
-  for(let i=0;i<12;i++) {
-    const u=-1.8+Math.sin(i*2.3)*(.42+(i%3)*.13),v=-5.08+Math.cos(i*1.4)*.38;
-    rock(u,ground(u,v)+.35+(i%3)*.25,v,.35,.37,.31,i);
-  }
-  for(let i=0;i<3;i++)rock(-1.82+(i-1)*.26,levels[0]+.19+(i===1?.11:0),-5.08,
-    .39,.38,.34,i,'garden-cascade-head');
-  waterfall([-1.8,levels[0]+.52,-4.95],[-1.75,levels[0]+.015,-4.24],'sourceDrop');
+  // The three bowls stand apart and still: no source spout, cascade head or
+  // tubular spillways, so the loop walk passes close behind the upper bowl.
   const channelLevel=levels[2]-.055;
   slab([[-1.62,.76],[-1.27,.43],[1.60,1.23],[1.61,1.83],[-.05,1.79]],
     ()=>channelLevel-.17,C.darkStone,'garden-rill-bed',true,true);
@@ -109,7 +95,7 @@ export function buildAmphitheaterGarden(feature, grade=()=>0) {
 
   // A small hump-backed plank footbridge, with continuous red handrails and
   // upright posts. The underside clears the stream at the channel crossing.
-  const bridge={u:.25,v:1.35,length:3.5,width:1.24};
+  const bridge=GARDEN_BRIDGE;
   const deck=Math.max(channelLevel+.22,...[-1,1].flatMap(side=>[-1,1].map(end=>
     ground(bridge.u+side*bridge.width/2,bridge.v+end*bridge.length/2)+.12)));
   const deckY=t=>deck+.34*Math.sin(Math.PI*t);
@@ -139,8 +125,8 @@ export function buildAmphitheaterGarden(feature, grade=()=>0) {
   root.userData.garden.bridge={...bridge,deck:deck+base,archRise:.34,channelLevel:channelLevel+base};
 
   // The public approach is on the Amphitheater side. Its short level landing
-  // feeds a west-to-east flight down into the planted pocket, then the path
-  // turns around the lower pool to the bridge's near abutment.
+  // feeds a west-to-east flight down into the planted pocket, and the lower
+  // landing runs on to meet the single flagstone loop around the pools.
   const entry=spec.entry||[-10.8,1.4];
   const upperPosition=spec.stairs?.upper||[-8.4,1.4],lowerPosition=spec.stairs?.lower||[-5.7,1.4];
   const entryLift=spec.entryLift??.04;
@@ -149,45 +135,65 @@ export function buildAmphitheaterGarden(feature, grade=()=>0) {
   const direction=lowerPosition.map((v,i)=>(v-upperPosition[i])/run),across=[-direction[1],direction[0]];
   const steps=Math.max(2,Math.ceil((top-lower)/.18));
   const flightPoint=(t,side=0)=>upperPosition.map((v,i)=>v+direction[i]*run*t+across[i]*side);
-  const pathHeight=(u,v)=>{
-    const bridgeEnd=bridge.v+bridge.length/2;
-    const nearBridge=Math.abs(u-bridge.u)<1.3&&v>-1.15&&v<5.05;
-    if(nearBridge&&v>bridgeEnd) {
-      const t=Math.min(1,(v-bridgeEnd)/(5.05-bridgeEnd));
-      return Math.max(ground(u,v)+.10,(deck-.025)*(1-t)+(ground(u,v)+.10)*t);
-    }
-    if(v<bridge.v-bridge.length/2) {
-      const weight=Math.max(0,1-Math.hypot(u-bridge.u,v-bridge.v+bridge.length/2)/2.2);
-      return Math.max(ground(u,v)+.1,(deck-.025)*weight+(ground(u,v)+.1)*(1-weight));
-    }
-    return nearBridge?Math.max(ground(u,v)+.10,deck-.025):ground(u,v)+.1;
+  // The loop ramps up to the plank ends so the bridge deck continues the walk.
+  const bridgeEnds=[bridge.v-bridge.length/2,bridge.v+bridge.length/2],deckTop=deck+.03;
+  const walkTop=(u,v)=>{
+    const floor=ground(u,v)+.1;
+    const weight=Math.max(...bridgeEnds.map(e=>1-Math.hypot(u-bridge.u,v-e)/2.2),0);
+    return Math.max(floor,floor+(deckTop-floor)*weight);
   };
-  const path=(points,width,height=pathHeight)=>{
-    const line=new THREE.CatmullRomCurve3(points.map(([u,v])=>new THREE.Vector3(u,0,v)),false,'centripetal');
-    const n=Math.ceil(line.getLength()/.64);
-    const point=(t,w)=>{const p=line.getPointAt(t),d=line.getTangentAt(t);return[p.x-d.z*w,p.z+d.x*w];};
-    for(let j=0;j<n;j++)for(let side=0;side<2;side++) {
-      const t0=(j+.025)/n,t1=(j+.975)/n,l=-width/2+side*width/2+.015,r=l+width/2-.03;
-      const p0=point(t0,l),p1=point(t1,l),p2=point(t1,r),p3=point(t0,r);
-      // Diagonal joints alternate with broad flags like the reference path.
-      const flags=(j+side)%3===0?[[p0,p1,p2],[p0,p2,p3]]:[[p0,p1,p2,p3]];
-      for(const flag of flags)slab(flag,(u,v)=>Math.max(height(u,v),ground(u,v)+.08)-.12,
-        (j+side)%3?C.flag:C.lightStone,'garden-flagstone',true,true);
-    }
+  const loop=GARDEN_LOOP,width=GARDEN_LOOP_WIDTH,lengths=[0];
+  for(let i=1;i<loop.length;i++)lengths.push(lengths[i-1]+Math.hypot(loop[i][0]-loop[i-1][0],loop[i][1]-loop[i-1][1]));
+  const total=lengths[lengths.length-1];
+  const along=d=>{
+    d=Math.max(0,Math.min(total,d));
+    let i=1;while(i<loop.length-1&&lengths[i]<d)i++;
+    const t=(d-lengths[i-1])/(lengths[i]-lengths[i-1]);
+    return loop[i-1].map((v,k)=>v+(loop[i][k]-v)*t);
   };
+  const point=(d,w)=>{
+    const p=along(d),a=along(d-.1),b=along(d+.1),l=Math.hypot(b[0]-a[0],b[1]-a[1]);
+    return [p[0]-(b[1]-a[1])/l*w,p[1]+(b[0]-a[0])/l*w];
+  };
+  // One continuous run of paired flags from the north plank end, round the
+  // pools, to the south plank end; joints are the only breaks.
+  const n=Math.ceil(total/.64);
+  for(let j=0;j<n;j++)for(let side=0;side<2;side++) {
+    const d0=total*(j+.025)/n,d1=total*(j+.975)/n,l=-width/2+side*width/2+.015,r=l+width/2-.03;
+    const p0=point(d0,l),p1=point(d1,l),p2=point(d1,r),p3=point(d0,r);
+    // Diagonal joints alternate with broad flags like the reference path.
+    const flags=(j+side)%3===0?[[p0,p1,p2],[p0,p2,p3]]:[[p0,p1,p2,p3]];
+    for(const flag of flags)slab(flag,(u,v)=>Math.max(walkTop(u,v),ground(u,v)+.08)-.12,
+      (j+side)%3?C.flag:C.lightStone,'garden-flagstone',true,true);
+  }
   // Broad, gapless landings prevent the flagstone joints becoming a lip at
-  // either end of the stairs; flagstone paths start flush with each landing.
+  // either end of the stairs.
   const landing=(a,b,width,height,name)=>{
     const du=b[0]-a[0],dv=b[1]-a[1],length=Math.hypot(du,dv),side=[-dv/length*width/2,du/length*width/2];
     return slab([[a[0]+side[0],a[1]+side[1]],[b[0]+side[0],b[1]+side[1]],
-      [b[0]-side[0],b[1]-side[1]],[a[0]-side[0],a[1]-side[1]]],()=>height-.12,C.flag,name,true,true);
+      [b[0]-side[0],b[1]-side[1]],[a[0]-side[0],a[1]-side[1]]],
+      typeof height==='function'?(u,v)=>height(u,v)-.12:()=>height-.12,C.flag,name,true,true);
   };
   landing(entry,upperPosition,1.44,top,'garden-upper-landing');
-  const lowerExit=lowerPosition.map((v,i)=>v+direction[i]*.65);
-  landing(lowerPosition,lowerExit,1.44,lower,'garden-lower-landing');
-  path([lowerExit,[-4.5,2.6],[-2.3,4.3],[bridge.u,4.55],[bridge.u,3.15]],1.34);
-  path([[bridge.u,-.43],[1.45,-1.35],[2.2,-3.4],[1.2,-4.45]],1.15);
-  path([[1.45,-1.35],[2.55,.5],[3.0,3.1],[2.1,4.65],[bridge.u,4.55]],1.08);
+  // The lower landing continues along the flight until it tucks under the
+  // loop's outer flags, easing from the stair foot to the loop's level.
+  let join=null;
+  for(let i=1;i<loop.length&&!join;i++) {
+    const a=loop[i-1],b=loop[i],e=[b[0]-a[0],b[1]-a[1]],q=[a[0]-lowerPosition[0],a[1]-lowerPosition[1]];
+    const den=direction[0]*e[1]-direction[1]*e[0];if(Math.abs(den)<1e-9)continue;
+    const s=(q[0]*e[1]-q[1]*e[0])/den,t=(q[0]*direction[1]-q[1]*direction[0])/den;
+    if(s>0&&t>=0&&t<=1)join={distance:s,point:[a[0]+e[0]*t,a[1]+e[1]*t]};
+  }
+  const reach=join?Math.max(.65,join.distance-width/4):.65;
+  const lowerEnd=lowerPosition.map((v,i)=>v+direction[i]*reach);
+  const endTop=join?walkTop(...lowerEnd)-.012:lower;
+  landing(lowerPosition,lowerEnd,1.44,(u,v)=>{
+    const s=(u-lowerPosition[0])*direction[0]+(v-lowerPosition[1])*direction[1];
+    const t=Math.max(0,Math.min(1,(s-.65)/Math.max(.01,reach-.65)));
+    return lower+(endTop-lower)*t;
+  },'garden-lower-landing');
+  root.userData.garden.path={loop,width,length:total,closedBy:'bridge',join:join?.point??null,
+    landingEnd:lowerEnd};
   for(let i=0;i<steps;i++) {
     const y=top-(top-lower)*(i+1)/steps,[u,v]=flightPoint((i+.5)/steps);
     const edges=[flightPoint(i/steps,-.72),flightPoint(i/steps,.72),
@@ -212,9 +218,9 @@ export function buildAmphitheaterGarden(feature, grade=()=>0) {
 
   // Dense, low rhododendron-like shrubs enclose the cascade without covering
   // its pools or the bridge. Deliberate placements leave the flagstone loop open.
-  const shrubs=[[-3.45,-4.35,1.0],[-2.85,-5.5,1.05],[-1.05,-5.75,1.15],[.65,-5.65,1.0],
-    [2.3,-4.9,.85],[3.1,-3.8,.88],[-3.8,-2.5,.9],[-3.65,-.65,.85],[-3.3,1.35,.85],
-    [-2.2,2.15,.62],[-1.8,6.55,.85],[-.45,7.1,.7],[-2.15,8.5,.6],
+  const shrubs=[[-4.45,-4.95,.55],[-3.25,-6.4,.55],[-1.4,-6.85,.6],[1.15,-5.65,.8],
+    [2.3,-4.9,.85],[3.1,-3.8,.88],[-4.8,-2.6,.6],[-4.75,-.6,.55],[-4.4,2.9,.55],
+    [-1.75,2.55,.55],[-1.9,6.85,.85],[-.45,7.1,.7],[-2.15,8.5,.6],
     [3.65,-1.7,.78],[3.95,.15,.82],[4,2.1,.8],[3.85,4.55,.85],[3.2,6.25,.8],[1.55,8.1,.65]];
   shrubs.forEach(([u,v,r],i)=>{
     const y=ground(u,v);
@@ -233,8 +239,10 @@ export function buildAmphitheaterGarden(feature, grade=()=>0) {
       leaf.rotation.set(.2,a,.22);
     }
   });
-  // A small memorial plaque on the cascade head is geometry, with no texture.
-  const plaque=block(.43,.35,.05,0x665b43,-1.73,levels[0]+.43,-5.2,'garden-memorial-plaque',false);
-  plaque.rotation.x=-.15;
+  // A small memorial plaque set into the upper bowl faces the loop walk; it is
+  // geometry, with no texture.
+  const plaque=block(.43,.3,.05,0x665b43,pools[0].u,levels[0]-.3,pools[0].v-pools[0].r-.3,
+    'garden-memorial-plaque',false);
+  plaque.rotation.x=.07;
   return root;
 }

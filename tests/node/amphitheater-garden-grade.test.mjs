@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {amphitheaterGardenGrade} from '../../src/amphitheater-garden-grade.js';
+import {amphitheaterGardenGrade,GARDEN_LOOP} from '../../src/amphitheater-garden-grade.js';
 import {createStreetGrade} from '../../src/street-grade.js';
 import {terrainGrid} from '../../src/terrain-grid.js';
 import {shiftLandmark} from '../../src/landmark-frame.js';
@@ -15,8 +15,8 @@ test('the garden cut leaves the amphitheatre-side public path unchanged after te
   for(let u=-30;u<=-10.65;u+=.15)for(let v=-10;v<=10;v+=.2){
     const p=world([u,v]);assert.equal(after(...p),before(...p));
   }
-  for(const p of [[-.5,0],[-5.7,1.4],[-4.5,2.6],[-2.3,4.3],[.25,4.55]]){
-    const q=world(p);assert.ok(before(...q)-after(...q)>.95,'the entire lower walk lies in the sunken garden');
+  for(const p of [[-.5,0],[-5.7,1.4],[-4.5,2.6],...GARDEN_LOOP.filter((_,i)=>i%4===0)]){
+    const q=world(p);assert.ok(before(...q)-after(...q)>.95,'the stair foot and the entire loop lie in the sunken garden');
   }
 });
 
