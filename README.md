@@ -54,9 +54,9 @@ Each verb is idempotent: re-running it does the missing work and exits 0.
 [docs/fixing.md](docs/fixing.md).
 
 Prerequisites, by stage: Python ≥ 3.10 with `pillow` and `websocket-client`
-(installed by `pip install -e .`); Node ≥ 22 for `bake` and tests; the private
-headless Chromium from `./town browser setup` for `refs`, `render`, `author`,
-`bake` and browser tests; the [OpenAI Codex CLI](https://github.com/openai/codex)
+(installed by `pip install -e .`); Node ≥ 22 and `npm ci` for `bake` and tests; the private
+headless Chromium from `./town browser setup` for `refs`, `render`, `author`
+and browser tests; the [OpenAI Codex CLI](https://github.com/openai/codex)
 logged in for `author` and change-queue workers; network for OSM/USGS/Esri fetches, Street View
 capture and the Three.js CDN.
 
@@ -83,7 +83,7 @@ pyproject.toml       package metadata; `pip install -e .` installs `town`
 tinytown/            the package, one module per stage: sources, site, references,
                      review, render, author, model, bake, deploy, browser, state, config, paths
   plugins/           per-site hooks (avon.py, chautauqua.py)
-  web/               pages and scripts the pipeline drives in the browser (bake, stream export)
+  web/               the Node bake (bake.mjs, stream export) and pages the pipeline drives in the browser
 index.html, src/     the viewer (Three.js modules, served as-is)
 sites/<site>/        site config: site.json (title, deploy routes, plugin), scope, labels, landmarks
 sites/deploy.json    deploy targets -> dist directory and Wrangler config
@@ -121,8 +121,8 @@ Two Cloudflare Workers upload the static `dist/` directories that
 `./town stage` stages: `avon-town` serves avon.town (`/` Avon, `/avon` alias,
 `/avon-extended`, `/chautauqua`) and `chautauqua-miniature` serves
 chautauqua.town. Routes derive from `sites/*/site.json`. On push to `main`,
-`wrangler deploy` runs `scripts/cloudflare-build.sh <target>`, which installs
-the package and the private headless browser and runs `town stage`: baked
+`wrangler deploy` runs `scripts/cloudflare-build.sh <target>`, which runs
+`npm ci` and `town stage`: baked
 surfaces and streams are build output, generated on every deploy and never
 committed. Commit `index.html` restamped (`./town bake --viewer`) after editing
 `src/`. Verify with

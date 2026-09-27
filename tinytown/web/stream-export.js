@@ -32,13 +32,20 @@ export function stableIds(json, shared = new Map()) {
   };
   return copy(json);
 }
+// Gzip and SHA-256 in the browser. The Node bake passes synchronous zlib and
+// crypto instead: awaiting a stream per chunk left its exporter mostly idle.
+const hex=bytes=>[...new Uint8Array(bytes)].map(v=>v.toString(16).padStart(2,'0')).join('');
+export const webCodec={
+  gzip:async blob=>new Uint8Array(await new Response(blob.stream().pipeThrough(new CompressionStream('gzip'))).arrayBuffer()),
+  sha256:async bytes=>hex(await crypto.subtle.digest('SHA-256',bytes)),
+};
 // A content-derived id (version nibble 5, so never a renumbered local id).
-async function geometryId(g) {
+async function geometryId(g,codec) {
   const parts=[];
   for (const [name,a] of Object.entries(g.attributes)) parts.push(`${name}:${a.itemSize}:${a.normalized}:${a.array.constructor.name};`,a.array);
   if (g.index) parts.push('index;',g.index.array);
   parts.push(JSON.stringify(g.groups));
-  const h=[...new Uint8Array(await crypto.subtle.digest('SHA-256',await new Blob(parts).arrayBuffer()))].map(v=>v.toString(16).padStart(2,'0')).join('');
+  const h=await codec.sha256(new Uint8Array(await new Blob(parts).arrayBuffer()));
   return `${h.slice(0,8)}-${h.slice(8,12)}-5${h.slice(13,16)}-8${h.slice(17,20)}-${h.slice(20,32)}`;
 }
 export function sceneJSON(root, extra = {}, sharedGeometries = new Set()) {
@@ -113,20 +120,31 @@ export function coarseModel(root) {
   return out;
 }
 
-// Called only by the offline preparation page. No model calls or new research.
-export async function exportStream(url, seed, write) {
-  const response = await fetch(url);
-  if (!response.ok) throw new Error('Missing source map');
-  const site = await response.json();
-  let imagesLoading=false,imagesDone;
+// Called only by the offline bake (tinytown/web/bake.mjs). No model calls or
+// new research. `source` is a site.json object or its URL; `codec` replaces
+// webCodec; any other options go to generateSite (the bake collects surfaces
+// with onSurface, or hands over current ones as surfaceAsset).
+export async function exportStream(source, seed, write, {codec = webCodec, ...generate} = {}) {
+  let site = source;
+  if (typeof source === 'string') {
+    const response = await fetch(source);
+    if (!response.ok) throw new Error('Missing source map');
+    site = await response.json();
+  }
+  // Every image the scene started must be in before tiles are sized: a
+  // texture still loading counts as 0 bytes. onLoad alone is not enough; it
+  // fires whenever the manager drains, and a later image can start after that.
+  // onStart and onProgress always carry the manager's current counts.
+  let imagesLoaded=0,imagesTotal=0,imagesDone=null;
   const imageErrors=[];
-  const ready=new Promise(resolve=>{imagesDone=resolve;});
-  THREE.DefaultLoadingManager.onStart=()=>{imagesLoading=true;};
-  THREE.DefaultLoadingManager.onLoad=imagesDone;
-  THREE.DefaultLoadingManager.onError=url=>imageErrors.push(url);
+  const manager=THREE.DefaultLoadingManager;
+  manager.onStart=(url,loaded,total)=>{imagesLoaded=loaded;imagesTotal=total;};
+  manager.onProgress=(url,loaded,total)=>{imagesLoaded=loaded;imagesTotal=total;if(loaded===total)imagesDone?.();};
+  manager.onError=url=>imageErrors.push(url);
   let staging;
   const preparedCoarse = new WeakMap();
   const street = await generateSite(site,site.seed??seed,{
+    ...generate,
     async onModel(model) {
       model.updateMatrixWorld(true);
       const simple=await bakeMobile(coarseModel(model),NO_YIELD);
@@ -138,7 +156,7 @@ export async function exportStream(url, seed, write) {
     },
     onScene(root){staging=root;return new THREE.Group();},
   });
-  if(imagesLoading)await ready;
+  while(imagesLoaded<imagesTotal)await new Promise(resolve=>{imagesDone=resolve;});
   if(imageErrors.length)throw new Error('Missing scene images: '+imageErrors.join(', '));
   staging.position.copy(street.group.position);
   staging.updateMatrixWorld(true);
@@ -301,20 +319,21 @@ export async function exportStream(url, seed, write) {
         }
       }
     });
+    // Everything that reads the scene happens before the first await: the tile
+    // loop moves on (and grows sharedGeometries) while this chunk compresses.
     const blob=packSceneJSON(stableIds(sceneJSON(root,extra,sharedGeometries),sharedIds));
-    const compressed=new Uint8Array(await new Response(blob.stream().pipeThrough(new CompressionStream('gzip'))).arrayBuffer());
+    const memoryBytes=Math.ceil(resources(root,sharedGeometries));
+    const compressed=await codec.gzip(blob);
     // The gzip header's OS byte is the host's (3 on Linux, 19 on macOS); use
     // 255 (unknown) so the same inputs give the same bytes on any builder.
     compressed[9]=255;
-    const hash=await crypto.subtle.digest('SHA-256',compressed);
-    const sha=[...new Uint8Array(hash)].map(v=>v.toString(16).padStart(2,'0')).join('');
-    const record={sha256:sha,bytes:compressed.length,rawBytes:blob.size,memoryBytes:Math.ceil(resources(root,sharedGeometries))};
+    const sha=await codec.sha256(compressed);
+    const record={sha256:sha,bytes:compressed.length,rawBytes:blob.size,memoryBytes};
     if(name==='base' && compressed.length>STREAM_PART_BYTES) {
       const parts=[];
       for(let offset=0;offset<compressed.length;offset+=STREAM_PART_BYTES) {
         const bytes=compressed.subarray(offset,Math.min(offset+STREAM_PART_BYTES,compressed.length));
-        const digest=await crypto.subtle.digest('SHA-256',bytes);
-        const sha256=[...new Uint8Array(digest)].map(v=>v.toString(16).padStart(2,'0')).join('');
+        const sha256=await codec.sha256(bytes);
         const file=`base-part-${parts.length}-${sha256.slice(0,16)}.bin.gz`;
         await write(file,bytes);parts.push({file,sha256,bytes:bytes.length});
       }
@@ -325,6 +344,9 @@ export async function exportStream(url, seed, write) {
     return {...record,file};
   }
   const sectorCells=new Map();
+  // Up to SAVING tiles compress while the next ones bake (off the main thread
+  // where the codec allows it); records keep leaf order either way.
+  const SAVING=8,saving=[];
   for (const leaf of leaves) {
     const cell={id:leaf.id,...assemble(leaf)};
     sectorCells.set(leaf.id,[leaf.cell.i,leaf.cell.j]);
@@ -335,7 +357,7 @@ export async function exportStream(url, seed, write) {
       sharedTrees.add(o.geometry);added.push(o.geometry);
       treeLibrary.add(new THREE.Mesh(o.geometry,o.material));
     });
-    for(const g of added) sharedIds.set(g.uuid,await geometryId(g));
+    for(const g of added) sharedIds.set(g.uuid,await geometryId(g,codec));
     const simple = await bakeMobile(cell.coarse,NO_YIELD);
     simple.name=cell.id; coarse.add(simple);
     const b=new THREE.Box3().setFromObject(model);
@@ -343,13 +365,17 @@ export async function exportStream(url, seed, write) {
     const smokes=street.smokes.filter(e=>e.puffs.every(p=>uuids.has(p.mesh.uuid))).map(e=>({
       x:e.x,z:e.z,baseY:e.baseY,puffs:e.puffs.map(p=>({uuid:p.mesh.uuid,t:p.t,speed:p.speed,drift:p.drift})),
     }));
-    records.push({id:cell.id,area:leaf.area,bounds:[b.min.toArray(),b.max.toArray()],...(await save(`detail-${cell.id}`,model,{smokes},sharedTrees))});
+    const record={id:cell.id,area:leaf.area,bounds:[b.min.toArray(),b.max.toArray()]};
+    records.push(record);
+    saving.push(save(`detail-${cell.id}`,model,{smokes},sharedTrees).then(saved=>Object.assign(record,saved)));
+    if(saving.length>=SAVING)await saving.shift();
     console.log(`Prepared ${cell.id} (${records.length}/${leaves.length})`);
     model.traverse(o=>{if(o.geometry&&!sharedTrees.has(o.geometry))o.geometry.dispose();});
     // Collect finished tiles regularly (the harness exposes gc). Left to itself,
     // V8 grows toward the host's RAM and Cloudflare's 8 GB builder runs out.
     if(records.length%25===0)globalThis.gc?.();
   }
+  await Promise.all(saving);
   const bakedBase=await bakeMobile(base,NO_YIELD);
   bakedBase.add(treeLibrary);
   bakedBase.add(coarse);

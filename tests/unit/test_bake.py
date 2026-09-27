@@ -1,6 +1,5 @@
-"""`town bake --check` decides from fingerprints alone: no browser, standard library only."""
+"""`town bake` delegates site bakes to `node tinytown/web/bake.mjs`; viewer stamping is standard library."""
 from contextlib import redirect_stdout
-import hashlib
 import io
 import json
 from pathlib import Path
@@ -9,8 +8,7 @@ import unittest
 from unittest.mock import patch
 
 from tinytown import bake as module
-from tinytown.bake import (WEB, bake, stamp_viewer, surface_source_hash, surfaces_status, versioned_html,
-                           viewer_revision)
+from tinytown.bake import WEB, bake, stamp_viewer, versioned_html, viewer_revision
 from tinytown.paths import SitePaths
 
 INDEX = '''<html><head><script type="importmap">{"imports":{"three":"https://example.com/three.js"}}</script>
@@ -38,93 +36,25 @@ class Fixture(unittest.TestCase):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(content.encode() if isinstance(content, str) else content)
 
-    def bake_surfaces(self, payload=b'packed surfaces'):
-        """Record a baked surface asset the way a real bake does."""
-        digest = hashlib.sha256(payload).hexdigest()
-        self.write(f'data/ridge/surfaces-{digest[:16]}.bin.gz', payload)
-        self.write('data/ridge/surfaces.json', json.dumps({
-            'file': f'surfaces-{digest[:16]}.bin.gz', 'compressedBytes': len(payload), 'compressedSha256': digest,
-            'inputSha256': hashlib.sha256(self.paths.scene.read_bytes()).hexdigest(),
-            'sourceSha256': surface_source_hash(self.root)}))
 
 
-class SurfaceFingerprints(Fixture):
-    def test_generator_hash_covers_src_modules_and_the_precompute_page(self):
-        # The page's repository path is part of every committed surfaces.json.
-        expected = hashlib.sha256()
-        for label, path in (('src/main.js', self.root / 'src/main.js'), ('src/site.js', self.root / 'src/site.js'),
-                            ('tinytown/web/precompute.html', WEB / 'precompute.html')):
-            expected.update(label.encode() + b'\0' + path.read_bytes())
-        self.assertEqual(surface_source_hash(self.root), expected.hexdigest())
-        self.write('src/site.js', '// generator v2')
-        self.assertNotEqual(surface_source_hash(self.root), expected.hexdigest())
-
-    def test_check_is_current_only_when_scene_generator_and_payload_all_match(self):
-        self.assertFalse(surfaces_status(self.paths)[0], 'no manifest yet')
-        self.bake_surfaces()
-        self.assertTrue(surfaces_status(self.paths)[0])
-        self.assertTrue(bake(self.paths, check=True, stream=False))
-        self.write('data/ridge/site.json', '{"buildings": [{"id": 1}]}')
-        self.assertFalse(bake(self.paths, check=True, stream=False), 'edited scene')
-        self.bake_surfaces()
-        self.write('src/site.js', '// generator v2')
-        self.assertFalse(bake(self.paths, check=True, stream=False), 'edited generator')
-        self.bake_surfaces()
-        manifest = json.loads(self.paths.surfaces_index.read_text())
-        self.write('data/ridge/' + manifest['file'], b'corrupt')
-        self.assertFalse(bake(self.paths, check=True, stream=False), 'corrupt payload')
-        (self.root / 'data/ridge' / manifest['file']).unlink()
-        self.assertFalse(bake(self.paths, check=True, stream=False), 'missing payload')
-
-    def test_check_never_touches_the_browser(self):
-        with patch.dict('sys.modules', {'tinytown.browser': None}):
-            self.assertFalse(bake(self.paths, check=True, stream=False))
-            self.bake_surfaces()
-            self.assertTrue(bake(self.paths, check=True, stream=False))
-
-    def test_stream_check_delegates_to_the_node_exporter(self):
+class SiteBake(Fixture):
+    def test_site_bakes_run_the_node_baker(self):
         with patch.object(module.subprocess, 'run') as run:
             run.return_value.returncode = 0
-            self.assertTrue(bake(self.paths, check=True, surfaces=False))
+            self.assertTrue(bake(self.paths, check=True))
             command, kwargs = run.call_args.args[0], run.call_args.kwargs
-            self.assertEqual(command[:2], ['node', str(WEB / 'prepare_streaming.mjs')])
+            self.assertEqual(command[:2], ['node', str(WEB / 'bake.mjs')])
             self.assertEqual(command[2:], ['data/ridge', '--check'])
             self.assertEqual(kwargs['cwd'], self.root)
-            run.return_value.returncode = 1
-            self.assertFalse(bake(self.paths, check=True, surfaces=False))
-            self.bake_surfaces()
-            self.assertFalse(bake(self.paths, check=True), 'a stale stream fails the whole check')
-            run.return_value.returncode = 0
-            self.assertTrue(bake(self.paths, check=True))
-            bake(self.paths, check=False, surfaces=False)
+            bake(self.paths)
             self.assertEqual(run.call_args.args[0][2:], ['data/ridge'])
-
-
-class ParallelBake(Fixture):
-    def test_a_full_bake_exports_the_stream_while_surfaces_bake(self):
-        order = []
-        with patch.object(module.subprocess, 'Popen') as popen, patch.object(module, 'bake_surfaces') as surfaces:
-            popen.side_effect = lambda *args, **kwargs: order.append('stream') or popen.return_value
-            surfaces.side_effect = lambda paths: order.append('surfaces') or True
-            popen.return_value.wait.return_value = 0
-            self.assertTrue(bake(self.paths, force=True))
-            self.assertEqual(order, ['stream', 'surfaces'], 'the exporter starts first and runs alongside')
-            self.assertEqual(popen.call_args.args[0][2:], ['data/ridge', '--force'])
-            self.assertEqual(popen.call_args.kwargs['cwd'], self.root)
-            popen.return_value.wait.return_value = 1
-            self.assertFalse(bake(self.paths), 'a failed stream export fails the bake')
-            popen.return_value.wait.return_value = 0
-            surfaces.side_effect = None
-            surfaces.return_value = False
-            self.assertFalse(bake(self.paths), 'a failed surface bake fails the bake')
-
-    def test_a_surface_error_stops_the_exporter(self):
-        with patch.object(module.subprocess, 'Popen') as popen, patch.object(module, 'bake_surfaces') as surfaces:
-            surfaces.side_effect = RuntimeError('precompute failed')
-            with self.assertRaises(RuntimeError):
-                bake(self.paths)
-            popen.return_value.terminate.assert_called_once()
-            popen.return_value.wait.assert_called_once()
+            bake(self.paths, force=True, surfaces=False)
+            self.assertEqual(run.call_args.args[0][2:], ['data/ridge', '--force', '--stream-only'])
+            bake(self.paths, check=True, stream=False)
+            self.assertEqual(run.call_args.args[0][2:], ['data/ridge', '--check', '--surfaces-only'])
+            run.return_value.returncode = 1
+            self.assertFalse(bake(self.paths), 'a failed bake fails the verb')
 
 
 class ViewerStamp(Fixture):

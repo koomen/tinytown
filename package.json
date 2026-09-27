@@ -1,0 +1,10 @@
+{
+  "name": "tinytown",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "dependencies": {
+    "@napi-rs/canvas": "1.0.9",
+    "three": "0.180.0"
+  }
+}

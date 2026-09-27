@@ -63,10 +63,10 @@ For each target it:
 4. Copies `_headers` (from `sites/<root-site>/_headers` if present, else the
    repo root) and swaps the staged directory into place atomically.
 
-Baking needs the package's dependencies (`pip install -e .`), Node 22+ and
-the private headless browser, so a stage that has to bake does too. Importing
-`tinytown/deploy.py` stays standard library only, and `--no-bake` on current
-assets needs nothing beyond `python3` and `node`. Codex and model keys are
+Baking runs in plain Node 22+ (`tinytown/web/bake.mjs`) and needs only
+`npm ci` (three.js and `@napi-rs/canvas`); no Python packages and no browser.
+Importing `tinytown/deploy.py` stays standard library only, and `--no-bake` on
+current assets needs nothing beyond `python3` and `node` (no `node_modules`). Codex and model keys are
 never needed to deploy.
 
 ## Caching: `_headers`
@@ -103,34 +103,28 @@ tokens; there are no GitHub Actions and no secrets in the repository.
 
 `scripts/cloudflare-build.sh` (also runnable locally):
 
-1. Requires Node 22+, creates `.venv/` if missing and runs
-   `pip install -e .`.
-2. Installs the private headless browser (`./town browser setup`) unless
-   `runs/headless-browser/` already has one.
-3. On Linux, if `ldd` reports missing shared libraries for the headless shell,
-   downloads the needed Ubuntu packages with `apt-get download` as a normal
-   user, unpacks them under `runs/system-libs/` and puts them on
-   `LD_LIBRARY_PATH`. The Workers Builds image is Ubuntu 24.04 without root or
-   sudo, so Playwright's `--with-deps` cannot install them.
-4. Runs `./town stage --target <target>`, which bakes and stages.
+1. Requires Node 22+ and runs `npm ci --omit=dev` (three.js and
+   `@napi-rs/canvas`, a prebuilt Skia binary with no system dependencies).
+2. Runs `./town stage --target <target>` with the image's `python3` (standard
+   library only; no venv), which bakes and stages.
 
 Every build bakes from scratch (the builder keeps no `data/*/stream/`), so the
-whole script must fit in Workers Builds' 20-minute, 8 GB limits. In a
-Cloudflare-like container (Ubuntu 24.04 x86_64, 4 CPUs, 8 GB, under emulation)
-the avon target, which bakes both sites, took about 8 minutes. To stay under
-8 GB, `town stage` runs the surfaces and stream exports one after the other,
-and the exporter forces a garbage collection every 25 tiles (the harness
-launches Chromium with `--js-flags=--expose-gc`); V8 otherwise sizes its heap
-from the host's RAM and collects too late.
+whole script must fit in Workers Builds' 20-minute, 8 GB limits. Each site
+bakes in one Node process and one generator run: the stream export's
+`generateSite` hands the terrain and pavement surfaces to the baker on the
+way, so surfaces cost no second pass. The exporter forces a garbage collection
+every 25 tiles (`bake.mjs` exposes `gc`) so the heap stays small.
 
 The builder has none of the fonts the canvas sign textures ask for (Georgia,
-Arial, Nunito), so `tinytown/web/stream-export.html` registers bundled,
-metric-compatible substitutes under those names (Gelasio, Arimo, Nunito in
-`tinytown/web/fonts/`, see its README) and only exposes `exportStream` once
-all of them have loaded. Sign textures therefore use the same fonts on macOS
-and Linux; only glyph anti-aliasing differs, so chunks with canvas text hash
-differently between a Mac bake and Cloudflare's (Linux builds match each other). The font files are part of the stream fingerprint; the surfaces
-bake draws no text and does not use them.
+Arial, Nunito), so `tinytown/web/node-dom.mjs` registers bundled,
+metric-compatible substitutes under those names with Skia (Gelasio, Arimo,
+Nunito in `tinytown/web/fonts/`, see its README). Sign textures therefore use
+the same fonts on every OS, and Skia is bundled with the package rather than
+taken from the system. The font files are part of the stream fingerprint; the
+surfaces draw no text and do not use them. Bakes are byte-reproducible for a
+given Node version. Across versions the packed geometry has matched (macOS
+Node 26 against Linux Node 22), but the gzip bytes, and so the file names,
+follow the zlib that Node bundles.
 
 What must be current in the commit you push: `data/<site>/site.json` (golden
 against `town build`), `overrides.json`, `source/`, `textures/`, `sites/`,

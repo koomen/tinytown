@@ -230,7 +230,6 @@ class DeployTargets(unittest.TestCase):
         with patch('tinytown.deploy.bake', return_value=True) as bake, patch('tinytown.deploy.stamp_viewer', return_value=True) as stamp:
             self.assertTrue(build('town', self.root).is_dir())
         self.assertEqual(sorted(call.args[0].name for call in bake.call_args_list), ['compact', 'hillview', 'lakeside'])
-        self.assertTrue(all(call.kwargs == {'parallel': False} for call in bake.call_args_list))
         stamp.assert_called_once_with(self.root.resolve())
         with patch('tinytown.deploy.bake', return_value=False), patch('tinytown.deploy.stamp_viewer', return_value=True):
             with self.assertRaisesRegex(ValueError, 'Baking lakeside failed'):

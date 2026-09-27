@@ -8,7 +8,8 @@ Notes for coding agents working in this repository. Read
 
 ```sh
 python3 -m venv .venv && .venv/bin/pip install -e .   # Python >= 3.10; pillow, websocket-client
-./town browser setup                                  # private headless Chromium -> runs/headless-browser/ (render, bake, browser tests)
+npm ci                                                # three.js + @napi-rs/canvas for the Node bake
+./town browser setup                                  # private headless Chromium -> runs/headless-browser/ (render, author, browser tests)
 node --version                                        # >= 22 for bake and tests
 codex login                                           # `town author` with OpenAI models; Claude models need pip install -e ".[anthropic]" + ANTHROPIC_API_KEY
 ```
@@ -63,7 +64,7 @@ codex login                                           # `town author` with OpenA
 | `tinytown/<stage>.py` | one module per stage; each with verbs exposes `register(subparsers)`; `cli.py` maps verbs to modules |
 | `tinytown/paths.py`, `config.py`, `state.py` | every filesystem path; site/deploy config and derived routes; fingerprints, atomic JSON, status derivation |
 | `tinytown/plugins/<site>.py` | per-site hooks: `extra_sources`, `landmarks`, `outline`, `refine_building`, `scope_filter` |
-| `tinytown/web/` | `precompute.html` (surfaces), `prepare_streaming.mjs` + `stream-export.*` (chunks) |
+| `tinytown/web/` | `bake.mjs` (surfaces + stream chunks in plain Node), `node-dom.mjs` (canvas/image/font shims), `stream-export.js` |
 | `index.html`, `src/` | the viewer, served as-is |
 | `sites/<site>/site.json` | title, description, domain, `deploy` placements, `plugin`, `scope`, `landmarks`, `outline`, `social_image` |
 | `sites/deploy.json` | target -> `{dist, wrangler}` |
@@ -71,7 +72,7 @@ codex login                                           # `town author` with OpenA
 | `data/<site>/overrides.json` | the authored truth: `buildings`, `blueprints`, `blueprint_frames`, `miniature_review`, `roads`, `extras`, `areas`, `landmarks`, `footprints`, `authored_buildings`, `authored_roads`, `notes`, `seed`, `title` |
 | `data/<site>/site.json`, `textures/` | built scene and textures (committed, deployed) |
 | `data/<site>/surfaces*`, `stream/` | baked runtime assets (gitignored build output of `bake`/`stage`; deployed) |
-| `scripts/cloudflare-build.sh` | Workers Builds entry point (wrangler `build.command`): venv, browser, libs, `town stage` |
+| `scripts/cloudflare-build.sh` | Workers Builds entry point (wrangler `build.command`): `npm ci`, `town stage` |
 | `data/<site>/buildings/<id>/` | per-building records; images gitignored |
 | `tests/unit`, `tests/node`, `tests/browser`, `tests/run.sh` | see Tests |
 | `runs/` | gitignored: browser runtime, `runs/model-calls/` scratch |
@@ -86,8 +87,8 @@ codex login                                           # `town author` with OpenA
 4. `overrides.json` is the authored truth; `accept` is the only thing that
    writes blueprints into it. Drafts are proposals.
 5. Standard library only at import time for `config`, `paths`, `state`,
-   `deploy`, `bake --check`, `site.build`; import `PIL`/`websocket` lazily.
-   (`stage` itself bakes, so running it needs the full toolchain.)
+   `deploy`, `bake`, `site.build`; import `PIL`/`websocket` lazily.
+   (`stage` bakes via `node tinytown/web/bake.mjs`, which needs `npm ci`.)
 6. Python >= 3.10, Node >= 22. One browser harness (`browser.py` / `browser.mjs`).
 7. Verbs are idempotent.
 
@@ -95,7 +96,9 @@ codex login                                           # `town author` with OpenA
 
 - Surfaces and streams are never committed. `town stage` bakes what is stale
   first; Cloudflare runs `scripts/cloudflare-build.sh <target>` (via wrangler's
-  `build.command`) on Ubuntu 24.04 without root, within a 20-minute limit.
+  `build.command`): `npm ci`, then `town stage` with bare `python3`, within a
+  20-minute limit. The bake is plain Node (no browser); one generator run per
+  site makes both surfaces and stream chunks.
   See `docs/deploy.md`.
 - A fresh clone has no baked assets: `./town bake <site>` before viewing
   streamed sites locally (otherwise the viewer falls back to `?stream=0`).
@@ -132,9 +135,8 @@ node tests/browser/run.mjs [--list | name… | all]             # headless suite
 
 Golden checks: `./town build <site>` must reproduce the committed
 `data/<site>/site.json` for both sites (apart from `name`), and
-bakes are byte-reproducible: two Linux builds (Cloudflare) give identical
-chunks, and a macOS bake matches them except chunks with canvas text (glyph
-anti-aliasing differs by OS; fonts are bundled in `tinytown/web/fonts/`). `tests/browser/chautauqua-browser.py` needs
+bakes are byte-reproducible for a given Node version (Skia and fonts are
+bundled, so the OS does not matter); the gzip bytes follow Node's bundled zlib. `tests/browser/chautauqua-browser.py` needs
 `./town stage --target chautauqua` first; `avon-isolation` and
 `miniature-sectors` need `./town stage --target avon`. Drivers that read
 baked streams need `./town bake avon-extended` first (`streaming`,

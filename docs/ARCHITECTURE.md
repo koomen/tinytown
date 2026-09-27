@@ -17,7 +17,7 @@ through the middle four independently of every other structure.
 | 4 | Author a blueprint per building | `town author` | building references, `overrides.json` | `buildings/<id>/draft.json`, `author.json` |
 | 5 | Review and repair, bounded | `town review`, `town lint` | draft, renders | `buildings/<id>/review.json`, `repair-N.json` |
 | 6 | Accept into the authored truth | `town accept` | drafts | `data/<site>/overrides.json` |
-| 7 | Build the scene and bake assets | `town build`, `town bake` | `source/`, `overrides.json`, the renderer in headless Chromium | `data/<site>/site.json` (committed), `surfaces*.bin.gz`, `stream/` (gitignored) |
+| 7 | Build the scene and bake assets | `town build`, `town bake` | `source/`, `overrides.json`, the generator in plain Node | `data/<site>/site.json` (committed), `surfaces*.bin.gz`, `stream/` (gitignored) |
 | 8 | Stage and deploy | `town stage` (bakes what is stale), `town verify`, `town serve` | scenes, `sites/`, `index.html`, `src/` | `dist/<target>/` |
 
 `town author` runs stages 3 through 6 for many buildings in one command. It is
@@ -31,7 +31,7 @@ tiny-town/
   town                 CLI shim: exec python -m tinytown "$@" (prefers .venv/)
   pyproject.toml       package metadata; `pip install -e .` gives you `town`
   tinytown/            the Python package (one module per stage, see below)
-    web/               browser-side helpers the pipeline drives: bake pages, stream export
+    web/               the Node bake (bake.mjs, node-dom.mjs, stream export) and browser-side pages
     plugins/           per-site code hooks (landmarks, outlines); one module per site that needs one
   index.html, src/     the viewer (Three.js). Runtime only. Served as-is.
   sites/<site>/        deployment metadata per miniature: site.json, icons, scope.json, labels.json,
@@ -75,7 +75,7 @@ and imports a module only when one of its verbs runs.
 | `change_watch.py` | read-only queue status watcher | `changes watch` | |
 | `preview.py` | cropped and whole-map live-source scenes and preview documents | | |
 | `change_worker.py` | standalone worker progress/preview reporter, scoped to one queue pass | `changes report` | |
-| `bake.py` + `web/` | terrain/pavement surfaces, streaming chunks, viewer version stamping | `bake` | `precompute_surfaces`, `precompute.html`, `prepare_streaming.mjs`, `stream-export.*`, `stream-asset-limits.mjs`, `version_viewer` |
+| `bake.py` + `web/bake.mjs` | terrain/pavement surfaces and streaming chunks (in Node), viewer version stamping | `bake` | `precompute_surfaces`, `precompute.html`, `prepare_streaming.mjs`, `stream-export.*`, `stream-asset-limits.mjs`, `version_viewer` |
 | `deploy.py` | route documents, dist staging per target, dev server, live verification | `stage`, `serve`, `verify` | `build_routes`, `build_deployment`, `site_routes`, `verify_deployment`, `serve.py` |
 | `migrate.py` | one-time move from the pre-2026-09 layout | `migrate` | |
 
@@ -99,13 +99,14 @@ Deleted outright, not ported: `resume_expansion`, `watch_expansion`,
    is the only thing that writes blueprints into `overrides.json`.
 5. **Stdlib only at import time.** `config`, `paths`, `state`, `deploy`,
    `bake --check`, and `site.build` must import nothing outside the standard
-   library at module import time (`stage --no-bake` runs with bare `python3`;
-   `stage` bakes, so Cloudflare's build installs the package and browser first).
+   library at module import time (`stage` runs with bare `python3`; its bake
+   is `node tinytown/web/bake.mjs`, which needs `npm ci`).
    Import `PIL` and `websocket` lazily inside the functions that need them.
 6. **Python 3.10 or newer**; Node 22 or newer for anything under `web/` and
    for tests.
 7. **One browser harness.** Everything that needs Chromium goes through
-   `browser.py` (Python) or `browser.mjs` (Node).
+   `browser.py` (Python) or `browser.mjs` (Node). The bake does not: it runs
+   the generator in plain Node with `web/node-dom.mjs` standing in for the DOM.
 8. **Verbs are idempotent.** Re-running a verb with the same inputs does no
    work and exits 0.
 

@@ -1,8 +1,11 @@
 # Bake fonts
 
 Metric-compatible substitutes for the families canvas sign textures in `src/`
-request. `../stream-export.html` registers them under the requested names so
-baked textures do not depend on the fonts installed on the baking machine.
+request. The bake (`../node-dom.mjs`) registers them with Skia under the
+requested names, and `../stream-export.html` does the same for browser tests,
+so baked textures do not depend on the fonts installed on the baking machine.
+`node-dom.mjs` takes the family from the file name prefix and the weight and
+style from the font itself.
 
 | Registered as | File | Weights covered |
 | --- | --- | --- |
@@ -20,4 +23,5 @@ subset only. All three are licensed under the SIL Open Font License 1.1; see
 `LICENSE-*.txt`.
 
 Adding a family, weight or style to a texture in `src/` means adding the file
-here and a row to `FACES` in `../stream-export.html`.
+here (and a `FAMILIES` entry in `../node-dom.mjs` for a new family) and a row
+to `FACES` in `../stream-export.html`.

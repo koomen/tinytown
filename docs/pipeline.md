@@ -117,19 +117,20 @@ writes `overrides.json` and rebuilds `site.json`.
 
 ```sh
 ./town bake mytown              # surfaces-<hash>.bin.gz + surfaces.json, stream/manifest.json + chunks
-./town bake mytown --check      # are they current? (no browser; what `town stage --no-bake` runs)
+./town bake mytown --check      # are they current? (no node_modules; what `town stage --no-bake` runs)
 ./town bake --viewer            # restamp index.html after editing src/
 ```
 
-Surfaces are precomputed terrain and pavement rendered by the generator in
-headless Chromium; streaming chunks are camera-sector geometry exported by
-Node. Both are keyed by a fingerprint of `site.json` and of the generator
+Surfaces are precomputed terrain and pavement from the generator; streaming
+chunks are camera-sector geometry. Both are baked in plain Node
+(`tinytown/web/bake.mjs`, after `npm ci`), no browser. Both are keyed by a fingerprint of `site.json` and of the generator
 sources, so an unchanged input does no work. The results are gitignored build
 output: `town stage` bakes whatever is stale, and Cloudflare bakes on every
 deploy ([deploy.md](deploy.md)). Bake locally to view a site as deployed. Both
 exports are byte-reproducible: the same inputs give the same files, and a
 re-export renames only the chunks whose contents changed, so rebuilds stay
-cheap. The two run side by side when both are stale. Until a site is baked the
+cheap. When both are stale, one generator run makes both; when only the
+stream is, it reuses the current surfaces instead of regenerating them. Until a site is baked the
 viewer falls back to in-browser generation and does not stream (`?stream=1`
 after baking); a fresh clone has no baked assets.
 

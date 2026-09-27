@@ -12,6 +12,7 @@ import { setTimeout as delay } from 'node:timers/promises';
 import { checkRendering } from './checks/rendering.mjs';
 import { checkLighting } from './checks/lighting.mjs';
 import { viewerFixture } from './viewer-fixture.mjs';
+import { precomputeSurfaces } from '../../tinytown/web/bake.mjs';
 
 const root = fileURLToPath(new URL('../../',import.meta.url));
 const fixture = viewerFixture(JSON.parse(await readFile(root+'data/avon-extended/site.json','utf8')));
@@ -138,14 +139,8 @@ try {
     };
   }
 
-  const prepare = await page(400,300);
-  await prepare.send('Page.navigate',{url:origin+'/tinytown/web/precompute.html'});
-  await waitFor(()=>prepare.evaluate('typeof window.precomputeSurfaces === "function"'),'fixture surface builder');
-  fixtureSurfaces = await prepare.evaluate("window.precomputeSurfaces('/data/avon-extended/site.json?viewer-fixture=1','avon-extended')");
-  fixtureBytes = Buffer.from(fixtureSurfaces.base64,'base64');
-  delete fixtureSurfaces.base64;
+  [fixtureSurfaces, fixtureBytes] = await precomputeSurfaces(fixture, 'avon-extended');
   fixtureSurfaces.file = 'surfaces-ffffffffffffffff.bin.gz';
-  await prepare.close();
 
   if (process.env.TOWN_VIEWER_PHASE !== 'mobile') {
   const p = await page();

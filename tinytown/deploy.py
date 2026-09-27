@@ -264,8 +264,7 @@ def precheck(sites, root=ROOT):
 def prebake(sites, root=ROOT):
     """Bake each site's stale surfaces and streams and restamp the viewer; current assets are kept."""
     for site in sites:
-        # One export at a time: the builder's 8 GB cannot hold both at once.
-        if not bake(SitePaths(site, root), parallel=False):
+        if not bake(SitePaths(site, root)):
             raise ValueError(f'Baking {site} failed; see the messages above')
     stamp_viewer(root)
 
