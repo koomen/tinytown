@@ -13,7 +13,7 @@ export function amphitheaterLayout(obb, spec = {}) {
       [start+rearWingChamfer,half],[start,half-rearWingChamfer]]
     : outline;
   const angle=(obb.angle||0)+(spec.axis==='v'?Math.PI/2:0)+(spec.stageEnd==='positive'?Math.PI:0);
-  const houseHalf=span*.31+1,houseRear=rear+(spec.porchDepth??3.4);
+  const houseHalf=span*(spec.houseWidth??.62)/2+1,houseRear=rear+(spec.porchDepth??3.4);
   const canopyEdge=[[start,-houseHalf],...roofOutline,[start,houseHalf]];
   // The stage-house join is internal: cutting only the auditorium polygon
   // leaves a ridge of ground through the stage at that join. Use the exposed

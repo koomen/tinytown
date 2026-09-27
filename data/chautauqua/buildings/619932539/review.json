@@ -1,9 +1,14 @@
 {
- "verdict": "ready",
- "summary": "Recognizable amphitheater caricature with the broad pale hipped canopy, raised longitudinal monitor, open cream perimeter, slender supports, and visible tiered seating. The simplified treatment is coherent at miniature scale, with no obvious broken geometry or duplicated principal portals.",
- "orientation": {
-  "status": "correct",
-  "summary": "The map assigns +v to ENE and -v to WSW. The current aerial and supplied appearance cues place the narrower projecting stage house at the ENE end and the chamfered audience end opposite; the labeled renders correspondingly show the solid stage-house end on +v and the open audience/perimeter condition toward -v, while +u/-u expose the seating galleries. The empty door inventory is appropriate for this open amphitheater, whose access is through distributed perimeter gates rather than a single door-leaf entrance. Pre-2017 Street Views establish geographic faces only and do not contradict this placement."
- },
- "issues": []
+ "draft_hash": "0f0dcfb8f26d89f15ef48912426d15f98e3b4d47e1391e6693bcd1ba6334a9a6",
+ "frame": "b89f1fc3fe9435957437dba713145d418b75e1da050c079854d70dc2e9c7bf23",
+ "passed": true,
+ "findings": [],
+ "geometry": [],
+ "report": null,
+ "renderer_signature": "568f0e3eb4bd7f02c49967afe66477fb98635a9c3637dbf01a868c4ffbdf83db",
+ "model": null,
+ "stage": "detail",
+ "repairs": 0,
+ "orientation_policy": "strict",
+ "timestamp": 1790496774.2245078
 }

@@ -349,10 +349,15 @@ structures. See `MINIATURE_KIT.md` for its axis, stageEnd, height, roofRise,
 backstageDepth, rows, monitor and color fields. Dimensions follow the footprint.
 `bowlDepth` (2–8 m, default 5.2) lowers the stage and nested seating tiers below
 exterior grade. `audienceChamfer` clips both audience-end corners (default up to
-12 m). `porchDepth` (1.5–6 m) controls the upper veranda depth: the deck and
-bowed canopy project beyond the wall, with doors set in a shallow recess.
-Its flared gable, clerestory and nameplate follow the Hagen Center;
-the separate lower entry, stairs and loading apron meet the sampled hillside.
+12 m). `porchDepth` (1.5–6 m) sets the curved rear bay's projection (up to
+2.4 m) and the balcony room's recess. `houseWidth` (0.4–0.7 of the cross-axis
+span, default 0.62) sets the stage-house width, its canopy returns and the
+excavated envelope. The stage house follows the Hagen Center: a swooping
+shingled gable with wide eaves, clerestory and nameplate; a curved two-storey
+bay carrying a covered wraparound balcony over a ground colonnade; symmetric
+wings on a concrete base, a right-wing loading door, and a rockery with iron
+railings. Its colonnade floor, entry stairs and loading apron meet the sampled
+hillside.
 The scene excavates the same polygon and omits a generic building foundation.
 
 Clock facade elements use window `type: "clock"`, diameter `w`, and metal `trim`.

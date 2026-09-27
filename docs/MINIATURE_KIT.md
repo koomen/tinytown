@@ -275,7 +275,8 @@ Use root `amphitheater` for a large open auditorium, instead of enclosing volume
 The footprint supplies length/span. Axis is the roof ridge and stage-to-audience
 axis. stageEnd specifies the end containing the stage house in that axis; resolve
 it from the aerial and geolocated views. Height is perimeter eave height (5–14 m),
-roofRise is the rise above it (1–9 m). backstageDepth is 3 m to 30% of length.
+roofRise is the rise above it (1–9 m). backstageDepth is 3 m to 30% of length; houseWidth (0.4–0.7, default 0.62)
+is the stage-house width as a fraction of the span.
 The integrated component provides a broad hipped canopy, optional ridge monitor,
 perimeter posts with open galleries, stepped benches split by an aisle, stage,
 abstract organ screen and a compact enclosed stage house. Rows 6–20 deliberately

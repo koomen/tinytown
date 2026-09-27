@@ -5,8 +5,8 @@ import { amphitheaterLayout, auditoriumPoint } from '../../../src/amphitheater-l
 import { applyNightEmission } from '../../../src/lighting.js';
 
 export function checkAmphitheater() {
-  for (const axis of ['u','v']) for (const stageEnd of ['negative','positive']) {
-    const obb={cx:150,cz:-80,angle:.37,w:64,d:90},spec={axis,stageEnd,rearWingChamfer:5.5,stringLightSpacing:1.05,interiorLighting:true};
+  for (const axis of ['u','v']) for (const stageEnd of ['negative','positive']) for (const houseWidth of [.62,.54]) {
+    const obb={cx:150,cz:-80,angle:.37,w:64,d:90},spec={axis,stageEnd,houseWidth,rearWingChamfer:5.5,stringLightSpacing:1.05,interiorLighting:true};
     const root=buildAmphitheater(obb,spec);root.updateMatrixWorld(true);
     const named={};
     root.traverse(o=>{
@@ -19,7 +19,7 @@ export function checkAmphitheater() {
     const stage=new THREE.Box3().setFromObject(named['amphitheater-stage'][0]);
     if(stage.max.y>-4)throw new Error('Stage is not well below exterior grade');
     if(named['amphitheater-backstage-window'].length<20||!named['amphitheater-back-porch'])throw new Error('Rear porch/windows missing');
-    const house=named['amphitheater-hagen-center'][0],rear=house.userData.backstage;
+    const house=named['amphitheater-hagen-center'][0],rear=house.userData.backstage,L0=amphitheaterLayout(obb,spec);
     if(rear.balconyHalf*2>=obb[axis==='v'?'w':'d']*.62)throw new Error('Rear balcony is wider than the stage house');
     // A ray through an upper porch bay must reach the recessed doors, not
     // hit a full-width wall where the open veranda should be.
@@ -33,6 +33,18 @@ export function checkAmphitheater() {
     if(Math.abs(new THREE.Box3().setFromObject(steps.at(-1)).max.y-new THREE.Box3().setFromObject(landing).max.y)>.001)throw new Error('Rear entrance stairs miss the landing');
     const canopy=named['amphitheater-porch-canopy'][0];canopy.geometry.computeBoundingBox();
     if(rear.front-rear.balconyFront<1||canopy.geometry.boundingBox.min.x>rear.balconyFront-.25)throw new Error('Balcony canopy does not project beyond the facade and railing');
+    // The curved middle bay projects from the wing plane and carries the
+    // balcony; its railing wraps the whole curve.
+    if(!named['amphitheater-bay-wall']||rear.bayDepth<1.5)throw new Error('Curved rear bay is missing');
+    const railZ=named['amphitheater-porch-rail'].flatMap(o=>{const b=new THREE.Box3().setFromObject(o),p=house.worldToLocal(b.getCenter(new THREE.Vector3()));return [p.z];});
+    if(Math.min(...railZ)>-rear.bayHalf*.85||Math.max(...railZ)<rear.bayHalf*.85)throw new Error('Balcony railing does not wrap the bay');
+    const columns=named['amphitheater-colonnade-column']||[];
+    if(columns.length!==7)throw new Error('Ground colonnade under the bay is missing');
+    for(const column of columns){
+      const b=new THREE.Box3().setFromObject(column);
+      if(Math.abs(house.worldToLocal(b.getCenter(new THREE.Vector3())).z)>rear.bayHalf)throw new Error('Colonnade leaves the bay');
+    }
+    if(rear.garageZ-rear.garageW/2<rear.bayHalf||rear.garageZ+rear.garageW/2>L0.span*(spec.houseWidth??.62)/2)throw new Error('Loading door is not in the right wing');
     const lowerDoors=named['amphitheater-lower-porch-door']||[];
     if(lowerDoors.length!==4||Math.min(...lowerDoors.map(d=>d.position.z))>rear.entryZ-landing.geometry.parameters.depth*.25||Math.max(...lowerDoors.map(d=>d.position.z))<rear.entryZ+landing.geometry.parameters.depth*.25)throw new Error('Glazed doors do not extend across the lower porch');
     for(const door of lowerDoors){
@@ -47,6 +59,14 @@ export function checkAmphitheater() {
       const roofHit=new THREE.Raycaster(p.clone().add(new THREE.Vector3(0,30,0)),new THREE.Vector3(0,-1,0)).intersectObject(stageRoof)[0];
       if(!roofHit||roofHit.point.y<p.y)throw new Error('Nameplate protrudes through the gable roof');
     }
+    const probe=z=>{
+      const p=house.localToWorld(new THREE.Vector3(rear.front+.5,40,z));
+      const down=new THREE.Vector3(0,-1,0).transformDirection(house.matrixWorld);
+      return house.worldToLocal(new THREE.Raycaster(p,down).intersectObject(stageRoof)[0].point.clone()).y;
+    };
+    const eaveSlope=(probe(rear.roofHalf*.7)-probe(rear.roofHalf*.9))/(rear.roofHalf*.2);
+    const apexSlope=(probe(0)-probe(rear.roofHalf*.2))/(rear.roofHalf*.2);
+    if(!(apexSlope>eaveSlope*2))throw new Error('Rear gable lacks its swooping profile');
     if(!named['amphitheater-concourse']||!named['amphitheater-perimeter-brick']||!named['amphitheater-perimeter-rail'])throw new Error('Perimeter concourse and barrier missing');
     if(named['amphitheater-perimeter-brick'].some(o=>o.material.userData.surface!=='brick'))throw new Error('Perimeter has lost its brick material');
     const position=named['amphitheater-backstage'][0].getWorldPosition(new THREE.Vector3());

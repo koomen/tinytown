@@ -99,9 +99,9 @@ function fixtures(positions,geometry,material,name) {
   return object;
 }
 
-function stringLights(group,outline,height,spacing,bulbMaterial,name) {
+function stringLights(group,outline,height,spacing,bulbMaterial,name,closed=true) {
   const bulbs=[],sockets=[],segments=[];
-  for(let i=0;i<outline.length;i++) {
+  for(let i=0;i<outline.length-(closed?0:1);i++) {
     const a=outline[i],b=outline[(i+1)%outline.length],length=Math.hypot(b[0]-a[0],b[1]-a[1]);
     const count=Math.max(1,Math.round(length/spacing));
     const cable=beam([...a,height],[...b,height],.027,.027,'#4b5147','amphitheater-string-cable');
@@ -163,7 +163,7 @@ export function buildAmphitheater(obb,spec={},ground=null) {
     }
   }
   // Rear choir balcony, stage wall and an abstract organ screen behind it.
-  const houseWidth=span*.62,houseEnd=start-1;
+  const houseWidth=span*(spec.houseWidth??.62),houseEnd=start-1;
   const backstage=buildBackstage(L,spec,groundAt);g.add(backstage.root);
   add(box(5,.4,houseWidth*.86,trim,start+1,floor+3.4,0),'amphitheater-choir-balcony');
   for(let r=0;r<3;r++)add(box(.5,.15,houseWidth*.8,seat,start-r*1.15,floor+3.8+r*.3,0),'amphitheater-choir-bench');
@@ -199,10 +199,11 @@ export function buildAmphitheater(obb,spec={},ground=null) {
   if(spec.stringLightSpacing) {
     // Trace the exposed roof union, including the rear wing cuts and stage
     // house, without laying a string across the covered stage-house join.
+    // The Hagen Center's rear facade itself carries no string.
     const perimeter=[[rear,-houseHalf],...canopyEdge,[rear,houseHalf]];
-    stringLights(g,perimeter,eave-.32,spec.stringLightSpacing,bulbMaterial,'amphitheater-string-bulbs');
-    // The downhill entrance has its own narrow canopy and string lights.
-    stringLights(g,backstage.porchLights.outline,backstage.porchLights.height,spec.stringLightSpacing,bulbMaterial,'amphitheater-porch-string-bulbs');
+    stringLights(g,perimeter,eave-.32,spec.stringLightSpacing,bulbMaterial,'amphitheater-string-bulbs',false);
+    // The downhill colonnade has its own string lights under the bay.
+    stringLights(g,backstage.porchLights.outline,backstage.porchLights.height,spec.stringLightSpacing,bulbMaterial,'amphitheater-porch-string-bulbs',false);
   }
   if(spec.interiorLighting) {
     // Baked warm bounce on the actual seating surfaces: horizontal benches,

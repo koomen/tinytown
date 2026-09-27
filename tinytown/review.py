@@ -45,7 +45,7 @@ PROTRUDING = re.compile(r"porch|stoop|portico|canopy|step|vestibule|bay", re.I) 
 KEYS = {
     "top": {"wall", "wallMaterial", "trim", "roofColor", "volumes", "porches", "details", "notes", "id", "name", "_comment", "bridge", "pavilion", "fountain", "amphitheater", "athenaeumFront", "alumniHallBalcony", "lennaHall", "hultquistCenter"},
     "fountain": {"height", "basinHeight", "rimWidth", "pylonWidth", "stoneColor", "brickColor", "waterColor", "jets"},
-    "amphitheater": {"axis", "stageEnd", "height", "roofRise", "backstageDepth", "bowlDepth", "audienceChamfer", "rearWingChamfer", "porchDepth", "rows", "monitor", "wallColor", "trimColor", "roofColor", "seatColor", "stringLightSpacing", "interiorLighting"},
+    "amphitheater": {"axis", "stageEnd", "height", "roofRise", "backstageDepth", "bowlDepth", "audienceChamfer", "rearWingChamfer", "porchDepth", "houseWidth", "rows", "monitor", "wallColor", "trimColor", "roofColor", "seatColor", "stringLightSpacing", "interiorLighting"},
     "pavilion": {"axis", "height", "pitch", "postWidth", "bents", "floorH", "floorColor", "furniture", "columns", "columnColor", "trimColor", "endPosts", "roofType", "seatingRows", "entranceEnd", "railing", "railingStyle", "entranceStairs", "wallH"},
     "pavilion.stairs": {"length", "width", "bottomY", "foundationDepth", "railing"},
     "bridge": {"type", "axis", "height", "arches", "pierWidth", "archRise", "deckThickness", "tracks", "railing", "girderHeight", "abutmentWidth", "wingWalls", "approaches", "approachLength", "approachWidth", "approachPlateau"},
@@ -630,7 +630,7 @@ def lint_blueprint(bp, b, label):
         if spec.get('axis', 'u') not in ('u', 'v'): L.err('amphitheater', 'axis must be u or v')
         if spec.get('stageEnd', 'negative') not in ('negative', 'positive'): L.err('amphitheater', 'stageEnd must be negative or positive')
         length = b['obb']['d' if spec.get('axis') == 'v' else 'w']
-        for k, default, lo, hi in [('height',8,5,14), ('roofRise',5,1,9), ('backstageDepth',length*.22,3,length*.3), ('bowlDepth',5.2,2,8), ('audienceChamfer',min(12,min(b['obb']['w'],b['obb']['d'])*.2),3,min(b['obb']['w'],b['obb']['d'])*.35), ('porchDepth',3.4,1.5,6)]:
+        for k, default, lo, hi in [('height',8,5,14), ('roofRise',5,1,9), ('backstageDepth',length*.22,3,length*.3), ('bowlDepth',5.2,2,8), ('audienceChamfer',min(12,min(b['obb']['w'],b['obb']['d'])*.2),3,min(b['obb']['w'],b['obb']['d'])*.35), ('porchDepth',3.4,1.5,6), ('houseWidth',.62,.4,.7)]:
             value = spec.get(k, default)
             if type(value) not in (int,float) or not lo <= value <= hi: L.err('amphitheater', f'{k} must be between {lo} and {hi}')
         if type(spec.get('rows',12)) is not int or not 6 <= spec.get('rows',12) <= 20: L.err('amphitheater', 'rows must be an integer 6..20')

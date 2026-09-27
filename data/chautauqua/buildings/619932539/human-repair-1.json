@@ -1,0 +1,41 @@
+{
+ "role": "human-repair",
+ "number": 1,
+ "source": "change queue request #13 (runs/changes/3f0e6f9de957)",
+ "request": "Rework the Chautauqua Amphitheater back (Susan Hirt Hagen Center) to match the attached rear photograph: swooping shingled gable, arched clerestory, curved balcony bay over a colonnade, symmetric wings, concrete base, gray loading door, rockery with iron railings and redbud.",
+ "reference": "fronts/front_619932539_+v.png (user photograph, hagen-center-back.png)",
+ "author": "claude-opus-5-5 (change worker)",
+ "base_hash": "1b5868ce4c3076c9b4d607edf52e5d4b1de1b48a9b8f3bd93f8178c498f75399",
+ "draft_hash": "0f0dcfb8f26d89f15ef48912426d15f98e3b4d47e1391e6693bcd1ba6334a9a6",
+ "blueprint": {
+  "wall": "#d9d0aa",
+  "trim": "#eee5ce",
+  "roofColor": "#b8c0bd",
+  "amphitheater": {
+   "axis": "v",
+   "stageEnd": "positive",
+   "height": 6.5,
+   "roofRise": 5,
+   "backstageDepth": 22,
+   "rows": 18,
+   "monitor": true,
+   "wallColor": "#d9d0aa",
+   "trimColor": "#eee5ce",
+   "roofColor": "#b8c0bd",
+   "seatColor": "#d8d2b7",
+   "bowlDepth": 5.2,
+   "audienceChamfer": 12,
+   "porchDepth": 3.4,
+   "houseWidth": 0.54,
+   "rearWingChamfer": 5.5,
+   "stringLightSpacing": 1.05,
+   "interiorLighting": true
+  },
+  "volumes": [],
+  "details": []
+ },
+ "frame": "b89f1fc3fe9435957437dba713145d418b75e1da050c079854d70dc2e9c7bf23",
+ "feedback_ids": [],
+ "error": null,
+ "timestamp": 1790496817.247591
+}
