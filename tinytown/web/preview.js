@@ -31,6 +31,10 @@ try {
   const data = await response.json();
   if (!response.ok || data.error) throw new Error(data.error || `Scene request failed (${response.status})`);
   const THREE = await import('three');
+  // Authored textures use production /data URLs. Resolve those inside this
+  // preview's workspace, just like its modules, rather than at the queue root.
+  THREE.DefaultLoadingManager.setURLModifier(url => url.startsWith('/data/')
+    ? new URL(url.slice(1), document.baseURI).href : url);
   const {OrbitControls} = await import('three/addons/controls/OrbitControls.js');
   const {createNightSpotlights, applyNightEmission, NIGHT, DAY, NIGHT_SCENE} = await import('../../src/lighting.js');
   const world = new THREE.Scene();
@@ -101,6 +105,9 @@ try {
   document.body.append(timeButton);
   let night = new URL(location.href).searchParams.get('time') === 'night';
   const render = () => { spotlights.update(night ? 1 : 0, controls.target); renderer.render(world, camera); };
+  // Image callbacks can paint canvas textures after the first frame. This
+  // preview renders on demand, so display those pixels without a camera move.
+  THREE.DefaultLoadingManager.onLoad = render;
   const setTime = value => {
     night = value; NIGHT.value = night ? 1 : 0;
     const profile = night ? NIGHT_SCENE : DAY;
