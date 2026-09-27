@@ -90,7 +90,20 @@ def bake_surfaces(paths, check=False):
                 raise RuntimeError('Surface builder did not initialize: ' + '\n'.join(tab.logs))
             time.sleep(0.2)
         url = '/' + paths.relative(paths.scene)
-        result = tab.ev(f'window.precomputeSurfaces({json.dumps(url)}, {json.dumps(paths.name)})')
+        # Start the build and poll for it: one awaited evaluate is bounded by the
+        # harness's socket timeout, which a slow CI builder can exceed.
+        tab.ev(f'window.__surfaces={{done:false}};window.precomputeSurfaces({json.dumps(url)}, {json.dumps(paths.name)})'
+               '.then(result=>{window.__surfaces={done:true,result};},'
+               'error=>{window.__surfaces={done:true,error:String(error&&error.stack||error)};});true')
+        deadline = time.monotonic() + 30 * 60
+        while not tab.ev('window.__surfaces.done'):
+            if time.monotonic() > deadline:
+                raise RuntimeError('Surface builder timed out: ' + '\n'.join(tab.logs))
+            time.sleep(1)
+        outcome = tab.ev('window.__surfaces')
+        if outcome.get('error'):
+            raise RuntimeError('Surface builder failed: ' + outcome['error'])
+        result = outcome['result']
     compressed = base64.b64decode(result.pop('base64'), validate=True)
     # An ongoing map edit must not publish assets for an obsolete snapshot.
     if paths.scene.read_bytes() != scene_bytes or surface_source_hash(paths.root) != generator_hash:

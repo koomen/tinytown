@@ -11,6 +11,9 @@ set -eu
 target="${1:?usage: scripts/cloudflare-build.sh <target>}"
 cd "$(dirname "$0")/.."
 root=$(pwd)
+phase() { echo "== $(date -u +%H:%M:%S) $*"; }
+
+phase "install toolchain"
 
 node -e 'if (+process.versions.node.split(".")[0] < 22) { console.error(`Node ${process.version}: bake needs Node 22+`); process.exit(1); }'
 [ -x .venv/bin/python ] || python3 -m venv .venv
@@ -38,4 +41,6 @@ if [ "$(uname -s)" = Linux ]; then
   fi
 fi
 
+phase "bake and stage $target"
 ./town stage --target "$target"
+phase done

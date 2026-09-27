@@ -91,10 +91,16 @@ if (process.argv.includes('--check')) {
         catch (error) { if (attempt === 3) throw error; console.error(`Exporter not ready after 60 s; reloading (attempt ${attempt + 1} of 3)`); }
       }
       const siteURL = '/'+relative(root,directory).split(sep).join('/')+'/site.json';
-      const manifest = await page.evaluate(`window.exportStream(${JSON.stringify(siteURL)}, ${JSON.stringify(directory.split(sep).at(-1))}, async (file,bytes)=>{
+      // Start the export and poll for it. A single awaited evaluate is bounded
+      // by the harness's 5-minute CDP timeout, and on Cloudflare's builder a
+      // large site's export takes longer than that.
+      await page.evaluate(`window.__export={done:false};window.exportStream(${JSON.stringify(siteURL)}, ${JSON.stringify(directory.split(sep).at(-1))}, async (file,bytes)=>{
         const r=await fetch('/__stream_asset/'+file,{method:'POST',body:bytes});
         if(!r.ok)throw new Error('Could not write '+file+' (HTTP '+r.status+'): '+await r.text());
-      })`);
+      }).then(manifest=>{window.__export={done:true,manifest};},error=>{window.__export={done:true,error:String(error?.stack||error)};});true`);
+      await waitFor(()=>page.evaluate('window.__export.done'), 'stream export', 30*60*1000);
+      const {manifest,error} = await page.evaluate('window.__export');
+      if (error) throw new Error(error);
       const mb = n => (n/1048576).toFixed(1)+' MiB';
       console.log(`Base: ${mb(manifest.base.bytes)} download, ${mb(manifest.base.memoryBytes)} geometry/textures`);
       console.log(`${manifest.tiles.length} detail tiles: ${mb(manifest.tiles.reduce((n,t)=>n+t.bytes,0))} total download`);
