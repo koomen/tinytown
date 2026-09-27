@@ -12,7 +12,7 @@ argparse does not read `-u` as an option.
 | A building is generic (no blueprint) | `./town plan <site>` lists it as `new`; author it: `./town author <site> ID --accept`. |
 | A building is missing altogether | If OSM has it and the site is scoped: `./town scope <site> --ids ID` then `./town build <site>`. If OSM lacks it: add it to `overrides.json → authored_buildings` (negative id, `[lon, lat]` ring), then `./town build <site>`. |
 | A footprint OSM still has but the lot is empty | `overrides.json → buildings → {ID: {"demolished": true}}`, then `./town build <site>`. |
-| A building should be authored again | `./town author <site> --reauthor ID --accept`. The candidate is compared against the accepted blueprint; it replaces it only if approved (`comparison.json`). |
+| A building should be authored again | `./town author <site> --reauthor ID --accept`. The candidate is compared against the accepted blueprint; it replaces it only if approved (`comparison.json`). If re-authoring keeps returning an empty patch ("already accepted with this draft"), add `--fresh`: the author writes a complete blueprint from the references instead of patching the accepted one; the comparison still judges it against the accepted blueprint. |
 | `town author` says `failed` for a building | Read `buildings/ID/author.json` (`error`, `attempts`). `--reauthor ID` clears it; `--dry-run` first to see the next step. |
 | A published miniature is not the last draft | Repairs ran out and an earlier draft scored better: `review.json` `selected_draft` has both scores, `history` the other drafts' reviews. |
 | `town author` stops one building with `building token budget exhausted` | It reached `--max-tokens-per-building` (300,000); resume with a larger cap or `0` for none. |

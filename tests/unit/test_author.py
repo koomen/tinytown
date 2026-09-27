@@ -585,6 +585,91 @@ class Authoring(Fixture):
         self.assertEqual(ov['miniature_review']['1']['publication']['inspection']['baseline_comparison']['verdict'], 'approved')
 
 
+class FreshReauthor(Fixture):
+    """--fresh: the re-author call writes from the references; the comparison still judges against the accepted blueprint."""
+
+    def test_fresh_author_prompt_omits_the_baseline_and_the_refinement_patch(self):
+        self.accept_site('1', BP)
+        self.model.script('author', response(BP2)).script('review', READY)
+        self.model.script('baseline-comparison', {'verdict': 'approved', 'reason': 'better roof'})
+        result = self.run_author(['1'], reauthor=['1'], fresh=True, accept=True)
+        prompt = self.model.calls[0]['prompt']
+        self.assertEqual(self.model.calls[0]['role'], 'author')
+        self.assertNotIn('PUBLISHED PRODUCTION BASELINE', prompt)
+        self.assertNotIn('REFINEMENT', prompt)
+        self.assertNotIn(fingerprint(BP), prompt)
+        self.assertNotIn(json.dumps(BP, separators=(',', ':')), prompt)
+        self.assertIn(author.LENGTH_TARGET, prompt, 'written like a first authoring')
+        record = read_json(self.paths.building('1').author)
+        self.assertTrue(record['fresh'])
+        self.assertEqual(record['draft_hash'], fingerprint(BP2))
+        # The comparison still judges the new draft against the accepted blueprint.
+        comparison = read_json(author.comparison_path(self.paths.building('1')))
+        self.assertEqual((comparison['baseline_hash'], comparison['candidate_hash']), (fingerprint(BP), fingerprint(BP2)))
+        self.assertTrue(any(no_bp and phase == 'production-baseline' for _, phase, _, _, no_bp in FakeBatch.captures))
+        self.assertEqual(result['accepted'], ['1'])
+        self.assertEqual(read_json(self.paths.overrides)['blueprints']['1'], BP2)
+
+    def test_a_rejected_fresh_draft_is_repaired_as_a_patch_of_the_new_candidate(self):
+        self.accept_site('1', BP)
+        ops = [{'op': 'replace', 'path': '/volumes/@main/height', 'value': 7}]
+        self.model.script('author', response(BP2)).script('review', READY, READY)
+        self.model.script('baseline-comparison', {'verdict': 'rejected', 'reason': 'lost the mural'},
+                          {'verdict': 'approved', 'reason': 'mural back'})
+        self.model.script('repair', response(patch_ops=ops, base=BP2))
+        result = self.run_author(['1'], reauthor=['1'], fresh=True, accept=True)
+        repair = next(c for c in self.model.calls if c['role'] == 'repair')
+        self.assertIn('"base_hash":"' + fingerprint(BP2), repair['prompt'])
+        self.assertIn('lost the mural', repair['prompt'])
+        self.assertIn('PUBLISHED PRODUCTION BASELINE', repair['prompt'], 'later steps still see the accepted baseline')
+        self.assertEqual(read_json(self.paths.building('1').repair(1))['base_hash'], fingerprint(BP2))
+        comparison = read_json(author.comparison_path(self.paths.building('1')))
+        self.assertEqual((comparison['baseline_hash'], comparison['candidate_hash'], comparison['verdict']),
+                         (fingerprint(BP), fingerprint(BP3), 'approved'))
+        self.assertEqual(result['accepted'], ['1'])
+        self.assertEqual(read_json(self.paths.overrides)['blueprints']['1'], BP3)
+
+    def test_a_patch_from_a_fresh_author_is_invalid_and_its_fix_asks_for_a_full_blueprint(self):
+        self.accept_site('1', BP)
+        ops = [{'op': 'replace', 'path': '/volumes/@main/height', 'value': 6}]
+        self.model.script('author', response(patch_ops=ops, base=BP)).script('fix', response(BP2)).script('review', READY)
+        self.model.script('baseline-comparison', {'verdict': 'approved', 'reason': 'fine'})
+        self.run_author(['1'], reauthor=['1'], fresh=True)
+        record = read_json(self.paths.building('1').author)
+        self.assertTrue(any('no base blueprint' in e for e in record['initial_validation_errors']))
+        fix = next(c for c in self.model.calls if c['role'] == 'fix')
+        self.assertNotIn('base_blueprint', fix['prompt'])
+        self.assertIn('full corrected blueprint', fix['prompt'])
+        self.assertEqual(read_json(self.paths.building('1').draft), BP2)
+
+    def test_without_fresh_the_reauthor_still_patches_and_fresh_is_validated(self):
+        self.accept_site('1', BP)
+        run = author.Run(self.paths, ['1'], reauthor=['1'], log=lambda t: None)
+        self.assertFalse(run.fresh)
+        with self.assertRaisesRegex(ValueError, 'fresh must be true or false'):
+            author.Run(self.paths, ['1'], reauthor=['1'], fresh='yes', log=lambda t: None)
+        # fresh only changes re-authored buildings: a first authoring is the same either way.
+        self.model.script('author', response(BP2)).script('review', READY)
+        self.run_author(['2'], fresh=True)
+        self.assertNotIn('fresh', read_json(self.paths.building('2').author))
+        self.assertEqual(author.Run(self.paths, reauthor=['1'], dry_run=True, log=lambda t: None).select(), ['1'],
+                         '--reauthor ID needs no positional ids')
+
+    def test_cli_fresh_flag(self):
+        parser = cli.build_parser({'author', 'accept'})
+        args = parser.parse_args(['author', 'trial', '--reauthor', '1', '--fresh', '--dry-run'])
+        self.assertEqual((args.reauthor, args.fresh), (['1'], True))
+        self.assertFalse(parser.parse_args(['author', 'trial', '1']).fresh)
+        with patch.object(author, 'site_paths', return_value=self.paths), patch.object(author, 'author', return_value={'buildings': {}, 'counts': {}, 'skipped': {}}) as run:
+            self.assertEqual(args.run(args), 0)
+            self.assertIs(run.call_args.kwargs['fresh'], True)
+            self.assertEqual(run.call_args.kwargs['all'], False, '--reauthor ID alone selects only that building')
+            lone = parser.parse_args(['author', 'trial', '1', '--fresh'])
+            self.assertEqual(lone.run(lone), 2)
+            self.assertEqual(run.call_count, 1)
+        self.assertIn('--fresh applies to re-authored buildings', self.out.getvalue())
+
+
 class Accepting(Fixture):
     def reviewed(self, bid, bp=BP, passed=True):
         """Files for a building whose draft was reviewed with the current renderer."""

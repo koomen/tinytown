@@ -184,7 +184,8 @@ machine (`author.Run`) for those buildings in the main checkout. It needs no
 snapshot: a draft is already a proposal, and the Street View photos and renders
 it needs are gitignored. `--option` passes any `town author` keyword argument
 (names come from `author.Run`; selection, acceptance and binaries are not
-accepted). The job log streams the author's progress; building jobs run in
+accepted). `--reauthor --option fresh=true` rebuilds each building from its
+references instead of patching the accepted blueprint (`town author --fresh`). The job log streams the author's progress; building jobs run in
 their own worker slots (`serve --building-workers`, default 1, because every
 render goes through the one private browser), and two jobs never share a
 building. `town author` itself is unchanged: batch runs from the terminal do

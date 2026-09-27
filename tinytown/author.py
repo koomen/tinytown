@@ -1,6 +1,6 @@
 """Stages 4-6: author a blueprint per building, review and repair it (bounded), critique the scene, accept.
 
-    town author <site> [IDS...] [--all] [--reauthor ID...] [--accept] [--dry-run] ...
+    town author <site> [IDS...] [--all] [--reauthor ID... [--fresh]] [--accept] [--dry-run] ...
     town accept <site> IDS... [--all-reviewed] [--force] [--no-rebuild]
 
 `author` is a resumable per-building state machine. Each selected building's
@@ -24,7 +24,11 @@ at most MAX_REPAIRS repairs, then the building is recorded as reviewed with its
 failed inspection intact ("forced publication": `accept` refuses it without
 --force) and the best-scoring reviewed draft, not merely the last one, is the
 draft that stays; a re-authored building must be explicitly approved against the
-accepted baseline by the reviewer or the baseline stays. An unresolved entrance
+accepted baseline by the reviewer or the baseline stays. A re-author normally
+shows the author the accepted blueprint and asks for a small patch to it; with
+--fresh (Run(fresh=True)) the author call instead writes a complete blueprint from
+the references alone, like a first authoring, while self-checks, repairs and the
+comparison still see the accepted baseline. An unresolved entrance
 ("uncertain" orientation) blocks only landmark, commercial, civic and large
 buildings (orientation_policy). Model calls share one in-process model.Budget
 and a per-building token cap; budget exhaustion or Ctrl-C stops admitting new
@@ -590,7 +594,7 @@ class Run:
                  reasoning_effort=None, author_effort='high', reviewer_effort='medium', self_checks=1,
                  building_review=True, scene_review=True, max_repairs=MAX_REPAIRS, capture='missing', image_search='bing',
                  max_web_images=1, extra_street_views=0, render_distance=90, call_timeout=300, codex='codex',
-                 location='', labels=None, web_references=None, reauthor=(), dry_run=False, accept=False,
+                 location='', labels=None, web_references=None, reauthor=(), fresh=False, dry_run=False, accept=False,
                  force=False, log=None):
         if not 1 <= int(workers) <= 6:
             raise ValueError('workers must be between 1 and 6')
@@ -611,6 +615,8 @@ class Run:
                             ('max_tokens_per_building', max_tokens_per_building)):
             if value is not None and value < 0:
                 raise ValueError(f'{name} must be positive (0 or omitted: unlimited)')
+        if not isinstance(fresh, bool):
+            raise ValueError('fresh must be true or false')
         if reasoning_effort:  # the old single knob sets both roles
             author_effort = reviewer_effort = reasoning_effort
         self.paths = _paths(paths)
@@ -618,6 +624,7 @@ class Run:
         self.overrides = load_overrides(self.paths)
         self.config = settings(self.paths)
         self.ids, self.all, self.reauthor = [str(x) for x in ids or ()], all, {str(x) for x in reauthor or ()}
+        self.fresh = fresh
         self.workers, self.max_repairs, self.self_checks = int(workers), int(max_repairs), int(self_checks)
         self.author_model, self.reviewer_model = author_model, reviewer_model
         self.author_effort, self.reviewer_effort = author_effort, reviewer_effort
@@ -672,7 +679,7 @@ class Run:
         mapped = [str(b['id']) for b in self.site['buildings']]
         if self.all:
             ids = list(mapped)
-        elif self.ids:
+        elif self.ids or self.reauthor:
             ids = list(dict.fromkeys(self.ids))
         else:
             raise ValueError('give structure ids or --all')
@@ -926,11 +933,13 @@ class Run:
         packet = read_json(b.references) or {}
         _, images = self.describe(packet)
         baseline = self.baseline(bid)
-        prompt = self.author_prompt(bid, packet, baseline)
         repair = number > 0
-        current = baseline
+        fresh = self.fresh and baseline is not None and not repair
+        # A fresh re-author writes from the references alone: no baseline in the prompt, nothing to patch.
+        prompt = self.author_prompt(bid, packet, None if fresh else baseline)
+        current = None if fresh else baseline
         feedback = pending_feedback(b) if human else []
-        if baseline and not repair:
+        if baseline and not repair and not fresh:
             prompt = self.extend(prompt, '\nREFINEMENT: prefer a small patch to the production baseline. Leave blueprint_json '
                                  'empty and encode patch_json as {"base_hash":"' + fingerprint(baseline) +
                                  '","operations":[{"op":"replace","path":"/volumes/@main/height","value":7}]}. Supports '
@@ -975,6 +984,8 @@ class Run:
                   'frame': building_frame(self.site, building), 'timestamp': time.time()}
         if repair:
             record['base_hash'] = fingerprint(current)
+        if fresh:
+            record['fresh'] = True
         if human:
             record['role'] = 'human-repair'
             if not result.get('error'):
@@ -993,7 +1004,9 @@ class Run:
         try:
             if response['blueprint_json'] and response['patch_json']:
                 raise ValueError('Use full blueprint or patch, not both.')
-            bp = (apply_patch(current, json.loads(response['patch_json'])) if current is not None and response['patch_json']
+            if response['patch_json'] and current is None:
+                raise ValueError('There is no base blueprint to patch; return the full blueprint in blueprint_json.')
+            bp = (apply_patch(current, json.loads(response['patch_json'])) if response['patch_json']
                   else json.loads(response['blueprint_json']))
             bp = canonical_blueprint(bp)
             errors = validate(bp, building, baseline)
@@ -1019,8 +1032,9 @@ class Run:
         response = record.get('response') or {}
         base = record.get('blueprint') if isinstance(record.get('blueprint'), dict) else None
         submitted = {'blueprint': base} if base is not None else {'blueprint_json': response.get('blueprint_json') or None}
-        if base is None and response.get('patch_json'):
+        if base is None and response.get('patch_json') and not record.get('fresh'):
             # A patch that failed to apply: fix it against the blueprint it was aimed at, never from nothing.
+            # A fresh author call had no base, so its fix asks for the full blueprint instead.
             base = self.patch_base(b, record)
             if base is None:
                 record.setdefault('fixes', []).append({'error': 'no base blueprint for the failed patch; left to repair',
@@ -1687,6 +1701,9 @@ def register(subparsers):
     p.add_argument('ids', nargs='*', help='structure ids (default: --all)')
     p.add_argument('--all', action='store_true', help='every structure in site.json that is not accepted or failed')
     p.add_argument('--reauthor', nargs='*', default=[], metavar='ID', help='author these again, even if accepted or failed')
+    p.add_argument('--fresh', action='store_true',
+                   help='with --reauthor: write a complete blueprint from the references instead of patching the accepted '
+                        'one (still compared against it before it can replace it)')
     p.add_argument('--workers', type=int, default=3)
     p.add_argument('--max-tokens', type=int, default=None, help='run token budget (default: unlimited; the per-building cap bounds it)')
     p.add_argument('--max-tokens-per-building', type=int, default=MAX_TOKENS_PER_BUILDING,
@@ -1730,6 +1747,9 @@ def _run_author(args):
     paths = site_paths(args.site)
     labels = args.labels or (paths.labels if paths.labels.is_file() else None)
     web = args.web_references or (paths.web_references if paths.web_references.is_file() else None)
+    if args.fresh and not args.reauthor:
+        print('error: --fresh applies to re-authored buildings; give --reauthor ID')
+        return 2
     try:
         result = author(paths, args.ids, all=args.all or not (args.ids or args.reauthor), workers=args.workers, max_tokens=args.max_tokens,
                         max_seconds=args.max_seconds, max_tokens_per_building=args.max_tokens_per_building,
@@ -1741,7 +1761,7 @@ def _run_author(args):
                         image_search=args.image_search, max_web_images=args.max_web_images,
                         extra_street_views=args.extra_street_views, render_distance=args.render_distance,
                         call_timeout=args.call_timeout, codex=args.codex, location=args.location, labels=labels,
-                        web_references=web, reauthor=args.reauthor, dry_run=args.dry_run, accept=args.accept,
+                        web_references=web, reauthor=args.reauthor, fresh=args.fresh, dry_run=args.dry_run, accept=args.accept,
                         force=args.force)
     except (ValueError, FileNotFoundError) as exc:
         print(f'error: {exc}')

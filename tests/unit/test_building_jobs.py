@@ -12,6 +12,7 @@ from unittest import mock
 
 from tests.unit.test_changes import ChangeQueueFixture
 from tinytown import building_jobs, change_agents, changes
+from tinytown.author import Run as REAL_RUN
 from tinytown.state import fingerprint
 
 SITE = 'town'
@@ -27,8 +28,9 @@ class FakeRun:
     """Stands in for author.Run: writes a draft and a passing review for each building."""
     calls = []
 
-    def __init__(self, paths, ids=None, *, reauthor=(), log=None, workers=3, author_model='astra'):
+    def __init__(self, paths, ids=None, *, reauthor=(), log=None, workers=3, author_model='astra', fresh=False):
         self.paths, self.ids, self.reauthor, self.log = paths, list(ids or ()), tuple(reauthor), log
+        self.fresh = fresh
         self.halted = None
         FakeRun.calls.append(self)
 
@@ -147,8 +149,24 @@ class BuildingIndexTests(BuildingFixture):
             with self.subTest(bad=bad), self.assertRaises(ValueError):
                 building_jobs.validate_options(bad)
 
+    def test_fresh_is_an_author_option(self):
+        self.assertNotIn('fresh', building_jobs.RESERVED_OPTIONS)
+        with mock.patch('tinytown.author.Run', REAL_RUN):  # the real signature, not the fixture's fake
+            self.assertEqual(building_jobs.validate_options({'fresh': True, 'author_model': 'opus'}),
+                             {'fresh': True, 'author_model': 'opus'})
+        self.assertEqual(changes._options(['fresh=true']), {'fresh': True})
+
 
 class BuildingJobTests(BuildingFixture):
+    def test_reauthor_job_passes_fresh_to_the_author_run(self):
+        record = self.queue.create_building_job(SITE, ['103'], mode='reauthor', options={'fresh': True, 'author_model': 'opus'})
+        self.assertEqual(record['options'], {'fresh': True, 'author_model': 'opus'})
+        self.queue.start()
+        record = self.wait(record['id'], 'pending_approval')
+        run = FakeRun.calls[-1]
+        self.assertEqual((run.ids, run.reauthor, run.fresh), (['103'], ('103',), True))
+        self.assertIn('(fresh re-author)', record['log'])
+
     def test_job_authors_then_approval_accepts_and_commits_only_its_delta(self):
         self.write('src/other.js', 'uncommitted operator edit\n')
         record = self.queue.create_building_job(SITE, ['101', '102'])

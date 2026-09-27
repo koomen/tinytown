@@ -419,7 +419,8 @@ def work(queue, record):
             queue.building_runs.pop(record['id'], None)
             raise RuntimeError('Cancelled before the author run started')
     try:
-        log(f'town author {paths.name} {" ".join(ids)}' + (' (re-author)' if reauthor else ''))
+        log(f'town author {paths.name} {" ".join(ids)}' +
+            ((' (fresh re-author)' if options.get('fresh') else ' (re-author)') if reauthor else ''))
         summary = run.run()
     finally:
         with queue.lock:

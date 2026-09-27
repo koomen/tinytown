@@ -311,7 +311,7 @@ def fetch(paths, center=None, size_m=None, *, margin=1.0, satellite=True, elevat
 def crop_aerials(paths, ids=None, *, source=None, force=False, pad=45, log=print) -> None   # references imports it
 
 # author.py
-def author(paths, ids=None, **options) -> dict  # options are Run.__init__'s: all, workers, max_tokens, max_seconds, author_model, reviewer_model, ..., reauthor, dry_run, accept, force
+def author(paths, ids=None, **options) -> dict  # options are Run.__init__'s: all, workers, max_tokens, max_seconds, author_model, reviewer_model, ..., reauthor, fresh, dry_run, accept, force
 def accept(paths, ids, *, rebuild=True, force=False, out=print) -> list[str]   # drafts -> overrides.json blueprints (+ blueprint_frames, miniature_review); all-or-nothing
 
 # bake.py

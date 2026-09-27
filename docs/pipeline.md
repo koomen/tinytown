@@ -100,6 +100,7 @@ manual verbs are for when you want to inspect or steer.
 ./town author mytown --all --accept             # stages 3–6 for every unauthored structure (Codex CLI or ANTHROPIC_API_KEY, per model)
 ./town author mytown 247541316 248290075        # just these
 ./town author mytown --reauthor 247541316       # again, compared against the accepted blueprint
+./town author mytown --reauthor 247541316 --fresh  # rebuilt from the references, not patched; still compared
 ./town accept mytown --all-reviewed             # if you ran without --accept
 ./town status mytown
 ```
