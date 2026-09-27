@@ -4,7 +4,7 @@
 // `./town browser setup` installs the private browser and the bridge's Python runtime.
 //
 // withBrowser(root) serves `root` over loopback. When root is a repository checkout the
-// server answers exactly like `town serve`: '/' and the named routes ('/avon', '/chautauqua',
+// server answers exactly like `town serve`: '/' and the named routes ('/avon', '/avon-extended',
 // ...) return their route documents and `/?site=<name>` an authoring preview, so drivers
 // address a scene by its production URL. Other roots (a dist directory) are served statically
 // with the deployment host's clean `.html` paths.

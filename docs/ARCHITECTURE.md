@@ -179,8 +179,7 @@ Status of a building, derived by `state.building_status(paths, bid)`:
   "description": "...",
   "domain": "https://chautauqua.town",
   "deploy": [
-    {"target": "chautauqua", "route": "/"},
-    {"target": "avon", "route": "/chautauqua"}
+    {"target": "chautauqua", "route": "/"}
   ],
   "plugin": "chautauqua",
   "scope": "scope.json",

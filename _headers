@@ -7,8 +7,6 @@
   Cache-Control: no-cache
 /avon-extended
   Cache-Control: no-cache
-/chautauqua
-  Cache-Control: no-cache
 /data/:site/surfaces-*.bin.gz
   Cache-Control: public, max-age=31536000, immutable
   Content-Type: application/octet-stream

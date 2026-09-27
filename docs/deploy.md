@@ -7,7 +7,7 @@ build output: Cloudflare bakes them on every deploy.
 
 | Worker | Domain | Wrangler config | Dist | Routes |
 | --- | --- | --- | --- | --- |
-| `avon-town` | avon.town | `wrangler.avon.jsonc` | `dist/avon/` | `/` Avon, `/avon` an alias of the larger scene, `/avon-extended` (+ alias `/extended`), `/chautauqua` |
+| `avon-town` | avon.town | `wrangler.avon.jsonc` | `dist/avon/` | `/` Avon, `/avon` an alias of the larger scene, `/avon-extended` (+ alias `/extended`) |
 | `chautauqua-miniature` | chautauqua.town | `wrangler.chautauqua.jsonc` | `dist/chautauqua/` | `/` Chautauqua |
 
 ## Routes are config
@@ -73,7 +73,7 @@ never needed to deploy.
 
 ```
 /                                  Cache-Control: no-cache
-/index.html, /avon, /avon-extended, /chautauqua      no-cache
+/index.html, /avon, /avon-extended                   no-cache
 /data/:site/surfaces-*.bin.gz      public, max-age=31536000, immutable
 /data/:site/surfaces.json          no-cache
 /data/:site/stream/*.bin.gz        public, max-age=31536000, immutable
@@ -169,7 +169,7 @@ contents changed and stays cheap.
 ## Preview a build locally
 
 ```sh
-./town serve                        # the repository: /, /avon, /chautauqua, /?site=<name>
+./town serve                        # the repository: /, /avon, /avon-extended, /?site=<name>
 ./town serve --dist avon            # dist/avon/ exactly as deployed
 ./town serve --dist chautauqua --port 8735
 ```

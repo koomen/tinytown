@@ -173,7 +173,7 @@ All parameters are read from `location.search` (`src/site-data.js`,
 | `nobake` | present | keep every generator mesh separate (slow) so a raycast can say what a pixel is |
 
 `town render` builds `?site=…&focus=…&side=…&dist=…&height=…&stage=…&free=1&bp=…&notrees=1`
-for its screenshots. Named routes (`/avon`, `/chautauqua`) accept every
+for its screenshots. Named routes (`/avon`, `/avon-extended`) accept every
 parameter except `site`, which the path already fixes.
 
 ## Performance profile

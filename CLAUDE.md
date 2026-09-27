@@ -36,7 +36,7 @@ codex login                                           # `town author` with OpenA
 | `status <site> [--ids…]` | derived per-building status |
 | `bake <site> [--check] [--surfaces-only\|--stream-only]`, `bake --viewer [--check]` | surfaces + stream chunks for a site; `?v=` stamps in `index.html` |
 | `stage [--target avon\|chautauqua\|all] [--no-bake]` | bake stale surfaces/streams and restamp the viewer, then stage `dist/<target>/`; `--no-bake` fails on stale instead |
-| `serve [--port 8734] [--dist [TARGET]]` | dev server: `/`, `/avon`, `/chautauqua`, `/?site=<name>`; or a built dist |
+| `serve [--port 8734] [--dist [TARGET]]` | dev server: `/`, `/avon`, `/avon-extended`, `/?site=<name>`; or a built dist |
 | `verify <target> <domain> [site]` | live files match `dist/<target>/` |
 | `browser setup\|status\|cleanup\|stop` | the private headless Chromium |
 | `migrate <site>… [--dry-run]` | pre-2026-09 layout -> current layout |

@@ -19,8 +19,7 @@ await withBrowser(new URL('../../dist/avon/',import.meta.url).pathname,async pag
  });
  // The root document is the extended miniature (config.routes: '/' -> avon-extended).
  for(const [label,url,count] of [['root','/?time=day',1644],['alias','/avon?time=night',1644],
-   ['extended','/avon-extended?time=day&focus=248675024&dist=180',1644],
-   ['chautauqua','/chautauqua?time=day&quality=mobile&resolution=0.5',946]]) {
+   ['extended','/avon-extended?time=day&focus=248675024&dist=180',1644]]) {
   await page.go(url);
   await waitFor(()=>duringNavigation(`!!window.__town && !document.getElementById('loading') && __town.siteData.buildings.length===${count}`),label+' ready');
   await waitFor(()=>page.evaluate('!__town.streaming || (!__town.streaming.stats.loading && __town.streaming.stats.desired.every(id=>__town.streaming.stats.resident.includes(id)))'),label+' tiles');
@@ -38,19 +37,8 @@ await withBrowser(new URL('../../dist/avon/',import.meta.url).pathname,async pag
   if(state.stream)assert.deepEqual(state.stream.failures,[]);
   assert.equal(new URL(state.url).pathname,url.split('?')[0]);
   assert.equal(new URL(state.url).search,'?'+url.split('?')[1]);
-  if(label==='alias'||label==='extended'||label==='root') {
-   assert.equal(state.renderer,'/src/main.js');
-   assert.ok(state.landscape.trees>9000);assert.ok(state.landscape.understory>3000);
-   assert.ok(state.resources.includes('/data/avon-extended/stream/manifest.json'));
-  } else {
-   assert.equal(state.renderer,'/src/main.js');
-   assert.ok(state.resources.includes('/data/chautauqua/stream/manifest.json'));
-   assert.ok(!state.resources.includes('/data/chautauqua/site.json'));
-   assert.ok(!state.resources.includes('/data/chautauqua/surfaces.json'));
-   assert.equal(state.icon,'/sites/chautauqua/favicon.svg');
-   assert.equal(await page.evaluate("fetch('/sites/chautauqua/favicon.svg').then(r=>r.status)"),200);
-   assert.ok(!state.resources.some(p=>p.includes('/data/avon-extended/')));
-  }
+  assert.ok(state.landscape.trees>9000);assert.ok(state.landscape.understory>3000);
+  assert.ok(state.resources.includes('/data/avon-extended/stream/manifest.json'));
   const shot=await page.send('Page.captureScreenshot',{format:'png'});
   await writeFile(new URL(`${label}.png`,directory),Buffer.from(shot.data,'base64'));
   results.push(state);console.log('PASS',label,JSON.stringify({count:state.count,renderer:state.renderer,landscape:state.landscape}));

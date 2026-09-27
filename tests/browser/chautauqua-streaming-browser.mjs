@@ -42,7 +42,7 @@ for(const mobile of [false,true]) {
       assert.equal(await page.evaluate('__town.renderer.getContext().isContextLost()'),false);
       return s;
     };
-    await page.go('/chautauqua');await ready();
+    await page.go('/?site=chautauqua');await ready();
     const opening=await check();
     assert.equal(await page.evaluate('__town.siteData.buildings.length'),scene.buildings.length);
     assert.ok(opening.loadedRegions.length<manifest.regions.length/2,'opening does not fetch most of the grounds');
@@ -72,7 +72,7 @@ for(const mobile of [false,true]) {
     assert.ok(overview.evictions>0,'panning releases detail outside the view');
     console.log('PASS Chautauqua exploration and full overview',JSON.stringify({mobile}));
 
-    await page.go('/chautauqua?focus=619932539&dist=180&time=night');await ready();await check();
+    await page.go('/?site=chautauqua&focus=619932539&dist=180&time=night');await ready();await check();
     // Dense cells are split into quadrants: find the tile that holds the Amphitheater.
     const {obb}=manifest.map.buildings.find(b=>String(b.id)==='619932539');
     const amphitheater=manifest.tiles.find(({area:[x,z,size]})=>obb.cx>=x&&obb.cx<x+size&&obb.cz>=z&&obb.cz<z+size).id;

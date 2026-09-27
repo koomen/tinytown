@@ -5,7 +5,7 @@ western New York: from Elm Gate to Bryant Gate along Chautauqua Lake, with
 Bestor Plaza and its fountain, the historic halls, the Amphitheater, the
 Athenaeum Hotel, Miller Bell Tower, the piers and the 43 detached practice
 cabins beside Lenna Hall. It is served at https://chautauqua.town (its own
-Worker, `wrangler.chautauqua.jsonc`) and at https://avon.town/chautauqua.
+Worker, `wrangler.chautauqua.jsonc`).
 
 ## What makes it different from Avon
 
@@ -50,7 +50,7 @@ Worker, `wrangler.chautauqua.jsonc`) and at https://avon.town/chautauqua.
 ## Working on it
 
 ```sh
-./town serve                                  # http://localhost:8734/chautauqua
+./town serve                                  # http://localhost:8734/?site=chautauqua
 ./town status chautauqua
 ./town author chautauqua 619932539 --reauthor 619932539 --accept   # the Amphitheater again
 ./town bake chautauqua

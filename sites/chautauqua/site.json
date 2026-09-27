@@ -11,10 +11,6 @@
     {
       "target": "chautauqua",
       "route": "/"
-    },
-    {
-      "target": "avon",
-      "route": "/chautauqua"
     }
   ],
   "plugin": "chautauqua",

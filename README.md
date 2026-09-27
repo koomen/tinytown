@@ -20,7 +20,7 @@ structures) and **[chautauqua.town](https://chautauqua.town)**
 git clone https://github.com/koomen/tinytown && cd tinytown
 python3 -m venv .venv && .venv/bin/pip install -e .   # Python 3.10+
 ./town serve
-# open http://localhost:8734/  (Avon), /avon (alias), /chautauqua, /?site=<name>
+# open http://localhost:8734/  (Avon), /avon (alias), /?site=chautauqua, /?site=<name>
 ```
 
 `town serve` needs only the standard library; `./town` picks up `.venv`
@@ -119,7 +119,7 @@ drivers need `./town bake avon-extended` (or `town stage`) first. See
 
 Two Cloudflare Workers upload the static `dist/` directories that
 `./town stage` stages: `avon-town` serves avon.town (`/` Avon, `/avon` alias,
-`/avon-extended`, `/chautauqua`) and `chautauqua-miniature` serves
+`/avon-extended`) and `chautauqua-miniature` serves
 chautauqua.town. Routes derive from `sites/*/site.json`. On push to `main`,
 `wrangler deploy` runs `scripts/cloudflare-build.sh <target>`, which runs
 `npm ci` and `town stage`: baked
