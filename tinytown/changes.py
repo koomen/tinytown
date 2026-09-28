@@ -1445,7 +1445,7 @@ def register(subparsers):
             child.add_argument('ids', nargs='+', help='Structure ids')
             child.add_argument('--reauthor', action='store_true', help='Author again even if accepted; compared against the accepted blueprint')
             child.add_argument('--option', action='append', metavar='KEY=VALUE',
-                               help='town author option, e.g. author_model=opus, max_tokens=200000, or fresh=true with --reauthor '
+                               help='town author option, e.g. author_model=astra (default opus), max_tokens=200000, or fresh=true with --reauthor '
                                     'to rebuild from references instead of patching (repeatable)')
             child.add_argument('--title')
         if action == 'buildings':

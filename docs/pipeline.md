@@ -12,8 +12,8 @@ stages and the files they write are summarised in
 git clone https://github.com/koomen/tinytown && cd tinytown
 python3 -m venv .venv && .venv/bin/pip install -e .      # Python 3.10+; pillow, websocket-client; `town` on PATH
 ./town browser setup                                     # private headless Chromium into runs/headless-browser/
-codex login                                              # for `town author` with OpenAI models
-# or: .venv/bin/pip install -e ".[anthropic]" and export ANTHROPIC_API_KEY for Claude models
+.venv/bin/pip install -e ".[anthropic]"                  # `town author` defaults to Claude Opus 5.5; export ANTHROPIC_API_KEY
+# optional: codex login, for Codex models (--author-model astra --reviewer-model sol)
 node --version                                           # 22+ for bake and tests
 ```
 
@@ -97,7 +97,7 @@ manual verbs are for when you want to inspect or steer.
 
 ```sh
 ./town author mytown --dry-run                  # status and next step per building; no model, no browser
-./town author mytown --all --accept             # stages 3–6 for every unauthored structure (Codex CLI or ANTHROPIC_API_KEY, per model)
+./town author mytown --all --accept             # stages 3–6 for every unauthored structure (Opus by default: ANTHROPIC_API_KEY)
 ./town author mytown 247541316 248290075        # just these
 ./town author mytown --reauthor 247541316       # again, compared against the accepted blueprint
 ./town author mytown --reauthor 247541316 --fresh  # rebuilt from the references, not patched; still compared
@@ -105,7 +105,9 @@ manual verbs are for when you want to inspect or steer.
 ./town status mytown
 ```
 
-Defaults: `astra` authors (high effort), `sol` reviews (medium), 3 workers,
+Defaults: `opus` (Claude Opus 5.5) authors (high effort) and reviews (medium),
+which needs `pip install -e ".[anthropic]"` and `ANTHROPIC_API_KEY`; the Codex
+models stay selectable with `--author-model astra --reviewer-model sol`. 3 workers,
 300,000 tokens per building and no run-wide cap, one self-check of the
 author's own render, one validation fix per response, at most 2 repairs per
 building, then forced publication of the best-scoring draft that `accept`

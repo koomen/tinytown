@@ -10,21 +10,23 @@ implementation and `./town author --help` the option list.
 ## Requirements
 
 Authoring is the only stage that needs a model. Two providers are supported,
-chosen per role by the model name (`tinytown/model.py`):
+chosen per role by the model name (`tinytown/model.py`). Both roles default to
+Claude Opus 5.5 (`opus`), so a default `town author` needs the Anthropic setup:
 
-- **OpenAI** through the Codex CLI (`codex exec`): `codex` must be installed
-  and logged in (`codex login`); credentials stay in `CODEX_HOME` (default
-  `~/.codex`) and are never read or copied. `--codex PATH` selects another binary.
 - **Anthropic** through the Messages API: `pip install -e '.[anthropic]'` and
   `ANTHROPIC_API_KEY` in the environment (read by the SDK, never logged).
+- **OpenAI** through the Codex CLI (`codex exec`), only when a role names a
+  Codex model (e.g. `--author-model astra --reviewer-model sol`): `codex` must be
+  installed and logged in (`codex login`); credentials stay in `CODEX_HOME`
+  (default `~/.codex`) and are never read or copied. `--codex PATH` selects another binary.
 
 | Alias | Model | Provider | Default role |
 | --- | --- | --- | --- |
-| `astra` | `gpt-6-astra` | OpenAI | author and repairs (`--author-model`) |
-| `sol` | `gpt-5.6-sol` | OpenAI | building review, scene critique, baseline comparison (`--reviewer-model`) |
-| `terra`, `luna` | `gpt-5.6-terra`, `gpt-5.6-luna` | OpenAI | alternatives |
-| `opus` | `claude-opus-5-5` | Anthropic | alternative author or reviewer |
+| `opus` | `claude-opus-5-5` | Anthropic | author and repairs (`--author-model`); building review, scene critique, baseline comparison (`--reviewer-model`) |
 | `sonnet`, `fable`, `haiku` | `claude-sonnet-5`, `claude-fable-5-1`, `claude-haiku-4-5-20251001` | Anthropic | alternatives |
+| `astra` | `gpt-6-astra` | OpenAI | alternative author (`--author-model astra`) |
+| `sol` | `gpt-5.6-sol` | OpenAI | alternative reviewer (`--reviewer-model sol`) |
+| `terra`, `luna` | `gpt-5.6-terra`, `gpt-5.6-luna` | OpenAI | alternatives |
 
 Any literal model id also works; ids starting `claude-` go to Anthropic. Roles
 can mix providers, e.g. `--author-model opus --reviewer-model sol`; a reviewer

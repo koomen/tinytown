@@ -311,7 +311,7 @@ class Authoring(Fixture):
         self.assertTrue((b.renders / 'initial-faces.jpg').is_file())
         review = read_json(b.review)
         self.assertEqual((review['draft_hash'], review['passed'], review['report']['verdict'], review['model']),
-                         (fingerprint(BP), True, 'ready', 'sol'))
+                         (fingerprint(BP), True, 'ready', 'opus'))
         self.assertEqual(review['renderer_signature'], 'renderer-1')
         self.assertEqual(set(review['renders']), {'overview', 'pairs'})
         # the review saw the reference image, then the photo|render pairs and the overview
@@ -344,8 +344,8 @@ class Authoring(Fixture):
         self.assertIn('APPROVED STYLE EXAMPLES', prompt)
         self.assertIn('Keep blueprint under 8000 output tokens.', prompt)
         self.assertIn('entrance_plan', prompt)
-        self.assertEqual(self.model.calls[0]['model'], 'astra')
-        self.assertEqual(self.model.calls[1]['model'], 'sol')
+        self.assertEqual(self.model.calls[0]['model'], 'opus')
+        self.assertEqual(self.model.calls[1]['model'], 'opus')
 
     def test_resume_skips_finished_steps(self):
         self.model.script('author', response(BP), response(BP2)).script('review', READY, READY)
@@ -557,7 +557,7 @@ class Authoring(Fixture):
         self.assertEqual(self.model.roles(), {'author': 1, 'review': 3, 'repair': 2, 'baseline-comparison': 3})
         comparison = read_json(author.comparison_path(self.paths.building('1')))
         self.assertEqual((comparison['verdict'], comparison['baseline_hash'], comparison['candidate_hash'], comparison['reviewer']),
-                         ('rejected', fingerprint(BP), fingerprint(BP4), 'sol'))
+                         ('rejected', fingerprint(BP), fingerprint(BP4), 'opus'))
         self.assertEqual(read_json(self.paths.building('1').draft), BP4)
         self.assertEqual(self.status('1'), 'reviewed')
         exhausted = read_json(self.paths.building('1').review)

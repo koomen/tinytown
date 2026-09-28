@@ -36,7 +36,7 @@ To choose the coding agent, add `--agent claude` (Claude Code, default model
 
 ```sh
 ./town changes buildings SITE --group needs-attention      # derived status; no queue records
-./town changes add-building SITE ID [ID…] [--reauthor] [--option author_model=opus]
+./town changes add-building SITE ID [ID…] [--reauthor] [--option author_model=astra]
 ./town changes iterate 7 'The porch roof slopes away from the door' --building ID
 ./town changes approve 7 [--building ID] [--force]
 ./town changes escalate SITE ID --note 'Keep the tower' [--agent claude]

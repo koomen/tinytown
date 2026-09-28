@@ -65,7 +65,7 @@ and imports a module only when one of its verbs runs.
 | `review.py` | blueprint lint, geometry audit, review policy and records, repair counting | `lint`, `review` | `lint_blueprint`, `geometry_audit`, `review_blueprint`, `miniature_policy`, the live parts of `fidelity` |
 | `render.py` | rendering a building or scene through the viewer; comparisons | `render` | `render_bp`, `miniature_render` |
 | `browser.py` + `browser.mjs` | one headless Chromium harness for Python and Node | `browser` | `headless`, `private_browser`, `browser.mjs`, `setup_browser` (deleted: `agent_browser`, `terminal_browser`) |
-| `model.py` | the model adapter (Codex CLI today); usage accounting; `BudgetExhausted` | | `miniature_model`, `model_runner`, the model parts of `fidelity_runner` |
+| `model.py` | the model adapter (Anthropic Messages API for the default `opus`, or the Codex CLI); usage accounting; `BudgetExhausted` | | `miniature_model`, `model_runner`, the model parts of `fidelity_runner` |
 | `author.py` | per-building author/review/repair state machine; concurrency; budgets; scene critique; accept | `author`, `accept` | `miniature_pipeline`, `fidelity_runner`, `run_diorama`, `expand_diorama`, `expansion_queue`, `publish_*`, `merge_blueprints`, `production_baseline`, `renderer_snapshot` |
 | `changes.py` | local source-change queue, isolated workspaces, worker events, approval, dashboard and preview URLs | `changes`, `preview` | |
 | `change_bakes.py` | task bake snapshots, serialized bake jobs and immutable map serving | `changes bake` | |

@@ -11,7 +11,8 @@ python3 -m venv .venv && .venv/bin/pip install -e .   # Python >= 3.10; pillow, 
 npm ci                                                # three.js + @napi-rs/canvas for the Node bake
 ./town browser setup                                  # private headless Chromium -> runs/headless-browser/ (render, author, browser tests)
 node --version                                        # >= 22 for bake and tests
-codex login                                           # `town author` with OpenAI models; Claude models need pip install -e ".[anthropic]" + ANTHROPIC_API_KEY
+.venv/bin/pip install -e ".[anthropic]"               # `town author` defaults to Claude Opus 5.5: also export ANTHROPIC_API_KEY
+codex login                                           # only for Codex models: --author-model astra --reviewer-model sol
 ```
 
 `./town` runs `python -B -m tinytown` with `.venv/bin/python` when present

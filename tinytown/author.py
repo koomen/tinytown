@@ -590,7 +590,7 @@ class Run:
     """One `town author` invocation: options, shared budget, serialized rendering, per-building work."""
 
     def __init__(self, paths, ids=None, *, all=False, workers=3, max_tokens=None, max_seconds=None,
-                 max_tokens_per_building=MAX_TOKENS_PER_BUILDING, author_model='astra', reviewer_model='sol',
+                 max_tokens_per_building=MAX_TOKENS_PER_BUILDING, author_model='opus', reviewer_model='opus',
                  reasoning_effort=None, author_effort='high', reviewer_effort='medium', self_checks=1,
                  building_review=True, scene_review=True, max_repairs=MAX_REPAIRS, capture='missing', image_search='bing',
                  max_web_images=1, extra_street_views=0, render_distance=90, call_timeout=300, codex='codex',
@@ -1709,8 +1709,10 @@ def register(subparsers):
     p.add_argument('--max-tokens-per-building', type=int, default=MAX_TOKENS_PER_BUILDING,
                    help=f'token cap per building in this run (default {MAX_TOKENS_PER_BUILDING:,}; 0 = unlimited)')
     p.add_argument('--max-seconds', type=float, default=None, help='wall-time budget for the run (default: unlimited)')
-    p.add_argument('--author-model', default='astra', help='author/repair/self-check model alias or id (astra, opus, ...)')
-    p.add_argument('--reviewer-model', default='sol', help='review/scene/comparison model alias or id (sol, sonnet, ...)')
+    p.add_argument('--author-model', default='opus',
+                   help='author/repair/self-check model alias or id (opus, astra, ...; default opus)')
+    p.add_argument('--reviewer-model', default='opus',
+                   help='review/scene/comparison model alias or id (opus, sol, sonnet, ...; default opus)')
     p.add_argument('--author-effort', choices=['low', 'medium', 'high'], default='high')
     p.add_argument('--reviewer-effort', choices=['low', 'medium', 'high'], default='medium')
     p.add_argument('--reasoning-effort', choices=['low', 'medium', 'high'], default=None,

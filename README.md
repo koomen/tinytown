@@ -42,7 +42,7 @@ See [the change queue guide](docs/changes.md).
 ./town build mytown                                               # -> data/mytown/site.json; view at /?site=mytown
 ./town scope mytown --bounds S,W,N,E                              # optional: freeze which structures are in
 ./town refs mytown --all                                          # Street View fronts and aerials per building
-./town author mytown --all --accept                               # model authoring: needs the Codex CLI (`codex login`)
+./town author mytown --all --accept                               # model authoring: Claude Opus 5.5 by default (ANTHROPIC_API_KEY)
 ./town bake mytown                                                # terrain/pavement surfaces and streaming chunks
 ./town stage --target avon                                       # after adding sites/mytown/site.json; bakes what is stale
 ```
@@ -56,8 +56,10 @@ Each verb is idempotent: re-running it does the missing work and exits 0.
 Prerequisites, by stage: Python ≥ 3.10 with `pillow` and `websocket-client`
 (installed by `pip install -e .`); Node ≥ 22 and `npm ci` for `bake` and tests; the private
 headless Chromium from `./town browser setup` for `refs`, `render`, `author`
-and browser tests; the [OpenAI Codex CLI](https://github.com/openai/codex)
-logged in for `author` and change-queue workers; network for OSM/USGS/Esri fetches, Street View
+and browser tests; for `author`, which defaults to Claude Opus 5.5,
+`pip install -e ".[anthropic]"` and `ANTHROPIC_API_KEY` (the
+[OpenAI Codex CLI](https://github.com/openai/codex), logged in, only for
+`--author-model astra --reviewer-model sol` or `--agent codex` change-queue workers); network for OSM/USGS/Esri fetches, Street View
 capture and the Three.js CDN.
 
 ## The look
@@ -139,8 +141,9 @@ committed. Commit `index.html` restamped (`./town bake --viewer`) after editing
   gitignored, never committed and never deployed.
 - [Three.js](https://threejs.org) (MIT) from jsDelivr; fonts Nunito and
   Fraunces from Google Fonts (SIL Open Font License).
-- Authoring uses the OpenAI Codex CLI; model names and aliases are in
-  `tinytown/model.py`.
+- Authoring uses Claude Opus 5.5 through the Anthropic API by default (the
+  OpenAI Codex CLI when a Codex model is selected); model names and aliases
+  are in `tinytown/model.py`.
 
 The miniatures depict real places, including real signage and business names,
 as hand-made caricatures. Signs are redrawn or procedural approximations, not

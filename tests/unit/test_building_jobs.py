@@ -28,7 +28,7 @@ class FakeRun:
     """Stands in for author.Run: writes a draft and a passing review for each building."""
     calls = []
 
-    def __init__(self, paths, ids=None, *, reauthor=(), log=None, workers=3, author_model='astra', fresh=False):
+    def __init__(self, paths, ids=None, *, reauthor=(), log=None, workers=3, author_model='opus', fresh=False):
         self.paths, self.ids, self.reauthor, self.log = paths, list(ids or ()), tuple(reauthor), log
         self.fresh = fresh
         self.halted = None

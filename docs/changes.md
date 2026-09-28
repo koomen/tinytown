@@ -176,7 +176,7 @@ Select buildings and choose **Author** or **Re-author**, or run:
 
 ```sh
 ./town changes add-building chautauqua 619932538 619932540 [--reauthor] \
-    [--option author_model=opus --option max_tokens=200000]
+    [--option author_model=astra --option max_tokens=200000]
 ```
 
 A building job (`kind: "building"`) runs the bounded `town author` state
@@ -184,7 +184,9 @@ machine (`author.Run`) for those buildings in the main checkout. It needs no
 snapshot: a draft is already a proposal, and the Street View photos and renders
 it needs are gitignored. `--option` passes any `town author` keyword argument
 (names come from `author.Run`; selection, acceptance and binaries are not
-accepted). `--reauthor --option fresh=true` rebuilds each building from its
+accepted). Both model roles default to `opus` (Claude Opus 5.5, so the queue's
+environment needs `ANTHROPIC_API_KEY`); `author_model=astra` and
+`reviewer_model=sol` select the Codex models. `--reauthor --option fresh=true` rebuilds each building from its
 references instead of patching the accepted blueprint (`town author --fresh`). The job log streams the author's progress; building jobs run in
 their own worker slots (`serve --building-workers`, default 1, because every
 render goes through the one private browser), and two jobs never share a
